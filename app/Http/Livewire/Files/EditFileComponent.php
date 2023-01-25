@@ -1,0 +1,213 @@
+<?php
+
+namespace App\Http\Livewire\Files;
+
+use App\Models\File;
+use App\Models\FileTestResult;
+use App\Models\Proctor;
+use App\Models\ProctorData;
+use App\Models\Project;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+use Livewire\Component;
+
+class EditFileComponent extends Component
+{
+    public $file_title, $project_id, $user_id = [], $remark, $created_by, $pdf_details, $file_id, $i = 1, $j = 1, $main_test_method, $test_mode, $status, $observation, $responsible_person = [];
+
+    public $proctorData = [], $fields = [], $proctor_id = [], $description = [], $test_method = [], $max_dry_density = [], $optimum_moisture = [];
+
+    public $testResultData = [], $testresults = [], $test_num = [], $location = [], $test_dept = [], $elev_test = [], $wet_density = [], $dry_density = [], $moisture_content = [], $percent_comp = [], $comments = [], $result_proctor_id = [], $percent_comp_one = [], $comments_one = [];
+
+
+    public function selectInfo()
+    {
+        $project = Project::where('id', $this->project_id)->first();
+        $this->project_number = $project->project_number;
+        $this->client_id = $project->client_id;
+        $this->client_name = client($project->client_id)->name;
+    }
+
+    public function addField($i)
+    {
+        $i = $i + 1;
+        $this->i = $i;
+        array_push($this->fields, $i);
+    }
+
+    public function removeField($i)
+    {
+        unset($this->fields[$i]);
+    }
+
+    public function addTestResult($j)
+    {
+        $j = $j + 1;
+        $this->j = $j;
+        array_push($this->testresults, $j);
+    }
+
+    public function removeTestResult($j)
+    {
+        unset($this->testresults[$j]);
+    }
+
+    public function mount($file_id)
+    {
+        $file = File::where('id', $file_id)->first();
+        $this->project_id = $file->project_id;
+
+        $this->file_id = $file_id;
+
+        $this->client_id = $file->client_id;
+        $this->project_number = $file->project_number;
+        $this->date = $file->date;
+        $this->user_id = $file->user_id;
+        $this->weather = $file->weather;
+        $this->troxler = $file->troxler;
+        $this->other = $file->other;
+        $this->model = $file->model;
+        $this->serial_number = $file->serial_number;
+        $this->density_count = $file->density_count;
+        $this->moisture_count = $file->moisture_count;
+        $this->moisture_equation = $file->moisture_equation;
+        $this->observation = $file->observation;
+
+        $this->test_mode = $file->test_mode;
+        $this->main_test_method = $file->main_test_method;
+        $this->responsible_person = json_encode($this->responsible_person);
+
+        $proctors = ProctorData::where('file_id', $file->id)->get();
+        $this->i = $proctors->count();
+
+        foreach ($proctors as $key => $proctor) {
+            array_push($this->proctor_id, $proctor->proctor_id);
+            array_push($this->description, $proctor->description);
+            array_push($this->test_method, $proctor->test_method);
+            array_push($this->max_dry_density, $proctor->max_dry_density);
+            array_push($this->optimum_moisture, $proctor->optimum_moisture);
+            array_push($this->proctorData, $proctor->id);
+            array_push($this->fields, $key);
+        }
+
+        $test_results = FileTestResult::where('file_id', $file->id)->get();
+        $this->i = $test_results->count();
+
+        foreach ($test_results as $key => $test_result) {
+            array_push($this->test_num, $test_result->test_num);
+            array_push($this->location, $test_result->location);
+            array_push($this->result_proctor_id, $test_result->result_proctor_id);
+            array_push($this->test_dept, $test_result->test_dept);
+            array_push($this->elev_test, $test_result->elev_test);
+            array_push($this->wet_density, $test_result->wet_density);
+            array_push($this->dry_density, $test_result->dry_density);
+            array_push($this->moisture_content, $test_result->moisture_content);
+            array_push($this->percent_comp, $test_result->percent_comp);
+            array_push($this->comments, $test_result->comments);
+
+            array_push($this->comments_one, $test_result->comments_one);
+            array_push($this->percent_comp_one, $test_result->percent_comp_one);
+
+            array_push($this->testResultData, $test_result->id);
+            array_push($this->testresults, $key);
+        }
+
+        $this->compaction_requirement = $file->compaction_requirement;
+        $this->requirment_plus = $file->requirment_plus;
+        $this->requirment_minus = $file->requirment_minus;
+        $this->general_info = $file->general_info;
+        $this->remark = $file->remark;
+    }
+
+    public function updateData()
+    {
+        $this->validate([
+            'project_id' => 'required',
+            'client_id' => 'required',
+            'user_id' => 'required',
+            'date' => 'required',
+            'compaction_requirement' => 'required',
+            'requirment_plus' => 'required',
+            'requirment_minus' => 'required',
+            'general_info' => 'required',
+            'responsible_person' => 'required',
+        ]);
+
+        $data = new File();
+        $data->project_id = $this->project_id;
+        $data->client_id = $this->client_id;
+        $data->project_number = $this->project_number;
+        $data->date = $this->date;
+        $data->user_id = $this->user_id;
+        $data->weather = $this->weather;
+        $data->troxler = $this->troxler;
+        $data->other = $this->other;
+        $data->model = $this->model;
+        $data->serial_number = $this->serial_number;
+        $data->density_count = $this->density_count;
+        $data->moisture_count = $this->moisture_count;
+        $data->moisture_equation = $this->moisture_equation;
+
+        $data->test_mode = $this->test_mode;
+        $data->main_test_method = $this->main_test_method;
+
+        $data->compaction_requirement = $this->compaction_requirement;
+        $data->requirment_plus = $this->requirment_plus;
+        $data->requirment_minus = $this->requirment_minus;
+        $data->general_info = $this->general_info;
+        $data->observation = $this->observation;
+        $data->status = $this->status;
+        $data->responsible_person = json_encode($this->responsible_person);
+        $data->save();
+
+        // proctor information
+        foreach ($this->proctor_id as $key => $p_id) {
+            $cont = new ProctorData();
+            $cont->file_id = $data->id;
+            $cont->proctor_id = $this->proctor_id[$key];
+            $cont->description = $this->description[$key];
+            $cont->test_method = $this->test_method[$key];
+            $cont->max_dry_density = $this->max_dry_density[$key];
+            $cont->optimum_moisture = $this->optimum_moisture[$key];
+            $cont->save();
+        }
+
+        // test result information
+        foreach ($this->test_num as $key => $test_n) {
+            $cont = new FileTestResult();
+            $cont->file_id = $data->id;
+            $cont->result_proctor_id = $this->result_proctor_id[$key];
+            $cont->test_num = $this->test_num[$key];
+            $cont->location = $this->location[$key];
+            $cont->test_dept = $this->test_dept[$key];
+            $cont->elev_test = $this->elev_test[$key];
+            $cont->wet_density = $this->wet_density[$key];
+            $cont->dry_density = $this->dry_density[$key];
+            $cont->moisture_content = $this->moisture_content[$key];
+            $cont->percent_comp = $this->percent_comp[$key];
+            $cont->comments = $this->comments[$key];
+
+            $cont->comments_one = $this->comments_one[$key];
+            $cont->percent_comp_one = $this->percent_comp_one[$key];
+
+            $cont->save();
+        }
+
+        // $data->user_id = json_encode($this->user_id);
+        $data->remark = $this->remark;
+        $data->created_by = Auth::user()->id;
+
+        $data->save();
+        session()->flash('message', 'File created successfully');
+        return redirect()->route('file.list');
+    }
+
+    public function render()
+    {
+        $projects = Project::orderBy('id', 'DESC')->get();
+        $supervisors = User::orderBy('id', 'DESC')->where('role_id', 4)->get();
+        $proctors = Proctor::orderBy('id', 'DESC')->get();
+
+        return view('livewire.files.edit-file-component', ['projects' => $projects, 'supervisors' => $supervisors, 'proctors' => $proctors])->layout('livewire.layouts.base');
+    }
+}
