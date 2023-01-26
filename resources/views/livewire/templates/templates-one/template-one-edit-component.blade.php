@@ -193,12 +193,14 @@
                                 <div class="input-group mb-3">
                                     <span class="input-group-text">Specified Slump:</span>
                                     <span class="input-group-text">Min:</span>
-                                    <input type="number" step="any" class="form-control" wire:model="specified_slump_min">
+                                    <input type="number" step="any" class="form-control"
+                                        wire:model="specified_slump_min">
                                     @error('specified_slump_min')
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
                                     <span class="input-group-text">Max:</span>
-                                    <input type="number" step="any" class="form-control" wire:model="specified_slump_max">
+                                    <input type="number" step="any" class="form-control"
+                                        wire:model="specified_slump_max">
                                     @error('specified_slump_max')
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
@@ -391,7 +393,8 @@
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="number" step="any" class="form-control moistureremoveinput"
+                                                        <input type="number" step="any"
+                                                            class="form-control moistureremoveinput"
                                                             wire:model='batch_size.{{ $field }}'>
                                                         @error('batch_size')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
@@ -401,7 +404,8 @@
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="number" step="any" class="form-control moistureremoveinput"
+                                                        <input type="number" step="any"
+                                                            class="form-control moistureremoveinput"
                                                             wire:model='total_cumulative.{{ $field }}'>
                                                         @error('total_cumulative')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
@@ -411,7 +415,8 @@
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="number" step="any" class="form-control moistureremoveinput"
+                                                        <input type="number" step="any"
+                                                            class="form-control moistureremoveinput"
                                                             wire:model='slump.{{ $field }}'>
                                                         @error('slump')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
@@ -421,7 +426,8 @@
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="number" step="any" class="form-control moistureremoveinput"
+                                                        <input type="number" step="any"
+                                                            class="form-control moistureremoveinput"
                                                             wire:model='air_cont.{{ $field }}'>
                                                         @error('air_cont')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
@@ -431,7 +437,8 @@
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="number" step="any" class="form-control moistureremoveinput"
+                                                        <input type="number" step="any"
+                                                            class="form-control moistureremoveinput"
                                                             wire:model='unit_wt.{{ $field }}'>
                                                         @error('unit_wt')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
@@ -441,7 +448,8 @@
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="number" step="any" class="form-control moistureremoveinput"
+                                                        <input type="number" step="any"
+                                                            class="form-control moistureremoveinput"
                                                             wire:model='air_temp.{{ $field }}'>
                                                         @error('air_temp')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
@@ -451,7 +459,8 @@
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="number" step="any" class="form-control moistureremoveinput"
+                                                        <input type="number" step="any"
+                                                            class="form-control moistureremoveinput"
                                                             wire:model='conc_temp.{{ $field }}'>
                                                         @error('conc_temp')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
@@ -476,7 +485,8 @@
                                                 <td class="moistureremove text-center">Before Test</td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="number" step="any" class="form-control moistureremoveinput"
+                                                        <input type="number" step="any"
+                                                            class="form-control moistureremoveinput"
                                                             wire:model='water_added_before_test.{{ $field }}'>
                                                         @error('water_added_before_test')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
@@ -487,7 +497,8 @@
                                                 <td class="moistureremove">After Test</td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="number" step="any" class="form-control moistureremoveinput"
+                                                        <input type="number" step="any"
+                                                            class="form-control moistureremoveinput"
                                                             wire:model='water_added_after_test.{{ $field }}'>
                                                         @error('water_added_after_test')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
@@ -500,7 +511,8 @@
                                                 <td class="moistureremove text-center">Cylinder Set ID No.</td>
                                                 <td class="moistureremove" colspan="3">
                                                     <div class="input-group">
-                                                        <input type="number" step="any" class="form-control moistureremoveinput"
+                                                        <input type="number" step="any"
+                                                            class="form-control moistureremoveinput"
                                                             wire:model='cylinder_set_no.{{ $field }}'>
                                                         @error('cylinder_set_no')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
@@ -511,7 +523,8 @@
                                                 <td class="moistureremove">W/C Ratio</td>
                                                 <td class="moistureremove" colspan="3">
                                                     <div class="input-group">
-                                                        <input type="number" step="any" class="form-control moistureremoveinput"
+                                                        <input type="number" step="any"
+                                                            class="form-control moistureremoveinput"
                                                             wire:model='wc_ratio.{{ $field }}'>
                                                         @error('wc_ratio')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
@@ -522,7 +535,8 @@
                                                 <td class="moistureremove text-center">Relative Yield:</td>
                                                 <td class="moistureremove" colspan="4">
                                                     <div class="input-group">
-                                                        <input type="number" step="any" class="form-control moistureremoveinput"
+                                                        <input type="number" step="any"
+                                                            class="form-control moistureremoveinput"
                                                             wire:model='relative_yield.{{ $field }}'>
                                                         @error('relative_yield')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
@@ -545,19 +559,22 @@
                                                             </div>
                                                             <div class="form-check form-check-inline">
                                                                 <input class="form-check-input" type="radio"
-                                                                    wire:model='type.{{ $field }}' id="inlineRadio2" value="Beams">
+                                                                    wire:model='type.{{ $field }}' id="inlineRadio2"
+                                                                    value="Beams">
                                                                 <label class="form-check-label"
                                                                     for="inlineRadio2">Beams</label>
                                                             </div>
                                                             <div class="form-check form-check-inline">
                                                                 <input class="form-check-input" type="radio"
-                                                                    wire:model='type.{{ $field }}' id="inlineRadio3" value="Prisms">
+                                                                    wire:model='type.{{ $field }}' id="inlineRadio3"
+                                                                    value="Prisms">
                                                                 <label class="form-check-label"
                                                                     for="inlineRadio3">Prisms</label>
                                                             </div>
                                                             <div class="form-check form-check-inline">
                                                                 <input class="form-check-input" type="radio"
-                                                                    wire:model='type.{{ $field }}' id="inlineRadio3" value="Cubes">
+                                                                    wire:model='type.{{ $field }}' id="inlineRadio3"
+                                                                    value="Cubes">
                                                                 <label class="form-check-label"
                                                                     for="inlineRadio3">Cubes(circle one)</label>
                                                             </div>
@@ -599,14 +616,14 @@
                                                 </td>
                                             </tr>
                                             <td colspan="14"
-                                            style="text-align: right; border-bottom: 2px solid #3F2165">
-                                            <button type="button"
-                                                class="btn btn-outline-danger btn-icon-circle btn-icon-circle-sm"
-                                                wire:click.prevent='removeField({{ $key }})'>
-                                                {!! loadingState('removeField(' . $key . ')', '<i
-                                                    class="ti ti-circle-plus"></i>') !!}
-                                            </button>
-                                        </td>
+                                                style="text-align: right; border-bottom: 2px solid #3F2165">
+                                                <button type="button"
+                                                    class="btn btn-outline-danger btn-icon-circle btn-icon-circle-sm"
+                                                    wire:click.prevent='removeField({{ $key }})'>
+                                                    {!! loadingState('removeField(' . $key . ')', '<i
+                                                        class="ti ti-circle-plus"></i>') !!}
+                                                </button>
+                                            </td>
                                             @endforeach
                                         </tbody>
                                     </table>
@@ -628,7 +645,7 @@
                                             @enderror
                                         </div>
                                     </div>
-                                     <div class="col-md-6">
+                                    <div class="col-md-6">
                                         <div class="input-group mb-3">
                                             <span class="input-group-text">Project Representative’s Signature:</span>
                                             <input type="text" class="form-control" wire:model="representative">
@@ -651,10 +668,10 @@
                                         </div>
                                     </div>
                                     <div class="col-md-10">
-                                        <div class="input-group mb-3">
+                                        <div class="input-group">
                                             <span class="input-group-text">Next Action:</span>
-                                            <select class="form-select moistureremoveinput dependent" wire:model='status'
-                                                data-template_one_id="{{ $template_one_id }}">
+                                            <select class="form-select moistureremoveinput dependent"
+                                                wire:model='status' data-template_one_id="{{ $template_one_id }}">
                                                 <option value="">Select an action...</option>
                                                 <option value="sentToPE">Send to Project Engineer</option>
                                                 <option value="sentToClerk">Send to Clerk</option>
@@ -663,12 +680,16 @@
                                                 <option value="sentToClient">Send to Client</option>
                                             </select>
                                         </div>
+                                        @error('status')
+                                        <span class="text-danger" style="font-size: 12px;">{{ $message
+                                            }}</span>
+                                        @enderror
                                     </div>
-                                    <div class="col-md-10" wire:ignore>
+                                    <div class="col-md-10 mt-3" wire:ignore>
                                         <div class="input-group mb-3">
                                             <span class="input-group-text">Responsible Persons:</span>
-                                            <select class="form-select moistureremoveinput multiple_selector" wire:model="responsible_person"
-                                                id="action" multiple>
+                                            <select class="form-select moistureremoveinput multiple_selector"
+                                                wire:model="responsible_person" id="action" multiple>
                                             </select>
                                         </div>
                                     </div>

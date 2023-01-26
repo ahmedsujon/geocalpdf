@@ -22,6 +22,30 @@ class TemplateOneEditComponent extends Component
         $i = $i + 1;
         $this->i = $i;
         array_push($this->fields, $i);
+        $this->test_no[$i] = 0;
+        $this->ticket_no[$i] = 0;
+        $this->truck_no[$i] = 0;
+        $this->truck_dispatched[$i] = 0;
+        $this->time_sample_taken[$i] = 0;
+        $this->time_truck_finished[$i] = 0;
+        $this->batch_size[$i] = 0;
+        $this->total_cumulative[$i] = 0;
+        $this->slump[$i] = 0;
+        $this->air_cont[$i] = 0;
+        $this->unit_wt[$i] = 0;
+        $this->air_temp[$i] = 0;
+        $this->conc_temp[$i] = 0;
+        $this->location[$i] = 0;
+        $this->water_added_before_test[$i] = 0;
+        $this->water_added_after_test[$i] = 0;
+        $this->cylinder_set_no[$i] = 0;
+        $this->relative_yield[$i] = 0;
+        $this->type[$i] = 0;
+        $this->dimensions[$i] = 0;
+        $this->dimensions[$i] = 0;
+        $this->cyls_cast[$i] = 0;
+        $this->age_days[$i] = 0;
+        $this->wc_ratio[$i] = 0;
     }
 
     public function removeField($i)
@@ -128,6 +152,7 @@ class TemplateOneEditComponent extends Component
             'client_id' => 'required',
             'user_id' => 'required',
             'date' => 'required',
+            'status' => 'required'
         ]);
 
         $data = new TemplateOne();

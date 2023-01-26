@@ -17,11 +17,63 @@ class TemplateOneAddComponent extends Component
 
     public $test_no = [], $ticket_no = [], $truck_no = [], $truck_dispatched = [], $time_sample_taken = [], $time_truck_finished = [], $batch_size = [], $total_cumulative = [], $slump = [], $air_cont = [], $unit_wt = [], $air_temp = [], $conc_temp = [], $location = [], $water_added_before_test = [], $water_added_after_test = [], $cylinder_set_no = [], $wc_ratio = [], $relative_yield = [], $type = [], $dimensions = [], $cyls_cast = [], $age_days = [];
 
+    public function mount(){
+        $this->test_no[0] = 0;
+        $this->ticket_no[0] = 0;
+        $this->truck_no[0] = 0;
+        $this->truck_dispatched[0] = 0;
+        $this->time_sample_taken[0] = 0;
+        $this->time_truck_finished[0] = 0;
+        $this->batch_size[0] = 0;
+        $this->total_cumulative[0] = 0;
+        $this->slump[0] = 0;
+        $this->air_cont[0] = 0;
+        $this->unit_wt[0] = 0;
+        $this->air_temp[0] = 0;
+        $this->conc_temp[0] = 0;
+        $this->location[0] = 0;
+        $this->water_added_before_test[0] = 0;
+        $this->water_added_after_test[0] = 0;
+        $this->cylinder_set_no[0] = 0;
+        $this->relative_yield[0] = 0;
+        $this->type[0] = 0;
+        $this->dimensions[0] = 0;
+        $this->dimensions[0] = 0;
+        $this->cyls_cast[0] = 0;
+        $this->age_days[0] = 0;
+        $this->wc_ratio[0] = 0;
+
+    }
+
     public function addField($i)
     {
         $i = $i + 1;
         $this->i = $i;
         array_push($this->fields, $i);
+        $this->test_no[$i] = 0;
+        $this->ticket_no[$i] = 0;
+        $this->truck_no[$i] = 0;
+        $this->truck_dispatched[$i] = 0;
+        $this->time_sample_taken[$i] = 0;
+        $this->time_truck_finished[$i] = 0;
+        $this->batch_size[$i] = 0;
+        $this->total_cumulative[$i] = 0;
+        $this->slump[$i] = 0;
+        $this->air_cont[$i] = 0;
+        $this->unit_wt[$i] = 0;
+        $this->air_temp[$i] = 0;
+        $this->conc_temp[$i] = 0;
+        $this->location[$i] = 0;
+        $this->water_added_before_test[$i] = 0;
+        $this->water_added_after_test[$i] = 0;
+        $this->cylinder_set_no[$i] = 0;
+        $this->relative_yield[$i] = 0;
+        $this->type[$i] = 0;
+        $this->dimensions[$i] = 0;
+        $this->dimensions[$i] = 0;
+        $this->cyls_cast[$i] = 0;
+        $this->age_days[$i] = 0;
+        $this->wc_ratio[$i] = 0;
     }
 
     public function removeField($i)
