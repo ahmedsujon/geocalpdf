@@ -15,9 +15,11 @@ class EditFileComponent extends Component
 {
     public $file_title, $project_id, $user_id = [], $remark, $created_by, $pdf_details, $file_id, $i = 1, $j = 1, $main_test_method, $test_mode, $status, $observation, $responsible_person = [];
 
-    public $proctorData = [], $fields = [], $proctor_id = [], $description = [], $test_method = [], $max_dry_density = [], $optimum_moisture = [];
+    public $proctorData = [], $fields = [], $proctor_id = [], $description = [], $test_method = [], $max_dry_density = [], $optimum_moisture = [], $project_number, $client_id, $client_name;
 
     public $testResultData = [], $testresults = [], $test_num = [], $location = [], $test_dept = [], $elev_test = [], $wet_density = [], $dry_density = [], $moisture_content = [], $percent_comp = [], $comments = [], $result_proctor_id = [], $percent_comp_one = [], $comments_one = [];
+
+    public $weather, $date, $troxler, $other, $model, $serial_number, $density_count, $moisture_count, $moisture_equation, $compaction_requirement, $requirment_plus, $requirment_minus, $general_info;
 
 
     public function selectInfo()
@@ -28,11 +30,34 @@ class EditFileComponent extends Component
         $this->client_name = client($project->client_id)->name;
     }
 
+    public function changeTestResult($value)
+    {
+        $proctor = Proctor::where('proctorid', $this->result_proctor_id[$value])->first();
+
+        if (!$this->dry_density[$value]) {
+            $this->dry_density[$value] = 0;
+        }
+
+        $this->percent_comp[$value] = round(($this->dry_density[$value] / $proctor->max_dry_density) * 100, 1);
+    }
+
     public function addField($i)
     {
         $i = $i + 1;
         $this->i = $i;
         array_push($this->fields, $i);
+        $this->test_num[$i] = 0;
+        $this->location[$i] = 0;
+        $this->result_proctor_id[$i] = 0;
+        $this->elev_test[$i] = 0;
+        $this->wet_density[$i] = 0;
+        $this->moisture_content[$i] = 0;
+        $this->percent_comp[$i] = 0;
+        $this->comments[$i] = 0;
+        $this->percent_comp_one[$i] = 0;
+        $this->comments_one[$i] = 0;
+        $this->dry_density[$i] = 0;
+        $this->test_dept[$i] = 0;
     }
 
     public function removeField($i)
@@ -45,6 +70,18 @@ class EditFileComponent extends Component
         $j = $j + 1;
         $this->j = $j;
         array_push($this->testresults, $j);
+        $this->test_num[$j] = 0;
+        $this->location[$j] = 0;
+        $this->result_proctor_id[$j] = 0;
+        $this->elev_test[$j] = 0;
+        $this->wet_density[$j] = 0;
+        $this->moisture_content[$j] = 0;
+        $this->percent_comp[$j] = 0;
+        $this->comments[$j] = 0;
+        $this->percent_comp_one[$j] = 0;
+        $this->comments_one[$j] = 0;
+        $this->dry_density[$j] = 0;
+        $this->test_dept[$j] = 0;
     }
 
     public function removeTestResult($j)
@@ -127,10 +164,9 @@ class EditFileComponent extends Component
             'user_id' => 'required',
             'date' => 'required',
             'compaction_requirement' => 'required',
-            'requirment_plus' => 'required',
-            'requirment_minus' => 'required',
             'general_info' => 'required',
             'responsible_person' => 'required',
+            'status' => 'required',
         ]);
 
         $data = new File();

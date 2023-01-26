@@ -62,7 +62,7 @@ class AddFileComponent extends Component
     {
         $proctor = Proctor::where('proctorid', $this->result_proctor_id[$value])->first();
 
-        if(!$this->dry_density[$value]){
+        if (!$this->dry_density[$value]) {
             $this->dry_density[$value] = 0;
         }
 
@@ -74,6 +74,18 @@ class AddFileComponent extends Component
         $i = $i + 1;
         $this->i = $i;
         array_push($this->fields, $i);
+        $this->test_num[$i] = 0;
+        $this->location[$i] = 0;
+        $this->result_proctor_id[$i] = 0;
+        $this->elev_test[$i] = 0;
+        $this->wet_density[$i] = 0;
+        $this->moisture_content[$i] = 0;
+        $this->percent_comp[$i] = 0;
+        $this->comments[$i] = 0;
+        $this->percent_comp_one[$i] = 0;
+        $this->comments_one[$i] = 0;
+        $this->dry_density[$i] = 0;
+        $this->test_dept[$i] = 0;
     }
 
     public function removeField($i)
@@ -86,12 +98,34 @@ class AddFileComponent extends Component
         $j = $j + 1;
         $this->j = $j;
         array_push($this->testresults, $j);
+        $this->test_num[$j] = 0;
+        $this->location[$j] = 0;
+        $this->result_proctor_id[$j] = 0;
+        $this->elev_test[$j] = 0;
+        $this->wet_density[$j] = 0;
+        $this->moisture_content[$j] = 0;
+        $this->percent_comp[$j] = 0;
+        $this->comments[$j] = 0;
+        $this->percent_comp_one[$j] = 0;
+        $this->comments_one[$j] = 0;
         $this->dry_density[$j] = 0;
+        $this->test_dept[$j] = 0;
     }
 
     public function mount()
     {
+        $this->test_num[0] = 0;
+        $this->location[0] = 0;
+        $this->result_proctor_id[0] = 0;
+        $this->elev_test[0] = 0;
+        $this->wet_density[0] = 0;
+        $this->moisture_content[0] = 0;
+        $this->percent_comp[0] = 0;
+        $this->comments[0] = 0;
+        $this->percent_comp_one[0] = 0;
+        $this->comments_one[0] = 0;
         $this->dry_density[0] = 0;
+        $this->test_dept[0] = 0;
     }
 
     public function removeTestResult($j)
@@ -183,7 +217,7 @@ class AddFileComponent extends Component
             $cont->save();
         }
 
-        
+
 
         $data->save();
         session()->flash('message', 'File created successfully');
