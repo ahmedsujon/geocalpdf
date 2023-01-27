@@ -60,14 +60,14 @@
                                 </div>
                                 <div class="input-group mb-3">
                                     <span class="input-group-text">Client Name:</span>
-                                    <input type="text" class="form-control" wire:model="client_name">
+                                    <input type="text" class="form-control" wire:model="client_name" readonly>
                                     @error('client_id')
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
                                 </div>
                                 <div class="input-group mb-3">
                                     <span class="input-group-text">Project Number:</span>
-                                    <input type="text" class="form-control" wire:model="project_number">
+                                    <input type="text" class="form-control" wire:model="project_number" readonly>
                                     @error('project_number')
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
@@ -667,11 +667,12 @@
                                                 class="cGcvT"></grammarly-extension>
                                         </div>
                                     </div>
+
                                     <div class="col-md-10">
                                         <div class="input-group">
                                             <span class="input-group-text">Next Action:</span>
-                                            <select class="form-select moistureremoveinput dependent"
-                                                wire:model='status' data-template_one_id="{{ $template_one_id }}">
+                                            <select class="form-select moistureremoveinput dependent" wire:model='status'
+                                            data-template_one_id="{{ $template_one_id }}">
                                                 <option value="">Select an action...</option>
                                                 <option value="sentToPE">Send to Project Engineer</option>
                                                 <option value="sentToClerk">Send to Clerk</option>
@@ -689,10 +690,15 @@
                                         <div class="input-group mb-3">
                                             <span class="input-group-text">Responsible Persons:</span>
                                             <select class="form-select moistureremoveinput multiple_selector"
-                                                wire:model="responsible_person" id="action" multiple>
+                                                wire:model="responsible_person" id="action" multiple required>
                                             </select>
                                         </div>
+                                        @error('responsible_person')
+                                        <span class="text-danger" style="font-size: 12px;">{{ $message
+                                            }}</span>
+                                        @enderror
                                     </div>
+
                                 </div>
                             </div>
                         </div>
@@ -741,6 +747,7 @@
             });
         });
 </script>
+
 <script>
     $(document).ready(function() {
     $('.multiple_selector').select2({

@@ -48,7 +48,8 @@
                                 <h6>Project Information</h6>
                                 <div class="input-group">
                                     <span class="input-group-text">Project Name:</span>
-                                    <select class="form-select" wire:model="project_id" wire:change="selectInfo">
+                                    <select class="form-select" wire:model="project_id" wire:change="selectInfo"
+                                    id="selectInfo">
                                         <option value="">Select Project:</option>
                                         @foreach ($projects as $project)
                                         <option value="{{ $project->id }}">{{ $project->name }}</option>
@@ -61,14 +62,14 @@
 
                                 <div class="input-group mt-3">
                                     <span class="input-group-text">Client Name:</span>
-                                    <input type="text" class="form-control" wire:model="client_name">
+                                    <input type="text" class="form-control" wire:model="client_name" readonly>
                                 </div>
                                 @error('client_id')
                                 <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                 @enderror
                                 <div class="input-group mt-3">
                                     <span class="input-group-text">Project Number:</span>
-                                    <input type="text" class="form-control" wire:model="project_number">
+                                    <input type="text" class="form-control" wire:model="project_number" readonly>
                                 </div>
                                 @error('project_number')
                                 <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
@@ -947,16 +948,13 @@
                                                 class="cGcvT"></grammarly-extension>
                                         </div>
                                     </div>
-                                    <div class="col-md-12" wire:ignore>
-                                        <div class="input-group mt-3">
+                                    <div class="col-md-10" wire:ignore>
+                                        <div class="input-group mb-3 mt-3">
                                             <span class="input-group-text">Responsible Persons:</span>
                                             <select class="form-select moistureremoveinput multiple_selector"
                                                 id="action" multiple>
                                             </select>
                                         </div>
-                                        @error('representative')
-                                        <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
-                                        @enderror
                                     </div>
                                 </div>
                             </div>
@@ -990,7 +988,7 @@
             $('#selectInfo').change(function() {
                 var project_id = $(this).val();
                 $.ajax({
-                        url: "{{ route('get_representative_one') }}",
+                        url: "{{ route('get_representative') }}",
                         method: "POST",
                         data: {
                             project_id: project_id,

@@ -67,14 +67,14 @@
                                 </div>
                                 <div class="input-group mb-3">
                                     <span class="input-group-text">Client Name:</span>
-                                    <input type="text" class="form-control" wire:model="client_id">
+                                    <input type="text" class="form-control" wire:model="client_id" readonly>
                                     @error('client_id')
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
                                 </div>
                                 <div class="input-group mb-3">
                                     <span class="input-group-text">Project Number:</span>
-                                    <input type="text" class="form-control" wire:model="project_number">
+                                    <input type="text" class="form-control" wire:model="project_number" readonly>
                                     @error('project_number')
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror

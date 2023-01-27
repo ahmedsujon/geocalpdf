@@ -17,6 +17,8 @@ class TemplateOneEditComponent extends Component
 
     public $test_no = [], $ticket_no = [], $truck_no = [], $truck_dispatched = [], $time_sample_taken = [], $time_truck_finished = [], $batch_size = [], $total_cumulative = [], $slump = [], $air_cont = [], $unit_wt = [], $air_temp = [], $conc_temp = [], $location = [], $water_added_before_test = [], $water_added_after_test = [], $cylinder_set_no = [], $wc_ratio = [], $relative_yield = [], $type = [], $dimensions = [], $cyls_cast = [], $age_days = [], $templateData = [];
 
+    public $responsible_person = [], $template_one_id, $general_location, $compaction_requirement, $requirment_plus, $requirment_minus, $general_info;
+
     public function addField($i)
     {
         $i = $i + 1;
@@ -198,7 +200,7 @@ class TemplateOneEditComponent extends Component
         $data->admixture_one = $this->admixture_one;
         $data->admixture_two = $this->admixture_two;
         $data->admixture_three = $this->admixture_three;
-
+        $data->responsible_person = json_encode($this->responsible_person);
 
         if (Auth::user()->role_id == '1') {
             $data['status'] = "SuperAdminCreated";

@@ -21,8 +21,6 @@ class AddFileComponent extends Component
 
     public $testresults = [], $test_num = [], $location = [], $test_dept = [], $elev_test = [], $wet_density = [], $dry_density = [], $moisture_content = [], $percent_comp = [], $comments = [], $result_proctor_id = [], $comments_one = [], $percent_comp_one = [];
 
-    // public $material_description, $test_type, $max_dry_density, $optimum_moisture;
-
 
     public function selectInfo()
     {
@@ -31,10 +29,6 @@ class AddFileComponent extends Component
         $this->project_number = $project->project_number;
         $this->client_id = $project->client_id;
         $this->client_name = client($project->client_id)->name;
-
-        // get proctor information
-        // $proctor = Proctor::where('id', $this->proctor_id)->first();
-        // $this->test_type = $proctor->test_type;
 
         // get responsible persons
         $responsible_persons = [];

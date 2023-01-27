@@ -241,7 +241,7 @@ class EditFileComponent extends Component
     public function render()
     {
         $projects = Project::orderBy('id', 'DESC')->get();
-        $supervisors = User::orderBy('id', 'DESC')->where('role_id', 4)->get();
+        $supervisors = User::orderBy('id', 'DESC')->get();
         $proctors = Proctor::orderBy('id', 'DESC')->get();
 
         return view('livewire.files.edit-file-component', ['projects' => $projects, 'supervisors' => $supervisors, 'proctors' => $proctors])->layout('livewire.layouts.base');

@@ -13,11 +13,30 @@ class TemplateOneAddComponent extends Component
 {
     public $fields = [], $i = 1, $j = 1, $responsible_person = [];
 
-    public $project_id, $client_id, $project_number, $date, $user_id, $remark, $created_by, $client_name, $weather, $est_wind, $est_rh, $slump_cone, $thermometer, $air_meter, $unit_weight_measure, $scale_id, $contractor, $mix_supplier, $plant, $mix_id, $design_strength, $required_strength, $specified_slump_min, $specified_slump_max, $specified_air_min, $specified_air_max, $conc_temp_min, $conc_temp_max, $cement_ib, $cementitious_malt, $water, $fine_aggregate, $course_aggregate, $max_aggregate, $admixture_one, $admixture_two, $admixture_three, $representative, $total_yds, $general_location;
+    public $project_id, $client_id, $project_number, $date, $user_id, $remark, $created_by, $client_name, $weather, $est_wind, $est_rh, $slump_cone, $thermometer, $air_meter, $unit_weight_measure, $scale_id, $contractor, $mix_supplier, $plant, $mix_id, $design_strength, $required_strength, $specified_slump_min, $specified_slump_max, $specified_air_min, $specified_air_max, $conc_temp_min, $conc_temp_max, $cement_ib, $cementitious_malt, $water, $fine_aggregate, $course_aggregate, $max_aggregate, $admixture_one, $admixture_two, $admixture_three, $representative, $total_yds, $general_location, $responsibles;
 
     public $test_no = [], $ticket_no = [], $truck_no = [], $truck_dispatched = [], $time_sample_taken = [], $time_truck_finished = [], $batch_size = [], $total_cumulative = [], $slump = [], $air_cont = [], $unit_wt = [], $air_temp = [], $conc_temp = [], $location = [], $water_added_before_test = [], $water_added_after_test = [], $cylinder_set_no = [], $wc_ratio = [], $relative_yield = [], $type = [], $dimensions = [], $cyls_cast = [], $age_days = [];
 
-    public function mount(){
+    public function selectInfo()
+    {
+        $project = Project::where('id', $this->project_id)->first();
+        $this->project_number = $project->project_number;
+        $this->client_id = $project->client_id;
+        $this->client_name = client($project->client_id)->name;
+
+        // get responsible persons
+        $responsible_persons = [];
+        $responsible_supervisor = $project->responsible_supervisor;
+        $responsible_persons = array_merge($responsible_persons, json_decode($responsible_supervisor));
+        $responsible_clerk = $project->responsible_clerk;
+        $responsible_persons = array_merge($responsible_persons, json_decode($responsible_clerk));
+        $responsible_pe = $project->responsible_pe;
+        $responsible_persons = array_merge($responsible_persons, json_decode($responsible_pe));
+        $this->responsibles = User::whereIn('id', $responsible_persons)->get();
+    }
+
+    public function mount()
+    {
         $this->test_no[0] = 0;
         $this->ticket_no[0] = 0;
         $this->truck_no[0] = 0;
@@ -42,7 +61,6 @@ class TemplateOneAddComponent extends Component
         $this->cyls_cast[0] = 0;
         $this->age_days[0] = 0;
         $this->wc_ratio[0] = 0;
-
     }
 
     public function addField($i)
@@ -79,25 +97,6 @@ class TemplateOneAddComponent extends Component
     public function removeField($i)
     {
         unset($this->fields[$i]);
-    }
-
-    public function selectInfo()
-    {
-        $project = Project::where('id', $this->project_id)->first();
-        $this->project_number = $project->project_number;
-        $this->client_id = $project->client_id;
-        $this->client_name = client($project->client_id)->name;
-
-        // get responsible persons
-        $responsible_persons = [];
-        $responsible_supervisor = $project->responsible_supervisor;
-        $responsible_persons = array_merge($responsible_persons, json_decode($responsible_supervisor));
-        $responsible_clerk = $project->responsible_clerk;
-        $responsible_persons = array_merge($responsible_persons, json_decode($responsible_clerk));
-        $responsible_pe = $project->responsible_pe;
-        $responsible_persons = array_merge($responsible_persons, json_decode($responsible_pe));
-        $this->responsibles = User::whereIn('id', $responsible_persons)->get();
-        
     }
 
 
@@ -143,7 +142,6 @@ class TemplateOneAddComponent extends Component
 
         $data->total_yds = $this->total_yds;
         $data->representative = $this->representative;
-
         $data->cement_ib = $this->cement_ib;
         $data->cementitious_malt = $this->cementitious_malt;
         $data->water = $this->water;
@@ -153,6 +151,7 @@ class TemplateOneAddComponent extends Component
         $data->admixture_one = $this->admixture_one;
         $data->admixture_two = $this->admixture_two;
         $data->admixture_three = $this->admixture_three;
+        $data->responsible_person = json_encode($this->responsible_person);
 
 
         if (Auth::user()->role_id == '1') {
@@ -208,6 +207,7 @@ class TemplateOneAddComponent extends Component
     {
         $projects = Project::orderBy('id', 'DESC')->get();
         $supervisors = User::orderBy('id', 'DESC')->get();
+
         return view('livewire.templates.templates-one.template-one-add-component', ['projects' => $projects, 'supervisors' => $supervisors])->layout('livewire.layouts.base');
     }
 }

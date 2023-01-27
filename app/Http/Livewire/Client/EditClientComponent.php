@@ -52,6 +52,7 @@ class EditClientComponent extends Component
             'email' => 'required|unique:clients,email,'.$this->client_id.'',
             'company_name' => 'required',
             'phone' => 'required',
+            'designation' => 'required',
         ]);
 
         $client = Client::where('id', $this->client_id)->first();

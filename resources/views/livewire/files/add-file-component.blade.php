@@ -65,14 +65,14 @@
                                 @enderror
                                 <div class="input-group mt-3">
                                     <span class="input-group-text">Client Name:</span>
-                                    <input type="text" class="form-control" wire:model="client_name">
+                                    <input type="text" class="form-control" wire:model="client_name" readonly>
                                 </div>
                                 @error('client_id')
                                 <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                 @enderror
                                 <div class="input-group mt-3">
                                     <span class="input-group-text">Project Number:</span>
-                                    <input type="text" class="form-control" wire:model="project_number">
+                                    <input type="text" class="form-control" wire:model="project_number" readonly>
                                 </div>
                                 @error('project_number')
                                 <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
@@ -671,14 +671,14 @@
                             </div> --}}
                             <div class="col-md-7 mb-3">
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" wire:model='observation' id="inlineRadio"
-                                        value="Full Time Observation">
+                                    <input class="form-check-input" type="radio" wire:model='observation'
+                                        id="inlineRadio" value="Full Time Observation">
                                     <label class="form-check-label" for="inlineRadio">Full Time Observation
                                     </label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" wire:model='observation' id="inlineRadio1"
-                                        value="Part Time Observation">
+                                    <input class="form-check-input" type="radio" wire:model='observation'
+                                        id="inlineRadio1" value="Part Time Observation">
                                     <label class="form-check-label" for="inlineRadio1">Part Time Observation</label>
                                 </div>
                             </div>
@@ -754,6 +754,7 @@
             dropdownAutoWidth: true,
             theme: 'bootstrap-5'
 });
+
  //add model value
  $('#action').on('change', function() {
             var value = $(this).val();

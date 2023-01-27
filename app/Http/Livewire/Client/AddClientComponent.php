@@ -29,6 +29,7 @@ class AddClientComponent extends Component
             'email' => 'required|unique:clients,email',
             'company_name' => 'required',
             'phone' => 'required',
+            'designation' => 'required',
         ]);
 
         $client = new Client();
