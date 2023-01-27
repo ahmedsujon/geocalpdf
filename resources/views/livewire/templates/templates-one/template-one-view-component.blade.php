@@ -444,8 +444,7 @@
                     <div class="row mb-5 mt-3">
                         <div class="col-md-12" style="text-align: right;">
                             <a href="{{ route('template.one.generate',['id'=>$file_id]) }}" target="_blank" class="btn btn-primary submit_btn" style="background: green;">Download PDF</a>
-                            <button type="submit" class="btn btn-primary submit_btn" style="background: green;">Save
-                                and Send</button>
+                            <a href="{{ route('template-one.list') }}" class="btn btn-primary submit_btn" style="background: green;">Back To Files</a>
                         </div>
                     </div>
                 </div>
