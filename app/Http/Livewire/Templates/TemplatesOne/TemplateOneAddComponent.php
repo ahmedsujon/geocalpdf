@@ -107,6 +107,7 @@ class TemplateOneAddComponent extends Component
             'client_id' => 'required',
             'user_id' => 'required',
             'date' => 'required',
+            'proctor_id' => 'required',
         ]);
 
         $data = new TemplateOne();

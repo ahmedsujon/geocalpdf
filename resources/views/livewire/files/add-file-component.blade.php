@@ -208,6 +208,10 @@
                                                                 {{ proctor($proctor->id)->proctorid }}</option>
                                                             @endforeach
                                                         </select>
+                                                        @error('proctor_id')
+                                                        <span class="text-danger" style="font-size: 12px;">{{ $message
+                                                            }}</span>
+                                                        @enderror
                                                     </div>
                                                 </td>
                                                 <td class="moistureremove">
@@ -247,6 +251,10 @@
                                                                 {{ proctor($proctor->id)->proctorid }}</option>
                                                             @endforeach
                                                         </select>
+                                                        @error('proctor_id')
+                                                        <span class="text-danger" style="font-size: 12px;">{{ $message
+                                                            }}</span>
+                                                        @enderror
                                                     </div>
                                                 </td>
                                                 <td class="moistureremove">
@@ -704,6 +712,10 @@
                                     </select>
                                 </div>
                             </div>
+                            @error('responsible_person')
+                            <span class="text-danger" style="font-size: 12px;">{{ $message
+                                }}</span>
+                            @enderror
                         </div>
                     </div>
                 </div>

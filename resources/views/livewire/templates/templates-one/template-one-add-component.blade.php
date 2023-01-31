@@ -956,6 +956,10 @@
                                             </select>
                                         </div>
                                     </div>
+                                    @error('responsible_person')
+                                    <span class="text-danger" style="font-size: 12px;">{{ $message
+                                        }}</span>
+                                    @enderror
                                 </div>
                             </div>
                         </div>

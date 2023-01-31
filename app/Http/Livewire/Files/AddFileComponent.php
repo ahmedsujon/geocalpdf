@@ -137,6 +137,7 @@ class AddFileComponent extends Component
             'compaction_requirement' => 'required',
             'general_info' => 'required',
             'responsible_person' => 'required',
+            'proctor_id' => 'required',
         ]);
 
         $data = new File();
