@@ -21,6 +21,19 @@ class AddFileComponent extends Component
 
     public $testresults = [], $test_num = [], $location = [], $test_dept = [], $elev_test = [], $wet_density = [], $dry_density = [], $moisture_content = [], $percent_comp = [], $comments = [], $result_proctor_id = [], $comments_one = [], $percent_comp_one = [];
 
+    public function updated($fields)
+    {
+        $this->validateOnly($fields, [
+            'project_id' => 'required',
+            'client_id' => 'required',
+            'user_id' => 'required',
+            'date' => 'required',
+            'compaction_requirement' => 'required',
+            'general_info' => 'required',
+            'responsible_person' => 'required',
+            'proctor_id' => 'required',
+        ]);
+    }
 
     public function selectInfo()
     {

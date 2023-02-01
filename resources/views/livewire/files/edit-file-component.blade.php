@@ -334,6 +334,10 @@
                                                                 {{ proctor($proctor->id)->proctorid }}</option>
                                                             @endforeach
                                                         </select>
+                                                        @error('result_proctor_id')
+                                                        <span class="text-danger" style="font-size: 12px;">{{ $message
+                                                            }}</span>
+                                                        @enderror
                                                     </div>
                                                 </td>
                                                 <td class="moistureremove">
@@ -546,11 +550,11 @@
                                         wire:model="responsible_person" id="action" multiple required>
                                     </select>
                                 </div>
-                                @error('responsible_person')
-                                <span class="text-danger" style="font-size: 12px;">{{ $message
-                                    }}</span>
-                                @enderror
                             </div>
+                            @error('responsible_person')
+                            <span class="text-danger" style="font-size: 12px;">{{ $message
+                                }}</span>
+                            @enderror
                         </div>
                     </div>
                 </div>

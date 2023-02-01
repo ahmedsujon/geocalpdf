@@ -22,6 +22,20 @@ class EditFileComponent extends Component
     public $weather, $date, $troxler, $other, $model, $serial_number, $density_count, $moisture_count, $moisture_equation, $compaction_requirement, $requirment_plus, $requirment_minus, $general_info;
 
 
+    public function updated($fields)
+    {
+        $this->validateOnly($fields, [
+            'project_id' => 'required',
+            'client_id' => 'required',
+            'user_id' => 'required',
+            'date' => 'required',
+            'compaction_requirement' => 'required',
+            'general_info' => 'required',
+            'responsible_person' => 'required',
+            'proctor_id' => 'required',
+        ]);
+    }
+    
     public function selectInfo()
     {
         $project = Project::where('id', $this->project_id)->first();
@@ -167,6 +181,7 @@ class EditFileComponent extends Component
             'general_info' => 'required',
             'responsible_person' => 'required',
             'status' => 'required',
+            'proctor_id' => 'required',
         ]);
 
         $data = new File();

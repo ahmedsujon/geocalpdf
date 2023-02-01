@@ -705,7 +705,7 @@
                                 </div>
                             </div>
                             <div class="col-md-10" wire:ignore>
-                                <div class="input-group mb-3">
+                                <div class="input-group">
                                     <span class="input-group-text">Responsible Persons:</span>
                                     <select class="form-select moistureremoveinput multiple_selector" id="action"
                                         multiple>
