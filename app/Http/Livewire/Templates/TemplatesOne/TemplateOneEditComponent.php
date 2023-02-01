@@ -66,7 +66,7 @@ class TemplateOneEditComponent extends Component
     public function mount($file_id)
     {
         $file = TemplateOne::where('id', $file_id)->first();
-      
+
         $this->project_id = $file->project_id;
         $this->client_id = $file->client_id;
         $this->project_number = $file->project_number;
@@ -154,6 +154,7 @@ class TemplateOneEditComponent extends Component
             'client_id' => 'required',
             'user_id' => 'required',
             'date' => 'required',
+            'responsible_person' => 'required',
             'status' => 'required'
         ]);
 

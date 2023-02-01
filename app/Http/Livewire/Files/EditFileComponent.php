@@ -35,7 +35,7 @@ class EditFileComponent extends Component
             'proctor_id' => 'required',
         ]);
     }
-    
+
     public function selectInfo()
     {
         $project = Project::where('id', $this->project_id)->first();
@@ -126,7 +126,7 @@ class EditFileComponent extends Component
 
         $this->test_mode = $file->test_mode;
         $this->main_test_method = $file->main_test_method;
-        $this->responsible_person = json_encode($this->responsible_person);
+        // $this->responsible_person = json_encode($this->responsible_person);
 
         $proctors = ProctorData::where('file_id', $file->id)->get();
         $this->i = $proctors->count();
