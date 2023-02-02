@@ -544,7 +544,7 @@
                                 @enderror
                             </div>
                             <div class="col-md-10 mt-3" wire:ignore>
-                                <div class="input-group mb-3">
+                                <div class="input-group">
                                     <span class="input-group-text">Responsible Persons:</span>
                                     <select class="form-select moistureremoveinput multiple_selector"
                                         wire:model="responsible_person" id="action" multiple required>
