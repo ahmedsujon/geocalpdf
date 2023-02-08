@@ -454,20 +454,9 @@
       <tr>
         <td style="padding: 4px 6px">
           <div>
-            @if ($data == 'Full Time Observation')
             <h4>
-              <span style="font-size: 14px; font-weight: 400">Full Time Observation</span>
+              <span style="font-size: 14px; font-weight: 400">{{ $data->observation }}</span>
             </h4>
-            @else
-            <h4 style="padding-top: 5px">
-              <i style="
-                    border-bottom: 1px solid black;
-                    width: 20px;
-                    display: inline-block;
-                  "></i>
-              <span style="font-size: 14px; font-weight: 400">Part Time Observation</span>
-            </h4>
-            @endif
           </div>
         </td>
         <td>

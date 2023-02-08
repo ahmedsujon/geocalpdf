@@ -97,6 +97,7 @@
                                 @error('user_id')
                                 <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                 @enderror
+
                                 <div class="input-group mt-3">
                                     <span class="input-group-text">Weather:</span>
                                     <input type="text" class="form-control" wire:model="weather">
@@ -104,6 +105,7 @@
                                 @error('weather')
                                 <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                 @enderror
+                                
                                 <div class="input-group mt-3">
                                     <span class="input-group-text">Test Method:</span>
                                     <input type="text" class="form-control" wire:model="main_test_method">

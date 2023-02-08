@@ -62,7 +62,7 @@
                                 <i class="ti ti-stack menu-icon"></i>
                                 <span>Physical Properties</span>
                             </a>
-                            <div class="collapse {{ request()->is('file') || request()->is('file/*')? 'show': '' }}"
+                            <div class="collapse {{ request()->is('templateOne') || request()->is('templateOne/*')? 'show': '' }}"
                                 id="sidebarPROPERTIES">
                                 <ul class="nav flex-column">
                                     <li class="nav-item">
@@ -74,13 +74,12 @@
                                 </ul>
                             </div>
                         </li>
-                        @if(Auth::user()->role_id == '1' || Auth::user()->role_id == '2')
+                        {{-- @if(Auth::user()->role_id == '1' || Auth::user()->role_id == '2')
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('archive.files') }}"><i
                                     class="ti ti-file-check menu-icon"></i><span>Archived Files</span></a>
                         </li>
-                        @endif
-
+                        @endif --}}
                         @if(Auth::user()->role_id == '1' || Auth::user()->role_id == '2' || Auth::user()->role_id ==
                         '3')
                         <li class="menu-label mt-0 text-primary font-12 fw-semibold">M<span>anagements</span></li>
@@ -167,12 +166,12 @@
                         </li>
                         <!--end nav-item-->
                         @endif
-                        @if(Auth::user()->role_id == '1' || Auth::user()->role_id == '2')
+                        {{-- @if(Auth::user()->role_id == '1' || Auth::user()->role_id == '2')
                         <li class="nav-item">
                             <a class="nav-link" href="apps-chat.html"><i class="ti ti-activity menu-icon"></i><span>Log
                                     Activity</span></a>
                         </li>
-                        @endif
+                        @endif --}}
                         <li class="menu-label mt-0 text-primary font-12 fw-semibold">S<span>ettings</span></li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('profile') }}"><i

@@ -399,21 +399,8 @@
                 <td style="padding: 4px 6px">
                     <div>
                         <h4>
-                            <span style="
-                    border-bottom: 1px solid black;
-                    width: 20px;
-                    display: inline-block;
-                  "></span>
-                            <span style="font-size: 14px; font-weight: 400">Full Time Observation</span>
-                        </h4>
-                        <h4 style="padding-top: 5px">
-                            <span style="
-                    border-bottom: 1px solid black;
-                    width: 20px;
-                    display: inline-block;
-                  "></span>
-                            <span style="font-size: 14px; font-weight: 400">Full Time Observation</span>
-                        </h4>
+                            <span style="font-size: 14px; font-weight: 400">{{ $data->observation }}</span>
+                          </h4>
                     </div>
                 </td>
                 <td>

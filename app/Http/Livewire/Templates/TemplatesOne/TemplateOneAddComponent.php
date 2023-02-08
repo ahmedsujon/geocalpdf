@@ -13,7 +13,7 @@ class TemplateOneAddComponent extends Component
 {
     public $fields = [], $i = 1, $j = 1, $responsible_person = [];
 
-    public $project_id, $client_id, $project_number, $date, $user_id, $remark, $created_by, $client_name, $weather, $est_wind, $est_rh, $slump_cone, $thermometer, $air_meter, $unit_weight_measure, $scale_id, $contractor, $mix_supplier, $plant, $mix_id, $design_strength, $required_strength, $specified_slump_min, $specified_slump_max, $specified_air_min, $specified_air_max, $conc_temp_min, $conc_temp_max, $cement_ib, $cementitious_malt, $water, $fine_aggregate, $course_aggregate, $max_aggregate, $admixture_one, $admixture_two, $admixture_three, $representative, $total_yds, $general_location, $responsibles;
+    public $project_id, $client_id, $project_number, $date, $user_id, $remark, $created_by, $client_name, $weather, $est_wind, $est_rh, $slump_cone, $thermometer, $air_meter, $unit_weight_measure, $scale_id, $contractor, $mix_supplier, $plant, $mix_id, $design_strength, $required_strength, $specified_slump_min, $specified_slump_max, $specified_air_min, $specified_air_max, $conc_temp_min, $conc_temp_max, $cement_ib, $cementitious_malt, $water, $fine_aggregate, $course_aggregate, $max_aggregate, $admixture_one, $admixture_two, $admixture_three, $representative, $total_yds, $general_location, $responsibles, $observation;
 
     public $test_no = [], $ticket_no = [], $truck_no = [], $truck_dispatched = [], $time_sample_taken = [], $time_truck_finished = [], $batch_size = [], $total_cumulative = [], $slump = [], $air_cont = [], $unit_wt = [], $air_temp = [], $conc_temp = [], $location = [], $water_added_before_test = [], $water_added_after_test = [], $cylinder_set_no = [], $wc_ratio = [], $relative_yield = [], $type = [], $dimensions = [], $cyls_cast = [], $age_days = [];
 
@@ -108,6 +108,7 @@ class TemplateOneAddComponent extends Component
             'user_id' => 'required',
             'date' => 'required',
             'responsible_person' => 'required',
+            'observation' => 'required',
         ]);
 
         $data = new TemplateOne();
@@ -153,6 +154,7 @@ class TemplateOneAddComponent extends Component
         $data->admixture_two = $this->admixture_two;
         $data->admixture_three = $this->admixture_three;
         $data->responsible_person = json_encode($this->responsible_person);
+        $data->observation = $this->observation;
 
 
         if (Auth::user()->role_id == '1') {
