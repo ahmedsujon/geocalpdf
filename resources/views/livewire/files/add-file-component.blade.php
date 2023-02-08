@@ -375,9 +375,9 @@
                                                             wire:model="result_proctor_id.0" required
                                                             wire:change='changeTestResult(0)'>
                                                             <option value="">Select id</option>
-                                                            @foreach ($proctor_id as $proctor)
-                                                            <option value="{{ $proctor }}">
-                                                                {{ $proctor }}</option>
+                                                            @foreach ($selected_proctor_ids as $s_proctor)
+                                                            <option value="{{ $s_proctor }}">
+                                                                {{ $s_proctor }}</option>
                                                             @endforeach
                                                         </select>
                                                     </div>
@@ -418,7 +418,8 @@
                                                     <div class="input-group">
                                                         <input type="number" step="any"
                                                             class="form-control moistureremoveinput"
-                                                            wire:model="dry_density.0" wire:keyup='changeTestResult(0)'>
+                                                            wire:model="dry_density.0" wire:keyup='changeTestResult(0)'
+                                                            @if (!$result_proctor_id[0]) readonly @endif>
                                                         @error('dry_density')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
@@ -439,7 +440,7 @@
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="text" class="form-control moistureremoveinput"
-                                                            wire:model="percent_comp.0" readonly>
+                                                            wire:model="percent_comp.0" style="@if($compaction_requirement > $percent_comp[0]) color: red; @endif" readonly>
                                                         @error('compaction')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
@@ -512,9 +513,9 @@
                                                             wire:model="result_proctor_id.{{ $testresult }}"
                                                             wire:change='changeTestResult({{ $testresult }})'>
                                                             <option value="">Select id</option>
-                                                            @foreach ($proctors as $proctor)
-                                                            <option value="{{ proctor($proctor->id)->proctorid }}">
-                                                                {{ proctor($proctor->id)->proctorid }}</option>
+                                                            @foreach ($selected_proctor_ids as $s_proctor)
+                                                            <option value="{{ $s_proctor }}">
+                                                                {{ $s_proctor }}</option>
                                                             @endforeach
                                                         </select>
                                                     </div>
@@ -556,7 +557,7 @@
                                                         <input type="number" step="any"
                                                             class="form-control moistureremoveinput"
                                                             wire:model="dry_density.{{ $testresult }}"
-                                                            wire:keyup='changeTestResult({{ $testresult }})'>
+                                                            wire:keyup='changeTestResult({{ $testresult }})' @if (!$result_proctor_id[$testresult]) readonly @endif>
                                                         @error('dry_density')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
@@ -577,7 +578,7 @@
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="text" class="form-control moistureremoveinput"
-                                                            wire:model="percent_comp.{{ $testresult }}" readonly>
+                                                            wire:model="percent_comp.{{ $testresult }}" style="@if($compaction_requirement > $percent_comp[$testresult]) color: red; @endif" readonly>
                                                         @error('compaction')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>

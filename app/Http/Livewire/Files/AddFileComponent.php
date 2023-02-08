@@ -55,25 +55,40 @@ class AddFileComponent extends Component
     }
 
     // get proctor information
+
+    public $selected_proctor_ids = [];
+
     public function proctorInfo($value)
     {
         $proctor = Proctor::where('proctorid', $this->proctor_id[$value])->first();
+        if ($proctor) {
 
-        $this->description[$value] = $proctor->material_description;
-        $this->test_method[$value] = $proctor->max_dry_density;
-        $this->max_dry_density[$value] = $proctor->optimum_moisture;
-        $this->optimum_moisture[$value] = $proctor->test_type;
+            $this->selected_proctor_ids[$value] = $this->proctor_id[$value];
+
+            $this->description[$value] = $proctor->material_description;
+            $this->test_method[$value] = $proctor->max_dry_density;
+            $this->max_dry_density[$value] = $proctor->optimum_moisture;
+            $this->optimum_moisture[$value] = $proctor->test_type;
+        } else {
+            $this->description[$value] = '';
+            $this->test_method[$value] = '';
+            $this->max_dry_density[$value] = '';
+            $this->optimum_moisture[$value] = '';
+            unset($this->selected_proctor_ids[$value]);
+        }
     }
 
     public function changeTestResult($value)
     {
         $proctor = Proctor::where('proctorid', $this->result_proctor_id[$value])->first();
-
-        if (!$this->dry_density[$value]) {
-            $this->dry_density[$value] = 0;
+        if ($proctor) {
+            if (!$this->dry_density[$value]) {
+                $this->dry_density[$value] = 0;
+            }
+            $this->percent_comp[$value] = round(($this->dry_density[$value] / $proctor->max_dry_density) * 100, 1);
+        }else {
+            $this->percent_comp[$value] = 0;
         }
-
-        $this->percent_comp[$value] = round(($this->dry_density[$value] / $proctor->max_dry_density) * 100, 1);
     }
 
     public function addField($i)
@@ -93,11 +108,13 @@ class AddFileComponent extends Component
         $this->comments_one[$i] = 0;
         $this->dry_density[$i] = 0;
         $this->test_dept[$i] = 0;
+        $this->proctor_id[$i] = 0;
     }
 
     public function removeField($i)
     {
         unset($this->fields[$i]);
+        unset($this->selected_proctor_ids[$i]);
     }
 
     public function addTestResult($j)
