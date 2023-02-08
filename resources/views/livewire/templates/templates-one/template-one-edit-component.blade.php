@@ -656,17 +656,17 @@
                                     </div>
 
 
-                                    <div class="col-md-7 mt-3 mb-3">
+                                    <div class="col-md-7 mt-3">
                                         <div class="form-check form-check-inline">
                                             <input class="form-check-input" type="radio" wire:model='observation'
-                                                id="inlineRadio" value="Full Time Observation">
-                                            <label class="form-check-label" for="inlineRadio">Full Time Observation
+                                                id="inlineRadiof" value="Full Time Observation">
+                                            <label class="form-check-label" for="inlineRadiof">Full Time Observation
                                             </label>
                                         </div>
                                         <div class="form-check form-check-inline">
                                             <input class="form-check-input" type="radio" wire:model='observation'
-                                                id="inlineRadio1" value="Part Time Observation">
-                                            <label class="form-check-label" for="inlineRadio1">Part Time
+                                                id="inlineRadio1f" value="Part Time Observation">
+                                            <label class="form-check-label" for="inlineRadio1f">Part Time
                                                 Observation</label>
                                         </div>
                                     </div>
