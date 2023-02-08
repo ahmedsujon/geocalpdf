@@ -33,6 +33,7 @@ class AddFileComponent extends Component
             'responsible_person' => 'required',
             'proctor_id' => 'required',
             'weather' => 'required',
+            'observation' => 'required',
             'main_test_method' => 'required',
         ]);
     }
@@ -155,6 +156,7 @@ class AddFileComponent extends Component
             'proctor_id' => 'required',
             'weather' => 'required',
             'main_test_method' => 'required',
+            'observation' => 'required',
         ]);
 
         $data = new File();

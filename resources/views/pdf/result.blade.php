@@ -453,11 +453,16 @@
     <table style="width: 100%; border-collapse: collapse">
       <tr>
         <td style="padding: 4px 6px">
-          <div>
-            <h4>
-              <span style="font-size: 14px; font-weight: 400">{{ $data->observation }}</span>
-            </h4>
-          </div>
+          <h5>{{ $data->observation }}</h5>
+          <h4 style="
+                font-size: 14px;
+                font-weight: 400;
+                border-top: 1px solid black;
+                padding-top: 2px;
+                width: 160px;
+              ">
+            Field Observation
+          </h4>
         </td>
         <td>
           <h5>{{ $data->technician }}</h5>

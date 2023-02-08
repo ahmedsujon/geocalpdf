@@ -33,6 +33,7 @@ class EditFileComponent extends Component
             'general_info' => 'required',
             'responsible_person' => 'required',
             'proctor_id' => 'required',
+            'observation' => 'required',
         ]);
     }
 
@@ -182,6 +183,7 @@ class EditFileComponent extends Component
             'responsible_person' => 'required',
             'status' => 'required',
             'proctor_id' => 'required',
+            'observation' => 'required',
         ]);
 
         $data = new File();
