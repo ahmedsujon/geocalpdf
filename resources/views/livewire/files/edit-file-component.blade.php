@@ -115,13 +115,13 @@
                             </div>
                             <div class="col-lg-5">
                                 <h6>Gauge Information</h6>
-                                <div class="input-group mt-2">
+                                <div class="input-group mt-2 mb-3">
                                     <span class="input-group-text">Office Address:</span>
                                     <select class="form-select" wire:model="office_address">
                                         <option value="">Select office addres</option>
                                         <option value="7290 South Fraser Street Centennial, CO 80112 (303)-337-0338">7290 South Fraser Street Centennial, CO 80112 (303)-337-0338</option>
-                                        <option value="7290 South Fraser Street Centennial, CO 80112 (303)-337-0338">7290 South Fraser Street Centennial, CO 80112 (302)-337-0338</option>
-                                        <option value="7290 South Fraser Street Centennial, CO 80112 (303)-337-0338">7290 South Fraser Street Centennial, CO 80112 (301)-337-0338</option>
+                                        <option value="7290 South Fraser Street Centennial, CO 80112 (302)-337-0338">7290 South Fraser Street Centennial, CO 80112 (302)-337-0338</option>
+                                        <option value="7290 South Fraser Street Centennial, CO 80112 (301)-337-0338">7290 South Fraser Street Centennial, CO 80112 (301)-337-0338</option>
                                     </select>
                                 </div>
                                 @error('office_address')

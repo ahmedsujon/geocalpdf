@@ -74,12 +74,9 @@
           <div>
             <img src="https://i0.wp.com/geocal.us/wp-content/uploads/2019/05/logo-new.png" alt="logo"
               style="max-width: 100px" />
-            <h3 style="font-size: 16px; font-weight: 700; padding-top: 5px">
-              7290 South Fraser Street
-            </h3>
-            <h3 style="font-size: 16px; font-weight: 700; padding-top: 5px">
-              Centennial, CO 80112
-            </h3>
+            <h4 style="font-size: 16px; font-weight: 700; padding-top: 5px">
+              {{ $data->office_address }}
+            </h4>
           </div>
         </td>
         <td>

@@ -72,14 +72,8 @@
                     <div>
                         <img src="https://i0.wp.com/geocal.us/wp-content/uploads/2019/05/logo-new.png" alt="logo" style="max-width: 100px" />
                         <h4 style="font-size: 16px; font-weight: 700; padding-top: 5px">
-                            7290 South Fraser Street
-                        </h4>
-                        <h4 style="font-size: 16px; font-weight: 700; padding-top: 5px">
-                            Centennial, CO 80112
-                        </h4>
-                        <h4 style="font-size: 16px; font-weight: 700; padding-top: 5px">
-                            PHYSICAL PROPERTIES OF PLASTIC CONCRETE
-                        </h4>
+                            {{ $data->office_address }}
+                          </h4>
                     </div>
                 </td>
                 <td>
