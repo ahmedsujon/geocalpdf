@@ -573,10 +573,10 @@
                                                             </div>
                                                             <div class="form-check form-check-inline">
                                                                 <input class="form-check-input" type="radio"
-                                                                    wire:model='type.{{ $field }}' id="inlineRadio3"
+                                                                    wire:model='type.{{ $field }}' id="inlineRadio4"
                                                                     value="Cubes">
                                                                 <label class="form-check-label"
-                                                                    for="inlineRadio3">Cubes(circle one)</label>
+                                                                    for="inlineRadio4">Cubes(circle one)</label>
                                                             </div>
                                                         </div>
                                                     </div>

@@ -258,7 +258,7 @@
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="text" class="form-control moistureremoveinput"
-                                                            wire:model="percent_comp.{{ $testresult }}" readonly>
+                                                            wire:model="percent_comp.{{ $testresult }}" style="@if($compaction_requirement > $percent_comp[$testresult]) color: red; @endif" readonly>
                                                     </div>
                                                 </td>
                                                 <td class="moistureremove">
