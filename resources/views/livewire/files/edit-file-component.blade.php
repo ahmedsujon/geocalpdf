@@ -537,6 +537,10 @@
                                     <label class="form-check-label" for="inlineRadio1">Part Time Observation</label>
                                 </div>
                             </div>
+                            @error('observation')
+                            <span class="text-danger" style="font-size: 12px;">{{ $message
+                                }}</span>
+                            @enderror
                             <div class="col-md-3"></div>
                             <div class="col-md-10 mb-3">
                                 <div class="input-group">

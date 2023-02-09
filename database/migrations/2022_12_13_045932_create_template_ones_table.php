@@ -68,6 +68,7 @@ class CreateTemplateOnesTable extends Migration
             $table->string('total_yds')->nullable();
             $table->string('representative')->nullable();
             $table->string('responsible_person')->default();
+            $table->string('observation')->nullable();
 
             $table->timestamps();
         });

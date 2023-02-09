@@ -935,6 +935,24 @@
                                         <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                         @enderror
                                     </div>
+
+                                    <div class="col-md-7 mt-3">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" wire:model='observation'
+                                                id="inlineRadiof" value="Full Time Observation">
+                                            <label class="form-check-label" for="inlineRadiof">Full Time Observation
+                                            </label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" wire:model='observation'
+                                                id="inlineRadio1f" value="Part Time Observation">
+                                            <label class="form-check-label" for="inlineRadio1f">Part Time Observation</label>
+                                        </div>
+                                    </div>
+                                    @error('observation')
+                                        <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
+                                        @enderror
+
                                     <div class="col-md-12 mt-3">
                                         <div class="input-group">
                                             <span class="input-group-text">Remark</span>
