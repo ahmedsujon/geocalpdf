@@ -37,11 +37,7 @@
                         <div class="row mb-3">
                             <div class="col-md-4"></div>
                             <div class="col-md-4">
-                                <div class="logo text-center">
-                                    <img src="{{ asset('assets/images/logo-new.png') }}" alt="">
-                                </div>
                                 <div class="content text-center pt-2 pb-2">
-                                    <p>7290 South Fraser<br>Street Centennial,<br> CO 80112 (303)-337-0338</p>
                                     <h6>FIELD MOISTURE AND DENSITY TEST RESULTS</h6>
                                 </div>
                             </div>
