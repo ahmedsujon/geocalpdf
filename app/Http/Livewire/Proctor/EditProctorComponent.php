@@ -7,7 +7,7 @@ use Livewire\Component;
 
 class EditProctorComponent extends Component
 {
-    public $proctor_id, $proctorid, $material_description, $max_dry_density, $optimum_moisture, $test_type, $status;
+    public $proctor_id, $proctorid, $material_description, $max_dry_density, $optimum_moisture, $test_method, $status;
     
     public function mount($proctor_id)
     {
@@ -16,7 +16,7 @@ class EditProctorComponent extends Component
         $this->material_description = $proctor->material_description;
         $this->max_dry_density = $proctor->max_dry_density;
         $this->optimum_moisture = $proctor->optimum_moisture;
-        $this->test_type = $proctor->test_type;
+        $this->test_method = $proctor->test_method;
        
     }
 
@@ -27,7 +27,7 @@ class EditProctorComponent extends Component
             'material_description' => 'required',
             'max_dry_density' => 'required',
             'optimum_moisture' => 'required',
-            'test_type' => 'required',
+            'test_method' => 'required',
         ]);
 
         $proctor = Proctor::where('id', $this->proctor_id)->first();
@@ -35,7 +35,7 @@ class EditProctorComponent extends Component
         $proctor->material_description = $this->material_description;
         $proctor->max_dry_density = $this->max_dry_density;
         $proctor->optimum_moisture = $this->optimum_moisture;
-        $proctor->test_type = $this->test_type;
+        $proctor->test_method = $this->test_method;
         $proctor->save();
 
         session()->flash('success', 'Proctor updated successfully');

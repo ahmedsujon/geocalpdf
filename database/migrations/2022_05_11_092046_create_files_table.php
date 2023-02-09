@@ -26,6 +26,7 @@ class CreateFilesTable extends Migration
             $table->string('test_mode')->nullable();
             $table->string('main_test_method')->nullable();
             // gauge information
+            $table->string('office_address')->nullable();
             $table->string('troxler')->nullable();
             $table->string('other')->nullable();
             $table->string('model')->nullable();

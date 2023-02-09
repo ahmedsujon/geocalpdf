@@ -396,26 +396,18 @@
         <br />
         <table style="width: 100%; border-collapse: collapse">
             <tr>
-                <td style="padding: 4px 6px">
-                    <div>
-                        <h4>
-                            <span style="
-                    border-bottom: 1px solid black;
-                    width: 20px;
-                    display: inline-block;
-                  "></span>
-                            <span style="font-size: 14px; font-weight: 400">Full Time Observation</span>
-                        </h4>
-                        <h4 style="padding-top: 5px">
-                            <span style="
-                    border-bottom: 1px solid black;
-                    width: 20px;
-                    display: inline-block;
-                  "></span>
-                            <span style="font-size: 14px; font-weight: 400">Full Time Observation</span>
-                        </h4>
-                    </div>
-                </td>
+                <td>
+                    <h5>{{ $data->observation }}</h5>
+                    <h4 style="
+                          font-size: 14px;
+                          font-weight: 400;
+                          border-top: 1px solid black;
+                          padding-top: 2px;
+                          width: 160px;
+                        ">
+                      Observation
+                    </h4>
+                  </td>
                 <td>
                     <h5>{{ $data->technician }}</h5>
                     <h4 style="

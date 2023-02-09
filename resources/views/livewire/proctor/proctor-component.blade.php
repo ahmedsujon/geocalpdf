@@ -55,7 +55,7 @@
                                     <tr>
                                         <th>Proctor ID</th>
                                         <th>Material Description</th>
-                                        <th>Proctor Test Type</th>
+                                        <th>Proctor Test Method</th>
                                         <th>Max Dry Density, (pcf) </th>
                                         <th>Optimum Moisture %</th>
                                         <th>Status</th>
@@ -71,7 +71,7 @@
                                     <tr>
                                         <td>{{ $proctor->proctorid }}</td>
                                         <td>{{ $proctor->material_description }}</td>
-                                        <td>{{ $proctor->test_type }}</td>
+                                        <td>{{ $proctor->test_method }}</td>
                                         <td>{{ $proctor->max_dry_density }}</td>
                                         <td>{{ $proctor->optimum_moisture }}</td>
                                         @if ($proctor->status == 0)

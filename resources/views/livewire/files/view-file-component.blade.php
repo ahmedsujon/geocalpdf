@@ -35,7 +35,7 @@
                                     <img src="{{ asset('assets/images/logo-new.png') }}" alt="">
                                 </div>
                                 <div class="content text-center pt-2 pb-2">
-                                    <p>7290 South Fraser Street<br>Centennial, CO 80112 <br>(303)-337-0338</p>
+                                    <p>{{ $office_address }}</p>
                                     <h6>FIELD MOISTURE AND DENSITY TEST RESULTS</h6>
                                 </div>
                             </div>
@@ -184,8 +184,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row mb-3 offset-1">
-                            <div class="col-md-10">
+                        <div class="row mb-3">
+                            <div class="col-md-12">
                                 <h6>Test Results</h6>
                                 <div class="table-responsive">
                                     <table class="table table-bordered moisture" style="margin-bottom: 0;">
@@ -200,6 +200,7 @@
                                                 <th class="customcolor" scope="col">Dry Density, (pcf)</th>
                                                 <th class="customcolor" scope="col">Moisture Content %</th>
                                                 <th class="customcolor" scope="col">Percent Compaction</th>
+                                                <th class="customcolor" scope="col">Materials</th>
                                                 <th class="customcolor" scope="col">Comments</th>
                                             </tr>
                                         </thead>
@@ -263,6 +264,12 @@
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="text" class="form-control moistureremoveinput"
+                                                            wire:model="material.{{ $testresult }}" readonly>
+                                                    </div>
+                                                </td>
+                                                <td class="moistureremove">
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control moistureremoveinput"
                                                             wire:model="comments.{{ $testresult }}" readonly>
                                                     </div>
                                                 </td>
@@ -273,24 +280,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row mb-3 offset-1">
-                            <div class="col-md-7 mb-3">
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" wire:model='observation' id="inlineRadio"
-                                        value="Full Time Observation" readonly>
-                                    <label class="form-check-label" for="inlineRadio">Full Time Observation
-                                    </label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" wire:model='observation' id="inlineRadio1"
-                                        value="Part Time Observation" readonly>
-                                    <label class="form-check-label" for="inlineRadio1">Part Time Observation</label>
-                                </div>
+                        <div class="row mb-3">
+                            <div class="col-md-1">
+                                <h6>Materials:</h6>
                             </div>
-                            {{-- <div class="col-md-1">
-                                <h6>Comments:</h6>
-                            </div>
-                            <div class="col-md-3">
+                            <div class="col-md-2">
                                 <ol type="1">
                                     <li>Base</li>
                                     <li>Subbase</li>
@@ -300,7 +294,10 @@
                                     <li>Fill</li>
                                 </ol>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-6">
+                                <div class="col-md-2">
+                                    <h6>Comments:</h6>
+                                </div>
                                 <ol type="A">
                                     <li>Test results comply with specifications</li>
                                     <li>Compaction percentage does not comply with specifications</li>
@@ -308,12 +305,36 @@
                                     <li>Moisture in excess of specifications</li>
                                     <li>Moisture below specifications</li>
                                 </ol>
+                            </div>
+                            <div class="col-md-7 mb-3">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" wire:model='observation'
+                                        id="inlineRadio" value="Full Time Observation">
+                                    <label class="form-check-label" for="inlineRadio">Full Time Observation
+                                    </label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" wire:model='observation'
+                                        id="inlineRadio1" value="Part Time Observation">
+                                    <label class="form-check-label" for="inlineRadio1">Part Time Observation</label>
+                                </div>
+                            </div>
+                            {{-- <div class="col-md-7 mb-3">
+                                <label for="Status">Status</label>
+                                <h6>{{ $status }}</h6>
                             </div> --}}
                             <div class="col-md-3"></div>
-                            <div class="col-md-10">
+                            <div class="col-md-10 mb-3">
                                 <div class="input-group">
                                     <span class="input-group-text">Remark</span>
-                                    <input type="text" class="form-control" wire:model="remark" readonly>
+                                    <textarea class="form-control" aria-label="With textarea" spellcheck="false"
+                                        wire:model="remark"></textarea>
+                                    <grammarly-extension data-grammarly-shadow-root="true"
+                                        style="position: absolute; top: 0px; left: 0px; pointer-events: none; z-index: 3;"
+                                        class="cGcvT"></grammarly-extension>
+                                    <grammarly-extension data-grammarly-shadow-root="true"
+                                        style="mix-blend-mode: darken; position: absolute; top: 0px; left: 0px; pointer-events: none; z-index: 3;"
+                                        class="cGcvT"></grammarly-extension>
                                 </div>
                             </div>
                         </div>

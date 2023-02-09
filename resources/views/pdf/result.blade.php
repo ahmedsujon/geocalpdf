@@ -348,8 +348,9 @@
         <td style="padding: 4px 6px; border: 1px solid lightgray">
           <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $test_result->percent_comp }}</h4>
         </td>
+
         <td style="padding: 4px 6px; border: 1px solid lightgray">
-          <h4 style="font-size: 14px; font-weight: 400; text-align:center;">95</h4>
+          <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->compaction_requirement }}</h4>
         </td>
         <td style="padding: 4px 6px; border: 1px solid lightgray">
           <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $test_result->comments }}</h4>
@@ -380,6 +381,9 @@
           <h3 style="font-size: 14px; font-weight: 700">Location</h3>
         </th>
         <th style="padding: 20px 6px 5px 6px; border: 1px solid lightgray">
+          <h3 style="font-size: 14px; font-weight: 700">Material</h3>
+        </th>
+        <th style="padding: 20px 6px 5px 6px; border: 1px solid lightgray">
           <h3 style="font-size: 14px; font-weight: 700">Elev/Lift of Test</h3>
         </th>
       </tr>
@@ -392,6 +396,10 @@
         <td style="padding: 4px 6px; border: 1px solid lightgray">
           <h4 style="font-size: 14px; font-weight: 400">{{ $test_result->location }}</h4>
         </td>
+        
+        <td style="padding: 4px 6px; border: 1px solid lightgray">
+          <h4 style="font-size: 14px; font-weight: 400">{{ $test_result->material }}</h4>
+        </td>
 
         <td style="padding: 4px 6px; border: 1px solid lightgray; width: 90px">
           <h4 style="font-size: 14px; font-weight: 400">{{ $test_result->elev_test }}</h4>
@@ -399,76 +407,20 @@
       </tr>
       @endforeach
     </table>
-
-    <br />
-    {{-- <table style="width: 100%; border-collapse: collapse">
-      <tr style="vertical-align: top">
-        <td style="padding: 4px 6px; width: 90px">
-          <h4 style="font-size: 14px; font-weight: 400">Comments:</h4>
-        </td>
-        <td style="padding: 4px 6px; width: 200px">
-          <ol style="padding: 0; margin: 0">
-            <li style="font-size: 14px; font-weight: 400; padding-bottom: 5px">
-              Base
-            </li>
-            <li style="font-size: 14px; font-weight: 400; padding-bottom: 5px">
-              Subbase
-            </li>
-            <li style="font-size: 14px; font-weight: 400; padding-bottom: 5px">
-              Subgrade
-            </li>
-            <li style="font-size: 14px; font-weight: 400; padding-bottom: 5px">
-              Improved Subgrade
-            </li>
-            <li style="font-size: 14px; font-weight: 400; padding-bottom: 5px">
-              Surface
-            </li>
-            <li style="font-size: 14px; font-weight: 400; padding-bottom: 5px">
-              Fill
-            </li>
-          </ol>
-        </td>
-        <td style="padding: 4px 6px">
-          <ol type="A" style="padding: 0; margin: 0">
-            <li style="font-size: 14px; font-weight: 400; padding-bottom: 5px">
-              Test results comply with specifications
-            </li>
-            <li style="font-size: 14px; font-weight: 400; padding-bottom: 5px">
-              Compaction percentage does not comply with specifications
-            </li>
-            <li style="font-size: 14px; font-weight: 400; padding-bottom: 5px">
-              Retest of previous test
-            </li>
-            <li style="font-size: 14px; font-weight: 400; padding-bottom: 5px">
-              Moisture in excess of specifications
-            </li>
-            <li style="font-size: 14px; font-weight: 400; padding-bottom: 5px">
-              Moisture below specifications
-            </li>
-          </ol>
-        </td>
-      </tr>
-    </table> --}}
     <br />
     <table style="width: 100%; border-collapse: collapse">
       <tr>
-        <td style="padding: 4px 6px">
-          <div>
-            @if ($data == 'Full Time Observation')
-            <h4>
-              <span style="font-size: 14px; font-weight: 400">Full Time Observation</span>
-            </h4>
-            @else
-            <h4 style="padding-top: 5px">
-              <i style="
-                    border-bottom: 1px solid black;
-                    width: 20px;
-                    display: inline-block;
-                  "></i>
-              <span style="font-size: 14px; font-weight: 400">Part Time Observation</span>
-            </h4>
-            @endif
-          </div>
+      <td>
+          <h5>{{ $data->observation }}</h5>
+          <h4 style="
+                font-size: 14px;
+                font-weight: 400;
+                border-top: 1px solid black;
+                padding-top: 2px;
+                width: 160px;
+              ">
+            Observation
+          </h4>
         </td>
         <td>
           <h5>{{ $data->technician }}</h5>
@@ -508,5 +460,4 @@
     </table>
   </div>
 </body>
-
 </html>

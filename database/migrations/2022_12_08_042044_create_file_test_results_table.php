@@ -26,10 +26,8 @@ class CreateFileTestResultsTable extends Migration
             $table->string('dry_density')->nullable();
             $table->string('moisture_content')->nullable();
             $table->string('percent_comp')->nullable();
+            $table->string('material')->nullable();
             $table->string('comments')->nullable();
-
-            $table->string('percent_comp_one')->nullable();
-            $table->string('comments_one')->nullable();
 
             $table->timestamps();
         });

@@ -12,11 +12,11 @@ use Livewire\Component;
 
 class ViewFileComponent extends Component
 {
-    public $file_title, $observation, $project_id, $user_id = [], $remark, $created_by, $pdf_details, $file_id, $i = 1, $j = 1;
+    public $file_title, $observation, $status, $office_address, $project_id, $user_id = [], $remark, $created_by, $pdf_details, $file_id, $i = 1, $j = 1;
 
     public $proctorData = [], $fields = [], $proctor_id = [], $description = [], $test_method = [], $max_dry_density = [], $optimum_moisture = [];
 
-    public $testResultData = [], $testresults = [], $test_num = [], $location = [], $test_dept = [], $elev_test = [], $wet_density = [], $dry_density = [], $moisture_content = [], $percent_comp = [], $comments = [], $result_proctor_id = [];
+    public $testResultData = [], $testresults = [], $test_num = [], $location = [], $test_dept = [], $elev_test = [], $wet_density = [], $dry_density = [], $moisture_content = [], $percent_comp = [], $comments = [], $material = [], $result_proctor_id = [];
 
 
     public function mount($file_id)
@@ -35,6 +35,7 @@ class ViewFileComponent extends Component
         $this->date = $file->date;
         $this->user_id = $file->user_id;
         $this->weather = $file->weather;
+        $this->office_address = $file->office_address;
         $this->troxler = $file->troxler;
         $this->other = $file->other;
         $this->model = $file->model;
@@ -43,6 +44,7 @@ class ViewFileComponent extends Component
         $this->moisture_count = $file->moisture_count;
         $this->moisture_equation = $file->moisture_equation;
         $this->observation = $file->observation;
+        $this->status = $file->status;
 
         $this->test_mode = $file->test_mode;
         $this->main_test_method = $file->main_test_method;
@@ -73,6 +75,7 @@ class ViewFileComponent extends Component
             array_push($this->dry_density, $test_result->dry_density);
             array_push($this->moisture_content, $test_result->moisture_content);
             array_push($this->percent_comp, $test_result->percent_comp);
+            array_push($this->material, $test_result->material);
             array_push($this->comments, $test_result->comments);
             array_push($this->testResultData, $test_result->id);
             array_push($this->testresults, $key);

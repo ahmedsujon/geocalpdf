@@ -15,11 +15,11 @@ class AddFileComponent extends Component
 {
     public $fields = [], $i = 1, $j = 1, $client_name, $responsibles, $responsible_person = [];
 
-    public $project_id, $client_id, $project_number, $date, $user_id, $weather, $troxler, $other, $model, $serial_number, $density_count, $moisture_count, $moisture_equation, $compaction_requirement, $requirment_plus, $requirment_minus, $general_info, $remark, $created_by, $status, $test_mode, $main_test_method, $observation;
+    public $project_id, $client_id, $project_number, $date, $user_id, $weather, $troxler, $other, $model, $serial_number, $density_count, $moisture_count, $moisture_equation, $compaction_requirement, $requirment_plus, $requirment_minus, $general_info, $remark, $created_by, $status, $test_mode, $main_test_method, $observation, $office_address;
 
     public $proctor_id = [], $description = [], $test_method = [], $max_dry_density = [], $optimum_moisture = [], $proctor_info = [];
 
-    public $testresults = [], $test_num = [], $location = [], $test_dept = [], $elev_test = [], $wet_density = [], $dry_density = [], $moisture_content = [], $percent_comp = [], $comments = [], $result_proctor_id = [], $comments_one = [], $percent_comp_one = [];
+    public $testresults = [], $test_num = [], $location = [], $test_dept = [], $elev_test = [], $wet_density = [], $dry_density = [], $moisture_content = [], $percent_comp = [], $comments = [], $result_proctor_id = [], $material = [];
 
     public function updated($fields)
     {
@@ -32,6 +32,7 @@ class AddFileComponent extends Component
             'general_info' => 'required',
             'responsible_person' => 'required',
             'proctor_id' => 'required',
+            'office_address' => 'required',
         ]);
     }
 
@@ -55,25 +56,37 @@ class AddFileComponent extends Component
     }
 
     // get proctor information
+    public $selected_proctor_ids = [];
     public function proctorInfo($value)
     {
         $proctor = Proctor::where('proctorid', $this->proctor_id[$value])->first();
+        if ($proctor) {
 
-        $this->description[$value] = $proctor->material_description;
-        $this->test_method[$value] = $proctor->max_dry_density;
-        $this->max_dry_density[$value] = $proctor->optimum_moisture;
-        $this->optimum_moisture[$value] = $proctor->test_type;
+            $this->selected_proctor_ids[$value] = $this->proctor_id[$value];
+            $this->description[$value] = $proctor->material_description;
+            $this->test_method[$value] = $proctor->test_method;
+            $this->max_dry_density[$value] = $proctor->max_dry_density;
+            $this->optimum_moisture[$value] = $proctor->optimum_moisture;
+        } else {
+            $this->description[$value] = '';
+            $this->test_method[$value] = '';
+            $this->max_dry_density[$value] = '';
+            $this->optimum_moisture[$value] = '';
+            unset($this->selected_proctor_ids[$value]);
+        }
     }
 
     public function changeTestResult($value)
     {
         $proctor = Proctor::where('proctorid', $this->result_proctor_id[$value])->first();
-
-        if (!$this->dry_density[$value]) {
-            $this->dry_density[$value] = 0;
+        if ($proctor) {
+            if (!$this->dry_density[$value]) {
+                $this->dry_density[$value] = 0;
+            }
+            $this->percent_comp[$value] = round(($this->dry_density[$value] / $proctor->max_dry_density) * 100, 1);
+        } else {
+            $this->percent_comp[$value] = 0;
         }
-
-        $this->percent_comp[$value] = round(($this->dry_density[$value] / $proctor->max_dry_density) * 100, 1);
     }
 
     public function addField($i)
@@ -89,15 +102,16 @@ class AddFileComponent extends Component
         $this->moisture_content[$i] = 0;
         $this->percent_comp[$i] = 0;
         $this->comments[$i] = 0;
-        $this->percent_comp_one[$i] = 0;
-        $this->comments_one[$i] = 0;
+        $this->material[$i] = 0;
         $this->dry_density[$i] = 0;
         $this->test_dept[$i] = 0;
+        $this->proctor_id[$i] = 0;
     }
 
     public function removeField($i)
     {
         unset($this->fields[$i]);
+        unset($this->selected_proctor_ids[$i]);
     }
 
     public function addTestResult($j)
@@ -113,8 +127,7 @@ class AddFileComponent extends Component
         $this->moisture_content[$j] = 0;
         $this->percent_comp[$j] = 0;
         $this->comments[$j] = 0;
-        $this->percent_comp_one[$j] = 0;
-        $this->comments_one[$j] = 0;
+        $this->material[$j] = 0;
         $this->dry_density[$j] = 0;
         $this->test_dept[$j] = 0;
     }
@@ -129,8 +142,7 @@ class AddFileComponent extends Component
         $this->moisture_content[0] = 0;
         $this->percent_comp[0] = 0;
         $this->comments[0] = 0;
-        $this->percent_comp_one[0] = 0;
-        $this->comments_one[0] = 0;
+        $this->material[0] = 0;
         $this->dry_density[0] = 0;
         $this->test_dept[0] = 0;
     }
@@ -151,6 +163,7 @@ class AddFileComponent extends Component
             'general_info' => 'required',
             'responsible_person' => 'required',
             'proctor_id' => 'required',
+            'office_address' => 'required',
         ]);
 
         $data = new File();
@@ -160,6 +173,7 @@ class AddFileComponent extends Component
         $data->date = $this->date;
         $data->user_id = $this->user_id;
         $data->weather = $this->weather;
+        $data->office_address = $this->office_address;
         $data->troxler = $this->troxler;
         $data->other = $this->other;
         $data->model = $this->model;
@@ -220,8 +234,7 @@ class AddFileComponent extends Component
             $cont->moisture_content = $this->moisture_content[$key];
             $cont->percent_comp = $this->percent_comp[$key];
             $cont->comments = $this->comments[$key];
-            $cont->percent_comp_one = $this->percent_comp_one[$key];
-            $cont->comments_one = $this->comments_one[$key];
+            $cont->material = $this->material[$key];
             $cont->save();
         }
 

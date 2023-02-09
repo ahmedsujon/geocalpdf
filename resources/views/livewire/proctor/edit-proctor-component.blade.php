@@ -57,17 +57,17 @@ Edit Proctor
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label class="col-sm-3 col-form-label" for="test_type">Proctor Test Type <span
+                                <label class="col-sm-3 col-form-label" for="test_method">Proctor Test Type <span
                                         class="text-danger">*</span></label>
                                 <div class="col-sm-9">
-                                    <select class="form-select" wire:model="test_type">
+                                    <select class="form-select" wire:model="test_method">
                                         <option value="">Select</option>
                                         <option value="ASTM D698">ASTM D698</option>
                                         <option value="ASTM D1557">ASTM D1557</option>
                                         <option value="AASHTO T99">AASHTO T99</option>
                                         <option value="AASHTO T180">AASHTO T180</option>
                                     </select>
-                                    @error('test_type')
+                                    @error('test_method')
                                     <span class="text-danger" style="font-size: 12.5px;">{{ $message }}</span>
                                     @enderror
                                 </div>
