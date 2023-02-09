@@ -113,7 +113,7 @@
                                     </div>
                                     @endforeach
                                     <br>
-                                    @error('responsible_supervisor')
+                                    @error('responsible_clerk')
                                     <span class="text-danger" style="font-size: 12.5px;">{{ $message }}</span>
                                     @enderror
                                 </div>
@@ -131,7 +131,7 @@
                                     </div>
                                     @endforeach
                                     <br>
-                                    @error('responsible_supervisor')
+                                    @error('responsible_pe')
                                     <span class="text-danger" style="font-size: 12.5px;">{{ $message }}</span>
                                     @enderror
                                 </div>

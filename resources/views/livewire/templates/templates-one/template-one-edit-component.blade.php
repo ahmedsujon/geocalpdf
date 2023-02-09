@@ -654,6 +654,26 @@
                                             @enderror
                                         </div>
                                     </div>
+
+
+                                    <div class="col-md-7 mt-3">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" wire:model='observation'
+                                                id="inlineRadiof" value="Full Time Observation">
+                                            <label class="form-check-label" for="inlineRadiof">Full Time Observation
+                                            </label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" wire:model='observation'
+                                                id="inlineRadio1f" value="Part Time Observation">
+                                            <label class="form-check-label" for="inlineRadio1f">Part Time
+                                                Observation</label>
+                                        </div>
+                                    </div>
+                                    @error('observation')
+                                    <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
+                                    @enderror
+
                                     <div class="col-md-12 mb-3">
                                         <div class="input-group">
                                             <span class="input-group-text">Remark</span>
@@ -671,8 +691,8 @@
                                     <div class="col-md-10">
                                         <div class="input-group">
                                             <span class="input-group-text">Next Action:</span>
-                                            <select class="form-select moistureremoveinput dependent" wire:model='status'
-                                            data-template_one_id="{{ $template_one_id }}">
+                                            <select class="form-select moistureremoveinput dependent"
+                                                wire:model='status' data-template_one_id="{{ $template_one_id }}">
                                                 <option value="">Select an action...</option>
                                                 <option value="sentToPE">Send to Project Engineer</option>
                                                 <option value="sentToClerk">Send to Clerk</option>

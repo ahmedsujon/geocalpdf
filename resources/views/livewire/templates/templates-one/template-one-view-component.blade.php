@@ -415,6 +415,25 @@
                                             <input type="text" class="form-control" wire:model="representative" readonly>
                                         </div>
                                     </div>
+
+                                    <div class="col-md-7 mt-3 mb-3">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" wire:model='observation'
+                                                id="inlineRadio" value="Full Time Observation">
+                                            <label class="form-check-label" for="inlineRadio">Full Time Observation
+                                            </label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" wire:model='observation'
+                                                id="inlineRadio1" value="Part Time Observation">
+                                            <label class="form-check-label" for="inlineRadio1">Part Time
+                                                Observation</label>
+                                        </div>
+                                    </div>
+                                    @error('observation')
+                                    <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
+                                    @enderror
+                                    
                                     <div class="col-md-12">
                                         <div class="input-group">
                                             <span class="input-group-text">Remark</span>
