@@ -228,6 +228,7 @@
                                                             wire:model="test_method.0" readonly>
                                                     </div>
                                                 </td>
+
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="text" class="form-control moistureremoveinput"
@@ -420,7 +421,7 @@
                                                     <div class="input-group">
                                                         <input type="number" step="any"
                                                             class="form-control moistureremoveinput"
-                                                            wire:model="dry_density.0" wire:keyup='changeTestResult(0)'
+                                                            wire:model="dry_density.0" wire:keyup="changeTestResult(0)"
                                                             @if (!$result_proctor_id[0]) readonly @endif>
                                                         @error('dry_density')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
@@ -442,7 +443,9 @@
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="text" class="form-control moistureremoveinput"
-                                                            wire:model="percent_comp.0" style="@if($compaction_requirement > $percent_comp[0]) color: red; @endif" readonly>
+                                                            wire:model="percent_comp.0"
+                                                            style="@if($compaction_requirement > $percent_comp[0]) color: red; @endif"
+                                                            readonly>
                                                         @error('compaction')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
@@ -559,7 +562,8 @@
                                                         <input type="number" step="any"
                                                             class="form-control moistureremoveinput"
                                                             wire:model="dry_density.{{ $testresult }}"
-                                                            wire:keyup='changeTestResult({{ $testresult }})' @if (!$result_proctor_id[$testresult]) readonly @endif>
+                                                            wire:keyup='changeTestResult({{ $testresult }})' @if
+                                                            (!$result_proctor_id[$testresult]) readonly @endif>
                                                         @error('dry_density')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
@@ -580,7 +584,9 @@
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="text" class="form-control moistureremoveinput"
-                                                            wire:model="percent_comp.{{ $testresult }}" style="@if($compaction_requirement > $percent_comp[$testresult]) color: red; @endif" readonly>
+                                                            wire:model="percent_comp.{{ $testresult }}"
+                                                            style="@if($compaction_requirement > $percent_comp[$testresult]) color: red; @endif"
+                                                            readonly>
                                                         @error('compaction')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
