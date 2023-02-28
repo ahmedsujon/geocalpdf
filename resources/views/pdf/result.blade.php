@@ -133,7 +133,8 @@
         </td>
       </tr>
     </table>
-    <table style="width: 100%; border-collapse: collapse; padding-top: 25px;">
+    <h4 style="text-align: center; padding-top: 10px;">Field Density of Soil Aggregate by Nuclear Method</h4>
+    <table style="width: 100%; border-collapse: collapse; padding-top: 10px;">
       <tr>
         <td style="padding: 5px 4px; background-color: #92d050">
           <h4 style="font-size: 14px; font-weight: 600">TESTING DETAILS</h4>
@@ -191,7 +192,7 @@
       </tr>
       <tr>
         <td style="padding: 4px 6px; border: 1px solid lightgray">
-          <h4 style="font-size: 14px; font-weight: 400">Gauge Marke:</h4>
+          <h4 style="font-size: 14px; font-weight: 400">Gauge Make:</h4>
         </td>
         <td style="padding: 4px 6px; border: 1px solid lightgray">
           <h4 style="font-size: 14px; font-weight: 400">
@@ -203,7 +204,7 @@
           </h4>
         </td>
         <td style="padding: 4px 6px; border: 1px solid lightgray">
-          <h4 style="font-size: 14px; font-weight: 400">Min. Compaction Requirements</h4>
+          <h4 style="font-size: 14px; font-weight: 400">Compaction Requirement</h4>
         </td>
         <td style="padding: 4px 6px; border: 1px solid lightgray">
           <h4 style="font-size: 14px; font-weight: 400">{{ $data->compaction_requirement }}</h4>
@@ -222,7 +223,7 @@
           <h4 style="font-size: 14px; font-weight: 400">Moisture Requirements:</h4>
         </td>
         <td style="padding: 4px 6px; border: 1px solid lightgray">
-          <h4 style="font-size: 14px; font-weight: 400">-{{ $data->requirment_minus }} to {{ $data->requirment_plus }}
+          <h4 style="font-size: 14px; font-weight: 400">-{{ $data->requirment_minus }} to +{{ $data->requirment_plus }}
           </h4>
         </td>
       </tr>
@@ -342,9 +343,11 @@
         <td style="padding: 4px 6px; border: 1px solid lightgray">
           <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $test_result->moisture_content }}</h4>
         </td>
-        
+
         <td style="padding: 4px 6px; border: 1px solid lightgray">
-          <h4 style="font-size: 14px; font-weight: 400; text-align:center; @if($data->compaction_requirement > $test_result->percent_comp) color: red; @endif">{{ $test_result->percent_comp }}</h4>
+          <h4
+            style="font-size: 14px; font-weight: 400; text-align:center; @if($data->compaction_requirement > $test_result->percent_comp) color: red; @endif">
+            {{ $test_result->percent_comp }}</h4>
         </td>
 
         <td style="padding: 4px 6px; border: 1px solid lightgray">
@@ -394,7 +397,7 @@
         <td style="padding: 4px 6px; border: 1px solid lightgray">
           <h4 style="font-size: 14px; font-weight: 400">{{ $test_result->location }}</h4>
         </td>
-        
+
         <td style="padding: 4px 6px; border: 1px solid lightgray">
           <h4 style="font-size: 14px; font-weight: 400">{{ $test_result->material }}</h4>
         </td>
@@ -406,9 +409,25 @@
       @endforeach
     </table>
     <br />
+
+    <table style="width: 100%; border-collapse: collapse; padding-bottom: 20px;">
+      <tr>
+        <td>Comments:</td>
+        <td style="padding: 4px 6px">
+          <ol type="A" style="font-size: 14px; font-weight: 400; text-align: left">
+            <li>Test results comply with specifications</li>
+            <li>Compaction percentage does not comply with specifications</li>
+            <li>Retest of previous test</li>
+            <li>Moisture in excess of specifications</li>
+            <li>Moisture below specifications</li>
+          </ol>
+        </td>
+      </tr>
+    </table>
+
     <table style="width: 100%; border-collapse: collapse">
       <tr>
-      <td>
+        <td>
           <h5>{{ $data->observation }}</h5>
           <h4 style="
                 font-size: 14px;
@@ -433,19 +452,19 @@
           </h4>
         </td>
         <td>
-          <h5>{{ $data->technician }}</h5>
+          <h5>{{ user($data->created_by)->name }}</h5>
           <h4 style="
                 font-size: 14px;
                 font-weight: 400;
                 border-top: 1px solid black;
                 padding-top: 2px;
               ">
-            Field Representative
+            Reviewed By
           </h4>
         </td>
       </tr>
     </table>
-    <table style="width: 100%; border-collapse: collapse">
+    <table style="width: 100%; border-collapse: collapse; padding-top: 20px;">
       <tr>
         <td style="padding: 4px 6px">
           <p style="font-size: 14px; font-weight: 400; text-align: center">
@@ -458,4 +477,5 @@
     </table>
   </div>
 </body>
+
 </html>

@@ -339,54 +339,20 @@
             @endforeach
         </table>
         <br />
-        <table style="width: 100%; border-collapse: collapse">
-            <tr style="vertical-align: top">
-                <td style="padding: 4px 6px; width: 90px">
-                    <h4 style="font-size: 14px; font-weight: 400">Comments:</h4>
-                </td>
-                <td style="padding: 4px 6px; width: 200px">
-                    <ol style="padding: 0; margin: 0">
-                        <li style="font-size: 14px; font-weight: 400; padding-bottom: 5px">
-                            Base
-                        </li>
-                        <li style="font-size: 14px; font-weight: 400; padding-bottom: 5px">
-                            Subbase
-                        </li>
-                        <li style="font-size: 14px; font-weight: 400; padding-bottom: 5px">
-                            Subgrade
-                        </li>
-                        <li style="font-size: 14px; font-weight: 400; padding-bottom: 5px">
-                            Improved Subgrade
-                        </li>
-                        <li style="font-size: 14px; font-weight: 400; padding-bottom: 5px">
-                            Surface
-                        </li>
-                        <li style="font-size: 14px; font-weight: 400; padding-bottom: 5px">
-                            Fill
-                        </li>
-                    </ol>
-                </td>
-                <td style="padding: 4px 6px">
-                    <ol type="A" style="padding: 0; margin: 0">
-                        <li style="font-size: 14px; font-weight: 400; padding-bottom: 5px">
-                            Test results comply with specifications
-                        </li>
-                        <li style="font-size: 14px; font-weight: 400; padding-bottom: 5px">
-                            Compaction percentage does not comply with specifications
-                        </li>
-                        <li style="font-size: 14px; font-weight: 400; padding-bottom: 5px">
-                            Retest of previous test
-                        </li>
-                        <li style="font-size: 14px; font-weight: 400; padding-bottom: 5px">
-                            Moisture in excess of specifications
-                        </li>
-                        <li style="font-size: 14px; font-weight: 400; padding-bottom: 5px">
-                            Moisture below specifications
-                        </li>
-                    </ol>
-                </td>
+        <table style="width: 100%; border-collapse: collapse; padding-bottom: 20px;">
+            <tr>
+              <td>Comments:</td>
+              <td style="padding: 4px 6px">
+                <ol type="A" style="font-size: 14px; font-weight: 400; text-align: left">
+                  <li>Test results comply with specifications</li>
+                  <li>Compaction percentage does not comply with specifications</li>
+                  <li>Retest of previous test</li>
+                  <li>Moisture in excess of specifications</li>
+                  <li>Moisture below specifications</li>
+                </ol>
+              </td>
             </tr>
-        </table>
+          </table>
         <br />
         <table style="width: 100%; border-collapse: collapse">
             <tr>

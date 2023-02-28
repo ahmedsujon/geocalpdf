@@ -168,9 +168,9 @@
                             <div class="col-md-5">
                                 <div class="input-group mb-3">
                                     <span class="input-group-text">Moisture Requirements (+/- %) Minus:</span>
-                                    <input type="text" class="form-control" wire:model="requirment_plus" readonly>
-                                    <span class="input-group-text">Plus:</span>
                                     <input type="text" class="form-control" wire:model="requirment_minus" readonly>
+                                    <span class="input-group-text">Plus:</span>
+                                    <input type="text" class="form-control" wire:model="requirment_plus" readonly>
                                 </div>
                             </div>
                             <div class="col-md-10">
