@@ -22,7 +22,7 @@
 
 <body>
   <div style="
-        padding: 50px;
+        padding: 20px 40px 40px 40px;
       ">
     <table style="width: 100%; border-collapse: collapse">
       <tr>
@@ -30,102 +30,94 @@
           <table style="width: 100%; border-collapse: collapse">
             <tr>
               <td style="padding: 4px 6px">
-                <h4 style="font-size: 14px; font-weight: 400; text-align: right">
+                <h4 style="font-size: 14px; font-weight: 400;">
                   Client:
                 </h4>
               </td>
-              <td style="padding: 4px 6px; border-bottom: 1px solid lightgray">
+              <td style="padding: 4px 0px; border-bottom: 1px solid lightgray">
                 <h4 style="font-size: 14px; font-weight: 400">{{ $data->client_name }}</h4>
               </td>
             </tr>
             <tr>
               <td style="padding: 4px 6px">
-                <h4 style="font-size: 14px; font-weight: 400; text-align: right">
+                <h4 style="font-size: 14px; font-weight: 400;">
                   Email:
                 </h4>
               </td>
-              <td style="padding: 4px 6px; border-bottom: 1px solid lightgray">
+              <td style="padding: 4px 0px; border-bottom: 1px solid lightgray">
                 <h4 style="font-size: 14px; font-weight: 400">{{ $data->client_email }}</h4>
               </td>
             </tr>
             <tr>
               <td style="padding: 4px 6px">
-                <h4 style="font-size: 14px; font-weight: 400; text-align: right">
+                <h4 style="font-size: 14px; font-weight: 400;">
                   Phone:
                 </h4>
               </td>
-              <td style="padding: 4px 6px; border-bottom: 1px solid lightgray">
+              <td style="padding: 4px 0px; border-bottom: 1px solid lightgray">
                 <h4 style="font-size: 14px; font-weight: 400">{{ $data->client_phone }}</h4>
               </td>
             </tr>
             <tr>
               <td style="padding: 4px 6px">
-                <h4 style="font-size: 14px; font-weight: 400; text-align: right">
+                <h4 style="font-size: 14px; font-weight: 400;">
                   Company Name:
                 </h4>
               </td>
-              <td style="padding: 4px 6px; border-bottom: 1px solid lightgray">
+              <td style="padding: 4px 0px; border-bottom: 1px solid lightgray">
                 <h4 style="font-size: 14px; font-weight: 400">{{ $data->client_company_name }}</h4>
               </td>
             </tr>
           </table>
         </td>
-        <td style="padding: 10px 10px 20px 30px; text-align: center">
+        <td style="padding: 0px 10px 20px 30px; text-align: center">
           <div>
-            <img src="https://i0.wp.com/geocal.us/wp-content/uploads/2019/05/logo-new.png" alt="logo"
-              style="max-width: 100px" />
+            <img src="https://i0.wp.com/geocal.us/wp-content/uploads/2019/05/logo-new.png" alt="logo" style="max-width: 100px" />
             <h4 style="font-size: 16px; font-weight: 700; padding-top: 5px">
               {{ $data->office_address }}
             </h4>
           </div>
         </td>
+
         <td>
           <table style="width: 100%; border-collapse: collapse">
             <tr>
               <td style="padding: 4px 6px">
-                <h4 style="font-size: 14px; font-weight: 400; text-align: right">
+                <h4 style="font-size: 14px; font-weight: 400;">
                   Date:
                 </h4>
               </td>
-              <td style="padding: 4px 6px; border-bottom: 1px solid lightgray">
+              <td style="padding: 4px 0px; border-bottom: 1px solid lightgray">
                 <h4 style="font-size: 14px; font-weight: 400">{{ $data->created_at->format('Y-m-d') }}</h4>
               </td>
             </tr>
             <tr>
               <td style="padding: 4px 6px">
-                <h4 style="font-size: 14px; font-weight: 400; text-align: right">
+                <h4 style="font-size: 14px; font-weight: 400;">
                   Project No:
                 </h4>
               </td>
-              <td style="padding: 4px 6px; border-bottom: 1px solid lightgray">
+              <td style="padding: 4px 0px; border-bottom: 1px solid lightgray">
                 <h4 style="font-size: 14px; font-weight: 400">{{ $data->project_number }}</h4>
               </td>
             </tr>
             <tr>
               <td style="padding: 4px 6px">
-                <h4 style="font-size: 14px; font-weight: 400; text-align: right">
+                <h4 style="font-size: 14px; font-weight: 400;">
                   Project Name:
                 </h4>
               </td>
-              <td style="padding: 4px 6px; border-bottom: 1px solid lightgray">
+              <td style="padding: 4px 0px; border-bottom: 1px solid lightgray">
                 <h4 style="font-size: 14px; font-weight: 400">{{ $data->project_name }}</h4>
               </td>
             </tr>
             <tr>
               <td style="padding: 4px 6px">
-                <h4 style="font-size: 14px; font-weight: 400; text-align: right"></h4>
-              </td>
-              <td style="padding: 4px 6px; border-bottom: 1px solid lightgray">
-                <h4 style="font-size: 14px; font-weight: 400"></h4>
-              </td>
-            </tr>
-            <tr>
-              <td style="padding: 4px 6px">
-                <h4 style="font-size: 14px; font-weight: 400; text-align: right">
+                <h4 style="font-size: 14px; font-weight: 400;">
                   Weather
                 </h4>
               </td>
-              <td style="padding: 4px 6px; border-bottom: 1px solid lightgray">
+              <td style="padding: 4px 0px; border-bottom: 1px solid lightgray">
                 <h4 style="font-size: 14px; font-weight: 400">{{ $data->weather }}</h4>
               </td>
             </tr>
