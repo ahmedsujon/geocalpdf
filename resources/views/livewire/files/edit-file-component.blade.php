@@ -105,30 +105,38 @@
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
                                 </div>
-                                <div class="input-group mb-3">
+                                <div class="input-group mt-3">
                                     <span class="input-group-text">Test Method:</span>
-                                    <input type="text" class="form-control" wire:model="main_test_method">
-                                    @error('main_test_method')
-                                    <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
-                                    @enderror
+                                    <select class="form-select" wire:model="main_test_method">
+                                        <option value="">Select Test Method</option>
+                                        <option value="ASTM D6938">ASTM D6938</option>
+                                        <option value="AASHTO T310">AASHTO T310</option>
+                                    </select>
                                 </div>
+                                @error('main_test_method')
+                                <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
+                                @enderror
                             </div>
                             <div class="col-lg-5">
                                 <h6>Gauge Information</h6>
-                                <div class="input-group mt-2 mb-3">
+                                <div class="input-group mt-2">
                                     <span class="input-group-text">Office Address:</span>
                                     <select class="form-select" wire:model="office_address">
                                         <option value="">Select office addres</option>
-                                        <option value="7290 South Fraser Street Centennial, CO 80112 (303)-337-0338">7290 South Fraser Street Centennial, CO 80112 (303)-337-0338</option>
-                                        <option value="7290 South Fraser Street Centennial, CO 80112 (302)-337-0338">7290 South Fraser Street Centennial, CO 80112 (302)-337-0338</option>
-                                        <option value="7290 South Fraser Street Centennial, CO 80112 (301)-337-0338">7290 South Fraser Street Centennial, CO 80112 (301)-337-0338</option>
+                                        <option value="7290 South Fraser St. Centennial, CO 80112 (303)-337-0338">7290
+                                            South Fraser St. Centennial, CO 80112 (303)-337-0338</option>
+                                        <option
+                                            value="4763 Town Center Drive Colorado Springs, CO 80916 (719)-265-9003">
+                                            4763 Town Center Drive Colorado Springs, CO 80916 (719)-265-9003</option>
+                                        <option value="542 W. 66th St. Loveland, CO 80538(970) 685-4316">542 W. 66th St.
+                                            Loveland, CO 80538(970) 685-4316</option>
                                     </select>
                                 </div>
                                 @error('office_address')
                                 <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                 @enderror
 
-                                <div class="input-group mb-3">
+                                <div class="input-group mb-3 mt-3">
                                     <span class="input-group-text">Troxler:</span>
                                     <select class="form-select" wire:model="troxler">
                                         <option value="">Select</option>
@@ -148,20 +156,33 @@
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
                                 </div>
-                                <div class="input-group mb-3">
+                               
+                                <div class="input-group mt-3">
                                     <span class="input-group-text">Model:</span>
-                                    <input type="text" class="form-control" wire:model="model">
+                                    <select class="form-select" wire:model="model">
+                                        <option value="">Select Model</option>
+                                        <option value="Model One">Model One</option>
+                                        <option value="Model Two">Model Two</option>
+                                        <option value="Model Three">Model Three</option>
+                                    </select>
                                     @error('model')
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
                                 </div>
-                                <div class="input-group mb-3">
+
+                                 <div class="input-group mt-3">
                                     <span class="input-group-text">Serial No:</span>
-                                    <input type="text" class="form-control" wire:model="serial_number">
+                                    <select class="form-select" wire:model="serial_number">
+                                        <option value="">Select Serial No</option>
+                                        <option value="Model One">Serial One</option>
+                                        <option value="Serial Two">Serial Two</option>
+                                        <option value="Serial Three">Serial Three</option>
+                                    </select>
                                     @error('serial_number')
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
                                 </div>
+
                                 <div class="input-group mb-3">
                                     <span class="input-group-text">Density Standard Count:</span>
                                     <input type="text" class="form-control" wire:model="density_count">
@@ -187,13 +208,19 @@
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
                                 </div>
-                                <div class="input-group mb-3">
+                                
+                                <div class="input-group mt-3">
                                     <span class="input-group-text">Test Mode:</span>
-                                    <input type="text" class="form-control" wire:model="test_mode">
+                                    <select class="form-select" wire:model="test_mode">
+                                        <option value="">Select Test Mode</option>
+                                        <option value="BACKSCATTER">BACKSCATTER</option>
+                                        <option value="DIRECT TRANSMISSION">DIRECT TRANSMISSION</option>
+                                    </select>
                                     @error('test_mode')
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
                                 </div>
+
                             </div>
                         </div>
                            <div class="row offset-1">
@@ -372,17 +399,27 @@
                                                         @enderror
                                                     </div>
                                                 </td>
+
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="number" step="any"
-                                                            class="form-control moistureremoveinput"
-                                                            wire:model="test_dept.{{ $testresult }}">
+                                                        <select class="form-select moistureremoveinput"
+                                                            wire:model="test_dept.{{ $testresult }}" required>
+                                                            <option value="">Select</option>
+                                                            <option value="BS">BS</option>
+                                                            <option value="2">2</option>
+                                                            <option value="4">4</option>
+                                                            <option value="6">6</option>
+                                                            <option value="8">8</option>
+                                                            <option value="10">10</option>
+                                                            <option value="12">12</option>
+                                                        </select>
                                                         @error('test_dept')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
                                                         @enderror
                                                     </div>
                                                 </td>
+
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="text" class="form-control moistureremoveinput"

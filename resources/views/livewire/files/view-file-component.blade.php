@@ -72,6 +72,10 @@
                             <div class="col-lg-5">
                                 <h6>Gauge Information</h6>
                                 <div class="input-group mb-3">
+                                    <span class="input-group-text">Office Address:</span>
+                                    <input type="text" class="form-control" wire:model="office_address" readonly>
+                                </div>
+                                <div class="input-group mb-3">
                                     <span class="input-group-text">Troxler:</span>
                                     <input type="text" class="form-control" wire:model="troxler" readonly>
                                     <span class="input-group-text">Other:</span>
