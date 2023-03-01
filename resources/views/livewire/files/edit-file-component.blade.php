@@ -67,7 +67,7 @@
                                 </div>
                                 <div class="input-group mb-3">
                                     <span class="input-group-text">Client Name:</span>
-                                    <input type="text" class="form-control" wire:model="client_id" readonly>
+                                    <input type="text" class="form-control" wire:model="client_name" readonly>
                                     @error('client_id')
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
