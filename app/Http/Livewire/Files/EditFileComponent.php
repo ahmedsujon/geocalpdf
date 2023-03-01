@@ -130,6 +130,7 @@ class EditFileComponent extends Component
 
         $this->file_id = $file_id;
 
+        $this->client_id = $file->client_id;
         $this->client_name = client($file->client_id)->name;
         
         $this->project_number = $file->project_number;

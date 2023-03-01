@@ -70,7 +70,7 @@
             </tr>
           </table>
         </td>
-        <td style="padding: 0px 10px 20px 30px; text-align: center">
+        <td style="padding: 0px 5px 20px 5px; text-align: center;">
           <div>
             <img src="https://i0.wp.com/geocal.us/wp-content/uploads/2019/05/logo-new.png" alt="logo" style="max-width: 100px" />
             <h4 style="font-size: 16px; font-weight: 700; padding-top: 5px">
@@ -125,6 +125,7 @@
         </td>
       </tr>
     </table>
+
     <h4 style="text-align: center; padding-top: 10px;">Field Density of Soil Aggregate by Nuclear Method</h4>
     <table style="width: 100%; border-collapse: collapse; padding-top: 10px;">
       <tr>
