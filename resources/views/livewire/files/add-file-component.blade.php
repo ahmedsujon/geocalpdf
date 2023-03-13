@@ -158,9 +158,34 @@
                                     <span class="input-group-text">Model:</span>
                                     <select class="form-select" wire:model="model">
                                         <option value="">Select Model</option>
-                                        <option value="Model One">Model One</option>
-                                        <option value="Model Two">Model Two</option>
-                                        <option value="Model Three">Model Three</option>
+                                        <option value="3430">3430</option>
+                                        <option value="3430">3430</option>
+                                        <option value="3430">3430</option>
+                                        <option value="3430">3430</option>
+                                        <option value="3430">3430</option>
+                                        <option value="3430">3430</option>
+                                        <option value="3430">3430</option>
+                                        <option value="3430">3430</option>
+                                        <option value="3430">3430</option>
+                                        <option value="3430">3430</option>
+                                        <option value="3430">3430</option>
+                                        <option value="3430">3430</option>
+                                        <option value="3430">3430</option>
+                                        <option value="3430">3430</option>
+                                        <option value="3430">3430</option>
+                                        <option value="3430">3430</option>
+                                        <option value="3430">3430</option>
+                                        <option value="3430">3430</option>
+                                        <option value="3430">3430</option>
+                                        <option value="3430">3430</option>
+                                        <option value="3430">3430</option>
+                                        <option value="3430">3430</option>
+                                        <option value="3430">3430</option>
+                                        <option value="3430">3430</option>
+                                        <option value="3450">3450</option>
+                                        <option value="3241">3241</option>
+                                        <option value="3241">3241</option>
+                                        <option value="3241">3241</option>
                                     </select>
                                     @error('model')
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
@@ -171,9 +196,34 @@
                                     <span class="input-group-text">Serial No:</span>
                                     <select class="form-select" wire:model="serial_number">
                                         <option value="">Select Serial No</option>
-                                        <option value="Model One">Serial One</option>
-                                        <option value="Serial Two">Serial Two</option>
-                                        <option value="Serial Three">Serial Three</option>
+                                        <option value="22392">22392</option>
+                                        <option value="26206">26206</option>
+                                        <option value="28312">28312</option>
+                                        <option value="28905">28905</option>
+                                        <option value="29684">29684</option>
+                                        <option value="29683">29683</option>
+                                        <option value="32247">32247</option>
+                                        <option value="32248">32248</option>
+                                        <option value="33247">33247</option>
+                                        <option value="33248">33248</option>
+                                        <option value="33249">33249</option>
+                                        <option value="33250">33250</option>
+                                        <option value="23365">23365</option>
+                                        <option value="31483">31483</option>
+                                        <option value="30738">30738</option>
+                                        <option value="32504">32504</option>
+                                        <option value="34097">34097</option>
+                                        <option value="34099">34099</option>
+                                        <option value="35013">35013</option>
+                                        <option value="35032">35032</option>
+                                        <option value="35033">35033</option>
+                                        <option value="35034">35034</option>
+                                        <option value="35041">35041</option>
+                                        <option value="35068">35068</option>
+                                        <option value="568">568</option>
+                                        <option value="2525">2525</option>
+                                        <option value="2581">2581</option>
+                                        <option value="2583">2583</option>
                                     </select>
                                     @error('serial_number')
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
@@ -601,7 +651,7 @@
                                                         @enderror
                                                     </div>
                                                 </td>
-                                                
+
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="text" class="form-control moistureremoveinput"
