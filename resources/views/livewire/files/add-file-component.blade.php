@@ -128,6 +128,7 @@
                                             4763 Town Center Drive Colorado Springs, CO 80916 (719)-265-9003</option>
                                         <option value="542 W. 66th St. Loveland, CO 80538(970) 685-4316">542 W. 66th St.
                                             Loveland, CO 80538(970) 685-4316</option>
+                                            <option value="5709 SE 74th St., Suite A Oklahoma City, OK 73135">5709 SE 74th St., Suite A Oklahoma City, OK 73135</option>
                                     </select>
                                 </div>
                                 @error('office_address')
@@ -159,32 +160,7 @@
                                     <select class="form-select" wire:model="model">
                                         <option value="">Select Model</option>
                                         <option value="3430">3430</option>
-                                        <option value="3430">3430</option>
-                                        <option value="3430">3430</option>
-                                        <option value="3430">3430</option>
-                                        <option value="3430">3430</option>
-                                        <option value="3430">3430</option>
-                                        <option value="3430">3430</option>
-                                        <option value="3430">3430</option>
-                                        <option value="3430">3430</option>
-                                        <option value="3430">3430</option>
-                                        <option value="3430">3430</option>
-                                        <option value="3430">3430</option>
-                                        <option value="3430">3430</option>
-                                        <option value="3430">3430</option>
-                                        <option value="3430">3430</option>
-                                        <option value="3430">3430</option>
-                                        <option value="3430">3430</option>
-                                        <option value="3430">3430</option>
-                                        <option value="3430">3430</option>
-                                        <option value="3430">3430</option>
-                                        <option value="3430">3430</option>
-                                        <option value="3430">3430</option>
-                                        <option value="3430">3430</option>
-                                        <option value="3430">3430</option>
                                         <option value="3450">3450</option>
-                                        <option value="3241">3241</option>
-                                        <option value="3241">3241</option>
                                         <option value="3241">3241</option>
                                     </select>
                                     @error('model')

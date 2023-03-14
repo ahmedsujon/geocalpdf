@@ -34,6 +34,7 @@ class CreateTemplateOnesTable extends Migration
             $table->string('general_location')->nullable();
 
             // Mix information
+            $table->string('office_address')->nullable();
             $table->string('contractor')->nullable();
             $table->string('mix_supplier')->nullable();
             $table->string('plant')->nullable();

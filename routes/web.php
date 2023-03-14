@@ -112,23 +112,23 @@ Route::middleware(['auth:sanctum', 'verified', 'authSuperAdmin'])->name('admin.'
 });
 
 //authProjectEng.
-Route::middleware(['auth:sanctum', 'verified', 'authProjectEngineer'])->name('pe.')->group(function () {
-    Route::get('/project-engineer', ProjectEngDashboardComponent::class)->name('dashboard');
+Route::middleware(['auth:sanctum', 'verified', 'authSuperAdmin'])->name('admin.')->group(function () {
+    Route::get('/admin', DashboardComponent::class)->name('dashboard');
 });
 
 //authClerk
-Route::middleware(['auth:sanctum', 'verified', 'authClerk'])->name('clerk.')->group(function () {
-    Route::get('/clerk', ClerkDashboardComponent::class)->name('dashboard');
+Route::middleware(['auth:sanctum', 'verified', 'authSuperAdmin'])->name('admin.')->group(function () {
+    Route::get('/admin', DashboardComponent::class)->name('dashboard');
 });
 
 //authSupervisor
-Route::middleware(['auth:sanctum', 'verified', 'authSupervisor'])->name('supervisor.')->group(function () {
-    Route::get('/supervisor', SupervisorDashboardComponent::class)->name('dashboard');
+Route::middleware(['auth:sanctum', 'verified', 'authSuperAdmin'])->name('admin.')->group(function () {
+    Route::get('/admin', DashboardComponent::class)->name('dashboard');
 });
 
 //FieldTech
-Route::middleware(['auth:sanctum', 'verified'])->name('fieldtech.')->group(function () {
-    Route::get('/field-tech', FieldTechDashboardComponent::class)->name('dashboard');
+Route::middleware(['auth:sanctum', 'verified'])->name('admin.')->group(function () {
+    Route::get('/admin', DashboardComponent::class)->name('dashboard');
 });
 
 

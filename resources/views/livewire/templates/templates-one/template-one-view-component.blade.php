@@ -33,12 +33,8 @@
                         <div class="row mb-3">
                             <div class="col-md-4"></div>
                             <div class="col-md-4">
-                                <div class="logo text-center">
-                                    <img src="{{ asset('assets/images/logo-new.png') }}" alt="">
-                                </div>
                                 <div class="content text-center pt-2 pb-2">
-                                    <p>7290 South Fraser Street<br>Centennial, CO 80112</p>
-                                    <h6>PHYSICAL PROPERTIES OF PLASTIC CONCRETE</h6>
+                                    <h5>PHYSICAL PROPERTIES OF PLASTIC CONCRETE</h5>
                                 </div>
                             </div>
                             <div class="col-md-4"></div>

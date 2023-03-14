@@ -74,18 +74,12 @@
                                 </ul>
                             </div>
                         </li>
-                        {{-- @if(Auth::user()->role_id == '1' || Auth::user()->role_id == '2')
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('archive.files') }}"><i
-                                    class="ti ti-file-check menu-icon"></i><span>Archived Files</span></a>
-                        </li>
-                        @endif --}}
+                        
                         @if(Auth::user()->role_id == '1' || Auth::user()->role_id == '2' || Auth::user()->role_id ==
                         '3')
                         <li class="menu-label mt-0 text-primary font-12 fw-semibold">M<span>anagements</span></li>
                         @if(Auth::user()->role_id == '1' || Auth::user()->role_id == '2' || Auth::user()->role_id ==
                         '3')
-                        <li class="menu-label mt-0 text-primary font-12 fw-semibold">P<span>rojects</span></li>
                         <li class="nav-item">
                             <a class="nav-link" href="#sidebarAnalytics" data-bs-toggle="collapse" role="button"
                                 aria-expanded="false" aria-controls="sidebarAnalytics">
@@ -105,6 +99,7 @@
                             </div>
                         </li>
                         @endif
+                        @if(Auth::user()->role_id == '1' || Auth::user()->role_id == '2' || Auth::user()->role_id == '3')
                         <li class="nav-item">
                             <a class="nav-link" href="#sidebarClient" data-bs-toggle="collapse" role="button"
                                 aria-expanded="false" aria-controls="sidebarClient">
@@ -123,6 +118,8 @@
                                 </ul>
                             </div>
                         </li>
+                        @endif
+                        @if(Auth::user()->role_id == '1' || Auth::user()->role_id == '2' || Auth::user()->role_id == '3')
                         <li class="nav-item">
                             <a class="nav-link" href="#sidebarProctor" data-bs-toggle="collapse" role="button"
                                 aria-expanded="false" aria-controls="sidebarProctor">
@@ -141,6 +138,8 @@
                                 </ul>
                             </div>
                         </li>
+                        @endif
+                        @if(Auth::user()->role_id == '1' || Auth::user()->role_id == '2')
                         <!--end nav-item-->
                         <li class="nav-item">
                             <a class="nav-link" href="#sidebarUser" data-bs-toggle="collapse" role="button"
@@ -166,12 +165,8 @@
                         </li>
                         <!--end nav-item-->
                         @endif
-                        {{-- @if(Auth::user()->role_id == '1' || Auth::user()->role_id == '2')
-                        <li class="nav-item">
-                            <a class="nav-link" href="apps-chat.html"><i class="ti ti-activity menu-icon"></i><span>Log
-                                    Activity</span></a>
-                        </li>
-                        @endif --}}
+                        @endif
+                       
                         <li class="menu-label mt-0 text-primary font-12 fw-semibold">S<span>ettings</span></li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('profile') }}"><i

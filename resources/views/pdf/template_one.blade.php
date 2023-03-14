@@ -12,23 +12,24 @@
             padding: 0;
             box-sizing: border-box;
         }
+
         .page-break {
-        page-break-after: always;
-    }
+            page-break-after: always;
+        }
     </style>
 </head>
 
 <body>
     <div style="
-        padding: 50px;
-      ">
+    padding: 20px 40px 40px 40px;
+  ">
         <table style="width: 100%; border-collapse: collapse">
             <tr>
                 <td>
                     <table style="width: 100%; border-collapse: collapse">
                         <tr>
                             <td style="padding: 4px 6px">
-                                <h4 style="font-size: 14px; font-weight: 400; text-align: right">
+                                <h4 style="font-size: 14px; font-weight: 400;">
                                     Client:
                                 </h4>
                             </td>
@@ -38,7 +39,7 @@
                         </tr>
                         <tr>
                             <td style="padding: 4px 6px">
-                                <h4 style="font-size: 14px; font-weight: 400; text-align: right">
+                                <h4 style="font-size: 14px; font-weight: 400;">
                                     Company:
                                 </h4>
                             </td>
@@ -48,7 +49,7 @@
                         </tr>
                         <tr>
                             <td style="padding: 4px 6px">
-                                <h4 style="font-size: 14px; font-weight: 400; text-align: right">
+                                <h4 style="font-size: 14px; font-weight: 400;">
                                     Email:
                                 </h4>
                             </td>
@@ -58,7 +59,7 @@
                         </tr>
                         <tr>
                             <td style="padding: 4px 6px">
-                                <h4 style="font-size: 14px; font-weight: 400; text-align: right">
+                                <h4 style="font-size: 14px; font-weight: 400;">
                                     Phone:
                                 </h4>
                             </td>
@@ -70,17 +71,18 @@
                 </td>
                 <td style="padding: 10px 10px 20px 30px; text-align: center">
                     <div>
-                        <img src="https://i0.wp.com/geocal.us/wp-content/uploads/2019/05/logo-new.png" alt="logo" style="max-width: 100px" />
+                        <img src="https://i0.wp.com/geocal.us/wp-content/uploads/2019/05/logo-new.png" alt="logo"
+                            style="max-width: 100px" />
                         <h4 style="font-size: 16px; font-weight: 700; padding-top: 5px">
                             {{ $data->office_address }}
-                          </h4>
+                        </h4>
                     </div>
                 </td>
                 <td>
                     <table style="width: 100%; border-collapse: collapse">
                         <tr>
                             <td style="padding: 4px 6px">
-                                <h4 style="font-size: 14px; font-weight: 400; text-align: right">
+                                <h4 style="font-size: 14px; font-weight: 400;">
                                     Date:
                                 </h4>
                             </td>
@@ -90,7 +92,7 @@
                         </tr>
                         <tr>
                             <td style="padding: 4px 6px">
-                                <h4 style="font-size: 14px; font-weight: 400; text-align: right">
+                                <h4 style="font-size: 14px; font-weight: 400;">
                                     Project No:
                                 </h4>
                             </td>
@@ -100,7 +102,7 @@
                         </tr>
                         <tr>
                             <td style="padding: 4px 6px">
-                                <h4 style="font-size: 14px; font-weight: 400; text-align: right">
+                                <h4 style="font-size: 14px; font-weight: 400;">
                                     Project Name:
                                 </h4>
                             </td>
@@ -110,7 +112,7 @@
                         </tr>
                         <tr>
                             <td style="padding: 4px 6px">
-                                <h4 style="font-size: 14px; font-weight: 400; text-align: right">
+                                <h4 style="font-size: 14px; font-weight: 400;">
                                     Weather:
                                 </h4>
                             </td>
@@ -134,7 +136,7 @@
                 </td>
                 <td style="padding: 4px 6px; border: 1px solid lightgray">
                     <h4 style="font-size: 14px; font-weight: 400">
-                       - {{ $data->specified_slump_max }}
+                        - {{ $data->specified_slump_max }}
                     </h4>
                 </td>
                 <td style="padding: 4px 6px; border: 1px solid lightgray">
@@ -341,18 +343,18 @@
         <br />
         <table style="width: 100%; border-collapse: collapse; padding-bottom: 20px;">
             <tr>
-              <td>Comments:</td>
-              <td style="padding: 4px 6px">
-                <ol type="A" style="font-size: 14px; font-weight: 400; text-align: left">
-                  <li>Test results comply with specifications</li>
-                  <li>Compaction percentage does not comply with specifications</li>
-                  <li>Retest of previous test</li>
-                  <li>Moisture in excess of specifications</li>
-                  <li>Moisture below specifications</li>
-                </ol>
-              </td>
+                <td>Comments:</td>
+                <td style="padding: 4px 6px">
+                    <ol type="A" style="font-size: 14px; font-weight: 400; text-align: left">
+                        <li>Test results comply with specifications</li>
+                        <li>Compaction percentage does not comply with specifications</li>
+                        <li>Retest of previous test</li>
+                        <li>Moisture in excess of specifications</li>
+                        <li>Moisture below specifications</li>
+                    </ol>
+                </td>
             </tr>
-          </table>
+        </table>
         <br />
         <table style="width: 100%; border-collapse: collapse">
             <tr>
@@ -365,9 +367,9 @@
                           padding-top: 2px;
                           width: 160px;
                         ">
-                      Observation
+                        Observation
                     </h4>
-                  </td>
+                </td>
                 <td>
                     <h5>{{ $data->technician }}</h5>
                     <h4 style="
@@ -381,14 +383,14 @@
                     </h4>
                 </td>
                 <td>
-                    <h5>{{ $data->technician }}</h5>
+                    <h5>{{ user($data->created_by)->name }}</h5>
                     <h4 style="
                 font-size: 14px;
                 font-weight: 400;
                 border-top: 1px solid black;
                 padding-top: 2px;
               ">
-                        Field Representative
+                        Reviewed By
                     </h4>
                 </td>
             </tr>

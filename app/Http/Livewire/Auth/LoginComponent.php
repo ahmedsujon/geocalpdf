@@ -38,16 +38,16 @@ class LoginComponent extends Component
                     return redirect()->route('admin.dashboard');
                 }
                 elseif(Auth::user()->role_id == 2){
-                    return redirect()->route('pe.dashboard');
+                    return redirect()->route('admin.dashboard');
                 }
                 elseif(Auth::user()->role_id == 3){
-                    return redirect()->route('clerk.dashboard');
+                    return redirect()->route('admin.dashboard');
                 }
                 elseif(Auth::user()->role_id == 4){
-                    return redirect()->route('supervisor.dashboard');
+                    return redirect()->route('admin.dashboard');
                 }
                 elseif(Auth::user()->role_id == 5){
-                    return redirect()->route('fieldtech.dashboard');
+                    return redirect()->route('admin.dashboard');
                 }
                 
             } else {
