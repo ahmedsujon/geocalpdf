@@ -3,13 +3,14 @@
 namespace App\Http\Livewire\Files;
 
 use App\Models\File;
-use App\Models\FileTestResult;
-use App\Models\Proctor;
-use App\Models\ProctorData;
-use App\Models\Project;
 use App\Models\User;
-use Illuminate\Support\Facades\Auth;
+use App\Models\Proctor;
+use App\Models\Project;
 use Livewire\Component;
+use App\Models\ProctorData;
+use App\Models\FileTestResult;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class AddFileComponent extends Component
 {
@@ -36,42 +37,42 @@ class AddFileComponent extends Component
         ]);
     }
 
-        // get project information
-        public $selected_project_ids = [];
-        public function selectInfo()
-        {
-            if($this->project_id){
+    // get project information
+    public $selected_project_ids = [];
+    public function selectInfo()
+    {
+        if ($this->project_id) {
             $project = Project::where('id', $this->project_id)->first();
-                $this->selected_project_ids = $this->project_id;
-                $this->client_id = $project->client_id;
-                $this->project_number = $project->project_number;
-                $this->client_id = $project->client_id;
-                $this->client_name = client($project->client_id)->name;
+            $this->selected_project_ids = $this->project_id;
+            $this->client_id = $project->client_id;
+            $this->project_number = $project->project_number;
+            $this->client_id = $project->client_id;
+            $this->client_name = client($project->client_id)->name;
 
-                // get responsible persons
-                // $responsible_persons = [];
+            // get responsible persons
+            // $responsible_persons = [];
 
-                // $responsible_ft = $project->responsible_ft;
-                // $responsible_persons = array_merge($responsible_persons, json_decode($responsible_ft));
+            // $responsible_ft = $project->responsible_ft;
+            // $responsible_persons = array_merge($responsible_persons, json_decode($responsible_ft));
 
-                // $responsible_supervisor = $project->responsible_supervisor;
-                // $responsible_persons = array_merge($responsible_persons, json_decode($responsible_supervisor));
+            // $responsible_supervisor = $project->responsible_supervisor;
+            // $responsible_persons = array_merge($responsible_persons, json_decode($responsible_supervisor));
 
-                // $responsible_clerk = $project->responsible_clerk;
-                // $responsible_persons = array_merge($responsible_persons, json_decode($responsible_clerk));
+            // $responsible_clerk = $project->responsible_clerk;
+            // $responsible_persons = array_merge($responsible_persons, json_decode($responsible_clerk));
 
-                // $responsible_pe = $project->responsible_pe;
-                // $responsible_persons = array_merge($responsible_persons, json_decode($responsible_pe));
+            // $responsible_pe = $project->responsible_pe;
+            // $responsible_persons = array_merge($responsible_persons, json_decode($responsible_pe));
 
-                // $this->responsibles = User::whereIn('id', $responsible_persons)->get();
+            // $this->responsibles = User::whereIn('id', $responsible_persons)->get();
 
-            } else {
-                $this->client_id = '';
-                $this->project_number = '';
-                $this->client_name = '';
-                unset($this->selected_project_ids);
-            }
+        } else {
+            $this->client_id = '';
+            $this->project_number = '';
+            $this->client_name = '';
+            unset($this->selected_project_ids);
         }
+    }
 
     // get proctor information
     public $selected_proctor_ids = [];
@@ -257,6 +258,25 @@ class AddFileComponent extends Component
         }
 
         $data->save();
+
+
+        //send Mail
+        if ($this->responsible_person) {
+            $persons = $this->responsible_person;
+            dispatch(function () use ($persons) {
+                foreach ($persons as $key => $re_id) {
+                    $user = User::find($re_id);
+
+                    $mailData['email'] = $user->email;
+                    $mailData['subject'] = 'Mail Subject';
+                    Mail::send('emails.mail_one', $mailData, function ($message) use ($mailData) {
+                        $message->to($mailData['email'])
+                            ->subject($mailData['subject']);
+                    });
+                }
+            });
+        }
+
         session()->flash('message', 'File created successfully');
         return redirect()->route('file.list');
     }
