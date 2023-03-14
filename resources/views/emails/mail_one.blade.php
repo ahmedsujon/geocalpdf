@@ -8,5 +8,9 @@
 </head>
 <body>
     <h1>{{ $subject }}</h1>
+
+    @if ($file_id)
+        <a href="{{ route('invoice.generate',['id'=>$file_id]) }}">Download</a>
+    @endif
 </body>
 </html>

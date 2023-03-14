@@ -276,12 +276,15 @@ class EditFileComponent extends Component
         if ($this->responsible_person) {
             $persons = $this->responsible_person;
             $status = $this->status;
-            dispatch(function () use ($persons, $status) {
+            $f_id = $data->id;
+            dispatch(function () use ($persons, $status, $f_id) {
                 foreach ($persons as $key => $re_id) {
                     if($status == 'sentToClient'){
                         $user = SubClient::find($re_id);
+                        $mailData['file_id'] = $f_id;
                     } else{
                         $user = User::find($re_id);
+                        $mailData['file_id'] = NULL;
                     }
 
                     $mailData['email'] = $user->email;
