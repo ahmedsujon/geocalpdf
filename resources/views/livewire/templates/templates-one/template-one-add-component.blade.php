@@ -33,11 +33,7 @@
                         <div class="row mb-3">
                             <div class="col-md-4"></div>
                             <div class="col-md-4">
-                                <div class="logo text-center">
-                                    <img src="{{ asset('assets/images/logo-new.png') }}" alt="">
-                                </div>
                                 <div class="content text-center pt-2 pb-2">
-                                    <p>7290 South Fraser Street<br>Centennial, CO 80112</p>
                                     <h6>PHYSICAL PROPERTIES OF PLASTIC CONCRETE</h6>
                                 </div>
                             </div>
@@ -850,31 +846,31 @@
                                                         <div class="col-md-12">
                                                             <div class="form-check form-check-inline">
                                                                 <input class="form-check-input" type="radio"
-                                                                    wire:model='type.{{ $field }}' id="inlineRadio1"
+                                                                    wire:model='type.{{ $field }}' id="inlineRadio1.{{ $field }}"
                                                                     value="Cylinders">
                                                                 <label class="form-check-label"
-                                                                    for="inlineRadio1">Cylinders</label>
+                                                                    for="inlineRadio1.{{ $field }}">Cylinders</label>
                                                             </div>
                                                             <div class="form-check form-check-inline">
                                                                 <input class="form-check-input" type="radio"
-                                                                    wire:model='type.{{ $field }}' id="inlineRadio2"
+                                                                    wire:model='type.{{ $field }}' id="inlineRadio2.{{ $field }}"
                                                                     value="Beams">
                                                                 <label class="form-check-label"
-                                                                    for="inlineRadio2">Beams</label>
+                                                                    for="inlineRadio2.{{ $field }}">Beams</label>
                                                             </div>
                                                             <div class="form-check form-check-inline">
                                                                 <input class="form-check-input" type="radio"
-                                                                    wire:model='type.{{ $field }}' id="inlineRadio3"
+                                                                    wire:model='type.{{ $field }}' id="inlineRadio3.{{ $field }}"
                                                                     value="Prisms">
                                                                 <label class="form-check-label"
-                                                                    for="inlineRadio3">Prisms</label>
+                                                                    for="inlineRadio3.{{ $field }}">Prisms</label>
                                                             </div>
                                                             <div class="form-check form-check-inline">
                                                                 <input class="form-check-input" type="radio"
-                                                                    wire:model='type.{{ $field }}' id="inlineRadio4"
+                                                                    wire:model='type.{{ $field }}' id="inlineRadio4.{{ $field }}"
                                                                     value="Cubes">
                                                                 <label class="form-check-label"
-                                                                    for="inlineRadio4">Cubes(circle one)</label>
+                                                                    for="inlineRadio4.{{ $field }}">Cubes(circle one)</label>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -919,7 +915,7 @@
                                                     class="btn btn-outline-danger btn-icon-circle btn-icon-circle-sm"
                                                     wire:click.prevent='removeField({{ $key }})'>
                                                     {!! loadingState('removeField(' . $key . ')', '<i
-                                                        class="ti ti-circle-plus"></i>') !!}
+                                                        class="ti ti-trash"></i>') !!}
                                                 </button>
                                             </td>
                                             @endforeach
