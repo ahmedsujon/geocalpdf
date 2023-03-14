@@ -3,13 +3,15 @@
 namespace App\Http\Livewire\Files;
 
 use App\Models\File;
-use App\Models\FileTestResult;
-use App\Models\Proctor;
-use App\Models\ProctorData;
-use App\Models\Project;
 use App\Models\User;
-use Illuminate\Support\Facades\Auth;
+use App\Models\Proctor;
+use App\Models\Project;
 use Livewire\Component;
+use App\Models\ProctorData;
+use App\Models\FileTestResult;
+use App\Models\SubClient;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class EditFileComponent extends Component
 {
@@ -132,7 +134,7 @@ class EditFileComponent extends Component
 
         $this->client_id = $file->client_id;
         $this->client_name = client($file->client_id)->name;
-        
+
         $this->project_number = $file->project_number;
         $this->date = $file->date;
         $this->user_id = $file->user_id;
@@ -269,6 +271,29 @@ class EditFileComponent extends Component
         $data->created_by = Auth::user()->id;
 
         $data->save();
+
+        //send Mail
+        if ($this->responsible_person) {
+            $persons = $this->responsible_person;
+            $status = $this->status;
+            dispatch(function () use ($persons, $status) {
+                foreach ($persons as $key => $re_id) {
+                    if($status == 'sentToClient'){
+                        $user = SubClient::find($re_id);
+                    } else{
+                        $user = User::find($re_id);
+                    }
+
+                    $mailData['email'] = $user->email;
+                    $mailData['subject'] = 'Mail Subject';
+                    Mail::send('emails.mail_one', $mailData, function ($message) use ($mailData) {
+                        $message->to($mailData['email'])
+                            ->subject($mailData['subject']);
+                    });
+                }
+            });
+        }
+
         session()->flash('message', 'File created successfully');
         return redirect()->route('file.list');
     }
