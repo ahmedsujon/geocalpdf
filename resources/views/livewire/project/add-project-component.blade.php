@@ -85,6 +85,23 @@
                                 </div>
                             </div>
                             <div class="row mb-3">
+                                <label class="col-md-3 my-2 control-label">Responsible Field Tech</label>
+                                <div class="col-md-9">
+                                    @foreach ($field_techs as $field_tech)
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" wire:model="responsible_ft"
+                                            type="checkbox" value="{{ $field_tech->id }}">
+                                        <label class="form-check-label" for="responsible_ft">{{
+                                            $field_tech->name }}</label>
+                                    </div>
+                                    @endforeach
+                                    <br>
+                                    @error('responsible_ft')
+                                    <span class="text-danger" style="font-size: 12.5px;">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="row mb-3">
                                 <label class="col-md-3 my-2 control-label">Responsible Supervisor</label>
                                 <div class="col-md-9">
                                     @foreach ($supervisors as $supervisor)

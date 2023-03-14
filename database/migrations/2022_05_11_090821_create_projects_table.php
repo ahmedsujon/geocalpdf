@@ -19,6 +19,7 @@ class CreateProjectsTable extends Migration
             $table->string('name');
             $table->string('location');
             $table->string('avatar')->nullable();
+            $table->string('responsible_ft')->default('[]');
             $table->string('responsible_supervisor')->default('[]');
             $table->string('responsible_clerk')->default('[]');
             $table->string('responsible_pe')->default('[]');

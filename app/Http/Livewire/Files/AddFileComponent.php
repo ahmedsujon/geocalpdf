@@ -50,12 +50,19 @@ class AddFileComponent extends Component
 
                 // get responsible persons
                 $responsible_persons = [];
+
+                $responsible_ft = $project->responsible_ft;
+                $responsible_persons = array_merge($responsible_persons, json_decode($responsible_ft));
+
                 $responsible_supervisor = $project->responsible_supervisor;
                 $responsible_persons = array_merge($responsible_persons, json_decode($responsible_supervisor));
+
                 $responsible_clerk = $project->responsible_clerk;
                 $responsible_persons = array_merge($responsible_persons, json_decode($responsible_clerk));
+
                 $responsible_pe = $project->responsible_pe;
                 $responsible_persons = array_merge($responsible_persons, json_decode($responsible_pe));
+
                 $this->responsibles = User::whereIn('id', $responsible_persons)->get();
 
             } else {
@@ -65,28 +72,6 @@ class AddFileComponent extends Component
                 unset($this->selected_project_ids);
             }
         }
-
-
-    // public function selectInfo()
-    // {
-    //     // get project information
-        
-    //     $project = Project::where('id', $this->project_id)->first();
-        
-    //     $this->project_number = $project->project_number;
-    //     $this->client_id = $project->client_id;
-    //     $this->client_name = client($project->client_id)->name;
-
-    //     // get responsible persons
-    //     $responsible_persons = [];
-    //     $responsible_supervisor = $project->responsible_supervisor;
-    //     $responsible_persons = array_merge($responsible_persons, json_decode($responsible_supervisor));
-    //     $responsible_clerk = $project->responsible_clerk;
-    //     $responsible_persons = array_merge($responsible_persons, json_decode($responsible_clerk));
-    //     $responsible_pe = $project->responsible_pe;
-    //     $responsible_persons = array_merge($responsible_persons, json_decode($responsible_pe));
-    //     $this->responsibles = User::whereIn('id', $responsible_persons)->get();
-    // }
 
     // get proctor information
     public $selected_proctor_ids = [];
@@ -270,8 +255,6 @@ class AddFileComponent extends Component
             $cont->material = $this->material[$key];
             $cont->save();
         }
-
-
 
         $data->save();
         session()->flash('message', 'File created successfully');

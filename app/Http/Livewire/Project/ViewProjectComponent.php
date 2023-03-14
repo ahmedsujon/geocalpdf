@@ -10,7 +10,7 @@ use Livewire\Component;
 class ViewProjectComponent extends Component
 {
 
-    public $project_id, $project_number, $name, $location, $avatar, $new_avatar, $client_id, $created_by, $responsible_supervisor=[], $responsible_clerk=[], $responsible_pe=[];
+    public $project_id, $project_number, $name, $phone, $location, $avatar, $new_avatar, $client_id, $created_by, $responsible_supervisor=[], $responsible_clerk=[], $responsible_pe=[], $responsible_ft = [];
 
     public function mount($project_id)
     {
@@ -23,6 +23,7 @@ class ViewProjectComponent extends Component
         $this->client_id = $project->client_id;
         $this->project_id = $project->id;
 
+        $this->responsible_ft = json_decode($project->responsible_ft);
         $this->responsible_supervisor = json_decode($project->responsible_supervisor);
         $this->responsible_clerk = json_decode($project->responsible_clerk);
         $this->responsible_pe = json_decode($project->responsible_pe);
@@ -30,11 +31,12 @@ class ViewProjectComponent extends Component
 
     public function render()
     {
+        $field_techs = User::orderBy('id', 'DESC')->where('role_id', 5)->get();
         $supervisors = User::orderBy('id', 'DESC')->where('role_id', 4)->get();
         $cleks = User::orderBy('id', 'DESC')->where('role_id', 3)->get();
         $p_engineers = User::orderBy('id', 'DESC')->where('role_id', 2)->get();
 
         $clients = Client::orderBy('id', 'DESC')->get();
-        return view('livewire.project.view-project-component', ['clients'=>$clients, 'supervisors'=>$supervisors, 'cleks'=>$cleks, 'p_engineers'=>$p_engineers])->layout('livewire.layouts.base');
+        return view('livewire.project.view-project-component', ['clients'=>$clients, 'supervisors'=>$supervisors, 'cleks'=>$cleks, 'p_engineers'=>$p_engineers, 'field_techs'=>$field_techs])->layout('livewire.layouts.base');
     }
 }

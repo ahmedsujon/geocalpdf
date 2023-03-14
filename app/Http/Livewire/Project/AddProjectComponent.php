@@ -13,7 +13,7 @@ use Livewire\WithPagination;
 
 class AddProjectComponent extends Component
 {
-    public $project_number, $name, $location, $avatar, $client_id, $created_by, $responsible_supervisor=[], $responsible_clerk=[], $responsible_pe=[];
+    public $project_number, $name, $location, $avatar, $client_id, $created_by, $responsible_supervisor = [], $responsible_clerk = [], $responsible_pe = [], $responsible_ft = [];
 
     use WithFileUploads;
     use WithPagination;
@@ -30,6 +30,7 @@ class AddProjectComponent extends Component
             'name'=>'required',
             'location'=>'required',
             'client_id'=>'required',
+            'responsible_ft'=>'required',
             'responsible_supervisor'=>'required',
             'responsible_clerk'=>'required',
             'responsible_pe'=>'required',
@@ -42,6 +43,7 @@ class AddProjectComponent extends Component
         $project->client_id = $this->client_id;
         $project->created_by = Auth::user()->id;
 
+        $project->responsible_ft = json_encode($this->responsible_ft);
         $project->responsible_supervisor = json_encode($this->responsible_supervisor);
         $project->responsible_clerk = json_encode($this->responsible_clerk);
         $project->responsible_pe = json_encode($this->responsible_pe);
@@ -67,6 +69,7 @@ class AddProjectComponent extends Component
         $this->avatar = '';
         $this->client_id = '';
         $this->created_by = '';
+        $this->responsible_ft = '';
         $this->responsible_supervisor = '';
         $this->responsible_clerk = '';
         $this->responsible_pe = '';
@@ -74,11 +77,12 @@ class AddProjectComponent extends Component
 
     public function render()
     {
+        $field_techs = User::orderBy('id', 'DESC')->where('role_id', 5)->get();
         $supervisors = User::orderBy('id', 'DESC')->where('role_id', 4)->get();
         $cleks = User::orderBy('id', 'DESC')->where('role_id', 3)->get();
         $p_engineers = User::orderBy('id', 'DESC')->where('role_id', 2)->get();
 
         $clients = Client::orderBy('id', 'DESC')->get();
-        return view('livewire.project.add-project-component', ['clients'=>$clients, 'supervisors'=>$supervisors, 'cleks'=>$cleks, 'p_engineers'=>$p_engineers ])->layout('livewire.layouts.base');
+        return view('livewire.project.add-project-component', ['clients'=>$clients, 'supervisors'=>$supervisors, 'cleks'=>$cleks, 'p_engineers'=>$p_engineers, 'field_techs'=>$field_techs ])->layout('livewire.layouts.base');
     }
 }

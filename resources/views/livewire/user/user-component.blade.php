@@ -77,7 +77,7 @@
                                             @endif
                                         </td>
                                         <td>{{ $user->name }}</td>
-                                        <td>{{ $user->name }}</td>
+                                        <td>{{ userRole($user->role_id)->role }}</td>
                                         <td>{{ $user->email }}</td>
                                         <td>{{ $user->created_at }}</td>
                                         <td style="text-align: center;">
