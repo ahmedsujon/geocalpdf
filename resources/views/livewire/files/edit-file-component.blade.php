@@ -55,7 +55,7 @@
                                 <h6>Project Information</h6>
                                 <div class="input-group mb-3">
                                     <span class="input-group-text">Project Name:</span>
-                                    <select class="form-select" wire:model="project_id" wire:change="selectInfo">
+                                    <select class="form-select" wire:model="project_id" wire:change="selectInfo"> 
                                         <option value="" disabled>Select Project:</option>
                                         @foreach ($projects as $project)
                                         <option value="{{ $project->id }}">{{ $project->name }}</option>
