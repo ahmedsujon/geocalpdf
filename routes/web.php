@@ -10,6 +10,12 @@ use App\Http\Livewire\Client\AddClientComponent;
 use App\Http\Livewire\Client\ClientComponent;
 use App\Http\Livewire\Client\EditClientComponent;
 use App\Http\Livewire\Client\ShowClientComponent;
+use App\Http\Livewire\FieldMoisture\Cdot\CdotComponent;
+use App\Http\Livewire\FieldMoisture\Commercial\AddCommercialComponent;
+use App\Http\Livewire\FieldMoisture\Commercial\ArchiveCommercialComponent;
+use App\Http\Livewire\FieldMoisture\Commercial\CommercialComponent;
+use App\Http\Livewire\FieldMoisture\Commercial\EditCommercialComponent;
+use App\Http\Livewire\FieldMoisture\Commercial\ViewCommercialComponent;
 use App\Http\Livewire\FieldTech\DashboardComponent as FieldTechDashboardComponent;
 use App\Http\Livewire\Files\AddFileComponent;
 use App\Http\Livewire\Files\ArchiveFileComponent;
@@ -92,6 +98,18 @@ Route::get('logActivity', LogActivityComponent::class);
 
 // Templates
 Route::get('/templates', TemplateComponent::class)->name('templates');
+
+// FIELD MOISTURE AND DENSITY TEST
+// Commercial
+Route::get('/commercial', CommercialComponent::class)->name('template.commercial');
+Route::get('/commercial-create', AddCommercialComponent::class)->name('commercial.create');
+Route::get('/commercial/edit/{file_id}', EditCommercialComponent::class)->name('commercial.update');
+Route::get('/commercial/show/{file_id}', ViewCommercialComponent::class)->name('commercial.show');
+Route::get('/archive-commercial', ArchiveCommercialComponent::class)->name('archive.commercial');
+
+// CDOT
+Route::get('/cdot', CdotComponent::class)->name('template.cdot');
+
 
 // Login Register Route
 Route::get('/', LoginComponent::class)->middleware('guest')->name('login');
