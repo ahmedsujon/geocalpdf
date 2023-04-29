@@ -44,14 +44,11 @@
                                 <i class="ti ti-stack menu-icon"></i>
                                 <span>Field Moisture</span>
                             </a>
-                            <div class="collapse {{ request()->is('file') || request()->is('file/*')? 'show': '' }}"
+                            <div class="collapse {{ request()->is('commercial') || request()->is('commercial/*')? 'show': '' }}"
                                 id="sidebarMOISTURE">
                                 <ul class="nav flex-column">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('file.list') }}">All Files</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="{{ route('file.create') }}" class="nav-link ">Add New</a>
+                                        <a class="nav-link" href="{{ route('template.commercial') }}">All Files</a>
                                     </li>
                                 </ul>
                             </div>
@@ -66,10 +63,7 @@
                                 id="sidebarPROPERTIES">
                                 <ul class="nav flex-column">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('template-one.list') }}">All Files</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="{{ route('template-one.create') }}" class="nav-link ">Add New</a>
+                                        <a class="nav-link" href="3">All Files</a>
                                     </li>
                                 </ul>
                             </div>

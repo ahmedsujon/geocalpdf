@@ -27,7 +27,7 @@
                 <div class="card">
                     <div class="card-header">
                         <h4 class="card-title">All File</h4>
-                        <a style="float: right" href="{{ route('file.create') }}"
+                        <a style="float: right" href="{{ route('commercial.create') }}"
                             class="card-button btn btn-sm btn-primary"><i class="ti ti-plus"></i> Add File</a>
                     </div>
                     <div class="card-body">
@@ -78,10 +78,10 @@
                                         <td>{{ user($file->created_by)->name }}</td>
                                         <td>{{ $file->created_at }}</td>
                                         <td style="text-align: center;">
-                                            <a href="{{ route('file.show', ['file_id' => $file->id]) }}" type="button"
+                                            <a href="{{ route('commercial.show', ['file_id' => $file->id]) }}" type="button"
                                                 class="btn btn-outline-success btn-icon-circle btn-icon-circle-sm"><i
                                                     class="ti ti-eye"></i></a>
-                                            <a href="{{ route('file.update', ['file_id' => $file->id]) }}" type="button"
+                                            <a href="{{ route('commercial.update', ['file_id' => $file->id]) }}" type="button"
                                                 class="btn btn-outline-warning btn-icon-circle btn-icon-circle-sm"><i
                                                     class="ti ti-edit"></i></a>
                                             <a wire:click.prevent="deleteConfirmation({{ $file->id }})" type="button"

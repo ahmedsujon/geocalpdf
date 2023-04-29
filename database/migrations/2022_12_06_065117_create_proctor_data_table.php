@@ -15,7 +15,7 @@ class CreateProctorDataTable extends Migration
     {
         Schema::create('proctor_data', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('file_id')->unsigned();
+            $table->bigInteger('field_density_commercial_id')->unsigned();
             $table->string('proctor_id')->nullable();
             $table->text('description')->nullable();
             $table->string('test_method')->nullable();

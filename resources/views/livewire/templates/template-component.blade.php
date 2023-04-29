@@ -37,7 +37,7 @@
                 <!--end col-->
                 <div class="col">
                     <div style="text-align: center" class="card">
-                        <a href="{{ route('template-one.create') }}">
+                        <a href="#">
                             <div class="card-body">
                                 <h5 class="card-title"></h5>
                             </div>
@@ -52,7 +52,7 @@
                 </div>
                 <div class="col">
                     <div style="text-align: center" class="card">
-                        <a href="{{ route('file.create') }}">
+                        <a href="#">
                             <div class="card-body">
                                 <h5 class="card-title"></h5>
                             </div>
@@ -67,7 +67,7 @@
                 </div>
                 <div class="col">
                     <div style="text-align: center" class="card">
-                        <a href="{{ route('file.create') }}">
+                        <a href="#">
                             <div class="card-body">
                                 <h5 class="card-title"></h5>
                             </div>
@@ -82,7 +82,7 @@
                 </div>
                 <div class="col">
                     <div style="text-align: center" class="card">
-                        <a href="{{ route('file.create') }}">
+                        <a href="#">
                             <div class="card-body">
                                 <h5 class="card-title"></h5>
                             </div>
@@ -97,7 +97,7 @@
                 </div>
                 <div class="col">
                     <div style="text-align: center; height: 230px;" class="card">
-                        <a href="{{ route('file.create') }}">
+                        <a href="#">
                             <div class="card-body">
                                 <h5 class="card-title"></h5>
                             </div>

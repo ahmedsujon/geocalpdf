@@ -17,6 +17,11 @@ use App\Http\Livewire\FieldMoisture\Commercial\CommercialComponent;
 use App\Http\Livewire\FieldMoisture\Commercial\EditCommercialComponent;
 use App\Http\Livewire\FieldMoisture\Commercial\ViewCommercialComponent;
 use App\Http\Livewire\FieldTech\DashboardComponent as FieldTechDashboardComponent;
+use App\Http\Livewire\Files\AddFileComponent;
+use App\Http\Livewire\Files\ArchiveFileComponent;
+use App\Http\Livewire\Files\EditFileComponent;
+use App\Http\Livewire\Files\FilesComponent;
+use App\Http\Livewire\Files\ViewFileComponent;
 use App\Http\Livewire\LogActivity\LogActivityComponent;
 use App\Http\Livewire\Proctor\AddProctorComponent;
 use App\Http\Livewire\Proctor\EditProctorComponent;
@@ -30,7 +35,10 @@ use App\Http\Livewire\ProjectEng\DashboardComponent as ProjectEngDashboardCompon
 use App\Http\Livewire\SuperAdmin\DashboardComponent;
 use App\Http\Livewire\Supervisor\DashboardComponent as SupervisorDashboardComponent;
 use App\Http\Livewire\Templates\TemplateComponent;
+use App\Http\Livewire\Templates\TemplatesOne\TemplateOneAddComponent;
 use App\Http\Livewire\Templates\TemplatesOne\TemplateOneComponent;
+use App\Http\Livewire\Templates\TemplatesOne\TemplateOneEditComponent;
+use App\Http\Livewire\Templates\TemplatesOne\TemplateOneViewComponent;
 use App\Http\Livewire\User\AddUserComponent;
 use App\Http\Livewire\User\EditUserComponent;
 use App\Http\Livewire\User\UserComponent;
@@ -63,8 +71,23 @@ Route::get('/project/add', AddProjectComponent::class)->name('project.create');
 Route::get('/project/edit/{project_id}', EditProjectComponent::class)->name('project.update');
 Route::get('/project/show/{project_id}', ViewProjectComponent::class)->name('project.show');
 
+// Files Route
+Route::get('/file-list', FilesComponent::class)->name('file.list');
+Route::get('/file-create', AddFileComponent::class)->name('file.create');
+Route::get('/file/edit/{file_id}', EditFileComponent::class)->name('file.update');
+Route::get('/file/show/{file_id}', ViewFileComponent::class)->name('file.show');
+Route::get('/archive-files', ArchiveFileComponent::class)->name('archive.files');
 
+// Templates One Routes
+Route::get('/templateOne', TemplateOneComponent::class)->name('template-one.list');
+Route::get('/templateOne-create', TemplateOneAddComponent::class)->name('template-one.create');
+Route::get('/templateOne/edit/{file_id}', TemplateOneEditComponent::class)->name('template.one.update');
+Route::get('/templateOne/show/{file_id}', TemplateOneViewComponent::class)->name('template.one.show');
+// Route::get('/archive-template-one', ArchiveFileComponent::class)->name('archive.template.one');
 
+// Get Representative for file
+Route::post('/get-representative', [FilesComponent::class, 'getRepresentative'])->name('get_representative');
+Route::post('/edit-representative', [FilesComponent::class, 'editRepresentative'])->name('edit_representative');
 // Get Representative for template one
 Route::post('/get-representative-one', [TemplateOneComponent::class, 'getOneRepresentative'])->name('get_representative_one');
 Route::post('/edit-representative-one', [TemplateOneComponent::class, 'editOneRepresentative'])->name('edit_representative_one');
@@ -84,10 +107,6 @@ Route::get('/commercial/edit/{file_id}', EditCommercialComponent::class)->name('
 Route::get('/commercial/show/{file_id}', ViewCommercialComponent::class)->name('commercial.show');
 Route::get('/archive-commercial', ArchiveCommercialComponent::class)->name('archive.commercial');
 
-// Get Representative for file
-Route::post('/get-representative', [CommercialComponent::class, 'getRepresentative'])->name('get_representative');
-Route::post('/edit-representative', [CommercialComponent::class, 'editRepresentative'])->name('edit_representative');
-
 // CDOT
 Route::get('/cdot', CdotComponent::class)->name('template.cdot');
 
@@ -102,7 +121,7 @@ Route::post('/get-supervisors', [BaseController::class, 'getSupervisor'])->name(
 Route::post('/upload', 'app\http\controllers\BaseController@uploadckimage')->name('ckeditor.upload');
 
 // PDF Generate
-Route::get('/invoice/{id}', [InvocieController::class, 'commercialPDF'])->name('invoice.commercial');
+Route::get('/invoice/{id}', [InvocieController::class, 'generatePDF'])->name('invoice.generate');
 Route::get('/temp-one/{id}', [InvocieController::class, 'templateOnePDF'])->name('template.one.generate');
 
 //authSuperAdmin

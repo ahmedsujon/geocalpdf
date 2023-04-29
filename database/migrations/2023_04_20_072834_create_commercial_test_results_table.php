@@ -16,7 +16,7 @@ class CreateCommercialTestResultsTable extends Migration
         Schema::create('commercial_test_results', function (Blueprint $table) {
             $table->id();
             // test results information
-            $table->bigInteger('file_id')->unsigned();
+            $table->bigInteger('field_density_commercial_id')->unsigned();
             $table->string('test_num')->nullable();
             $table->string('location')->nullable();
             $table->string('result_proctor_id')->nullable();

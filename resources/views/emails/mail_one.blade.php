@@ -9,8 +9,8 @@
 <body>
     <h1>{{ $subject }}</h1>
 
-    @if ($file_id)
-        <a href="{{ route('invoice.generate',['id'=>$file_id]) }}">Download</a>
+    @if ($field_density_commercial_id)
+        <a href="{{ route('invoice.generate',['id'=>$field_density_commercial_id]) }}">Download</a>
     @endif
 </body>
 </html>

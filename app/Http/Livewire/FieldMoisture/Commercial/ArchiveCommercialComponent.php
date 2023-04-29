@@ -8,6 +8,6 @@ class ArchiveCommercialComponent extends Component
 {
     public function render()
     {
-        return view('livewire.field-moisture.commercial.archive-commercial-component');
+        return view('livewire.field-moisture.commercial.archive-commercial-component')->layout('livewire.layouts.base');
     }
 }

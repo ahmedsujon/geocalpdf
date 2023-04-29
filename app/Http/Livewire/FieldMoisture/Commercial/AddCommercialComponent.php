@@ -231,7 +231,7 @@ class AddCommercialComponent extends Component
         // proctor information
         foreach ($this->proctor_id as $key => $p_id) {
             $cont = new ProctorData();
-            $cont->file_id = $data->id;
+            $cont->field_density_commercial_id = $data->id;
             $cont->proctor_id = $this->proctor_id[$key];
             $cont->description = $this->description[$key];
             $cont->test_method = $this->test_method[$key];
@@ -243,7 +243,7 @@ class AddCommercialComponent extends Component
         // test result information
         foreach ($this->test_num as $key => $test_n) {
             $cont = new CommercialTestResult();
-            $cont->file_id = $data->id;
+            $cont->field_density_commercial_id = $data->id;
             $cont->result_proctor_id = $this->result_proctor_id[$key];
             $cont->test_num = $this->test_num[$key];
             $cont->location = $this->location[$key];
@@ -278,7 +278,7 @@ class AddCommercialComponent extends Component
         }
 
         session()->flash('message', 'File created successfully');
-        return redirect()->route('file.list');
+        return redirect()->route('template.commercial');
     }
 
     public function render()
