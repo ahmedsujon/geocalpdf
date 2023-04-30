@@ -38,7 +38,7 @@
                             <div class="col-md-4"></div>
                             <div class="col-md-4">
                                 <div class="content text-center pt-2 pb-2">
-                                    <h6>FIELD MOISTURE AND DENSITY TEST RESULTS</h6>
+                                    <h6>ASPHALT FIELD DENSITY BY NUCLEAR METHOD - COMMERCIAL</h6>
                                 </div>
                             </div>
                             <div class="col-md-4"></div>
