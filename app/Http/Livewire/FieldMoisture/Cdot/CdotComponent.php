@@ -2,12 +2,13 @@
 
 namespace App\Http\Livewire\FieldMoisture\Cdot;
 
+use App\Models\FieldDensityCdot;
 use App\Models\Project;
 use Livewire\Component;
 
 class CdotComponent extends Component
 {
-    public $project_id, $client_id, $project_number, $client_name, $geocal_project_num, $geocal_project_name, $cdot_project_name, $weather, $date;
+    public $user_id, $project_id, $client_id, $project_number, $client_name, $geocal_project_num, $geocal_project_name, $cdot_project_name, $weather, $date;
 
     public function updated($fields)
     {
@@ -39,6 +40,46 @@ class CdotComponent extends Component
             $this->client_name = '';
             unset($this->selected_project_ids);
         }
+    }
+
+    public function storeData()
+    {
+        $this->validate([
+            'project_id' => 'required',
+            'client_id' => 'required',
+            'project_number' => 'required',
+            'geocal_project_num' => 'required',
+            'geocal_project_name' => 'required',
+            'cdot_project_name' => 'required',
+            'date' => 'required',
+            'weather' => 'required',
+            'office_address' => 'required',
+            'test_method' => 'required',
+        ]);
+
+        $data = new FieldDensityCdot();
+        $data->project_id = $this->project_id;
+        $data->client_id = $this->client_id;
+        $data->project_number = $this->project_number;
+        $data->geocal_project_num = $this->geocal_project_num;
+        $data->geocal_project_name = $this->geocal_project_name;
+        $data->cdot_project_name = $this->cdot_project_name;
+        $data->date = $this->date;
+        $data->weather = $this->weather;
+        $data->office_address = $this->office_address;
+        $data->test_method = $this->test_method;
+        $data->troxler = $this->troxler;
+        $data->other = $this->other;
+        $data->model = $this->model;
+        $data->serial_no = $this->serial_no;
+        $data->density_std_count = $this->density_std_count;
+        $data->moisture_std_count = $this->moisture_std_count;
+        $data->moisture_equations = $this->moisture_equations;
+        $data->save();
+
+        session()->flash('success', 'Proctor added successfully');
+        return redirect()->route('proctor.list');
+        $this->resetInputs();
     }
 
     public function render()
