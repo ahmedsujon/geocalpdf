@@ -48,7 +48,10 @@
                                 id="sidebarMOISTURE">
                                 <ul class="nav flex-column">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('template.commercial') }}">All Files</a>
+                                        <a class="nav-link" href="{{ route('template.commercial') }}">Commercial Form</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('template.cdot') }}">CDOT Form</a>
                                     </li>
                                 </ul>
                             </div>
@@ -68,7 +71,7 @@
                                 </ul>
                             </div>
                         </li>
-                        
+
                         @if(Auth::user()->role_id == '1' || Auth::user()->role_id == '2' || Auth::user()->role_id ==
                         '3')
                         <li class="menu-label mt-0 text-primary font-12 fw-semibold">M<span>anagements</span></li>
@@ -93,7 +96,8 @@
                             </div>
                         </li>
                         @endif
-                        @if(Auth::user()->role_id == '1' || Auth::user()->role_id == '2' || Auth::user()->role_id == '3')
+                        @if(Auth::user()->role_id == '1' || Auth::user()->role_id == '2' || Auth::user()->role_id ==
+                        '3')
                         <li class="nav-item">
                             <a class="nav-link" href="#sidebarClient" data-bs-toggle="collapse" role="button"
                                 aria-expanded="false" aria-controls="sidebarClient">
@@ -113,7 +117,8 @@
                             </div>
                         </li>
                         @endif
-                        @if(Auth::user()->role_id == '1' || Auth::user()->role_id == '2' || Auth::user()->role_id == '3')
+                        @if(Auth::user()->role_id == '1' || Auth::user()->role_id == '2' || Auth::user()->role_id ==
+                        '3')
                         <li class="nav-item">
                             <a class="nav-link" href="#sidebarProctor" data-bs-toggle="collapse" role="button"
                                 aria-expanded="false" aria-controls="sidebarProctor">
@@ -160,7 +165,7 @@
                         <!--end nav-item-->
                         @endif
                         @endif
-                       
+
                         <li class="menu-label mt-0 text-primary font-12 fw-semibold">S<span>ettings</span></li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('profile') }}"><i

@@ -24,6 +24,7 @@ class CreateFieldDensityCdotsTable extends Migration
             $table->string('cdot_project_name')->nullable();
             $table->string('date')->nullable();
             $table->string('weather')->nullable();
+            $table->string('created_by')->nullable();
             // Gauge Information
             $table->string('office_address')->nullable();
             $table->string('test_method')->nullable();
@@ -34,6 +35,14 @@ class CreateFieldDensityCdotsTable extends Migration
             $table->string('density_std_count')->nullable();
             $table->string('moisture_std_count')->nullable();
             $table->string('moisture_equations')->nullable();
+            // COLORADO DEPARTMENT OF TRANSPORTATION													
+            $table->string('project_no')->nullable();
+            $table->string('region')->nullable();
+            $table->string('contract_id')->nullable();
+            $table->string('project_location')->nullable();
+            $table->string('form_no')->nullable();
+            $table->string('grading')->nullable();
+
             $table->timestamps();
         });
     }

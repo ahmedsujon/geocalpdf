@@ -10,7 +10,9 @@ use App\Http\Livewire\Client\AddClientComponent;
 use App\Http\Livewire\Client\ClientComponent;
 use App\Http\Livewire\Client\EditClientComponent;
 use App\Http\Livewire\Client\ShowClientComponent;
+use App\Http\Livewire\FieldMoisture\Cdot\AddCdotComponent;
 use App\Http\Livewire\FieldMoisture\Cdot\CdotComponent;
+use App\Http\Livewire\FieldMoisture\Cdot\ViewCdotComponent;
 use App\Http\Livewire\FieldMoisture\Commercial\AddCommercialComponent;
 use App\Http\Livewire\FieldMoisture\Commercial\ArchiveCommercialComponent;
 use App\Http\Livewire\FieldMoisture\Commercial\CommercialComponent;
@@ -30,7 +32,10 @@ use App\Http\Livewire\ProjectEng\DashboardComponent as ProjectEngDashboardCompon
 use App\Http\Livewire\SuperAdmin\DashboardComponent;
 use App\Http\Livewire\Supervisor\DashboardComponent as SupervisorDashboardComponent;
 use App\Http\Livewire\Templates\TemplateComponent;
+use App\Http\Livewire\Templates\TemplatesOne\TemplateOneAddComponent;
 use App\Http\Livewire\Templates\TemplatesOne\TemplateOneComponent;
+use App\Http\Livewire\Templates\TemplatesOne\TemplateOneEditComponent;
+use App\Http\Livewire\Templates\TemplatesOne\TemplateOneViewComponent;
 use App\Http\Livewire\User\AddUserComponent;
 use App\Http\Livewire\User\EditUserComponent;
 use App\Http\Livewire\User\UserComponent;
@@ -90,7 +95,15 @@ Route::post('/edit-representative', [CommercialComponent::class, 'editRepresenta
 
 // CDOT
 Route::get('/cdot', CdotComponent::class)->name('template.cdot');
+Route::get('/cdot/create', AddCdotComponent::class)->name('cdot.create');
+Route::get('/cdot/edit/{file_id}', CdotComponent::class)->name('cdot.update');
+Route::get('/cdot/show/{file_id}', ViewCdotComponent::class)->name('cdot.show');
 
+// Templates One Routes
+Route::get('/templateOne', TemplateOneComponent::class)->name('template-one.list');
+Route::get('/templateOne-create', TemplateOneAddComponent::class)->name('template-one.create');
+Route::get('/templateOne/edit/{file_id}', TemplateOneEditComponent::class)->name('template.one.update');
+Route::get('/templateOne/show/{file_id}', TemplateOneViewComponent::class)->name('template.one.show');
 
 // Login Register Route
 Route::get('/', LoginComponent::class)->middleware('guest')->name('login');

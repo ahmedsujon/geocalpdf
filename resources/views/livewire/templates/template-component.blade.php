@@ -37,7 +37,7 @@
                 <!--end col-->
                 <div class="col">
                     <div style="text-align: center" class="card">
-                        <a href="#">
+                        <a href="{{ route('template-one.create') }}">
                             <div class="card-body">
                                 <h5 class="card-title"></h5>
                             </div>
@@ -131,7 +131,7 @@
                             <h5>Select Asphalt Field Density forms</h5>
                             <ul class="mt-3 mb-0">
                                 <li class="mb-3"><a href="{{ route('commercial.create') }}" type="button" class="btn btn-soft-primary">Asphalt Field Density by Nuclear Method - Commercial </a></li>
-                                <li class="mb-3"><a href="{{ route('template.cdot') }}" type="button" class="btn btn-soft-primary">Asphalt Field Density by Nuclear Method - CDOT Form</a></li>
+                                <li class="mb-3"><a href="{{ route('cdot.create') }}" type="button" class="btn btn-soft-primary">Asphalt Field Density by Nuclear Method - CDOT Form</a></li>
                             </ul>
                         </div>
                     </div>
