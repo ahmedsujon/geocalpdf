@@ -41,7 +41,11 @@
                                     <h6>ASPHALT FIELD DENSITY BY NUCLEAR METHOD - CDOT FORM</h6>
                                 </div>
                             </div>
-                            <div class="col-md-4"></div>
+                            <div class="col-md-4">
+                                <div class="content text-center pt-2 pb-2">
+                                    <button type="button" class="btn btn-outline-success waves-effect waves-light">Status: {{ $status }}</button>
+                                </div>
+                            </div>
                         </div>
                         <div class="row mb-3 offset-1">
                             <div class="col-lg-5">
