@@ -10,7 +10,7 @@ use Livewire\Component;
 
 class AddCdotComponent extends Component
 {
-    public $user_id, $project_id, $client_id, $project_number, $client_name, $geocal_project_num, $geocal_project_name, $cdot_project_name, $weather, $date, $office_address, $test_method, $troxler, $other, $model, $serial_no, $density_std_count, $moisture_std_count, $moisture_equations, $density_count, $moisture_count, $created_by;
+    public $user_id, $project_id, $client_id, $project_number, $client_name, $geocal_project_num, $geocal_project_name, $cdot_project_name, $weather, $date, $office_address, $test_method, $troxler, $other, $model, $serial_no, $density_std_count, $moisture_std_count, $moisture_equations, $density_count, $moisture_count, $created_by, $remark,$responsible_person = [];
 
     public $project_no, $region, $contract_id, $project_location, $form_no, $grading, $taster_id, $sampled_by;
 
@@ -67,6 +67,7 @@ class AddCdotComponent extends Component
             'weather' => 'required',
             'office_address' => 'required',
             'test_method' => 'required',
+            'responsible_person' => 'required',
         ]);
 
         $data = new FieldDensityCdot();
@@ -95,9 +96,6 @@ class AddCdotComponent extends Component
         $data->project_location = $this->project_location;
         $data->form_no = $this->form_no;
         $data->grading = $this->grading;
-        
-
-        
 
         // Table Data
         $data->taster_id = $this->taster_id;
@@ -206,7 +204,21 @@ class AddCdotComponent extends Component
         $data->compaction_d = $this->compaction_d;
         $data->compaction_e = $this->compaction_e;
 
+        if (Auth::user()->role_id == '1') {
+            $data['status'] = "SuperAdminCreated";
+        } elseif (Auth::user()->role_id == '2') {
+            $data['status'] = 'ProjectEngineerCreated';
+        } elseif (Auth::user()->role_id == '3') {
+            $data['status'] = 'ClerkCreated';
+        } elseif (Auth::user()->role_id == '4') {
+            $data['status'] = 'SupervisorCreated';
+        } else {
+            $data['status'] = 'FTCreated';
+        }
         
+        $data->remark = $this->remark;
+        $data->responsible_person = json_encode($this->responsible_person);
+
         $data->save();
 
         session()->flash('success', 'CDOT Form added successfully');

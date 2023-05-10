@@ -8,6 +8,6 @@ class ViewCdotComponent extends Component
 {
     public function render()
     {
-        return view('livewire.field-moisture.cdot.view-cdot-component');
+        return view('livewire.field-moisture.cdot.view-cdot-component')->layout('livewire.layouts.base');
     }
 }

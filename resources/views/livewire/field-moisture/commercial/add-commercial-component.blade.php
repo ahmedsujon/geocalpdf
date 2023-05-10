@@ -819,6 +819,7 @@
             </div>
         </div>
     </div>
+    
     <form wire:submit.prevent='storeData'>
         <div class="row">
             <div class="col-md-12">

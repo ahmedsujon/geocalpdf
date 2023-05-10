@@ -12,6 +12,7 @@ use App\Http\Livewire\Client\EditClientComponent;
 use App\Http\Livewire\Client\ShowClientComponent;
 use App\Http\Livewire\FieldMoisture\Cdot\AddCdotComponent;
 use App\Http\Livewire\FieldMoisture\Cdot\CdotComponent;
+use App\Http\Livewire\FieldMoisture\Cdot\EditCdotComponent;
 use App\Http\Livewire\FieldMoisture\Cdot\ViewCdotComponent;
 use App\Http\Livewire\FieldMoisture\Commercial\AddCommercialComponent;
 use App\Http\Livewire\FieldMoisture\Commercial\ArchiveCommercialComponent;
@@ -96,7 +97,7 @@ Route::post('/edit-representative', [CommercialComponent::class, 'editRepresenta
 // CDOT
 Route::get('/cdot', CdotComponent::class)->name('template.cdot');
 Route::get('/cdot/create', AddCdotComponent::class)->name('cdot.create');
-Route::get('/cdot/edit/{file_id}', CdotComponent::class)->name('cdot.update');
+Route::get('/cdot/edit/{file_id}', EditCdotComponent::class)->name('cdot.update');
 Route::get('/cdot/show/{file_id}', ViewCdotComponent::class)->name('cdot.show');
 
 // Templates One Routes

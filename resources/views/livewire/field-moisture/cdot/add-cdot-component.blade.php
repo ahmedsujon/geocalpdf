@@ -1074,6 +1074,31 @@
                                         </tbody>
                                     </table>
                                 </div>
+                                <div class="col-md-12 mb-3 mt-3">
+                                    <div class="input-group">
+                                        <span class="input-group-text">Remark</span>
+                                        <textarea class="form-control" aria-label="With textarea" spellcheck="false"
+                                            wire:model="remark"></textarea>
+                                        <grammarly-extension data-grammarly-shadow-root="true"
+                                            style="position: absolute; top: 0px; left: 0px; pointer-events: none; z-index: 3;"
+                                            class="cGcvT"></grammarly-extension>
+                                        <grammarly-extension data-grammarly-shadow-root="true"
+                                            style="mix-blend-mode: darken; position: absolute; top: 0px; left: 0px; pointer-events: none; z-index: 3;"
+                                            class="cGcvT"></grammarly-extension>
+                                    </div>
+                                </div>
+                                <div class="col-md-12" wire:ignore>
+                                    <div class="input-group">
+                                        <span class="input-group-text">Responsible Persons:</span>
+                                        <select class="form-select moistureremoveinput multiple_selector" id="action"
+                                            multiple>
+                                        </select>
+                                    </div>
+                                </div>
+                                @error('responsible_person')
+                                <span class="text-danger" style="font-size: 12px;">{{ $message
+                                    }}</span>
+                                @enderror
                             </div>
                         </div>
                     </div>
@@ -1118,6 +1143,7 @@
             });
         });
 </script>
+
 <script>
     $(document).ready(function() {
     $('.multiple_selector').select2({
