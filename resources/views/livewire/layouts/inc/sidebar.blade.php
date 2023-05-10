@@ -56,6 +56,7 @@
                                 </ul>
                             </div>
                         </li>
+
                         <li class="nav-item">
                             <a class="nav-link" href="#sidebarPROPERTIES" data-bs-toggle="collapse" role="button"
                                 aria-expanded="false" aria-controls="sidebarPROPERTIES">
@@ -66,7 +67,7 @@
                                 id="sidebarPROPERTIES">
                                 <ul class="nav flex-column">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="3">All Files</a>
+                                        <a class="nav-link" href="{{ route('template-one.list') }}">All Files</a>
                                     </li>
                                 </ul>
                             </div>

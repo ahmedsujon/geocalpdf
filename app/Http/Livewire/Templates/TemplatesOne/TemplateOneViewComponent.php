@@ -110,6 +110,7 @@ class TemplateOneViewComponent extends Component
         $this->requirment_minus = $file->requirment_minus;
         $this->general_info = $file->general_info;
         $this->remark = $file->remark;
+        $this->status = $file->status;
     }
     
     public function render()

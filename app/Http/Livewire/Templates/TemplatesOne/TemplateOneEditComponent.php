@@ -147,6 +147,7 @@ class TemplateOneEditComponent extends Component
         $this->general_info = $file->general_info;
         $this->remark = $file->remark;
         $this->observation = $file->observation;
+        $this->status = $file->status;
         
     }
 
