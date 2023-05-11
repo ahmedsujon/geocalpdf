@@ -91,14 +91,18 @@ Route::get('/commercial/show/{file_id}', ViewCommercialComponent::class)->name('
 Route::get('/archive-commercial', ArchiveCommercialComponent::class)->name('archive.commercial');
 
 // Get Representative for file
-Route::post('/get-representative', [CommercialComponent::class, 'getRepresentative'])->name('get_representative');
-Route::post('/edit-representative', [CommercialComponent::class, 'editRepresentative'])->name('edit_representative');
+Route::post('/get-com-representative', [CommercialComponent::class, 'getCommercialRepresentative'])->name('get_commercial_representative');
+Route::post('/edit-com-representative', [CommercialComponent::class, 'editCommercialRepresentative'])->name('edit_commercial_representative');
 
 // CDOT
 Route::get('/cdot', CdotComponent::class)->name('template.cdot');
 Route::get('/cdot/create', AddCdotComponent::class)->name('cdot.create');
 Route::get('/cdot/edit/{file_id}', EditCdotComponent::class)->name('cdot.update');
 Route::get('/cdot/show/{file_id}', ViewCdotComponent::class)->name('cdot.show');
+
+// Get Representative for file
+Route::post('/get-representative', [CdotComponent::class, 'getCdotRepresentative'])->name('get_cdot_representative');
+Route::post('/edit-representative', [CdotComponent::class, 'editCdotRepresentative'])->name('edit_cdot_representative');
 
 // Templates One Routes
 Route::get('/templateOne', TemplateOneComponent::class)->name('template-one.list');
@@ -118,6 +122,7 @@ Route::post('/upload', 'app\http\controllers\BaseController@uploadckimage')->nam
 // PDF Generate
 Route::get('/invoice/{id}', [InvocieController::class, 'commercialPDF'])->name('invoice.commercial');
 Route::get('/temp-one/{id}', [InvocieController::class, 'templateOnePDF'])->name('template.one.generate');
+Route::get('/cdot-form/{id}', [InvocieController::class, 'cdotPDF'])->name('cdot.form.generate');
 
 //authSuperAdmin
 Route::middleware(['auth:sanctum', 'verified', 'authSuperAdmin'])->name('admin.')->group(function () {

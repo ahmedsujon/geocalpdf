@@ -683,7 +683,7 @@
                     var file_id = $(this).data("file_id");
                     var value = $(this).val();
                     $.ajax({
-                        url: "{{ route('edit_representative') }}",
+                        url: "{{ route('edit_commercial_representative') }}",
                         method: "POST",
                         data: {
                             file_id: file_id,

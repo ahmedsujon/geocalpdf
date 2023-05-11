@@ -843,7 +843,7 @@
             $('#selectInfo').change(function() {
                 var project_id = $(this).val();
                 $.ajax({
-                        url: "{{ route('get_representative') }}",
+                        url: "{{ route('get_commercial_representative') }}",
                         method: "POST",
                         data: {
                             project_id: project_id,

@@ -325,7 +325,7 @@
                                             <tr>
                                                 <th class="customcolor" scope="col">Tester Name</th>
                                                 <th class="customcolor" scope="col">Sampled By</th>
-                                                <th class="customcolor" scope="col">Company Name</th>
+                                                <th class="customcolor" scope="col">Company Name or CDOT</th>
                                                 <th class="customcolor" scope="col">Gauge ID</th>
                                             </tr>
                                         </thead>
@@ -1129,7 +1129,7 @@
             $('#selectInfo').change(function() {
                 var project_id = $(this).val();
                 $.ajax({
-                        url: "{{ route('get_representative') }}",
+                        url: "{{ route('get_cdot_representative') }}",
                         method: "POST",
                         data: {
                             project_id: project_id,

@@ -1102,6 +1102,7 @@
                 <div class="card">
                     <div class="row mb-5 mt-3">
                         <div class="col-md-12" style="text-align: center;">
+                            <a href="{{ route('cdot.form.generate',['id'=>$file_id]) }}" target="_blank" class="btn btn-primary submit_btn" style="background: green;">Download PDF</a>
                             <a href="{{ route('template.cdot') }}" class="btn btn-primary submit_btn" style="background: green;">Back To list</a>
                         </div>
                     </div>

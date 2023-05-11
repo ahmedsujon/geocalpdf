@@ -32,7 +32,7 @@ class CommercialComponent extends Component
         $this->dispatchBrowserEvent('FileDeleted');
     }
 
-    public function getRepresentative(Request $request)
+    public function getCommercialRepresentative(Request $request)
     {
         $output = '';
         $project_id = $request->get('project_id');
@@ -61,7 +61,7 @@ class CommercialComponent extends Component
         echo $output;
     }
 
-    public function editRepresentative(Request $request)
+    public function editCommercialRepresentative(Request $request)
     {
         $output = '';
         $value = $request->get('value');

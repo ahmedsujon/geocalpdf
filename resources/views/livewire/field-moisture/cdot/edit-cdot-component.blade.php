@@ -329,7 +329,7 @@
                                             <tr>
                                                 <th class="customcolor" scope="col">Tester Name</th>
                                                 <th class="customcolor" scope="col">Sampled By</th>
-                                                <th class="customcolor" scope="col">Company Name</th>
+                                                <th class="customcolor" scope="col">Company Name or CDOT</th>
                                                 <th class="customcolor" scope="col">Gauge ID</th>
                                             </tr>
                                         </thead>
@@ -1153,7 +1153,7 @@
                     var file_id = $(this).data("file_id");
                     var value = $(this).val();
                     $.ajax({
-                        url: "{{ route('edit_representative') }}",
+                        url: "{{ route('edit_cdot_representative') }}",
                         method: "POST",
                         data: {
                             file_id: file_id,
