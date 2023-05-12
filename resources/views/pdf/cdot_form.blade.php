@@ -72,7 +72,8 @@
         </td>
         <td style="padding: 0px 5px 20px 5px; text-align: center;">
           <div>
-            <img src="https://i0.wp.com/geocal.us/wp-content/uploads/2019/05/logo-new.png" alt="logo" style="max-width: 100px" />
+            <img src="https://i0.wp.com/geocal.us/wp-content/uploads/2019/05/logo-new.png" alt="logo"
+              style="max-width: 100px" />
             <h4 style="font-size: 16px; font-weight: 700; padding-top: 5px">
               {{ $data->office_address }}
             </h4>
@@ -509,7 +510,7 @@
     </table>
     <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
       <tr>
-        <td style="padding: 4px 6px; border: 1px solid lightgray; width: 23%;">
+        <td style="padding: 4px 6px; border: 1px solid lightgray; width: 30%;">
           <h4 style="font-size: 14px; font-weight: 400">Sum of Wet Densities</h4>
         </td>
         <td style="padding: 4px 6px; border: 1px solid lightgray; width: 23%;">
@@ -529,7 +530,7 @@
         </td>
       </tr>
       <tr>
-        <td style="padding: 4px 6px; border: 1px solid lightgray; width: 13%;">
+        <td style="padding: 4px 6px; border: 1px solid lightgray; width: 30%;">
           <h4 style="font-size: 14px; font-weight: 400">Average Wet Density</h4>
         </td>
         <td style="padding: 4px 6px; border: 1px solid lightgray; width: 12%;">
@@ -549,7 +550,7 @@
         </td>
       </tr>
       <tr>
-        <td style="padding: 4px 6px; border: 1px solid lightgray; width: 13%;">
+        <td style="padding: 4px 6px; border: 1px solid lightgray; width: 30%;">
           <h4 style="font-size: 14px; font-weight: 400">Correction Factor (#469) PCF</h4>
         </td>
         <td style="padding: 4px 6px; border: 1px solid lightgray; width: 12%;">
@@ -569,7 +570,7 @@
         </td>
       </tr>
       <tr>
-        <td style="padding: 4px 6px; border: 1px solid lightgray; width: 13%;">
+        <td style="padding: 4px 6px; border: 1px solid lightgray; width: 30%;">
           <h4 style="font-size: 14px; font-weight: 400">Adjusted Wet Density</h4>
         </td>
         <td style="padding: 4px 6px; border: 1px solid lightgray; width: 12%;">
@@ -589,7 +590,7 @@
         </td>
       </tr>
       <tr>
-        <td style="padding: 4px 6px; border: 1px solid lightgray; width: 13%;">
+        <td style="padding: 4px 6px; border: 1px solid lightgray; width: 30%;">
           <h4 style="font-size: 14px; font-weight: 400">Ave. Daily Rice X 62.4 (PCF)</h4>
         </td>
         <td style="padding: 4px 6px; border: 1px solid lightgray; width: 12%;">
@@ -609,7 +610,7 @@
         </td>
       </tr>
       <tr>
-        <td style="padding: 4px 6px; border: 1px solid lightgray; width: 13%;">
+        <td style="padding: 4px 6px; border: 1px solid lightgray; width: 30%;">
           <h4 style="font-size: 14px; font-weight: 400">% Compaction</h4>
         </td>
         <td style="padding: 4px 6px; border: 1px solid lightgray; width: 12%;">
@@ -626,6 +627,50 @@
         </td>
         <td style="padding: 4px 6px; border: 1px solid lightgray; width: 25%">
           <h4 style="font-size: 14px; font-weight: 400">{{ $data->compaction_e }}</h4>
+        </td>
+      </tr>
+    </table>
+    <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+      <tr>
+        <td style="padding: 4px 6px; border: 1px solid lightgray; width: 30%;">
+          <h4 style="font-size: 14px; font-weight: 400">Tested by</h4>
+        </td>
+        <td style="padding: 4px 6px; border: 1px solid lightgray; width: 30%">
+          <h4 style="font-size: 14px; font-weight: 400">Sampled by</h4>
+        </td>
+        <td style="padding: 4px 6px; border: 1px solid lightgray; width: 30%">
+          <h4 style="font-size: 14px; font-weight: 400">Company Name or CDOT</h4>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding: 4px 6px; border: 1px solid lightgray; width: 30%">
+          <h4 style="font-size: 14px; font-weight: 400">{{ user($data->created_by)->name }}</h4>
+        </td>
+        <td style="padding: 4px 6px; border: 1px solid lightgray; width: 30%">
+          <h4 style="font-size: 14px; font-weight: 400">{{ $data->sampled_by }}</h4>
+        </td>
+        <td style="padding: 4px 6px; border: 1px solid lightgray; width: 30%">
+          <h4 style="font-size: 14px; font-weight: 400">{{ $data->client_company_name }}</h4>
+        </td>
+      </tr>
+    </table>
+
+    <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+      <tr>
+        <td style="padding: 4px 6px; border: 1px solid lightgray; width: 30%; height: 150px;">
+          <h4 style="font-size: 14px; font-weight: 400">Place stampe here:</h4>
+        </td>
+      </tr>
+    </table>
+
+    <table style="width: 100%; border-collapse: collapse; padding-top: 20px;">
+      <tr>
+        <td style="padding: 4px 6px">
+          <p style="font-size: 14px; font-weight: 400; text-align: center">
+            These test results apply only to the specific samples/location/materials noted and may not be representative
+            of other areas or similar materials. This report may not be reproduced, except in full, without written
+            authorization by Geocal, Inc.
+          </p>
         </td>
       </tr>
     </table>
