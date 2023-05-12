@@ -273,29 +273,29 @@ class EditCommercialComponent extends Component
         $data->save();
 
         //send Mail
-        // if ($this->responsible_person) {
-        //     $persons = $this->responsible_person;
-        //     $status = $this->status;
-        //     $f_id = $data->id;
-        //     dispatch(function () use ($persons, $status, $f_id) {
-        //         foreach ($persons as $key => $re_id) {
-        //             if($status == 'sentToClient'){
-        //                 $user = SubClient::find($re_id);
-        //                 $mailData['field_density_commercial_id'] = $f_id;
-        //             } else{
-        //                 $user = User::find($re_id);
-        //                 $mailData['field_density_commercial_id'] = NULL;
-        //             }
+        if ($this->responsible_person) {
+            $persons = $this->responsible_person;
+            $status = $this->status;
+            $f_id = $data->id;
+            dispatch(function () use ($persons, $status, $f_id) {
+                foreach ($persons as $key => $re_id) {
+                    if($status == 'sentToClient'){
+                        $user = SubClient::find($re_id);
+                        $mailData['field_density_commercial_id'] = $f_id;
+                    } else{
+                        $user = User::find($re_id);
+                        $mailData['field_density_commercial_id'] = NULL;
+                    }
 
-        //             $mailData['email'] = $user->email;
-        //             $mailData['subject'] = 'Mail Subject';
-        //             Mail::send('emails.mail_one', $mailData, function ($message) use ($mailData) {
-        //                 $message->to($mailData['email'])
-        //                     ->subject($mailData['subject']);
-        //             });
-        //         }
-        //     });
-        // }
+                    $mailData['email'] = $user->email;
+                    $mailData['subject'] = 'New file waiting for your review';
+                    Mail::send('emails.mail_commercial', $mailData, function ($message) use ($mailData) {
+                        $message->to($mailData['email'])
+                            ->subject($mailData['subject']);
+                    });
+                }
+            });
+        }
 
         session()->flash('message', 'File created successfully');
         return redirect()->route('template.commercial');

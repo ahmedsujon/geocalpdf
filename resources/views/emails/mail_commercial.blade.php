@@ -9,7 +9,7 @@
 <body>
     <h1>{{ $subject }}</h1>
     @if ($id)
-        <a href="{{ route('template.one.generate',['id'=>$id]) }}">Download</a>
+        <a href="{{ route('invoice.commercial',['id'=>$id]) }}">Download</a>
     @endif
 </body>
 </html>
