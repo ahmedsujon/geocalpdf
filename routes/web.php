@@ -75,6 +75,7 @@ Route::get('/project/show/{project_id}', ViewProjectComponent::class)->name('pro
 Route::post('/get-representative-one', [TemplateOneComponent::class, 'getOneRepresentative'])->name('get_representative_one');
 Route::post('/edit-representative-one', [TemplateOneComponent::class, 'editOneRepresentative'])->name('edit_representative_one');
 
+
 // LogActivity
 Route::get('add-to-log', LogActivityComponent::class);
 Route::get('logActivity', LogActivityComponent::class);

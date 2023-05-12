@@ -4,8 +4,10 @@ namespace App\Http\Livewire\FieldMoisture\Cdot;
 
 use App\Models\FieldDensityCdot;
 use App\Models\Project;
+use App\Models\SubClient;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Livewire\Component;
 
 class EditCdotComponent extends Component
@@ -321,9 +323,34 @@ class EditCdotComponent extends Component
         } else {
             $data['status'] = 'FTCreated';
         }
-        
         $data->remark = $this->remark;
         $data->responsible_person = json_encode($this->responsible_person);
+
+        // send email
+        // if ($this->responsible_person) {
+        //     $persons = $this->responsible_person;
+        //     $status = $this->status;
+        //     $f_id = $data->id;
+        //     dispatch(function () use ($persons, $status, $f_id) {
+        //         foreach ($persons as $key => $re_id) {
+        //             if($status == 'sentToClient'){
+        //                 $user = SubClient::find($re_id);
+        //                 $mailData['field_density_commercial_id'] = $f_id;
+        //             } else{
+        //                 $user = User::find($re_id);
+        //                 $mailData['field_density_commercial_id'] = NULL;
+        //             }
+
+        //             $mailData['email'] = $user->email;
+        //             $mailData['subject'] = 'Mail Subject';
+        //             Mail::send('emails.mail_one', $mailData, function ($message) use ($mailData) {
+        //                 $message->to($mailData['email'])
+        //                     ->subject($mailData['subject']);
+        //             });
+        //         }
+        //     });
+        // }
+
         $data->save();
         session()->flash('message', 'File created successfully');
         return redirect()->route('template.cdot');

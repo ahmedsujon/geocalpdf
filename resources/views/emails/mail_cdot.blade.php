@@ -8,8 +8,8 @@
 </head>
 <body>
     <h1>{{ $subject }}</h1>
-    @if ($field_density_commercial_id)
-        <a href="{{ route('invoice.commercial',['id'=>$field_density_commercial_id]) }}">Download</a>
+    @if ($id)
+        <a href="{{ route('cdot.form.generate',['id'=>$id]) }}">Download</a>
     @endif
 </body>
 </html>
