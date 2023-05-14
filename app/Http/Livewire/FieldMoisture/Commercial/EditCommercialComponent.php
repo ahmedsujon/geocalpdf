@@ -269,7 +269,6 @@ class EditCommercialComponent extends Component
         // $data->user_id = json_encode($this->user_id);
         $data->remark = $this->remark;
         $data->created_by = Auth::user()->id;
-
         $data->save();
 
         //send Mail
@@ -286,9 +285,9 @@ class EditCommercialComponent extends Component
                         $user = User::find($re_id);
                         $mailData['field_density_commercial_id'] = NULL;
                     }
-
                     $mailData['email'] = $user->email;
                     $mailData['subject'] = 'New file waiting for your review';
+                    $mailData['id'] = $f_id;
                     Mail::send('emails.mail_commercial', $mailData, function ($message) use ($mailData) {
                         $message->to($mailData['email'])
                             ->subject($mailData['subject']);
