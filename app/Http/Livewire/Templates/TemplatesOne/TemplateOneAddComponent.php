@@ -7,6 +7,7 @@ use App\Models\TemplateOne;
 use App\Models\TemplateOneData;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Livewire\Component;
 
 class TemplateOneAddComponent extends Component
@@ -202,6 +203,21 @@ class TemplateOneAddComponent extends Component
             $cont->cyls_cast = $this->cyls_cast[$key];
             $cont->age_days = $this->age_days[$key];
             $cont->save();
+        }
+        //send Mail
+        if ($this->responsible_person) {
+            $persons = $this->responsible_person;
+            dispatch(function () use ($persons) {
+                foreach ($persons as $key => $re_id) {
+                    $user = User::find($re_id);
+                    $mailData['email'] = $user->email;
+                    $mailData['subject'] = 'New file waiting for your review';
+                    Mail::send('emails.mail_one', $mailData, function ($message) use ($mailData) {
+                        $message->to($mailData['email'])
+                            ->subject($mailData['subject']);
+                    });
+                }
+            });
         }
 
         session()->flash('message', 'File created successfully');

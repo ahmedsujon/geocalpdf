@@ -3,10 +3,12 @@
 namespace App\Http\Livewire\Templates\TemplatesOne;
 
 use App\Models\Project;
+use App\Models\SubClient;
 use App\Models\TemplateOne;
 use App\Models\TemplateOneData;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Livewire\Component;
 
 class TemplateOneEditComponent extends Component
@@ -148,7 +150,6 @@ class TemplateOneEditComponent extends Component
         $this->remark = $file->remark;
         $this->observation = $file->observation;
         $this->status = $file->status;
-        
     }
 
     public function storeData()
@@ -161,7 +162,7 @@ class TemplateOneEditComponent extends Component
             'responsible_person' => 'required',
             'status' => 'required',
             'observation' => 'required',
-            
+
         ]);
 
         $data = new TemplateOne();
@@ -255,6 +256,31 @@ class TemplateOneEditComponent extends Component
             $cont->age_days = $this->age_days[$key];
             $cont->save();
         }
+        
+        //send Mail
+        if ($this->responsible_person) {
+            $persons = $this->responsible_person;
+            $status = $this->status;
+            $f_id = $data->id;
+            dispatch(function () use ($persons, $status, $f_id) {
+                foreach ($persons as $key => $re_id) {
+                    if ($status == 'sentToClient') {
+                        $user = SubClient::find($re_id);
+                        $mailData['field_density_commercial_id'] = $f_id;
+                    } else {
+                        $user = User::find($re_id);
+                        $mailData['field_density_commercial_id'] = NULL;
+                    }
+
+                    $mailData['email'] = $user->email;
+                    $mailData['subject'] = 'New file waiting for your review';
+                    Mail::send('emails.mail_one', $mailData, function ($message) use ($mailData) {
+                        $message->to($mailData['email'])
+                            ->subject($mailData['subject']);
+                    });
+                }
+            });
+        }
 
         session()->flash('message', 'File created successfully');
         return redirect()->route('template-one.list');
@@ -264,6 +290,6 @@ class TemplateOneEditComponent extends Component
     {
         $projects = Project::orderBy('id', 'DESC')->get();
         $supervisors = User::orderBy('id', 'DESC')->get();
-        return view('livewire.templates.templates-one.template-one-edit-component', ['projects'=>$projects, 'supervisors'=>$supervisors])->layout('livewire.layouts.base');
+        return view('livewire.templates.templates-one.template-one-edit-component', ['projects' => $projects, 'supervisors' => $supervisors])->layout('livewire.layouts.base');
     }
 }

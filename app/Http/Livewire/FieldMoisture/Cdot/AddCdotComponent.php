@@ -6,6 +6,7 @@ use App\Models\FieldDensityCdot;
 use App\Models\Project;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Livewire\Component;
 
 class AddCdotComponent extends Component
@@ -218,9 +219,24 @@ class AddCdotComponent extends Component
         
         $data->remark = $this->remark;
         $data->responsible_person = json_encode($this->responsible_person);
-
         $data->save();
-
+        //send Mail
+        if ($this->responsible_person) {
+            $persons = $this->responsible_person;
+            $f_id = $data->id;
+            dispatch(function () use ($persons, $f_id) {
+                foreach ($persons as $key => $re_id) {
+                    $user = User::find($re_id);
+                    $mailData['email'] = $user->email;
+                    $mailData['id'] = $f_id;
+                    $mailData['subject'] = 'New file waiting for your review';
+                    Mail::send('emails.mail_cdot', $mailData, function ($message) use ($mailData) {
+                        $message->to($mailData['email'])
+                            ->subject($mailData['subject']);
+                    });
+                }
+            });
+        }
         session()->flash('success', 'CDOT Form added successfully');
         return redirect()->route('template.cdot');
         $this->resetInputs();

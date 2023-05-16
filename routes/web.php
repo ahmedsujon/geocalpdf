@@ -1,8 +1,7 @@
 <?php
 
 use App\Http\Controllers\BaseController;
-use App\Http\Controllers\InvocieController;
-
+use App\Http\Controllers\InvoiceController;
 use App\Http\Livewire\Auth\LoginComponent;
 use App\Http\Livewire\Auth\RegistrationComponent;
 use App\Http\Livewire\Clerk\DashboardComponent as ClerkDashboardComponent;
@@ -125,9 +124,9 @@ Route::post('/get-supervisors', [BaseController::class, 'getSupervisor'])->name(
 Route::post('/upload', 'app\http\controllers\BaseController@uploadckimage')->name('ckeditor.upload');
 
 // PDF Generate
-Route::get('/invoice/{id}', [InvocieController::class, 'commercialPDF'])->name('invoice.commercial');
-Route::get('/temp-one/{id}', [InvocieController::class, 'templateOnePDF'])->name('template.one.generate');
-Route::get('/cdot-form/{id}', [InvocieController::class, 'cdotPDF'])->name('cdot.form.generate');
+Route::get('/invoice/{id}', [InvoiceController::class, 'commercialPDF'])->name('invoice.commercial');
+Route::get('/cdot-form/{id}', [InvoiceController::class, 'cdotPDF'])->name('cdot.form.generate');
+Route::get('/temp-one/{id}', [InvoiceController::class, 'templateOnePDF'])->name('template.one.generate');
 
 //authSuperAdmin
 Route::middleware(['auth:sanctum', 'verified', 'authSuperAdmin'])->name('admin.')->group(function () {

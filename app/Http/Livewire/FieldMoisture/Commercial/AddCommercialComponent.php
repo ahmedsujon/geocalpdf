@@ -244,21 +244,22 @@ class AddCommercialComponent extends Component
         $data->save();
 
         //send Mail
-        // if ($this->responsible_person) {
-        //     $persons = $this->responsible_person;
-        //     dispatch(function () use ($persons) {
-        //         foreach ($persons as $key => $re_id) {
-        //             $user = User::find($re_id);
-
-        //             $mailData['email'] = $user->email;
-        //             $mailData['subject'] = 'Mail Subject';
-        //             Mail::send('emails.mail_one', $mailData, function ($message) use ($mailData) {
-        //                 $message->to($mailData['email'])
-        //                     ->subject($mailData['subject']);
-        //             });
-        //         }
-        //     });
-        // }
+        if ($this->responsible_person) {
+            $persons = $this->responsible_person;
+            $f_id = $data->id;
+            dispatch(function () use ($persons, $f_id) {
+                foreach ($persons as $key => $re_id) {
+                    $user = User::find($re_id);
+                    $mailData['email'] = $user->email;
+                    $mailData['id'] = $f_id;
+                    $mailData['subject'] = 'New file waiting for your review';
+                    Mail::send('emails.mail_commercial', $mailData, function ($message) use ($mailData) {
+                        $message->to($mailData['email'])
+                            ->subject($mailData['subject']);
+                    });
+                }
+            });
+        }
 
         session()->flash('message', 'File created successfully');
         return redirect()->route('template.commercial');
