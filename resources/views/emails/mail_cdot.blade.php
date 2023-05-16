@@ -30,8 +30,8 @@
   <p>Please check the attachment for your next action.</p> <br>
 
   
-  @if ($id)
-  <a class="button button1" href="{{ route('cdot.form.generate',['id'=>$id]) }}">Download</a>
+  @if ($field_density_cdot_id)
+  <a class="button button1" href="{{ route('cdot.form.generate',['id'=>$field_density_cdot_id]) }}">Download</a>
   @endif
 
   <br><br>

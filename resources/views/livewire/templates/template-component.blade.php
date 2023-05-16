@@ -19,7 +19,7 @@
             <div class="row row-cols-1 row-cols-md-2 gx-3">
                 <div class="col">
                     <div style="text-align: center" class="card">
-                        <button data-bs-toggle="modal" data-bs-target="#FIELDMOISTUREDENSITY">
+                        <a style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#FIELDMOISTUREDENSITY">
                             <div class="card-body">
                                 <h5 class="card-title"></h5>
                             </div>
@@ -29,7 +29,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">FIELD MOISTURE AND DENSITY TEST RESULTS</h5>
                             </div>
-                        </button>
+                        </a>
                         <!--end card-body-->
                     </div>
                     <!--end card-->

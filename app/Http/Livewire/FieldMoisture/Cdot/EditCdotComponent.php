@@ -335,10 +335,10 @@ class EditCdotComponent extends Component
                 foreach ($persons as $key => $re_id) {
                     if($status == 'sentToClient'){
                         $user = SubClient::find($re_id);
-                        $mailData['field_density_commercial_id'] = $f_id;
+                        $mailData['field_density_cdot_id'] = $f_id;
                     } else{
                         $user = User::find($re_id);
-                        $mailData['field_density_commercial_id'] = NULL;
+                        $mailData['field_density_cdot_id'] = NULL;
                     }
 
                     $mailData['email'] = $user->email;

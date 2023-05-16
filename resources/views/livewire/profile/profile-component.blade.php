@@ -29,10 +29,10 @@
                                         <div class="met-profile-main-pic">
                                             @if ($profile->avatar)
                                             <img src="{{ asset('uploads/profile') }}/{{  $profile->avatar }}" alt=""
-                                                height="110" class="rounded-circle">
+                                                height="110">
                                             @else
                                             <img src="{{ asset('assets/admin/images/default/profile.png') }}" alt=""
-                                                height="110" class="rounded-circle">
+                                                height="110">
                                             @endif
                                         </div>
                                         <div class="met-profile_user-detail">
