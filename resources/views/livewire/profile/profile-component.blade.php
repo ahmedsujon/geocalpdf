@@ -30,15 +30,9 @@
                                             @if ($profile->avatar)
                                             <img src="{{ asset('uploads/profile') }}/{{  $profile->avatar }}" alt=""
                                                 height="110" class="rounded-circle">
-                                            <span class="met-profile_main-pic-change">
-                                                <i class="fas fa-camera"></i>
-                                            </span>
                                             @else
                                             <img src="{{ asset('assets/admin/images/default/profile.png') }}" alt=""
                                                 height="110" class="rounded-circle">
-                                            <span class="met-profile_main-pic-change">
-                                                <i class="fas fa-camera"></i>
-                                            </span>
                                             @endif
                                         </div>
                                         <div class="met-profile_user-detail">

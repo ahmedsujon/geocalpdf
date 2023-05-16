@@ -7669,7 +7669,7 @@ input.add-file-input {
     background-repeat: repeat
 }
 
-.met-profile .met-profile-main {
+/* .met-profile .met-profile-main {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -7685,7 +7685,7 @@ input.add-file-input {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center
-}
+} */
 
 .met-profile .met-profile-main .met-profile-main-pic {
     position: relative;
