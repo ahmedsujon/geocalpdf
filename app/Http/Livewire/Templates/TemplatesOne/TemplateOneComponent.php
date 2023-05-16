@@ -32,7 +32,7 @@ class TemplateOneComponent extends Component
         $this->dispatchBrowserEvent('FileDeleted');
     }
 
-    public function getOneRepresentative(Request $request)
+    public function getTempOneRepresentative(Request $request)
     {
         $output = '';
         $project_id = $request->get('project_id');
@@ -55,7 +55,7 @@ class TemplateOneComponent extends Component
         echo $output;
     }
 
-    public function editOneRepresentative(Request $request)
+    public function editTempOneRepresentative(Request $request)
     {
         $output = '';
         $value = $request->get('value');

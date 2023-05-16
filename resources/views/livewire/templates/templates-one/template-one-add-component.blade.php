@@ -1023,7 +1023,7 @@
             $('#selectInfo').change(function() {
                 var project_id = $(this).val();
                 $.ajax({
-                        url: "{{ route('get_representative') }}",
+                        url: "{{ route('get_temp_one_representative') }}",
                         method: "POST",
                         data: {
                             project_id: project_id,

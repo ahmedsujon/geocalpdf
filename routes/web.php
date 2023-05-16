@@ -91,7 +91,7 @@ Route::get('/commercial/edit/{file_id}', EditCommercialComponent::class)->name('
 Route::get('/commercial/show/{file_id}', ViewCommercialComponent::class)->name('commercial.show');
 Route::get('/archive-commercial', ArchiveCommercialComponent::class)->name('archive.commercial');
 
-// Get Representative for file
+// Get Representative for Commercial
 Route::post('/get-com-representative', [CommercialComponent::class, 'getCommercialRepresentative'])->name('get_commercial_representative');
 Route::post('/edit-com-representative', [CommercialComponent::class, 'editCommercialRepresentative'])->name('edit_commercial_representative');
 
@@ -101,7 +101,7 @@ Route::get('/cdot/create', AddCdotComponent::class)->name('cdot.create');
 Route::get('/cdot/edit/{file_id}', EditCdotComponent::class)->name('cdot.update');
 Route::get('/cdot/show/{file_id}', ViewCdotComponent::class)->name('cdot.show');
 
-// Get Representative for file
+// Get Representative for CDOT
 Route::post('/get-representative', [CdotComponent::class, 'getCdotRepresentative'])->name('get_cdot_representative');
 Route::post('/edit-representative', [CdotComponent::class, 'editCdotRepresentative'])->name('edit_cdot_representative');
 
@@ -110,6 +110,10 @@ Route::get('/templateOne', TemplateOneComponent::class)->name('template-one.list
 Route::get('/templateOne-create', TemplateOneAddComponent::class)->name('template-one.create');
 Route::get('/templateOne/edit/{file_id}', TemplateOneEditComponent::class)->name('template.one.update');
 Route::get('/templateOne/show/{file_id}', TemplateOneViewComponent::class)->name('template.one.show');
+
+// Get Representative for Template One
+Route::post('/get-one-representative', [TemplateOneComponent::class, 'getTempOneRepresentative'])->name('get_temp_one_representative');
+Route::post('/edit-one-representative', [TemplateOneComponent::class, 'editTempOneRepresentative'])->name('edit_temp_one_representative');
 
 // Login Register Route
 Route::get('/', LoginComponent::class)->middleware('guest')->name('login');

@@ -7,7 +7,8 @@
     <title>Mail Title</title>
 </head>
 <body>
-    <h1>{{ $subject }}</h1>
+    <h1>Files Information</h1>
+    <p>Dear {{  }}</p>
     @if ($id)
         <a href="{{ route('cdot.form.generate',['id'=>$id]) }}">Download</a>
     @endif

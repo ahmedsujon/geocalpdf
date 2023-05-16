@@ -768,7 +768,7 @@
                     var template_one_id = $(this).data("template_one_id");
                     var value = $(this).val();
                     $.ajax({
-                        url: "{{ route('edit_representative_one') }}",
+                        url: "{{ route('edit_temp_one_representative') }}",
                         method: "POST",
                         data: {
                             template_one_id: template_one_id,
