@@ -30,5 +30,18 @@
     <br><br>
     <p>Thank you...!!</p>
     <p>{{ $name }}</p>
+    @if ($role_id = 1)
+    <p>Super Administrator</p>
+    @elseif($role_id = 2){
+    <p>Project Engineer</p>
+    }
+    @elseif($role_id = 3){
+    <p>Clerk</p>
+    }
+    @elseif($role_id = 4){
+    <p>Supervisor</p>
+    }
+    <p>Filed Technician</p>
+    @endif
 </body>
 </html>

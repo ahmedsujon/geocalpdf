@@ -287,6 +287,7 @@ class EditCommercialComponent extends Component
                     }
                     $mailData['email'] = $user->email;
                     $mailData['name'] = $user->name;
+                    $mailData['role_id'] = $user->role_id;
                     $mailData['subject'] = 'New file waiting for your review';
                     $mailData['id'] = $f_id;
                     Mail::send('emails.mail_commercial', $mailData, function ($message) use ($mailData) {

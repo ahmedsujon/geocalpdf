@@ -343,6 +343,8 @@ class EditCdotComponent extends Component
 
                     $mailData['email'] = $user->email;
                     $mailData['name'] = $user->name;
+                    $mailData['role_id'] = $user->role_id;
+                    $mailData['id'] = $f_id;
                     $mailData['subject'] = 'New file waiting for your review';
                     Mail::send('emails.mail_cdot', $mailData, function ($message) use ($mailData) {
                         $message->to($mailData['email'])
