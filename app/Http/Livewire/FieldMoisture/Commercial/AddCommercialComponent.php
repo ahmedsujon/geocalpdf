@@ -251,6 +251,7 @@ class AddCommercialComponent extends Component
                 foreach ($persons as $key => $re_id) {
                     $user = User::find($re_id);
                     $mailData['email'] = $user->email;
+                    $mailData['name'] = $user->name;
                     $mailData['id'] = $f_id;
                     $mailData['subject'] = 'New file waiting for your review';
                     Mail::send('emails.mail_commercial', $mailData, function ($message) use ($mailData) {

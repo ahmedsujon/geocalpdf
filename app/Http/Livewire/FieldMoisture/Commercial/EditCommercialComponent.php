@@ -286,6 +286,7 @@ class EditCommercialComponent extends Component
                         $mailData['field_density_commercial_id'] = NULL;
                     }
                     $mailData['email'] = $user->email;
+                    $mailData['name'] = $user->name;
                     $mailData['subject'] = 'New file waiting for your review';
                     $mailData['id'] = $f_id;
                     Mail::send('emails.mail_commercial', $mailData, function ($message) use ($mailData) {

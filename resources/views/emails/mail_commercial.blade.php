@@ -5,11 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>PDF Document management</title>
+    <style>
+        .button {
+          border: none;
+          color: white;
+          padding: 12px 32px;
+          text-align: center;
+          text-decoration: none;
+          font-size: 16px;
+          cursor: pointer;
+          border-radius: 10px;
+        }
+        
+        .button1 {background-color: #4D2C98;}
+        </style>
 </head>
 <body>
-    <h1>{{ $subject }}</h1>
+    <h1>Files Information</h1>
+    <p>New file has been created.</p>
+    <p>Please check the attachment for your next action.</p> <br>
     @if ($id)
-        <a href="{{ route('invoice.commercial',['id'=>$id]) }}">Download</a>
+    <a class="button button1" href="{{ route('cdot.form.generate',['id'=>$id]) }}">Download</a>
     @endif
+    <br><br>
+    <p>Thank you...!!</p>
+    <p>{{ $name }}</p>
 </body>
 </html>
