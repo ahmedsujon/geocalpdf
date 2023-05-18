@@ -41,13 +41,13 @@ class LoginComponent extends Component
                     return redirect()->route('admin.dashboard');
                 }
                 elseif(Auth::user()->role_id == 3){
-                    return redirect()->route('admin.dashboard');
+                    return redirect()->route('admin.normal.dashboard');
                 }
                 elseif(Auth::user()->role_id == 4){
-                    return redirect()->route('admin.dashboard');
+                    return redirect()->route('admin.normal.dashboard');
                 }
                 elseif(Auth::user()->role_id == 5){
-                    return redirect()->route('admin.dashboard');
+                    return redirect()->route('admin.normal.dashboard');
                 }
                 
             } else {

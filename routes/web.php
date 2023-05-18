@@ -20,6 +20,7 @@ use App\Http\Livewire\FieldMoisture\Commercial\EditCommercialComponent;
 use App\Http\Livewire\FieldMoisture\Commercial\ViewCommercialComponent;
 use App\Http\Livewire\FieldTech\DashboardComponent as FieldTechDashboardComponent;
 use App\Http\Livewire\LogActivity\LogActivityComponent;
+use App\Http\Livewire\NormalAdmin\DashboardComponent as NormalAdminDashboardComponent;
 use App\Http\Livewire\Proctor\AddProctorComponent;
 use App\Http\Livewire\Proctor\EditProctorComponent;
 use App\Http\Livewire\Proctor\ProctorComponent;
@@ -140,17 +141,17 @@ Route::middleware(['auth:sanctum', 'verified', 'authSuperAdmin'])->name('admin.'
 
 //authClerk
 Route::middleware(['auth:sanctum', 'verified', 'authSuperAdmin'])->name('admin.')->group(function () {
-    Route::get('/admin', DashboardComponent::class)->name('dashboard');
+    Route::get('/admin/clerk', NormalAdminDashboardComponent::class)->name('normal.dashboard');
 });
 
 //authSupervisor
 Route::middleware(['auth:sanctum', 'verified', 'authSuperAdmin'])->name('admin.')->group(function () {
-    Route::get('/admin', DashboardComponent::class)->name('dashboard');
+    Route::get('/admin/supervisor', NormalAdminDashboardComponent::class)->name('normal.dashboard');
 });
 
 //FieldTech
 Route::middleware(['auth:sanctum', 'verified'])->name('admin.')->group(function () {
-    Route::get('/admin', DashboardComponent::class)->name('dashboard');
+    Route::get('/admin/field-tech', NormalAdminDashboardComponent::class)->name('normal.dashboard');
 });
 
 
