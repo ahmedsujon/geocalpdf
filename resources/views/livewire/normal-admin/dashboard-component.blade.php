@@ -26,6 +26,7 @@
 
                                     @if ($files->count() > 0)
                                     @foreach ($files as $file)
+                                    @if(in_array(Auth::user()->id, json_decode($file->responsible_person)))
                                     <tr>
                                         <td>
                                             <img src="{{ asset('uploads/project') }}/{{ project($file->project_id)->avatar }}"
@@ -43,6 +44,8 @@
                                                     class="ti ti-edit"></i></a>
                                         </td>
                                     </tr>
+                                    @endif
+
                                     @endforeach
                                     @else
                                     <tr>
@@ -77,7 +80,9 @@
                                     <?php echo App\Http\Livewire\NormalAdmin\DashboardComponent::ago($item->created_at); ?>
                                 </span>
                                 <div class="timeline-content">
-                                    <h5 class="title">{{ project($item->project_id)->name }}: By  {{ user($item->user_id)->name }} <span class="post">{{ $item->created_at }}</span> To {{ $item->status }}</h5>
+                                    <h5 class="title">{{ project($item->project_id)->name }}: By {{
+                                        user($item->user_id)->name }} <span class="post">{{ $item->created_at }}</span>
+                                        To {{ $item->status }}</h5>
                                     <p class="description">
                                         {{ $item->remark }}
                                     </p>

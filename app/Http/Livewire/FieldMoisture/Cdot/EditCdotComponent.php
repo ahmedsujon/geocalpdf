@@ -325,6 +325,7 @@ class EditCdotComponent extends Component
         }
         $data->remark = $this->remark;
         $data->responsible_person = json_encode($this->responsible_person);
+        $data->save();
 
         //send Mail
         if ($this->responsible_person) {
@@ -354,7 +355,6 @@ class EditCdotComponent extends Component
             });
         }
 
-        $data->save();
         session()->flash('message', 'File created successfully');
         return redirect()->route('template.cdot');
     }
