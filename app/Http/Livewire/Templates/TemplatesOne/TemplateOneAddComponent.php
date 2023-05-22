@@ -204,23 +204,44 @@ class TemplateOneAddComponent extends Component
             $cont->age_days = $this->age_days[$key];
             $cont->save();
         }
+
         //send Mail
         if ($this->responsible_person) {
             $persons = $this->responsible_person;
-            dispatch(function () use ($persons) {
+            $f_id = $data->id;
+            
+            dispatch(function () use ($persons, $f_id) {
                 foreach ($persons as $key => $re_id) {
                     $user = User::find($re_id);
                     $mailData['email'] = $user->email;
                     $mailData['name'] = $user->name;
                     $mailData['role_id'] = $user->role_id;
+                    $mailData['id'] = $f_id;
                     $mailData['subject'] = 'New file waiting for your review';
-                    Mail::send('emails.mail_one', $mailData, function ($message) use ($mailData) {
+                    Mail::send('emails.mail_cdot', $mailData, function ($message) use ($mailData) {
                         $message->to($mailData['email'])
                             ->subject($mailData['subject']);
                     });
                 }
             });
         }
+
+        // if ($this->responsible_person) {
+        //     $persons = $this->responsible_person;
+        //     dispatch(function () use ($persons) {
+        //         foreach ($persons as $key => $re_id) {
+        //             $user = User::find($re_id);
+        //             $mailData['email'] = $user->email;
+        //             $mailData['name'] = $user->name;
+        //             $mailData['role_id'] = $user->role_id;
+        //             $mailData['subject'] = 'New file waiting for your review';
+        //             Mail::send('emails.mail_one', $mailData, function ($message) use ($mailData) {
+        //                 $message->to($mailData['email'])
+        //                     ->subject($mailData['subject']);
+        //             });
+        //         }
+        //     });
+        // }
 
         session()->flash('message', 'File created successfully');
         return redirect()->route('template-one.list');
