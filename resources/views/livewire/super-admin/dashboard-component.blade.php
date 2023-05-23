@@ -5,7 +5,7 @@
             <div class="col-10 offset-1">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">Latest Documentss</h4>
+                        <h4 class="card-title">Latest Documents</h4>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
