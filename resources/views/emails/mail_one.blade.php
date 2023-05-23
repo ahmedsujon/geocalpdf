@@ -25,7 +25,7 @@
     <p>New file has been created.</p>
     <p>Please check the attachment for your next action.</p> <br>
     @if ($id)
-    <a class="button button1" href="{{ route('cdot.form.generate',['id'=>$id]) }}">Download</a>
+    <a class="button button1" href="{{ route('template.one.generate',['id'=>$id]) }}">Download</a>
     @endif
     <br><br>
     <p>Thank you...!!</p>
