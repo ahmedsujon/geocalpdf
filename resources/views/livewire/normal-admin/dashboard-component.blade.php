@@ -74,6 +74,7 @@
                             @endphp
                             @if ($activities->count() > 0)
                             @foreach ($activities as $item)
+                            @if(in_array(Auth::user()->id, json_decode($item->responsible_person)))
                             <div class="timeline">
                                 <span class="timeline-icon"></span>
                                 <span class="year">
@@ -88,6 +89,7 @@
                                     </p>
                                 </div>
                             </div>
+                            @endif
                             @endforeach
                             @else
                             <h5>No Activity Available!</h5>
