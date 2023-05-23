@@ -22,10 +22,11 @@
 </head>
 <body>
     <h1>Files Information</h1>
+    <h3>ASPHALT FIELD DENSITY BY NUCLEAR METHOD - COMMERCIAL</h3>
     <p>New file has been created.</p>
     <p>Please check the attachment for your next action.</p> <br>
     @if ($id)
-    <a class="button button1" href="{{ route('cdot.form.generate',['id'=>$id]) }}">Download</a>
+    <a class="button button1" href="{{ route('invoice.commercial',['id'=>$id]) }}">Download</a>
     @endif
     <br><br>
     <p>Thank you...!!</p>
