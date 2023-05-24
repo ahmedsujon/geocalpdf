@@ -57,7 +57,7 @@
             </div>
         </div>
 
-        {{-- <div class="row">
+        <div class="row">
             <div class="col-lg-10 offset-1">
                 <div class="card">
                     <div class="card-header">
@@ -77,7 +77,7 @@
                                     <?php echo App\Http\Livewire\SuperAdmin\DashboardComponent::ago($item->created_at); ?>
                                 </span>
                                 <div class="timeline-content">
-                                    <h5 class="title">{{ project($item->project_id)->name }}: By  {{ user($item->user_id)->name }} <span class="post">{{ $item->created_at }}</span> To {{ $item->status }}</h5>
+                                    <h5 class="title">{{ getProject($item->project_id)->name }} - Created By: {{ getUser($item->created_by)->name }} - Created Time:  <span class="post">{{ $item->created_at }}</span></h5>
                                     <p class="description">
                                         {{ $item->remark }}
                                     </p>
@@ -92,6 +92,6 @@
                     {{ $activities->links('pagination-links-table') }}
                 </div>
             </div>
-        </div> --}}
+        </div>
     </div>
 </div>

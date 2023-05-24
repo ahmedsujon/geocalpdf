@@ -277,7 +277,7 @@ class TemplateOneEditComponent extends Component
                     $mailData['role_id'] = $user->role_id;
                     $mailData['id'] = $f_id;
                     $mailData['subject'] = 'New file waiting for your review';
-                    Mail::send('emails.mail_cdot', $mailData, function ($message) use ($mailData) {
+                    Mail::send('emails.mail_one', $mailData, function ($message) use ($mailData) {
                         $message->to($mailData['email'])
                             ->subject($mailData['subject']);
                     });

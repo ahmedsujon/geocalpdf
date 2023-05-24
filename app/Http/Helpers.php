@@ -32,6 +32,16 @@ function project($id)
     return Project::where('id', $id)->first();
 }
 
+function getProject($id)
+{
+    return Project::where('id', $id)->first();
+}
+
+function getUser($id)
+{
+    return User::where('id', $id)->first();
+}
+
 
 function loadingState($key, $title)
 {
