@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\SuperAdmin;
 
+use App\Models\FieldDensityCdot;
 use App\Models\File;
 use DateTime;
 use Livewire\Component;
@@ -48,8 +49,8 @@ class DashboardComponent extends Component
 
     public function render()
     {
-        $files = File::orderBy('id', 'DESC')->take(2)->get();
-        $activities = File::orderBy('id', 'DESC')->paginate($this->sortingValue);
+        $files = FieldDensityCdot::orderBy('id', 'DESC')->take(5)->get();
+        $activities = FieldDensityCdot::orderBy('id', 'DESC')->paginate($this->sortingValue);
         return view('livewire.super-admin.dashboard-component', ['files'=>$files, 'activities'=>$activities])->layout('livewire.layouts.base');
     }
 }

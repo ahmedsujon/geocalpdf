@@ -60,7 +60,7 @@
             </div>
         </div>
 
-        <div class="row">
+        {{-- <div class="row">
             <div class="col-lg-10 offset-1">
                 <div class="card">
                     <div class="card-header">
@@ -99,6 +99,6 @@
                     {{ $activities->links('pagination-links-table') }}
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
 </div>
