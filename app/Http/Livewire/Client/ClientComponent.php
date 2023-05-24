@@ -37,7 +37,6 @@ class ClientComponent extends Component
             $data->delete();
 
             $this->dispatchBrowserEvent('ClientDeleted');
-            $this->resetInputs();
         }
     }
 

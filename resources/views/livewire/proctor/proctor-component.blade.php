@@ -84,9 +84,9 @@
                                                 type="button"
                                                 class="btn btn-outline-warning btn-icon-circle btn-icon-circle-sm"><i
                                                     class="ti ti-edit"></i></a>
-                                            <a wire:click.prevent="deleteConfirmation({{ $proctor->id }})" type="button"
+                                            {{-- <a wire:click.prevent="deleteConfirmation({{ $proctor->id }})" type="button"
                                                 class="btn btn-outline-danger btn-icon-circle btn-icon-circle-sm"><i
-                                                    class="ti ti-trash"></i></a>
+                                                    class="ti ti-trash"></i></a> --}}
                                         </td>
                                     </tr>
                                     @endforeach
@@ -127,5 +127,4 @@
         });
         
 </script>
-
 @endpush
