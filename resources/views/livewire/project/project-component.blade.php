@@ -130,5 +130,23 @@
         });
         
 </script>
+@endpush
 
+@push('scripts')
+    <script>
+        window.addEventListener('showEditModal', event => {
+            $('#editDataModal').modal('show');
+        });
+        window.addEventListener('closeModal', event => {
+            $('#addDataModal').modal('hide');
+            $('#editDataModal').modal('hide');
+        });
+        window.addEventListener('projectDeleteError', event => {
+            Swal.fire(
+                'Error!',
+                'Can not delete this project.<br>Because this project has active forms.<br>Please delete them first.',
+                'error'
+            )
+        });
+    </script>
 @endpush

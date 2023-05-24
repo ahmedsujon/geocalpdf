@@ -2,7 +2,10 @@
 
 namespace App\Http\Livewire\Project;
 
+use App\Models\FieldDensityCdot;
+use App\Models\FieldDensityCommercial;
 use App\Models\Project;
+use App\Models\TemplateOne;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -22,12 +25,20 @@ class ProjectComponent extends Component
 
     public function deleteData()
     {
-        $data = Project::find($this->delete_id);
-        $data->delete();
-        $this->delete_id = '';
-        $this->dispatchBrowserEvent('ProjectDeleted');
+        $cdot = FieldDensityCdot::where('project_id', $this->delete_id)->get();
+        $commercial = FieldDensityCommercial::where('project_id', $this->delete_id)->get();
+        $temp_one = TemplateOne::where('project_id', $this->delete_id)->get();
 
+        if ($cdot->count() > 0 || $commercial->count() > 0 || $temp_one->count() > 0) {
+            $this->dispatchBrowserEvent('projectDeleteError');
+        } else {
+            $data = Project::find($this->delete_id);
+            $data->delete();
+
+            $this->dispatchBrowserEvent('ProjectDeleted');
+        }
     }
+
 
     public function render()
     {

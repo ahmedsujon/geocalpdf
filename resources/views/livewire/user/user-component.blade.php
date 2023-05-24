@@ -84,9 +84,9 @@
                                             <a href="{{ route('user.update', ['user_id' => $user->id]) }}" type="button"
                                                 class="btn btn-outline-warning btn-icon-circle btn-icon-circle-sm"><i
                                                     class="ti ti-edit"></i></a>
-                                            <a wire:click.prevent="deleteConfirmation({{ $user->id }})" type="button"
+                                            {{-- <a wire:click.prevent="deleteConfirmation({{ $user->id }})" type="button"
                                                 class="btn btn-outline-danger btn-icon-circle btn-icon-circle-sm"><i
-                                                    class="ti ti-trash"></i></a>
+                                                    class="ti ti-trash"></i></a> --}}
                                         </td>
                                     </tr>
                                     @endforeach
@@ -125,5 +125,22 @@
         });
         
 </script>
-
+@endpush
+@push('scripts')
+    <script>
+        window.addEventListener('showEditModal', event => {
+            $('#editDataModal').modal('show');
+        });
+        window.addEventListener('closeModal', event => {
+            $('#addDataModal').modal('hide');
+            $('#editDataModal').modal('hide');
+        });
+        window.addEventListener('projectDeleteError', event => {
+            Swal.fire(
+                'Error!',
+                'Can not delete this project.<br>Because this project has active forms.<br>Please delete them first.',
+                'error'
+            )
+        });
+    </script>
 @endpush

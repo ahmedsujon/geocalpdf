@@ -121,5 +121,23 @@
         });
         
 </script>
+@endpush
 
+@push('scripts')
+    <script>
+        window.addEventListener('showEditModal', event => {
+            $('#editDataModal').modal('show');
+        });
+        window.addEventListener('closeModal', event => {
+            $('#addDataModal').modal('hide');
+            $('#editDataModal').modal('hide');
+        });
+        window.addEventListener('clientDeleteError', event => {
+            Swal.fire(
+                'Error!',
+                'Can not delete this client.<br>Because this client has active projects.<br>Please delete them first.',
+                'error'
+            )
+        });
+    </script>
 @endpush
