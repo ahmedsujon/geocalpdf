@@ -28,7 +28,7 @@
                     <div class="card-header">
                         <h4 class="card-title">All File</h4>
                         <a style="float: right" href="{{ route('template-one.create') }}"
-                            class="card-button btn btn-sm btn-primary"><i class="ti ti-plus"></i> Add File</a>
+                            class="card-button btn btn-sm btn-primary"><i class="ti ti-plus"></i> ADD NEW</a>
                     </div>
                     <div class="card-body">
                         <div class="row mb-3">
