@@ -26,7 +26,10 @@
 
                                     @if ($files->count() > 0)
                                     @foreach ($files as $file)
-                                    @if(in_array(Auth::user()->id, json_decode($file->responsible_person)))
+
+                                    {{-- @if(in_array(Auth::user()->id, json_decode($file->responsible_person)))
+                                    @endif --}}
+
                                     <tr>
                                         <td>
                                             <img src="{{ asset('uploads/project') }}/{{ project($file->project_id)->avatar }}"
@@ -44,7 +47,7 @@
                                                     class="ti ti-edit"></i></a>
                                         </td>
                                     </tr>
-                                    @endif
+                                    
                                     @endforeach
                                     @else
                                     <tr>
