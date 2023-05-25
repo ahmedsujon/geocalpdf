@@ -2,7 +2,7 @@
     <div class="left-sidebar">
         <!-- LOGO -->
         <div class="brand">
-            <a href="{{ route('admin.dashboard') }}" class="logo">
+            <a href="#" class="logo">
                 <span>
                     <img src="{{ asset('assets/images/logo.png') }}" alt="logo-large" class="logo-lg logo-light">
                 </span>
@@ -28,10 +28,36 @@
         <div class="menu-content h-100" data-simplebar>
             <div class="menu-body navbar-vertical">
                 <div class="collapse navbar-collapse tab-content" id="sidebarCollapse">
+                    @if(Auth::user()->role_id == '1')
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('admin.dashboard') }}"><i class="ti ti-brand-codepen
+                        <a class="nav-link" href="{{ route('admin.super.admin.dashboard') }}"><i class="ti ti-brand-codepen
                             menu-icon"></i><span>Overview</span></a>
                     </li>
+                    @endif
+                    @if(Auth::user()->role_id == '2')
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('admin.project.engineer.dashboard') }}"><i class="ti ti-brand-codepen
+                            menu-icon"></i><span>Overview</span></a>
+                    </li>
+                    @endif
+                    @if(Auth::user()->role_id == '3')
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('admin.clerk.dashboard') }}"><i class="ti ti-brand-codepen
+                        menu-icon"></i><span>Overview</span></a>
+                    </li>
+                    @endif
+                    @if(Auth::user()->role_id == '4')
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('admin.supervisor.dashboard') }}"><i class="ti ti-brand-codepen
+                        menu-icon"></i><span>Overview</span></a>
+                    </li>
+                    @endif
+                    @if(Auth::user()->role_id == '5')
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('admin.tech.dashboard') }}"><i class="ti ti-brand-codepen
+                        menu-icon"></i><span>Overview</span></a>
+                    </li>
+                    @endif
                     <!-- Navigation -->
                     <ul class="navbar-nav tab-pane active" id="Main" role="tabpanel">
                         <li class="nav-item">
@@ -48,7 +74,8 @@
                                 id="sidebarMOISTURE">
                                 <ul class="nav flex-column">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('template.commercial') }}">Commercial Form</a>
+                                        <a class="nav-link" href="{{ route('template.commercial') }}">Commercial
+                                            Form</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="{{ route('template.cdot') }}">CDOT Form</a>
@@ -126,7 +153,7 @@
                                 <i class="ti ti-users menu-icon"></i>
                                 <span>Proctor</span>
                             </a>
-                            <div class="collapse {{ request()->is('client') || request()->is('client/*')? 'show': '' }}"
+                            <div class="collapse {{ request()->is('proctor') || request()->is('proctor/*')? 'show': '' }}"
                                 id="sidebarProctor">
                                 <ul class="nav flex-column">
                                     <li class="nav-item">

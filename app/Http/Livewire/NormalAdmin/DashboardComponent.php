@@ -12,7 +12,7 @@ use Livewire\WithPagination;
 class DashboardComponent extends Component
 {
     use WithPagination;
-    public $sortingValue = 10, $searchTerm;
+    public $sortingValue = 8, $searchTerm;
     
     public $edit_id;
 

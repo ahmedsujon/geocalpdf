@@ -35,19 +35,19 @@ class LoginComponent extends Component
                 $this->dispatchBrowserEvent('success', ['message' => 'Login Successful']);
 
                 if(Auth::user()->role_id == 1){
-                    return redirect()->route('admin.dashboard');
+                    return redirect()->route('admin.super.admin.dashboard');
                 }
                 elseif(Auth::user()->role_id == 2){
-                    return redirect()->route('admin.dashboard');
+                    return redirect()->route('admin.project.engineer.dashboard');
                 }
                 elseif(Auth::user()->role_id == 3){
-                    return redirect()->route('admin.normal.dashboard');
+                    return redirect()->route('admin.clerk.dashboard');
                 }
                 elseif(Auth::user()->role_id == 4){
-                    return redirect()->route('admin.normal.dashboard');
+                    return redirect()->route('admin.supervisor.dashboard');
                 }
                 elseif(Auth::user()->role_id == 5){
-                    return redirect()->route('admin.normal.dashboard');
+                    return redirect()->route('admin.tech.dashboard');
                 }
                 
             } else {

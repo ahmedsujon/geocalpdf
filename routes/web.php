@@ -130,28 +130,28 @@ Route::get('/cdot-form/{id}', [InvoiceController::class, 'cdotPDF'])->name('cdot
 Route::get('/temp-one/{id}', [InvoiceController::class, 'templateOnePDF'])->name('template.one.generate');
 
 //authSuperAdmin
-Route::middleware(['auth:sanctum', 'verified', 'authSuperAdmin'])->name('admin.')->group(function () {
-    Route::get('/admin', DashboardComponent::class)->name('dashboard');
+Route::middleware(['auth:sanctum', 'verified'])->name('admin.')->group(function () {
+    Route::get('/admin/super/admin', DashboardComponent::class)->name('super.admin.dashboard');
 });
 
 //authProjectEng.
-Route::middleware(['auth:sanctum', 'verified', 'authSuperAdmin'])->name('admin.')->group(function () {
-    Route::get('/admin', DashboardComponent::class)->name('dashboard');
+Route::middleware(['auth:sanctum', 'verified'])->name('admin.')->group(function () {
+    Route::get('/admin/project-engineer', DashboardComponent::class)->name('project.engineer.dashboard');
 });
 
 //authClerk
-Route::middleware(['auth:sanctum', 'verified', 'authSuperAdmin'])->name('admin.')->group(function () {
-    Route::get('/admin/clerk', NormalAdminDashboardComponent::class)->name('normal.dashboard');
+Route::middleware(['auth:sanctum', 'verified'])->name('admin.')->group(function () {
+    Route::get('/admin/clerk', NormalAdminDashboardComponent::class)->name('clerk.dashboard');
 });
 
 //authSupervisor
-Route::middleware(['auth:sanctum', 'verified', 'authSuperAdmin'])->name('admin.')->group(function () {
-    Route::get('/admin/supervisor', NormalAdminDashboardComponent::class)->name('normal.dashboard');
+Route::middleware(['auth:sanctum', 'verified'])->name('admin.')->group(function () {
+    Route::get('/admin/supervisor', NormalAdminDashboardComponent::class)->name('supervisor.dashboard');
 });
 
 //FieldTech
 Route::middleware(['auth:sanctum', 'verified'])->name('admin.')->group(function () {
-    Route::get('/admin/field-tech', NormalAdminDashboardComponent::class)->name('normal.dashboard');
+    Route::get('/admin/field-tech', NormalAdminDashboardComponent::class)->name('tech.dashboard');
 });
 
 

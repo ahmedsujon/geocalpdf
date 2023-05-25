@@ -39,13 +39,12 @@
                                         <td>{{ user($file->created_by)->name }}</td>
                                         <td>{{ $file->created_at }}</td>
                                         <td style="text-align: center;">
-                                            <a href="#" type="button"
+                                            <a href="{{ route('cdot.update', ['file_id' => $file->id]) }}" type="button"
                                                 class="btn btn-outline-warning btn-icon-circle btn-icon-circle-sm"><i
                                                     class="ti ti-edit"></i></a>
                                         </td>
                                     </tr>
                                     @endif
-
                                     @endforeach
                                     @else
                                     <tr>
@@ -59,8 +58,7 @@
                 </div>
             </div>
         </div>
-
-        {{-- <div class="row">
+        <div class="row">
             <div class="col-lg-10 offset-1">
                 <div class="card">
                     <div class="card-header">
@@ -74,22 +72,18 @@
                             @endphp
                             @if ($activities->count() > 0)
                             @foreach ($activities as $item)
-                            @if(in_array(Auth::user()->id, json_decode($item->responsible_person)))
                             <div class="timeline">
                                 <span class="timeline-icon"></span>
                                 <span class="year">
                                     <?php echo App\Http\Livewire\NormalAdmin\DashboardComponent::ago($item->created_at); ?>
                                 </span>
                                 <div class="timeline-content">
-                                    <h5 class="title">{{ project($item->project_id)->name }}: By {{
-                                        user($item->user_id)->name }} <span class="post">{{ $item->created_at }}</span>
-                                        To {{ $item->status }}</h5>
+                                    <h5 class="title">{{ getProject($item->project_id)->name }} - Created By: {{ getUser($item->created_by)->name }} - Created Time:  <span class="post">{{ $item->created_at }}</span></h5>
                                     <p class="description">
                                         {{ $item->remark }}
                                     </p>
                                 </div>
                             </div>
-                            @endif
                             @endforeach
                             @else
                             <h5>No Activity Available!</h5>
@@ -99,6 +93,6 @@
                     {{ $activities->links('pagination-links-table') }}
                 </div>
             </div>
-        </div> --}}
+        </div>
     </div>
 </div>
