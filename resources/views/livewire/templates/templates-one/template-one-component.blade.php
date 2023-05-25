@@ -68,7 +68,6 @@
                                     @endphp
                                     @if ($temp_ones->count() > 0)
                                     @foreach ($temp_ones as $temp)
-                                    @if(in_array(Auth::user()->id, json_decode($file->responsible_person)))
                                     <tr>
                                         <td>
                                             <img src="{{ asset('uploads/project') }}/{{ project($temp->project_id)->avatar }}"
@@ -92,7 +91,6 @@
                                                     class="ti ti-trash"></i></a>
                                         </td>
                                     </tr>
-                                    @endif
                                     @endforeach
                                     @else
                                     <tr>

@@ -67,7 +67,6 @@
                                     @endphp
                                     @if ($cdot_files->count() > 0)
                                     @foreach ($cdot_files as $file)
-                                    @if(in_array(Auth::user()->id, json_decode($file->responsible_person)))
                                     <tr>
                                         <td>
                                             <img src="{{ asset('uploads/project') }}/{{ project($file->project_id)->avatar }}" alt="user"
@@ -90,7 +89,6 @@
                                                     class="ti ti-trash"></i></a>
                                         </td>
                                     </tr>
-                                    @endif
                                     @endforeach
                                     @else
                                     <tr>

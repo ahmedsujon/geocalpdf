@@ -3,7 +3,9 @@
 namespace App\Http\Livewire\SuperAdmin;
 
 use App\Models\FieldDensityCdot;
+use App\Models\FieldDensityCommercial;
 use App\Models\File;
+use App\Models\TemplateOne;
 use DateTime;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -12,7 +14,7 @@ class DashboardComponent extends Component
 {
 
     use WithPagination;
-    public $sortingValue = 10, $searchTerm;
+    public $sortingValue = 5, $searchTerm;
     
     public $edit_id;
 
@@ -49,8 +51,10 @@ class DashboardComponent extends Component
 
     public function render()
     {
-        $files = FieldDensityCdot::orderBy('id', 'DESC')->take(5)->get();
+        $cdot_forms = FieldDensityCdot::orderBy('id', 'DESC')->take(5)->get();
+        $commercial_forms = FieldDensityCommercial::orderBy('id', 'DESC')->take(5)->get();
+        $temp_one_forms = TemplateOne::orderBy('id', 'DESC')->take(5)->get();
         $activities = FieldDensityCdot::orderBy('id', 'DESC')->paginate($this->sortingValue);
-        return view('livewire.super-admin.dashboard-component', ['files'=>$files, 'activities'=>$activities])->layout('livewire.layouts.base');
+        return view('livewire.super-admin.dashboard-component', ['cdot_forms'=>$cdot_forms, 'commercial_forms'=>$commercial_forms, 'temp_one_forms'=>$temp_one_forms, 'activities'=>$activities])->layout('livewire.layouts.base');
     }
 }

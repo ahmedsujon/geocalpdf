@@ -10,6 +10,7 @@ class UserComponent extends Component
 {
     use WithPagination;
     public $sortingValue = 10, $searchTerm;
+
     protected $listeners = ['deleteConfirmed'=>'deleteData'];
     public $edit_id, $delete_id;
 
