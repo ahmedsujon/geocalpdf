@@ -39,7 +39,7 @@
                                                 }}</span></td>
                                         <td>{{ $file->created_at }}</td>
                                         <td style="text-align: center;">
-                                            <a href="{{ route('cdot.update', ['file_id' => $file->id]) }}" type="button"
+                                            <a href="{{ route('commercial.update', ['file_id' => $file->id]) }}" type="button"
                                                 class="btn btn-outline-warning btn-icon-circle btn-icon-circle-sm"><i
                                                     class="ti ti-edit"></i></a>
                                         </td>
@@ -151,7 +151,7 @@
                                                 }}</span></td>
                                         <td>{{ $file->created_at }}</td>
                                         <td style="text-align: center;">
-                                            <a href="{{ route('cdot.update', ['file_id' => $file->id]) }}" type="button"
+                                            <a href="{{ route('template.one.update', ['file_id' => $file->id]) }}" type="button"
                                                 class="btn btn-outline-warning btn-icon-circle btn-icon-circle-sm"><i
                                                     class="ti ti-edit"></i></a>
                                         </td>
