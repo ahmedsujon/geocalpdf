@@ -52,15 +52,15 @@
                 </div>
                 <div class="col">
                     <div style="text-align: center" class="card">
-                        <a href="#">
+                        <a href="{{ route('concrete.create') }}">
                             <div class="card-body">
                                 <h5 class="card-title"></h5>
                             </div>
                             <img style="height: 150px; width: 350px;"
                                 src="{{ asset('uploads/templates/template-1.png') }}" class="card-img-top bg-light-alt"
-                                alt="...">
+                                alt="temp">
                             <div class="card-body">
-                                <h5 class="card-title">Comming Soon...</h5>
+                                <h5 class="card-title">REPORT OF FIELD INSPECTION OF CONCRETE – SINGLE MIX</h5>
                             </div>
                         </a>
                     </div>

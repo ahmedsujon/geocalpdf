@@ -19,6 +19,10 @@ use App\Http\Livewire\FieldMoisture\Commercial\CommercialComponent;
 use App\Http\Livewire\FieldMoisture\Commercial\EditCommercialComponent;
 use App\Http\Livewire\FieldMoisture\Commercial\ViewCommercialComponent;
 use App\Http\Livewire\FieldTech\DashboardComponent as FieldTechDashboardComponent;
+use App\Http\Livewire\InspectionOfConcrete\AddConcreteComponent;
+use App\Http\Livewire\InspectionOfConcrete\ConcreteComponent;
+use App\Http\Livewire\InspectionOfConcrete\EditConcreteComponent;
+use App\Http\Livewire\InspectionOfConcrete\ViewConcreteComponent;
 use App\Http\Livewire\LogActivity\LogActivityComponent;
 use App\Http\Livewire\NormalAdmin\DashboardComponent as NormalAdminDashboardComponent;
 use App\Http\Livewire\Proctor\AddProctorComponent;
@@ -114,6 +118,12 @@ Route::get('/templateOne/show/{file_id}', TemplateOneViewComponent::class)->name
 // Get Representative for Template One
 Route::post('/get-one-representative', [TemplateOneComponent::class, 'getTempOneRepresentative'])->name('get_temp_one_representative');
 Route::post('/edit-one-representative', [TemplateOneComponent::class, 'editTempOneRepresentative'])->name('edit_temp_one_representative');
+
+// INSPECTION OF CONCRETE – SINGLE MIX ROUTE
+Route::get('/inspection/concrete', ConcreteComponent::class)->name('template.concrete');
+Route::get('/inspection/concrete/create', AddConcreteComponent::class)->name('concrete.create');
+Route::get('/inspection/concrete/{file_id}', EditConcreteComponent::class)->name('concrete.update');
+Route::get('/inspection/concrete/{file_id}', ViewConcreteComponent::class)->name('concrete.show');
 
 // Login Register Route
 Route::get('/', LoginComponent::class)->middleware('guest')->name('login');
