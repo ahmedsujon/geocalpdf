@@ -37,11 +37,11 @@ class CreateConcretesTable extends Migration
             $table->text('batch_time')->nullable();
             $table->text('sample_time')->nullable();
             $table->text('ttf_unloading')->nullable();
-            $table->integer('ambient_temp')->nullable();
-            $table->integer('yards_at_sampling')->nullable();
-            $table->integer('total_yard_placement')->nullable();
-            $table->integer('water_added')->nullable();
-            $table->integer('water_cement_ratio')->nullable();
+            $table->text('ambient_temp')->nullable();
+            $table->text('yards_at_sampling')->nullable();
+            $table->text('total_yard_placement')->nullable();
+            $table->text('water_added')->nullable();
+            $table->text('water_cement_ratio')->nullable();
 
             // Physical Properties
             $table->string('air_content')->nullable();
@@ -49,12 +49,12 @@ class CreateConcretesTable extends Migration
             $table->string('concrete_temp')->nullable();
             $table->string('unit_weight')->nullable();
 
-            $table->integer('min_a')->nullable();
-            $table->integer('min_b')->nullable();
-            $table->integer('min_c')->nullable();
-            $table->integer('max_a')->nullable();
-            $table->integer('max_b')->nullable();
-            $table->integer('max_c')->nullable();
+            $table->text('min_a')->nullable();
+            $table->text('min_b')->nullable();
+            $table->text('min_c')->nullable();
+            $table->text('max_a')->nullable();
+            $table->text('max_b')->nullable();
+            $table->text('max_c')->nullable();
             $table->string('yield')->nullable();
             $table->string('relative_yield')->nullable();
             $table->string('mix_design_strength')->nullable();
