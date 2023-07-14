@@ -19,13 +19,14 @@ class CreateConcretesTable extends Migration
             $table->string('project_id')->nullable();
             $table->string('client_id')->nullable();
             $table->string('project_number')->nullable();
+            $table->string('office_address')->nullable();
             $table->string('cylinder_id')->nullable();
             $table->string('date')->nullable();
             $table->string('supplier')->nullable();
             $table->string('plant')->nullable();
             $table->string('sampled_by')->nullable();
             $table->string('created_by')->nullable();
-
+            
             // Reference Data
             $table->text('type_of_structure')->nullable();
             $table->text('general_location')->nullable();
@@ -62,6 +63,7 @@ class CreateConcretesTable extends Migration
             // Weather
             $table->text('weather')->nullable();
             $table->text('est_wind')->nullable();
+            $table->text('est_rh')->nullable();
             $table->text('slump_cone_id')->nullable();
             $table->text('thermometer_id')->nullable();
             $table->text('air_meter_id')->nullable();
@@ -70,7 +72,7 @@ class CreateConcretesTable extends Migration
 
             $table->string('cement')->nullable();
             $table->string('other_cementitious_matl')->nullable();
-            $table->string('fly_ash')->nullable();
+            $table->string('other_cementitious_matl_a')->nullable();
             $table->string('water')->nullable();
             $table->string('fine_aggregate')->nullable();
             $table->string('course_aggregate')->nullable();
