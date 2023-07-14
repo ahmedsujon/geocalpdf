@@ -21,11 +21,11 @@
                     <div class="float-end">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="">Dashboard</a></li>
-                            <li class="breadcrumb-item"><a href="">Files</a></li>
-                            <li class="breadcrumb-item active">Add File</li>
+                            <li class="breadcrumb-item"><a href="">FIELD DENSITY OF SOIL AGGREGATE</a></li>
+                            <li class="breadcrumb-item active">Add</li>
                         </ol>
                     </div>
-                    <h4 class="page-title">Edit File</h4>
+                    <h4 class="page-title">EDIT FIELD DENSITY OF SOIL AGGREGATE</h4>
                 </div>
             </div>
         </div>
@@ -45,7 +45,7 @@
                                 </div>
                                 <div class="content text-center pt-2 pb-2">
                                     <p>{{ $office_address }}</p>
-                                    <h6>ASPHALT FIELD DENSITY BY NUCLEAR METHOD - COMMERCIAL</h6>
+                                    <h6 style="text-transform: uppercase;">Field Density of Soil Aggregate by Nuclear Method</h6>
                                 </div>
                             </div>
                             <div class="col-md-4">

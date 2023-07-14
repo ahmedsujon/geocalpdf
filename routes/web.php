@@ -34,6 +34,10 @@ use App\Http\Livewire\Project\EditProjectComponent;
 use App\Http\Livewire\Project\ProjectComponent;
 use App\Http\Livewire\Project\ViewProjectComponent;
 use App\Http\Livewire\ProjectEng\DashboardComponent as ProjectEngDashboardComponent;
+use App\Http\Livewire\SoilAggregate\AddSoilAggregateComponent;
+use App\Http\Livewire\SoilAggregate\EditSoilAggregateComponent;
+use App\Http\Livewire\SoilAggregate\SoilAggregateComponent;
+use App\Http\Livewire\SoilAggregate\ViewSoilAggregateComponent;
 use App\Http\Livewire\SuperAdmin\DashboardComponent;
 use App\Http\Livewire\Supervisor\DashboardComponent as SupervisorDashboardComponent;
 use App\Http\Livewire\Templates\TemplateComponent;
@@ -87,13 +91,19 @@ Route::get('logActivity', LogActivityComponent::class);
 // Templates
 Route::get('/templates', TemplateComponent::class)->name('templates');
 
-// FIELD MOISTURE AND DENSITY TEST
+// Soil Aggregate
+Route::get('/commercial', SoilAggregateComponent::class)->name('template.soil.aggregate');
+Route::get('/commercial/create', AddSoilAggregateComponent::class)->name('soil.aggregate.create');
+Route::get('/commercial/edit/{file_id}', EditSoilAggregateComponent::class)->name('soil.aggregate.update');
+Route::get('/commercial/show/{file_id}', ViewSoilAggregateComponent::class)->name('soil.aggregate.show');
+
 // Commercial
-Route::get('/commercial', CommercialComponent::class)->name('template.commercial');
-Route::get('/commercial-create', AddCommercialComponent::class)->name('commercial.create');
-Route::get('/commercial/edit/{file_id}', EditCommercialComponent::class)->name('commercial.update');
-Route::get('/commercial/show/{file_id}', ViewCommercialComponent::class)->name('commercial.show');
-Route::get('/archive-commercial', ArchiveCommercialComponent::class)->name('archive.commercial');
+Route::get('/soil-aggregate', CommercialComponent::class)->name('template.commercial');
+Route::get('/soil-aggregate/create', AddCommercialComponent::class)->name('commercial.create');
+Route::get('/soil-aggregate/edit/{file_id}', EditCommercialComponent::class)->name('commercial.update');
+Route::get('/soil-aggregate/show/{file_id}', ViewCommercialComponent::class)->name('commercial.show');
+Route::get('/archive/soil-aggregate', ArchiveCommercialComponent::class)->name('archive.commercial');
+
 
 // Get Representative for Commercial
 Route::post('/get-com-representative', [CommercialComponent::class, 'getCommercialRepresentative'])->name('get_commercial_representative');
@@ -108,6 +118,7 @@ Route::get('/cdot/show/{file_id}', ViewCdotComponent::class)->name('cdot.show');
 // Get Representative for CDOT
 Route::post('/get-representative', [CdotComponent::class, 'getCdotRepresentative'])->name('get_cdot_representative');
 Route::post('/edit-representative', [CdotComponent::class, 'editCdotRepresentative'])->name('edit_cdot_representative');
+
 
 // Templates One Routes
 Route::get('/templateOne', TemplateOneComponent::class)->name('template-one.list');

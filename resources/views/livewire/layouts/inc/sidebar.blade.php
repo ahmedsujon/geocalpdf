@@ -68,17 +68,33 @@
                             <a class="nav-link" href="#sidebarMOISTURE" data-bs-toggle="collapse" role="button"
                                 aria-expanded="false" aria-controls="sidebarMOISTURE">
                                 <i class="ti ti-stack menu-icon"></i>
-                                <span>Field Moisture</span>
+                                <span>Asphalt Field Density</span>
                             </a>
                             <div class="collapse {{ request()->is('commercial') || request()->is('commercial/*')? 'show': '' }}"
                                 id="sidebarMOISTURE">
                                 <ul class="nav flex-column">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('template.commercial') }}">Commercial
+                                        <a class="nav-link" href="#">Commercial
                                             Form</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="{{ route('template.cdot') }}">CDOT Form</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#sidebarAggregate" data-bs-toggle="collapse" role="button"
+                                aria-expanded="false" aria-controls="sidebarAggregate">
+                                <i class="ti ti-stack menu-icon"></i>
+                                <span>Soil Aggregate</span>
+                            </a>
+                            <div class="collapse {{ request()->is('soil-aggregate') || request()->is('soil-aggregate/*')? 'show': '' }}"
+                                id="sidebarAggregate">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('template.commercial') }}">Soil Aggregate Form</a>
                                     </li>
                                 </ul>
                             </div>
@@ -94,7 +110,7 @@
                                 id="sidebarPROPERTIES">
                                 <ul class="nav flex-column">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('template-one.list') }}">All Files</a>
+                                        <a class="nav-link" href="{{ route('template-one.list') }}">Physical Properties Form</a>
                                     </li>
                                 </ul>
                             </div>

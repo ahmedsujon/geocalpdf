@@ -17,10 +17,10 @@
                     <div class="float-end">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="">Dashboard</a></li>
-                            <li class="breadcrumb-item"><a href="">Files Details</a></li>
+                            <li class="breadcrumb-item"><a href="">FIELD DENSITY OF SOIL AGGREGATE BY NUCLEAR METHOD</a></li>
                         </ol>
                     </div>
-                    <h4 class="page-title">File Details</h4>
+                    <h4 class="page-title">FIELD DENSITY OF SOIL AGGREGATE BY NUCLEAR METHOD</h4>
                 </div>
             </div>
         </div>
@@ -32,7 +32,7 @@
                             <div class="col-md-4"></div>
                             <div class="col-md-4">
                                 <div class="content text-center pt-2 pb-2">
-                                    <h6>ASPHALT FIELD DENSITY BY NUCLEAR METHOD - COMMERCIAL</h6>
+                                    <h6>FIELD DENSITY OF SOIL AGGREGATE BY NUCLEAR METHOD</h6>
                                 </div>
                             </div>
                             <div class="col-md-4">

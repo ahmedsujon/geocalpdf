@@ -27,7 +27,7 @@
                                 src="{{ asset('uploads/templates/template-1.png') }}" class="card-img-top bg-light-alt"
                                 alt="...">
                             <div class="card-body">
-                                <h5 class="card-title">FIELD MOISTURE AND DENSITY TEST RESULTS</h5>
+                                <h5 style="text-transform: uppercase;" class="card-title">Asphalt Field Density by Nuclear Method </h5>
                             </div>
                         </a>
                         <!--end card-body-->
@@ -35,6 +35,22 @@
                     <!--end card-->
                 </div>
                 <!--end col-->
+                <div class="col">
+                    <div style="text-align: center" class="card">
+                        <a href="{{ route('commercial.create') }}">
+                            <div class="card-body">
+                                <h5 class="card-title"></h5>
+                            </div>
+                            <img style="height: 150px; width: 350px;"
+                                src="{{ asset('uploads/templates/template-2.png') }}" class="card-img-top bg-light-alt"
+                                alt="">
+                            <div class="card-body">
+                                <h5 style="text-transform: uppercase;" class="card-title">Field Density of Soil Aggregate by Nuclear Method</h5>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
                 <div class="col">
                     <div style="text-align: center" class="card">
                         <a href="{{ route('template-one.create') }}">
@@ -50,6 +66,7 @@
                         </a>
                     </div>
                 </div>
+
                 <div class="col">
                     <div style="text-align: center" class="card">
                         <a href="{{ route('concrete.create') }}">
@@ -130,7 +147,7 @@
                         <div class="col-lg-9 pt-5 pb-5">
                             <h5>Select Asphalt Field Density forms</h5>
                             <ul class="mt-3 mb-0">
-                                <li class="mb-3"><a href="{{ route('commercial.create') }}" type="button" class="btn btn-soft-primary">Asphalt Field Density by Nuclear Method - Commercial </a></li>
+                                <li class="mb-3"><a href="#" type="button" class="btn btn-soft-primary">Asphalt Field Density by Nuclear Method - Commercial </a></li>
                                 <li class="mb-3"><a href="{{ route('cdot.create') }}" type="button" class="btn btn-soft-primary">Asphalt Field Density by Nuclear Method - CDOT Form</a></li>
                             </ul>
                         </div>

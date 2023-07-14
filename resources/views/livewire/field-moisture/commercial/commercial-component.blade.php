@@ -15,10 +15,10 @@
                     <div class="float-end">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="">Dashboard</a></li>
-                            <li class="breadcrumb-item active">COMMERCIAL</li>
+                            <li class="breadcrumb-item active">FIELD DENSITY OF SOIL AGGREGATE</li>
                         </ol>
                     </div>
-                    <h4 class="page-title">ALL COMMERCIAL</h4>
+                    <h4 class="page-title">FIELD DENSITY OF SOIL AGGREGATE</h4>
                 </div>
             </div>
         </div>
@@ -26,9 +26,9 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">ALL COMMERCIAL FILE</h4>
+                        <h4 class="card-title">FIELD DENSITY OF SOIL AGGREGATE</h4>
                         <a style="float: right" href="{{ route('commercial.create') }}"
-                            class="card-button btn btn-sm btn-primary"><i class="ti ti-plus"></i> ADD NEW COMMERCIAL</a>
+                            class="card-button btn btn-sm btn-primary"><i class="ti ti-plus"></i> ADD NEW FIELD DENSITY OF SOIL AGGREGATE</a>
                     </div>
                     <div class="card-body">
                         <div class="row mb-3">
