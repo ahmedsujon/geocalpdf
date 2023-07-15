@@ -251,11 +251,11 @@
 
                                 <div class="input-group mt-3">
                                     <span class="input-group-text">Air Content (%): &nbsp; &nbsp; &nbsp; &nbsp;</span>
-                                    <input type="text" class="form-control" wire:model="air_content">
+                                    <input type="number" step="any" class="form-control" wire:model="air_content">
                                     <span class="input-group-text">Min:</span>
-                                    <input type="text" class="form-control" wire:model="min_a">
+                                    <input type="number" step="any" class="form-control" wire:model="air_min">
                                     <span class="input-group-text">Max:</span>
-                                    <input type="text" class="form-control" wire:model="max_a">
+                                    <input type="number" step="any" class="form-control" wire:model="air_max">
                                 </div>
                                 @error('air_content')
                                 <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
@@ -264,11 +264,11 @@
                                 <div class="input-group mt-3">
                                     <span class="input-group-text">Slump (in): &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                                         &nbsp; &nbsp;</span>
-                                    <input type="text" class="form-control" wire:model="slump">
+                                    <input type="number" step="any" class="form-control" wire:model="slump">
                                     <span class="input-group-text">Min:</span>
-                                    <input type="text" class="form-control" wire:model="min_b">
+                                    <input type="number" step="any" class="form-control" wire:model="slump_min">
                                     <span class="input-group-text">Max:</span>
-                                    <input type="text" class="form-control" wire:model="max_b">
+                                    <input type="number" step="any" class="form-control" wire:model="slump_max">
                                 </div>
                                 @error('slump')
                                 <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
@@ -276,13 +276,13 @@
 
                                 <div class="input-group mt-3">
                                     <span class="input-group-text">Concrete Temp (°F):</span>
-                                    <input type="text" class="form-control" wire:model="concrete_temp">
+                                    <input type="number" step="any" class="form-control" wire:model="concrete_temp">
                                     
                                     <span class="input-group-text">Min:</span>
-                                    <input type="text" class="form-control" wire:model="min_c">
+                                    <input type="number" step="any" class="form-control" wire:model="concrete_temp_min">
                                     
                                     <span class="input-group-text">Max:</span>
-                                    <input type="text" class="form-control" wire:model="max_c">
+                                    <input type="number" step="any" class="form-control" wire:model="concrete_temp_max">
                                 </div>
                                 @error('concrete_temp')
                                 <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>

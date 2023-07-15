@@ -45,8 +45,14 @@ class CreateConcretesTable extends Migration
 
             // Physical Properties
             $table->string('air_content')->nullable();
+            $table->string('air_min')->nullable();
+            $table->string('air_max')->nullable();
             $table->string('slump')->nullable();
+            $table->string('slump_min')->nullable();
+            $table->string('slump_max')->nullable();
             $table->string('concrete_temp')->nullable();
+            $table->string('concrete_temp_min')->nullable();
+            $table->string('concrete_temp_max')->nullable();
             $table->string('unit_weight')->nullable();
 
             $table->text('min_a')->nullable();
@@ -55,6 +61,8 @@ class CreateConcretesTable extends Migration
             $table->text('max_a')->nullable();
             $table->text('max_b')->nullable();
             $table->text('max_c')->nullable();
+
+            
             $table->string('yield')->nullable();
             $table->string('relative_yield')->nullable();
             $table->string('mix_design_strength')->nullable();

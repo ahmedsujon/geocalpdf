@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\CommercialTestResult;
+use App\Models\Concrete;
+use App\Models\ConcreteData;
 use App\Models\FieldDensityCdot;
 use App\Models\FieldDensityCommercial;
 use App\Models\ProctorData;
@@ -58,4 +60,21 @@ class InvoiceController extends Controller
         $pdf = Pdf::loadView('pdf.template_one', compact('data'));
         return $pdf->stream('test_result.pdf');
     }
+
+    public function templateInspectionConcrete($id)
+    {
+        $data = Concrete::findOrFail($id);
+        $data->project_name = project($data->project_id)->name;
+        $data->technician = user($data->created_by)->name;
+        $data->client_name = client($data->client_id)->name;
+        $data->client_email = client($data->client_id)->email;
+        $data->client_phone = client($data->client_id)->phone;
+        $data->client_company_name = client($data->client_id)->company_name;
+
+        $data->concrete_infos = ConcreteData::where('concrete_id', $data->id)->get();
+
+        $pdf = Pdf::loadView('pdf.concrete', compact('data'));
+        return $pdf->stream('report.pdf');
+    }
+
 }

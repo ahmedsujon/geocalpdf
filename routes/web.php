@@ -153,6 +153,7 @@ Route::post('/upload', 'app\http\controllers\BaseController@uploadckimage')->nam
 Route::get('/invoice/{id}', [InvoiceController::class, 'commercialPDF'])->name('invoice.commercial');
 Route::get('/cdot-form/{id}', [InvoiceController::class, 'cdotPDF'])->name('cdot.form.generate');
 Route::get('/temp-one/{id}', [InvoiceController::class, 'templateOnePDF'])->name('template.one.generate');
+Route::get('/inspection/concrete/report/{id}', [InvoiceController::class, 'templateInspectionConcrete'])->name('inspection.concrete.generate');
 
 //authSuperAdmin
 Route::middleware(['auth:sanctum', 'verified'])->name('admin.')->group(function () {

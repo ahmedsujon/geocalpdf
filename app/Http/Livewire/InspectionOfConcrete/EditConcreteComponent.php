@@ -10,7 +10,7 @@ use Livewire\Component;
 
 class EditConcreteComponent extends Component
 {
-    public $project_id, $client_id, $client_name, $project_number, $office_address, $cylinder_id, $date, $supplier, $plant, $sampled_by, $created_by, $type_of_structure, $general_location, $specific_location, $mix_id, $truck_no, $ticket_no, $batch_time, $sample_time, $ttf_unloading, $ambient_temp, $yards_at_sampling, $total_yard_placement, $water_added, $water_cement_ratio, $air_content, $slump, $concrete_temp, $unit_weight, $min_a, $min_b, $min_c, $max_a, $max_b, $max_c, $yield, $relative_yield, $mix_design_strength, $required_strength, $weather, $est_wind, $est_rh, $slump_cone_id, $thermometer_id, $air_meter_id, $unit_weight_measure_id, $weather_scale_id, $cement, $other_cementitious_matl, $other_cementitious_matl_a, $fly_ash, $water, $fine_aggregate, $course_aggregate, $max_aggregate_size, $admixture_a, $admixture_a_a, $admixture_b, $admixture_b_b, $admixture_c, $admixture_c_c, $total_batch_weight, $conc_comp_machine_id, $caliper_id, $scale_id, $field, $lab, $time_cylinders_molded, $cylinders_temperature_24h, $where_cylinders_cured, $field_placement_observations, $remark, $date_cylinders_received_lab, $pick_up_by, $cylinders_condition, $good, $fair, $poor, $test_hours, $pick_up_hours, $delayed_hours, $why, $status, $file_id, $responsible_person = [];
+    public $project_id, $client_id, $client_name, $project_number, $office_address, $cylinder_id, $date, $supplier, $plant, $sampled_by, $created_by, $type_of_structure, $general_location, $specific_location, $mix_id, $truck_no, $ticket_no, $batch_time, $sample_time, $ttf_unloading, $ambient_temp, $yards_at_sampling, $total_yard_placement, $water_added, $water_cement_ratio, $air_content, $slump, $concrete_temp, $unit_weight, $air_min, $air_max, $slump_min, $slump_max, $concrete_temp_min, $concrete_temp_max, $yield, $relative_yield, $mix_design_strength, $required_strength, $weather, $est_wind, $est_rh, $slump_cone_id, $thermometer_id, $air_meter_id, $unit_weight_measure_id, $weather_scale_id, $cement, $other_cementitious_matl, $other_cementitious_matl_a, $fly_ash, $water, $fine_aggregate, $course_aggregate, $max_aggregate_size, $admixture_a, $admixture_a_a, $admixture_b, $admixture_b_b, $admixture_c, $admixture_c_c, $total_batch_weight, $conc_comp_machine_id, $caliper_id, $scale_id, $field, $lab, $time_cylinders_molded, $cylinders_temperature_24h, $where_cylinders_cured, $field_placement_observations, $remark, $date_cylinders_received_lab, $pick_up_by, $cylinders_condition, $good, $fair, $poor, $test_hours, $pick_up_hours, $delayed_hours, $why, $status, $file_id, $responsible_person = [];
 
     public $concreteData = [], $fields = [], $concrete_id = [], $age = [], $test_date = [], $diameter = [], $diameter_a = [], $avg_length = [], $mass = [], $max_load = [], $type_cap = [], $area_cyl = [], $measured_strength = [], $specified_strength = [], $type_fracture = [], $person_performing = [], $i = 1;
 
@@ -54,12 +54,12 @@ class EditConcreteComponent extends Component
          $this->slump = $file->slump;
          $this->concrete_temp = $file->concrete_temp;
          $this->unit_weight = $file->unit_weight;
-         $this->min_a = $file->min_a;
-         $this->min_b = $file->min_b;
-         $this->min_c = $file->min_c;
-         $this->max_a = $file->max_a;
-         $this->max_b = $file->max_b;
-         $this->max_c = $file->max_c;
+         $this->air_min = $file->air_min;
+         $this->air_max = $file->air_max;
+         $this->slump_min = $file->slump_min;
+         $this->slump_max = $file->slump_max;
+         $this->concrete_temp_min = $file->concrete_temp_min;
+         $this->concrete_temp_max = $file->concrete_temp_max;
          $this->yield = $file->yield;
          $this->relative_yield = $file->relative_yield;
          $this->mix_design_strength = $file->mix_design_strength;
@@ -194,12 +194,12 @@ class EditConcreteComponent extends Component
         $data->slump = $this->slump;
         $data->concrete_temp = $this->concrete_temp;
         $data->unit_weight = $this->unit_weight;
-        $data->min_a = $this->min_a;
-        $data->min_b = $this->min_b;
-        $data->min_c = $this->min_c;
-        $data->max_a = $this->max_a;
-        $data->max_b = $this->max_b;
-        $data->max_c = $this->max_c;
+        $data->air_min = $this->air_min;
+        $data->air_max = $this->air_max;
+        $data->slump_min = $this->slump_min;
+        $data->slump_max = $this->slump_max;
+        $data->concrete_temp_min = $this->concrete_temp_min;
+        $data->concrete_temp_max = $this->concrete_temp_max;
         $data->yield = $this->yield;
         $data->relative_yield = $this->relative_yield;
         $data->mix_design_strength = $this->mix_design_strength;
