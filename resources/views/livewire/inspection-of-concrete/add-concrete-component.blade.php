@@ -889,7 +889,7 @@
 
                                 <div class="input-group mt-3">
                                     <span class="input-group-text">Time cylinders molded:</span>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" wire:model="time_cylinders_molded">
                                     @error('time_cylinders_molded')
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
