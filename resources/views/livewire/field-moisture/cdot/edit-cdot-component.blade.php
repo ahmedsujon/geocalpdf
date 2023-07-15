@@ -19,10 +19,10 @@
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="">Dashboard</a></li>
                             <li class="breadcrumb-item"><a href="">Files</a></li>
-                            <li class="breadcrumb-item active">Add File</li>
+                            <li class="breadcrumb-item active">Edit File</li>
                         </ol>
                     </div>
-                    <h4 class="page-title">Add New File</h4>
+                    <h4 class="page-title">EDIT CDOT FORM</h4>
                 </div>
             </div>
         </div>

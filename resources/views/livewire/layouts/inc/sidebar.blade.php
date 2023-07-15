@@ -116,6 +116,22 @@
                             </div>
                         </li>
 
+                        <li class="nav-item">
+                            <a class="nav-link" href="#sidebarInspection" data-bs-toggle="collapse" role="button"
+                                aria-expanded="false" aria-controls="sidebarInspection">
+                                <i class="ti ti-stack menu-icon"></i>
+                                <span>Inspection Of Concrete</span>
+                            </a>
+                            <div class="collapse {{ request()->is('inspection') || request()->is('inspection/*')? 'show': '' }}"
+                                id="sidebarInspection">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('template.concrete') }}">Single Mix Form</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
                         @if(Auth::user()->role_id == '1' || Auth::user()->role_id == '2' || Auth::user()->role_id ==
                         '3')
                         <li class="menu-label mt-0 text-primary font-12 fw-semibold">M<span>anagements</span></li>

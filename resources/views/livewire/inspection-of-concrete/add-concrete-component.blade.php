@@ -597,7 +597,6 @@
                                                     <div class="input-group">
                                                         <select class="form-select moistureremoveinput"
                                                             wire:model="type_cap.0" required>
-                                                            <option value="">Select</option>
                                                             <option value="Unbonded">Unbonded</option>
                                                             <option value="Gypsum cement">Gypsum cement</option>
                                                             <option value="Neat Cement">Neat Cement</option>
@@ -750,7 +749,6 @@
                                                     <div class="input-group">
                                                         <select class="form-select moistureremoveinput"
                                                             wire:model="type_cap.{{ $concrete_data }}" required>
-                                                            <option value="">Select</option>
                                                             <option value="Unbonded">Unbonded</option>
                                                             <option value="Gypsum cement">Gypsum cement</option>
                                                             <option value="Neat Cement">Neat Cement</option>
@@ -1062,7 +1060,7 @@
             $('#selectInfo').change(function() {
                 var project_id = $(this).val();
                 $.ajax({
-                        url: "{{ route('get_commercial_representative') }}",
+                        url: "{{ route('get_inspection_representative') }}",
                         method: "POST",
                         data: {
                             project_id: project_id,

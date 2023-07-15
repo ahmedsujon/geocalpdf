@@ -59,17 +59,6 @@ class AddConcreteComponent extends Component
         unset($this->selected_project_ids[$i]);
     }
 
-    public function updated($fields)
-    {
-        $this->validate([
-            'project_id' => 'required',
-            'client_id' => 'required',
-            'date' => 'required',
-            'responsible_person' => 'required',
-            'office_address' => 'required',
-        ]);
-    }
-
     public function storeData()
     {
         $this->validate([

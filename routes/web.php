@@ -133,8 +133,12 @@ Route::post('/edit-one-representative', [TemplateOneComponent::class, 'editTempO
 // INSPECTION OF CONCRETE – SINGLE MIX ROUTE
 Route::get('/inspection/concrete', ConcreteComponent::class)->name('template.concrete');
 Route::get('/inspection/concrete/create', AddConcreteComponent::class)->name('concrete.create');
-Route::get('/inspection/concrete/{file_id}', EditConcreteComponent::class)->name('concrete.update');
+Route::get('/inspection/concrete/edit/{file_id}', EditConcreteComponent::class)->name('concrete.update');
 Route::get('/inspection/concrete/{file_id}', ViewConcreteComponent::class)->name('concrete.show');
+
+// Get Representative for INSPECTION OF CONCRETE – SINGLE MIX ROUTE
+Route::post('/get-inspection-representative', [ConcreteComponent::class, 'getInspectionRepresentative'])->name('get_inspection_representative');
+Route::post('/edit-inspection-representative', [ConcreteComponent::class, 'editInspectionRepresentative'])->name('edit_inspection_representative');
 
 // Login Register Route
 Route::get('/', LoginComponent::class)->middleware('guest')->name('login');
