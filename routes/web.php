@@ -97,6 +97,10 @@ Route::get('/commercial/create', AddSoilAggregateComponent::class)->name('soil.a
 Route::get('/commercial/edit/{file_id}', EditSoilAggregateComponent::class)->name('soil.aggregate.update');
 Route::get('/commercial/show/{file_id}', ViewSoilAggregateComponent::class)->name('soil.aggregate.show');
 
+// Get Representative for Commercial
+Route::post('/get-soil-aggregate-representative', [SoilAggregateComponent::class, 'getSoilAggregateRepresentative'])->name('get_soil_aggregate_representative');
+Route::post('/edit-soil-aggregate-representative', [SoilAggregateComponent::class, 'editSoilAggregateRepresentative'])->name('edit_soil_aggregate_representative');
+
 // Commercial
 Route::get('/soil-aggregate', CommercialComponent::class)->name('template.commercial');
 Route::get('/soil-aggregate/create', AddCommercialComponent::class)->name('commercial.create');

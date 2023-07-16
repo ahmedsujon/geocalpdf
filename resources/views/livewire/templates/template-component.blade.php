@@ -147,7 +147,7 @@
                         <div class="col-lg-9 pt-5 pb-5">
                             <h5>Select Asphalt Field Density forms</h5>
                             <ul class="mt-3 mb-0">
-                                <li class="mb-3"><a href="#" type="button" class="btn btn-soft-primary">Asphalt Field Density by Nuclear Method - Commercial </a></li>
+                                <li class="mb-3"><a href="{{ route('soil.aggregate.create') }}" type="button" class="btn btn-soft-primary">Asphalt Field Density by Nuclear Method - Commercial </a></li>
                                 <li class="mb-3"><a href="{{ route('cdot.create') }}" type="button" class="btn btn-soft-primary">Asphalt Field Density by Nuclear Method - CDOT Form</a></li>
                             </ul>
                         </div>

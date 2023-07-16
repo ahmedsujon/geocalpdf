@@ -8,6 +8,6 @@ class ViewSoilAggregateComponent extends Component
 {
     public function render()
     {
-        return view('livewire.soil-aggregate.view-soil-aggregate-component');
+        return view('livewire.soil-aggregate.view-soil-aggregate-component')->layout('livewire.layouts.base');
     }
 }

@@ -74,7 +74,7 @@
                                 id="sidebarMOISTURE">
                                 <ul class="nav flex-column">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#">Commercial
+                                        <a class="nav-link" href="{{ route('template.soil.aggregate') }}">Commercial
                                             Form</a>
                                     </li>
                                     <li class="nav-item">
