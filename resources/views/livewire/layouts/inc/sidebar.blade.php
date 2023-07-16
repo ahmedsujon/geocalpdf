@@ -198,6 +198,27 @@
                             </div>
                         </li>
                         @endif
+                        @if(Auth::user()->role_id == '1' || Auth::user()->role_id == '2' || Auth::user()->role_id ==
+                        '3')
+                        <li class="nav-item">
+                            <a class="nav-link" href="#sidebarMixInfo" data-bs-toggle="collapse" role="button"
+                                aria-expanded="false" aria-controls="sidebarMixInfo">
+                                <i class="ti ti-users menu-icon"></i>
+                                <span>Mix Information</span>
+                            </a>
+                            <div class="collapse {{ request()->is('mix-information') || request()->is('mix-information/*')? 'show': '' }}"
+                                id="sidebarMixInfo">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('mixInfo.list') }}">Mix Information List</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('mixInfo.create') }}">Add Mix Information</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        @endif
                         @if(Auth::user()->role_id == '1' || Auth::user()->role_id == '2')
                         <!--end nav-item-->
                         <li class="nav-item">

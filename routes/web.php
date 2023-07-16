@@ -24,6 +24,9 @@ use App\Http\Livewire\InspectionOfConcrete\ConcreteComponent;
 use App\Http\Livewire\InspectionOfConcrete\EditConcreteComponent;
 use App\Http\Livewire\InspectionOfConcrete\ViewConcreteComponent;
 use App\Http\Livewire\LogActivity\LogActivityComponent;
+use App\Http\Livewire\MixInfo\AddMaxInfoComponent;
+use App\Http\Livewire\MixInfo\EditMaxInfoComponent;
+use App\Http\Livewire\MixInfo\MaxInfoComponent;
 use App\Http\Livewire\NormalAdmin\DashboardComponent as NormalAdminDashboardComponent;
 use App\Http\Livewire\Proctor\AddProctorComponent;
 use App\Http\Livewire\Proctor\EditProctorComponent;
@@ -70,6 +73,11 @@ Route::get('/client/show/{client_id}', ShowClientComponent::class)->name('client
 Route::get('/proctor', ProctorComponent::class)->name('proctor.list');
 Route::get('/proctor/create', AddProctorComponent::class)->name('proctor.create');
 Route::get('/proctor/edit/{proctor_id}', EditProctorComponent::class)->name('proctor.update');
+
+// MixInfo Route
+Route::get('/mix-information', MaxInfoComponent::class)->name('mixInfo.list');
+Route::get('/mix-information/create', AddMaxInfoComponent::class)->name('mixInfo.create');
+Route::get('/mix-information/edit/{mix_info_id}', EditMaxInfoComponent::class)->name('mixInfo.update');
 
 // Project Route
 Route::get('/project', ProjectComponent::class)->name('project.list');
