@@ -33,6 +33,7 @@ class CreateSoilAggregatesTable extends Migration
             $table->string('moisture_equation')->nullable();
 
             $table->string('test_mode')->nullable();
+            $table->string('test_method')->nullable();
             $table->string('compaction_requirement_min')->nullable();
             $table->string('compaction_requirement_max')->nullable();
             $table->text('general_location')->nullable();

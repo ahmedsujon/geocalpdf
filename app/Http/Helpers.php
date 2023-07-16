@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Client;
+use App\Models\MixInfo;
 use App\Models\Proctor;
 use App\Models\Project;
 use App\Models\Role;
@@ -25,6 +26,11 @@ function client($id)
 function proctor($id)
 {
     return Proctor::where('id', $id)->first();
+}
+
+function mixInfo($id)
+{
+    return MixInfo::where('id', $id)->first();
 }
 
 function project($id)

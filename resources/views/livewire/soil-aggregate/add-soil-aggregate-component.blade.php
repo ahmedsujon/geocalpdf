@@ -82,7 +82,7 @@
                                 @enderror
                                 <div class="input-group mt-3">
                                     <span class="input-group-text">Technician:</span>
-                                    <select class="form-select" wire:model="user_id">
+                                    <select class="form-select" wire:model="technician">
                                         <option value="">Select Technician</option>
                                         @foreach ($supervisors as $supervisor)
                                         <option value="{{ $supervisor->id }}">{{ user($supervisor->id)->name }}
@@ -104,13 +104,13 @@
 
                                 <div class="input-group mt-3">
                                     <span class="input-group-text">Test Method:</span>
-                                    <select class="form-select" wire:model="main_test_method">
+                                    <select class="form-select" wire:model="test_method">
                                         <option value="">Select Test Method</option>
                                         <option value="ASTM D6938">ASTM D6938</option>
                                         <option value="AASHTO T310">AASHTO T310</option>
                                     </select>
                                 </div>
-                                @error('main_test_method')
+                                @error('test_method')
                                 <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                 @enderror
                             </div>
@@ -171,7 +171,7 @@
 
                                 <div class="input-group mt-3">
                                     <span class="input-group-text">Serial No:</span>
-                                    <select class="form-select" wire:model="serial_number">
+                                    <select class="form-select" wire:model="serial_no">
                                         <option value="">Select Serial No</option>
                                         <option value="22392">22392</option>
                                         <option value="26206">26206</option>
@@ -202,7 +202,7 @@
                                         <option value="2581">2581</option>
                                         <option value="2583">2583</option>
                                     </select>
-                                    @error('serial_number')
+                                    @error('serial_no')
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
                                 </div>
@@ -255,59 +255,27 @@
                                     <table class="table table-bordered moisture" style="margin-bottom: 0;">
                                         <thead>
                                             <tr>
-                                                <th class="customcolor" scope="col">Proctor ID</th>
-                                                <th class="customcolor" scope="col">Material Description</th>
-                                                <th class="customcolor" scope="col">Proctor Test Method</th>
-                                                <th class="customcolor" scope="col">Max Dry Density, (pcf)</th>
-                                                <th class="customcolor" scope="col">Optimum Moisture %</th>
+                                                <th class="customcolor" scope="col">Mix ID</th>
+                                                <th class="customcolor" scope="col">Supplier</th>
+                                                <th class="customcolor" scope="col">Plant</th>
+                                                <th class="customcolor" scope="col">mix Type</th>
+                                                <th class="customcolor" scope="col">Max Theoretical Density, (lb/ft3)</th>
+                                                <th class="customcolor" scope="col">Max Theoretical SpecificGravity</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control moistureremoveinput"
-                                                            wire:model="description.0" readonly>
-                                                    </div>
-                                                </td>
-                                                <td class="moistureremove">
-                                                    <div class="input-group">
-                                                        <input type="text" class="form-control moistureremoveinput"
-                                                            wire:model="description.0" readonly>
-                                                    </div>
-                                                </td>
-                                                <td class="moistureremove">
-                                                    <div class="input-group">
-                                                        <input type="text" class="form-control moistureremoveinput"
-                                                            wire:model="test_method.0" readonly>
-                                                    </div>
-                                                </td>
-                                                <td class="moistureremove">
-                                                    <div class="input-group">
-                                                        <input type="text" class="form-control moistureremoveinput"
-                                                            wire:model="max_dry_density.0" readonly>
-                                                    </div>
-                                                </td>
-                                                <td class="moistureremove">
-                                                    <div class="input-group">
-                                                        <input type="text" class="form-control moistureremoveinput"
-                                                            wire:model="optimum_moisture.0" readonly>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            @foreach ($fields as $key => $field)
-                                            <tr>
-                                                <td class="moistureremove">
-                                                    <div class="input-group">
-                                                        <select class="form-select" wire:model="proctor_id.{{ $field }}"
-                                                            wire:change="proctorInfo({{ $field }})">
+                                                        <select class="form-select" wire:model="mix_info_id.0"
+                                                            wire:change="mixInfo(0)">
                                                             <option value="">Select id</option>
-                                                            @foreach ($proctors as $proctor)
-                                                            <option value="{{ proctor($proctor->id)->proctorid }}">
-                                                                {{ proctor($proctor->id)->proctorid }}</option>
+                                                            @foreach ($mix_infos as $mixInfo)
+                                                            <option value="{{ mixInfo($mixInfo->id)->mix_id }}">
+                                                                {{ mixInfo($mixInfo->id)->mix_id }}</option>
                                                             @endforeach
                                                         </select>
-                                                        @error('proctor_id')
+                                                        @error('mix_info_id')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
                                                         @enderror
@@ -316,26 +284,81 @@
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="text" class="form-control moistureremoveinput"
-                                                            wire:model="description.{{ $field }}" readonly>
+                                                            wire:model="supplier.0" readonly>
                                                     </div>
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="text" class="form-control moistureremoveinput"
-                                                            wire:model="test_method.{{ $field }}" readonly>
+                                                            wire:model="plant.0" readonly>
+                                                    </div>
+                                                </td>
+                                                <td class="moistureremove">
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control moistureremoveinput"
+                                                            wire:model="mix_type.0" readonly>
+                                                    </div>
+                                                </td>
+                                                <td class="moistureremove">
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control moistureremoveinput"
+                                                            wire:model="max_theoretical_density.0" readonly>
+                                                    </div>
+                                                </td>
+                                                <td class="moistureremove">
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control moistureremoveinput"
+                                                            wire:model="max_theoretical_specificGravity.0" readonly>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            @foreach ($fields as $key => $field)
+                                            <tr>
+                                                <td class="moistureremove">
+                                                    <div class="input-group">
+                                                        <select class="form-select" wire:model="mix_info_id.{{ $field }}"
+                                                            wire:change="mixInfo({{ $field }})">
+                                                            <option value="">Select id</option>
+                                                            @foreach ($mix_infos as $mixInfo)
+                                                            <option value="{{ mixInfo($mixInfo->id)->mix_id }}">
+                                                                {{ mixInfo($mixInfo->id)->mix_id }}</option>
+                                                            @endforeach
+                                                        </select>
+                                                        @error('mix_info_id')
+                                                        <span class="text-danger" style="font-size: 12px;">{{ $message
+                                                            }}</span>
+                                                        @enderror
+                                                    </div>
+                                                </td>
+                                                <td class="moistureremove">
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control moistureremoveinput"
+                                                            wire:model="supplier.{{ $field }}" readonly>
+                                                    </div>
+                                                </td>
+                                                <td class="moistureremove">
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control moistureremoveinput"
+                                                            wire:model="plant.{{ $field }}" readonly>
                                                     </div>
                                                 </td>
 
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="text" class="form-control moistureremoveinput"
-                                                            wire:model="max_dry_density.{{ $field }}" readonly>
+                                                            wire:model="mix_type.{{ $field }}" readonly>
                                                     </div>
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="text" class="form-control moistureremoveinput"
-                                                            wire:model="optimum_moisture.{{ $field }}" readonly>
+                                                            wire:model="max_theoretical_density.{{ $field }}" readonly>
+                                                    </div>
+                                                </td>
+                                                <td class="moistureremove">
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control moistureremoveinput"
+                                                            wire:model="max_theoretical_specificGravity.{{ $field }}" readonly>
                                                     </div>
                                                 </td>
                                                 <td class="moistureremove">
@@ -343,7 +366,7 @@
                                                         class="btn btn-outline-danger btn-icon-circle btn-icon-circle-sm"
                                                         wire:click.prevent='removeField({{ $key }})'>
                                                         {!! loadingState('removeField(' . $key . ')', '<i
-                                                            class="ti ti-circle-plus"></i>') !!}
+                                                            class="ti ti-circle-x"></i>') !!}
                                                     </button>
                                                 </td>
                                             </tr>
