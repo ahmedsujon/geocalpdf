@@ -26,6 +26,7 @@ class CreateSoilAggregateTestResultsTable extends Migration
             $table->string('field_wet_density')->nullable();
             $table->string('relative_compaction')->nullable();
             $table->string('pass_fail')->nullable();
+            $table->string('location')->nullable();
             $table->timestamps();
         });
     }

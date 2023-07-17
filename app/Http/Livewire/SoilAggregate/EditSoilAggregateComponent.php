@@ -17,7 +17,7 @@ class EditSoilAggregateComponent extends Component
 
     public $mix_id = [], $supplier = [], $plant = [], $mix_type = [], $max_theoretical_density = [], $max_theoretical_specific_gravity;
 
-    public $testresults = [], $test_no = [], $result_mix_id = [], $count_period = [], $material = [], $lift = [], $layer_thickness = [], $max_theory_density = [], $field_wet_density = [], $relative_compaction = [], $pass_fail = [];
+    public $testresults = [], $test_no = [], $result_mix_id = [], $location = [], $count_period = [], $material = [], $lift = [], $layer_thickness = [], $max_theory_density = [], $field_wet_density = [], $relative_compaction = [], $pass_fail = [];
 
     public $file_id, $user_id, $testResultData = [], $mixData = [];
 
@@ -70,6 +70,7 @@ class EditSoilAggregateComponent extends Component
         foreach ($test_results as $key => $test_result) {
             array_push($this->test_no, $test_result->test_no);
             array_push($this->result_mix_id, $test_result->result_mix_id);
+            array_push($this->location, $test_result->location);
             array_push($this->count_period, $test_result->count_period);
             array_push($this->material, $test_result->material);
             array_push($this->lift, $test_result->lift);
@@ -128,6 +129,7 @@ class EditSoilAggregateComponent extends Component
         array_push($this->testresults, $j);
         $this->test_no[$j] = 0;
         $this->result_mix_id[$j] = 0;
+        $this->location[$j] = 0;
         $this->count_period[$j] = 0;
         $this->material[$j] = 0;
         $this->lift[$j] = 0;
@@ -237,6 +239,7 @@ class EditSoilAggregateComponent extends Component
             $cont->soil_aggregate_id = $data->id;
             $cont->test_no = $this->test_no[$key];
             $cont->result_mix_id = $this->result_mix_id[$key];
+            $cont->location = $this->location[$key];
             $cont->count_period = $this->count_period[$key];
             $cont->material = $this->material[$key];
             $cont->lift = $this->lift[$key];

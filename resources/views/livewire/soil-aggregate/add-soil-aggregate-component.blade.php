@@ -258,7 +258,7 @@
                                                 <th class="customcolor" scope="col">Mix ID</th>
                                                 <th class="customcolor" scope="col">Supplier</th>
                                                 <th class="customcolor" scope="col">Plant</th>
-                                                <th class="customcolor" scope="col">mix Type</th>
+                                                <th class="customcolor" scope="col">Mix Type</th>
                                                 <th class="customcolor" scope="col">Max Theoretical Density, (lb/ft3)</th>
                                                 <th class="customcolor" scope="col">Max Theoretical SpecificGravity</th>
                                             </tr>
@@ -421,6 +421,7 @@
                                             <tr>
                                                 <th class="customcolor" scope="col">Test No.</th>
                                                 <th class="customcolor" scope="col">Mix ID</th>
+                                                <th class="customcolor" scope="col">Location</th>
                                                 <th class="customcolor" scope="col">(AASHTO requires 1 min) Count Period</th>
                                                 <th class="customcolor" scope="col">Material (Base, Surface, Bit Agg Mix)</th>
                                                 <th class="customcolor" scope="col">Lift</th>
@@ -456,7 +457,16 @@
                                                         </select>
                                                     </div>
                                                 </td>
-
+                                                <td class="moistureremove">
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control moistureremoveinput"
+                                                            wire:model="location.0">
+                                                        @error('location')
+                                                        <span class="text-danger" style="font-size: 12px;">{{ $message
+                                                            }}</span>
+                                                        @enderror
+                                                    </div>
+                                                </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <select class="form-select moistureremoveinput"
@@ -554,8 +564,8 @@
                                                         @enderror
                                                     </div>
                                                 </td>
-                                             
                                             </tr>
+                                          
                                             @foreach ($testresults as $key => $testresult)
                                             <tr>
                                                 <td class="moistureremove">
@@ -581,7 +591,16 @@
                                                         </select>
                                                     </div>
                                                 </td>
-
+                                                <td class="moistureremove">
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control moistureremoveinput"
+                                                            wire:model="location.{{ $testresult }}">
+                                                        @error('location')
+                                                        <span class="text-danger" style="font-size: 12px;">{{ $message
+                                                            }}</span>
+                                                        @enderror
+                                                    </div>
+                                                </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <select class="form-select moistureremoveinput"
