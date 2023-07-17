@@ -39,6 +39,7 @@ class CreateSoilAggregatesTable extends Migration
             $table->text('general_location')->nullable();
 
             $table->text('remark')->nullable();
+            $table->text('created_by')->nullable();
             $table->string('status')->nullable();
             $table->string('responsible_person')->nullable();
             $table->timestamps();

@@ -270,9 +270,9 @@
                                                         <select class="form-select" wire:model="mix_info_id.0"
                                                             wire:change="mixInfo(0)">
                                                             <option value="">Select id</option>
-                                                            @foreach ($mix_infos as $mixInfo)
-                                                            <option value="{{ mixInfo($mixInfo->id)->mix_id }}">
-                                                                {{ mixInfo($mixInfo->id)->mix_id }}</option>
+                                                            @foreach ($mix_infos as $mix_nfo)
+                                                            <option value="{{ mixInfo($mix_nfo->id)->mix_id }}">
+                                                                {{ mixInfo($mix_nfo->id)->mix_id }}</option>
                                                             @endforeach
                                                         </select>
                                                         @error('mix_info_id')
@@ -281,6 +281,7 @@
                                                         @enderror
                                                     </div>
                                                 </td>
+
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="text" class="form-control moistureremoveinput"
@@ -308,7 +309,7 @@
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="text" class="form-control moistureremoveinput"
-                                                            wire:model="max_theoretical_specificGravity.0" readonly>
+                                                            wire:model="max_theoretical_specific_gravity.0" readonly>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -330,6 +331,7 @@
                                                         @enderror
                                                     </div>
                                                 </td>
+                                                
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="text" class="form-control moistureremoveinput"
@@ -358,7 +360,7 @@
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="text" class="form-control moistureremoveinput"
-                                                            wire:model="max_theoretical_specificGravity.{{ $field }}" readonly>
+                                                            wire:model="max_theoretical_specific_gravity.{{ $field }}" readonly>
                                                     </div>
                                                 </td>
                                                 <td class="moistureremove">
@@ -388,22 +390,14 @@
                             <div class="col-md-5">
                                 <div class="input-group">
                                     <span class="input-group-text">Compaction Requirements (%):</span>
-                                    <input type="number" class="form-control" wire:model="compaction_requirement">
-                                </div>
-                                @error('compaction_requirement')
-                                <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
-                                @enderror
-                            </div>
-                            <div class="col-md-5">
-                                <div class="input-group">
-                                    <span class="input-group-text">Moisture Requirements (+/- %) Minus:</span>
-                                    <input type="number" class="form-control" wire:model="requirment_minus">
-                                    @error('requirment_minus')
+                                    <span class="input-group-text">Minus:</span>
+                                    <input type="number" class="form-control" wire:model="compaction_requirement_min">
+                                    @error('compaction_requirement_min')
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
                                     <span class="input-group-text">Plus:</span>
-                                    <input type="number" class="form-control" wire:model="requirment_plus">
-                                    @error('requirment_plus')
+                                    <input type="number" class="form-control" wire:model="compaction_requirement_max">
+                                    @error('compaction_requirement_max')
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
                                 </div>
@@ -411,9 +405,9 @@
                             <div class="col-md-10">
                                 <div class="input-group mt-3">
                                     <span class="input-group-text">General Location:</span>
-                                    <input type="text" class="form-control" wire:model="general_info">
+                                    <input type="text" class="form-control" wire:model="general_location">
                                 </div>
-                                @error('general_info')
+                                @error('general_location')
                                 <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                 @enderror
                             </div>
@@ -426,16 +420,15 @@
                                         <thead>
                                             <tr>
                                                 <th class="customcolor" scope="col">Test No.</th>
-                                                <th class="customcolor" scope="col">Proctor ID</th>
-                                                <th class="customcolor" scope="col">Location</th>
-                                                <th class="customcolor" scope="col">Test Depth (in)</th>
-                                                <th class="customcolor" scope="col">Elev/Lift of Test</th>
-                                                <th class="customcolor" scope="col">Wet Density (pcf)</th>
-                                                <th class="customcolor" scope="col">Dry Density, (pcf)</th>
-                                                <th class="customcolor" scope="col">Moisture Content %</th>
-                                                <th class="customcolor" scope="col">Percent Compaction</th>
-                                                <th class="customcolor" scope="col">Material</th>
-                                                <th class="customcolor" scope="col">Comments</th>
+                                                <th class="customcolor" scope="col">Mix ID</th>
+                                                <th class="customcolor" scope="col">(AASHTO requires 1 min) Count Period</th>
+                                                <th class="customcolor" scope="col">Material (Base, Surface, Bit Agg Mix)</th>
+                                                <th class="customcolor" scope="col">Lift</th>
+                                                <th class="customcolor" scope="col">Layer Thickness (in)</th>
+                                                <th class="customcolor" scope="col">Maximum Theo. Density (pcf)</th>
+                                                <th class="customcolor" scope="col">Field Wet Density (lb/ft3)</th>
+                                                <th class="customcolor" scope="col">% Relative Compaction</th>
+                                                <th class="customcolor" scope="col">Pass / Fail</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -443,119 +436,51 @@
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="number" class="form-control moistureremoveinput"
-                                                            wire:model="test_num.0">
-                                                        @error('test_num')
+                                                            wire:model="test_no.0">
+                                                        @error('test_no')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
                                                         @enderror
                                                     </div>
                                                 </td>
+                                                
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control moistureremoveinput"
-                                                            wire:model="location.0">
-                                                        @error('location')
-                                                        <span class="text-danger" style="font-size: 12px;">{{ $message
-                                                            }}</span>
-                                                        @enderror
-                                                    </div>
-                                                </td>
-                                                <td class="moistureremove">
-                                                    <div class="input-group">
-                                                        <input type="text" class="form-control moistureremoveinput"
-                                                            wire:model="location.0">
-                                                        @error('location')
-                                                        <span class="text-danger" style="font-size: 12px;">{{ $message
-                                                            }}</span>
-                                                        @enderror
+                                                        <select class="form-select moistureremoveinput"
+                                                            wire:model="result_mix_id.0" required>
+                                                            <option value="">Select id</option>
+                                                            @foreach ($selected_mix_info_ids as $s_mix_info)
+                                                            <option value="{{ $s_mix_info }}">
+                                                                {{ $s_mix_info }}</option>
+                                                            @endforeach
+                                                        </select>
                                                     </div>
                                                 </td>
 
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <select class="form-select moistureremoveinput"
-                                                            wire:model="test_dept.0" required>
+                                                            wire:model="count_period.0" required>
                                                             <option value="">Select</option>
-                                                            <option value="BS">BS</option>
-                                                            <option value="2">2</option>
-                                                            <option value="4">4</option>
-                                                            <option value="6">6</option>
-                                                            <option value="8">8</option>
-                                                            <option value="10">10</option>
-                                                            <option value="12">12</option>
+                                                            <option value="15 sec.">15 sec.</option>
+                                                            <option value="1 min.">1 min.</option>
+                                                            <option value="4 min.">4 min.</option>
                                                         </select>
-                                                        @error('test_dept')
+                                                        @error('count_period')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
                                                         @enderror
                                                     </div>
                                                 </td>
 
-                                                <td class="moistureremove">
-                                                    <div class="input-group">
-                                                        <input type="text" class="form-control moistureremoveinput"
-                                                            wire:model="elev_test.0">
-                                                        @error('elev_test')
-                                                        <span class="text-danger" style="font-size: 12px;">{{ $message
-                                                            }}</span>
-                                                        @enderror
-                                                    </div>
-                                                </td>
-                                                <td class="moistureremove">
-                                                    <div class="input-group">
-                                                        <input type="number" step="any"
-                                                            class="form-control moistureremoveinput"
-                                                            wire:model="wet_density.0">
-                                                        @error('wet_density')
-                                                        <span class="text-danger" style="font-size: 12px;">{{ $message
-                                                            }}</span>
-                                                        @enderror
-                                                    </div>
-                                                </td>
-                                                <td class="moistureremove">
-                                                    <div class="input-group">
-                                                        <input type="number" step="any"
-                                                            class="form-control moistureremoveinput"
-                                                            wire:model="moisture_content.0">
-                                                        @error('moisture_content')
-                                                        <span class="text-danger" style="font-size: 12px;">{{ $message
-                                                            }}</span>
-                                                        @enderror
-                                                    </div>
-                                                </td>
-                                                <td class="moistureremove">
-                                                    <div class="input-group">
-                                                        <input type="number" step="any"
-                                                            class="form-control moistureremoveinput"
-                                                            wire:model="moisture_content.0">
-                                                        @error('moisture_content')
-                                                        <span class="text-danger" style="font-size: 12px;">{{ $message
-                                                            }}</span>
-                                                        @enderror
-                                                    </div>
-                                                </td>
-                                                <td class="moistureremove">
-                                                    <div class="input-group">
-                                                        <input type="number" step="any"
-                                                            class="form-control moistureremoveinput"
-                                                            wire:model="moisture_content.0">
-                                                        @error('moisture_content')
-                                                        <span class="text-danger" style="font-size: 12px;">{{ $message
-                                                            }}</span>
-                                                        @enderror
-                                                    </div>
-                                                </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <select class="form-select moistureremoveinput"
                                                             wire:model="material.0" required>
-                                                            <option value="">Material</option>
-                                                            <option value="Base">Base</option>
-                                                            <option value="Subbase">Subbase</option>
-                                                            <option value="Subgrade">Subgrade</option>
-                                                            <option value="Improved Subgrade">Improved Subgrade</option>
+                                                            <option value="">Select</option>
                                                             <option value="Surface">Surface</option>
-                                                            <option value="Fill">Fill</option>
+                                                            <option value="Binder">Binder</option>
+                                                            <option value="Bituminous Aggregate Mixture">Bituminous Aggregate Mixture</option>
                                                         </select>
                                                         @error('material')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
@@ -563,148 +488,124 @@
                                                         @enderror
                                                     </div>
                                                 </td>
+
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <select class="form-select moistureremoveinput"
-                                                            wire:model="comments.0" required>
-                                                            <option value="">Comment</option>
-                                                            <option value="A">A</option>
-                                                            <option value="B">B</option>
-                                                            <option value="C">C</option>
-                                                            <option value="D">D</option>
-                                                            <option value="E">E</option>
-                                                        </select>
-                                                        @error('comments')
+                                                        <input type="text" class="form-control moistureremoveinput"
+                                                            wire:model="lift.0">
+                                                        @error('lift')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
                                                         @enderror
                                                     </div>
                                                 </td>
+                                                <td class="moistureremove">
+                                                    <div class="input-group">
+                                                        <input type="number" step="any"
+                                                            class="form-control moistureremoveinput"
+                                                            wire:model="layer_thickness.0">
+                                                        @error('layer_thickness')
+                                                        <span class="text-danger" style="font-size: 12px;">{{ $message
+                                                            }}</span>
+                                                        @enderror
+                                                    </div>
+                                                </td>
+                                                <td class="moistureremove">
+                                                    <div class="input-group">
+                                                        <input type="number" step="any"
+                                                            class="form-control moistureremoveinput"
+                                                            wire:model="max_theory_density.0">
+                                                        @error('max_theory_density')
+                                                        <span class="text-danger" style="font-size: 12px;">{{ $message
+                                                            }}</span>
+                                                        @enderror
+                                                    </div>
+                                                </td>
+                                                <td class="moistureremove">
+                                                    <div class="input-group">
+                                                        <input type="number" step="any"
+                                                            class="form-control moistureremoveinput"
+                                                            wire:model="field_wet_density.0">
+                                                        @error('field_wet_density')
+                                                        <span class="text-danger" style="font-size: 12px;">{{ $message
+                                                            }}</span>
+                                                        @enderror
+                                                    </div>
+                                                </td>
+                                                <td class="moistureremove">
+                                                    <div class="input-group">
+                                                        <input type="number" step="any"
+                                                            class="form-control moistureremoveinput"
+                                                            wire:model="relative_compaction.0">
+                                                        @error('relative_compaction')
+                                                        <span class="text-danger" style="font-size: 12px;">{{ $message
+                                                            }}</span>
+                                                        @enderror
+                                                    </div>
+                                                </td>
+                                                <td class="moistureremove">
+                                                    <div class="input-group">
+                                                        <input type="text"
+                                                            class="form-control moistureremoveinput"
+                                                            wire:model="pass_fail.0">
+                                                        @error('pass_fail')
+                                                        <span class="text-danger" style="font-size: 12px;">{{ $message
+                                                            }}</span>
+                                                        @enderror
+                                                    </div>
+                                                </td>
+                                             
                                             </tr>
                                             @foreach ($testresults as $key => $testresult)
                                             <tr>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="number" class="form-control moistureremoveinput"
-                                                            wire:model="test_num.{{ $testresult }}">
-                                                        @error('test_num')
+                                                            wire:model="test_no.{{ $testresult }}">
+                                                        @error('test_no')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
                                                         @enderror
                                                     </div>
                                                 </td>
+                                                
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <select class="form-select moistureremoveinput"
-                                                            wire:model="result_proctor_id.{{ $testresult }}"
-                                                            wire:change='changeTestResult({{ $testresult }})'>
+                                                            wire:model="result_mix_id.{{ $testresult }}" required>
                                                             <option value="">Select id</option>
-                                                            @foreach ($selected_proctor_ids as $s_proctor)
-                                                            <option value="{{ $s_proctor }}">
-                                                                {{ $s_proctor }}</option>
+                                                            @foreach ($selected_mix_info_ids as $s_mix_info)
+                                                            <option value="{{ $s_mix_info }}">
+                                                                {{ $s_mix_info }}</option>
                                                             @endforeach
                                                         </select>
                                                     </div>
                                                 </td>
-                                                <td class="moistureremove">
-                                                    <div class="input-group">
-                                                        <input type="text" class="form-control moistureremoveinput"
-                                                            wire:model="location.{{ $testresult }}">
-                                                        @error('location')
-                                                        <span class="text-danger" style="font-size: 12px;">{{ $message
-                                                            }}</span>
-                                                        @enderror
-                                                    </div>
-                                                </td>
 
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <select class="form-select moistureremoveinput"
-                                                            wire:model="test_dept.{{ $testresult }}" required>
+                                                            wire:model="count_period.{{ $testresult }}" required>
                                                             <option value="">Select</option>
-                                                            <option value="BS">BS</option>
-                                                            <option value="2">2</option>
-                                                            <option value="4">4</option>
-                                                            <option value="6">6</option>
-                                                            <option value="8">8</option>
-                                                            <option value="10">10</option>
-                                                            <option value="12">12</option>
+                                                            <option value="15 sec.">15 sec.</option>
+                                                            <option value="1 min.">1 min.</option>
+                                                            <option value="4 min.">4 min.</option>
                                                         </select>
-                                                        @error('test_dept')
+                                                        @error('count_period')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
                                                         @enderror
                                                     </div>
                                                 </td>
 
-                                                <td class="moistureremove">
-                                                    <div class="input-group">
-                                                        <input type="text" class="form-control moistureremoveinput"
-                                                            wire:model="elev_test.{{ $testresult }}">
-                                                        @error('elev_test')
-                                                        <span class="text-danger" style="font-size: 12px;">{{ $message
-                                                            }}</span>
-                                                        @enderror
-                                                    </div>
-                                                </td>
-                                                <td class="moistureremove">
-                                                    <div class="input-group">
-                                                        <input type="number" step="any"
-                                                            class="form-control moistureremoveinput"
-                                                            wire:model="wet_density.{{ $testresult }}">
-                                                        @error('wet_density')
-                                                        <span class="text-danger" style="font-size: 12px;">{{ $message
-                                                            }}</span>
-                                                        @enderror
-                                                    </div>
-                                                </td>
-                                                <td class="moistureremove ss">
-                                                    <div class="input-group">
-                                                        <input type="number" step="any"
-                                                            class="form-control moistureremoveinput"
-                                                            wire:model="dry_density.{{ $testresult }}"
-                                                            wire:keyup='changeTestResult({{ $testresult }})'
-                                                            @if(!$result_proctor_id[$testresult]) readonly @endif>
-                                                        @error('dry_density')
-                                                        <span class="text-danger" style="font-size: 12px;">{{ $message
-                                                            }}</span>
-                                                        @enderror
-                                                    </div>
-                                                </td>
-                                                <td class="moistureremove">
-                                                    <div class="input-group">
-                                                        <input type="number" step="any"
-                                                            class="form-control moistureremoveinput"
-                                                            wire:model="moisture_content.{{ $testresult }}">
-                                                        @error('moisture_content')
-                                                        <span class="text-danger" style="font-size: 12px;">{{ $message
-                                                            }}</span>
-                                                        @enderror
-                                                    </div>
-                                                </td>
-                                                <td class="moistureremove">
-                                                    <div class="input-group">
-                                                        <input type="text" class="form-control moistureremoveinput"
-                                                            wire:model="percent_comp.{{ $testresult }}"
-                                                            style="@if($compaction_requirement > $percent_comp[$testresult]) color: red; @endif"
-                                                            readonly>
-                                                        @error('compaction')
-                                                        <span class="text-danger" style="font-size: 12px;">{{ $message
-                                                            }}</span>
-                                                        @enderror
-                                                    </div>
-                                                </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <select class="form-select moistureremoveinput"
                                                             wire:model="material.{{ $testresult }}" required>
-                                                            <option value="">Material</option>
-                                                            <option value="Base">Base</option>
-                                                            <option value="Subbase">Subbase</option>
-                                                            <option value="Subgrade">Subgrade</option>
-                                                            <option value="Improved Subgrade">Improved Subgrade</option>
+                                                            <option value="">Select</option>
                                                             <option value="Surface">Surface</option>
-                                                            <option value="Fill">Fill</option>
+                                                            <option value="Binder">Binder</option>
+                                                            <option value="Bituminous Aggregate Mixture">Bituminous Aggregate Mixture</option>
                                                         </select>
                                                         @error('material')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
@@ -712,24 +613,72 @@
                                                         @enderror
                                                     </div>
                                                 </td>
+
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <select class="form-select moistureremoveinput"
-                                                            wire:model="comments.{{ $testresult }}" required>
-                                                            <option value="">Comment</option>
-                                                            <option value="A">A</option>
-                                                            <option value="B">B</option>
-                                                            <option value="C">C</option>
-                                                            <option value="D">D</option>
-                                                            <option value="E">E</option>
-                                                        </select>
-                                                        @error('comments')
+                                                        <input type="text" class="form-control moistureremoveinput"
+                                                            wire:model="lift.{{ $testresult }}">
+                                                        @error('lift')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
                                                         @enderror
                                                     </div>
                                                 </td>
-
+                                                <td class="moistureremove">
+                                                    <div class="input-group">
+                                                        <input type="number" step="any"
+                                                            class="form-control moistureremoveinput"
+                                                            wire:model="layer_thickness.{{ $testresult }}">
+                                                        @error('layer_thickness')
+                                                        <span class="text-danger" style="font-size: 12px;">{{ $message
+                                                            }}</span>
+                                                        @enderror
+                                                    </div>
+                                                </td>
+                                                <td class="moistureremove">
+                                                    <div class="input-group">
+                                                        <input type="number" step="any"
+                                                            class="form-control moistureremoveinput"
+                                                            wire:model="max_theory_density.{{ $testresult }}">
+                                                        @error('max_theory_density')
+                                                        <span class="text-danger" style="font-size: 12px;">{{ $message
+                                                            }}</span>
+                                                        @enderror
+                                                    </div>
+                                                </td>
+                                                <td class="moistureremove">
+                                                    <div class="input-group">
+                                                        <input type="number" step="any"
+                                                            class="form-control moistureremoveinput"
+                                                            wire:model="field_wet_density.{{ $testresult }}">
+                                                        @error('field_wet_density')
+                                                        <span class="text-danger" style="font-size: 12px;">{{ $message
+                                                            }}</span>
+                                                        @enderror
+                                                    </div>
+                                                </td>
+                                                <td class="moistureremove">
+                                                    <div class="input-group">
+                                                        <input type="number" step="any"
+                                                            class="form-control moistureremoveinput"
+                                                            wire:model="relative_compaction.{{ $testresult }}">
+                                                        @error('relative_compaction')
+                                                        <span class="text-danger" style="font-size: 12px;">{{ $message
+                                                            }}</span>
+                                                        @enderror
+                                                    </div>
+                                                </td>
+                                                <td class="moistureremove">
+                                                    <div class="input-group">
+                                                        <input type="text"
+                                                            class="form-control moistureremoveinput"
+                                                            wire:model="pass_fail.{{ $testresult }}">
+                                                        @error('pass_fail')
+                                                        <span class="text-danger" style="font-size: 12px;">{{ $message
+                                                            }}</span>
+                                                        @enderror
+                                                    </div>
+                                                </td>
                                                 <td class="moistureremove">
                                                     <button type="button"
                                                         class="btn btn-outline-danger btn-icon-circle btn-icon-circle-sm"
@@ -758,44 +707,13 @@
                                 <h6>Material:</h6>
                             </div>
                             <div class="col-md-3">
-                                <ol type="1">
-                                    <li>Base</li>
-                                    <li>Subbase</li>
-                                    <li>Subgrade</li>
-                                    <li>Improved Subgrade</li>
+                                <ol type="1">					
                                     <li>Surface</li>
-                                    <li>Fill</li>
+                                    <li>Binder</li>
+                                    <li>Bituminous Aggregate Mixture</li>
                                 </ol>
                             </div>
-                            <div class="col-md-1">
-                                <h6>Comments:</h6>
-                            </div>
-                            <div class="col-md-3">
-                                <ol type="A">
-                                    <li>Test results comply with specifications</li>
-                                    <li>Compaction percentage does not comply with specifications</li>
-                                    <li>Retest of previous test</li>
-                                    <li>Moisture in excess of specifications</li>
-                                    <li>Moisture below specifications</li>
-                                </ol>
-                            </div>
-                            <div class="col-md-7 mb-3">
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" wire:model='observation'
-                                        id="inlineRadio" value="Full Time Observation">
-                                    <label class="form-check-label" for="inlineRadio">Full Time Observation
-                                    </label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" wire:model='observation'
-                                        id="inlineRadio1" value="Part Time Observation">
-                                    <label class="form-check-label" for="inlineRadio1">Part Time Observation</label>
-                                </div>
-                            </div>
-                            @error('observation')
-                            <span class="text-danger" style="font-size: 12px;">{{ $message
-                                }}</span>
-                            @enderror
+                          
                             <div class="col-md-3 mt-3"></div>
                             <div class="col-md-10 mb-3 mt-3">
                                 <div class="input-group">
@@ -823,6 +741,13 @@
                                 }}</span>
                             @enderror
                         </div>
+
+                        <div class="row mb-3 mt-5">
+                            <div class="col-md-12">
+                                <p>The information presented in this report is preliminary in nature and presented for informational purposes only. The information included herein is not to be used for acceptance, compliance, or contractual purposes. This information is subject to review and change.  These test results apply only to the specific locations noted and may not represent any other locations or elevations.  Reports may not be reproduced, except in full, without written permission Geocal, Inc.</p>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>

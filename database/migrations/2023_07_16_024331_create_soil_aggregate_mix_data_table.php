@@ -21,7 +21,7 @@ class CreateSoilAggregateMixDataTable extends Migration
             $table->string('plant')->nullable();
             $table->string('mix_type')->nullable();
             $table->string('max_theoretical_density')->nullable();
-            $table->string('max_theoretical_specificGravity')->nullable();
+            $table->string('max_theoretical_specific_gravity')->nullable();
             $table->timestamps();
         });
     }

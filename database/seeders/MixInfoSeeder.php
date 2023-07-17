@@ -23,7 +23,7 @@ class MixInfoSeeder extends Seeder
             $admin->plant = 'Plant #2';
             $admin->mix_type = 'S100';
             $admin->max_theoretical_density = '167.3';
-            $admin->max_theoretical_specificGravity = '2.681';
+            $admin->max_theoretical_specific_gravity = '2.681';
             $admin->save();
         }
 
@@ -36,7 +36,7 @@ class MixInfoSeeder extends Seeder
             $admin->plant = 'Plant #1';
             $admin->mix_type = 'S200';
             $admin->max_theoretical_density = '150.8';
-            $admin->max_theoretical_specificGravity = '2.417';
+            $admin->max_theoretical_specific_gravity = '2.417';
             $admin->save();
         }
     }
