@@ -730,7 +730,7 @@
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="text" class="form-control moistureremoveinput"
-                                                            wire:model="wet_density_a_a">
+                                                            wire:model="wet_densitiesAA.0" wire:keyup='calculateAA'>
                                                     </div>
                                                 </td>
                                                 <td class="moistureremove">
@@ -764,8 +764,7 @@
                                                 <td class="moistureremove text-center" width="9%">Wet Density #2</td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control moistureremoveinput"
-                                                            wire:model="wet_density_b_a">
+                                                        <input type="text" class="form-control moistureremoveinput" wire:model="wet_densitiesAA.1" wire:keyup='calculateAA'>
                                                     </div>
                                                 </td>
                                                 <td class="moistureremove">
@@ -801,7 +800,7 @@
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="text" class="form-control moistureremoveinput"
-                                                            wire:model="wet_density_c_a">
+                                                             wire:model="wet_densitiesAA.2" wire:keyup='calculateAA'>
                                                     </div>
                                                 </td>
                                                 <td class="moistureremove">
@@ -835,7 +834,7 @@
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="text" class="form-control moistureremoveinput"
-                                                            wire:model="wet_density_d_a">
+                                                        wire:model="wet_densitiesAA.3" wire:keyup='calculateAA'>
                                                     </div>
                                                 </td>
                                                 <td class="moistureremove">
@@ -877,7 +876,7 @@
                                                 <td class="moistureremove text-center" width="18%">Sum of Wet Densities</td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <button type="text" class="form-control moistureremoveinput"
+                                                        <input type="text" class="form-control moistureremoveinput"
                                                             wire:model="wet_densities_a">
                                                     </div>
                                                 </td>
@@ -943,8 +942,8 @@
                                                 <td class="moistureremove text-center">Correction Factor (#469) PCF</td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control moistureremoveinput"
-                                                            wire:model="correction_factor_a">
+                                                        <input type="number" step="any" class="form-control moistureremoveinput"
+                                                            wire:model="correction_factor_a" wire:keyup='calculateAA'>
                                                     </div>
                                                 </td>
                                                 <td class="moistureremove">

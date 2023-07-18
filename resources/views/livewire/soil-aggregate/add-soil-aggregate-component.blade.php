@@ -455,7 +455,7 @@
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <select class="form-select moistureremoveinput"
-                                                            wire:model="result_mix_id.0" required>
+                                                            wire:model="result_mix_id.0" wire:change='mixResultInfo(0)' required>
                                                             <option value="">Select id</option>
                                                             @foreach ($selected_mix_info_ids as $s_mix_info)
                                                             <option value="{{ $s_mix_info }}">
@@ -468,6 +468,7 @@
                                                         }}</span>
                                                     @enderror
                                                 </td>
+
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="text" class="form-control moistureremoveinput"
@@ -548,7 +549,7 @@
                                                     <div class="input-group">
                                                         <input type="number" step="any"
                                                             class="form-control moistureremoveinput"
-                                                            wire:model="field_wet_density.0">
+                                                            wire:model="field_wet_density.0"  wire:keyup='changeTestResult(0)' readonly>
                                                         @error('field_wet_density')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
@@ -595,7 +596,7 @@
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <select class="form-select moistureremoveinput"
-                                                            wire:model="result_mix_id.{{ $testresult }}" required>
+                                                            wire:model="result_mix_id.{{ $testresult }}" wire:change='mixResultInfo({{ $testresult }})' required>
                                                             <option value="">Select id</option>
                                                             @foreach ($selected_mix_info_ids as $s_mix_info)
                                                             <option value="{{ $s_mix_info }}">

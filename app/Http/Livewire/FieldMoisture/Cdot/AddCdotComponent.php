@@ -25,6 +25,13 @@ class AddCdotComponent extends Component
 
 
     // Formula Calculation
+    public $wet_densitiesAA = [];
+    public function calculateAA()
+    {
+        $this->wet_densities_a = array_sum($this->wet_densitiesAA);
+        $this->average_wet_density_a = $this->wet_densities_a / count($this->wet_densitiesAA);
+        $this->adjusted_wet_a = $this->average_wet_density_a + (float)$this->correction_factor_a;
+    }
 
     public function updated($fields)
     {

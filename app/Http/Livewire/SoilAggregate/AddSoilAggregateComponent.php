@@ -44,8 +44,8 @@ class AddSoilAggregateComponent extends Component
     {
         $mix_info = MixInfo::where('mix_id', $this->result_mix_id[$value])->first();
         if ($mix_info) {
-            if (!$this->field_wet_density[$value]) {
-                $this->field_wet_density[$value] = 0;
+            if (!$this->max_theory_density[$value]) {
+                $this->max_theory_density[$value] = 0;
             }
             $this->relative_compaction[$value] = round(($this->field_wet_density[$value] / $mix_info->max_theoretical_density) * 100, 1);
         } else {
@@ -117,6 +117,16 @@ class AddSoilAggregateComponent extends Component
             $this->max_theoretical_density[$value] = '';
             $this->max_theoretical_specific_gravity[$value] = '';
             unset($this->selected_mix_info_ids[$value]);
+        }
+    }
+    // get result information
+    public function mixResultInfo($value)
+    {
+        $mixInfo = MixInfo::where('mix_id', $this->result_mix_id[$value])->first();
+        if ($mixInfo) {
+            $this->max_theory_density[$value] = $mixInfo->max_theoretical_density;
+        } else {
+            $this->max_theory_density[$value] = '';
         }
     }
 
