@@ -15,11 +15,13 @@ class EditSoilAggregateComponent extends Component
 {
     public $client_id, $client_name, $project_id, $project_number, $date, $technician, $weather, $office_address, $troxler, $other, $model, $serial_no, $density_count, $moisture_count, $moisture_equation, $test_mode, $test_method, $compaction_requirement_min, $compaction_requirement_max, $general_location, $remark, $status, $responsible_person = [], $fields = [], $i = 1, $j = 1, $mix_info_id = [];
 
-    public $mix_id = [], $supplier = [], $plant = [], $mix_type = [], $max_theoretical_density = [], $max_theoretical_specific_gravity;
+    public $mix_id = [], $supplier = [], $plant = [], $mix_type = [], $max_theoretical_density = [], $max_theoretical_specific_gravity = [];
 
     public $testresults = [], $test_no = [], $result_mix_id = [], $location = [], $count_period = [], $material = [], $lift = [], $layer_thickness = [], $max_theory_density = [], $field_wet_density = [], $relative_compaction = [], $pass_fail = [];
 
     public $file_id, $user_id, $testResultData = [], $mixData = [];
+
+
 
     public function mount($file_id)
     {
@@ -69,7 +71,10 @@ class EditSoilAggregateComponent extends Component
 
         foreach ($test_results as $key => $test_result) {
             array_push($this->test_no, $test_result->test_no);
+
+            array_push($this->selected_mix_info_ids, $test_result->result_mix_id);
             array_push($this->result_mix_id, $test_result->result_mix_id);
+
             array_push($this->location, $test_result->location);
             array_push($this->count_period, $test_result->count_period);
             array_push($this->material, $test_result->material);
@@ -150,10 +155,10 @@ class EditSoilAggregateComponent extends Component
     public $selected_mix_info_ids = [];
     public function mixInfo($value)
     {
-        $mixInfo = MixInfo::where('mix_id', $this->mix_info_id[$value])->first();
+        $mixInfo = MixInfo::where('mix_id', $this->result_mix_id[$value])->first();
 
         if ($mixInfo) {
-            $this->selected_mix_info_ids[$value] = $this->mix_info_id[$value];
+            $this->selected_mix_info_ids[$value] = $this->result_mix_id[$value];
             $this->supplier[$value] = $mixInfo->supplier;
             $this->plant[$value] = $mixInfo->plant;
             $this->mix_type[$value] = $mixInfo->mix_type;

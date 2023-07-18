@@ -268,7 +268,7 @@
                                             <tr>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <select class="form-select" wire:model="mix_info_id.{{ $field }}"
+                                                        <select class="form-select" wire:model="result_mix_id.{{ $field }}"
                                                             wire:change="mixInfo({{ $field }})">
                                                             <option value="">Select id</option>
                                                             @foreach ($mix_infos as $mixInfo)
@@ -276,7 +276,7 @@
                                                                 {{ mixInfo($mixInfo->id)->mix_id }}</option>
                                                             @endforeach
                                                         </select>
-                                                        @error('mix_info_id')
+                                                        @error('result_mix_id')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
                                                         @enderror
@@ -408,6 +408,7 @@
                                                         </select>
                                                     </div>
                                                 </td>
+
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="text" class="form-control moistureremoveinput"
@@ -608,7 +609,7 @@
         </div>
     </div>
     
-    <form wire:submit.prevent='storeData'>
+    <form wire:submit.prevent='updateData'>
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
@@ -628,20 +629,23 @@
 @push('scripts')
 <script>
     $(document).ready(function() {
-            $('#selectInfo').change(function() {
-                var project_id = $(this).val();
-                $.ajax({
-                        url: "{{ route('edit_soil_aggregate_representative') }}",
+            $('.dependent').change(function() {
+                if ($(this).val() != '') {
+                    var file_id = $(this).data("file_id");
+                    var value = $(this).val();
+                    $.ajax({
+                        url: "{{ route('edit_commercial_representative') }}",
                         method: "POST",
                         data: {
-                            project_id: project_id,
+                            file_id: file_id,
+                            value: value,
                             _token: '<?php echo csrf_token(); ?>',
                         },
                         success: function(result) {
-                            console.log(result);
                             $('#action').html(result);
                         }
                     })
+                }
             });
         });
 </script>
@@ -652,7 +656,6 @@
             dropdownAutoWidth: true,
             theme: 'bootstrap-5'
 });
-
  //add model value
  $('#action').on('change', function() {
             var value = $(this).val();

@@ -364,6 +364,7 @@
                                             <tr>
                                                 <th class="customcolor" scope="col">Test No.</th>
                                                 <th class="customcolor" scope="col">Mix ID</th>
+                                                <th class="customcolor" scope="col">Location</th>
                                                 <th class="customcolor" scope="col">(AASHTO requires 1 min) Count Period
                                                 </th>
                                                 <th class="customcolor" scope="col">Material (Base, Surface, Bit Agg
@@ -395,6 +396,17 @@
                                                         <input type="number" class="form-control moistureremoveinput"
                                                             wire:model="result_mix_id.{{ $testresult }}">
                                                         @error('result_mix_id')
+                                                        <span class="text-danger" style="font-size: 12px;">{{ $message
+                                                            }}</span>
+                                                        @enderror
+                                                    </div>
+                                                </td>
+
+                                                <td class="moistureremove">
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control moistureremoveinput"
+                                                            wire:model="location.{{ $testresult }}">
+                                                        @error('location')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
                                                         @enderror

@@ -70,6 +70,7 @@ class ViewSoilAggregateComponent extends Component
         foreach ($test_results as $key => $test_result) {
             array_push($this->test_no, $test_result->test_no);
             array_push($this->result_mix_id, $test_result->result_mix_id);
+            array_push($this->location, $test_result->location);
             array_push($this->count_period, $test_result->count_period);
             array_push($this->material, $test_result->material);
             array_push($this->lift, $test_result->lift);

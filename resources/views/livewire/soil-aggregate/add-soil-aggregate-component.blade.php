@@ -18,11 +18,10 @@
                     <div class="float-end">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="">Dashboard</a></li>
-                            <li class="breadcrumb-item"><a href="">FIELD DENSITY OF SOIL AGGREGATE</a></li>
+                            <li class="breadcrumb-item"><a href="">Asphalt Field Density by Nuclear Method - Commercial</a></li>
                             <li class="breadcrumb-item active">ADD</li>
                         </ol>
                     </div>
-                    <h4 class="page-title">ADD FIELD DENSITY OF SOIL AGGREGATE</h4>
                 </div>
             </div>
         </div>
@@ -38,7 +37,7 @@
                             <div class="col-md-4"></div>
                             <div class="col-md-4">
                                 <div class="content text-center pt-2 pb-2">
-                                    <h6>FIELD DENSITY OF SOIL AGGREGATE BY NUCLEAR METHOD</h6>
+                                    <h6 style="text-transform: uppercase;">Asphalt Field Density by Nuclear Method - Commercial</h6>
                                 </div>
                             </div>
                             <div class="col-md-4"></div>
@@ -796,7 +795,7 @@
             $('#selectInfo').change(function() {
                 var project_id = $(this).val();
                 $.ajax({
-                        url: "{{ route('get_commercial_representative') }}",
+                        url: "{{ route('get_soil_representative') }}",
                         method: "POST",
                         data: {
                             project_id: project_id,

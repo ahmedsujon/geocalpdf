@@ -15,7 +15,7 @@ class AddSoilAggregateComponent extends Component
 {
     public $client_id, $client_name, $project_id, $project_number, $date, $technician, $weather, $office_address, $troxler, $other, $model, $serial_no, $density_count, $moisture_count, $moisture_equation, $test_mode, $test_method, $compaction_requirement_min, $compaction_requirement_max, $general_location, $remark, $status, $responsible_person = [], $fields = [], $i = 1, $j = 1, $mix_info_id = [];
 
-    public $mix_id = [], $supplier = [], $plant = [], $mix_type = [], $max_theoretical_density = [], $max_theoretical_specific_gravity;
+    public $mix_id = [], $supplier = [], $plant = [], $mix_type = [], $max_theoretical_density = [], $max_theoretical_specific_gravity = [];
 
     public $testresults = [], $test_no = [], $result_mix_id = [], $location = [], $count_period = [], $material = [], $lift = [], $layer_thickness = [], $max_theory_density = [], $field_wet_density = [], $relative_compaction = [], $pass_fail = [];
 
@@ -156,10 +156,10 @@ class AddSoilAggregateComponent extends Component
         $data->save();
 
         // mix information
-        foreach ($this->mix_id as $key => $p_id) {
+        foreach ($this->mix_info_id as $key => $p_id) {
             $cont = new SoilAggregateMixData();
             $cont->soil_aggregate_id = $data->id;
-            $cont->mix_id = $this->mix_id[$key];
+            $cont->mix_id = $this->mix_info_id[$key];
             $cont->supplier = $this->supplier[$key];
             $cont->plant = $this->plant[$key];
             $cont->mix_type = $this->mix_type[$key];

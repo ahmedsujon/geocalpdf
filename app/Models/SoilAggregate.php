@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class SoilAggregate extends Model
 {
     use HasFactory;
+    protected $table = 'soil_aggregates';
 }
