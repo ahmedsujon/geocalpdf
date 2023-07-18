@@ -372,6 +372,7 @@
                                             <tr>
                                                 <th class="customcolor" scope="col">Test No.</th>
                                                 <th class="customcolor" scope="col">Mix ID</th>
+                                                <th class="customcolor" scope="col">Location</th>
                                                 <th class="customcolor" scope="col">(AASHTO requires 1 min) Count Period</th>
                                                 <th class="customcolor" scope="col">Material (Base, Surface, Bit Agg Mix)</th>
                                                 <th class="customcolor" scope="col">Lift</th>
@@ -634,7 +635,7 @@
                     var file_id = $(this).data("file_id");
                     var value = $(this).val();
                     $.ajax({
-                        url: "{{ route('edit_commercial_representative') }}",
+                        url: "{{ route('update_aggregate_representative') }}",
                         method: "POST",
                         data: {
                             file_id: file_id,

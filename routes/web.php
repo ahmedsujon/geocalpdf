@@ -106,8 +106,8 @@ Route::get('/commercial/edit/{file_id}', EditSoilAggregateComponent::class)->nam
 Route::get('/commercial/show/{file_id}', ViewSoilAggregateComponent::class)->name('soil.aggregate.show');
 
 // Get Representative for Aggregate
-Route::post('/get-soil-representative', [SoilAggregateComponent::class, 'getSoilRepresentative'])->name('get_soil_representative');
-Route::post('/edit-aggregate-representative', [SoilAggregateComponent::class, 'editSoilRepresentative'])->name('edit_aggregate_representative');
+Route::post('/soil-representative', [SoilAggregateComponent::class, 'getSoilRepresentative'])->name('fetch_soil_representative');
+Route::post('/aggregate-representative', [SoilAggregateComponent::class, 'editSoilRepresentative'])->name('update_aggregate_representative');
 
 // Commercial
 Route::get('/soil-aggregate', CommercialComponent::class)->name('template.commercial');
@@ -166,7 +166,7 @@ Route::get('/invoice/{id}', [InvoiceController::class, 'commercialPDF'])->name('
 Route::get('/cdot-form/{id}', [InvoiceController::class, 'cdotPDF'])->name('cdot.form.generate');
 Route::get('/temp-one/{id}', [InvoiceController::class, 'templateOnePDF'])->name('template.one.generate');
 Route::get('/inspection/concrete/report/{id}', [InvoiceController::class, 'templateInspectionConcrete'])->name('inspection.concrete.generate');
-Route::get('/commercial/report/{id}', [InvoiceController::class, 'templateSoilAggregate'])->name('soil.aggregate.generate');
+Route::get('/social/aggregate/report/{id}', [InvoiceController::class, 'templateSoilAggregate'])->name('soil.aggregate.generate');
 
 //authSuperAdmin
 Route::middleware(['auth:sanctum', 'verified'])->name('admin.')->group(function () {

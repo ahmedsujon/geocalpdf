@@ -9,6 +9,7 @@ use App\Models\SoilAggregateMixData;
 use App\Models\SoilAggregateTestResult;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Livewire\Component;
 
 class EditSoilAggregateComponent extends Component
@@ -174,7 +175,7 @@ class EditSoilAggregateComponent extends Component
         }
     }
 
-    public function storeData()
+    public function updateData()
     {
         $this->validate([
             'project_id' => 'required',
@@ -259,24 +260,24 @@ class EditSoilAggregateComponent extends Component
         $data->save();
 
         //send Mail
-        // if ($this->responsible_person) {
-        //     $persons = $this->responsible_person;
-        //     $f_id = $data->id;
-        //     dispatch(function () use ($persons, $f_id) {
-        //         foreach ($persons as $key => $re_id) {
-        //             $user = User::find($re_id);
-        //             $mailData['email'] = $user->email;
-        //             $mailData['name'] = $user->name;
-        //             $mailData['role_id'] = $user->role_id;
-        //             $mailData['id'] = $f_id;
-        //             $mailData['subject'] = 'New file waiting for your review';
-        //             Mail::send('emails.mail_commercial', $mailData, function ($message) use ($mailData) {
-        //                 $message->to($mailData['email'])
-        //                     ->subject($mailData['subject']);
-        //             });
-        //         }
-        //     });
-        // }
+        if ($this->responsible_person) {
+            $persons = $this->responsible_person;
+            $f_id = $data->id;
+            dispatch(function () use ($persons, $f_id) {
+                foreach ($persons as $key => $re_id) {
+                    $user = User::find($re_id);
+                    $mailData['email'] = $user->email;
+                    $mailData['name'] = $user->name;
+                    $mailData['role_id'] = $user->role_id;
+                    $mailData['id'] = $f_id;
+                    $mailData['subject'] = 'New file waiting for your review';
+                    Mail::send('emails.mail_commercial', $mailData, function ($message) use ($mailData) {
+                        $message->to($mailData['email'])
+                            ->subject($mailData['subject']);
+                    });
+                }
+            });
+        }
 
         session()->flash('message', 'File created successfully');
         return redirect()->route('template.soil.aggregate');

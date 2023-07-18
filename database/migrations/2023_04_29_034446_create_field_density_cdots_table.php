@@ -147,8 +147,8 @@ class CreateFieldDensityCdotsTable extends Migration
             $table->text('adjusted_wet_a')->nullable();
             $table->text('adjusted_wet_b')->nullable();
             $table->text('adjusted_wet_c')->nullable();
-            $table->text('adjusted_wet_e')->nullable();
             $table->text('adjusted_wet_d')->nullable();
+            $table->text('adjusted_wet_e')->nullable();
             $table->text('ave_daily_rice_a')->nullable();
             $table->text('ave_daily_rice_b')->nullable();
             $table->text('ave_daily_rice_c')->nullable();

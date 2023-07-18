@@ -877,7 +877,7 @@
                                                 <td class="moistureremove text-center" width="18%">Sum of Wet Densities</td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control moistureremoveinput"
+                                                        <button type="text" class="form-control moistureremoveinput"
                                                             wire:model="wet_densities_a">
                                                     </div>
                                                 </td>

@@ -18,7 +18,8 @@
                     <div class="float-end">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="">Dashboard</a></li>
-                            <li class="breadcrumb-item"><a href="">Asphalt Field Density by Nuclear Method - Commercial</a></li>
+                            <li class="breadcrumb-item"><a href="">Asphalt Field Density by Nuclear Method -
+                                    Commercial</a></li>
                             <li class="breadcrumb-item active">ADD</li>
                         </ol>
                     </div>
@@ -37,7 +38,8 @@
                             <div class="col-md-4"></div>
                             <div class="col-md-4">
                                 <div class="content text-center pt-2 pb-2">
-                                    <h6 style="text-transform: uppercase;">Asphalt Field Density by Nuclear Method - Commercial</h6>
+                                    <h6 style="text-transform: uppercase;">Asphalt Field Density by Nuclear Method -
+                                        Commercial</h6>
                                 </div>
                             </div>
                             <div class="col-md-4"></div>
@@ -127,7 +129,8 @@
                                             4763 Town Center Drive Colorado Springs, CO 80916 (719)-265-9003</option>
                                         <option value="542 W. 66th St. Loveland, CO 80538(970) 685-4316">542 W. 66th St.
                                             Loveland, CO 80538(970) 685-4316</option>
-                                            <option value="5709 SE 74th St., Suite A Oklahoma City, OK 73135">5709 SE 74th St., Suite A Oklahoma City, OK 73135</option>
+                                        <option value="5709 SE 74th St., Suite A Oklahoma City, OK 73135">5709 SE 74th
+                                            St., Suite A Oklahoma City, OK 73135</option>
                                     </select>
                                 </div>
                                 @error('office_address')
@@ -258,7 +261,8 @@
                                                 <th class="customcolor" scope="col">Supplier</th>
                                                 <th class="customcolor" scope="col">Plant</th>
                                                 <th class="customcolor" scope="col">Mix Type</th>
-                                                <th class="customcolor" scope="col">Max Theoretical Density, (lb/ft3)</th>
+                                                <th class="customcolor" scope="col">Max Theoretical Density, (lb/ft3)
+                                                </th>
                                                 <th class="customcolor" scope="col">Max Theoretical SpecificGravity</th>
                                             </tr>
                                         </thead>
@@ -316,7 +320,8 @@
                                             <tr>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <select class="form-select" wire:model="mix_info_id.{{ $field }}"
+                                                        <select class="form-select"
+                                                            wire:model="mix_info_id.{{ $field }}"
                                                             wire:change="mixInfo({{ $field }})">
                                                             <option value="">Select id</option>
                                                             @foreach ($mix_infos as $mixInfo)
@@ -330,7 +335,7 @@
                                                         @enderror
                                                     </div>
                                                 </td>
-                                                
+
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="text" class="form-control moistureremoveinput"
@@ -359,7 +364,8 @@
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="text" class="form-control moistureremoveinput"
-                                                            wire:model="max_theoretical_specific_gravity.{{ $field }}" readonly>
+                                                            wire:model="max_theoretical_specific_gravity.{{ $field }}"
+                                                            readonly>
                                                     </div>
                                                 </td>
                                                 <td class="moistureremove">
@@ -421,8 +427,10 @@
                                                 <th class="customcolor" scope="col">Test No.</th>
                                                 <th class="customcolor" scope="col">Mix ID</th>
                                                 <th class="customcolor" scope="col">Location</th>
-                                                <th class="customcolor" scope="col">(AASHTO requires 1 min) Count Period</th>
-                                                <th class="customcolor" scope="col">Material (Base, Surface, Bit Agg Mix)</th>
+                                                <th class="customcolor" scope="col">(AASHTO requires 1 min) Count Period
+                                                </th>
+                                                <th class="customcolor" scope="col">Material (Base, Surface, Bit Agg
+                                                    Mix)</th>
                                                 <th class="customcolor" scope="col">Lift</th>
                                                 <th class="customcolor" scope="col">Layer Thickness (in)</th>
                                                 <th class="customcolor" scope="col">Maximum Theo. Density (pcf)</th>
@@ -443,7 +451,7 @@
                                                         @enderror
                                                     </div>
                                                 </td>
-                                                
+
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <select class="form-select moistureremoveinput"
@@ -455,6 +463,10 @@
                                                             @endforeach
                                                         </select>
                                                     </div>
+                                                    @error('result_mix_id')
+                                                    <span class="text-danger" style="font-size: 12px;">{{ $message
+                                                        }}</span>
+                                                    @enderror
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
@@ -475,11 +487,11 @@
                                                             <option value="1 min.">1 min.</option>
                                                             <option value="4 min.">4 min.</option>
                                                         </select>
-                                                        @error('count_period')
-                                                        <span class="text-danger" style="font-size: 12px;">{{ $message
-                                                            }}</span>
-                                                        @enderror
                                                     </div>
+                                                    @error('count_period')
+                                                    <span class="text-danger" style="font-size: 12px;">{{ $message
+                                                        }}</span>
+                                                    @enderror
                                                 </td>
 
                                                 <td class="moistureremove">
@@ -489,13 +501,14 @@
                                                             <option value="">Select</option>
                                                             <option value="Surface">Surface</option>
                                                             <option value="Binder">Binder</option>
-                                                            <option value="Bituminous Aggregate Mixture">Bituminous Aggregate Mixture</option>
+                                                            <option value="Bituminous Aggregate Mixture">Bituminous
+                                                                Aggregate Mixture</option>
                                                         </select>
-                                                        @error('material')
-                                                        <span class="text-danger" style="font-size: 12px;">{{ $message
-                                                            }}</span>
-                                                        @enderror
                                                     </div>
+                                                    @error('material')
+                                                    <span class="text-danger" style="font-size: 12px;">{{ $message
+                                                        }}</span>
+                                                    @enderror
                                                 </td>
 
                                                 <td class="moistureremove">
@@ -530,6 +543,7 @@
                                                         @enderror
                                                     </div>
                                                 </td>
+
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="number" step="any"
@@ -541,6 +555,7 @@
                                                         @enderror
                                                     </div>
                                                 </td>
+
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="number" step="any"
@@ -554,8 +569,7 @@
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="text"
-                                                            class="form-control moistureremoveinput"
+                                                        <input type="text" class="form-control moistureremoveinput"
                                                             wire:model="pass_fail.0">
                                                         @error('pass_fail')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
@@ -564,7 +578,7 @@
                                                     </div>
                                                 </td>
                                             </tr>
-                                          
+
                                             @foreach ($testresults as $key => $testresult)
                                             <tr>
                                                 <td class="moistureremove">
@@ -577,7 +591,7 @@
                                                         @enderror
                                                     </div>
                                                 </td>
-                                                
+
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <select class="form-select moistureremoveinput"
@@ -589,6 +603,10 @@
                                                             @endforeach
                                                         </select>
                                                     </div>
+                                                    @error('result_mix_id')
+                                                    <span class="text-danger" style="font-size: 12px;">{{ $message
+                                                        }}</span>
+                                                    @enderror
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
@@ -623,7 +641,8 @@
                                                             <option value="">Select</option>
                                                             <option value="Surface">Surface</option>
                                                             <option value="Binder">Binder</option>
-                                                            <option value="Bituminous Aggregate Mixture">Bituminous Aggregate Mixture</option>
+                                                            <option value="Bituminous Aggregate Mixture">Bituminous
+                                                                Aggregate Mixture</option>
                                                         </select>
                                                         @error('material')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
@@ -664,22 +683,26 @@
                                                         @enderror
                                                     </div>
                                                 </td>
-                                                <td class="moistureremove">
+
+                                                 <td class="moistureremove ss">
                                                     <div class="input-group">
                                                         <input type="number" step="any"
                                                             class="form-control moistureremoveinput"
-                                                            wire:model="field_wet_density.{{ $testresult }}">
-                                                        @error('field_wet_density')
+                                                            wire:model="dry_density.{{ $testresult }}"
+                                                            wire:keyup='changeTestResult({{ $testresult }})'
+                                                            @if(!$result_mix_id[$testresult]) readonly @endif>
+                                                        @error('dry_density')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
                                                         @enderror
                                                     </div>
                                                 </td>
+
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="number" step="any"
                                                             class="form-control moistureremoveinput"
-                                                            wire:model="relative_compaction.{{ $testresult }}">
+                                                            wire:model="relative_compaction.{{ $testresult }}" readonly>
                                                         @error('relative_compaction')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
@@ -688,8 +711,7 @@
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="text"
-                                                            class="form-control moistureremoveinput"
+                                                        <input type="text" class="form-control moistureremoveinput"
                                                             wire:model="pass_fail.{{ $testresult }}">
                                                         @error('pass_fail')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
@@ -725,13 +747,13 @@
                                 <h6>Material:</h6>
                             </div>
                             <div class="col-md-3">
-                                <ol type="1">					
+                                <ol type="1">
                                     <li>Surface</li>
                                     <li>Binder</li>
                                     <li>Bituminous Aggregate Mixture</li>
                                 </ol>
                             </div>
-                          
+
                             <div class="col-md-3 mt-3"></div>
                             <div class="col-md-10 mb-3 mt-3">
                                 <div class="input-group">
@@ -762,7 +784,12 @@
 
                         <div class="row mb-3 mt-5">
                             <div class="col-md-12">
-                                <p>The information presented in this report is preliminary in nature and presented for informational purposes only. The information included herein is not to be used for acceptance, compliance, or contractual purposes. This information is subject to review and change.  These test results apply only to the specific locations noted and may not represent any other locations or elevations.  Reports may not be reproduced, except in full, without written permission Geocal, Inc.</p>
+                                <p>The information presented in this report is preliminary in nature and presented for
+                                    informational purposes only. The information included herein is not to be used for
+                                    acceptance, compliance, or contractual purposes. This information is subject to
+                                    review and change. These test results apply only to the specific locations noted and
+                                    may not represent any other locations or elevations. Reports may not be reproduced,
+                                    except in full, without written permission Geocal, Inc.</p>
                             </div>
                         </div>
 
@@ -771,7 +798,7 @@
             </div>
         </div>
     </div>
-    
+
     <form wire:submit.prevent='storeData'>
         <div class="row">
             <div class="col-md-12">
@@ -795,7 +822,7 @@
             $('#selectInfo').change(function() {
                 var project_id = $(this).val();
                 $.ajax({
-                        url: "{{ route('get_soil_representative') }}",
+                        url: "{{ route('fetch_soil_representative') }}",
                         method: "POST",
                         data: {
                             project_id: project_id,

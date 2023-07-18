@@ -515,6 +515,7 @@
                                                         @enderror
                                                     </div>
                                                 </td>
+                                                
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="number" step="any"
@@ -526,6 +527,7 @@
                                                         @enderror
                                                     </div>
                                                 </td>
+
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="text" class="form-control moistureremoveinput"

@@ -9,6 +9,7 @@ use App\Models\SoilAggregateMixData;
 use App\Models\SoilAggregateTestResult;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Livewire\Component;
 
 class AddSoilAggregateComponent extends Component
@@ -38,11 +39,26 @@ class AddSoilAggregateComponent extends Component
         }
     }
 
+    // formula calculation
+    public function changeTestResult($value)
+    {
+        $mix_info = MixInfo::where('mix_id', $this->result_mix_id[$value])->first();
+        if ($mix_info) {
+            if (!$this->field_wet_density[$value]) {
+                $this->field_wet_density[$value] = 0;
+            }
+            $this->relative_compaction[$value] = round(($this->field_wet_density[$value] / $mix_info->max_theoretical_density) * 100, 1);
+        } else {
+            $this->relative_compaction[$value] = 0;
+        }
+    }
+
     public function addField($i)
     {
         $i = $i + 1;
         $this->i = $i;
         array_push($this->fields, $i);
+        $this->result_mix_id = 0;
         $this->mix_id[$i] = 0;
         $this->supplier[$i] = 0;
         $this->plant[$i] = 0;
@@ -113,6 +129,9 @@ class AddSoilAggregateComponent extends Component
             'general_location' => 'required',
             'responsible_person' => 'required',
             'office_address' => 'required',
+            'result_mix_id' => 'required',
+            'count_period' => 'required',
+            'material' => 'required',
         ]);
 
         $data = new SoilAggregate();
@@ -189,24 +208,24 @@ class AddSoilAggregateComponent extends Component
         $data->save();
 
         //send Mail
-        // if ($this->responsible_person) {
-        //     $persons = $this->responsible_person;
-        //     $f_id = $data->id;
-        //     dispatch(function () use ($persons, $f_id) {
-        //         foreach ($persons as $key => $re_id) {
-        //             $user = User::find($re_id);
-        //             $mailData['email'] = $user->email;
-        //             $mailData['name'] = $user->name;
-        //             $mailData['role_id'] = $user->role_id;
-        //             $mailData['id'] = $f_id;
-        //             $mailData['subject'] = 'New file waiting for your review';
-        //             Mail::send('emails.mail_commercial', $mailData, function ($message) use ($mailData) {
-        //                 $message->to($mailData['email'])
-        //                     ->subject($mailData['subject']);
-        //             });
-        //         }
-        //     });
-        // }
+        if ($this->responsible_person) {
+            $persons = $this->responsible_person;
+            $f_id = $data->id;
+            dispatch(function () use ($persons, $f_id) {
+                foreach ($persons as $key => $re_id) {
+                    $user = User::find($re_id);
+                    $mailData['email'] = $user->email;
+                    $mailData['name'] = $user->name;
+                    $mailData['role_id'] = $user->role_id;
+                    $mailData['id'] = $f_id;
+                    $mailData['subject'] = 'New file waiting for your review';
+                    Mail::send('emails.mail_commercial', $mailData, function ($message) use ($mailData) {
+                        $message->to($mailData['email'])
+                            ->subject($mailData['subject']);
+                    });
+                }
+            });
+        }
 
         session()->flash('message', 'File created successfully');
         return redirect()->route('template.soil.aggregate');
