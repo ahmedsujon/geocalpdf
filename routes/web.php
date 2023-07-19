@@ -166,7 +166,7 @@ Route::get('/invoice/{id}', [InvoiceController::class, 'commercialPDF'])->name('
 Route::get('/cdot-form/{id}', [InvoiceController::class, 'cdotPDF'])->name('cdot.form.generate');
 Route::get('/temp-one/{id}', [InvoiceController::class, 'templateOnePDF'])->name('template.one.generate');
 Route::get('/inspection/concrete/report/{id}', [InvoiceController::class, 'templateInspectionConcrete'])->name('inspection.concrete.generate');
-Route::get('/social/aggregate/report/{id}', [InvoiceController::class, 'templateSoilAggregate'])->name('soil.aggregate.generate');
+Route::get('/commercial/report/{id}', [InvoiceController::class, 'templateSoilAggregate'])->name('soil.aggregate.generate');
 
 //authSuperAdmin
 Route::middleware(['auth:sanctum', 'verified'])->name('admin.')->group(function () {

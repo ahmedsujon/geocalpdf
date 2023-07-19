@@ -173,7 +173,7 @@
         </td>
         <td style="padding: 4px 6px; border: 1px solid lightgray">
           <h4 style="font-size: 14px; font-weight: 400">
-            {{ $data->main_test_method }}
+            {{ $data->test_method }}
           </h4>
         </td>
         <td style="padding: 4px 6px; border: 1px solid lightgray">
@@ -395,25 +395,10 @@
     </table>
     <br />
 
-    <table style="width: 100%; border-collapse: collapse; padding-bottom: 20px;">
-      <tr>
-        <td>Comments:</td>
-        <td style="padding: 4px 6px">
-          <ol type="A" style="font-size: 14px; font-weight: 400; text-align: left">
-            <li>Test results comply with specifications</li>
-            <li>Compaction percentage does not comply with specifications</li>
-            <li>Retest of previous test</li>
-            <li>Moisture in excess of specifications</li>
-            <li>Moisture below specifications</li>
-          </ol>
-        </td>
-      </tr>
-    </table>
-
     <table style="width: 100%; border-collapse: collapse">
       <tr>
         <td>
-          <h5>{{ $data->observation }}</h5>
+          <h5>{{ $data->report_status }}</h5>
           <h4 style="
                 font-size: 14px;
                 font-weight: 400;
@@ -425,7 +410,7 @@
           </h4>
         </td>
         <td>
-          <h5>{{ $data->technician }}</h5>
+          <h5>{{ user($data->user_id)->name }}</h5>
           <h4 style="
                 font-size: 14px;
                 font-weight: 400;
@@ -433,7 +418,7 @@
                 padding-top: 2px;
                 width: 160px;
               ">
-            Field Representative
+            Materials Technician:
           </h4>
         </td>
         <td>

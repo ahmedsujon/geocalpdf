@@ -12,7 +12,7 @@ use Livewire\Component;
 
 class ViewSoilAggregateComponent extends Component
 {
-    public $client_id, $client_name, $project_id, $project_number, $date, $technician, $weather, $office_address, $troxler, $other, $model, $serial_no, $density_count, $moisture_count, $moisture_equation, $test_mode, $test_method, $compaction_requirement_min, $compaction_requirement_max, $general_location, $remark, $status, $responsible_person = [], $fields = [], $i = 1, $j = 1, $mix_info_id = [];
+    public $client_id, $client_name, $project_id, $project_number, $date, $weather, $office_address, $troxler, $other, $model, $serial_no, $density_count, $moisture_count, $moisture_equation, $test_mode, $test_method,  $report_status,$compaction_requirement_min, $compaction_requirement_max, $general_location, $remark, $status, $responsible_person = [], $fields = [], $i = 1, $j = 1, $mix_info_id = [];
 
     public $mix_id = [], $supplier = [], $plant = [], $mix_type = [], $max_theoretical_density = [], $max_theoretical_specific_gravity = [];
 
@@ -42,6 +42,7 @@ class ViewSoilAggregateComponent extends Component
         $this->density_count = $file->density_count;
         $this->moisture_count = $file->moisture_count;
         $this->moisture_equation = $file->moisture_equation;
+        $this->report_status = $file->report_status;
         $this->test_mode = $file->test_mode;
         $this->test_method = $file->test_method;
         $this->compaction_requirement_min = $file->compaction_requirement_min;

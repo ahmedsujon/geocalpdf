@@ -86,7 +86,7 @@
 
                                 <div class="input-group mt-3">
                                     <span class="input-group-text">Technician:</span>
-                                    <select class="form-select" wire:model="technician">
+                                    <select class="form-select" wire:model="user_id">
                                         <option value="">Select Technician</option>
                                         @foreach ($supervisors as $supervisor)
                                         <option value="{{ $supervisor->id }}">{{ user($supervisor->id)->name }}
@@ -560,7 +560,27 @@
                                     <li>Bituminous Aggregate Mixture</li>
                                 </ol>
                             </div>
-                          
+                            <div class="row">
+                                <div class="col-md-2 mt-3">
+                                    <h6>Observation:</h6>
+                                </div>
+                                <div class="col-md-10 mt-3">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" wire:model="report_status"
+                                            id="inlineRadio1" value="Preliminary">
+                                        <label class="form-check-label" for="inlineRadio1">Preliminary:</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" wire:model="report_status"
+                                            id="inlineRadio2" value="Final">
+                                        <label class="form-check-label" for="inlineRadio2">Final:</label>
+                                    </div>
+                                    @error('report_status')
+                                    <span class="text-danger" style="font-size: 12px;">{{ $message
+                                        }}</span>
+                                    @enderror
+                                </div>
+                            </div>
                             <div class="col-md-3 mt-3"></div>
                             <div class="col-md-10 mb-3 mt-3">
                                 <div class="input-group">

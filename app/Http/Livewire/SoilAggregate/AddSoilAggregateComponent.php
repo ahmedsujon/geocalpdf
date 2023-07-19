@@ -14,7 +14,7 @@ use Livewire\Component;
 
 class AddSoilAggregateComponent extends Component
 {
-    public $client_id, $client_name, $project_id, $project_number, $date, $technician, $weather, $office_address, $troxler, $other, $model, $serial_no, $density_count, $moisture_count, $moisture_equation, $test_mode, $test_method, $compaction_requirement_min, $compaction_requirement_max, $general_location, $remark, $status, $responsible_person = [], $fields = [], $i = 1, $j = 1, $mix_info_id = [];
+    public $client_id, $client_name, $project_id, $project_number, $date, $user_id, $weather, $office_address, $troxler, $other, $model, $serial_no, $density_count, $moisture_count, $moisture_equation, $test_mode, $test_method, $compaction_requirement_min, $compaction_requirement_max, $general_location, $remark, $status, $report_status, $responsible_person = [], $fields = [], $i = 1, $j = 1, $mix_info_id = [];
 
     public $mix_id = [], $supplier = [], $plant = [], $mix_type = [], $max_theoretical_density = [], $max_theoretical_specific_gravity = [];
 
@@ -144,6 +144,7 @@ class AddSoilAggregateComponent extends Component
             'result_mix_id' => 'required',
             'count_period' => 'required',
             'material' => 'required',
+            'report_status' => 'required'
         ]);
 
         $data = new SoilAggregate();
@@ -151,7 +152,7 @@ class AddSoilAggregateComponent extends Component
         $data->client_id = $this->client_id;
         $data->project_number = $this->project_number;
         $data->date = $this->date;
-        $data->technician = $this->technician;
+        $data->user_id = $this->user_id;
         $data->weather = $this->weather;
         $data->office_address = $this->office_address;
         $data->troxler = $this->troxler;
@@ -161,6 +162,7 @@ class AddSoilAggregateComponent extends Component
         $data->density_count = $this->density_count;
         $data->moisture_count = $this->moisture_count;
         $data->moisture_equation = $this->moisture_equation;
+        $data->report_status = $this->report_status;
 
         $data->test_mode = $this->test_mode;
         $data->test_method = $this->test_method;

@@ -20,7 +20,7 @@ class CreateSoilAggregatesTable extends Migration
             $table->string('project_id')->nullable();
             $table->string('project_number')->nullable();
             $table->dateTime('date')->nullable();
-            $table->string('technician')->nullable();
+            $table->string('user_id')->nullable();
             $table->string('weather')->nullable();
             // gauge information
             $table->string('office_address')->nullable();
@@ -37,11 +37,11 @@ class CreateSoilAggregatesTable extends Migration
             $table->string('compaction_requirement_min')->nullable();
             $table->string('compaction_requirement_max')->nullable();
             $table->text('general_location')->nullable();
-
             $table->text('remark')->nullable();
             $table->text('created_by')->nullable();
             $table->string('status')->nullable();
             $table->string('responsible_person')->nullable();
+            $table->string('report_status')->nullable();
             $table->timestamps();
         });
     }
