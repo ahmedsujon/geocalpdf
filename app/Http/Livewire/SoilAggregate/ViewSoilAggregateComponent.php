@@ -14,7 +14,7 @@ class ViewSoilAggregateComponent extends Component
 {
     public $client_id, $client_name, $project_id, $project_number, $date, $technician, $weather, $office_address, $troxler, $other, $model, $serial_no, $density_count, $moisture_count, $moisture_equation, $test_mode, $test_method, $compaction_requirement_min, $compaction_requirement_max, $general_location, $remark, $status, $responsible_person = [], $fields = [], $i = 1, $j = 1, $mix_info_id = [];
 
-    public $mix_id = [], $supplier = [], $plant = [], $mix_type = [], $max_theoretical_density = [], $max_theoretical_specific_gravity;
+    public $mix_id = [], $supplier = [], $plant = [], $mix_type = [], $max_theoretical_density = [], $max_theoretical_specific_gravity = [];
 
     public $testresults = [], $test_no = [], $result_mix_id = [], $location = [], $count_period = [], $material = [], $lift = [], $layer_thickness = [], $max_theory_density = [], $field_wet_density = [], $relative_compaction = [], $pass_fail = [];
 
@@ -59,7 +59,7 @@ class ViewSoilAggregateComponent extends Component
             array_push($this->plant, $mix_data->plant);
             array_push($this->mix_type, $mix_data->mix_type);
             array_push($this->max_theoretical_density, $mix_data->max_theoretical_density);
-            // array_push($this->max_theoretical_specific_gravity, $mix_data->max_theoretical_specific_gravity);
+            array_push($this->max_theoretical_specific_gravity, $mix_data->max_theoretical_specific_gravity);
             array_push($this->mixData, $mix_data->id);
             array_push($this->fields, $key);
         }

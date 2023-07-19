@@ -455,7 +455,8 @@
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <select class="form-select moistureremoveinput"
-                                                            wire:model="result_mix_id.0" wire:change='mixResultInfo(0)' required>
+                                                            wire:model="result_mix_id.0" wire:change='mixResultInfo(0)'
+                                                            required>
                                                             <option value="">Select id</option>
                                                             @foreach ($selected_mix_info_ids as $s_mix_info)
                                                             <option value="{{ $s_mix_info }}">
@@ -537,7 +538,7 @@
                                                     <div class="input-group">
                                                         <input type="number" step="any"
                                                             class="form-control moistureremoveinput"
-                                                            wire:model="max_theory_density.0">
+                                                            wire:model="max_theory_density.0" readonly>
                                                         @error('max_theory_density')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
@@ -549,7 +550,8 @@
                                                     <div class="input-group">
                                                         <input type="number" step="any"
                                                             class="form-control moistureremoveinput"
-                                                            wire:model="field_wet_density.0"  wire:keyup='changeTestResult(0)' readonly>
+                                                            wire:model="field_wet_density.0"
+                                                            wire:keyup='changeTestResult(0)'>
                                                         @error('field_wet_density')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
@@ -561,13 +563,14 @@
                                                     <div class="input-group">
                                                         <input type="number" step="any"
                                                             class="form-control moistureremoveinput"
-                                                            wire:model="relative_compaction.0">
+                                                            wire:model="relative_compaction.0" readonly>
                                                         @error('relative_compaction')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
                                                         @enderror
                                                     </div>
                                                 </td>
+
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="text" class="form-control moistureremoveinput"
@@ -578,6 +581,7 @@
                                                         @enderror
                                                     </div>
                                                 </td>
+
                                             </tr>
 
                                             @foreach ($testresults as $key => $testresult)
@@ -596,7 +600,8 @@
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <select class="form-select moistureremoveinput"
-                                                            wire:model="result_mix_id.{{ $testresult }}" wire:change='mixResultInfo({{ $testresult }})' required>
+                                                            wire:model="result_mix_id.{{ $testresult }}"
+                                                            wire:change='mixResultInfo({{ $testresult }})' required>
                                                             <option value="">Select id</option>
                                                             @foreach ($selected_mix_info_ids as $s_mix_info)
                                                             <option value="{{ $s_mix_info }}">
@@ -677,7 +682,7 @@
                                                     <div class="input-group">
                                                         <input type="number" step="any"
                                                             class="form-control moistureremoveinput"
-                                                            wire:model="max_theory_density.{{ $testresult }}">
+                                                            wire:model="max_theory_density.{{ $testresult }}" readonly>
                                                         @error('max_theory_density')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
@@ -685,14 +690,14 @@
                                                     </div>
                                                 </td>
 
-                                                 <td class="moistureremove ss">
+                                                <td class="moistureremove ss">
                                                     <div class="input-group">
                                                         <input type="number" step="any"
                                                             class="form-control moistureremoveinput"
-                                                            wire:model="dry_density.{{ $testresult }}"
+                                                            wire:model="field_wet_density.{{ $testresult }}"
                                                             wire:keyup='changeTestResult({{ $testresult }})'
-                                                            @if(!$result_mix_id[$testresult]) readonly @endif>
-                                                        @error('dry_density')
+                                                            @if(!$result_mix_id[$testresult]) @endif>
+                                                        @error('field_wet_density.{{ $testresult }}')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
                                                         @enderror
@@ -733,7 +738,8 @@
                                         </tbody>
                                     </table>
                                     <div class="add-button pb-2" style="float:right;">
-                                        <button type="button"
+                                        <button type="button" {{ (!is_null($result_mix_id) && !empty($result_mix_id))
+                                            ? '' : 'disabled' }}
                                             class="btn btn-outline-success btn-icon-circle btn-icon-circle-sm"
                                             wire:click.prevent='addTestResult({{ $j }})'>
                                             {!! loadingState('addTestResult(' . $j . ')', '') !!}<i

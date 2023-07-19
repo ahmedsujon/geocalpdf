@@ -28,9 +28,83 @@ class AddCdotComponent extends Component
     public $wet_densitiesAA = [];
     public function calculateAA()
     {
-        $this->wet_densities_a = array_sum($this->wet_densitiesAA);
-        $this->average_wet_density_a = $this->wet_densities_a / count($this->wet_densitiesAA);
-        $this->adjusted_wet_a = $this->average_wet_density_a + (float)$this->correction_factor_a;
+        $this->wet_densities_a = round(array_sum($this->wet_densitiesAA));
+        $this->average_wet_density_a = round($this->wet_densities_a / count($this->wet_densitiesAA));
+        $this->adjusted_wet_a = round($this->average_wet_density_a + (float)$this->correction_factor_a);
+        
+    }
+    public function calculateAAA()
+    {
+        $this->ave_daily_rice_a = round((float)$this->daily_rice_a * 62.4, 1);
+    }
+    public function compactionAAA()
+    {
+        $this->compaction_a = round(($this->adjusted_wet_a / $this->ave_daily_rice_a) * 100, 1);
+    }
+    // Formula Calculation
+    public $wet_densitiesBB = [];
+    public function calculateBB()
+    {
+        $this->wet_densities_b = round(array_sum($this->wet_densitiesBB));
+        $this->average_wet_density_b = round($this->wet_densities_b / count($this->wet_densitiesBB));
+        $this->adjusted_wet_b = round($this->average_wet_density_b + (float)$this->correction_factor_b);
+    }
+    public function calculateBBB()
+    {
+        $this->ave_daily_rice_b = round((float)$this->daily_rice_b * 62.4, 1);
+    }
+    public function compactionBBB()
+    {
+        $this->compaction_b = round(($this->adjusted_wet_b / $this->ave_daily_rice_b) * 100, 1);
+    }
+    // Formula Calculation
+    public $wet_densitiesCC = [];
+    public function calculateCC()
+    {
+        $this->wet_densities_c = round(array_sum($this->wet_densitiesCC));
+        $this->average_wet_density_c = round($this->wet_densities_c / count($this->wet_densitiesCC));
+        $this->adjusted_wet_c = round($this->average_wet_density_c + (float)$this->correction_factor_c);
+        
+    }
+    public function calculateCCC()
+    {
+        $this->ave_daily_rice_c = round((float)$this->daily_rice_c * 62.4, 1);
+    }
+    public function compactionCCC()
+    {
+        $this->compaction_c = round(($this->adjusted_wet_c / $this->ave_daily_rice_c) * 100, 1);
+    }
+    // Formula Calculation
+    public $wet_densitiesDD = [];
+    public function calculateDD()
+    {
+        $this->wet_densities_d = round(array_sum($this->wet_densitiesDD));
+        $this->average_wet_density_d = round($this->wet_densities_d / count($this->wet_densitiesDD));
+        $this->adjusted_wet_d = round($this->average_wet_density_d + (float)$this->correction_factor_d);
+    }
+    public function calculateDDD()
+    {
+        $this->ave_daily_rice_d = round((float)$this->daily_rice_d * 62.4, 1);
+    }
+    public function compactionDDD()
+    {
+        $this->compaction_d = round(($this->adjusted_wet_d / $this->ave_daily_rice_d) * 100, 1);
+    }
+    // Formula Calculation
+    public $wet_densitiesEE = [];
+    public function calculateEE()
+    {
+        $this->wet_densities_e = round(array_sum($this->wet_densitiesEE));
+        $this->average_wet_density_e = round($this->wet_densities_e / count($this->wet_densitiesEE));
+        $this->adjusted_wet_e = round($this->average_wet_density_e + (float)$this->correction_factor_e);
+    }
+    public function calculateEEE()
+    {
+        $this->ave_daily_rice_e = round((float)$this->daily_rice_e * 62.4, 1);
+    }
+    public function compactionEEE()
+    {
+        $this->compaction_e = round(($this->adjusted_wet_e / $this->ave_daily_rice_e) * 100, 1);
     }
 
     public function updated($fields)

@@ -18,11 +18,11 @@
                     <div class="float-end">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="">Dashboard</a></li>
-                            <li class="breadcrumb-item"><a href="">FIELD DENSITY OF SOIL AGGREGATE</a></li>
+                            <li class="breadcrumb-item"><a style="text-transform: uppercase">Asphalt Field Density by Nuclear Method - Commercial</a></li>
                             <li class="breadcrumb-item active">EDIT</li>
                         </ol>
                     </div>
-                    <h4 class="page-title">EDIT FIELD DENSITY OF SOIL AGGREGATE</h4>
+                    <h4 class="page-title" style="text-transform: uppercase">EDIT Asphalt Field Density by Nuclear Method - Commercial</h4>
                 </div>
             </div>
         </div>
@@ -38,7 +38,7 @@
                             <div class="col-md-4"></div>
                             <div class="col-md-4">
                                 <div class="content text-center pt-2 pb-2">
-                                    <h6>FIELD DENSITY OF SOIL AGGREGATE BY NUCLEAR METHOD</h6>
+                                    <h6 style="text-transform: uppercase">Asphalt Field Density by Nuclear Method - Commercial</h6>
                                 </div>
                             </div>
                             <div class="col-md-4">
@@ -274,8 +274,7 @@
                                             <tr>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <select class="form-select"
-                                                            wire:model="mix_info_id.{{ $field }}"
+                                                        <select class="form-select" wire:model="result_mix_id.{{ $field }}"
                                                             wire:change="mixInfo({{ $field }})">
                                                             <option value="">Select id</option>
                                                             @foreach ($mix_infos as $mixInfo)
@@ -283,7 +282,7 @@
                                                                 {{ mixInfo($mixInfo->id)->mix_id }}</option>
                                                             @endforeach
                                                         </select>
-                                                        @error('mix_info_id')
+                                                        @error('result_mix_id')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
                                                         @enderror

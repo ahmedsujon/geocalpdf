@@ -22,7 +22,7 @@
                             <li class="breadcrumb-item active">EDIT</li>
                         </ol>
                     </div>
-                    <h4 class="page-title">EDIT FIELD DENSITY OF SOIL AGGREGATE</h4>
+                    <h4 class="page-title" style="text-transform: uppercase">Asphalt Field Density by Nuclear Method - Commercial </h4>
                 </div>
             </div>
         </div>
@@ -38,7 +38,7 @@
                             <div class="col-md-4"></div>
                             <div class="col-md-4">
                                 <div class="content text-center pt-2 pb-2">
-                                    <h6>FIELD DENSITY OF SOIL AGGREGATE BY NUCLEAR METHOD</h6>
+                                    <h6 style="text-transform: uppercase">Asphalt Field Density by Nuclear Method - Commercial </h6>
                                 </div>
                             </div>
                             <div class="col-md-4"></div>
@@ -59,6 +59,7 @@
                                 @error('project_id')
                                 <span class="text-danger mb-3" style="font-size: 12px;">{{ $message }}</span>
                                 @enderror
+
                                 <div class="input-group mt-3">
                                     <span class="input-group-text">Client Name:</span>
                                     <input type="text" class="form-control" wire:model="client_name" readonly>
@@ -66,6 +67,7 @@
                                 @error('client_id')
                                 <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                 @enderror
+
                                 <div class="input-group mt-3">
                                     <span class="input-group-text">Project Number:</span>
                                     <input type="text" class="form-control" wire:model="project_number" readonly>
@@ -73,6 +75,7 @@
                                 @error('project_number')
                                 <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                 @enderror
+
                                 <div class="input-group mt-3">
                                     <span class="input-group-text">Date:</span>
                                     <input type="date" class="form-control" wire:model="date">
@@ -80,6 +83,7 @@
                                 @error('date')
                                 <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                 @enderror
+
                                 <div class="input-group mt-3">
                                     <span class="input-group-text">Technician:</span>
                                     <select class="form-select" wire:model="technician">
@@ -400,7 +404,8 @@
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <select class="form-select moistureremoveinput"
-                                                            wire:model="result_mix_id.{{ $testresult }}" required>
+                                                            wire:model="result_mix_id.{{ $testresult }}"
+                                                            wire:change='mixResultInfo({{ $testresult }})' required>
                                                             <option value="">Select id</option>
                                                             @foreach ($selected_mix_info_ids as $s_mix_info)
                                                             <option value="{{ $s_mix_info }}">
@@ -408,6 +413,10 @@
                                                             @endforeach
                                                         </select>
                                                     </div>
+                                                    @error('result_mix_id')
+                                                    <span class="text-danger" style="font-size: 12px;">{{ $message
+                                                        }}</span>
+                                                    @enderror
                                                 </td>
 
                                                 <td class="moistureremove">
@@ -477,7 +486,7 @@
                                                     <div class="input-group">
                                                         <input type="number" step="any"
                                                             class="form-control moistureremoveinput"
-                                                            wire:model="max_theory_density.{{ $testresult }}">
+                                                            wire:model="max_theory_density.{{ $testresult }}" readonly>
                                                         @error('max_theory_density')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
@@ -488,7 +497,7 @@
                                                     <div class="input-group">
                                                         <input type="number" step="any"
                                                             class="form-control moistureremoveinput"
-                                                            wire:model="field_wet_density.{{ $testresult }}">
+                                                            wire:model="field_wet_density.{{ $testresult }}" wire:keyup="changeTestResult({{ $testresult }})">
                                                         @error('field_wet_density')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
@@ -499,7 +508,7 @@
                                                     <div class="input-group">
                                                         <input type="number" step="any"
                                                             class="form-control moistureremoveinput"
-                                                            wire:model="relative_compaction.{{ $testresult }}">
+                                                            wire:model="relative_compaction.{{ $testresult }}" readonly>
                                                         @error('relative_compaction')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>

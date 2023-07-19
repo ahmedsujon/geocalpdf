@@ -51,6 +51,7 @@ class AddSoilAggregateComponent extends Component
         } else {
             $this->relative_compaction[$value] = 0;
         }
+
     }
 
     public function addField($i)
@@ -129,6 +130,7 @@ class AddSoilAggregateComponent extends Component
             $this->max_theory_density[$value] = '';
         }
     }
+
 
     public function storeData()
     {
