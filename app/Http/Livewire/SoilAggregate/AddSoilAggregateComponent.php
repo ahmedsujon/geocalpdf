@@ -20,6 +20,21 @@ class AddSoilAggregateComponent extends Component
 
     public $testresults = [], $test_no = [], $result_mix_id = [], $location = [], $count_period = [], $material = [], $lift = [], $layer_thickness = [], $max_theory_density = [], $field_wet_density = [], $relative_compaction = [], $pass_fail = [];
 
+    public function mount()
+    {
+        $this->test_no[0] = 0;
+        $this->location[0] = 0;
+        $this->count_period[0] = 0;
+        $this->material[0] = 0;
+        $this->lift[0] = 0;
+        $this->layer_thickness[0] = 0;
+        $this->max_theory_density[0] = 0;
+        $this->field_wet_density[0] = 0;
+        $this->material[0] = 0;
+        $this->relative_compaction[0] = 0;
+        $this->pass_fail[0] = 0;
+    }
+
     // get project information
     public $selected_project_ids = [];
     public function selectInfo()
@@ -44,8 +59,8 @@ class AddSoilAggregateComponent extends Component
     {
         $mix_info = MixInfo::where('mix_id', $this->result_mix_id[$value])->first();
         if ($mix_info) {
-            if (!$this->max_theory_density[$value]) {
-                $this->max_theory_density[$value] = 0;
+            if (!$this->field_wet_density[$value]) {
+                $this->field_wet_density[$value] = 0;
             }
             $this->relative_compaction[$value] = round(($this->field_wet_density[$value] / $mix_info->max_theoretical_density) * 100, 1);
         } else {

@@ -27,7 +27,7 @@
                     <div class="card-header">
                         <h4 class="card-title">REPORT OF FIELD INSPECTION OF CONCRETE – SINGLE MIX</h4>
                         <a style="float: right" href="{{ route('concrete.create') }}"
-                            class="card-button btn btn-sm btn-primary"><i class="ti ti-plus"></i> ADD NEW REPORT OF FIELD INSPECTION OF CONCRETE – SINGLE MIX</a>
+                            class="card-button btn btn-sm btn-primary"><i class="ti ti-plus"></i> ADD NEW</a>
                     </div>
                     <div class="card-body">
                         <div class="row mb-3">

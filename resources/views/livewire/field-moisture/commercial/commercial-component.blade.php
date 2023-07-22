@@ -28,7 +28,7 @@
                     <div class="card-header">
                         <h4 class="card-title">FIELD DENSITY OF SOIL AGGREGATE</h4>
                         <a style="float: right" href="{{ route('commercial.create') }}"
-                            class="card-button btn btn-sm btn-primary"><i class="ti ti-plus"></i> ADD NEW FIELD DENSITY OF SOIL AGGREGATE</a>
+                            class="card-button btn btn-sm btn-primary"><i class="ti ti-plus"></i> ADD NEW</a>
                     </div>
                     <div class="card-body">
                         <div class="row mb-3">

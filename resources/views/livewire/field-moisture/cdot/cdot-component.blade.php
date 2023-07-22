@@ -28,7 +28,7 @@
                     <div class="card-header">
                         <h4 class="card-title">All CDOT FORM</h4>
                         <a style="float: right" href="{{ route('cdot.create') }}"
-                            class="card-button btn btn-sm btn-primary"><i class="ti ti-plus"></i> ADD CDOT FORM</a>
+                            class="card-button btn btn-sm btn-primary"><i class="ti ti-plus"></i> ADD NEW</a>
                     </div>
                     <div class="card-body">
                         <div class="row mb-3">
