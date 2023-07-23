@@ -190,31 +190,37 @@ class EditCdotComponent extends Component
         $this->course_c = $cdot_file->course_c;
         $this->course_d = $cdot_file->course_d;
         $this->course_e = $cdot_file->course_e;
-        $this->wet_density_a_a = $cdot_file->wet_density_a_a;
-        $this->wet_density_a_b = $cdot_file->wet_density_a_b;
-        $this->wet_density_a_c = $cdot_file->wet_density_a_c;
-        $this->wet_density_a_d = $cdot_file->wet_density_a_d;
-        $this->wet_density_a_e = $cdot_file->wet_density_a_e;
-        $this->wet_density_b_a = $cdot_file->wet_density_b_a;
-        $this->wet_density_b_b = $cdot_file->wet_density_b_b;
-        $this->wet_density_b_c = $cdot_file->wet_density_b_c;
-        $this->wet_density_b_d = $cdot_file->wet_density_b_d;
-        $this->wet_density_b_e = $cdot_file->wet_density_b_e;
-        $this->wet_density_c_a = $cdot_file->wet_density_c_a;
-        $this->wet_density_c_b = $cdot_file->wet_density_c_b;
-        $this->wet_density_c_c = $cdot_file->wet_density_c_c;
-        $this->wet_density_c_d = $cdot_file->wet_density_c_d;
-        $this->wet_density_c_e = $cdot_file->wet_density_c_e;
-        $this->wet_density_d_a = $cdot_file->wet_density_d_a;
-        $this->wet_density_d_b = $cdot_file->wet_density_d_b;
-        $this->wet_density_d_c = $cdot_file->wet_density_d_c;
-        $this->wet_density_d_d = $cdot_file->wet_density_d_d;
-        $this->wet_density_d_e = $cdot_file->wet_density_d_e;
+
+        $this->wet_densitiesAA[0] = $cdot_file->wet_density_a_a;
+        $this->wet_densitiesBB[0] = $cdot_file->wet_density_a_b;
+        $this->wet_densitiesCC[0] = $cdot_file->wet_density_a_c;
+        $this->wet_densitiesDD[0] = $cdot_file->wet_density_a_d;
+        $this->wet_densitiesEE[0] = $cdot_file->wet_density_a_e;
+
+        $this->wet_densitiesAA[1] = $cdot_file->wet_density_b_a;
+        $this->wet_densitiesBB[1] = $cdot_file->wet_density_b_b;
+        $this->wet_densitiesCC[1] = $cdot_file->wet_density_b_c;
+        $this->wet_densitiesDD[1] = $cdot_file->wet_density_b_d;
+        $this->wet_densitiesEE[1] = $cdot_file->wet_density_b_e;
+
+        $this->wet_densitiesAA[2] = $cdot_file->wet_density_c_a;
+        $this->wet_densitiesBB[2] = $cdot_file->wet_density_c_b;
+        $this->wet_densitiesCC[2] = $cdot_file->wet_density_c_c;
+        $this->wet_densitiesDD[2] = $cdot_file->wet_density_c_d;
+        $this->wet_densitiesEE[2] = $cdot_file->wet_density_c_e;
+
+        $this->wet_densitiesAA[3] = $cdot_file->wet_density_d_a;
+        $this->wet_densitiesBB[3] = $cdot_file->wet_density_d_b;
+        $this->wet_densitiesCC[3] = $cdot_file->wet_density_d_c;
+        $this->wet_densitiesDD[3] = $cdot_file->wet_density_d_d;
+        $this->wet_densitiesEE[3] = $cdot_file->wet_density_d_e;
+        // sum of wet_densities
         $this->wet_densities_a = $cdot_file->wet_densities_a;
         $this->wet_densities_b = $cdot_file->wet_densities_b;
         $this->wet_densities_c = $cdot_file->wet_densities_c;
         $this->wet_densities_d = $cdot_file->wet_densities_d;
         $this->wet_densities_e = $cdot_file->wet_densities_e;
+
         $this->average_wet_density_a = $cdot_file->average_wet_density_a;
         $this->average_wet_density_b = $cdot_file->average_wet_density_b;
         $this->average_wet_density_c = $cdot_file->average_wet_density_c;

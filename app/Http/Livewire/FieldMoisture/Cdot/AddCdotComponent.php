@@ -31,12 +31,13 @@ class AddCdotComponent extends Component
         $this->wet_densities_a = round(array_sum($this->wet_densitiesAA));
         $this->average_wet_density_a = round($this->wet_densities_a / count($this->wet_densitiesAA));
         $this->adjusted_wet_a = round($this->average_wet_density_a + (float)$this->correction_factor_a);
-        
     }
+
     public function calculateAAA()
     {
         $this->ave_daily_rice_a = round((float)$this->daily_rice_a * 62.4, 1);
     }
+
     public function compactionAAA()
     {
         $this->compaction_a = round(($this->adjusted_wet_a / $this->ave_daily_rice_a) * 100, 1);
@@ -237,37 +238,43 @@ class AddCdotComponent extends Component
         $data->course_d = $this->course_d;
         $data->course_e = $this->course_e;
 
-        $data->wet_density_a_a = $this->wet_density_a_a;
-        $data->wet_density_a_b = $this->wet_density_a_b;
-        $data->wet_density_a_c = $this->wet_density_a_c;
-        $data->wet_density_a_d = $this->wet_density_a_d;
-        $data->wet_density_a_e = $this->wet_density_a_e;
-        $data->wet_density_b_a = $this->wet_density_b_a;
-        $data->wet_density_b_b = $this->wet_density_b_b;
-        $data->wet_density_b_c = $this->wet_density_b_c;
-        $data->wet_density_b_d = $this->wet_density_b_d;
-        $data->wet_density_b_e = $this->wet_density_b_e;
-        $data->wet_density_c_a = $this->wet_density_c_a;
-        $data->wet_density_c_b = $this->wet_density_c_b;
-        $data->wet_density_c_c = $this->wet_density_c_c;
-        $data->wet_density_c_d = $this->wet_density_c_d;
-        $data->wet_density_c_e = $this->wet_density_c_e;
-        $data->wet_density_d_a = $this->wet_density_d_a;
-        $data->wet_density_d_b = $this->wet_density_d_b;
-        $data->wet_density_d_c = $this->wet_density_d_c;
-        $data->wet_density_d_d = $this->wet_density_d_d;
-        $data->wet_density_d_e = $this->wet_density_d_e;
+        $data->wet_density_a_a = $this->wet_densitiesAA[0];
+        $data->wet_density_a_b = $this->wet_densitiesBB[0];
+        $data->wet_density_a_c = $this->wet_densitiesCC[0];
+        $data->wet_density_a_d = $this->wet_densitiesDD[0];
+        $data->wet_density_a_e = $this->wet_densitiesEE[0];
 
+        $data->wet_density_b_a = $this->wet_densitiesAA[1];
+        $data->wet_density_b_b = $this->wet_densitiesBB[1];
+        $data->wet_density_b_c = $this->wet_densitiesCC[1];
+        $data->wet_density_b_d = $this->wet_densitiesDD[1];
+        $data->wet_density_b_e = $this->wet_densitiesEE[1];
+
+        $data->wet_density_c_a = $this->wet_densitiesAA[2];
+        $data->wet_density_c_b = $this->wet_densitiesBB[2];
+        $data->wet_density_c_c = $this->wet_densitiesCC[2];
+        $data->wet_density_c_d = $this->wet_densitiesDD[2];
+        $data->wet_density_c_e = $this->wet_densitiesEE[2];
+
+        $data->wet_density_d_a = $this->wet_densitiesAA[3];
+        $data->wet_density_d_b = $this->wet_densitiesBB[3];
+        $data->wet_density_d_c = $this->wet_densitiesCC[3];
+        $data->wet_density_d_d = $this->wet_densitiesDD[3];
+        $data->wet_density_d_e = $this->wet_densitiesEE[3];
+
+        // sum of wet_densities
         $data->wet_densities_a = $this->wet_densities_a;
         $data->wet_densities_b = $this->wet_densities_b;
         $data->wet_densities_c = $this->wet_densities_c;
         $data->wet_densities_d = $this->wet_densities_d;
         $data->wet_densities_e = $this->wet_densities_e;
+
         $data->average_wet_density_a = $this->average_wet_density_a;
         $data->average_wet_density_b = $this->average_wet_density_b;
         $data->average_wet_density_c = $this->average_wet_density_c;
         $data->average_wet_density_d = $this->average_wet_density_d;
         $data->average_wet_density_e = $this->average_wet_density_e;
+
         $data->correction_factor_a = $this->correction_factor_a;
         $data->correction_factor_b = $this->correction_factor_b;
         $data->correction_factor_c = $this->correction_factor_c;
