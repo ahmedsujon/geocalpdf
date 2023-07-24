@@ -18,8 +18,7 @@
                     <div class="float-end">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="">Dashboard</a></li>
-                            <li class="breadcrumb-item"><a href="">Asphalt Field Density by Nuclear Method -
-                                    Commercial</a></li>
+                            <li class="breadcrumb-item"><a href="">Asphalt Field Density - Commercial</a></li>
                             <li class="breadcrumb-item active">ADD</li>
                         </ol>
                     </div>
@@ -563,7 +562,7 @@
                                                     <div class="input-group">
                                                         <input type="number" step="any"
                                                             class="form-control moistureremoveinput"
-                                                            wire:model="relative_compaction.0" readonly>
+                                                            wire:model="relative_compaction.0" style="@if($compaction_requirement_max < $relative_compaction[0]) color: red; @endif" readonly>
                                                         @error('relative_compaction')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
@@ -708,7 +707,7 @@
                                                     <div class="input-group">
                                                         <input type="number" step="any"
                                                             class="form-control moistureremoveinput"
-                                                            wire:model="relative_compaction.{{ $testresult }}" readonly>
+                                                            wire:model="relative_compaction.{{ $testresult }}" style="@if($compaction_requirement_max < $relative_compaction[$testresult]) color: red; @endif" readonly>
                                                         @error('relative_compaction')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>

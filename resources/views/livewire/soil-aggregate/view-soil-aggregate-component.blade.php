@@ -492,7 +492,7 @@
                                                     <div class="input-group">
                                                         <input type="number" step="any"
                                                             class="form-control moistureremoveinput"
-                                                            wire:model="relative_compaction.{{ $testresult }}">
+                                                            wire:model="relative_compaction.{{ $testresult }}" style="@if($compaction_requirement_max < $relative_compaction[$testresult]) color: red; @endif">
                                                         @error('relative_compaction')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>

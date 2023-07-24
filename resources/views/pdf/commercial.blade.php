@@ -350,8 +350,10 @@
           <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $test_result->field_wet_density }}</h4>
         </td>
         <td style="padding: 4px 6px; border: 1px solid lightgray">
-          <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $test_result->relative_compaction }}</h4>
+          <h4 style="font-size: 14px; font-weight: 400; text-align:center; @if($data->compaction_requirement_max < $test_result->relative_compaction) color: red; @endif">{{ $test_result->relative_compaction }}</h4>
         </td>
+
+
         <td style="padding: 4px 6px; border: 1px solid lightgray">
           <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $test_result->pass_fail }}</h4>
         </td>

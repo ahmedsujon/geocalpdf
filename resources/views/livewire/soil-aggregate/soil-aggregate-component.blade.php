@@ -68,8 +68,14 @@
                                     @foreach ($files as $file)
                                     <tr>
                                         <td>
-                                            <img src="{{ asset('uploads/project') }}/{{ project($file->project_id)->avatar }}" alt="user"
+                                            @if (project($file->project_id)->avatar)
+                                            <img src="{{ asset('uploads/project') }}/{{ project($file->project_id)->avatar }}" alt="project"
                                                 class="rounded-circle thumb-md">
+                                            @else
+                                            <img src="{{ asset('assets/images/defaults/default_project.jpg') }}" alt="user"
+                                                class="rounded-circle thumb-md">
+                                            @endif
+
                                         </td>
                                         <td>{{ project($file->project_id)->name }}</td>
                                         <td>{{ client($file->client_id)->name }}</td>
