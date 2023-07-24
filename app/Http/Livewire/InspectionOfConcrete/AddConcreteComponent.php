@@ -5,7 +5,9 @@ namespace App\Http\Livewire\InspectionOfConcrete;
 use App\Models\Concrete;
 use App\Models\ConcreteData;
 use App\Models\Project;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Livewire\Component;
 
 class AddConcreteComponent extends Component
@@ -14,6 +16,42 @@ class AddConcreteComponent extends Component
 
     public $fields = [], $concrete_id = [], $age = [], $test_date = [], $diameter = [], $diameter_a = [], $avg_length = [], $mass = [], $max_load = [], $type_cap = [], $area_cyl = [], $measured_strength = [], $specified_strength = [], $type_fracture = [], $person_performing = [], $i = 1;
 
+    
+    
+    public function specifiedStrength($value)
+    {
+        if ($this->age[$value] == 28) {
+            $this->specified_strength[$value] = $this->required_strength;
+        } else {
+            $this->specified_strength[$value] = 0;
+        }
+    }
+
+    public function AreaCyl($value)
+    {
+        $specified = ConcreteData::first();
+        if ($specified) {
+            if (!$this->diameter_a[$value]) {
+                $this->diameter_a[$value] = 0;
+            }
+            $this->area_cyl[$value] = round(pow((($this->diameter[$value] + $this->diameter_a[$value]) / 2 / 2), 2) * 3.14159265, 2);
+        } else {
+            $this->area_cyl[$value] = 0;
+        }
+    }
+
+    public function measuredStrength($value)
+    {
+        $measured = ConcreteData::first();
+        if ($measured) {
+            if (!$this->area_cyl[$value]) {
+                $this->area_cyl[$value] = 0;
+            }
+            $this->measured_strength[$value] = round($this->max_load[$value] / $this->area_cyl[$value], -1);
+        } else {
+            $this->measured_strength[$value] = 0;
+        }
+    }
     // get project and client information
     public $selected_project_ids = [];
     public function selectInfo()
@@ -188,24 +226,24 @@ class AddConcreteComponent extends Component
         $data->save();
 
         //send Mail
-        // if ($this->responsible_person) {
-        //     $persons = $this->responsible_person;
-        //     $f_id = $data->id;
-        //     dispatch(function () use ($persons, $f_id) {
-        //         foreach ($persons as $key => $re_id) {
-        //             $user = User::find($re_id);
-        //             $mailData['email'] = $user->email;
-        //             $mailData['name'] = $user->name;
-        //             $mailData['role_id'] = $user->role_id;
-        //             $mailData['id'] = $f_id;
-        //             $mailData['subject'] = 'New file waiting for your review';
-        //             Mail::send('emails.mail_commercial', $mailData, function ($message) use ($mailData) {
-        //                 $message->to($mailData['email'])
-        //                     ->subject($mailData['subject']);
-        //             });
-        //         }
-        //     });
-        // }
+        if ($this->responsible_person) {
+            $persons = $this->responsible_person;
+            $f_id = $data->id;
+            dispatch(function () use ($persons, $f_id) {
+                foreach ($persons as $key => $re_id) {
+                    $user = User::find($re_id);
+                    $mailData['email'] = $user->email;
+                    $mailData['name'] = $user->name;
+                    $mailData['role_id'] = $user->role_id;
+                    $mailData['id'] = $f_id;
+                    $mailData['subject'] = 'New file waiting for your review';
+                    Mail::send('emails.inspection_concrete', $mailData, function ($message) use ($mailData) {
+                        $message->to($mailData['email'])
+                            ->subject($mailData['subject']);
+                    });
+                }
+            });
+        }
 
         session()->flash('message', 'File created successfully');
         return redirect()->route('template.concrete');

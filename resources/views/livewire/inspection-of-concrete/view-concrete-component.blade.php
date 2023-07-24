@@ -97,7 +97,7 @@
 
                                 <div class="input-group mt-3">
                                     <span class="input-group-text">Batch Time:</span>
-                                    <input type="text" class="form-control" wire:model="batch_time">
+                                    <input type="time" class="form-control" wire:model="batch_time">
                                 </div>
                                 @error('batch_time')
                                 <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
@@ -105,7 +105,7 @@
 
                                 <div class="input-group mt-3">
                                     <span class="input-group-text">Sample Time:</span>
-                                    <input type="text" class="form-control" wire:model="sample_time">
+                                    <input type="time" class="form-control" wire:model="sample_time">
                                 </div>
                                 @error('sample_time')
                                 <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
@@ -113,7 +113,7 @@
 
                                 <div class="input-group mt-3">
                                     <span class="input-group-text">Time Truck Finished Unloading:</span>
-                                    <input type="text" class="form-control" wire:model="ttf_unloading">
+                                    <input type="time" class="form-control" wire:model="ttf_unloading">
                                 </div>
                                 @error('ttf_unloading')
                                 <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
@@ -726,7 +726,7 @@
 
                                 <div class="input-group mt-3">
                                     <span class="input-group-text">Time cylinders molded:</span>
-                                    <input type="text" class="form-control" wire:model="time_cylinders_molded">
+                                    <input type="time" class="form-control" wire:model="time_cylinders_molded">
                                     @error('time_cylinders_molded')
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
@@ -760,7 +760,7 @@
                             <div class="col-lg-5">
                                 <div class="input-group mt-3">
                                     <span class="input-group-text">Date Cylinders received in lab:</span>
-                                    <input type="text" class="form-control" wire:model="date_cylinders_received_lab">
+                                    <input type="date" class="form-control" wire:model="date_cylinders_received_lab">
                                     @error('date_cylinders_received_lab')
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror

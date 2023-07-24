@@ -351,7 +351,7 @@
                 </td>
                 <td style="padding: 4px 6px; border: 1px solid lightgray">
                     <h4 style="font-size: 14px; font-weight: 400">
-                        {{ $data->batch_time }}
+                        {{ date('h:i a', strtotime($data->batch_time)) }}
                     </h4>
                 </td>
                 <td style="padding: 4px 6px; border: 1px solid lightgray">
@@ -370,7 +370,7 @@
                 </td>
                 <td style="padding: 4px 6px; border: 1px solid lightgray">
                     <h4 style="font-size: 14px; font-weight: 400">
-                        {{ $data->sample_time }}
+                        {{ date('h:i a', strtotime($data->sample_time)) }}
                     </h4>
                 </td>
                 <td style="padding: 4px 6px; border: 1px solid lightgray">
@@ -389,7 +389,7 @@
                 </td>
                 <td style="padding: 4px 6px; border: 1px solid lightgray">
                     <h4 style="font-size: 14px; font-weight: 400">
-                        {{ $data->ttf_unloading }}
+                        {{ date('h:i a', strtotime($data->ttf_unloading)) }}
                     </h4>
                 </td>
                 <td style="padding: 4px 6px; border: 1px solid lightgray">
@@ -402,18 +402,26 @@
                     <h4 style="font-size: 14px; font-weight: 400"></h4>
                 </td>
             </tr>
+
+            @php
+            $startTimestamp = strtotime($data->batch_time);
+            $endTimestamp = strtotime($data->ttf_unloading);
+
+            $timeDifferenceInMinutes = round(($endTimestamp - $startTimestamp) / 60);
+            @endphp
+
             <tr>
                 <td style="padding: 4px 6px; border: 1px solid lightgray">
                     <h4 style="font-size: 14px; font-weight: 400">Time in Truck: (min):</h4>
                 </td>
                 <td style="padding: 4px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400">null</h4>
+                    <h4 style="font-size: 14px; font-weight: 400">{{ $timeDifferenceInMinutes }}</h4>
                 </td>
                 <td style="padding: 4px 6px; border: 1px solid lightgray">
                     <h4 style="font-size: 14px; font-weight: 400">Batch Size:</h4>
                 </td>
                 <td style="padding: 4px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400">null</h4>
+                    <h4 style="font-size: 14px; font-weight: 400">{{ $data->yards_at_sampling }}</h4>
                 </td>
                 <td style="padding: 4px 6px; border: 1px solid lightgray">
                     <h4 style="font-size: 14px; font-weight: 400"></h4>
@@ -430,7 +438,7 @@
                     <h4 style="font-size: 14px; font-weight: 400">CY Placed:</h4>
                 </td>
                 <td style="padding: 4px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400">null</h4>
+                    <h4 style="font-size: 14px; font-weight: 400">{{ $data->total_yard_placement }}</h4>
                 </td>
                 <td style="padding: 4px 6px; border: 1px solid lightgray">
                     <h4 style="font-size: 14px; font-weight: 400"></h4>
@@ -555,8 +563,8 @@
                 </td>
             </tr>
             @endforeach
-
         </table>
+        <div style="page-break-before:always"></div>
         <table style="width: 100%; border-collapse: collapse; padding-top: 30px;">
             <tr>
                 <td style="padding: 5px 4px; background-color: #92d050">

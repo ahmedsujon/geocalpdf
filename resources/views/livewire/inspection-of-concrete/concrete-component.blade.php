@@ -15,7 +15,7 @@
                     <div class="float-end">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="">Dashboard</a></li>
-                            <li class="breadcrumb-item active">REPORT OF FIELD INSPECTION OF CONCRETE – SINGLE MIX</li>
+                            <li class="breadcrumb-item active">SINGLE MIX</li>
                         </ol>
                     </div>
                 </div>

@@ -407,6 +407,16 @@
       <tr>
         <td>Comments:</td>
         <td style="padding: 4px 6px">
+          <ol type="1" style="font-size: 14px; font-weight: 400; text-align: left">
+            <li>Base</li>
+            <li>Subbase</li>
+            <li>Subgrade</li>
+            <li>Improved Subgrade</li>
+            <li>Surface</li>
+            <li>Fill</li>
+          </ol>
+        </td>
+        <td style="padding: 4px 6px">
           <ol type="A" style="font-size: 14px; font-weight: 400; text-align: left">
             <li>Test results comply with specifications</li>
             <li>Compaction percentage does not comply with specifications</li>
