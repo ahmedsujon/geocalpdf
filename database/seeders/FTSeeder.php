@@ -18,8 +18,8 @@ class FTSeeder extends Seeder
         User::updateOrCreate([
             'role_id' => '5',
             'name' => 'FT',
-            'email' => 'fieldtechnician@gmail.com',
-            'password' => Hash::make('fieldtechnician'),
+            'email' => 'ahmedsujon050@gmail.com',
+            'password' => Hash::make('12345678'),
         ]);
     }
 }

@@ -2,9 +2,11 @@
 
 namespace App\Http\Livewire\SuperAdmin;
 
+use App\Models\Concrete;
 use App\Models\FieldDensityCdot;
 use App\Models\FieldDensityCommercial;
 use App\Models\File;
+use App\Models\SoilAggregate;
 use App\Models\TemplateOne;
 use DateTime;
 use Livewire\Component;
@@ -51,10 +53,12 @@ class DashboardComponent extends Component
 
     public function render()
     {
+        $commercial_forms = SoilAggregate::orderBy('id', 'DESC')->take(5)->get();
         $cdot_forms = FieldDensityCdot::orderBy('id', 'DESC')->take(5)->get();
-        $commercial_forms = FieldDensityCommercial::orderBy('id', 'DESC')->take(5)->get();
+        $soil_aggregates = FieldDensityCommercial::orderBy('id', 'DESC')->take(5)->get();
+        $concretes = Concrete::orderBy('id', 'DESC')->take(5)->get();
         $temp_one_forms = TemplateOne::orderBy('id', 'DESC')->take(5)->get();
-        $activities = FieldDensityCdot::orderBy('id', 'DESC')->paginate($this->sortingValue);
-        return view('livewire.super-admin.dashboard-component', ['cdot_forms'=>$cdot_forms, 'commercial_forms'=>$commercial_forms, 'temp_one_forms'=>$temp_one_forms, 'activities'=>$activities])->layout('livewire.layouts.base');
+        // $activities = FieldDensityCdot::orderBy('id', 'DESC')->paginate($this->sortingValue);
+        return view('livewire.super-admin.dashboard-component', ['cdot_forms'=>$cdot_forms, 'commercial_forms'=>$commercial_forms, 'soil_aggregates'=>$soil_aggregates, 'concretes'=>$concretes, 'temp_one_forms'=>$temp_one_forms])->layout('livewire.layouts.base');
     }
 }

@@ -18,8 +18,8 @@ class SupervisorSeeder extends Seeder
         User::updateOrCreate([
             'role_id' => '4',
             'name' => 'Supervisour',
-            'email' => 'supervisour@gmail.com',
-            'password' => Hash::make('supervisour'),
+            'email' => 'jennifermayer059@gmail.com',
+            'password' => Hash::make('12345678'),
         ]);
     }
 }

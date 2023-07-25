@@ -18,8 +18,8 @@ class ClerkSeeder extends Seeder
         User::updateOrCreate([
             'role_id' => '3',
             'name' => 'Clerk',
-            'email' => 'clerk@gmail.com',
-            'password' => Hash::make('clerk@gmail.com'),
+            'email' => 'gearinsane@gmail.com',
+            'password' => Hash::make('12345678'),
         ]);
     }
 }

@@ -28,9 +28,9 @@ class AddCdotComponent extends Component
     public $wet_densitiesAA = [];
     public function calculateAA()
     {
-        $this->wet_densities_a = round(array_sum($this->wet_densitiesAA));
-        $this->average_wet_density_a = round($this->wet_densities_a / count($this->wet_densitiesAA));
-        $this->adjusted_wet_a = round($this->average_wet_density_a + (float)$this->correction_factor_a);
+        $this->wet_densities_a = round(array_sum($this->wet_densitiesAA), 1);
+        $this->average_wet_density_a = round($this->wet_densities_a / count($this->wet_densitiesAA), 1);
+        $this->adjusted_wet_a = round($this->average_wet_density_a + (float)$this->correction_factor_a, 1);
     }
 
     public function calculateAAA()
@@ -46,9 +46,9 @@ class AddCdotComponent extends Component
     public $wet_densitiesBB = [];
     public function calculateBB()
     {
-        $this->wet_densities_b = round(array_sum($this->wet_densitiesBB));
-        $this->average_wet_density_b = round($this->wet_densities_b / count($this->wet_densitiesBB));
-        $this->adjusted_wet_b = round($this->average_wet_density_b + (float)$this->correction_factor_b);
+        $this->wet_densities_b = round(array_sum($this->wet_densitiesBB), 1);
+        $this->average_wet_density_b = round($this->wet_densities_b / count($this->wet_densitiesBB), 1);
+        $this->adjusted_wet_b = round($this->average_wet_density_b + (float)$this->correction_factor_b, 1);
     }
     public function calculateBBB()
     {
@@ -62,9 +62,9 @@ class AddCdotComponent extends Component
     public $wet_densitiesCC = [];
     public function calculateCC()
     {
-        $this->wet_densities_c = round(array_sum($this->wet_densitiesCC));
-        $this->average_wet_density_c = round($this->wet_densities_c / count($this->wet_densitiesCC));
-        $this->adjusted_wet_c = round($this->average_wet_density_c + (float)$this->correction_factor_c);
+        $this->wet_densities_c = round(array_sum($this->wet_densitiesCC), 1);
+        $this->average_wet_density_c = round($this->wet_densities_c / count($this->wet_densitiesCC), 1);
+        $this->adjusted_wet_c = round($this->average_wet_density_c + (float)$this->correction_factor_c, 1);
         
     }
     public function calculateCCC()
@@ -79,9 +79,9 @@ class AddCdotComponent extends Component
     public $wet_densitiesDD = [];
     public function calculateDD()
     {
-        $this->wet_densities_d = round(array_sum($this->wet_densitiesDD));
-        $this->average_wet_density_d = round($this->wet_densities_d / count($this->wet_densitiesDD));
-        $this->adjusted_wet_d = round($this->average_wet_density_d + (float)$this->correction_factor_d);
+        $this->wet_densities_d = round(array_sum($this->wet_densitiesDD), 1);
+        $this->average_wet_density_d = round($this->wet_densities_d / count($this->wet_densitiesDD), 1);
+        $this->adjusted_wet_d = round($this->average_wet_density_d + (float)$this->correction_factor_d, 1);
     }
     public function calculateDDD()
     {
@@ -95,9 +95,9 @@ class AddCdotComponent extends Component
     public $wet_densitiesEE = [];
     public function calculateEE()
     {
-        $this->wet_densities_e = round(array_sum($this->wet_densitiesEE));
-        $this->average_wet_density_e = round($this->wet_densities_e / count($this->wet_densitiesEE));
-        $this->adjusted_wet_e = round($this->average_wet_density_e + (float)$this->correction_factor_e);
+        $this->wet_densities_e = round(array_sum($this->wet_densitiesEE), 1);
+        $this->average_wet_density_e = round($this->wet_densities_e / count($this->wet_densitiesEE), 1);
+        $this->adjusted_wet_e = round($this->average_wet_density_e + (float)$this->correction_factor_e, 1);
     }
     public function calculateEEE()
     {

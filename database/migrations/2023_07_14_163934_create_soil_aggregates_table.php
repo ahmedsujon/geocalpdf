@@ -19,7 +19,7 @@ class CreateSoilAggregatesTable extends Migration
             $table->string('client_id')->nullable();
             $table->string('project_id')->nullable();
             $table->string('project_number')->nullable();
-            $table->dateTime('date')->nullable();
+            $table->string('date')->nullable();
             $table->string('user_id')->nullable();
             $table->string('weather')->nullable();
             // gauge information

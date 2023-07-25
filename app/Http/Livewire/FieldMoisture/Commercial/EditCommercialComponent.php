@@ -148,6 +148,7 @@ class EditCommercialComponent extends Component
         $this->moisture_count = $file->moisture_count;
         $this->moisture_equation = $file->moisture_equation;
         $this->observation = $file->observation;
+        $this->status = $file->status;
 
         $this->test_mode = $file->test_mode;
         $this->main_test_method = $file->main_test_method;
