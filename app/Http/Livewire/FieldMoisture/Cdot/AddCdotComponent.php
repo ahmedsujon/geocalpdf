@@ -140,6 +140,32 @@ class AddCdotComponent extends Component
         }
     }
 
+    public function mount(){
+        $this->wet_densitiesAA[0] = 0;
+        $this->wet_densitiesBB[0] = 0;
+        $this->wet_densitiesCC[0] = 0;
+        $this->wet_densitiesDD[0] = 0;
+        $this->wet_densitiesEE[0] = 0;
+
+        $this->wet_densitiesAA[1] = 0;
+        $this->wet_densitiesBB[1] = 0;
+        $this->wet_densitiesCC[1] = 0;
+        $this->wet_densitiesDD[1] = 0;
+        $this->wet_densitiesEE[1] = 0;
+
+        $this->wet_densitiesAA[2] = 0;
+        $this->wet_densitiesBB[2] = 0;
+        $this->wet_densitiesCC[2] = 0;
+        $this->wet_densitiesDD[2] = 0;
+        $this->wet_densitiesEE[2] = 0;
+
+        $this->wet_densitiesAA[3] = 0;
+        $this->wet_densitiesBB[3] = 0;
+        $this->wet_densitiesCC[3] = 0;
+        $this->wet_densitiesDD[3] = 0;
+        $this->wet_densitiesEE[3] = 0;
+    }
+
     public function storeData()
     {
         $this->validate([

@@ -275,7 +275,7 @@
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <select class="form-select" wire:model="result_mix_id.{{ $field }}"
-                                                            wire:change="mixInfo({{ $field }})">
+                                                            wire:change="mixInfo({{ $field }})" disabled>
                                                             <option value="">Select id</option>
                                                             @foreach ($mix_infos as $mixInfo)
                                                             <option value="{{ mixInfo($mixInfo->id)->mix_id }}">

@@ -238,9 +238,7 @@
           <h3 style="font-size: 14px; font-weight: 700">Mix ID</h3>
         </th>
         <th style="padding: 20px 6px 5px 6px; border: 1px solid lightgray">
-          <h3 style="font-size: 14px; font-weight: 700">
-            Supplier
-          </h3>
+          <h3 style="font-size: 14px; font-weight: 700">Supplier</h3>
         </th>
         <th style="padding: 20px 6px 5px 6px; border: 1px solid lightgray">
           <h3 style="font-size: 14px; font-weight: 700">Plant</h3>
@@ -249,10 +247,7 @@
           <h3 style="font-size: 14px; font-weight: 700">Mix Type	</h3>
         </th>
         <th style="padding: 20px 6px 5px 6px; border: 1px solid lightgray">
-          <h3 style="font-size: 14px; font-weight: 700">Max Theoretical Density, (lb/ft3)</h3>
-        </th>
-        <th style="padding: 20px 6px 5px 6px; border: 1px solid lightgray">
-          <h3 style="font-size: 14px; font-weight: 700">Max Theoretical SpecificGravity</h3>
+          <h3 style="font-size: 14px; font-weight: 700">Max Density, (lb/ft3)</h3>
         </th>
       </tr>
       @foreach ($data->proctor_infos as $proctor_info)
@@ -261,9 +256,7 @@
           <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $proctor_info->mix_id }}</h4>
         </td>
         <td style="padding: 4px 6px; border: 1px solid lightgray">
-          <h4 style="font-size: 14px; font-weight: 400">
-            {{ $proctor_info->supplier }}
-          </h4>
+          <h4 style="font-size: 14px; font-weight: 400">{{ $proctor_info->supplier }}</h4>
         </td>
         <td style="padding: 4px 6px; border: 1px solid lightgray">
           <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $proctor_info->plant }}</h4>
@@ -273,9 +266,6 @@
         </td>
         <td style="padding: 4px 6px; border: 1px solid lightgray">
           <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $proctor_info->max_theoretical_density }}</h4>
-        </td>
-        <td style="padding: 4px 6px; border: 1px solid lightgray">
-          <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $proctor_info->max_theoretical_specific_gravity }}</h4>
         </td>
       </tr>
       @endforeach

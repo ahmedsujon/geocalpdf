@@ -8985,3 +8985,13 @@ display:block
     text-shadow: rgba(137, 151, 189, .2) 1px 1px, rgba(137, 151, 189, .2) 2px 2px, rgba(137, 151, 189, .2) 3px 3px
 }
 
+/* How to disable arrows from Number input ? */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number]{
+    -moz-appearance: textfield;
+}
