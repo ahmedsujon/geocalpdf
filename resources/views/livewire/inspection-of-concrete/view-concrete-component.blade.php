@@ -496,7 +496,7 @@
 
                         <div class="row mb-3">
                             <div class="col-md-12">
-                                <h6>Test Results</h6>
+                                <h6>COMPRESSIVE STRENGTHS</h6>
                                 <div class="table-responsive">
                                     <table class="table table-bordered moisture" style="margin-bottom: 0;">
                                         <thead>

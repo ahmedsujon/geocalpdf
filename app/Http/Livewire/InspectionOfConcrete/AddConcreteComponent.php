@@ -16,8 +16,47 @@ class AddConcreteComponent extends Component
 
     public $fields = [], $concrete_id = [], $age = [], $test_date = [], $diameter = [], $diameter_a = [], $avg_length = [], $mass = [], $max_load = [], $type_cap = [], $area_cyl = [], $measured_strength = [], $specified_strength = [], $type_fracture = [], $person_performing = [], $i = 1;
 
-    
-    
+
+    public function AreaCyl($value)
+    {
+
+        if ($this->diameter_a[$value] != null) {
+            $this->area_cyl[$value] = round(pow((($this->diameter[$value] + $this->diameter_a[$value]) / 2 / 2), 2) * 3.14159265, 2);
+        } else {
+            $this->area_cyl[$value] = 0;
+        }
+
+        // $specified = ConcreteData::first();
+        // if ($specified) {
+        //     if (!$this->diameter_a[$value]) {
+        //         $this->diameter_a[$value] = 0;
+        //     }
+        //     $this->area_cyl[$value] = round(pow((($this->diameter[$value] + $this->diameter_a[$value]) / 2 / 2), 2) * 3.14159265, 2);
+        // } else {
+        //     $this->area_cyl[$value] = 0;
+        // }
+    }
+
+    public function measuredStrength($value)
+    {
+
+        if ($this->max_load[$value] != null) {
+            $this->measured_strength[$value] = round($this->max_load[$value] / $this->area_cyl[$value], -1);
+        } else {
+            $this->measured_strength[$value] = 0;
+        }
+
+        // $measured = ConcreteData::first();
+        // if ($measured) {
+        //     if (!$this->area_cyl[$value]) {
+        //         $this->area_cyl[$value] = 0;
+        //     }
+        //     $this->measured_strength[$value] = round($this->max_load[$value] / $this->area_cyl[$value], -1);
+        // } else {
+        //     $this->measured_strength[$value] = 0;
+        // }
+    }
+
     public function specifiedStrength($value)
     {
         if ($this->age[$value] == 28) {
@@ -27,31 +66,6 @@ class AddConcreteComponent extends Component
         }
     }
 
-    public function AreaCyl($value)
-    {
-        $specified = ConcreteData::first();
-        if ($specified) {
-            if (!$this->diameter_a[$value]) {
-                $this->diameter_a[$value] = 0;
-            }
-            $this->area_cyl[$value] = round(pow((($this->diameter[$value] + $this->diameter_a[$value]) / 2 / 2), 2) * 3.14159265, 2);
-        } else {
-            $this->area_cyl[$value] = 0;
-        }
-    }
-
-    public function measuredStrength($value)
-    {
-        $measured = ConcreteData::first();
-        if ($measured) {
-            if (!$this->area_cyl[$value]) {
-                $this->area_cyl[$value] = 0;
-            }
-            $this->measured_strength[$value] = round($this->max_load[$value] / $this->area_cyl[$value], -1);
-        } else {
-            $this->measured_strength[$value] = 0;
-        }
-    }
     // get project and client information
     public $selected_project_ids = [];
     public function selectInfo()
