@@ -392,7 +392,7 @@
                                     <?php echo App\Http\Livewire\SuperAdmin\DashboardComponent::ago($file->created_at); ?>
                                 </span>
                                 <div class="timeline-content">
-                                    <a href="{{ route('template.one.update', ['file_id' => $temp->id]) }}" class="title">{{ getProject($file->project_id)->name }} - {{$file->status }} ({{ getUser($file->created_by)->name }}) - Created Time:  <span class="post">{{ $file->created_at }}</span></a>
+                                    <a href="{{ route('template.one.update', ['file_id' => $file->id]) }}" class="title">{{ getProject($file->project_id)->name }} - {{$file->status }} ({{ getUser($file->created_by)->name }}) - Created Time:  <span class="post">{{ $file->created_at }}</span></a>
                                     <p class="description">
                                         {{ $file->remark }}
                                     </p>

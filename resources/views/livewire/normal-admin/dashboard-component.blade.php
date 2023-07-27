@@ -202,7 +202,7 @@
                                         <td><span class="badge badge-soft-primary">{{ user($file->created_by)->name }}</span></td>
                                         <td>{{ $file->created_at }}</td>
                                         <td style="text-align: center;">
-                                            <a href="{{ route('template.one.update', ['file_id' => $temp->id]) }}" type="button"
+                                            <a href="{{ route('template.one.update', ['file_id' => $file->id]) }}" type="button"
                                                 class="btn btn-outline-warning btn-icon-circle btn-icon-circle-sm"><i
                                                     class="ti ti-edit"></i></a>
                                         </td>
@@ -392,7 +392,7 @@
                                     <?php echo App\Http\Livewire\SuperAdmin\DashboardComponent::ago($file->created_at); ?>
                                 </span>
                                 <div class="timeline-content">
-                                    <a href="{{ route('template.one.update', ['file_id' => $temp->id]) }}" class="title">{{ getProject($file->project_id)->name }} - {{$file->status }} ({{ getUser($file->created_by)->name }}) - Created Time:  <span class="post">{{ $file->created_at }}</span></a>
+                                    <a href="{{ route('template.one.update', ['file_id' => $file->id]) }}" class="title">{{ getProject($file->project_id)->name }} - {{$file->status }} ({{ getUser($file->created_by)->name }}) - Created Time:  <span class="post">{{ $file->created_at }}</span></a>
                                     <p class="description">
                                         {{ $file->remark }}
                                     </p>
