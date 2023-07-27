@@ -323,19 +323,19 @@
                     <h5 style="font-size: 14px; font-weight: 500">Design Strength(psi)</h5>
                 </th>
             </tr>
-            @foreach ($data->template_one_infos as $template)
+            @foreach ($data->template_one_infos as $template_info)
             <tr>
                 <td style="padding: 4px 6px; border: 1px solid lightgray">
-                    <h6 style="font-size: 14px; font-weight: 400">{{ $template->test_no }}</h6>
+                    <h6 style="font-size: 14px; font-weight: 400">{{ $template_info->test_no }}</h6>
                 </td>
                 <td style="padding: 4px 6px; border: 1px solid lightgray">
-                    <h6 style="font-size: 14px; font-weight: 400">{{ $template->mix_supplier }}</h6>
+                    <h6 style="font-size: 14px; font-weight: 400">{{ $data->mix_supplier }}</h6>
                 </td>
                 <td style="padding: 4px 6px; border: 1px solid lightgray">
-                    <h6 style="font-size: 14px; font-weight: 400">{{ $template->mix_id }}</h6>
+                    <h6 style="font-size: 14px; font-weight: 400">{{ $data->mix_id }}</h6>
                 </td>
                 <td style="padding: 4px 6px; border: 1px solid lightgray">
-                    <h6 style="font-size: 14px; font-weight: 400">{{ $template->design_strength }}</h6>
+                    <h6 style="font-size: 14px; font-weight: 400">{{ $data->design_strength }}</h6>
                 </td>
             </tr>
             @endforeach
