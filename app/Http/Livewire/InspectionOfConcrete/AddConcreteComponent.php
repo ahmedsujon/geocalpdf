@@ -19,7 +19,6 @@ class AddConcreteComponent extends Component
 
     public function AreaCyl($value)
     {
-
         if ($this->diameter_a[$value] != null) {
             $this->area_cyl[$value] = round(pow((($this->diameter[$value] + $this->diameter_a[$value]) / 2 / 2), 2) * 3.14159265, 2);
         } else {
