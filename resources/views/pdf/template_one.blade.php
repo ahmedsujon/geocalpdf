@@ -329,13 +329,13 @@
                     <h6 style="font-size: 14px; font-weight: 400">{{ $template->test_no }}</h6>
                 </td>
                 <td style="padding: 4px 6px; border: 1px solid lightgray">
-                    <h6 style="font-size: 14px; font-weight: 400">null</h6>
+                    <h6 style="font-size: 14px; font-weight: 400">{{ $template->mix_supplier }}</h6>
                 </td>
                 <td style="padding: 4px 6px; border: 1px solid lightgray">
-                    <h6 style="font-size: 14px; font-weight: 400">null</h6>
+                    <h6 style="font-size: 14px; font-weight: 400">{{ $template->mix_id }}</h6>
                 </td>
                 <td style="padding: 4px 6px; border: 1px solid lightgray">
-                    <h6 style="font-size: 14px; font-weight: 400">null</h6>
+                    <h6 style="font-size: 14px; font-weight: 400">{{ $template->design_strength }}</h6>
                 </td>
             </tr>
             @endforeach
