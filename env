@@ -2,7 +2,7 @@ APP_NAME=Geocalpdf
 APP_ENV=local
 APP_KEY=base64:i7REmklh93/G+SkA0ie3WVhq2O/R+zeDZQxBwi4j9rM=
 APP_DEBUG=false
-APP_URL=http://34.72.92.154/
+APP_URL=https://geocalpdf.com/
 
 LOG_CHANNEL=stack
 LOG_DEPRECATIONS_CHANNEL=null
