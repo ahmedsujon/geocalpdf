@@ -602,7 +602,6 @@
                                                     <div class="input-group">
                                                         <select class="form-select moistureremoveinput"
                                                             wire:model="type_cap.{{ $concrete_data }}" required>
-                                                            <option value="">Select type cap</option>
                                                             <option value="Unbonded">Unbonded</option>
                                                             <option value="Gypsum cement">Gypsum cement</option>
                                                             <option value="Neat Cement">Neat Cement</option>
@@ -799,7 +798,7 @@
                                     <span class="input-group-text">Fair:</span>
                                     <input type="text" class="form-control" wire:model="fair">
                                     <span class="input-group-text">Poor:</span>
-                                    <input type="text" class="form-control" wire:model="weather">
+                                    <input type="text" class="form-control" wire:model="poor">
                                     @error('poor')
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror

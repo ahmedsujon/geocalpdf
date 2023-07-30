@@ -597,7 +597,6 @@
                                                     <div class="input-group">
                                                         <select class="form-select moistureremoveinput"
                                                             wire:model="type_cap.0" required>
-                                                            <option value="">Select type cap</option>
                                                             <option value="Unbonded">Unbonded</option>
                                                             <option value="Gypsum cement">Gypsum cement</option>
                                                             <option value="Neat Cement">Neat Cement</option>

@@ -16,6 +16,13 @@ class AddConcreteComponent extends Component
 
     public $fields = [], $concrete_id = [], $age = [], $test_date = [], $diameter = [], $diameter_a = [], $avg_length = [], $mass = [], $max_load = [], $type_cap = [], $area_cyl = [], $measured_strength = [], $specified_strength = [], $type_fracture = [], $person_performing = [], $i = 1;
 
+    public function mount()
+    {
+        $this->age[0] = 0;
+        $this->diameter[0] = 0;
+        $this->diameter_a[0] = 0;
+        $this->max_load[0] = 0;
+    }
 
     public function AreaCyl($value)
     {
