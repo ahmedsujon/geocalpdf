@@ -69,10 +69,10 @@
                                     <tr>
                                         <td>
                                             @if (project($file->project_id)->avatar)
-                                            <img src="{{ asset('uploads/project') }}/{{ project($file->project_id)->avatar }}" alt="project"
+                                            <img src="https://geocalpdf.com/uploads/project/{{ project($file->project_id)->avatar }}" alt="project"
                                                 class="rounded-circle thumb-md">
                                             @else
-                                            <img src="{{ asset('assets/images/defaults/default_project.jpg') }}" alt="user"
+                                            <img src="https://geocalpdf.com/assets/images/defaults/default_project.jpg" alt="user"
                                                 class="rounded-circle thumb-md">
                                             @endif
 

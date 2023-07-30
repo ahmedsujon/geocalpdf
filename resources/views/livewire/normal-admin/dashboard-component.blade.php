@@ -27,7 +27,7 @@
                                     @foreach ($commercial_forms as $file)
                                     <tr>
                                         <td>
-                                            <img src="{{ asset('uploads/project') }}/{{ project($file->project_id)->avatar }}"
+                                            <img src="{https://geocalpdf.com/uploads/project/{{ project($file->project_id)->avatar }}"
                                                 alt="user" class="rounded-circle thumb-md">
                                         </td>
                                         <td>{{ project($file->project_id)->name }}</td>
@@ -82,7 +82,7 @@
                                     @foreach ($cdot_forms as $file)
                                     <tr>
                                         <td>
-                                            <img src="{{ asset('uploads/project') }}/{{ project($file->project_id)->avatar }}"
+                                            <img src="{https://geocalpdf.com/uploads/project/{{ project($file->project_id)->avatar }}"
                                                 alt="user" class="rounded-circle thumb-md">
                                         </td>
                                         <td>{{ project($file->project_id)->name }}</td>
@@ -137,7 +137,7 @@
                                     @foreach ($soil_aggregates as $file)
                                     <tr>
                                         <td>
-                                            <img src="{{ asset('uploads/project') }}/{{ project($file->project_id)->avatar }}"
+                                            <img src="{https://geocalpdf.com/uploads/project/{{ project($file->project_id)->avatar }}"
                                                 alt="user" class="rounded-circle thumb-md">
                                         </td>
                                         <td>{{ project($file->project_id)->name }}</td>
@@ -192,7 +192,7 @@
                                     @foreach ($temp_one_forms as $file)
                                     <tr>
                                         <td>
-                                            <img src="{{ asset('uploads/project') }}/{{ project($file->project_id)->avatar }}"
+                                            <img src="{https://geocalpdf.com/uploads/project/{{ project($file->project_id)->avatar }}"
                                                 alt="user" class="rounded-circle thumb-md">
                                         </td>
                                         <td>{{ project($file->project_id)->name }}</td>
@@ -247,7 +247,7 @@
                                     @foreach ($concretes as $file)
                                     <tr>
                                         <td>
-                                            <img src="{{ asset('uploads/project') }}/{{ project($file->project_id)->avatar }}"
+                                            <img src="{https://geocalpdf.com/uploads/project/{{ project($file->project_id)->avatar }}"
                                                 alt="user" class="rounded-circle thumb-md">
                                         </td>
                                         <td>{{ project($file->project_id)->name }}</td>

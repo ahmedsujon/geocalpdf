@@ -24,7 +24,7 @@
                                 <h5 class="card-title"></h5>
                             </div>
                             <img style="height: 150px; width: 350px;"
-                                src="{{ asset('uploads/templates/template-1.png') }}" class="card-img-top bg-light-alt"
+                                src="https://geocalpdf.com/uploads/templates/template-1.png" class="card-img-top bg-light-alt"
                                 alt="...">
                             <div class="card-body">
                                 <h5 style="text-transform: uppercase;" class="card-title">Asphalt Field Density by Nuclear Method </h5>
@@ -42,7 +42,7 @@
                                 <h5 class="card-title"></h5>
                             </div>
                             <img style="height: 150px; width: 350px;"
-                                src="{{ asset('uploads/templates/template-2.png') }}" class="card-img-top bg-light-alt"
+                                src="https://geocalpdf.com/uploads/templates/template-2.png" class="card-img-top bg-light-alt"
                                 alt="">
                             <div class="card-body">
                                 <h5 style="text-transform: uppercase;" class="card-title">Field Density of Soil Aggregate by Nuclear Method</h5>
@@ -58,7 +58,7 @@
                                 <h5 class="card-title"></h5>
                             </div>
                             <img style="height: 150px; width: 350px;"
-                                src="{{ asset('uploads/templates/template-2.png') }}" class="card-img-top bg-light-alt"
+                                src="https://geocalpdf.com/uploads/templates/template-2.png" class="card-img-top bg-light-alt"
                                 alt="">
                             <div class="card-body">
                                 <h5 class="card-title">PHYSICAL PROPERTIES OF PLASTIC CONCRETE</h5>
@@ -74,7 +74,7 @@
                                 <h5 class="card-title"></h5>
                             </div>
                             <img style="height: 150px; width: 350px;"
-                                src="{{ asset('uploads/templates/template-1.png') }}" class="card-img-top bg-light-alt"
+                                src="https://geocalpdf.com/uploads/templates/template-1.png" class="card-img-top bg-light-alt"
                                 alt="temp">
                             <div class="card-body">
                                 <h5 class="card-title">REPORT OF FIELD INSPECTION OF CONCRETE – SINGLE MIX</h5>
@@ -89,7 +89,7 @@
                                 <h5 class="card-title"></h5>
                             </div>
                             <img style="height: 150px; width: 350px;"
-                                src="{{ asset('uploads/templates/template-1.png') }}" class="card-img-top bg-light-alt"
+                                src="https://geocalpdf.com/uploads/templates/template-1.png" class="card-img-top bg-light-alt"
                                 alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">Comming Soon...</h5>
@@ -104,7 +104,7 @@
                                 <h5 class="card-title"></h5>
                             </div>
                             <img style="height: 150px; width: 350px;"
-                                src="{{ asset('uploads/templates/template-2.png') }}" class="card-img-top bg-light-alt"
+                                src="https://geocalpdf.com/uploads/templates/template-2.png" class="card-img-top bg-light-alt"
                                 alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">Comming Soon...</h5>

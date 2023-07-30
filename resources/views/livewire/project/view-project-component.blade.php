@@ -146,7 +146,7 @@
                                     @if ($avatar)
                                     <img src="{{ $avatar->temporaryUrl() }}" width="120">
                                     @elseif($new_avatar != '')
-                                    <img src="{{ asset('uploads/project') }}/{{ $new_avatar }}" width="120">
+                                    <img src="https://geocalpdf.com/uploads/project/{{ $new_avatar }}" width="120">
                                     @endif
                                     @error('avatar')
                                     <span class="text-danger" style="font-size: 12.5px;">{{
