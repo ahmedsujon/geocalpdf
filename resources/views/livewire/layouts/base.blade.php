@@ -20,13 +20,13 @@
     <!-- Select2 -->
     <link rel="stylesheet" href="{{ asset('assets/plugins/select2/css/select2.min.css') }}">
     <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.min.css" />
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+        href="{{ asset('assets/css/select2-bootstrap-5-theme.min.css') }}" />
+    <link href="{{ asset('assets/css/select2.min.css') }}" rel="stylesheet" />
     <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/select2-bootstrap-5-theme/1.3.0/select2-bootstrap-5-theme.min.css">
+        href="{{ asset('assets/css/select2-bootstrap-theme.min.css') }}">
 
     {{-- Toaster --}}
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+    <link rel="stylesheet" href="{{ asset('assets/css/toastr.min.css') }}" />
 
     @stack('styles')
     @livewireStyles
@@ -46,7 +46,7 @@
     </div>
 
     <!-- Javascript  -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ asset('assets/js/jquery-3.6.0.min.js') }}"></script>
     <script src="{{ asset('assets/plugins/chartjs/chart.js') }}"></script>
     <script src="{{ asset('assets/plugins/lightpicker/litepicker.js') }}"></script>
     <script src="{{ asset('assets/plugins/apexcharts/apexcharts.min.js') }}"></script>
@@ -55,12 +55,12 @@
     <!-- Select2 -->
     <script src="{{ asset('assets/plugins/select2/js/select2.full.min.js') }}"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+    <script src="{{ asset('assets/js/select2.min.js') }}"></script>
     {{-- sweet alert 2 --}}
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="{{ asset('assets/js/sweetalert2.js') }}"></script>
 
     {{-- Toaster --}}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="{{ asset('assets/js/toastr.min.js') }}"></script>
 
     <!-- App js -->
     <script src="{{ asset('assets/js/app.js') }}"></script>
