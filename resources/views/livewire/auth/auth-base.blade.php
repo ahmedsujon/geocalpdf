@@ -10,22 +10,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- App favicon -->
-    <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico') }}">
+    <link rel="shortcut icon" href="https://geocalpdf.com/assets/images/favicon.ico">
     <!-- App css -->
-    <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('assets/css/app.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="https://geocalpdf.com/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://geocalpdf.com/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://geocalpdf.com/assets/css/app.min.css" rel="stylesheet" type="text/css" />
 
     @livewireStyles
 </head>
 
 <body id="body" class="auth-page"
-    style="background-image: url('{{ asset('assets/images/login-bg.png') }}'); background-size: cover; background-position: center center;">
+    style="background-image: url('https://geocalpdf.com/assets/images/login-bg.png'); background-size: cover; background-position: center center;">
 
     {{ $slot }}
 
     <!-- App js -->
-    <script src="{{ asset('assets/js/app.js') }}"></script>
+    <script src="https://geocalpdf.com/assets/js/app.js"></script>
     @livewireScripts
 </body>
 
