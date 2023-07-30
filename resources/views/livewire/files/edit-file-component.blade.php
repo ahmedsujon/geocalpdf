@@ -41,7 +41,7 @@
                             <div class="col-md-4"></div>
                             <div class="col-md-4">
                                 <div class="logo text-center">
-                                    <img src="https://geocalpdf.com/assets/images/logo-new.png" alt="">
+                                    <img src="{{ asset('assets/images/logo-new.png') }}" alt="">
                                 </div>
                                 <div class="content text-center pt-2 pb-2">
                                     <p>{{ $office_address }}</p>

@@ -28,10 +28,10 @@
                                     <div class="met-profile-main">
                                         <div class="met-profile-main-pic">
                                             @if ($profile->avatar)
-                                            <img src="https://geocalpdf.com/uploads/profile/{{  $profile->avatar }}" alt=""
+                                            <img src="{{ asset('uploads/profile') }}/{{  $profile->avatar }}" alt=""
                                                 height="110">
                                             @else
-                                            <img src="https://geocalpdf.com/assets/admin/images/default/profile.png" alt=""
+                                            <img src="{{ asset('assets/admin/images/default/profile.png') }}" alt=""
                                                 height="110">
                                             @endif
                                         </div>
@@ -193,7 +193,7 @@
                                                             @if ($avatar)
                                                             <img src="{{ $avatar->temporaryUrl() }}" width="120" alt="">
                                                             @elseif ($new_avatar)
-                                                            <img src="https://geocalpdf.com/uploads/profile/{{ $new_avatar }}"
+                                                            <img src="{{ asset('uploads/profile') }}/{{ $new_avatar }}"
                                                                 width="120" alt="">
                                                             @endif
                                                         </div>

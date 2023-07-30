@@ -10,23 +10,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- App favicon -->
-    <link rel="shortcut icon" href="https://geocalpdf.com/assets/images/favicon.png">
+    <link rel="shortcut icon" href="{{ asset('assets/images/favicon.png') }}">
 
     <!-- App css -->
-    <link href="https://geocalpdf.com/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="https://geocalpdf.com/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
-    <link href="https://geocalpdf.com/assets/css/app.min.css" rel="stylesheet" type="text/css" />
-    <link href="https://geocalpdf.com/assets/plugins/select/selectr.min.css" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('assets/css/app.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('assets/plugins/select/selectr.min.css') }}" rel="stylesheet" type="text/css" />
     <!-- Select2 -->
-    <link rel="stylesheet" href="https://geocalpdf.com/assets/plugins/select2/css/select2.min.css">
+    <link rel="stylesheet" href="{{ asset('assets/plugins/select2/css/select2.min.css') }}">
     <link rel="stylesheet"
-        href="https://geocalpdf.com/assets/css/select2-bootstrap-5-theme.min.css" />
-    <link href="https://geocalpdf.com/assets/css/select2.min.css" rel="stylesheet" />
+        href="{{ asset('assets/css/select2-bootstrap-5-theme.min.css') }}" />
+    <link href="{{ asset('assets/css/select2.min.css" rel="stylesheet') }}" />
     <link rel="stylesheet"
-        href="https://geocalpdf.com/assets/css/select2-bootstrap-theme.min.css">
+        href="{{ asset('assets/css/select2-bootstrap-theme.min.css') }}">
 
     {{-- Toaster --}}
-    <link rel="stylesheet" href="https://geocalpdf.com/assets/css/toastr.min.css" />
+    <link rel="stylesheet" href="{{ asset('assets/css/toastr.min.css') }}" />
 
     @stack('styles')
     @livewireStyles
@@ -46,24 +46,24 @@
     </div>
 
     <!-- Javascript  -->
-    <script src="https://geocalpdf.com/assets/js/jquery-3.6.0.min.js"></script>
-    <script src="https://geocalpdf.com/assets/plugins/chartjs/chart.js"></script>
-    <script src="https://geocalpdf.com/assets/plugins/lightpicker/litepicker.js"></script>
-    <script src="https://geocalpdf.com/assets/plugins/apexcharts/apexcharts.min.js"></script>
-    <script src="https://geocalpdf.com/assets/pages/projects-index.init.js"></script>
-    <script src="https://geocalpdf.com/assets/plugins/select/selectr.min.js"></script>
+    <script src="{{ asset('assets/js/jquery-3.6.0.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/chartjs/chart.js') }}"></script>
+    <script src="{{ asset('assets/plugins/lightpicker/litepicker.js') }}"></script>
+    <script src="{{ asset('assets/plugins/apexcharts/apexcharts.min.js') }}"></script>
+    <script src="{{ asset('assets/pages/projects-index.init.js') }}"></script>
+    <script src="{{ asset('assets/plugins/select/selectr.min.js') }}"></script>
     <!-- Select2 -->
-    <script src="https://geocalpdf.com/assets/plugins/select2/js/select2.full.min.js"></script>
+    <script src="{{ asset('assets/plugins/select2/js/select2.full.min.js') }}"></script>
 
-    <script src="https://geocalpdf.com/assets/js/select2.min.js"></script>
+    <script src="{{ asset('assets/js/select2.min.js') }}"></script>
     {{-- sweet alert 2 --}}
-    <script src="https://geocalpdf.com/assets/js/sweetalert2.js"></script>
+    <script src="{{ asset('assets/js/sweetalert2.js') }}"></script>
 
     {{-- Toaster --}}
-    <script src="https://geocalpdf.com/assets/js/toastr.min.js"></script>
+    <script src="{{ asset('assets/js/toastr.min.js') }}"></script>
 
     <!-- App js -->
-    <script src="https://geocalpdf.com/assets/js/app.js"></script>
+    <script src="{{ asset('assets/js/app.js') }}"></script>
 
     <script>
         $(document).ready(function(){
@@ -91,7 +91,7 @@
                     "progressBar" : true,
                     "positionClass": "toast-bottom-left"
                 }
-                toastr.success("{{ session('success");
+                toastr.success("{{ session('success') }}");
         @endif
 
 

@@ -68,7 +68,7 @@
                                     @foreach ($files as $file)
                                     <tr>
                                         <td>
-                                            <img src="https://geocalpdf.com/uploads/project/{{ project($file->project_id)->avatar }}" alt="user"
+                                            <img src="{{ asset('uploads/project') }}/{{ project($file->project_id)->avatar }}" alt="user"
                                                 class="rounded-circle thumb-md">
                                         </td>
                                         <td>{{ project($file->project_id)->name }}</td>
