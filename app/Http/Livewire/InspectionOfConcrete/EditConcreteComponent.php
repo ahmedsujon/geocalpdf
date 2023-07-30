@@ -181,7 +181,8 @@ class EditConcreteComponent extends Component
 
     }
 
-    public function addField($i)
+        
+    public function addFields($i)
     {
         $i = $i + 1;
         $this->i = $i;
@@ -201,9 +202,22 @@ class EditConcreteComponent extends Component
         $this->person_performing[$i] = 0;
     }
 
-    public function removeField($i)
+    public function removeFields($i)
     {
         unset($this->fields[$i]);
+        unset($this->age[$i]);
+        unset($this->test_date[$i]);
+        unset($this->diameter[$i]);
+        unset($this->diameter_a[$i]);
+        unset($this->avg_length[$i]);
+        unset($this->mass[$i]);
+        unset($this->max_load[$i]);
+        unset($this->type_cap[$i]);
+        unset($this->area_cyl[$i]);
+        unset($this->measured_strength[$i]);
+        unset($this->specified_strength[$i]);
+        unset($this->type_fracture[$i]);
+        unset($this->person_performing[$i]);
     }
 
     public function updateData()

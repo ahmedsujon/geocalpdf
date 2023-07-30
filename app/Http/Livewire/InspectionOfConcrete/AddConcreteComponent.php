@@ -22,6 +22,9 @@ class AddConcreteComponent extends Component
         $this->diameter[0] = 0;
         $this->diameter_a[0] = 0;
         $this->max_load[0] = 0;
+        $this->area_cyl[0] = 0;
+        $this->measured_strength[0] = 0;
+        $this->specified_strength[0] = 0;
     }
 
     public function AreaCyl($value)
@@ -91,7 +94,7 @@ class AddConcreteComponent extends Component
         }
     }
 
-    public function addField($i)
+    public function addFields($i)
     {
         $i = $i + 1;
         $this->i = $i;
@@ -111,7 +114,7 @@ class AddConcreteComponent extends Component
         $this->person_performing[$i] = 0;
     }
 
-    public function removeField($i)
+    public function removeFields($i)
     {
         unset($this->fields[$i]);
     }
