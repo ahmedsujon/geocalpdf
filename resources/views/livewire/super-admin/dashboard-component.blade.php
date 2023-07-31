@@ -5,7 +5,8 @@
             <div class="col-10 offset-1">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">Latest Documents Asphalt Field Density by Nuclear Method - Commercial </h4>
+                        <h4 class="card-title">Latest Documents Asphalt Field Density by Nuclear Method - Commercial
+                        </h4>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -27,17 +28,25 @@
                                     @foreach ($commercial_forms as $file)
                                     <tr>
                                         <td>
+                                            @if ( project($file->project_id)->avatar)
                                             <img src="{{ asset('uploads/project') }}/{{ project($file->project_id)->avatar }}"
                                                 alt="user" class="rounded-circle thumb-md">
+                                            @else
+                                            <img src="{{ asset('assets/images/defaults/default_project.jpg') }}" alt="user"
+                                                class="rounded-circle thumb-md">
+                                            @endif
                                         </td>
+
                                         <td>{{ project($file->project_id)->name }}</td>
                                         <td>{{ client($file->client_id)->name }}</td>
                                         <td>{{ $file->project_number }}</td>
                                         <td><span class="badge badge-soft-primary">{{ $file->status }}</span></td>
-                                        <td><span class="badge badge-soft-primary">{{ user($file->created_by)->name }}</span></td>
+                                        <td><span class="badge badge-soft-primary">{{ user($file->created_by)->name
+                                                }}</span></td>
                                         <td>{{ $file->created_at }}</td>
                                         <td style="text-align: center;">
-                                            <a href="{{ route('soil.aggregate.update', ['file_id' => $file->id]) }}" type="button"
+                                            <a href="{{ route('soil.aggregate.update', ['file_id' => $file->id]) }}"
+                                                type="button"
                                                 class="btn btn-outline-warning btn-icon-circle btn-icon-circle-sm"><i
                                                     class="ti ti-edit"></i></a>
                                         </td>
@@ -82,14 +91,20 @@
                                     @foreach ($cdot_forms as $file)
                                     <tr>
                                         <td>
+                                            @if ( project($file->project_id)->avatar)
                                             <img src="{{ asset('uploads/project') }}/{{ project($file->project_id)->avatar }}"
                                                 alt="user" class="rounded-circle thumb-md">
+                                            @else
+                                            <img src="{{ asset('assets/images/defaults/default_project.jpg') }}" alt="user"
+                                                class="rounded-circle thumb-md">
+                                            @endif
                                         </td>
                                         <td>{{ project($file->project_id)->name }}</td>
                                         <td>{{ client($file->client_id)->name }}</td>
                                         <td>{{ $file->project_number }}</td>
                                         <td><span class="badge badge-soft-primary">{{ $file->status }}</span></td>
-                                        <td><span class="badge badge-soft-primary">{{ user($file->created_by)->name }}</span></td>
+                                        <td><span class="badge badge-soft-primary">{{ user($file->created_by)->name
+                                                }}</span></td>
                                         <td>{{ $file->created_at }}</td>
                                         <td style="text-align: center;">
                                             <a href="{{ route('cdot.update', ['file_id' => $file->id]) }}" type="button"
@@ -137,17 +152,24 @@
                                     @foreach ($soil_aggregates as $file)
                                     <tr>
                                         <td>
+                                            @if ( project($file->project_id)->avatar)
                                             <img src="{{ asset('uploads/project') }}/{{ project($file->project_id)->avatar }}"
                                                 alt="user" class="rounded-circle thumb-md">
+                                            @else
+                                            <img src="{{ asset('assets/images/defaults/default_project.jpg') }}" alt="user"
+                                                class="rounded-circle thumb-md">
+                                            @endif
                                         </td>
                                         <td>{{ project($file->project_id)->name }}</td>
                                         <td>{{ client($file->client_id)->name }}</td>
                                         <td>{{ $file->project_number }}</td>
                                         <td><span class="badge badge-soft-primary">{{ $file->status }}</span></td>
-                                        <td><span class="badge badge-soft-primary">{{ user($file->created_by)->name }}</span></td>
+                                        <td><span class="badge badge-soft-primary">{{ user($file->created_by)->name
+                                                }}</span></td>
                                         <td>{{ $file->created_at }}</td>
                                         <td style="text-align: center;">
-                                            <a href="{{ route('commercial.update', ['file_id' => $file->id]) }}" type="button"
+                                            <a href="{{ route('commercial.update', ['file_id' => $file->id]) }}"
+                                                type="button"
                                                 class="btn btn-outline-warning btn-icon-circle btn-icon-circle-sm"><i
                                                     class="ti ti-edit"></i></a>
                                         </td>
@@ -192,17 +214,24 @@
                                     @foreach ($temp_one_forms as $file)
                                     <tr>
                                         <td>
+                                            @if ( project($file->project_id)->avatar)
                                             <img src="{{ asset('uploads/project') }}/{{ project($file->project_id)->avatar }}"
                                                 alt="user" class="rounded-circle thumb-md">
+                                            @else
+                                            <img src="{{ asset('assets/images/defaults/default_project.jpg') }}" alt="user"
+                                                class="rounded-circle thumb-md">
+                                            @endif
                                         </td>
                                         <td>{{ project($file->project_id)->name }}</td>
                                         <td>{{ client($file->client_id)->name }}</td>
                                         <td>{{ $file->project_number }}</td>
                                         <td><span class="badge badge-soft-primary">{{ $file->status }}</span></td>
-                                        <td><span class="badge badge-soft-primary">{{ user($file->created_by)->name }}</span></td>
+                                        <td><span class="badge badge-soft-primary">{{ user($file->created_by)->name
+                                                }}</span></td>
                                         <td>{{ $file->created_at }}</td>
                                         <td style="text-align: center;">
-                                            <a href="{{ route('template.one.update', ['file_id' => $file->id]) }}" type="button"
+                                            <a href="{{ route('template.one.update', ['file_id' => $file->id]) }}"
+                                                type="button"
                                                 class="btn btn-outline-warning btn-icon-circle btn-icon-circle-sm"><i
                                                     class="ti ti-edit"></i></a>
                                         </td>
@@ -247,17 +276,24 @@
                                     @foreach ($concretes as $file)
                                     <tr>
                                         <td>
+                                            @if ( project($file->project_id)->avatar)
                                             <img src="{{ asset('uploads/project') }}/{{ project($file->project_id)->avatar }}"
                                                 alt="user" class="rounded-circle thumb-md">
+                                            @else
+                                            <img src="{{ asset('assets/images/defaults/default_project.jpg') }}" alt="user"
+                                                class="rounded-circle thumb-md">
+                                            @endif
                                         </td>
                                         <td>{{ project($file->project_id)->name }}</td>
                                         <td>{{ client($file->client_id)->name }}</td>
                                         <td>{{ $file->project_number }}</td>
                                         <td><span class="badge badge-soft-primary">{{ $file->status }}</span></td>
-                                        <td><span class="badge badge-soft-primary">{{ user($file->created_by)->name }}</span></td>
+                                        <td><span class="badge badge-soft-primary">{{ user($file->created_by)->name
+                                                }}</span></td>
                                         <td>{{ $file->created_at }}</td>
                                         <td style="text-align: center;">
-                                            <a href="{{ route('concrete.update', ['file_id' => $file->id]) }}" type="button"
+                                            <a href="{{ route('concrete.update', ['file_id' => $file->id]) }}"
+                                                type="button"
                                                 class="btn btn-outline-warning btn-icon-circle btn-icon-circle-sm"><i
                                                     class="ti ti-edit"></i></a>
                                         </td>
@@ -280,7 +316,8 @@
             <div class="col-lg-10 offset-1">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">Recent Activities Of Asphalt Field Density By Nuclear Method - Commercial</h4>
+                        <h4 class="card-title">Recent Activities Of Asphalt Field Density By Nuclear Method - Commercial
+                        </h4>
                     </div>
                     <!--end card-header-->
                     <div class="card-body">
@@ -293,7 +330,10 @@
                                     <?php echo App\Http\Livewire\SuperAdmin\DashboardComponent::ago($file->created_at); ?>
                                 </span>
                                 <div class="timeline-content">
-                                    <a href="{{ route('soil.aggregate.update', ['file_id' => $file->id]) }}" class="title">{{ getProject($file->project_id)->name }} - {{$file->status }} ({{ getUser($file->created_by)->name }}) - Created Time:  <span class="post">{{ $file->created_at }}</span></a>
+                                    <a href="{{ route('soil.aggregate.update', ['file_id' => $file->id]) }}"
+                                        class="title">{{ getProject($file->project_id)->name }} - {{$file->status }} ({{
+                                        getUser($file->created_by)->name }}) - Created Time: <span class="post">{{
+                                            $file->created_at }}</span></a>
                                     <p class="description">
                                         {{ $file->remark }}
                                     </p>
@@ -313,7 +353,8 @@
             <div class="col-lg-10 offset-1">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">Recent Activities Of Asphalt Field Density By Nuclear Method - CDOT Form</h4>
+                        <h4 class="card-title">Recent Activities Of Asphalt Field Density By Nuclear Method - CDOT Form
+                        </h4>
                     </div>
                     <!--end card-header-->
                     <div class="card-body">
@@ -326,7 +367,10 @@
                                     <?php echo App\Http\Livewire\SuperAdmin\DashboardComponent::ago($file->created_at); ?>
                                 </span>
                                 <div class="timeline-content">
-                                    <a href="{{ route('cdot.update', ['file_id' => $file->id]) }}" class="title">{{ getProject($file->project_id)->name }} - {{$file->status }} ({{ getUser($file->created_by)->name }}) - Created Time:  <span class="post">{{ $file->created_at }}</span></a>
+                                    <a href="{{ route('cdot.update', ['file_id' => $file->id]) }}" class="title">{{
+                                        getProject($file->project_id)->name }} - {{$file->status }} ({{
+                                        getUser($file->created_by)->name }}) - Created Time: <span class="post">{{
+                                            $file->created_at }}</span></a>
                                     <p class="description">
                                         {{ $file->remark }}
                                     </p>
@@ -346,7 +390,8 @@
             <div class="col-lg-10 offset-1">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">Recent Activities Of Field Density Of Soil Aggregate By Nuclear Method</h4>
+                        <h4 class="card-title">Recent Activities Of Field Density Of Soil Aggregate By Nuclear Method
+                        </h4>
                     </div>
                     <!--end card-header-->
                     <div class="card-body">
@@ -359,7 +404,10 @@
                                     <?php echo App\Http\Livewire\SuperAdmin\DashboardComponent::ago($file->created_at); ?>
                                 </span>
                                 <div class="timeline-content">
-                                    <a href="{{ route('commercial.update', ['file_id' => $file->id]) }}" class="title">{{ getProject($file->project_id)->name }} - {{$file->status }} ({{ getUser($file->created_by)->name }}) - Created Time:  <span class="post">{{ $file->created_at }}</span></a>
+                                    <a href="{{ route('commercial.update', ['file_id' => $file->id]) }}"
+                                        class="title">{{ getProject($file->project_id)->name }} - {{$file->status }} ({{
+                                        getUser($file->created_by)->name }}) - Created Time: <span class="post">{{
+                                            $file->created_at }}</span></a>
                                     <p class="description">
                                         {{ $file->remark }}
                                     </p>
@@ -392,7 +440,10 @@
                                     <?php echo App\Http\Livewire\SuperAdmin\DashboardComponent::ago($file->created_at); ?>
                                 </span>
                                 <div class="timeline-content">
-                                    <a href="{{ route('template.one.update', ['file_id' => $file->id]) }}" class="title">{{ getProject($file->project_id)->name }} - {{$file->status }} ({{ getUser($file->created_by)->name }}) - Created Time:  <span class="post">{{ $file->created_at }}</span></a>
+                                    <a href="{{ route('template.one.update', ['file_id' => $file->id]) }}"
+                                        class="title">{{ getProject($file->project_id)->name }} - {{$file->status }} ({{
+                                        getUser($file->created_by)->name }}) - Created Time: <span class="post">{{
+                                            $file->created_at }}</span></a>
                                     <p class="description">
                                         {{ $file->remark }}
                                     </p>
@@ -412,7 +463,8 @@
             <div class="col-lg-10 offset-1">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">Recent Activities Of Report Of Field Inspection Of Concrete – Single Mix</h4>
+                        <h4 class="card-title">Recent Activities Of Report Of Field Inspection Of Concrete – Single Mix
+                        </h4>
                     </div>
                     <!--end card-header-->
                     <div class="card-body">
@@ -425,7 +477,10 @@
                                     <?php echo App\Http\Livewire\SuperAdmin\DashboardComponent::ago($file->created_at); ?>
                                 </span>
                                 <div class="timeline-content">
-                                    <a href="{{ route('concrete.update', ['file_id' => $file->id]) }}" class="title">{{ getProject($file->project_id)->name }} - {{$file->status }} ({{ getUser($file->created_by)->name }}) - Created Time:  <span class="post">{{ $file->created_at }}</span></a>
+                                    <a href="{{ route('concrete.update', ['file_id' => $file->id]) }}" class="title">{{
+                                        getProject($file->project_id)->name }} - {{$file->status }} ({{
+                                        getUser($file->created_by)->name }}) - Created Time: <span class="post">{{
+                                            $file->created_at }}</span></a>
                                     <p class="description">
                                         {{ $file->remark }}
                                     </p>
