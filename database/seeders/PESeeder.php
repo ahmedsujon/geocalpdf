@@ -18,7 +18,7 @@ class PESeeder extends Seeder
         User::updateOrCreate([
             'role_id' => '2',
             'name' => 'Project Engineer',
-            'email' => 'hrafsun8@gmail.com',
+            'email' => 'sujon15-1369@diu.edu.bd',
             'password' => Hash::make('12345678'),
         ]);
     }

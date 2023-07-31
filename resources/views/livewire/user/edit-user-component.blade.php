@@ -20,7 +20,7 @@
             </div>
         </div>
 
-        <form wire:submit.prevent='storeData' enctype="multipart/form-data">
+        <form wire:submit.prevent='updateData' enctype="multipart/form-data">
             @if (Session::has('message'))
             <div class="alert alert-success" role="alert">{{ Session::get('message') }}</div>
             @endif

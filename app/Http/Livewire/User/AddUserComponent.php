@@ -20,7 +20,7 @@ class AddUserComponent extends Component
     {
         $this->validate([
             'name' => 'required',
-            'email' => 'required|unique:users,email,'.Auth::user()->id.'',
+            'email' => 'required|unique:users,email,',
             'password' => 'min:8|same:confirm_password',
             'confirm_password' => 'min:8',
             'role_id' => 'required',

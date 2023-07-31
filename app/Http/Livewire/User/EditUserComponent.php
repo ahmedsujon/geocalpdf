@@ -2,12 +2,13 @@
 
 namespace App\Http\Livewire\User;
 
+use Carbon\Carbon;
 use App\Models\Role;
 use App\Models\User;
-use Carbon\Carbon;
-use Illuminate\Support\Facades\Hash;
 use Livewire\Component;
 use Livewire\WithFileUploads;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class EditUserComponent extends Component
 {
@@ -26,10 +27,11 @@ class EditUserComponent extends Component
         $this->user_id = $user->id;
     }
 
-    public function storeData()
+    public function updateData()
     {
         $this->validate([
             'role_id'=>'required',
+            'email' => 'required|unique:users,email,'.Auth::user()->id.'',
             'name'=>'required',
             'email'=>'required',
             'phone'=>'required',
