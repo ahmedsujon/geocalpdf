@@ -744,14 +744,14 @@
             </div>
         </div>
     </div>
-    <form wire:submit.prevent='storeData'>
+    <form wire:submit.prevent='updateData'>
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
                     <div class="row mb-5 mt-3">
                         <div class="col-md-12" style="text-align: right;">
-                            <button type="submit" class="btn btn-primary submit_btn" style="background: green;">Save
-                                and Send</button>
+                            <button type="submit" class="btn btn-primary submit_btn" style="background: green;">{!! loadingState('updateData', 'Save
+                                and Send') !!}</button>
                         </div>
                     </div>
                 </div>

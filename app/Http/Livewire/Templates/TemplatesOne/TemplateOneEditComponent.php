@@ -152,7 +152,7 @@ class TemplateOneEditComponent extends Component
         $this->status = $file->status;
     }
 
-    public function storeData()
+    public function updateData()
     {
         $this->validate([
             'project_id' => 'required',

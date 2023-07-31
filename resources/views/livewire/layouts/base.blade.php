@@ -19,21 +19,18 @@
     <link href="{{ asset('assets/plugins/select/selectr.min.css') }}" rel="stylesheet" type="text/css" />
     <!-- Select2 -->
     <link rel="stylesheet" href="{{ asset('assets/plugins/select2/css/select2.min.css') }}">
-    <link rel="stylesheet"
-        href="{{ asset('assets/css/select2-bootstrap-5-theme.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/select2-bootstrap-5-theme.min.css') }}" />
     <link href="{{ asset('assets/css/select2.min.css" rel="stylesheet') }}" />
-    <link rel="stylesheet"
-        href="{{ asset('assets/css/select2-bootstrap-theme.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/select2-bootstrap-theme.min.css') }}">
 
     {{-- Toaster --}}
     <link rel="stylesheet" href="{{ asset('assets/css/toastr.min.css') }}" />
-
     @stack('styles')
     @livewireStyles
 </head>
 
 <body id="body" class="dark-sidebar" data-editor="DecoupledDocumentEditor" data-revision-history="false">
-
+    
     @livewire('layouts.inc.sidebar')
     @livewire('layouts.inc.navbar')
     <div class="page-wrapper">
