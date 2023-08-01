@@ -360,7 +360,8 @@
                                         </tbody>
                                     </table>
                                     <div class="add-button pb-2" style="float:right;">
-                                        <button type="button"
+                                        <button type="button" {{ (!is_null($proctor_id) && !empty($proctor_id))
+                                            ? '' : 'disabled' }}
                                             class="btn btn-outline-success btn-icon-circle btn-icon-circle-sm"
                                             wire:click.prevent='addField({{ $i }})'>
                                             {!! loadingState('addField(' . $i . ')', '<i
@@ -738,7 +739,8 @@
                                         </tbody>
                                     </table>
                                     <div class="add-button pb-2" style="float:right;">
-                                        <button type="button"
+                                        <button type="button" {{ (!is_null($result_proctor_id) && !empty($result_proctor_id))
+                                            ? '' : 'disabled' }}
                                             class="btn btn-outline-success btn-icon-circle btn-icon-circle-sm"
                                             wire:click.prevent='addTestResult({{ $j }})'>
                                             {!! loadingState('addTestResult(' . $j . ')', '') !!}<i

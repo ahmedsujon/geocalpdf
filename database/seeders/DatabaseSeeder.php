@@ -26,6 +26,7 @@ class DatabaseSeeder extends Seeder
         $this->call(SupervisorSeeder::class);
         $this->call(FTSeeder::class);
         $this->call(MixInfoSeeder::class);
+        $this->call(ProctorSeeder::class);
 
     }
 }
