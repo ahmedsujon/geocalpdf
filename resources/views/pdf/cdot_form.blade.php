@@ -414,7 +414,7 @@
         </td>
       </tr>
     </table>
-    <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+    <table style="width: 100%; border-collapse: collapse;">
       <tr>
         <td style="padding: 4px 6px; border: 1px solid lightgray; width: 30%;">
           <h4 style="font-size: 14px; font-weight: 400">Backscatter 4,</h4>
@@ -508,7 +508,7 @@
         </td>
       </tr>
     </table>
-    <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+    <table style="width: 100%; border-collapse: collapse;">
       <tr>
         <td style="padding: 4px 6px; border: 1px solid lightgray; width: 30%;">
           <h4 style="font-size: 14px; font-weight: 400">Sum of Wet Densities</h4>
@@ -631,7 +631,7 @@
       </tr>
     </table>
     <div style="page-break-before:always"></div>
-    <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+    <table style="width: 100%; border-collapse: collapse;">
       <tr>
         <td style="padding: 4px 6px; border: 1px solid lightgray; width: 30%;">
           <h4 style="font-size: 14px; font-weight: 400">Tested by</h4>
