@@ -73,7 +73,7 @@
                                             <img src="{{ asset('uploads/project') }}/{{ $project->avatar }}" alt="user"
                                                 class="rounded-circle thumb-md">
                                             @else
-                                            <img src="{{ asset('assets/images/defaults/default.jpg') }}" alt="user"
+                                            <img src="{{ asset('assets/images/defaults/default_project.jpg') }}" alt="user"
                                                 class="rounded-circle thumb-md">
                                             @endif
                                         </td>
