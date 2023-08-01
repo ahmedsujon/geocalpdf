@@ -162,11 +162,11 @@ Route::post('/get-supervisors', [BaseController::class, 'getSupervisor'])->name(
 Route::post('/upload', 'app\http\controllers\BaseController@uploadckimage')->name('ckeditor.upload');
 
 // PDF Generate
-Route::get('/invoice/{id}', [InvoiceController::class, 'commercialPDF'])->name('invoice.commercial');
-Route::get('/cdot-form/{id}', [InvoiceController::class, 'cdotPDF'])->name('cdot.form.generate');
-Route::get('/temp-one/{id}', [InvoiceController::class, 'templateOnePDF'])->name('template.one.generate');
-Route::get('/inspection/concrete/report/{id}', [InvoiceController::class, 'templateInspectionConcrete'])->name('inspection.concrete.generate');
-Route::get('/commercial/report/{id}', [InvoiceController::class, 'templateSoilAggregate'])->name('soil.aggregate.generate');
+Route::get('/invoice/ijP6ERmmdeLfFi57209633311{id}4ijP6ERmmdeLfFi5RiwZATmrI2SMOYYVSmdtcmjxJe2K31U5knK', [InvoiceController::class, 'commercialPDF'])->name('invoice.commercial');
+Route::get('/cdot-form/ijP6ERmmdeLfFi55958194244{id}4ijP6ERmmdeLfFi5RiwZATmrI2SMOYYVSmdtcmjxJe2K31U5knK', [InvoiceController::class, 'cdotPDF'])->name('cdot.form.generate');
+Route::get('/temp-one/ijP6ERmmdeLfFi54426715493{id}4ijP6ERmmdeLfFi5RiwZATmrI2SMOYYVSmdtcmjxJe2K31U5knK', [InvoiceController::class, 'templateOnePDF'])->name('template.one.generate');
+Route::get('/inspection/concrete/report/ijP6ERmmdeLfFi56595438805{id}4ijP6ERmmdeLfFi5RiwZATmrI2SMOYYVSmdtcmjxJe2K31U5knK', [InvoiceController::class, 'templateInspectionConcrete'])->name('inspection.concrete.generate');
+Route::get('/commercial/report/ijP6ERmmdeLfFi51864136533{id}4ijP6ERmmdeLfFi5RiwZATmrI2SMOYYVSmdtcmjxJe2K31U5knK', [InvoiceController::class, 'templateSoilAggregate'])->name('soil.aggregate.generate');
 
 //authSuperAdmin
 Route::middleware(['auth:sanctum', 'verified'])->name('admin.')->group(function () {
