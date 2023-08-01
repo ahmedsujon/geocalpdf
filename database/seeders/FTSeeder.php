@@ -17,8 +17,8 @@ class FTSeeder extends Seeder
     {
         User::updateOrCreate([
             'role_id' => '5',
-            'name' => 'FT',
-            'email' => 'ahmedsujon050@gmail.com',
+            'name' => 'Kathy Glaze',
+            'email' => 'kathyglaze@geocal.us',
             'password' => Hash::make('12345678'),
         ]);
     }
