@@ -510,7 +510,7 @@
     </table>
     <table style="width: 100%; border-collapse: collapse;">
       <tr>
-        <td style="padding: 4px 6px; border: 1px solid lightgray; width: 30%;">
+        <td style="padding: 4px 6px; border: 1px solid lightgray; width: 50%;">
           <h4 style="font-size: 14px; font-weight: 400">Sum of Wet Densities</h4>
         </td>
         <td style="padding: 4px 6px; border: 1px solid lightgray; width: 23%;">
@@ -530,7 +530,7 @@
         </td>
       </tr>
       <tr>
-        <td style="padding: 4px 6px; border: 1px solid lightgray; width: 30%;">
+        <td style="padding: 4px 6px; border: 1px solid lightgray; width: 50%;">
           <h4 style="font-size: 14px; font-weight: 400">Average Wet Density</h4>
         </td>
         <td style="padding: 4px 6px; border: 1px solid lightgray; width: 12%;">
@@ -550,7 +550,7 @@
         </td>
       </tr>
       <tr>
-        <td style="padding: 4px 6px; border: 1px solid lightgray; width: 30%;">
+        <td style="padding: 4px 6px; border: 1px solid lightgray; width: 50%;">
           <h4 style="font-size: 14px; font-weight: 400">Correction Factor (#469) PCF</h4>
         </td>
         <td style="padding: 4px 6px; border: 1px solid lightgray; width: 12%;">
@@ -570,7 +570,7 @@
         </td>
       </tr>
       <tr>
-        <td style="padding: 4px 6px; border: 1px solid lightgray; width: 30%;">
+        <td style="padding: 4px 6px; border: 1px solid lightgray; width: 50%;">
           <h4 style="font-size: 14px; font-weight: 400">Adjusted Wet Density</h4>
         </td>
         <td style="padding: 4px 6px; border: 1px solid lightgray; width: 12%;">
@@ -590,7 +590,7 @@
         </td>
       </tr>
       <tr>
-        <td style="padding: 4px 6px; border: 1px solid lightgray; width: 30%;">
+        <td style="padding: 4px 6px; border: 1px solid lightgray; width: 50%;">
           <h4 style="font-size: 14px; font-weight: 400">Ave. Daily Rice X 62.4 (PCF)</h4>
         </td>
         <td style="padding: 4px 6px; border: 1px solid lightgray; width: 12%;">
@@ -610,7 +610,7 @@
         </td>
       </tr>
       <tr>
-        <td style="padding: 4px 6px; border: 1px solid lightgray; width: 30%;">
+        <td style="padding: 4px 6px; border: 1px solid lightgray; width: 50%;">
           <h4 style="font-size: 14px; font-weight: 400">% Compaction</h4>
         </td>
         <td style="padding: 4px 6px; border: 1px solid lightgray; width: 12%;">
