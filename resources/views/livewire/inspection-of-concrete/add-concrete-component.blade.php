@@ -317,10 +317,10 @@
                                 <div class="input-group mt-3">
                                     <span class="input-group-text">Required Strength (psi):</span>
                                     <input type="text" class="form-control" wire:model="required_strength">
-                                    @error('required_strength')
+                                </div>
+                                @error('required_strength')
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
-                                </div>
                             </div>
                         </div>
                         <div class="row mb-3 offset-1">
@@ -597,6 +597,7 @@
                                                     <div class="input-group">
                                                         <select class="form-select moistureremoveinput"
                                                             wire:model="type_cap.0" required>
+                                                            <option value="">Select type cap</option>
                                                             <option value="Unbonded">Unbonded</option>
                                                             <option value="Gypsum cement">Gypsum cement</option>
                                                             <option value="Neat Cement">Neat Cement</option>

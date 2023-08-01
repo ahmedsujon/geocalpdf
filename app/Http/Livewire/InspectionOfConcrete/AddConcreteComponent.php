@@ -25,6 +25,7 @@ class AddConcreteComponent extends Component
         $this->area_cyl[0] = 0;
         $this->measured_strength[0] = 0;
         $this->specified_strength[0] = 0;
+        $this->type_cap[0] = 'Unbonded';
     }
 
     public function AreaCyl($value)
@@ -127,6 +128,10 @@ class AddConcreteComponent extends Component
             'date' => 'required',
             'responsible_person' => 'required',
             'office_address' => 'required',
+            'batch_time' => 'required',
+            'sample_time' => 'required',
+            'ttf_unloading' => 'required',
+            'required_strength' => 'required',
         ]);
 
         $data = new Concrete();

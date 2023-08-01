@@ -228,6 +228,10 @@ class EditConcreteComponent extends Component
             'date' => 'required',
             'responsible_person' => 'required',
             'office_address' => 'required',
+            'batch_time' => 'required',
+            'sample_time' => 'required',
+            'ttf_unloading' => 'required',
+            'required_strength' => 'required',
         ]);
 
         $data = new Concrete();
