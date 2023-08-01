@@ -186,7 +186,7 @@
           <h4 style="font-size: 14px; font-weight: 400">Company Name or CDOT</h4>
         </td>
         <td style="padding: 4px 6px; border: 1px solid lightgray; width: 30%">
-          <h4 style="font-size: 14px; font-weight: 400">{{ $data->wet_density_a_a }}</h4>
+          <h4 style="font-size: 14px; font-weight: 400">Gauge ID</h4>
         </td>
       </tr>
       <tr>
