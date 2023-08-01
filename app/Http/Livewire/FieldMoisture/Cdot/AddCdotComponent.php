@@ -15,7 +15,7 @@ class AddCdotComponent extends Component
 
     public $project_no, $region, $contract_id, $project_location, $form_no, $grading, $taster_id, $sampled_by;
 
-    public $company_name, $gauge_id, $sample_id, $test_id, $ia_id, $test_data_a, $test_data_b, $test_data_c, $test_data_d, $test_data_e, $test_data_f, $test_data_g, $test_data_h, $test_data_i, $test_data_j;
+    public $company_name, $gauge_id, $test_id, $ia_id, $test_data_a, $test_data_b, $test_data_c, $test_data_d, $test_data_e, $test_data_f, $test_data_g, $test_data_h, $test_data_i, $test_data_j;
 
     public $sample_id_a, $sample_id_b, $sample_id_c, $sample_id_d, $sample_id_e, $test_date_a, $test_date_b, $test_date_c, $test_date_d, $test_date_e, $standard_count_a, $standard_count_b, $standard_count_c, $standard_count_d, $standard_count_e, $daily_rice_a, $daily_rice_b, $daily_rice_c, $daily_rice_d, $daily_rice_e, $station_a, $station_b, $station_c, $station_d, $station_e, $offset_a, $offset_b, $offset_c, $offset_d, $offset_e, $course_a, $course_b, $course_c, $course_d, $course_e;
 
@@ -214,7 +214,6 @@ class AddCdotComponent extends Component
         $data->sampled_by = $this->sampled_by;
         $data->company_name = $this->company_name;
         $data->gauge_id = $this->gauge_id;
-        $data->sample_id = $this->sample_id;
         $data->test_id = $this->test_id;
         $data->ia_id = $this->ia_id;
         $data->test_data_a = $this->test_data_a;

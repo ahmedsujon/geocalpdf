@@ -78,7 +78,7 @@
                                     <span class="input-group-text">Geocal Proj #:</span>
                                     <input type="text" class="form-control" wire:model="geocal_project_num">
                                 </div>
-                                @error('weather')
+                                @error('geocal_project_num')
                                 <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                 @enderror
 
@@ -86,7 +86,7 @@
                                     <span class="input-group-text">Geocal Project Name:</span>
                                     <input type="text" class="form-control" wire:model="geocal_project_name">
                                 </div>
-                                @error('weather')
+                                @error('geocal_project_name')
                                 <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                 @enderror
 
@@ -94,7 +94,7 @@
                                     <span class="input-group-text">CDOT Project Name:</span>
                                     <input type="text" class="form-control" wire:model="cdot_project_name">
                                 </div>
-                                @error('weather')
+                                @error('cdot_project_name')
                                 <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                 @enderror
 
@@ -373,13 +373,7 @@
                                     <table class="table table-bordered moisture" style="margin-bottom: 0;">
                                         <tbody>
                                             <tr>
-                                                <td class="moistureremove text-center" width="10%">Sample ID</td>
-                                                <td class="moistureremove" width="15%">
-                                                    <div class="input-group">
-                                                        <input type="text" class="form-control moistureremoveinput"
-                                                            wire:model="sample_id">
-                                                    </div>
-                                                </td>
+                                                <td class="moistureremove text-center" width="25%" height="35px;">Sample ID</td>
                                                 <td class="moistureremove text-center">4A</td>
                                                 <td class="moistureremove text-center">4B</td>
                                                 <td class="moistureremove text-center">4C</td>
@@ -957,31 +951,36 @@
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="text" class="form-control moistureremoveinput"
-                                                            wire:model="correction_factor_a" wire:keyup='calculateAA' wire:change='compactionAAA'>
+                                                            wire:model="correction_factor_a" wire:keyup='calculateAA' wire:change='compactionAAA' {{ (!is_null($daily_rice_a) && !empty($daily_rice_a))
+                                                                ? '' : 'disabled' }}>
                                                     </div>
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="text" class="form-control moistureremoveinput"
-                                                            wire:model="correction_factor_b" wire:keyup='calculateBB' wire:change='compactionBBB'>
+                                                            wire:model="correction_factor_b" wire:keyup='calculateBB' wire:change='compactionBBB' {{ (!is_null($daily_rice_b) && !empty($daily_rice_b))
+                                                                ? '' : 'disabled' }}>
                                                     </div>
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="text" class="form-control moistureremoveinput"
-                                                            wire:model="correction_factor_c" wire:keyup='calculateCC' wire:change='compactionCCC'>
+                                                            wire:model="correction_factor_c" wire:keyup='calculateCC' wire:change='compactionCCC' {{ (!is_null($daily_rice_c) && !empty($daily_rice_c))
+                                                                ? '' : 'disabled' }}>
                                                     </div>
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="text" class="form-control moistureremoveinput"
-                                                            wire:model="correction_factor_d" wire:keyup='calculateDD' wire:change='compactionDDD'>
+                                                            wire:model="correction_factor_d" wire:keyup='calculateDD' wire:change='compactionDDD' {{ (!is_null($daily_rice_d) && !empty($daily_rice_d))
+                                                                ? '' : 'disabled' }}>
                                                     </div>
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="text" class="form-control moistureremoveinput"
-                                                            wire:model="correction_factor_e" wire:keyup='calculateEE' wire:change='compactionEEE'>
+                                                            wire:model="correction_factor_e" wire:keyup='calculateEE' wire:change='compactionEEE' {{ (!is_null($daily_rice_e) && !empty($daily_rice_e))
+                                                                ? '' : 'disabled' }}>
                                                     </div>
                                                 </td>
                                             </tr>

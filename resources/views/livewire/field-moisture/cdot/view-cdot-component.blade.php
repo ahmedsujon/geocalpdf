@@ -376,13 +376,7 @@
                                     <table class="table table-bordered moisture" style="margin-bottom: 0;">
                                         <tbody>
                                             <tr>
-                                                <td class="moistureremove text-center" width="10%">Sample ID</td>
-                                                <td class="moistureremove" width="15%">
-                                                    <div class="input-group">
-                                                        <input type="text" class="form-control moistureremoveinput"
-                                                            wire:model="sample_id" readonly>
-                                                    </div>
-                                                </td>
+                                                <td class="moistureremove text-center" width="25%">Sample ID</td>
                                                 <td class="moistureremove text-center">4A</td>
                                                 <td class="moistureremove text-center">4B</td>
                                                 <td class="moistureremove text-center">4C</td>

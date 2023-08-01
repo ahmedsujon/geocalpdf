@@ -15,10 +15,10 @@
                     <div class="float-end">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="">Dashboard</a></li>
-                            <li class="breadcrumb-item active">CDOT FORMs</li>
+                            <li class="breadcrumb-item active">CDOT FORM</li>
                         </ol>
                     </div>
-                    <h4 class="page-title">All CDOT FORM</h4>
+                    <h4 class="page-title">Asphalt Field Density by Nuclear Method - CDOT Form</h4>
                 </div>
             </div>
         </div>
@@ -26,7 +26,6 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">All CDOT FORM</h4>
                         <a style="float: right" href="{{ route('cdot.create') }}"
                             class="card-button btn btn-sm btn-primary"><i class="ti ti-plus"></i> ADD NEW</a>
                     </div>

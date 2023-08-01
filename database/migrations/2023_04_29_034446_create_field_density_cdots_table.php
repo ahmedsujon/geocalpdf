@@ -47,7 +47,6 @@ class CreateFieldDensityCdotsTable extends Migration
             $table->string('sampled_by')->nullable();
             $table->string('company_name')->nullable();
             $table->string('gauge_id')->nullable();
-            $table->string('sample_id')->nullable();
             $table->string('test_id')->nullable();
             $table->string('ia_id')->nullable();
 

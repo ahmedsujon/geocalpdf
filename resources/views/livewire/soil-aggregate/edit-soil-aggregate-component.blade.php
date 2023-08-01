@@ -375,7 +375,7 @@
                                         <thead>
                                             <tr>
                                                 <th class="customcolor" scope="col">Test No.</th>
-                                                <th class="customcolor" scope="col">Mix ID</th>
+                                                <th class="customcolor" scope="col" width="10%">Mix ID</th>
                                                 <th class="customcolor" scope="col">Location</th>
                                                 <th class="customcolor" scope="col">(AASHTO requires 1 min) Count Period</th>
                                                 <th class="customcolor" scope="col">Material (Base, Surface, Bit Agg Mix)</th>
@@ -406,7 +406,6 @@
                                                         <select class="form-select moistureremoveinput"
                                                             wire:model="result_mix_id.{{ $testresult }}"
                                                             wire:change='mixResultInfo({{ $testresult }})' required>
-                                                            <option value="">Select id</option>
                                                             @foreach ($selected_mix_info_ids as $s_mix_info)
                                                             <option value="{{ $s_mix_info }}">
                                                                 {{ $s_mix_info }}</option>

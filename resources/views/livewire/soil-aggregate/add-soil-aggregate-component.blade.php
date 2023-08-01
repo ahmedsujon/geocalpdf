@@ -424,7 +424,7 @@
                                         <thead>
                                             <tr>
                                                 <th class="customcolor" scope="col">Test No.</th>
-                                                <th class="customcolor" scope="col">Mix ID</th>
+                                                <th class="customcolor" scope="col" width="10%">Mix ID</th>
                                                 <th class="customcolor" scope="col">Location</th>
                                                 <th class="customcolor" scope="col">(AASHTO requires 1 min) Count Period
                                                 </th>
