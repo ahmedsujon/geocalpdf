@@ -23,7 +23,7 @@ class ProctorSeeder extends Seeder
             $data->material_description = 'Red Lean Clay w/Sand';
             $data->max_dry_density = '107.0';
             $data->optimum_moisture = '19.3';
-            $data->status = '1';
+            $data->status = '0';
             $data->save();
         }
 
@@ -36,7 +36,7 @@ class ProctorSeeder extends Seeder
             $data->material_description = 'Brown Fat Clay';
             $data->max_dry_density = '102.0';
             $data->optimum_moisture = '22.1';
-            $data->status = '1';
+            $data->status = '0';
             $data->save();
         }
 
@@ -49,7 +49,7 @@ class ProctorSeeder extends Seeder
             $data->material_description = 'Brown Lean Clay';
             $data->max_dry_density = '108.0';
             $data->optimum_moisture = '18.8';
-            $data->status = '1';
+            $data->status = '0';
             $data->save();
         }
     }
