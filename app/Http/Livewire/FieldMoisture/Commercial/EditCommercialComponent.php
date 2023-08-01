@@ -97,9 +97,14 @@ class EditCommercialComponent extends Component
         $this->test_dept[$i] = 0;
     }
 
-    public function removeField($i)
+    public function removeFields($i)
     {
         unset($this->fields[$i]);
+        unset($this->proctor_id[$i]);
+        unset($this->description[$i]);
+        unset($this->test_method[$i]);
+        unset($this->max_dry_density[$i]);
+        unset($this->optimum_moisture[$i]);
     }
 
     public function addTestResult($j)
@@ -123,6 +128,18 @@ class EditCommercialComponent extends Component
     public function removeTestResult($j)
     {
         unset($this->testresults[$j]);
+        unset($this->test_num[$j]);
+        unset($this->location[$j]);
+        unset($this->result_proctor_id[$j]);
+        unset($this->elev_test[$j]);
+        unset($this->wet_density[$j]);
+        unset($this->moisture_content[$j]);
+        unset($this->percent_comp[$j]);
+        unset($this->comments[$j]);
+        unset($this->material[$j]);
+        unset($this->dry_density[$j]);
+        unset($this->test_dept[$j]);
+
     }
 
     public function mount($file_id)

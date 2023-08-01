@@ -97,18 +97,11 @@ class AddCommercialComponent extends Component
         $i = $i + 1;
         $this->i = $i;
         array_push($this->fields, $i);
-        $this->test_num[$i] = 0;
-        $this->location[$i] = 0;
-        $this->result_proctor_id[$i] = 0;
-        $this->elev_test[$i] = 0;
-        $this->wet_density[$i] = 0;
-        $this->moisture_content[$i] = 0;
-        $this->percent_comp[$i] = 0;
-        $this->comments[$i] = 0;
-        $this->material[$i] = 0;
-        $this->dry_density[$i] = 0;
-        $this->test_dept[$i] = 0;
         $this->proctor_id[$i] = 0;
+        $this->description[$i] = 0;
+        $this->test_method[$i] = 0;
+        $this->max_dry_density[$i] = 0;
+        $this->optimum_moisture[$i] = 0;
     }
 
     public function removeField($i)

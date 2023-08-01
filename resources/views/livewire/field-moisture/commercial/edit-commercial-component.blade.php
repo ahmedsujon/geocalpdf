@@ -314,8 +314,8 @@
                                                 <td class="moistureremove">
                                                     <button type="button"
                                                         class="btn btn-outline-danger btn-icon-circle btn-icon-circle-sm"
-                                                        wire:click.prevent='removeField({{ $key }})'>
-                                                        {!! loadingState('removeField(' . $key . ')', '<i
+                                                        wire:click.prevent='removeFields({{ $key }})'>
+                                                        {!! loadingState('removeFields(' . $key . ')', '<i
                                                             class="ti ti-circle-plus"></i>') !!}
                                                     </button>
                                                 </td>
