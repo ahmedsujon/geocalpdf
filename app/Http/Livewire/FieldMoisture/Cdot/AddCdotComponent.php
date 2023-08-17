@@ -65,7 +65,6 @@ class AddCdotComponent extends Component
         $this->wet_densities_c = round(array_sum($this->wet_densitiesCC), 1);
         $this->average_wet_density_c = round($this->wet_densities_c / count($this->wet_densitiesCC), 1);
         $this->adjusted_wet_c = round($this->average_wet_density_c + (float)$this->correction_factor_c, 1);
-        
     }
     public function calculateCCC()
     {
@@ -108,20 +107,6 @@ class AddCdotComponent extends Component
         $this->compaction_e = round(($this->adjusted_wet_e / $this->ave_daily_rice_e) * 100, 1);
     }
 
-    public function updated($fields)
-    {
-        $this->validateOnly($fields, [
-            'project_id' => 'required',
-            'client_id' => 'required',
-            'user_id' => 'required',
-            'date' => 'required',
-            'geocal_project_num' => 'required',
-            'geocal_project_name' => 'required',
-            'cdot_project_name' => 'required',
-            'weather' => 'required',
-            'date' => 'required',
-        ]);
-    }
 
     public $selected_project_ids = [];
     public function selectInfo()
@@ -140,7 +125,8 @@ class AddCdotComponent extends Component
         }
     }
 
-    public function mount(){
+    public function mount()
+    {
         $this->wet_densitiesAA[0] = 0;
         $this->wet_densitiesBB[0] = 0;
         $this->wet_densitiesCC[0] = 0;
@@ -166,12 +152,10 @@ class AddCdotComponent extends Component
         $this->wet_densitiesEE[3] = 0;
     }
 
-    public function storeData()
+    public function updated($fields)
     {
-        $this->validate([
+        $this->validateOnly($fields, [
             'project_id' => 'required',
-            'client_id' => 'required',
-            'project_number' => 'required',
             'geocal_project_num' => 'required',
             'geocal_project_name' => 'required',
             'cdot_project_name' => 'required',
@@ -180,6 +164,31 @@ class AddCdotComponent extends Component
             'office_address' => 'required',
             'test_method' => 'required',
             'responsible_person' => 'required',
+            'daily_rice_a' => 'required',
+            'daily_rice_b' => 'required',
+            'daily_rice_c' => 'required',
+            'daily_rice_d' => 'required',
+            'daily_rice_e' => 'required',
+        ]);
+    }
+
+    public function storeData()
+    {
+        $this->validate([
+            'project_id' => 'required',
+            'geocal_project_num' => 'required',
+            'geocal_project_name' => 'required',
+            'cdot_project_name' => 'required',
+            'date' => 'required',
+            'weather' => 'required',
+            'office_address' => 'required',
+            'test_method' => 'required',
+            'responsible_person' => 'required',
+            'daily_rice_a' => 'required',
+            'daily_rice_b' => 'required',
+            'daily_rice_c' => 'required',
+            'daily_rice_d' => 'required',
+            'daily_rice_e' => 'required',
         ]);
 
         $data = new FieldDensityCdot();

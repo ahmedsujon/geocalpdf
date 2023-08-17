@@ -316,7 +316,7 @@
 
                                 <div class="input-group mt-3">
                                     <span class="input-group-text">Required Strength (psi):</span>
-                                    <input type="text" class="form-control" wire:model="required_strength">
+                                    <input type="text" class="form-control" wire:model="required_strength" wire:keyup='specifiedStrength(0)' required>
                                 </div>
                                 @error('required_strength')
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
@@ -517,7 +517,7 @@
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="number" class="form-control moistureremoveinput"
-                                                            wire:model="age.0" wire:keyup='specifiedStrength(0)'>
+                                                            wire:model="age.0" wire:keyup='specifiedStrength(0)' required>
                                                         @error('age')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
@@ -550,7 +550,7 @@
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="number" step="any" class="form-control moistureremoveinput"
-                                                            wire:model="diameter_a.0" wire:keyup='AreaCyl(0)'>
+                                                            wire:model="diameter_a.0" wire:keyup='AreaCyl(0)' @if(empty($diameter) || $diameter === '0') readonly @endif>
                                                         @error('diameter_a')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
@@ -561,7 +561,7 @@
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="text" class="form-control moistureremoveinput"
-                                                            wire:model="avg_length.0">
+                                                            wire:model="avg_length.0" @if(empty($diameter_a) || $diameter_a === '0') readonly @endif >
                                                         @error('avg_length')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
@@ -573,7 +573,7 @@
                                                     <div class="input-group">
                                                         <input type="number" step="any"
                                                             class="form-control moistureremoveinput"
-                                                            wire:model="mass.0">
+                                                            wire:model="mass.0" @if(empty($avg_length) || $avg_length === '0') readonly @endif >
                                                         @error('mass')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
@@ -585,7 +585,7 @@
                                                     <div class="input-group">
                                                         <input type="number" step="any"
                                                             class="form-control moistureremoveinput"
-                                                            wire:model="max_load.0" wire:keyup='measuredStrength(0)'>
+                                                            wire:model="max_load.0" wire:keyup='measuredStrength(0)' @if(empty($mass) || $mass === '0') readonly @endif>
                                                         @error('max_load')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
@@ -832,7 +832,7 @@
                                     <div class="add-button pb-2" style="float:right;">
                                         <button type="button"
                                             class="btn btn-outline-success btn-icon-circle btn-icon-circle-sm"
-                                            wire:click.prevent='addFields({{ $i }})'>
+                                            wire:click.prevent='addFields({{ $i }})' @if(empty($type_fracture)) disabled @endif>
                                             {!! loadingState('addFields(' . $i . ')', '<i
                                                 class="ti ti-circle-plus"></i>') !!}
                                         </button>

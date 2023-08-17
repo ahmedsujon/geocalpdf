@@ -201,15 +201,37 @@ class EditSoilAggregateComponent extends Component
         }
     }
 
-    public function updateData()
+    public function updated($fields)
     {
-        $this->validate([
+        $this->validateOnly($fields, [
             'project_id' => 'required',
-            'client_id' => 'required',
             'date' => 'required',
             'general_location' => 'required',
             'responsible_person' => 'required',
             'office_address' => 'required',
+            'field_wet_density' => 'required',
+            'count_period' => 'required',
+            'material' => 'required',
+            'report_status' => 'required',
+            'compaction_requirement_min' => 'required',
+            'compaction_requirement_max' => 'required'
+        ]);
+    }
+
+    public function updateData()
+    {
+        $this->validate([
+            'project_id' => 'required',
+            'date' => 'required',
+            'general_location' => 'required',
+            'responsible_person' => 'required',
+            'office_address' => 'required',
+            'field_wet_density' => 'required',
+            'count_period' => 'required',
+            'material' => 'required',
+            'report_status' => 'required',
+            'compaction_requirement_min' => 'required',
+            'compaction_requirement_max' => 'required'
         ]);
 
         $data = new SoilAggregate();

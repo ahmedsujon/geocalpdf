@@ -23,6 +23,9 @@ class AddConcreteComponent extends Component
         $this->diameter_a[0] = 0;
         $this->max_load[0] = 0;
         $this->area_cyl[0] = 0;
+        $this->mass[0] = 0;
+        $this->avg_length[0] = 0;
+        $this->area_cyl[0] = 0;
         $this->measured_strength[0] = 0;
         $this->specified_strength[0] = 0;
         $this->type_cap[0] = 'Unbonded';
@@ -113,6 +116,7 @@ class AddConcreteComponent extends Component
         $this->specified_strength[$i] = 0;
         $this->type_fracture[$i] = 0;
         $this->person_performing[$i] = 0;
+        $this->type_cap[0] = 'Unbonded';
     }
 
     public function removeFields($i)
@@ -120,11 +124,10 @@ class AddConcreteComponent extends Component
         unset($this->fields[$i]);
     }
 
-    public function storeData()
+    public function updated($fields)
     {
-        $this->validate([
+        $this->validateOnly($fields, [
             'project_id' => 'required',
-            'client_id' => 'required',
             'date' => 'required',
             'responsible_person' => 'required',
             'office_address' => 'required',
@@ -132,6 +135,21 @@ class AddConcreteComponent extends Component
             'sample_time' => 'required',
             'ttf_unloading' => 'required',
             'required_strength' => 'required',
+        ]);
+    }
+
+    public function storeData()
+    {
+        $this->validate([
+            'project_id' => 'required',
+            'date' => 'required',
+            'responsible_person' => 'required',
+            'office_address' => 'required',
+            'batch_time' => 'required',
+            'sample_time' => 'required',
+            'ttf_unloading' => 'required',
+            'required_strength' => 'required',
+            'age' => 'required'
         ]);
 
         $data = new Concrete();

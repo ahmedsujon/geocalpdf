@@ -12,7 +12,7 @@ use Livewire\Component;
 
 class EditCdotComponent extends Component
 {
-    public $user_id, $project_id, $client_id, $project_number, $client_name, $geocal_project_num, $geocal_project_name, $cdot_project_name, $weather, $date, $office_address, $test_method, $troxler, $other, $model, $serial_no, $density_std_count, $moisture_std_count, $moisture_equations, $density_count, $moisture_count, $created_by, $remark,$responsible_person = [], $file_id, $status;
+    public $user_id, $project_id, $client_id, $project_number, $client_name, $geocal_project_num, $geocal_project_name, $cdot_project_name, $weather, $date, $office_address, $test_method, $troxler, $other, $model, $serial_no, $density_std_count, $moisture_std_count, $moisture_equations, $density_count, $moisture_count, $created_by, $remark, $responsible_person = [], $file_id, $status;
 
     public $project_no, $region, $contract_id, $project_location, $form_no, $grading, $taster_id, $sampled_by;
 
@@ -20,92 +20,91 @@ class EditCdotComponent extends Component
 
     public $sample_id_a, $sample_id_b, $sample_id_c, $sample_id_d, $sample_id_e, $test_date_a, $test_date_b, $test_date_c, $test_date_d, $test_date_e, $standard_count_a, $standard_count_b, $standard_count_c, $standard_count_d, $standard_count_e, $daily_rice_a, $daily_rice_b, $daily_rice_c, $daily_rice_d, $daily_rice_e, $station_a, $station_b, $station_c, $station_d, $station_e, $offset_a, $offset_b, $offset_c, $offset_d, $offset_e, $course_a, $course_b, $course_c, $course_d, $course_e;
 
-    public $wet_density_a_a, $wet_density_a_b, $wet_density_a_c, $wet_density_a_d,  $wet_density_a_e,$wet_density_b_a, $wet_density_b_b, $wet_density_b_c,  $wet_density_b_d, $wet_density_b_e,$wet_density_c_a, $wet_density_c_b, $wet_density_c_c, $wet_density_c_d, $wet_density_c_e, $wet_density_d_a, $wet_density_d_b, $wet_density_d_c, $wet_density_d_d,  $wet_density_d_e;
+    public $wet_density_a_a, $wet_density_a_b, $wet_density_a_c, $wet_density_a_d,  $wet_density_a_e, $wet_density_b_a, $wet_density_b_b, $wet_density_b_c,  $wet_density_b_d, $wet_density_b_e, $wet_density_c_a, $wet_density_c_b, $wet_density_c_c, $wet_density_c_d, $wet_density_c_e, $wet_density_d_a, $wet_density_d_b, $wet_density_d_c, $wet_density_d_d,  $wet_density_d_e;
 
     public $wet_densities_a, $wet_densities_b, $wet_densities_c, $wet_densities_d, $wet_densities_e, $average_wet_density_a, $average_wet_density_b, $average_wet_density_c, $average_wet_density_d, $average_wet_density_e, $correction_factor_a, $correction_factor_b, $correction_factor_c, $correction_factor_d, $correction_factor_e, $adjusted_wet_a, $adjusted_wet_b, $adjusted_wet_c, $adjusted_wet_d, $adjusted_wet_e, $ave_daily_rice_a, $ave_daily_rice_b, $ave_daily_rice_c, $ave_daily_rice_d, $ave_daily_rice_e, $compaction_a, $compaction_b, $compaction_c, $compaction_d, $compaction_e;
 
-     // Formula Calculation
-     public $wet_densitiesAA = [];
-     public function calculateAA()
-     {
-         $this->wet_densities_a = round(array_sum($this->wet_densitiesAA), 1);
-         $this->average_wet_density_a = round($this->wet_densities_a / count($this->wet_densitiesAA), 1);
-         $this->adjusted_wet_a = round($this->average_wet_density_a + (float)$this->correction_factor_a, 1);
-     }
-     public function calculateAAA()
-     {
-         $this->ave_daily_rice_a = round((float)$this->daily_rice_a * 62.4, 1);
-     }
-     public function compactionAAA()
-     {
-         $this->compaction_a = round(($this->adjusted_wet_a / $this->ave_daily_rice_a) * 100, 1);
-     }
-     // Formula Calculation
-     public $wet_densitiesBB = [];
-     public function calculateBB()
-     {
-         $this->wet_densities_b = round(array_sum($this->wet_densitiesBB), 1);
-         $this->average_wet_density_b = round($this->wet_densities_b / count($this->wet_densitiesBB), 1);
-         $this->adjusted_wet_b = round($this->average_wet_density_b + (float)$this->correction_factor_b, 1);
-     }
-     public function calculateBBB()
-     {
-         $this->ave_daily_rice_b = round((float)$this->daily_rice_b * 62.4, 1);
-     }
-     public function compactionBBB()
-     {
-         $this->compaction_b = round(($this->adjusted_wet_b / $this->ave_daily_rice_b) * 100, 1);
-     }
-     // Formula Calculation
-     public $wet_densitiesCC = [];
-     public function calculateCC()
-     {
-         $this->wet_densities_c = round(array_sum($this->wet_densitiesCC), 1);
-         $this->average_wet_density_c = round($this->wet_densities_c / count($this->wet_densitiesCC), 1);
-         $this->adjusted_wet_c = round($this->average_wet_density_c + (float)$this->correction_factor_c, 1);
-         
-     }
-     public function calculateCCC()
-     {
-         $this->ave_daily_rice_c = round((float)$this->daily_rice_c * 62.4, 1);
-     }
-     public function compactionCCC()
-     {
-         $this->compaction_c = round(($this->adjusted_wet_c / $this->ave_daily_rice_c) * 100, 1);
-     }
-     // Formula Calculation
-     public $wet_densitiesDD = [];
-     public function calculateDD()
-     {
-         $this->wet_densities_d = round(array_sum($this->wet_densitiesDD), 1);
-         $this->average_wet_density_d = round($this->wet_densities_d / count($this->wet_densitiesDD), 1);
-         $this->adjusted_wet_d = round($this->average_wet_density_d + (float)$this->correction_factor_d, 1);
-     }
-     public function calculateDDD()
-     {
-         $this->ave_daily_rice_d = round((float)$this->daily_rice_d * 62.4, 1);
-     }
-     public function compactionDDD()
-     {
-         $this->compaction_d = round(($this->adjusted_wet_d / $this->ave_daily_rice_d) * 100, 1);
-     }
-     // Formula Calculation
-     public $wet_densitiesEE = [];
-     public function calculateEE()
-     {
-         $this->wet_densities_e = round(array_sum($this->wet_densitiesEE), 1);
-         $this->average_wet_density_e = round($this->wet_densities_e / count($this->wet_densitiesEE), 1);
-         $this->adjusted_wet_e = round($this->average_wet_density_e + (float)$this->correction_factor_e, 1);
-     }
-     public function calculateEEE()
-     {
-         $this->ave_daily_rice_e = round((float)$this->daily_rice_e * 62.4, 1);
-     }
-     public function compactionEEE()
-     {
-         $this->compaction_e = round(($this->adjusted_wet_e / $this->ave_daily_rice_e) * 100, 1);
-     }
-     
+    // Formula Calculation
+    public $wet_densitiesAA = [];
+    public function calculateAA()
+    {
+        $this->wet_densities_a = round(array_sum($this->wet_densitiesAA), 1);
+        $this->average_wet_density_a = round($this->wet_densities_a / count($this->wet_densitiesAA), 1);
+        $this->adjusted_wet_a = round($this->average_wet_density_a + (float)$this->correction_factor_a, 1);
+    }
+    public function calculateAAA()
+    {
+        $this->ave_daily_rice_a = round((float)$this->daily_rice_a * 62.4, 1);
+    }
+    public function compactionAAA()
+    {
+        $this->compaction_a = round(($this->adjusted_wet_a / $this->ave_daily_rice_a) * 100, 1);
+    }
+    // Formula Calculation
+    public $wet_densitiesBB = [];
+    public function calculateBB()
+    {
+        $this->wet_densities_b = round(array_sum($this->wet_densitiesBB), 1);
+        $this->average_wet_density_b = round($this->wet_densities_b / count($this->wet_densitiesBB), 1);
+        $this->adjusted_wet_b = round($this->average_wet_density_b + (float)$this->correction_factor_b, 1);
+    }
+    public function calculateBBB()
+    {
+        $this->ave_daily_rice_b = round((float)$this->daily_rice_b * 62.4, 1);
+    }
+    public function compactionBBB()
+    {
+        $this->compaction_b = round(($this->adjusted_wet_b / $this->ave_daily_rice_b) * 100, 1);
+    }
+    // Formula Calculation
+    public $wet_densitiesCC = [];
+    public function calculateCC()
+    {
+        $this->wet_densities_c = round(array_sum($this->wet_densitiesCC), 1);
+        $this->average_wet_density_c = round($this->wet_densities_c / count($this->wet_densitiesCC), 1);
+        $this->adjusted_wet_c = round($this->average_wet_density_c + (float)$this->correction_factor_c, 1);
+    }
+    public function calculateCCC()
+    {
+        $this->ave_daily_rice_c = round((float)$this->daily_rice_c * 62.4, 1);
+    }
+    public function compactionCCC()
+    {
+        $this->compaction_c = round(($this->adjusted_wet_c / $this->ave_daily_rice_c) * 100, 1);
+    }
+    // Formula Calculation
+    public $wet_densitiesDD = [];
+    public function calculateDD()
+    {
+        $this->wet_densities_d = round(array_sum($this->wet_densitiesDD), 1);
+        $this->average_wet_density_d = round($this->wet_densities_d / count($this->wet_densitiesDD), 1);
+        $this->adjusted_wet_d = round($this->average_wet_density_d + (float)$this->correction_factor_d, 1);
+    }
+    public function calculateDDD()
+    {
+        $this->ave_daily_rice_d = round((float)$this->daily_rice_d * 62.4, 1);
+    }
+    public function compactionDDD()
+    {
+        $this->compaction_d = round(($this->adjusted_wet_d / $this->ave_daily_rice_d) * 100, 1);
+    }
+    // Formula Calculation
+    public $wet_densitiesEE = [];
+    public function calculateEE()
+    {
+        $this->wet_densities_e = round(array_sum($this->wet_densitiesEE), 1);
+        $this->average_wet_density_e = round($this->wet_densities_e / count($this->wet_densitiesEE), 1);
+        $this->adjusted_wet_e = round($this->average_wet_density_e + (float)$this->correction_factor_e, 1);
+    }
+    public function calculateEEE()
+    {
+        $this->ave_daily_rice_e = round((float)$this->daily_rice_e * 62.4, 1);
+    }
+    public function compactionEEE()
+    {
+        $this->compaction_e = round(($this->adjusted_wet_e / $this->ave_daily_rice_e) * 100, 1);
+    }
+
     public function mount($file_id)
     {
         $cdot_file = FieldDensityCdot::where('id', $file_id)->first();
@@ -248,12 +247,10 @@ class EditCdotComponent extends Component
         $this->remark = $cdot_file->remark;
     }
 
-    public function updateData()
+    public function updated($fields)
     {
-        $this->validate([
+        $this->validateOnly($fields, [
             'project_id' => 'required',
-            'client_id' => 'required',
-            'project_number' => 'required',
             'geocal_project_num' => 'required',
             'geocal_project_name' => 'required',
             'cdot_project_name' => 'required',
@@ -262,7 +259,31 @@ class EditCdotComponent extends Component
             'office_address' => 'required',
             'test_method' => 'required',
             'responsible_person' => 'required',
-            'status' => 'required',
+            'daily_rice_a' => 'required',
+            'daily_rice_b' => 'required',
+            'daily_rice_c' => 'required',
+            'daily_rice_d' => 'required',
+            'daily_rice_e' => 'required',
+        ]);
+    }
+
+    public function updateData()
+    {
+        $this->validate([
+            'project_id' => 'required',
+            'geocal_project_num' => 'required',
+            'geocal_project_name' => 'required',
+            'cdot_project_name' => 'required',
+            'date' => 'required',
+            'weather' => 'required',
+            'office_address' => 'required',
+            'test_method' => 'required',
+            'responsible_person' => 'required',
+            'daily_rice_a' => 'required',
+            'daily_rice_b' => 'required',
+            'daily_rice_c' => 'required',
+            'daily_rice_d' => 'required',
+            'daily_rice_e' => 'required',
         ]);
 
         $data = new FieldDensityCdot();
@@ -309,7 +330,7 @@ class EditCdotComponent extends Component
         $data->test_data_h = $this->test_data_h;
         $data->test_data_i = $this->test_data_i;
         $data->test_data_j = $this->test_data_j;
-        
+
         $data->sample_id_a = $this->sample_id_a;
         $data->sample_id_b = $this->sample_id_b;
         $data->sample_id_c = $this->sample_id_c;
@@ -375,7 +396,7 @@ class EditCdotComponent extends Component
         $data->wet_densities_c = $this->wet_densities_c;
         $data->wet_densities_d = $this->wet_densities_d;
         $data->wet_densities_e = $this->wet_densities_e;
-        
+
         $data->average_wet_density_a = $this->average_wet_density_a;
         $data->average_wet_density_b = $this->average_wet_density_b;
         $data->average_wet_density_c = $this->average_wet_density_c;
@@ -424,10 +445,10 @@ class EditCdotComponent extends Component
             $f_id = $data->id;
             dispatch(function () use ($persons, $status, $f_id) {
                 foreach ($persons as $key => $re_id) {
-                    if($status == 'sentToClient'){
+                    if ($status == 'sentToClient') {
                         $user = SubClient::find($re_id);
                         $mailData['field_density_cdot_id'] = $f_id;
-                    } else{
+                    } else {
                         $user = User::find($re_id);
                         $mailData['field_density_cdot_id'] = NULL;
                     }
@@ -454,6 +475,6 @@ class EditCdotComponent extends Component
         $projects = Project::orderBy('id', 'DESC')->get();
         $cdot_files = FieldDensityCdot::orderBy('id', 'DESC');
         $supervisors = User::orderBy('id', 'DESC')->get();
-        return view('livewire.field-moisture.cdot.edit-cdot-component', ['projects'=>$projects, 'cdot_files'=>$cdot_files, 'supervisors'=>$supervisors])->layout('livewire.layouts.base');
+        return view('livewire.field-moisture.cdot.edit-cdot-component', ['projects' => $projects, 'cdot_files' => $cdot_files, 'supervisors' => $supervisors])->layout('livewire.layouts.base');
     }
 }

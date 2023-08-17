@@ -66,7 +66,6 @@ class AddSoilAggregateComponent extends Component
         } else {
             $this->relative_compaction[$value] = 0;
         }
-
     }
 
     public function addField($i)
@@ -146,20 +145,37 @@ class AddSoilAggregateComponent extends Component
         }
     }
 
+    public function updated($fields)
+    {
+        $this->validateOnly($fields, [
+            'project_id' => 'required',
+            'date' => 'required',
+            'general_location' => 'required',
+            'responsible_person' => 'required',
+            'office_address' => 'required',
+            'field_wet_density' => 'required',
+            'count_period' => 'required',
+            'material' => 'required',
+            'report_status' => 'required',
+            'compaction_requirement_min' => 'required',
+            'compaction_requirement_max' => 'required'
+        ]);
+    }
 
     public function storeData()
     {
         $this->validate([
             'project_id' => 'required',
-            'client_id' => 'required',
             'date' => 'required',
             'general_location' => 'required',
             'responsible_person' => 'required',
             'office_address' => 'required',
-            'result_mix_id' => 'required',
+            'field_wet_density' => 'required',
             'count_period' => 'required',
             'material' => 'required',
-            'report_status' => 'required'
+            'report_status' => 'required',
+            'compaction_requirement_min' => 'required',
+            'compaction_requirement_max' => 'required'
         ]);
 
         $data = new SoilAggregate();

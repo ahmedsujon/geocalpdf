@@ -391,20 +391,20 @@
                             </div>
                         </div>
                         <div class="row mb-3 offset-1">
-                            <div class="col-md-5">
+                            <div class="col-md-10">
                                 <div class="input-group">
                                     <span class="input-group-text">Compaction Requirements (%):</span>
                                     <span class="input-group-text">Minus:</span>
                                     <input type="number" class="form-control" wire:model="compaction_requirement_min">
-                                    @error('compaction_requirement_min')
-                                    <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
-                                    @enderror
                                     <span class="input-group-text">Plus:</span>
                                     <input type="number" class="form-control" wire:model="compaction_requirement_max">
-                                    @error('compaction_requirement_max')
-                                    <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
-                                    @enderror
                                 </div>
+                                @error('compaction_requirement_min')
+                                <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
+                                @enderror
+                                @error('compaction_requirement_max')
+                                <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
+                                @enderror
                             </div>
                             <div class="col-md-10">
                                 <div class="input-group mt-3">
@@ -462,11 +462,11 @@
                                                                 {{ $s_mix_info }}</option>
                                                             @endforeach
                                                         </select>
+                                                        @error('result_mix_id')
+                                                        <span class="text-danger" style="font-size: 12px;">{{ $message
+                                                            }}</span>
+                                                        @enderror
                                                     </div>
-                                                    @error('result_mix_id')
-                                                    <span class="text-danger" style="font-size: 12px;">{{ $message
-                                                        }}</span>
-                                                    @enderror
                                                 </td>
 
                                                 <td class="moistureremove">
@@ -550,7 +550,8 @@
                                                         <input type="number" step="any"
                                                             class="form-control moistureremoveinput"
                                                             wire:model="field_wet_density.0"
-                                                            wire:keyup='changeTestResult(0)'>
+                                                            wire:keyup='changeTestResult(0)' @if(empty($result_mix_id))
+                                                            readonly @endif>
                                                         @error('field_wet_density')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
@@ -562,7 +563,9 @@
                                                     <div class="input-group">
                                                         <input type="number" step="any"
                                                             class="form-control moistureremoveinput"
-                                                            wire:model="relative_compaction.0" style="@if($compaction_requirement_max < $relative_compaction[0]) color: red; @endif" readonly>
+                                                            wire:model="relative_compaction.0"
+                                                            style="@if($compaction_requirement_max < $relative_compaction[0]) color: red; @endif"
+                                                            readonly>
                                                         @error('relative_compaction')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
@@ -695,7 +698,8 @@
                                                             class="form-control moistureremoveinput"
                                                             wire:model="field_wet_density.{{ $testresult }}"
                                                             wire:keyup='changeTestResult({{ $testresult }})'
-                                                            @if(!$result_mix_id[$testresult]) @endif>
+                                                            @if(!$result_mix_id[$testresult]) @endif
+                                                            @if(empty($result_mix_id)) readonly @endif>
                                                         @error('field_wet_density.{{ $testresult }}')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
@@ -707,7 +711,9 @@
                                                     <div class="input-group">
                                                         <input type="number" step="any"
                                                             class="form-control moistureremoveinput"
-                                                            wire:model="relative_compaction.{{ $testresult }}" style="@if($compaction_requirement_max < $relative_compaction[$testresult]) color: red; @endif" readonly>
+                                                            wire:model="relative_compaction.{{ $testresult }}"
+                                                            style="@if($compaction_requirement_max < $relative_compaction[$testresult]) color: red; @endif"
+                                                            readonly>
                                                         @error('relative_compaction')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
@@ -774,11 +780,11 @@
                                             id="inlineRadio2" value="Final">
                                         <label class="form-check-label" for="inlineRadio2">Final:</label>
                                     </div>
-                                    @error('report_status')
-                                    <span class="text-danger" style="font-size: 12px;">{{ $message
-                                        }}</span>
-                                    @enderror
                                 </div>
+                                @error('report_status')
+                                <span class="text-danger" style="font-size: 12px;">{{ $message
+                                    }}</span>
+                                @enderror
                             </div>
 
                             <div class="col-md-3 mt-3"></div>
@@ -832,7 +838,8 @@
                 <div class="card">
                     <div class="row mb-5 mt-3">
                         <div class="col-md-12" style="text-align: right;">
-                            <button type="submit" class="btn btn-primary submit_btn" style="background: green;">{!! loadingState('storeData', 'Save
+                            <button type="submit" class="btn btn-primary submit_btn" style="background: green;">{!!
+                                loadingState('storeData', 'Save
                                 and Send') !!}</button>
                         </div>
                     </div>
