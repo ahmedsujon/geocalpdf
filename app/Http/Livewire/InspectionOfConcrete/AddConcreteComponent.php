@@ -38,36 +38,15 @@ class AddConcreteComponent extends Component
         } else {
             $this->area_cyl[$value] = 0;
         }
-
-        // $specified = ConcreteData::first();
-        // if ($specified) {
-        //     if (!$this->diameter_a[$value]) {
-        //         $this->diameter_a[$value] = 0;
-        //     }
-        //     $this->area_cyl[$value] = round(pow((($this->diameter[$value] + $this->diameter_a[$value]) / 2 / 2), 2) * 3.14159265, 2);
-        // } else {
-        //     $this->area_cyl[$value] = 0;
-        // }
     }
 
     public function measuredStrength($value)
     {
-
         if ($this->max_load[$value] != null) {
-            $this->measured_strength[$value] = round($this->max_load[$value] / $this->area_cyl[$value], -1);
+            $this->measured_strength[$value] = round($this->max_load[$value] / ($this->area_cyl[$value] == 0 ? 1:$this->area_cyl[$value]), -1);
         } else {
             $this->measured_strength[$value] = 0;
         }
-
-        // $measured = ConcreteData::first();
-        // if ($measured) {
-        //     if (!$this->area_cyl[$value]) {
-        //         $this->area_cyl[$value] = 0;
-        //     }
-        //     $this->measured_strength[$value] = round($this->max_load[$value] / $this->area_cyl[$value], -1);
-        // } else {
-        //     $this->measured_strength[$value] = 0;
-        // }
     }
 
     public function specifiedStrength($value)
@@ -298,6 +277,16 @@ class AddConcreteComponent extends Component
 
     public function render()
     {
+        if ($this->area_cyl[0]) {
+            $this->measuredStrength(0);
+        }
+
+        foreach($this->fields as $field) {
+            if ($this->area_cyl[$field]) {
+                $this->measuredStrength($field);
+            }
+        }
+        
         $projects = Project::orderBy('id', 'DESC')->get();
         return view('livewire.inspection-of-concrete.add-concrete-component', ['projects' => $projects])->layout('livewire.layouts.base');
     }

@@ -561,7 +561,7 @@
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="text" class="form-control moistureremoveinput"
-                                                            wire:model="avg_length.0" @if(empty($diameter_a) || $diameter_a === '0') readonly @endif >
+                                                            wire:model="avg_length.0" @if(empty($diameter_a[0]) || $diameter_a[0] == '0') readonly @endif >
                                                         @error('avg_length')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
