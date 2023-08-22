@@ -31,6 +31,7 @@ class EditCdotComponent extends Component
         $this->wet_densities_a = round(array_sum($this->wet_densitiesAA), 1);
         $this->average_wet_density_a = round($this->wet_densities_a / count($this->wet_densitiesAA), 1);
         $this->adjusted_wet_a = round($this->average_wet_density_a + (float)$this->correction_factor_a, 1);
+        $this->compactionAAA();
     }
     public function calculateAAA()
     {

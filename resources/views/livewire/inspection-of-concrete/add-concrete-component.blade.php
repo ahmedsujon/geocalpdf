@@ -550,7 +550,7 @@
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="number" step="any" class="form-control moistureremoveinput"
-                                                            wire:model="diameter_a.0" wire:keyup='AreaCyl(0)' @if(empty($diameter) || $diameter === '0') readonly @endif>
+                                                            wire:model="diameter_a.0" wire:keyup='AreaCyl(0)' @if(empty($diameter[0]) || $diameter[0] === '0') readonly @endif>
                                                         @error('diameter_a')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
@@ -561,7 +561,7 @@
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="text" class="form-control moistureremoveinput"
-                                                            wire:model="avg_length.0" @if(empty($diameter_a[0]) || $diameter_a[0] == '0') readonly @endif >
+                                                            wire:model="avg_length.0" @if(empty($diameter_a[0]) || $diameter_a[0] === '0') readonly @endif >
                                                         @error('avg_length')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
@@ -573,7 +573,7 @@
                                                     <div class="input-group">
                                                         <input type="number" step="any"
                                                             class="form-control moistureremoveinput"
-                                                            wire:model="mass.0" @if(empty($avg_length) || $avg_length === '0') readonly @endif >
+                                                            wire:model="mass.0" @if(empty($avg_length[0]) || $avg_length[0] === '0') readonly @endif >
                                                         @error('mass')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
@@ -585,7 +585,7 @@
                                                     <div class="input-group">
                                                         <input type="number" step="any"
                                                             class="form-control moistureremoveinput"
-                                                            wire:model="max_load.0" wire:keyup='measuredStrength(0)' @if(empty($mass) || $mass === '0') readonly @endif>
+                                                            wire:model="max_load.0" wire:keyup='measuredStrength(0)' @if(empty($mass[0]) || $mass[0] === '0') readonly @endif>
                                                         @error('max_load')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>

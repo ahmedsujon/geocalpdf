@@ -555,7 +555,7 @@
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="number" step="any" class="form-control moistureremoveinput"
-                                                            wire:model="diameter_a.{{ $concrete_data }}" wire:keyup='AreaCyl({{ $concrete_data }})'>
+                                                            wire:model="diameter_a.{{ $concrete_data }}" wire:keyup='AreaCyl({{ $concrete_data }})' @if(empty($diameter[$concrete_data]) || $diameter[$concrete_data] === '0') readonly @endif>
                                                         @error('diameter_a')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
@@ -566,7 +566,7 @@
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="text" class="form-control moistureremoveinput"
-                                                            wire:model="avg_length.{{ $concrete_data }}">
+                                                            wire:model="avg_length.{{ $concrete_data }}" @if(empty($diameter_a[$concrete_data]) || $diameter_a[$concrete_data] === '0') readonly @endif>
                                                         @error('avg_length')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
@@ -578,7 +578,7 @@
                                                     <div class="input-group">
                                                         <input type="number" step="any"
                                                             class="form-control moistureremoveinput"
-                                                            wire:model="mass.{{ $concrete_data }}">
+                                                            wire:model="mass.{{ $concrete_data }}" @if(empty($avg_length[$concrete_data]) || $avg_length[$concrete_data] === '0') readonly @endif>
                                                         @error('mass')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
@@ -590,7 +590,7 @@
                                                     <div class="input-group">
                                                         <input type="number" step="any"
                                                             class="form-control moistureremoveinput"
-                                                            wire:model="max_load.{{ $concrete_data }}" wire:keyup='measuredStrength({{ $concrete_data }})'>
+                                                            wire:model="max_load.{{ $concrete_data }}" wire:keyup='measuredStrength({{ $concrete_data }})' @if(empty($mass[$concrete_data]) || $mass[$concrete_data] === '0') readonly @endif>
                                                         @error('max_load')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
