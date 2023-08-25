@@ -74,7 +74,7 @@
                                 id="sidebarCommercial">
                                 <ul class="nav flex-column">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('template.soil.aggregate') }}">Commercial
+                                        <a class="nav-link" href="{{ route('template.commercial') }}">Commercial
                                             Form</a>
                                     </li>
                                 </ul>

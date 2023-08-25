@@ -134,6 +134,7 @@ class AddSoilAggregateComponent extends Component
             unset($this->selected_mix_info_ids[$value]);
         }
     }
+    
     // get result information
     public function mixResultInfo($value)
     {
