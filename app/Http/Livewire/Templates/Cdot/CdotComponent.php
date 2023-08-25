@@ -1,20 +1,18 @@
 <?php
 
-namespace App\Http\Livewire\FieldMoisture\Cdot;
+namespace App\Http\Livewire\Templates\Cdot;
 
 use App\Models\FieldDensityCdot;
 use App\Models\Project;
 use App\Models\SubClient;
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 use Livewire\WithPagination;
 
 class CdotComponent extends Component
 {
-   
     use WithPagination;
     public $sortingValue = 10, $searchTerm;
     protected $listeners = ['deleteConfirmed' => 'deleteData'];
@@ -96,6 +94,6 @@ class CdotComponent extends Component
     public function render()
     {
         $cdot_files = FieldDensityCdot::orderBy('id', 'DESC')->paginate($this->sortingValue);
-        return view('livewire.field-moisture.cdot.cdot-component', ['cdot_files'=>$cdot_files])->layout('livewire.layouts.base');
+        return view('livewire.templates.cdot.cdot-component', ['cdot_files'=>$cdot_files])->layout('livewire.layouts.base');
     }
 }

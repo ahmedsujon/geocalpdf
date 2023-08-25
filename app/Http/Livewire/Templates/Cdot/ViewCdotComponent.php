@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\FieldMoisture\Cdot;
+namespace App\Http\Livewire\Templates\Cdot;
 
 use App\Models\FieldDensityCdot;
 use App\Models\Project;
@@ -9,7 +9,7 @@ use Livewire\Component;
 
 class ViewCdotComponent extends Component
 {
-    public $user_id, $project_id, $client_id, $project_number, $client_name, $geocal_project_num, $geocal_project_name, $cdot_project_name, $weather, $date, $office_address, $test_method, $troxler, $other, $model, $serial_no, $density_std_count, $moisture_std_count, $moisture_equations, $density_count, $moisture_count, $created_by, $remark,$responsible_person = [], $status, $file_id;
+    public $user_id, $project_id, $client_id, $project_number, $client_name, $geocal_project_num, $geocal_project_name, $cdot_project_name, $weather, $date, $office_address, $test_method, $troxler, $other, $model, $serial_no, $density_std_count, $moisture_std_count, $moisture_equations, $density_count, $moisture_count, $created_by, $remark, $responsible_person = [], $status, $file_id;
 
     public $project_no, $region, $contract_id, $project_location, $form_no, $grading, $taster_id, $sampled_by;
 
@@ -17,7 +17,7 @@ class ViewCdotComponent extends Component
 
     public $sample_id_a, $sample_id_b, $sample_id_c, $sample_id_d, $sample_id_e, $test_date_a, $test_date_b, $test_date_c, $test_date_d, $test_date_e, $standard_count_a, $standard_count_b, $standard_count_c, $standard_count_d, $standard_count_e, $daily_rice_a, $daily_rice_b, $daily_rice_c, $daily_rice_d, $daily_rice_e, $station_a, $station_b, $station_c, $station_d, $station_e, $offset_a, $offset_b, $offset_c, $offset_d, $offset_e, $course_a, $course_b, $course_c, $course_d, $course_e;
 
-    public $wet_density_a_a, $wet_density_a_b, $wet_density_a_c, $wet_density_a_d,  $wet_density_a_e,$wet_density_b_a, $wet_density_b_b, $wet_density_b_c,  $wet_density_b_d, $wet_density_b_e,$wet_density_c_a, $wet_density_c_b, $wet_density_c_c, $wet_density_c_d, $wet_density_c_e, $wet_density_d_a, $wet_density_d_b, $wet_density_d_c, $wet_density_d_d,  $wet_density_d_e;
+    public $wet_density_a_a, $wet_density_a_b, $wet_density_a_c, $wet_density_a_d,  $wet_density_a_e, $wet_density_b_a, $wet_density_b_b, $wet_density_b_c,  $wet_density_b_d, $wet_density_b_e, $wet_density_c_a, $wet_density_c_b, $wet_density_c_c, $wet_density_c_d, $wet_density_c_e, $wet_density_d_a, $wet_density_d_b, $wet_density_d_c, $wet_density_d_d,  $wet_density_d_e;
 
     public $wet_densities_a, $wet_densities_b, $wet_densities_c, $wet_densities_d, $wet_densities_e, $average_wet_density_a, $average_wet_density_b, $average_wet_density_c, $average_wet_density_d, $average_wet_density_e, $correction_factor_a, $correction_factor_b, $correction_factor_c, $correction_factor_d, $correction_factor_e, $adjusted_wet_a, $adjusted_wet_b, $adjusted_wet_c, $adjusted_wet_d, $adjusted_wet_e, $ave_daily_rice_a, $ave_daily_rice_b, $ave_daily_rice_c, $ave_daily_rice_d, $ave_daily_rice_e, $compaction_a, $compaction_b, $compaction_c, $compaction_d, $compaction_e;
 
@@ -162,6 +162,8 @@ class ViewCdotComponent extends Component
         $projects = Project::orderBy('id', 'DESC')->get();
         $cdot_files = FieldDensityCdot::orderBy('id', 'DESC');
         $supervisors = User::orderBy('id', 'DESC')->get();
-        return view('livewire.field-moisture.cdot.view-cdot-component', ['projects'=>$projects, 'cdot_files'=>$cdot_files, 'supervisors'=>$supervisors])->layout('livewire.layouts.base');
+        return view('livewire.templates.cdot.view-cdot-component', 
+        ['projects'=>$projects, 'cdot_files'=>$cdot_files, 'supervisors'=>$supervisors])
+        ->layout('livewire.layouts.base');
     }
 }

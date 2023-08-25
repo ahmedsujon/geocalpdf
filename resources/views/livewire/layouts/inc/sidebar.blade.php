@@ -65,18 +65,31 @@
                                 menu-icon"></i><span>Templates</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#sidebarMOISTURE" data-bs-toggle="collapse" role="button"
-                                aria-expanded="false" aria-controls="sidebarMOISTURE">
+                            <a class="nav-link" href="#sidebarCommercial" data-bs-toggle="collapse" role="button"
+                                aria-expanded="false" aria-controls="sidebarCommercial">
                                 <i class="ti ti-stack menu-icon"></i>
-                                <span>Asphalt Field Density</span>
+                                <span>Commercial Form</span>
                             </a>
                             <div class="collapse {{ request()->is('commercial') || request()->is('commercial/*')? 'show': '' }}"
-                                id="sidebarMOISTURE">
+                                id="sidebarCommercial">
                                 <ul class="nav flex-column">
                                     <li class="nav-item">
                                         <a class="nav-link" href="{{ route('template.soil.aggregate') }}">Commercial
                                             Form</a>
                                     </li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#sidebarCdot" data-bs-toggle="collapse" role="button"
+                                aria-expanded="false" aria-controls="sidebarCdot">
+                                <i class="ti ti-stack menu-icon"></i>
+                                <span>CDOT Form</span>
+                            </a>
+                            <div class="collapse {{ request()->is('cdot') || request()->is('cdot/*')? 'show': '' }}"
+                                id="sidebarCdot">
+                                <ul class="nav flex-column">
                                     <li class="nav-item">
                                         <a class="nav-link" href="{{ route('template.cdot') }}">CDOT Form</a>
                                     </li>
@@ -85,32 +98,32 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="#sidebarAggregate" data-bs-toggle="collapse" role="button"
-                                aria-expanded="false" aria-controls="sidebarAggregate">
+                            <a class="nav-link" href="#sidebarSoilAggregate" data-bs-toggle="collapse" role="button"
+                                aria-expanded="false" aria-controls="sidebarSoilAggregate">
                                 <i class="ti ti-stack menu-icon"></i>
                                 <span>Soil Aggregate</span>
                             </a>
                             <div class="collapse {{ request()->is('soil-aggregate') || request()->is('soil-aggregate/*')? 'show': '' }}"
-                                id="sidebarAggregate">
+                                id="sidebarSoilAggregate">
                                 <ul class="nav flex-column">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('template.commercial') }}">Soil Aggregate Form</a>
+                                        <a class="nav-link" href="{{ route('template.soil.aggregate') }}">Soil Aggregate Form</a>
                                     </li>
                                 </ul>
                             </div>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="#sidebarPROPERTIES" data-bs-toggle="collapse" role="button"
-                                aria-expanded="false" aria-controls="sidebarPROPERTIES">
+                            <a class="nav-link" href="#sidebarPlasticConcrete" data-bs-toggle="collapse" role="button"
+                                aria-expanded="false" aria-controls="sidebarPlasticConcrete">
                                 <i class="ti ti-stack menu-icon"></i>
-                                <span>Physical Properties</span>
+                                <span>Plastic Concrete</span>
                             </a>
-                            <div class="collapse {{ request()->is('templateOne') || request()->is('templateOne/*')? 'show': '' }}"
-                                id="sidebarPROPERTIES">
+                            <div class="collapse {{ request()->is('plastic-concrete') || request()->is('plastic-concrete/*')? 'show': '' }}"
+                                id="sidebarPlasticConcrete">
                                 <ul class="nav flex-column">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('template-one.list') }}">Physical Properties Form</a>
+                                        <a class="nav-link" href="{{ route('template.plastic.concrete.list') }}">Physical Properties Form</a>
                                     </li>
                                 </ul>
                             </div>

@@ -9,6 +9,16 @@
         .form-control:focus {
             outline: none;
             box-shadow: none;
+            background: #CCFFFF;
+        }
+        .form-select{
+            background: #CCFFFF;
+        }
+        .form-control{
+            background: #CCFFFF;
+        }
+        .moistureremoveinput{
+            background: #CCFFFF;
         }
     </style>
     <div class="container-fluid">
@@ -393,19 +403,9 @@
                                         <tbody>
                                             <tr>
                                                 <td class="moistureremove text-center" width="6%">Test#</td>
-                                                <td class="moistureremove" width="7%">
-                                                    <div class="input-group">
-                                                        <input type="text" class="form-control moistureremoveinput"
-                                                            wire:model="test_id">
-                                                    </div>
-                                                </td>
+                                                <td class="moistureremove text-center" width="7%"></td>
                                                 <td class="moistureremove text-center" width="5%">IA#</td>
-                                                <td class="moistureremove text-center" width="7%">
-                                                    <div class="input-group">
-                                                        <input type="text" class="form-control moistureremoveinput"
-                                                            wire:model="ia_id">
-                                                    </div>
-                                                </td>
+                                                <td class="moistureremove text-center" width="7%"></td>
                                                 <td class="moistureremove text-center">
                                                     <div class="input-group">
                                                         <input type="text" class="form-control moistureremoveinput"

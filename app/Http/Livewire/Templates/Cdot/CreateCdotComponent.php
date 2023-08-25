@@ -1,18 +1,17 @@
 <?php
 
-namespace App\Http\Livewire\FieldMoisture\Cdot;
+namespace App\Http\Livewire\Templates\Cdot;
 
 use App\Models\FieldDensityCdot;
 use App\Models\Project;
-use App\Models\SubClient;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Livewire\Component;
 
-class EditCdotComponent extends Component
+class CreateCdotComponent extends Component
 {
-    public $user_id, $project_id, $client_id, $project_number, $client_name, $geocal_project_num, $geocal_project_name, $cdot_project_name, $weather, $date, $office_address, $test_method, $troxler, $other, $model, $serial_no, $density_std_count, $moisture_std_count, $moisture_equations, $density_count, $moisture_count, $created_by, $remark, $responsible_person = [], $file_id, $status;
+    public $user_id, $project_id, $client_id, $project_number, $client_name, $geocal_project_num, $geocal_project_name, $cdot_project_name, $weather, $date, $office_address, $test_method, $troxler, $other, $model, $serial_no, $density_std_count, $moisture_std_count, $moisture_equations, $density_count, $moisture_count, $created_by, $remark, $responsible_person = [];
 
     public $project_no, $region, $contract_id, $project_location, $form_no, $grading, $taster_id, $sampled_by;
 
@@ -22,7 +21,8 @@ class EditCdotComponent extends Component
 
     public $wet_density_a_a, $wet_density_a_b, $wet_density_a_c, $wet_density_a_d,  $wet_density_a_e, $wet_density_b_a, $wet_density_b_b, $wet_density_b_c,  $wet_density_b_d, $wet_density_b_e, $wet_density_c_a, $wet_density_c_b, $wet_density_c_c, $wet_density_c_d, $wet_density_c_e, $wet_density_d_a, $wet_density_d_b, $wet_density_d_c, $wet_density_d_d,  $wet_density_d_e;
 
-    public $wet_densities_a, $wet_densities_b, $wet_densities_c, $wet_densities_d, $wet_densities_e, $average_wet_density_a, $average_wet_density_b, $average_wet_density_c, $average_wet_density_d, $average_wet_density_e, $correction_factor_a, $correction_factor_b, $correction_factor_c, $correction_factor_d, $correction_factor_e, $adjusted_wet_a, $adjusted_wet_b, $adjusted_wet_c, $adjusted_wet_d, $adjusted_wet_e, $ave_daily_rice_a, $ave_daily_rice_b, $ave_daily_rice_c, $ave_daily_rice_d, $ave_daily_rice_e, $compaction_a, $compaction_b, $compaction_c, $compaction_d, $compaction_e;
+    public $wet_densities_a, $wet_densities_b, $wet_densities_c, $wet_densities_d, $wet_densities_e, $average_wet_density_a, $average_wet_density_b, $average_wet_density_c, $average_wet_density_d, $average_wet_density_e, $correction_factor_a, $correction_factor_b, $correction_factor_c, $correction_factor_d, $correction_factor_e, $adjusted_wet_a, $adjusted_wet_b, $adjusted_wet_c, $adjusted_wet_d, $adjusted_wet_e, $ave_daily_rice_a, $ave_daily_rice_b, $ave_daily_rice_c, $ave_daily_rice_d, $ave_daily_rice_e, $compaction_a, $compaction_b, $compaction_c, $compaction_d, $compaction_e, $sumAA;
+
 
     // Formula Calculation
     public $wet_densitiesAA = [];
@@ -33,10 +33,12 @@ class EditCdotComponent extends Component
         $this->adjusted_wet_a = round($this->average_wet_density_a + (float)$this->correction_factor_a, 1);
         $this->compactionAAA();
     }
+
     public function calculateAAA()
     {
         $this->ave_daily_rice_a = round((float)$this->daily_rice_a * 62.4, 1);
     }
+
     public function compactionAAA()
     {
         $this->compaction_a = round(($this->adjusted_wet_a / $this->ave_daily_rice_a) * 100, 1);
@@ -106,146 +108,49 @@ class EditCdotComponent extends Component
         $this->compaction_e = round(($this->adjusted_wet_e / $this->ave_daily_rice_e) * 100, 1);
     }
 
-    public function mount($file_id)
+
+    public $selected_project_ids = [];
+    public function selectInfo()
     {
-        $cdot_file = FieldDensityCdot::where('id', $file_id)->first();
+        if ($this->project_id) {
+            $project = Project::where('id', $this->project_id)->first();
+            $this->selected_project_ids = $this->project_id;
+            $this->client_id = $project->client_id;
+            $this->project_number = $project->project_number;
+            $this->client_name = client($project->client_id)->name;
+        } else {
+            $this->client_id = '';
+            $this->project_number = '';
+            $this->client_name = '';
+            unset($this->selected_project_ids);
+        }
+    }
 
-        $this->project_id = $cdot_file->project_id;
-        $this->file_id = $file_id;
-        $this->client_id = $cdot_file->client_id;
-        $this->client_name = client($cdot_file->client_id)->name;
-        $this->project_number = $cdot_file->project_number;
-        $this->date = $cdot_file->date;
-        $this->user_id = $cdot_file->user_id;
-        $this->weather = $cdot_file->weather;
-        $this->office_address = $cdot_file->office_address;
+    public function mount()
+    {
+        $this->wet_densitiesAA[0] = 0;
+        $this->wet_densitiesBB[0] = 0;
+        $this->wet_densitiesCC[0] = 0;
+        $this->wet_densitiesDD[0] = 0;
+        $this->wet_densitiesEE[0] = 0;
 
-        $this->geocal_project_num = $cdot_file->geocal_project_num;
-        $this->geocal_project_name = $cdot_file->geocal_project_name;
-        $this->cdot_project_name = $cdot_file->cdot_project_name;
-        $this->test_method = $cdot_file->test_method;
-        $this->troxler = $cdot_file->troxler;
-        $this->other = $cdot_file->other;
-        $this->model = $cdot_file->model;
-        $this->serial_no = $cdot_file->serial_no;
-        $this->density_std_count = $cdot_file->density_std_count;
-        $this->moisture_std_count = $cdot_file->moisture_std_count;
-        $this->moisture_equations = $cdot_file->moisture_equations;
-        $this->project_no = $cdot_file->project_no;
-        $this->region = $cdot_file->region;
-        $this->contract_id = $cdot_file->contract_id;
-        $this->project_location = $cdot_file->project_location;
-        $this->form_no = $cdot_file->form_no;
-        $this->grading = $cdot_file->grading;
-        $this->taster_id = $cdot_file->taster_id;
-        $this->sampled_by = $cdot_file->sampled_by;
-        $this->company_name = $cdot_file->company_name;
-        $this->gauge_id = $cdot_file->gauge_id;
-        $this->test_id = $cdot_file->test_id;
-        $this->ia_id = $cdot_file->ia_id;
-        $this->test_data_a = $cdot_file->test_data_a;
-        $this->test_data_b = $cdot_file->test_data_b;
-        $this->test_data_c = $cdot_file->test_data_c;
-        $this->test_data_d = $cdot_file->test_data_d;
-        $this->test_data_e = $cdot_file->test_data_e;
-        $this->test_data_f = $cdot_file->test_data_f;
-        $this->test_data_g = $cdot_file->test_data_g;
-        $this->test_data_h = $cdot_file->test_data_h;
-        $this->test_data_i = $cdot_file->test_data_i;
-        $this->test_data_j = $cdot_file->test_data_j;
-        $this->sample_id_a = $cdot_file->sample_id_a;
-        $this->sample_id_b = $cdot_file->sample_id_b;
-        $this->sample_id_c = $cdot_file->sample_id_c;
-        $this->sample_id_d = $cdot_file->sample_id_d;
-        $this->sample_id_e = $cdot_file->sample_id_e;
-        $this->test_date_a = $cdot_file->test_date_a;
-        $this->test_date_b = $cdot_file->test_date_b;
-        $this->test_date_c = $cdot_file->test_date_c;
-        $this->test_date_d = $cdot_file->test_date_d;
-        $this->test_date_e = $cdot_file->test_date_e;
-        $this->standard_count_a = $cdot_file->standard_count_a;
-        $this->standard_count_b = $cdot_file->standard_count_b;
-        $this->standard_count_c = $cdot_file->standard_count_c;
-        $this->standard_count_d = $cdot_file->standard_count_d;
-        $this->standard_count_e = $cdot_file->standard_count_e;
-        $this->daily_rice_a = $cdot_file->daily_rice_a;
-        $this->daily_rice_b = $cdot_file->daily_rice_b;
-        $this->daily_rice_c = $cdot_file->daily_rice_c;
-        $this->daily_rice_d = $cdot_file->daily_rice_d;
-        $this->daily_rice_e = $cdot_file->daily_rice_e;
-        $this->station_a = $cdot_file->station_a;
-        $this->station_b = $cdot_file->station_b;
-        $this->station_c = $cdot_file->station_c;
-        $this->station_d = $cdot_file->station_d;
-        $this->station_e = $cdot_file->station_e;
-        $this->offset_a = $cdot_file->offset_a;
-        $this->offset_b = $cdot_file->offset_b;
-        $this->offset_c = $cdot_file->offset_c;
-        $this->offset_d = $cdot_file->offset_d;
-        $this->offset_e = $cdot_file->offset_e;
-        $this->course_a = $cdot_file->course_a;
-        $this->course_b = $cdot_file->course_b;
-        $this->course_c = $cdot_file->course_c;
-        $this->course_d = $cdot_file->course_d;
-        $this->course_e = $cdot_file->course_e;
+        $this->wet_densitiesAA[1] = 0;
+        $this->wet_densitiesBB[1] = 0;
+        $this->wet_densitiesCC[1] = 0;
+        $this->wet_densitiesDD[1] = 0;
+        $this->wet_densitiesEE[1] = 0;
 
-        $this->wet_densitiesAA[0] = $cdot_file->wet_density_a_a;
-        $this->wet_densitiesBB[0] = $cdot_file->wet_density_a_b;
-        $this->wet_densitiesCC[0] = $cdot_file->wet_density_a_c;
-        $this->wet_densitiesDD[0] = $cdot_file->wet_density_a_d;
-        $this->wet_densitiesEE[0] = $cdot_file->wet_density_a_e;
+        $this->wet_densitiesAA[2] = 0;
+        $this->wet_densitiesBB[2] = 0;
+        $this->wet_densitiesCC[2] = 0;
+        $this->wet_densitiesDD[2] = 0;
+        $this->wet_densitiesEE[2] = 0;
 
-        $this->wet_densitiesAA[1] = $cdot_file->wet_density_b_a;
-        $this->wet_densitiesBB[1] = $cdot_file->wet_density_b_b;
-        $this->wet_densitiesCC[1] = $cdot_file->wet_density_b_c;
-        $this->wet_densitiesDD[1] = $cdot_file->wet_density_b_d;
-        $this->wet_densitiesEE[1] = $cdot_file->wet_density_b_e;
-
-        $this->wet_densitiesAA[2] = $cdot_file->wet_density_c_a;
-        $this->wet_densitiesBB[2] = $cdot_file->wet_density_c_b;
-        $this->wet_densitiesCC[2] = $cdot_file->wet_density_c_c;
-        $this->wet_densitiesDD[2] = $cdot_file->wet_density_c_d;
-        $this->wet_densitiesEE[2] = $cdot_file->wet_density_c_e;
-
-        $this->wet_densitiesAA[3] = $cdot_file->wet_density_d_a;
-        $this->wet_densitiesBB[3] = $cdot_file->wet_density_d_b;
-        $this->wet_densitiesCC[3] = $cdot_file->wet_density_d_c;
-        $this->wet_densitiesDD[3] = $cdot_file->wet_density_d_d;
-        $this->wet_densitiesEE[3] = $cdot_file->wet_density_d_e;
-        // sum of wet_densities
-        $this->wet_densities_a = $cdot_file->wet_densities_a;
-        $this->wet_densities_b = $cdot_file->wet_densities_b;
-        $this->wet_densities_c = $cdot_file->wet_densities_c;
-        $this->wet_densities_d = $cdot_file->wet_densities_d;
-        $this->wet_densities_e = $cdot_file->wet_densities_e;
-
-        $this->average_wet_density_a = $cdot_file->average_wet_density_a;
-        $this->average_wet_density_b = $cdot_file->average_wet_density_b;
-        $this->average_wet_density_c = $cdot_file->average_wet_density_c;
-        $this->average_wet_density_d = $cdot_file->average_wet_density_d;
-        $this->average_wet_density_e = $cdot_file->average_wet_density_e;
-        $this->correction_factor_a = $cdot_file->correction_factor_a;
-        $this->correction_factor_b = $cdot_file->correction_factor_b;
-        $this->correction_factor_c = $cdot_file->correction_factor_c;
-        $this->correction_factor_e = $cdot_file->correction_factor_e;
-        $this->correction_factor_d = $cdot_file->correction_factor_d;
-        $this->adjusted_wet_a = $cdot_file->adjusted_wet_a;
-        $this->adjusted_wet_b = $cdot_file->adjusted_wet_b;
-        $this->adjusted_wet_c = $cdot_file->adjusted_wet_c;
-        $this->adjusted_wet_e = $cdot_file->adjusted_wet_e;
-        $this->adjusted_wet_d = $cdot_file->adjusted_wet_d;
-        $this->ave_daily_rice_a = $cdot_file->ave_daily_rice_a;
-        $this->ave_daily_rice_b = $cdot_file->ave_daily_rice_b;
-        $this->ave_daily_rice_c = $cdot_file->ave_daily_rice_c;
-        $this->ave_daily_rice_d = $cdot_file->ave_daily_rice_d;
-        $this->ave_daily_rice_e = $cdot_file->ave_daily_rice_e;
-        $this->compaction_a = $cdot_file->compaction_a;
-        $this->compaction_b = $cdot_file->compaction_b;
-        $this->compaction_c = $cdot_file->compaction_c;
-        $this->compaction_d = $cdot_file->compaction_d;
-        $this->compaction_e = $cdot_file->compaction_e;
-        $this->status = $cdot_file->status;
-        $this->remark = $cdot_file->remark;
+        $this->wet_densitiesAA[3] = 0;
+        $this->wet_densitiesBB[3] = 0;
+        $this->wet_densitiesCC[3] = 0;
+        $this->wet_densitiesDD[3] = 0;
+        $this->wet_densitiesEE[3] = 0;
     }
 
     public function updated($fields)
@@ -268,7 +173,7 @@ class EditCdotComponent extends Component
         ]);
     }
 
-    public function updateData()
+    public function storeData()
     {
         $this->validate([
             'project_id' => 'required',
@@ -392,6 +297,7 @@ class EditCdotComponent extends Component
         $data->wet_density_d_d = $this->wet_densitiesDD[3];
         $data->wet_density_d_e = $this->wet_densitiesEE[3];
 
+        // sum of wet_densities
         $data->wet_densities_a = $this->wet_densities_a;
         $data->wet_densities_b = $this->wet_densities_b;
         $data->wet_densities_c = $this->wet_densities_c;
@@ -403,6 +309,7 @@ class EditCdotComponent extends Component
         $data->average_wet_density_c = $this->average_wet_density_c;
         $data->average_wet_density_d = $this->average_wet_density_d;
         $data->average_wet_density_e = $this->average_wet_density_e;
+
         $data->correction_factor_a = $this->correction_factor_a;
         $data->correction_factor_b = $this->correction_factor_b;
         $data->correction_factor_c = $this->correction_factor_c;
@@ -435,6 +342,7 @@ class EditCdotComponent extends Component
         } else {
             $data['status'] = 'FTCreated';
         }
+
         $data->remark = $this->remark;
         $data->responsible_person = json_encode($this->responsible_person);
         $data->save();
@@ -442,18 +350,11 @@ class EditCdotComponent extends Component
         //send Mail
         if ($this->responsible_person) {
             $persons = $this->responsible_person;
-            $status = $this->status;
             $f_id = $data->id;
-            dispatch(function () use ($persons, $status, $f_id) {
-                foreach ($persons as $key => $re_id) {
-                    if ($status == 'sentToClient') {
-                        $user = SubClient::find($re_id);
-                        $mailData['field_density_cdot_id'] = $f_id;
-                    } else {
-                        $user = User::find($re_id);
-                        $mailData['field_density_cdot_id'] = NULL;
-                    }
 
+            dispatch(function () use ($persons, $f_id) {
+                foreach ($persons as $key => $re_id) {
+                    $user = User::find($re_id);
                     $mailData['email'] = $user->email;
                     $mailData['name'] = $user->name;
                     $mailData['role_id'] = $user->role_id;
@@ -467,8 +368,9 @@ class EditCdotComponent extends Component
             });
         }
 
-        session()->flash('message', 'File created successfully');
+        session()->flash('success', 'CDOT Form added successfully');
         return redirect()->route('template.cdot');
+        $this->resetInputs();
     }
 
     public function render()
@@ -476,6 +378,6 @@ class EditCdotComponent extends Component
         $projects = Project::orderBy('id', 'DESC')->get();
         $cdot_files = FieldDensityCdot::orderBy('id', 'DESC');
         $supervisors = User::orderBy('id', 'DESC')->get();
-        return view('livewire.field-moisture.cdot.edit-cdot-component', ['projects' => $projects, 'cdot_files' => $cdot_files, 'supervisors' => $supervisors])->layout('livewire.layouts.base');
+        return view('livewire.templates.cdot.create-cdot-component', ['projects'=>$projects, 'cdot_files'=>$cdot_files, 'supervisors'=>$supervisors])->layout('livewire.layouts.base');
     }
 }
