@@ -62,6 +62,7 @@ class CreateCommercialComponent extends Component
             unset($this->selected_project_ids);
         }
     }
+
     // ==================== get mix information =================
     // get mix information
     public $selected_mix_a_ids = []; // Initialize as an array
