@@ -7,6 +7,7 @@ use App\Models\Concrete;
 use App\Models\ConcreteData;
 use App\Models\FieldDensityCdot;
 use App\Models\FieldDensityCommercial;
+use App\Models\InspectionConcrete;
 use App\Models\ProctorData;
 use App\Models\SoilAggregate;
 use App\Models\SoilAggregateMixData;
@@ -85,17 +86,14 @@ class InvoiceController extends Controller
 
     public function templateInspectionConcrete($id)
     {
-        $data = Concrete::findOrFail($id);
+        $data = InspectionConcrete::findOrFail($id);
         $data->project_name = project($data->project_id)->name;
         $data->technician = user($data->created_by)->name;
         $data->client_name = client($data->client_id)->name;
         $data->client_email = client($data->client_id)->email;
         $data->client_phone = client($data->client_id)->phone;
         $data->client_company_name = client($data->client_id)->company_name;
-
-        $data->concrete_infos = ConcreteData::where('concrete_id', $data->id)->get();
-
-        $pdf = Pdf::loadView('pdf.concrete', compact('data'));
+        $pdf = Pdf::loadView('pdf.inspection_concrete', compact('data'));
         return $pdf->stream('report.pdf');
     }
 

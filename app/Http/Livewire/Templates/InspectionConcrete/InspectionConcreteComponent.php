@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Templates\InspectionConcrete;
 
 use App\Models\Concrete;
+use App\Models\InspectionConcrete;
 use App\Models\Project;
 use App\Models\SubClient;
 use App\Models\User;
@@ -26,7 +27,7 @@ class InspectionConcreteComponent extends Component
 
     public function deleteData()
     {
-        $data = Concrete::find($this->delete_id);
+        $data = InspectionConcrete::find($this->delete_id);
         $data->delete();
         $this->delete_id = '';
         $this->dispatchBrowserEvent('FileDeleted');
@@ -69,10 +70,10 @@ class InspectionConcreteComponent extends Component
         $file_id = $request->get('file_id');
         DB::statement("SET SQL_MODE=''");
 
-        $responsible_persons = Concrete::find($file_id)->responsible_person;
+        $responsible_persons = InspectionConcrete::find($file_id)->responsible_person;
 
         if ($value == 'sentToClient') {
-            $getCustomer = Concrete::where('id', $file_id)->first()->client_id;
+            $getCustomer = InspectionConcrete::where('id', $file_id)->first()->client_id;
             $data = SubClient::where('client_id', $getCustomer)->get();
         } else if ($value == 'sentToTech') {
             $data = User::whereIn('id', json_decode($responsible_persons))->where('role_id', 5)->get();
@@ -92,7 +93,7 @@ class InspectionConcreteComponent extends Component
 
     public function render()
     {
-        $files = Concrete::orderBy('id', 'DESC')->paginate($this->sortingValue);
+        $files = InspectionConcrete::orderBy('id', 'DESC')->paginate($this->sortingValue);
         return view('livewire.templates.inspection-concrete.inspection-concrete-component', ['files'=>$files])->layout('livewire.layouts.base');
     }
 }

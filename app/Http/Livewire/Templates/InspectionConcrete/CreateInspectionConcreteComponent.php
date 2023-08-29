@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Templates\InspectionConcrete;
 
 use App\Models\Concrete;
 use App\Models\ConcreteData;
+use App\Models\InspectionConcrete;
 use App\Models\Project;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -32,8 +33,6 @@ class CreateInspectionConcreteComponent extends Component
 
     public $age_i, $test_date_i, $diameter_i, $diameter_a_i, $avg_length_i, $mass_i, $max_load_i, $type_cap_i, $area_cyl_i, $measured_strength_i, $specified_strength_i, $type_fracture_i, $person_performing_i;
 
-    public $age_j, $test_date_j, $diameter_j, $diameter_a_j, $avg_length_j, $mass_j, $max_load_j, $type_cap_j, $area_cyl_j, $measured_strength_j, $specified_strength_j, $type_fracture_j, $person_performing_j;
-
     // get project and client information
     public $selected_project_ids = [];
     public function selectInfo()
@@ -52,7 +51,7 @@ class CreateInspectionConcreteComponent extends Component
             unset($this->selected_project_ids);
         }
     }
-// ================== specified strength ===================
+    // ================== specified strength ===================
     public function specifiedStrengthA()
     {
         if ($this->age_a == 28) {
@@ -126,14 +125,6 @@ class CreateInspectionConcreteComponent extends Component
             $this->specified_strength_i = 0;
         }
     }
-    public function specifiedStrengthJ()
-    {
-        if ($this->age_j == 28) {
-            $this->specified_strength_j = $this->required_strength;
-        } else {
-            $this->specified_strength_j = 0;
-        }
-    }
 
     // ================== area of cycle ===================
     public function AreaCylA()
@@ -154,7 +145,7 @@ class CreateInspectionConcreteComponent extends Component
     }
     public function AreaCylC()
     {
-        if ($this->diameter_c != null && $this->diameter_c_c != null) {
+        if ($this->diameter_c != null && $this->diameter_a_c != null) {
             $this->area_cyl_c = round(pow((($this->diameter_c + $this->diameter_a_c) / 2 / 2), 2) * 3.14159265, 2);
         } else {
             $this->area_cyl_c = 0;
@@ -206,14 +197,6 @@ class CreateInspectionConcreteComponent extends Component
             $this->area_cyl_i = round(pow((($this->diameter_i + $this->diameter_a_a) / 2 / 2), 2) * 3.14159265, 2);
         } else {
             $this->area_cyl_i = 0;
-        }
-    }
-    public function AreaCylJ()
-    {
-        if ($this->diameter_j != null && $this->diameter_a_j != null) {
-            $this->area_cyl_j = round(pow((($this->diameter_j + $this->diameter_a_a) / 2 / 2), 2) * 3.14159265, 2);
-        } else {
-            $this->area_cyl_j = 0;
         }
     }
     // ================== measured strength ===================
@@ -289,14 +272,6 @@ class CreateInspectionConcreteComponent extends Component
             $this->measured_strength_i = 0;
         }
     }
-    public function measuredStrengthJ()
-    {
-        if ($this->max_load_j != null) {
-            $this->measured_strength_j = round($this->max_load_j / ($this->area_cyl_j == 0 ? 1 : $this->area_cyl_j), -1);
-        } else {
-            $this->measured_strength_j = 0;
-        }
-    }
 
     public function updated($fields)
     {
@@ -323,10 +298,9 @@ class CreateInspectionConcreteComponent extends Component
             'sample_time' => 'required',
             'ttf_unloading' => 'required',
             'required_strength' => 'required',
-            'age' => 'required'
         ]);
 
-        $data = new Concrete();
+        $data = new InspectionConcrete();
         $data->project_id = $this->project_id;
         $data->client_id = $this->client_id;
         $data->project_number = $this->project_number;
@@ -405,6 +379,132 @@ class CreateInspectionConcreteComponent extends Component
         $data->pick_up_hours = $this->pick_up_hours;
         $data->delayed_hours = $this->delayed_hours;
         $data->why = $this->why;
+        // COMPRESSIVE STRENGTHS DATA
+        $data->age_a = $this->age_a;
+        $data->test_date_a = $this->test_date_a;
+        $data->diameter_a = $this->diameter_a;
+        $data->diameter_a_a = $this->diameter_a_a;
+        $data->avg_length_a = $this->avg_length_a;
+        $data->mass_a = $this->mass_a;
+        $data->max_load_a = $this->max_load_a;
+        $data->type_cap_a = $this->type_cap_a;
+        $data->area_cyl_a = $this->area_cyl_a;
+        $data->measured_strength_a = $this->measured_strength_a;
+        $data->specified_strength_a = $this->specified_strength_a;
+        $data->type_fracture_a = $this->type_fracture_a;
+        $data->person_performing_a = $this->person_performing_a;
+
+        $data->age_b = $this->age_b;
+        $data->test_date_b = $this->test_date_b;
+        $data->diameter_b = $this->diameter_b;
+        $data->diameter_a_b = $this->diameter_a_b;
+        $data->avg_length_b = $this->avg_length_b;
+        $data->mass_b = $this->mass_b;
+        $data->max_load_b = $this->max_load_b;
+        $data->type_cap_b = $this->type_cap_b;
+        $data->area_cyl_b = $this->area_cyl_b;
+        $data->measured_strength_b = $this->measured_strength_b;
+        $data->specified_strength_b = $this->specified_strength_b;
+        $data->type_fracture_b = $this->type_fracture_b;
+        $data->person_performing_b = $this->person_performing_b;
+
+        $data->age_c = $this->age_c;
+        $data->test_date_c = $this->test_date_c;
+        $data->diameter_c = $this->diameter_c;
+        $data->diameter_a_c = $this->diameter_a_c;
+        $data->avg_length_c = $this->avg_length_c;
+        $data->mass_c = $this->mass_c;
+        $data->max_load_c = $this->max_load_c;
+        $data->type_cap_c = $this->type_cap_c;
+        $data->area_cyl_c = $this->area_cyl_c;
+        $data->measured_strength_c = $this->measured_strength_c;
+        $data->specified_strength_c = $this->specified_strength_c;
+        $data->type_fracture_c = $this->type_fracture_c;
+        $data->person_performing_c = $this->person_performing_c;
+
+        $data->age_d = $this->age_d;
+        $data->test_date_d = $this->test_date_d;
+        $data->diameter_d = $this->diameter_d;
+        $data->diameter_a_d = $this->diameter_a_d;
+        $data->avg_length_d = $this->avg_length_d;
+        $data->mass_d = $this->mass_d;
+        $data->max_load_d = $this->max_load_d;
+        $data->type_cap_d = $this->type_cap_d;
+        $data->area_cyl_d = $this->area_cyl_d;
+        $data->measured_strength_d = $this->measured_strength_d;
+        $data->specified_strength_d = $this->specified_strength_d;
+        $data->type_fracture_d = $this->type_fracture_d;
+        $data->person_performing_d = $this->person_performing_d;
+
+        $data->age_e = $this->age_e;
+        $data->test_date_e = $this->test_date_e;
+        $data->diameter_e = $this->diameter_e;
+        $data->diameter_a_e = $this->diameter_a_e;
+        $data->avg_length_e = $this->avg_length_e;
+        $data->mass_e = $this->mass_e;
+        $data->max_load_e = $this->max_load_e;
+        $data->type_cap_e = $this->type_cap_e;
+        $data->area_cyl_e = $this->area_cyl_e;
+        $data->measured_strength_e = $this->measured_strength_e;
+        $data->specified_strength_e = $this->specified_strength_e;
+        $data->type_fracture_e = $this->type_fracture_e;
+        $data->person_performing_e = $this->person_performing_e;
+
+        $data->age_f = $this->age_f;
+        $data->test_date_f = $this->test_date_f;
+        $data->diameter_f = $this->diameter_f;
+        $data->diameter_a_f = $this->diameter_a_f;
+        $data->avg_length_f = $this->avg_length_f;
+        $data->mass_f = $this->mass_f;
+        $data->max_load_f = $this->max_load_f;
+        $data->type_cap_f = $this->type_cap_f;
+        $data->area_cyl_f = $this->area_cyl_f;
+        $data->measured_strength_f = $this->measured_strength_f;
+        $data->specified_strength_f = $this->specified_strength_f;
+        $data->type_fracture_f = $this->type_fracture_f;
+        $data->person_performing_f = $this->person_performing_f;
+
+        $data->age_g = $this->age_g;
+        $data->test_date_g = $this->test_date_g;
+        $data->diameter_g = $this->diameter_g;
+        $data->diameter_a_g = $this->diameter_a_g;
+        $data->avg_length_g = $this->avg_length_g;
+        $data->mass_g = $this->mass_g;
+        $data->max_load_g = $this->max_load_g;
+        $data->type_cap_g = $this->type_cap_g;
+        $data->area_cyl_g = $this->area_cyl_g;
+        $data->measured_strength_g = $this->measured_strength_g;
+        $data->specified_strength_g = $this->specified_strength_g;
+        $data->type_fracture_g = $this->type_fracture_g;
+        $data->person_performing_g = $this->person_performing_g;
+
+        $data->age_h = $this->age_h;
+        $data->test_date_h = $this->test_date_h;
+        $data->diameter_h = $this->diameter_h;
+        $data->diameter_a_h = $this->diameter_a_h;
+        $data->avg_length_h = $this->avg_length_h;
+        $data->mass_h = $this->mass_h;
+        $data->max_load_h = $this->max_load_h;
+        $data->type_cap_h = $this->type_cap_h;
+        $data->area_cyl_h = $this->area_cyl_h;
+        $data->measured_strength_h = $this->measured_strength_h;
+        $data->specified_strength_h = $this->specified_strength_h;
+        $data->type_fracture_h = $this->type_fracture_h;
+        $data->person_performing_h = $this->person_performing_h;
+
+        $data->age_i = $this->age_i;
+        $data->test_date_i = $this->test_date_i;
+        $data->diameter_i = $this->diameter_i;
+        $data->diameter_a_i = $this->diameter_a_i;
+        $data->avg_length_i = $this->avg_length_i;
+        $data->mass_i = $this->mass_i;
+        $data->max_load_i = $this->max_load_i;
+        $data->type_cap_i = $this->type_cap_i;
+        $data->area_cyl_i = $this->area_cyl_i;
+        $data->measured_strength_i = $this->measured_strength_i;
+        $data->specified_strength_i = $this->specified_strength_i;
+        $data->type_fracture_i = $this->type_fracture_i;
+        $data->person_performing_i = $this->person_performing_i;
 
         if (Auth::user()->role_id == '1') {
             $data['status'] = "SuperAdminCreated";
@@ -423,27 +523,6 @@ class CreateInspectionConcreteComponent extends Component
         $data->responsible_person = json_encode($this->responsible_person);
         $data->save();
 
-        // test concrete information
-        foreach ($this->test_date as $key => $test_n) {
-            $cont = new ConcreteData();
-            $cont->concrete_id = $data->id;
-            $cont->age = $this->age[$key];
-            $cont->test_date = $this->test_date[$key];
-            $cont->diameter = $this->diameter[$key];
-            $cont->diameter_a = $this->diameter_a[$key];
-            $cont->avg_length = $this->avg_length[$key];
-            $cont->mass = $this->mass[$key];
-            $cont->max_load = $this->max_load[$key];
-            $cont->type_cap = $this->type_cap[$key];
-            $cont->area_cyl = $this->area_cyl[$key];
-            $cont->measured_strength = $this->measured_strength[$key];
-            $cont->specified_strength = $this->specified_strength[$key];
-            $cont->type_fracture = $this->type_fracture[$key];
-            $cont->person_performing = $this->person_performing[$key];
-            $cont->save();
-        }
-
-        $data->save();
 
         //send Mail
         if ($this->responsible_person) {
@@ -465,7 +544,7 @@ class CreateInspectionConcreteComponent extends Component
             });
         }
 
-        session()->flash('message', 'File created successfully');
+        session()->flash('message', 'Inspection concrete created successfully');
         return redirect()->route('template.concrete');
     }
 
@@ -499,15 +578,6 @@ class CreateInspectionConcreteComponent extends Component
         if ($this->area_cyl_i) {
             $this->measuredStrengthI();
         }
-        if ($this->area_cyl_j) {
-            $this->measuredStrengthJ();
-        }
-
-        // foreach ($this->fields as $field) {
-        //     if ($this->area_cyl[$field]) {
-        //         $this->measuredStrength($field);
-        //     }
-        // }
 
         $projects = Project::orderBy('id', 'DESC')->get();
         return view('livewire.templates.inspection-concrete.create-inspection-concrete-component', ['projects' => $projects])->layout('livewire.layouts.base');

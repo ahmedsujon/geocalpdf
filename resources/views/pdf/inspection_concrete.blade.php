@@ -509,60 +509,58 @@
                     <h3 style="font-size: 14px; font-weight: 700">CompressiveStrength (psi)</h3>
                 </th>
             </tr>
-            @foreach ($data->concrete_infos as $concrete_info)
             <tr>
                 <td style="padding: 4px 6px; border: 1px solid lightgray">
                     <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->cylinder_id }}</h4>
                 </td>
                 <td style="padding: 4px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $concrete_info->cylinder_id }}
+                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->cylinder_id }}
                     </h4>
                 </td>
                 <td style="padding: 4px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $concrete_info->test_date }}
+                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->test_date }}
                     </h4>
                 </td>
                 <td style="padding: 4px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $concrete_info->age }}
+                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->age }}
                     </h4>
                 </td>
                 <td style="padding: 4px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $concrete_info->diameter }}
+                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->diameter }}
                     </h4>
                 </td>
                 <td style="padding: 4px 6px; border: 1px solid lightgray">
                     <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{
-                        $concrete_info->avg_length }}</h4>
+                        $data->avg_length }}</h4>
                 </td>
                 <td style="padding: 4px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $concrete_info->area_cyl }}
+                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->area_cyl }}
                     </h4>
                 </td>
                 <td style="padding: 4px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $concrete_info->type_cap }}
+                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->type_cap }}
                     </h4>
                 </td>
                 <td style="padding: 4px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $concrete_info->max_load }}
+                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->max_load }}
                     </h4>
                 </td>
                 <td style="padding: 4px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $concrete_info->type_fracture
+                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->type_fracture
                         }}
                     </h4>
                 </td>
                 <td style="padding: 4px 6px; border: 1px solid lightgray">
                     <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{
-                        $concrete_info->person_performing }}
+                        $data->person_performing }}
                     </h4>
                 </td>
                 <td style="padding: 4px 6px; border: 1px solid lightgray">
                     <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{
-                        $concrete_info->measured_strength }}
+                        $data->measured_strength }}
                     </h4>
                 </td>
             </tr>
-            @endforeach
         </table>
         <div style="page-break-before:always"></div>
         <table style="width: 100%; border-collapse: collapse; padding-top: 30px;">
