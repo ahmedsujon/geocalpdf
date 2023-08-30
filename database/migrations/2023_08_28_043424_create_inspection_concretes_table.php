@@ -245,20 +245,6 @@ class CreateInspectionConcretesTable extends Migration
             $table->text('specified_strength_i')->nullable();
             $table->text('type_fracture_i')->nullable();
             $table->text('person_performing_i')->nullable();
-
-            $table->text('age_j')->nullable();
-            $table->text('test_date_j')->nullable();
-            $table->text('diameter_j')->nullable();
-            $table->text('diameter_a_j')->nullable();
-            $table->text('avg_length_j')->nullable();
-            $table->text('mass_j')->nullable();
-            $table->text('max_load_j')->nullable();
-            $table->text('type_cap_j')->nullable();
-            $table->text('area_cyl_j')->nullable();
-            $table->text('measured_strength_j')->nullable();
-            $table->text('specified_strength_j')->nullable();
-            $table->text('type_fracture_j')->nullable();
-            $table->text('person_performing_j')->nullable();
             $table->timestamps();
         });
     }
