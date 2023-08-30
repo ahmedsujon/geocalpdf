@@ -2,17 +2,33 @@
 
 namespace App\Http\Livewire\Templates\SoilAggregate;
 
+use App\Models\CommercialTestResult;
+use App\Models\Proctor;
+use App\Models\ProctorData;
+use App\Models\Project;
+use App\Models\SoilAggregate;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Livewire\Component;
 
 class CreateSoilAggregateComponent extends Component
 {
-    public $fields = [], $i = 1, $j = 1, $client_name, $responsibles, $responsible_person = [];
+    public $fields = [], $i = 1, $j = 1, $client_name, $responsible_person = [];
 
-    public $project_id, $client_id, $project_number, $date, $user_id, $weather, $troxler, $other, $model, $serial_number, $density_count, $moisture_count, $moisture_equation, $compaction_requirement, $requirment_plus, $requirment_minus, $general_info, $remark, $created_by, $status, $test_mode, $main_test_method, $observation, $office_address;
+    public $project_id, $client_id, $project_number, $date, $user_id, $weather, $troxler, $other, $model, $serial_number, $density_count, $moisture_count, $moisture_equation, $compaction_requirement, $requirement_plus, $requirement_minus, $general_info, $remark, $created_by, $status, $test_mode, $main_test_method, $observation, $office_address;
 
-    public $proctor_id = [], $description = [], $test_method = [], $max_dry_density = [], $optimum_moisture = [], $proctor_info = [];
+    public $proctor_id_a, $description_a, $test_method_a, $max_dry_density_a, $optimum_moisture_a, $proctor_info_a;
+    public $proctor_id_b, $description_b, $test_method_b, $max_dry_density_b, $optimum_moisture_b, $proctor_info_b;
+    public $proctor_id_c, $description_c, $test_method_c, $max_dry_density_c, $optimum_moisture_c, $proctor_info_c;
+    public $proctor_id_d, $description_d, $test_method_d, $max_dry_density_d, $optimum_moisture_d, $proctor_info_d;
+    public $proctor_id_e, $description_e, $test_method_e, $max_dry_density_e, $optimum_moisture_e, $proctor_info_e;
 
-    public $testresults = [], $test_num = [], $location = [], $test_dept = [], $elev_test = [], $wet_density = [], $dry_density = [], $moisture_content = [], $percent_comp = [], $comments = [], $result_proctor_id = [], $material = [];
+    public $test_results_a, $test_num_a, $location_a, $test_dept_a, $elev_test_a, $wet_density_a, $dry_density_a, $moisture_content_a, $percent_comp_a, $comments_a, $result_proctor_id_a, $material_a;
+    public $test_results_b, $test_num_b, $location_b, $test_dept_b, $elev_test_b, $wet_density_b, $dry_density_b, $moisture_content_b, $percent_comp_b, $comments_b, $result_proctor_id_b, $material_b;
+    public $test_results_c, $test_num_c, $location_c, $test_dept_c, $elev_test_c, $wet_density_c, $dry_density_c, $moisture_content_c, $percent_comp_c, $comments_c, $result_proctor_id_c, $material_c;
+    public $test_results_d, $test_num_d, $location_d, $test_dept_d, $elev_test_d, $wet_density_d, $dry_density_d, $moisture_content_d, $percent_comp_d, $comments_d, $result_proctor_id_d, $material_d;
+    public $test_results_e, $test_num_e, $location_e, $test_dept_e, $elev_test_e, $wet_density_e, $dry_density_e, $moisture_content_e, $percent_comp_e, $comments_e, $result_proctor_id_e, $material_e;
 
     public function updated($fields)
     {
@@ -24,7 +40,6 @@ class CreateSoilAggregateComponent extends Component
             'compaction_requirement' => 'required',
             'general_info' => 'required',
             'responsible_person' => 'required',
-            'proctor_id' => 'required',
             'office_address' => 'required',
         ]);
     }
@@ -40,7 +55,6 @@ class CreateSoilAggregateComponent extends Component
             $this->project_number = $project->project_number;
             $this->client_id = $project->client_id;
             $this->client_name = client($project->client_id)->name;
-
         } else {
             $this->client_id = '';
             $this->project_number = '';
@@ -50,53 +64,141 @@ class CreateSoilAggregateComponent extends Component
     }
 
     // get proctor information
-    public $selected_proctor_ids = [];
-    public function proctorInfo($value)
+    public $selected_a_proctor_ids = [];
+    public function proctorInfoA()
     {
-        $proctor = Proctor::where('proctorid', $this->proctor_id[$value])->first();
-        if ($proctor) {
+        $data = Proctor::where('proctorid', $this->proctor_id_a)->first();
 
-            $this->selected_proctor_ids[$value] = $this->proctor_id[$value];
-            $this->description[$value] = $proctor->material_description;
-            $this->test_method[$value] = $proctor->test_method;
-            $this->max_dry_density[$value] = $proctor->max_dry_density;
-            $this->optimum_moisture[$value] = $proctor->optimum_moisture;
+        if ($data) {
+            $this->selected_a_proctor_ids = $this->proctor_id_a;
+            $this->description_a = $data->description_a;
+            $this->test_method_a = $data->test_method_a;
+            $this->max_dry_density_a = $data->max_dry_density_a;
+            $this->optimum_moisture_a = $data->optimum_moisture_a;
         } else {
-            $this->description[$value] = '';
-            $this->test_method[$value] = '';
-            $this->max_dry_density[$value] = '';
-            $this->optimum_moisture[$value] = '';
-            unset($this->selected_proctor_ids[$value]);
+            $this->description_a = '';
+            $this->test_method_a = '';
+            $this->max_dry_density_a = '';
+            $this->optimum_moisture_a = '';
+            unset($this->selected_a_proctor_ids);
         }
     }
-
-    public function changeTestResult($value)
+    public $selected_b_proctor_ids = [];
+    public function proctorInfoB()
     {
-        $proctor = Proctor::where('proctorid', $this->result_proctor_id[$value])->first();
+        $data = Proctor::where('proctorid', $this->proctor_id_b)->first();
+
+        if ($data) {
+            $this->selected_b_proctor_ids = $this->proctor_id_b;
+            $this->description_b = $data->description_b;
+            $this->test_method_b = $data->test_method_b;
+            $this->max_dry_density_b = $data->max_dry_density_b;
+            $this->optimum_moisture_b = $data->optimum_moisture_b;
+        } else {
+            $this->description_b = '';
+            $this->test_method_b = '';
+            $this->max_dry_density_b = '';
+            $this->optimum_moisture_b = '';
+            unset($this->selected_b_proctor_ids);
+        }
+    }
+    public $selected_c_proctor_ids = [];
+    public function proctorInfoC()
+    {
+        $data = Proctor::where('proctorid', $this->proctor_id_c)->first();
+
+        if ($data) {
+            $this->selected_c_proctor_ids = $this->proctor_id_c;
+            $this->description_c = $data->description_c;
+            $this->test_method_c = $data->test_method_c;
+            $this->max_dry_density_c = $data->max_dry_density_c;
+            $this->optimum_moisture_c = $data->optimum_moisture_c;
+        } else {
+            $this->description_c = '';
+            $this->test_method_c = '';
+            $this->max_dry_density_c = '';
+            $this->optimum_moisture_c = '';
+            unset($this->selected_c_proctor_ids);
+        }
+    }
+    public $selected_d_proctor_ids = [];
+    public function proctorInfoD()
+    {
+        $data = Proctor::where('proctorid', $this->proctor_id_d)->first();
+
+        if ($data) {
+            $this->selected_d_proctor_ids = $this->proctor_id_d;
+            $this->description_d = $data->description_d;
+            $this->test_method_d = $data->test_method_d;
+            $this->max_dry_density_d = $data->max_dry_density_d;
+            $this->optimum_moisture_d = $data->optimum_moisture_d;
+        } else {
+            $this->description_d = '';
+            $this->test_method_d = '';
+            $this->max_dry_density_d = '';
+            $this->optimum_moisture_d = '';
+            unset($this->selected_d_proctor_ids);
+        }
+    }
+    public $selected_e_proctor_ids = [];
+    public function proctorInfoE()
+    {
+        $data = Proctor::where('proctorid', $this->proctor_id_e)->first();
+
+        if ($data) {
+            $this->selected_e_proctor_ids = $this->proctor_id_e;
+            $this->description_e = $data->description_e;
+            $this->test_method_e = $data->test_method_e;
+            $this->max_dry_density_e = $data->max_dry_density_e;
+            $this->optimum_moisture_e = $data->optimum_moisture_e;
+        } else {
+            $this->description_e = '';
+            $this->test_method_e = '';
+            $this->max_dry_density_e = '';
+            $this->optimum_moisture_e = '';
+            unset($this->selected_e_proctor_ids);
+        }
+    }
+    // Test Results
+    public function changeTestResultA()
+    {
+        $proctor = Proctor::where('proctorid', $this->result_proctor_id_a)->first();
         if ($proctor) {
-            if (!$this->dry_density[$value]) {
-                $this->dry_density[$value] = 0;
+            if (!$this->dry_density_a) {
+                $this->dry_density_a = 0;
             }
-            $this->percent_comp[$value] = round(($this->dry_density[$value] / $proctor->max_dry_density) * 100, 1);
+            $this->percent_comp_a = round(($this->dry_density_a / $proctor->max_dry_density_a) * 100, 1);
         } else {
-            $this->percent_comp[$value] = 0;
+            $this->percent_comp_a = 0;
+        }
+    }
+    public function changeTestResultB()
+    {
+        $proctor = Proctor::where('proctorid', $this->result_proctor_id_b)->first();
+        if ($proctor) {
+            if (!$this->dry_density_b) {
+                $this->dry_density_b = 0;
+            }
+            $this->percent_comp_b = round(($this->dry_density_b / $proctor->max_dry_density_b) * 100, 1);
+        } else {
+            $this->percent_comp_b = 0;
         }
     }
 
-    public function mount()
-    {
-        $this->test_num[0] = 0;
-        $this->location[0] = 0;
-        $this->result_proctor_id[0] = 0;
-        $this->elev_test[0] = 0;
-        $this->wet_density[0] = 0;
-        $this->moisture_content[0] = 0;
-        $this->percent_comp[0] = 0;
-        $this->comments[0] = 0;
-        $this->material[0] = 0;
-        $this->dry_density[0] = 0;
-        $this->test_dept[0] = 0;
-    }
+    // public function mount()
+    // {
+    //     $this->test_num[0] = 0;
+    //     $this->location[0] = 0;
+    //     $this->result_proctor_id[0] = 0;
+    //     $this->elev_test[0] = 0;
+    //     $this->wet_density[0] = 0;
+    //     $this->moisture_content[0] = 0;
+    //     $this->percent_comp[0] = 0;
+    //     $this->comments[0] = 0;
+    //     $this->material[0] = 0;
+    //     $this->dry_density[0] = 0;
+    //     $this->test_dept[0] = 0;
+    // }
 
     public function storeData()
     {
@@ -112,7 +214,7 @@ class CreateSoilAggregateComponent extends Component
             'office_address' => 'required',
         ]);
 
-        $data = new FieldDensityCommercial();
+        $data = new SoilAggregate();
         $data->project_id = $this->project_id;
         $data->client_id = $this->client_id;
         $data->project_number = $this->project_number;
@@ -154,38 +256,6 @@ class CreateSoilAggregateComponent extends Component
         $data->responsible_person = json_encode($this->responsible_person);
         $data->save();
 
-        // proctor information
-        foreach ($this->proctor_id as $key => $p_id) {
-            $cont = new ProctorData();
-            $cont->field_density_commercial_id = $data->id;
-            $cont->proctor_id = $this->proctor_id[$key];
-            $cont->description = $this->description[$key];
-            $cont->test_method = $this->test_method[$key];
-            $cont->max_dry_density = $this->max_dry_density[$key];
-            $cont->optimum_moisture = $this->optimum_moisture[$key];
-            $cont->save();
-        }
-
-        // test result information
-        foreach ($this->test_num as $key => $test_n) {
-            $cont = new CommercialTestResult();
-            $cont->field_density_commercial_id = $data->id;
-            $cont->result_proctor_id = $this->result_proctor_id[$key];
-            $cont->test_num = $this->test_num[$key];
-            $cont->location = $this->location[$key];
-            $cont->test_dept = $this->test_dept[$key];
-            $cont->elev_test = $this->elev_test[$key];
-            $cont->wet_density = $this->wet_density[$key];
-            $cont->dry_density = $this->dry_density[$key];
-            $cont->moisture_content = $this->moisture_content[$key];
-            $cont->percent_comp = $this->percent_comp[$key];
-            $cont->comments = $this->comments[$key];
-            $cont->material = $this->material[$key];
-            $cont->save();
-        }
-
-        $data->save();
-
         //send Mail
         if ($this->responsible_person) {
             $persons = $this->responsible_person;
@@ -215,6 +285,6 @@ class CreateSoilAggregateComponent extends Component
         $projects = Project::orderBy('id', 'DESC')->get();
         $supervisors = User::orderBy('id', 'DESC')->get();
         $proctors = Proctor::orderBy('id', 'DESC')->get();
-        return view('livewire.templates.soil-aggregate.create-soil-aggregate-component');
+        return view('livewire.templates.soil-aggregate.create-soil-aggregate-component', ['projects' => $projects, 'supervisors' => $supervisors, 'proctors' => $proctors])->layout('livewire.layouts.base');
     }
 }
