@@ -9,6 +9,17 @@ class AddProctorComponent extends Component
 {
     public $proctorid, $material_description, $max_dry_density, $optimum_moisture, $test_method, $status;
 
+    public function updated($fields)
+    {
+        $this->validateOnly($fields, [
+            'proctorid' => 'required',
+            'material_description' => 'required',
+            'test_method' => 'required',
+            'max_dry_density' => 'required',
+            'optimum_moisture' => 'required',
+        ]);
+    }
+
     public function storeData()
     {
         $this->validate([

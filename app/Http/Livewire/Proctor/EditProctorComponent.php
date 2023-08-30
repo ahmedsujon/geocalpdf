@@ -20,6 +20,17 @@ class EditProctorComponent extends Component
        
     }
 
+    public function updated($fields)
+    {
+        $this->validateOnly($fields, [
+            'proctorid' => 'required',
+            'material_description' => 'required',
+            'test_method' => 'required',
+            'max_dry_density' => 'required',
+            'optimum_moisture' => 'required',
+        ]);
+    }
+    
     public function updateData()
     {
         $this->validate([

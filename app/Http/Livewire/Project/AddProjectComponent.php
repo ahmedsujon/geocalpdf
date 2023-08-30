@@ -22,6 +22,19 @@ class AddProjectComponent extends Component
     public $edit_id, $delete_id;
     protected $listeners = ['deleteConfirmed'=>'deleteData'];
 
+    public function updated($fields)
+    {
+        $this->validateOnly($fields, [
+            'project_number'=>'required|unique:projects,project_number',
+            'name'=>'required',
+            'location'=>'required',
+            'client_id'=>'required',
+            'responsible_ft'=>'required',
+            'responsible_supervisor'=>'required',
+            'responsible_clerk'=>'required',
+            'responsible_pe'=>'required',
+        ]);
+    }
 
     public function storeData()
     {

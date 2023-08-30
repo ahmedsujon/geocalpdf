@@ -9,6 +9,18 @@ class AddMaxInfoComponent extends Component
 {
     public $mix_id, $supplier, $plant, $mix_type, $max_theoretical_density, $max_theoretical_specificGravity;
 
+    public function updated($fields)
+    {
+        $this->validateOnly($fields, [
+            'mix_id' => 'required',
+            'supplier' => 'required',
+            'plant' => 'required',
+            'mix_type' => 'required',
+            'max_theoretical_density' => 'required',
+            'max_theoretical_specificGravity' => 'required',
+        ]);
+    }
+
     public function storeData()
     {
         $this->validate([
