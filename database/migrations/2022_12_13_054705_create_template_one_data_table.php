@@ -29,15 +29,12 @@ class CreateTemplateOneDataTable extends Migration
             $table->string('unit_wt')->nullable();
             $table->string('air_temp')->nullable();
             $table->string('conc_temp')->nullable();
-
             $table->string('location')->nullable();
             $table->string('water_added_before_test')->nullable();
             $table->string('water_added_after_test')->nullable();
-
             $table->string('cylinder_set_no')->nullable();
             $table->string('wc_ratio')->nullable();
             $table->string('relative_yield')->nullable();
-
             $table->string('type')->nullable();
             $table->string('dimensions')->nullable();
             $table->string('cyls_cast')->nullable();

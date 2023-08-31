@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTemplateOnesTable extends Migration
+class CreatePlasticConcretesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateTemplateOnesTable extends Migration
      */
     public function up()
     {
-        Schema::create('template_ones', function (Blueprint $table) {
+        Schema::create('plastic_concretes', function (Blueprint $table) {
             $table->id();
             // project information
             $table->string('project_id')->nullable();
@@ -63,7 +63,7 @@ class CreateTemplateOnesTable extends Migration
             $table->string('representative')->nullable();
             $table->string('responsible_person')->default();
             $table->string('observation')->nullable();
-
+            // Test Results
             $table->string('test_no')->nullable();
             $table->string('ticket_no')->nullable();
             $table->string('truck_no')->nullable();
@@ -87,7 +87,7 @@ class CreateTemplateOnesTable extends Migration
             $table->string('dimensions')->nullable();
             $table->string('cyls_cast')->nullable();
             $table->string('age_days')->nullable();
-            
+
             $table->timestamps();
         });
     }
@@ -99,6 +99,6 @@ class CreateTemplateOnesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('template_ones');
+        Schema::dropIfExists('plastic_concretes');
     }
 }
