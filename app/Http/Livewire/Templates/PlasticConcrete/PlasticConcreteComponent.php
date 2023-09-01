@@ -2,7 +2,14 @@
 
 namespace App\Http\Livewire\Templates\PlasticConcrete;
 
+use App\Models\PlasticConcrete;
+use App\Models\Project;
+use App\Models\SubClient;
+use App\Models\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class PlasticConcreteComponent extends Component
 {
@@ -19,7 +26,7 @@ class PlasticConcreteComponent extends Component
 
     public function deleteData()
     {
-        $data = TemplateOne::find($this->delete_id);
+        $data = PlasticConcrete::find($this->delete_id);
         $data->delete();
         $this->delete_id = '';
         $this->dispatchBrowserEvent('FileDeleted');
@@ -53,13 +60,13 @@ class PlasticConcreteComponent extends Component
         $output = '';
         $value = $request->get('value');
 
-        $template_one_id = $request->get('template_one_id');
+        $file_id = $request->get('file_id');
         DB::statement("SET SQL_MODE=''");
 
-        $responsible_persons = TemplateOne::find($template_one_id)->responsible_person;
+        $responsible_persons = PlasticConcrete::find($file_id)->responsible_person;
 
         if ($value == 'sentToClient') {
-            $getCustomer = TemplateOne::where('id', $template_one_id)->first()->client_id;
+            $getCustomer = PlasticConcrete::where('id', $file_id)->first()->client_id;
             $data = SubClient::where('client_id', $getCustomer)->get();
         } else if ($value == 'sentToTech') {
             $data = User::whereIn('id', json_decode($responsible_persons))->where('role_id', 5)->get();
@@ -79,7 +86,7 @@ class PlasticConcreteComponent extends Component
 
     public function render()
     {
-        $temp_ones = TemplateOne::orderBy('id', 'DESC')->paginate($this->sortingValue);
-        return view('livewire.templates.plastic-concrete.plastic-concrete-component')->layout('livewire.layouts.base');
+        $plastic_concretes = PlasticConcrete::orderBy('id', 'DESC')->paginate($this->sortingValue);
+        return view('livewire.templates.plastic-concrete.plastic-concrete-component', ['plastic_concretes'=>$plastic_concretes])->layout('livewire.layouts.base');
     }
 }

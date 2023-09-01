@@ -151,7 +151,7 @@ Route::post('/upload', 'app\http\controllers\BaseController@uploadckimage')->nam
 // PDF Generate
 Route::get('/invoice/ijP6ERmmdeLfFi57209633311{id}4ijP6ERmmdeLfFi5RiwZATmrI2SMOYYVSmdtcmjxJe2K31U5knK', [InvoiceController::class, 'commercialPDF'])->name('invoice.commercial');
 Route::get('/cdot-form/ijP6ERmmdeLfFi55958194244{id}4ijP6ERmmdeLfFi5RiwZATmrI2SMOYYVSmdtcmjxJe2K31U5knK', [InvoiceController::class, 'cdotPDF'])->name('cdot.form.generate');
-Route::get('/temp-one/ijP6ERmmdeLfFi54426715493{id}4ijP6ERmmdeLfFi5RiwZATmrI2SMOYYVSmdtcmjxJe2K31U5knK', [InvoiceController::class, 'templateOnePDF'])->name('template.one.generate');
+Route::get('/plastic/concrete/ijP6ERmmdeLfFi54426715493{id}4ijP6ERmmdeLfFi5RiwZATmrI2SMOYYVSmdtcmjxJe2K31U5knK', [InvoiceController::class, 'plasticConcretePDF'])->name('plastic.concrete.generate');
 Route::get('/inspection/concrete/report/ijP6ERmmdeLfFi56595438805{id}4ijP6ERmmdeLfFi5RiwZATmrI2SMOYYVSmdtcmjxJe2K31U5knK', [InvoiceController::class, 'templateInspectionConcrete'])->name('inspection.concrete.generate');
 Route::get('/commercial/report/ijP6ERmmdeLfFi51864136533{id}4ijP6ERmmdeLfFi5RiwZATmrI2SMOYYVSmdtcmjxJe2K31U5knK', [InvoiceController::class, 'templateSoilAggregate'])->name('soil.aggregate.generate');
 

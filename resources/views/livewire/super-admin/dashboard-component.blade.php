@@ -210,8 +210,8 @@
                                 </thead>
                                 <tbody>
 
-                                    @if ($temp_one_forms->count() > 0)
-                                    @foreach ($temp_one_forms as $file)
+                                    @if ($plastic_concretes->count() > 0)
+                                    @foreach ($plastic_concretes as $file)
                                     <tr>
                                         <td>
                                             @if ( project($file->project_id)->avatar)
@@ -432,8 +432,8 @@
                     <!--end card-header-->
                     <div class="card-body">
                         <div class="main-timeline mt-3">
-                            @if ($temp_one_forms->count() > 0)
-                            @foreach ($temp_one_forms as $file)
+                            @if ($plastic_concretes->count() > 0)
+                            @foreach ($plastic_concretes as $file)
                             <div class="timeline">
                                 <span class="timeline-icon"></span>
                                 <span class="year">

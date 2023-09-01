@@ -15,7 +15,7 @@
                     <div class="float-end">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="">Dashboard</a></li>
-                            <li class="breadcrumb-item active">Files</li>
+                            <li class="breadcrumb-item active">Plastic Concrete</li>
                         </ol>
                     </div>
                     <h4 class="page-title">PHYSICAL PROPERTIES OF PLASTIC CONCRETE</h4>
@@ -26,7 +26,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <a style="float: right" href="{{ route('template-one.create') }}"
+                        <a style="float: right" href="{{ route('plastic.concrete.create') }}"
                             class="card-button btn btn-sm btn-primary"><i class="ti ti-plus"></i> ADD NEW</a>
                     </div>
                     <div class="card-body">
@@ -62,19 +62,20 @@
                                 </thead>
                                 <tbody>
                                     @php
-                                    $sl = $temp_ones->perPage() * $temp_ones->currentPage() - ($temp_ones->perPage() -
+                                    $sl = $plastic_concretes->perPage() * $plastic_concretes->currentPage() -
+                                    ($plastic_concretes->perPage() -
                                     1);
                                     @endphp
-                                    @if ($temp_ones->count() > 0)
-                                    @foreach ($temp_ones as $temp)
+                                    @if ($plastic_concretes->count() > 0)
+                                    @foreach ($plastic_concretes as $temp)
                                     <tr>
                                         <td>
-                                            @if ( project($file->project_id)->avatar)
-                                            <img src="{{ asset('uploads/project') }}/{{ project($file->project_id)->avatar }}"
+                                            @if ( project($temp->project_id)->avatar)
+                                            <img src="{{ asset('uploads/project') }}/{{ project($temp->project_id)->avatar }}"
                                                 alt="user" class="rounded-circle thumb-md">
                                             @else
-                                            <img src="{{ asset('assets/images/defaults/default_project.jpg') }}" alt="user"
-                                                class="rounded-circle thumb-md">
+                                            <img src="{{ asset('assets/images/defaults/default_project.jpg') }}"
+                                                alt="user" class="rounded-circle thumb-md">
                                             @endif
                                         </td>
                                         <td>{{ project($temp->project_id)->name }}</td>
@@ -83,11 +84,12 @@
                                         <td>{{ user($temp->created_by)->name }}</td>
                                         <td>{{ $temp->created_at }}</td>
                                         <td style="text-align: center;">
-                                            <a href="{{ route('template.one.show', ['file_id' => $temp->id]) }}"
+                                            <a href="{{ route('plastic.concrete.show', ['file_id' => $temp->id]) }}"
                                                 type="button"
                                                 class="btn btn-outline-success btn-icon-circle btn-icon-circle-sm"><i
                                                     class="ti ti-eye"></i></a>
-                                            <a href="{{ route('template.one.update', ['file_id' => $temp->id]) }}" type="button"
+                                            <a href="{{ route('plastic.concrete.update', ['file_id' => $temp->id]) }}"
+                                                type="button"
                                                 class="btn btn-outline-warning btn-icon-circle btn-icon-circle-sm"><i
                                                     class="ti ti-edit"></i></a>
                                             <a wire:click.prevent="deleteConfirmation({{ $temp->id }})" type="button"
@@ -104,7 +106,7 @@
                                 </tbody>
                             </table>
                         </div>
-                        {{ $temp_ones->links('pagination-links-table') }}
+                        {{ $plastic_concretes->links('pagination-links-table') }}
                     </div>
                 </div>
             </div>
