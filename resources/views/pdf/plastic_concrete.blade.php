@@ -21,7 +21,7 @@
 
 <body>
     <div style="
-    padding: 20px 40px 40px 40px;
+    padding: 10px 20px 20px 20px;
   ">
         <table style="width: 100%; border-collapse: collapse">
             <tr>
@@ -165,7 +165,7 @@
         <br />
         <table style="width: 100%; border-collapse: collapse">
             <tr>
-                <td style="padding: 5px 4px; background-color: #92d050">
+                <td style="padding: 5px 4px;">
                     <h4 style="font-size: 14px; font-weight: 600">Test Results</h4>
                 </td>
             </tr>
@@ -215,52 +215,259 @@
                     <h5 style="font-size: 13px; font-weight: 500">CYL<br>Set ID<br>Number</h5>
                 </th>
             </tr>
-            @foreach ($data->template_one_infos as $template)
+            @if ($data->test_no_a)
             <tr>
                 <td style="padding: 4px 6px; border: 1px solid lightgray">
-                    <h6 style="font-size: 14px; font-weight: 400">{{ $template->test_no }}</h6>
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->test_no_a }}</h6>
                 </td>
                 <td style="padding: 4px 6px; border: 1px solid lightgray">
-                    <h6 style="font-size: 14px; font-weight: 400">{{ $template->truck_no }}</h6>
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->truck_no_a }}</h6>
                 </td>
                 <td style="padding: 4px 6px; border: 1px solid lightgray">
-                    <h6 style="font-size: 14px; font-weight: 400">{{ $template->ticket_no }}</h6>
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->ticket_no_a }}</h6>
                 </td>
                 <td style="padding: 4px 6px; border: 1px solid lightgray">
-                    <h6 style="font-size: 14px; font-weight: 400">{{ $template->truck_dispatched }}</h6>
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->truck_dispatched_a }}
+                    </h6>
                 </td>
                 <td style="padding: 4px 6px; border: 1px solid lightgray">
-                    <h6 style="font-size: 14px; font-weight: 400">{{ $template->time_sample_taken }}</h6>
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->time_sample_taken_a }}
+                    </h6>
                 </td>
                 <td style="padding: 4px 6px; border: 1px solid lightgray">
-                    <h6 style="font-size: 14px; font-weight: 400">{{ $template->time_truck_finished }}</h6>
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->time_truck_finished_a
+                        }}</h6>
+                </td>
+                @if ($data->slump_a < $data->specified_slump_min || $data->slump_a > $data->specified_slump_max)
+                <td style="padding: 4px 6px; border: 1px solid lightgray">
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center; color:red;">{{ $data->slump_a }}</h6>
+                </td>
+                @else
+                <td style="padding: 4px 6px; border: 1px solid lightgray">
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->slump_a }}</h6>
+                </td>
+                @endif
+                @if ($data->air_cont_a < $data->specified_air_min || $data->air_cont_a > $data->specified_air_max)
+                <td style="padding: 4px 6px; border: 1px solid lightgray">
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center; color:red;">{{ $data->air_cont_a }}</h6>
+                </td>
+                @else
+                <td style="padding: 4px 6px; border: 1px solid lightgray">
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->air_cont_a }}</h6>
+                </td>
+                @endif
+                <td style="padding: 4px 6px; border: 1px solid lightgray">
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->unit_wt_a }}</h6>
                 </td>
                 <td style="padding: 4px 6px; border: 1px solid lightgray">
-                    <h6 style="font-size: 14px; font-weight: 400">{{ $template->slump }}</h6>
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->relative_yield_a }}
+                    </h6>
                 </td>
                 <td style="padding: 4px 6px; border: 1px solid lightgray">
-                    <h6 style="font-size: 14px; font-weight: 400">{{ $template->air_cont }}</h6>
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->wc_ratio_a }}</h6>
                 </td>
                 <td style="padding: 4px 6px; border: 1px solid lightgray">
-                    <h6 style="font-size: 14px; font-weight: 400">{{ $template->unit_wt }}</h6>
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->conc_temp_a }}</h6>
                 </td>
                 <td style="padding: 4px 6px; border: 1px solid lightgray">
-                    <h6 style="font-size: 14px; font-weight: 400">{{ $template->relative_yield }}</h6>
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->air_temp_a }}</h6>
                 </td>
                 <td style="padding: 4px 6px; border: 1px solid lightgray">
-                    <h6 style="font-size: 14px; font-weight: 400">{{ $template->wc_ratio }}</h6>
-                </td>
-                <td style="padding: 4px 6px; border: 1px solid lightgray">
-                    <h6 style="font-size: 14px; font-weight: 400">{{ $template->conc_temp }}</h6>
-                </td>
-                <td style="padding: 4px 6px; border: 1px solid lightgray">
-                    <h6 style="font-size: 14px; font-weight: 400">{{ $template->air_temp }}</h6>
-                </td>
-                <td style="padding: 4px 6px; border: 1px solid lightgray">
-                    <h6 style="font-size: 14px; font-weight: 400">{{ $template->cylinder_set_no }}</h6>
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->cylinder_set_no_a }}
+                    </h6>
                 </td>
             </tr>
-            @endforeach
+            @endif
+            @if ($data->test_no_b)
+            <tr>
+                <td style="padding: 4px 6px; border: 1px solid lightgray">
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->test_no_b }}</h6>
+                </td>
+                <td style="padding: 4px 6px; border: 1px solid lightgray">
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->truck_no_b }}</h6>
+                </td>
+                <td style="padding: 4px 6px; border: 1px solid lightgray">
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->ticket_no_b }}</h6>
+                </td>
+                <td style="padding: 4px 6px; border: 1px solid lightgray">
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->truck_dispatched_b }}
+                    </h6>
+                </td>
+                <td style="padding: 4px 6px; border: 1px solid lightgray">
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->time_sample_taken_b }}
+                    </h6>
+                </td>
+                <td style="padding: 4px 6px; border: 1px solid lightgray">
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->time_truck_finished_b
+                        }}</h6>
+                </td>
+                @if ($data->slump_b < $data->specified_slump_min || $data->slump_b > $data->specified_slump_max)
+                <td style="padding: 4px 6px; border: 1px solid lightgray">
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center; color:red;">{{ $data->slump_b }}</h6>
+                </td>
+                @else
+                <td style="padding: 4px 6px; border: 1px solid lightgray">
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->slump_a }}</h6>
+                </td>
+                @endif
+                @if ($data->air_cont_b < $data->specified_air_min || $data->air_cont_b > $data->specified_air_max)
+                <td style="padding: 4px 6px; border: 1px solid lightgray">
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center; color:red;">{{ $data->air_cont_b }}</h6>
+                </td>
+                @else
+                <td style="padding: 4px 6px; border: 1px solid lightgray">
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->air_cont_b }}</h6>
+                </td>
+                @endif
+                <td style="padding: 4px 6px; border: 1px solid lightgray">
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->unit_wt_b }}</h6>
+                </td>
+                <td style="padding: 4px 6px; border: 1px solid lightgray">
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->relative_yield_b }}
+                    </h6>
+                </td>
+                <td style="padding: 4px 6px; border: 1px solid lightgray">
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->wc_ratio_b }}</h6>
+                </td>
+                <td style="padding: 4px 6px; border: 1px solid lightgray">
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->conc_temp_b }}</h6>
+                </td>
+                <td style="padding: 4px 6px; border: 1px solid lightgray">
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->air_temp_b }}</h6>
+                </td>
+                <td style="padding: 4px 6px; border: 1px solid lightgray">
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->cylinder_set_no_b }}
+                    </h6>
+                </td>
+            </tr>
+            @endif
+            @if ($data->test_no_c)
+            <tr>
+                <td style="padding: 4px 6px; border: 1px solid lightgray">
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->test_no_c }}</h6>
+                </td>
+                <td style="padding: 4px 6px; border: 1px solid lightgray">
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->truck_no_c }}</h6>
+                </td>
+                <td style="padding: 4px 6px; border: 1px solid lightgray">
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->ticket_no_c }}</h6>
+                </td>
+                <td style="padding: 4px 6px; border: 1px solid lightgray">
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->truck_dispatched_c }}
+                    </h6>
+                </td>
+                <td style="padding: 4px 6px; border: 1px solid lightgray">
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->time_sample_taken_c }}
+                    </h6>
+                </td>
+                <td style="padding: 4px 6px; border: 1px solid lightgray">
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->time_truck_finished_c
+                        }}</h6>
+                </td>
+                @if ($data->slump_c < $data->specified_slump_min || $data->slump_c > $data->specified_slump_max)
+                <td style="padding: 4px 6px; border: 1px solid lightgray">
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center; color:red;">{{ $data->slump_c }}</h6>
+                </td>
+                @else
+                <td style="padding: 4px 6px; border: 1px solid lightgray">
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->slump_c }}</h6>
+                </td>
+                @endif
+                @if ($data->air_cont_c < $data->specified_air_min || $data->air_cont_c > $data->specified_air_max)
+                <td style="padding: 4px 6px; border: 1px solid lightgray">
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center; color:red;">{{ $data->air_cont_c }}</h6>
+                </td>
+                @else
+                <td style="padding: 4px 6px; border: 1px solid lightgray">
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->air_cont_c }}</h6>
+                </td>
+                @endif
+                <td style="padding: 4px 6px; border: 1px solid lightgray">
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->unit_wt_c }}</h6>
+                </td>
+                <td style="padding: 4px 6px; border: 1px solid lightgray">
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->relative_yield_c }}
+                    </h6>
+                </td>
+                <td style="padding: 4px 6px; border: 1px solid lightgray">
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->wc_ratio_c }}</h6>
+                </td>
+                <td style="padding: 4px 6px; border: 1px solid lightgray">
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->conc_temp_c }}</h6>
+                </td>
+                <td style="padding: 4px 6px; border: 1px solid lightgray">
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->air_temp_c }}</h6>
+                </td>
+                <td style="padding: 4px 6px; border: 1px solid lightgray">
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->cylinder_set_no_c }}
+                    </h6>
+                </td>
+            </tr>
+            @endif
+            @if ($data->test_no_d)
+            <tr>
+                <td style="padding: 4px 6px; border: 1px solid lightgray">
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->test_no_d }}</h6>
+                </td>
+                <td style="padding: 4px 6px; border: 1px solid lightgray">
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->truck_no_d }}</h6>
+                </td>
+                <td style="padding: 4px 6px; border: 1px solid lightgray">
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->ticket_no_d }}</h6>
+                </td>
+                <td style="padding: 4px 6px; border: 1px solid lightgray">
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->truck_dispatched_d }}
+                    </h6>
+                </td>
+                <td style="padding: 4px 6px; border: 1px solid lightgray">
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->time_sample_taken_d }}
+                    </h6>
+                </td>
+                <td style="padding: 4px 6px; border: 1px solid lightgray">
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->time_truck_finished_d
+                        }}</h6>
+                </td>
+                @if ($data->slump_d < $data->specified_slump_min || $data->slump_d > $data->specified_slump_max)
+                <td style="padding: 4px 6px; border: 1px solid lightgray">
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center; color:red;">{{ $data->slump_d }}</h6>
+                </td>
+                @else
+                <td style="padding: 4px 6px; border: 1px solid lightgray">
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->slump_d }}</h6>
+                </td>
+                @endif
+                @if ($data->air_cont_d < $data->specified_air_min || $data->air_cont_d > $data->specified_air_max)
+                <td style="padding: 4px 6px; border: 1px solid lightgray">
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center; color:red;">{{ $data->air_cont_d }}</h6>
+                </td>
+                @else
+                <td style="padding: 4px 6px; border: 1px solid lightgray">
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->air_cont_d }}</h6>
+                </td>
+                @endif
+                <td style="padding: 4px 6px; border: 1px solid lightgray">
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->unit_wt_d }}</h6>
+                </td>
+                <td style="padding: 4px 6px; border: 1px solid lightgray">
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->relative_yield_d }}
+                    </h6>
+                </td>
+                <td style="padding: 4px 6px; border: 1px solid lightgray">
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->wc_ratio_d }}</h6>
+                </td>
+                <td style="padding: 4px 6px; border: 1px solid lightgray">
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->conc_temp_d }}</h6>
+                </td>
+                <td style="padding: 4px 6px; border: 1px solid lightgray">
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->air_temp_d }}</h6>
+                </td>
+                <td style="padding: 4px 6px; border: 1px solid lightgray">
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->cylinder_set_no_d }}
+                    </h6>
+                </td>
+            </tr>
+            @endif
+
         </table>
         <br />
         <table style="width: 100%; border-collapse: collapse">
@@ -275,35 +482,80 @@
         <table style="width: 100%; border-collapse: collapse">
             <tr>
                 <th style="padding: 20px 6px 5px 6px; border: 1px solid lightgray">
-                    <h3 style="font-size: 14px; font-weight: 700">Test No.</h3>
+                    <h3 style="font-size: 14px; font-weight: 700; text-align: center;">Test No.</h3>
                 </th>
                 <th style="padding: 20px 6px 5px 6px; border: 1px solid lightgray">
-                    <h3 style="font-size: 14px; font-weight: 700">Location</h3>
+                    <h3 style="font-size: 14px; font-weight: 700; text-align: center;">Location</h3>
                 </th>
                 <th style="padding: 20px 6px 5px 6px; border: 1px solid lightgray">
-                    <h3 style="font-size: 14px; font-weight: 700">Remarks</h3>
+                    <h3 style="font-size: 14px; font-weight: 700; text-align: center;">Remarks</h3>
                 </th>
             </tr>
-            @foreach ($data->template_one_infos as $template)
+            @if ($data->test_no_a)
             <tr>
                 <td style="padding: 4px 6px; border: 1px solid lightgray; width: 50px">
-                    <h4 style="font-size: 14px; font-weight: 400">{{ $template->test_no }}</h4>
+                    <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->test_no_a }}</h4>
                 </td>
 
                 <td style="padding: 4px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400">{{ $template->location }}</h4>
+                    <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->location_a }}</h4>
                 </td>
 
                 <td style="padding: 4px 6px; border: 1px solid lightgray; width: 90px">
-                    <h4 style="font-size: 14px; font-weight: 400">Remark</h4>
+                    <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->remark }}</h4>
                 </td>
             </tr>
-            @endforeach
+            @endif
+            @if ($data->test_no_b)
+            <tr>
+                <td style="padding: 4px 6px; border: 1px solid lightgray; width: 50px">
+                    <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->test_no_b }}</h4>
+                </td>
+
+                <td style="padding: 4px 6px; border: 1px solid lightgray">
+                    <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->location_b }}</h4>
+                </td>
+
+                <td style="padding: 4px 6px; border: 1px solid lightgray; width: 90px">
+                    <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->remark }}</h4>
+                </td>
+            </tr>
+            @endif
+            @if ($data->test_no_c)
+            <tr>
+                <td style="padding: 4px 6px; border: 1px solid lightgray; width: 50px">
+                    <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->test_no_c }}</h4>
+                </td>
+
+                <td style="padding: 4px 6px; border: 1px solid lightgray">
+                    <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->location_c }}</h4>
+                </td>
+
+                <td style="padding: 4px 6px; border: 1px solid lightgray; width: 90px">
+                    <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->remark }}</h4>
+                </td>
+            </tr>
+            @endif
+            @if ($data->test_no_d)
+            <tr>
+                <td style="padding: 4px 6px; border: 1px solid lightgray; width: 50px">
+                    <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->test_no_d }}</h4>
+                </td>
+
+                <td style="padding: 4px 6px; border: 1px solid lightgray">
+                    <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->location_d }}</h4>
+                </td>
+
+                <td style="padding: 4px 6px; border: 1px solid lightgray; width: 90px">
+                    <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->remark }}</h4>
+                </td>
+            </tr>
+            @endif
+
         </table>
-        {{-- <div class="page-break"></div> --}}
         <table style="width: 100%; border-collapse: collapse; padding-top: 25px;">
             <tr>
-                <td style="padding: 5px 4px; background-color: #92d050">
+                <td style="padding: 5px 4px;">
                     <h4 style="font-size: 14px; font-weight: 600">Mix Data</h4>
                 </td>
             </tr>
@@ -323,36 +575,89 @@
                     <h5 style="font-size: 14px; font-weight: 500">Design Strength(psi)</h5>
                 </th>
             </tr>
-            @foreach ($data->template_one_infos as $template_info)
+            @if ($data->test_no_a)
             <tr>
                 <td style="padding: 4px 6px; border: 1px solid lightgray">
-                    <h6 style="font-size: 14px; font-weight: 400">{{ $template_info->test_no }}</h6>
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->test_no_a }}</h6>
                 </td>
                 <td style="padding: 4px 6px; border: 1px solid lightgray">
-                    <h6 style="font-size: 14px; font-weight: 400">{{ $data->mix_supplier }}</h6>
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->mix_supplier }}</h6>
                 </td>
                 <td style="padding: 4px 6px; border: 1px solid lightgray">
-                    <h6 style="font-size: 14px; font-weight: 400">{{ $data->mix_id }}</h6>
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->mix_id }}</h6>
                 </td>
                 <td style="padding: 4px 6px; border: 1px solid lightgray">
-                    <h6 style="font-size: 14px; font-weight: 400">{{ $data->design_strength }}</h6>
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->design_strength }}</h6>
                 </td>
             </tr>
-            @endforeach
+            @endif
+            @if ($data->test_no_b)
+            <tr>
+                <td style="padding: 4px 6px; border: 1px solid lightgray">
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->test_no_b }}</h6>
+                </td>
+                <td style="padding: 4px 6px; border: 1px solid lightgray">
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->mix_supplier }}</h6>
+                </td>
+                <td style="padding: 4px 6px; border: 1px solid lightgray">
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->mix_id }}</h6>
+                </td>
+                <td style="padding: 4px 6px; border: 1px solid lightgray">
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->design_strength }}</h6>
+                </td>
+            </tr>
+            @endif
+            @if ($data->test_no_c)
+            <tr>
+                <td style="padding: 4px 6px; border: 1px solid lightgray">
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->test_no_c }}</h6>
+                </td>
+                <td style="padding: 4px 6px; border: 1px solid lightgray">
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->mix_supplier }}</h6>
+                </td>
+                <td style="padding: 4px 6px; border: 1px solid lightgray">
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->mix_id }}</h6>
+                </td>
+                <td style="padding: 4px 6px; border: 1px solid lightgray">
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->design_strength }}</h6>
+                </td>
+            </tr>
+            @endif
+            @if ($data->test_no_d)
+            <tr>
+                <td style="padding: 4px 6px; border: 1px solid lightgray">
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->test_no_d }}</h6>
+                </td>
+                <td style="padding: 4px 6px; border: 1px solid lightgray">
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->mix_supplier }}</h6>
+                </td>
+                <td style="padding: 4px 6px; border: 1px solid lightgray">
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->mix_id }}</h6>
+                </td>
+                <td style="padding: 4px 6px; border: 1px solid lightgray">
+                    <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->design_strength }}</h6>
+                </td>
+            </tr>
+            @endif
         </table>
         <br />
         <table style="width: 100%; border-collapse: collapse; padding-bottom: 20px;">
             <tr>
-                <td>Comments:</td>
-                <td style="padding: 4px 6px">
-                    <ol type="A" style="font-size: 14px; font-weight: 400; text-align: left">
-                        <li>Test results comply with specifications</li>
-                        <li>Compaction percentage does not comply with specifications</li>
-                        <li>Retest of previous test</li>
-                        <li>Moisture in excess of specifications</li>
-                        <li>Moisture below specifications</li>
-                    </ol>
-                </td>
+                <td class="mb-3" style="font-weight: 600">Remark:</td>
+            </tr>
+            <tr>
+                <td>{{ $data->remark }}</td>
+            </tr>
+        </table>
+        <table style="width: 100%; border-collapse: collapse; padding-bottom: 20px;">
+            <tr>
+                <td class="mb-3" style="font-weight: 600">Nodes:</td>
+            </tr>
+            <tr>
+                <td style="font-size: 14px;">1. Applicable ASTM/AASHTO standards unless otherwise indicated:  Sampling, C172/R60</td>
+            </tr>
+            <tr>
+                <td style="font-size: 14px;">Slump: C143/T119; Air Content: C231/T152; Temperature: C1064/T309; Unit Weight C138/T121</td>
             </tr>
         </table>
         <br />
@@ -395,7 +700,7 @@
                 </td>
             </tr>
         </table>
-        <table style="width: 100%; border-collapse: collapse">
+        <table style="width: 100%; border-collapse: collapse; padding-top: 40px;">
             <tr>
                 <td style="padding: 4px 6px">
                     <p style="font-size: 14px; font-weight: 400; text-align: center">
