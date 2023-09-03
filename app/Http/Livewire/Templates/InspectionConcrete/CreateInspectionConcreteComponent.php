@@ -52,6 +52,14 @@ class CreateInspectionConcreteComponent extends Component
         }
     }
     // ================== specified strength ===================
+
+    public function specifiedStrength(){
+        $this->specifiedStrengthA();
+        $this->specifiedStrengthB();
+        $this->specifiedStrengthC();
+        $this->specifiedStrengthD();
+    }
+
     public function specifiedStrengthA()
     {
         if ($this->age_a == 28) {

@@ -69,16 +69,16 @@ class CreateCommercialComponent extends Component
     public function mixInfoA()
     {
         $mixInfoA = MixInfo::where('mix_id', $this->mix_a_id)->first();
-
-        dd($mixInfoA);
-
+     
         if ($mixInfoA) {
-            $this->selected_mix_a_ids[] = $this->mix_a_id; // Add the value to the array
-            $this->supplier_a = $mixInfoA->supplier_a;
-            $this->plant_a = $mixInfoA->plant_a;
-            $this->mix_type_a = $mixInfoA->mix_type_a;
-            $this->max_theoretical_density_a = $mixInfoA->max_theoretical_density_a;
-            $this->max_theoretical_specific_gravity_a = $mixInfoA->max_theoretical_specific_gravity_a;
+            $this->result_mix_id_a = $this->mix_a_id;
+            $this->max_theory_density_a = $mixInfoA->max_theoretical_density;
+            
+            $this->supplier_a = $mixInfoA->supplier;
+            $this->plant_a = $mixInfoA->plant;
+            $this->mix_type_a = $mixInfoA->mix_type;
+            $this->max_theoretical_density_a = $mixInfoA->max_theoretical_density;
+            $this->max_theoretical_specific_gravity_a = $mixInfoA->max_theoretical_specific_gravity;
         } else {
             $this->supplier_a = '';
             $this->plant_a = '';

@@ -592,6 +592,19 @@
                                                         @enderror
                                                     </div>
                                                 </td>
+
+                                                <td class="moistureremove">
+                                                    <div class="input-group">
+                                                        <input type="number" class="form-control form-color moistureremoveinput"
+                                                            wire:model="result_mix_id_a">
+                                                        @error('result_mix_id_a')
+                                                        <span class="text-danger" style="font-size: 12px;">{{ $message
+                                                            }}</span>
+                                                        @enderror
+                                                    </div>
+                                                </td>
+
+{{-- 
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <select class="form-select moistureremoveinput"
@@ -608,7 +621,7 @@
                                                             }}</span>
                                                         @enderror
                                                     </div>
-                                                </td>
+                                                </td> --}}
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="text" class="form-control form-color moistureremoveinput"

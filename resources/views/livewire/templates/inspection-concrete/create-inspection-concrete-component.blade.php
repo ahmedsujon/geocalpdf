@@ -344,11 +344,7 @@
                                 <div class="input-group mt-3">
                                     <span class="input-group-text">Required Strength (psi):</span>
                                     <input type="text" class="form-control form-color" wire:model="required_strength"
-                                        wire:keyup='specifiedStrengthA' wire:keyup='specifiedStrengthB'
-                                        wire:keyup='specifiedStrengthC' wire:keyup='specifiedStrengthD'
-                                        wire:keyup='specifiedStrengthE' wire:keyup='specifiedStrengthF'
-                                        wire:keyup='specifiedStrengthG' wire:keyup='specifiedStrengthH'
-                                        wire:keyup='specifiedStrengthI' wire:keyup='specifiedStrengthJ' required>
+                                        wire:keyup='specifiedStrength' required>
                                 </div>
                                 @error('required_strength')
                                 <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
