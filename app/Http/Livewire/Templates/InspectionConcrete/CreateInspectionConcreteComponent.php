@@ -58,6 +58,11 @@ class CreateInspectionConcreteComponent extends Component
         $this->specifiedStrengthB();
         $this->specifiedStrengthC();
         $this->specifiedStrengthD();
+        $this->specifiedStrengthE();
+        $this->specifiedStrengthF();
+        $this->specifiedStrengthG();
+        $this->specifiedStrengthH();
+        $this->specifiedStrengthI();
     }
 
     public function specifiedStrengthA()

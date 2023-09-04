@@ -27,22 +27,8 @@ class CreateCommercialComponent extends Component
         $test_no_c, $result_mix_id_c, $location_c, $count_period_c, $material_c, $lift_c, $layer_thickness_c, $max_theory_density_c, $field_wet_density_c, $relative_compaction_c, $pass_fail_c,
         $test_no_d, $result_mix_id_d, $location_d, $count_period_d, $material_d, $lift_d, $layer_thickness_d, $max_theory_density_d, $field_wet_density_d, $relative_compaction_d, $pass_fail_d,
         $test_no_e, $result_mix_id_e, $location_e, $count_period_e, $material_e, $lift_e, $layer_thickness_e, $max_theory_density_e, $field_wet_density_e, $relative_compaction_e, $pass_fail_e,
-        $test_no_f, $result_mix_id_f, $location_f, $count_period_f, $material_f, $lift_f, $layer_thickness_f, $max_theory_density_f, $field_wet_density_f, $relative_compaction_f, $pass_fail_f;
 
-    // public function mount()
-    // {
-    //     $this->test_no[0] = 0;
-    //     $this->location[0] = 0;
-    //     $this->count_period[0] = 0;
-    //     $this->material[0] = 0;
-    //     $this->lift[0] = 0;
-    //     $this->layer_thickness[0] = 0;
-    //     $this->max_theory_density[0] = 0;
-    //     $this->field_wet_density[0] = 0;
-    //     $this->material[0] = 0;
-    //     $this->relative_compaction[0] = 0;
-    //     $this->pass_fail[0] = 0;
-    // }
+        $test_no_f, $result_mix_id_f, $location_f, $count_period_f, $material_f, $lift_f, $layer_thickness_f, $max_theory_density_f, $field_wet_density_f, $relative_compaction_f, $pass_fail_f;
 
     // get project information
     public $selected_project_ids = [];
@@ -69,11 +55,9 @@ class CreateCommercialComponent extends Component
     public function mixInfoA()
     {
         $mixInfoA = MixInfo::where('mix_id', $this->mix_a_id)->first();
-     
         if ($mixInfoA) {
-            $this->result_mix_id_a = $this->mix_a_id;
-            $this->max_theory_density_a = $mixInfoA->max_theoretical_density;
-            
+            $this->selected_mix_a_ids[] = $this->mix_a_id;
+
             $this->supplier_a = $mixInfoA->supplier;
             $this->plant_a = $mixInfoA->plant;
             $this->mix_type_a = $mixInfoA->mix_type;
@@ -88,19 +72,18 @@ class CreateCommercialComponent extends Component
             $this->selected_mix_a_ids = []; // Reset the array
         }
     }
-
     public $selected_mix_b_ids = []; // Initialize as an array
     public function mixInfoB()
     {
         $mixInfoB = MixInfo::where('mix_id', $this->mix_b_id)->first();
-
         if ($mixInfoB) {
-            $this->selected_mix_b_ids[] = $this->mix_b_id; // Add the value to the array
-            $this->supplier_b = $mixInfoB->supplier_b;
-            $this->plant_b = $mixInfoB->plant_b;
-            $this->mix_type_b = $mixInfoB->mix_type_b;
-            $this->max_theoretical_density_b = $mixInfoB->max_theoretical_density_b;
-            $this->max_theoretical_specific_gravity_b = $mixInfoB->max_theoretical_specific_gravity_b;
+            $this->selected_mix_b_ids[] = $this->mix_b_id;
+
+            $this->supplier_b = $mixInfoB->supplier;
+            $this->plant_b = $mixInfoB->plant;
+            $this->mix_type_b = $mixInfoB->mix_type;
+            $this->max_theoretical_density_b = $mixInfoB->max_theoretical_density;
+            $this->max_theoretical_specific_gravity_b = $mixInfoB->max_theoretical_specific_gravity;
         } else {
             $this->supplier_b = '';
             $this->plant_b = '';
@@ -110,19 +93,18 @@ class CreateCommercialComponent extends Component
             $this->selected_mix_b_ids = []; // Reset the array
         }
     }
-
     public $selected_mix_c_ids = []; // Initialize as an array
     public function mixInfoC()
     {
-        $mixInfoA = MixInfo::where('mix_id', $this->mix_c_id)->first();
+        $mixInfoC = MixInfo::where('mix_id', $this->mix_c_id)->first();
+        if ($mixInfoC) {
+            $this->selected_mix_c_ids[] = $this->mix_c_id;
 
-        if ($mixInfoA) {
-            $this->selected_mix_c_ids[] = $this->mix_c_id; // Add the value to the array
-            $this->supplier_c = $mixInfoA->supplier_c;
-            $this->plant_c = $mixInfoA->plant_c;
-            $this->mix_type_c = $mixInfoA->mix_type_c;
-            $this->max_theoretical_density_c = $mixInfoA->max_theoretical_density_c;
-            $this->max_theoretical_specific_gravity_c = $mixInfoA->max_theoretical_specific_gravity_c;
+            $this->supplier_c = $mixInfoC->supplier;
+            $this->plant_c = $mixInfoC->plant;
+            $this->mix_type_c = $mixInfoC->mix_type;
+            $this->max_theoretical_density_c = $mixInfoC->max_theoretical_density;
+            $this->max_theoretical_specific_gravity_c = $mixInfoC->max_theoretical_specific_gravity;
         } else {
             $this->supplier_c = '';
             $this->plant_c = '';
@@ -132,19 +114,18 @@ class CreateCommercialComponent extends Component
             $this->selected_mix_c_ids = []; // Reset the array
         }
     }
-
     public $selected_mix_d_ids = []; // Initialize as an array
     public function mixInfoD()
     {
-        $mixInfoA = MixInfo::where('mix_id', $this->mix_d_id)->first();
+        $mixInfoD = MixInfo::where('mix_id', $this->mix_d_id)->first();
+        if ($mixInfoD) {
+            $this->selected_mix_d_ids[] = $this->mix_d_id;
 
-        if ($mixInfoA) {
-            $this->selected_mix_d_ids[] = $this->mix_d_id; // Add the value to the array
-            $this->supplier_d = $mixInfoA->supplier_d;
-            $this->plant_d = $mixInfoA->plant_d;
-            $this->mix_type_d = $mixInfoA->mix_type_d;
-            $this->max_theoretical_density_d = $mixInfoA->max_theoretical_density_d;
-            $this->max_theoretical_specific_gravity_d = $mixInfoA->max_theoretical_specific_gravity_d;
+            $this->supplier_d = $mixInfoD->supplier;
+            $this->plant_d = $mixInfoD->plant;
+            $this->mix_type_d = $mixInfoD->mix_type;
+            $this->max_theoretical_density_d = $mixInfoD->max_theoretical_density;
+            $this->max_theoretical_specific_gravity_d = $mixInfoD->max_theoretical_specific_gravity;
         } else {
             $this->supplier_d = '';
             $this->plant_d = '';
@@ -154,19 +135,18 @@ class CreateCommercialComponent extends Component
             $this->selected_mix_d_ids = []; // Reset the array
         }
     }
-
     public $selected_mix_e_ids = []; // Initialize as an array
     public function mixInfoE()
     {
-        $mixInfoA = MixInfo::where('mix_id', $this->mix_e_id)->first();
+        $mixInfoE = MixInfo::where('mix_id', $this->mix_e_id)->first();
+        if ($mixInfoE) {
+            $this->selected_mix_e_ids[] = $this->mix_e_id;
 
-        if ($mixInfoA) {
-            $this->selected_mix_e_ids[] = $this->mix_e_id; // Add the value to the array
-            $this->supplier_e = $mixInfoA->supplier_e;
-            $this->plant_e = $mixInfoA->plant_e;
-            $this->mix_type_e = $mixInfoA->mix_type_e;
-            $this->max_theoretical_density_e = $mixInfoA->max_theoretical_density_e;
-            $this->max_theoretical_specific_gravity_e = $mixInfoA->max_theoretical_specific_gravity_e;
+            $this->supplier_e = $mixInfoE->supplier;
+            $this->plant_e = $mixInfoE->plant;
+            $this->mix_type_e = $mixInfoE->mix_type;
+            $this->max_theoretical_density_e = $mixInfoE->max_theoretical_density;
+            $this->max_theoretical_specific_gravity_e = $mixInfoE->max_theoretical_specific_gravity;
         } else {
             $this->supplier_e = '';
             $this->plant_e = '';
@@ -180,84 +160,64 @@ class CreateCommercialComponent extends Component
     // =========================== test result ========================
 
     // get result information
-    public function mixResultInfo($value)
+    public function mixResultInfoA()
     {
-        $mixInfoA = MixInfo::where('mix_id', $this->result_mix_a_id[$value])->first();
+        $mixInfoA = MixInfo::where('mix_id', $this->result_mix_id_a)->first();
         if ($mixInfoA) {
-            $this->max_theory_density_a[$value] = $mixInfoA->max_theoretical_density_a;
+            $this->max_theory_density_a = $mixInfoA->max_theoretical_density;
         } else {
-            $this->max_theory_density_a[$value] = '';
+            $this->max_theory_density_a = '';
         }
     }
-
-    // formula calculation
-    // public function changeTestResult($value)
-    // {
-    //     $mix_info = MixInfo::where('mix_id', $this->result_mix_id[$value])->first();
-    //     if ($mix_info) {
-    //         if (!$this->field_wet_density[$value]) {
-    //             $this->field_wet_density[$value] = 0;
-    //         }
-    //         $this->relative_compaction[$value] = round(($this->field_wet_density[$value] / $mix_info->max_theoretical_density) * 100, 1);
-    //     } else {
-    //         $this->relative_compaction[$value] = 0;
-    //     }
-    // }
-
-    // public function addField($i)
-    // {
-    //     $i = $i + 1;
-    //     $this->i = $i;
-    //     array_push($this->fields, $i);
-    //     $this->result_mix_id = 0;
-    //     $this->mix_id[$i] = 0;
-    //     $this->supplier[$i] = 0;
-    //     $this->plant[$i] = 0;
-    //     $this->mix_type[$i] = 0;
-    //     $this->max_theoretical_density[$i] = 0;
-    //     $this->max_theoretical_specific_gravity[$i] = 0;
-    // }
-
-    // public function removeField($i)
-    // {
-    //     unset($this->fields[$i]);
-    //     unset($this->selected_mix_info_ids[$i]);
-    // }
-
-    // public function addTestResult($j)
-    // {
-    //     $j = $j + 1;
-    //     $this->j = $j;
-    //     array_push($this->testresults, $j);
-    //     $this->test_no[$j] = 0;
-    //     $this->result_mix_id[$j] = 0;
-    //     $this->location[$j] = 0;
-    //     $this->count_period[$j] = 0;
-    //     $this->material[$j] = 0;
-    //     $this->lift[$j] = 0;
-    //     $this->layer_thickness[$j] = 0;
-    //     $this->max_theory_density[$j] = 0;
-    //     $this->field_wet_density[$j] = 0;
-    //     $this->material[$j] = 0;
-    //     $this->relative_compaction[$j] = 0;
-    //     $this->pass_fail[$j] = 0;
-    // }
-
-    // public function removeTestResult($j)
-    // {
-    //     unset($this->testresults[$j]);
-    // }
-
-    // get result information
-    // public function mixResultInfo($value)
-    // {
-    //     $mixInfo = MixInfo::where('mix_id', $this->result_mix_id[$value])->first();
-    //     if ($mixInfo) {
-    //         $this->max_theory_density[$value] = $mixInfo->max_theoretical_density;
-    //     } else {
-    //         $this->max_theory_density[$value] = '';
-    //     }
-    // }
+    public function mixResultInfoB()
+    {
+        $mixInfoB = MixInfo::where('mix_id', $this->result_mix_id_b)->first();
+        if ($mixInfoB) {
+            $this->max_theory_density_b = $mixInfoB->max_theoretical_density;
+        } else {
+            $this->max_theory_density_b = '';
+        }
+    }
+    public function mixResultInfoC()
+    {
+        $mixInfoC = MixInfo::where('mix_id', $this->result_mix_id_c)->first();
+        if ($mixInfoC) {
+            $this->max_theory_density_c = $mixInfoC->max_theoretical_density;
+        } else {
+            $this->max_theory_density_c = '';
+        }
+    }
+    public function mixResultInfoD()
+    {
+        $mixInfoD = MixInfo::where('mix_id', $this->result_mix_id_d)->first();
+        if ($mixInfoD) {
+            $this->max_theory_density_d = $mixInfoD->max_theoretical_density;
+        } else {
+            $this->max_theory_density_d = '';
+        }
+    }
+    public function mixResultInfoE()
+    {
+        $mixInfoE = MixInfo::where('mix_id', $this->result_mix_id_e)->first();
+        if ($mixInfoE) {
+            $this->max_theory_density_e = $mixInfoE->max_theoretical_density;
+        } else {
+            $this->max_theory_density_e = '';
+        }
+    }
+    // =================== formula calculation =========================
+    public function changeTestResultA()
+    {
+        $mix_info = MixInfo::where('mix_id', $this->result_mix_id_a)->first();
+        if ($mix_info) {
+            if (!$this->field_wet_density_a) {
+                $this->field_wet_density_a = 0;
+            }
+            $this->relative_compaction_a = round(($this->field_wet_density_a / $mix_info->max_theoretical_density) * 100, 1);
+        } else {
+            $this->relative_compaction_a = '';
+        }
+    }
 
     public function updated($fields)
     {

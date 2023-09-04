@@ -70,6 +70,7 @@ class CreateSoilAggregateComponent extends Component
         $data = Proctor::where('proctorid', $this->proctor_id_a)->first();
 
         if ($data) {
+            
             $this->selected_a_proctor_ids = $this->proctor_id_a;
             $this->description_a = $data->description_a;
             $this->test_method_a = $data->test_method_a;
