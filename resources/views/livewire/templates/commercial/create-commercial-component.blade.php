@@ -22,6 +22,9 @@
         .moistureremoveinput {
             background: #CCFFFF;
         }
+        h6{
+            font-weight: 600;
+        }
     </style>
     <div class="container-fluid">
         <div class="row">
@@ -46,7 +49,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-body" style="margin: 25px; border: 3px solid #ddd; !important">
-                        <div class="row mb-3">
+                        <div class="row">
                             <div class="col-md-4"></div>
                             <div class="col-md-4">
                                 <div class="content text-center pt-2 pb-2">
@@ -56,7 +59,7 @@
                             </div>
                             <div class="col-md-4"></div>
                         </div>
-                        <div class="row mb-3 offset-1">
+                        <div class="row offset-1">
                             <div class="col-lg-5">
                                 <h6>Project Information</h6>
                                 <div class="input-group">
@@ -70,9 +73,9 @@
                                     </select>
                                 </div>
                                 @error('project_id')
-                                <span class="text-danger mb-3" style="font-size: 12px;">{{ $message }}</span>
+                                <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                 @enderror
-                                <div class="input-group mt-3">
+                                <div class="input-group mt-2">
                                     <span class="input-group-text">Client Name:</span>
                                     <input type="text" class="form-control form-color" wire:model="client_name"
                                         readonly>
@@ -80,7 +83,7 @@
                                 @error('client_id')
                                 <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                 @enderror
-                                <div class="input-group mt-3">
+                                <div class="input-group mt-2">
                                     <span class="input-group-text">Project Number:</span>
                                     <input type="text" class="form-control form-color" wire:model="project_number"
                                         readonly>
@@ -88,14 +91,14 @@
                                 @error('project_number')
                                 <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                 @enderror
-                                <div class="input-group mt-3">
+                                <div class="input-group mt-2">
                                     <span class="input-group-text">Date:</span>
                                     <input type="date" class="form-control form-color" wire:model="date">
                                 </div>
                                 @error('date')
                                 <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                 @enderror
-                                <div class="input-group mt-3">
+                                <div class="input-group mt-2">
                                     <span class="input-group-text">Technician:</span>
                                     <select class="form-select" wire:model="user_id">
                                         <option value="">Select Technician</option>
@@ -109,7 +112,7 @@
                                 <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                 @enderror
 
-                                <div class="input-group mt-3">
+                                <div class="input-group mt-2">
                                     <span class="input-group-text">Weather:</span>
                                     <input type="text" class="form-control form-color" wire:model="weather">
                                 </div>
@@ -117,7 +120,7 @@
                                 <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                 @enderror
 
-                                <div class="input-group mt-3">
+                                <div class="input-group mt-2">
                                     <span class="input-group-text">Test Method:</span>
                                     <select class="form-select" wire:model="test_method">
                                         <option value="">Select Test Method</option>
@@ -172,7 +175,7 @@
                                 <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                 @enderror
 
-                                <div class="input-group mt-3">
+                                <div class="input-group mt-2">
                                     <span class="input-group-text">Model:</span>
                                     <select class="form-select" wire:model="model">
                                         <option value="">Select Model</option>
@@ -185,7 +188,7 @@
                                     @enderror
                                 </div>
 
-                                <div class="input-group mt-3">
+                                <div class="input-group mt-2">
                                     <span class="input-group-text">Serial No:</span>
                                     <select class="form-select" wire:model="serial_no">
                                         <option value="">Select Serial No</option>
@@ -223,7 +226,7 @@
                                     @enderror
                                 </div>
 
-                                <div class="input-group mt-3">
+                                <div class="input-group mt-2">
                                     <span class="input-group-text">Density Standard Count:</span>
                                     <input type="number" class="form-control form-color" wire:model="density_count">
                                     @error('density_count')
@@ -231,7 +234,7 @@
                                     @enderror
                                 </div>
 
-                                <div class="input-group mt-3">
+                                <div class="input-group mt-2">
                                     <span class="input-group-text">Moisture Standard Count:</span>
                                     <input type="number" class="form-control form-color" wire:model="moisture_count">
                                     @error('moisture_count')
@@ -239,7 +242,7 @@
                                     @enderror
                                 </div>
 
-                                <div class="input-group mt-3">
+                                <div class="input-group mt-2">
                                     <span class="input-group-text">Moisture/Density Equations used? (yes/no):</span>
                                     <select class="form-select" wire:model="moisture_equation">
                                         <option value="">Select</option>
@@ -251,7 +254,7 @@
                                     @enderror
                                 </div>
 
-                                <div class="input-group mt-3">
+                                <div class="input-group mt-2">
                                     <span class="input-group-text">Test Mode:</span>
                                     <select class="form-select" wire:model="test_mode">
                                         <option value="">Select Test Mode</option>
@@ -536,7 +539,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row mb-3 offset-1">
+                        <div class="row offset-1">
                             <div class="col-md-10">
                                 <div class="input-group">
                                     <span class="input-group-text">Compaction Requirements (%):</span>
@@ -555,7 +558,7 @@
                                 @enderror
                             </div>
                             <div class="col-md-10">
-                                <div class="input-group mt-3">
+                                <div class="input-group mt-2">
                                     <span class="input-group-text">General Location:</span>
                                     <input type="text" class="form-control form-color" wire:model="general_location">
                                 </div>
@@ -564,7 +567,7 @@
                                 @enderror
                             </div>
                         </div>
-                        <div class="row mb-3">
+                        <div class="row">
                             <div class="col-md-12">
                                 <h6>Test Results</h6>
                                 <div class="table-responsive">
@@ -842,7 +845,7 @@
                                                         <input type="number" step="any"
                                                             class="form-control form-color moistureremoveinput"
                                                             wire:model="field_wet_density_b"
-                                                            wire:keyup='changeTestResultA'>
+                                                            wire:keyup='changeTestResultB'>
                                                         @error('field_wet_density_b')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
@@ -1318,21 +1321,23 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row mb-3 offset-1">
+                        <div class="row offset-1">
                             <div class="row">
-                                <div class="col-md-2 mt-3">
+                                <div class="col-md-2 mt-2">
                                     <h6>Observation:</h6>
                                 </div>
                                 <div class="col-md-10 mt-3">
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" wire:model="report_status"
-                                            id="inlineRadio1" value="Preliminary">
-                                        <label class="form-check-label" for="inlineRadio1">Preliminary:</label>
+                                            id="inlineRadio1" value="Full Time Observation">
+                                        <label class="form-check-label" for="inlineRadio1">Full Time
+                                            Observation:</label>
                                     </div>
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" wire:model="report_status"
-                                            id="inlineRadio2" value="Final">
-                                        <label class="form-check-label" for="inlineRadio2">Final:</label>
+                                            id="inlineRadio2" value="Part Time Observation">
+                                        <label class="form-check-label" for="inlineRadio2">Part Time
+                                            Observation:</label>
                                     </div>
                                 </div>
                                 @error('report_status')
@@ -1341,8 +1346,8 @@
                                 @enderror
                             </div>
 
-                            <div class="col-md-3 mt-3"></div>
-                            <div class="col-md-10 mb-3 mt-3">
+                            <div class="col-md-3 mt-2"></div>
+                            <div class="col-md-10 mt-2">
                                 <div class="input-group">
                                     <span class="input-group-text">Remark</span>
                                     <textarea class="form-control form-color" aria-label="With textarea"
@@ -1355,7 +1360,7 @@
                                         class="cGcvT"></grammarly-extension>
                                 </div>
                             </div>
-                            <div class="col-md-10" wire:ignore>
+                            <div class="col-md-10 mt-2" wire:ignore>
                                 <div class="input-group">
                                     <span class="input-group-text">Responsible Persons:</span>
                                     <select class="form-select moistureremoveinput multiple_selector" id="action"
@@ -1369,7 +1374,7 @@
                             @enderror
                         </div>
 
-                        <div class="row mb-3 mt-5">
+                        <div class="row mt-5">
                             <div class="col-md-12">
                                 <p>The information presented in this report is preliminary in nature and presented for
                                     informational purposes only. The information included herein is not to be used for
@@ -1390,7 +1395,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="row mb-5 mt-3">
+                    <div class="row mb-5 mt-2">
                         <div class="col-md-12" style="text-align: right;">
                             <button type="submit" class="btn btn-primary submit_btn" style="background: green;">{!!
                                 loadingState('storeData', 'Save
@@ -1410,7 +1415,7 @@
             $('#selectInfo').change(function() {
                 var project_id = $(this).val();
                 $.ajax({
-                        url: "{{ route('fetch_soil_representative') }}",
+                        url: "{{ route('get_commercial_representative') }}",
                         method: "POST",
                         data: {
                             project_id: project_id,

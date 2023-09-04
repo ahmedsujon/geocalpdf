@@ -23,7 +23,20 @@ class CreateCommercialsTable extends Migration
             $table->string('user_id')->nullable();
             $table->string('weather')->nullable();
             $table->string('test_mode')->nullable();
-            $table->string('main_test_method')->nullable();
+            $table->string('test_method')->nullable();
+
+            // gauge information
+            $table->string('office_address')->nullable();
+            $table->string('troxler')->nullable();
+            $table->string('other')->nullable();
+            $table->string('model')->nullable();
+            $table->string('serial_no')->nullable();
+            $table->string('density_count')->nullable();
+            $table->string('moisture_count')->nullable();
+            $table->string('moisture_equation')->nullable();
+
+            $table->string('compaction_requirement_min')->nullable();
+            $table->string('compaction_requirement_max')->nullable();
 
             // mix information
             $table->string('mix_a_id')->nullable();
@@ -134,23 +147,10 @@ class CreateCommercialsTable extends Migration
             $table->text('pass_fail_f')->nullable();
             $table->text('location_f')->nullable();
 
-            // gauge information
-            $table->string('office_address')->nullable();
-            $table->string('troxler')->nullable();
-            $table->string('other')->nullable();
-            $table->string('model')->nullable();
-            $table->string('serial_number')->nullable();
-            $table->string('density_count')->nullable();
-            $table->string('moisture_count')->nullable();
-            $table->string('moisture_equation')->nullable();
-            
-            $table->string('compaction_requirement')->nullable();
-            $table->string('requirment_plus')->nullable();
-            $table->string('requirment_minus')->nullable();
             // general information
-            $table->text('general_info')->nullable();
-
+            $table->text('general_location')->nullable();
             $table->text('remark')->nullable();
+            $table->text('report_status')->nullable();
             $table->string('created_by')->nullable();
             $table->string('status')->nullable();
             $table->string('responsible_person')->nullable();

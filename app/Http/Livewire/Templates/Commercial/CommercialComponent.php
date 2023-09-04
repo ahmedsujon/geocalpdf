@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Templates\Commercial;
 
+use App\Models\Commercial;
 use App\Models\FieldDensityCommercial;
 use App\Models\Project;
 use App\Models\SubClient;
@@ -26,7 +27,7 @@ class CommercialComponent extends Component
 
     public function deleteData()
     {
-        $data = FieldDensityCommercial::find($this->delete_id);
+        $data = Commercial::find($this->delete_id);
         $data->delete();
         $this->delete_id = '';
         $this->dispatchBrowserEvent('FileDeleted');
@@ -69,10 +70,10 @@ class CommercialComponent extends Component
         $file_id = $request->get('file_id');
         DB::statement("SET SQL_MODE=''");
 
-        $responsible_persons = FieldDensityCommercial::find($file_id)->responsible_person;
+        $responsible_persons = Commercial::find($file_id)->responsible_person;
 
         if ($value == 'sentToClient') {
-            $getCustomer = FieldDensityCommercial::where('id', $file_id)->first()->client_id;
+            $getCustomer = Commercial::where('id', $file_id)->first()->client_id;
             $data = SubClient::where('client_id', $getCustomer)->get();
         } else if ($value == 'sentToTech') {
             $data = User::whereIn('id', json_decode($responsible_persons))->where('role_id', 5)->get();
@@ -92,7 +93,7 @@ class CommercialComponent extends Component
 
     public function render()
     {
-        $files = FieldDensityCommercial::orderBy('id', 'DESC')->paginate($this->sortingValue);
+        $files = Commercial::orderBy('id', 'DESC')->paginate($this->sortingValue);
         return view('livewire.templates.commercial.commercial-component', ['files'=>$files])->layout('livewire.layouts.base');
     }
 }
