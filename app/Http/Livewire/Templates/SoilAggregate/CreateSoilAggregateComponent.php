@@ -29,6 +29,7 @@ class CreateSoilAggregateComponent extends Component
     public $test_results_c, $test_num_c, $location_c, $test_dept_c, $elev_test_c, $wet_density_c, $dry_density_c, $moisture_content_c, $percent_comp_c, $comments_c, $result_proctor_id_c, $material_c;
     public $test_results_d, $test_num_d, $location_d, $test_dept_d, $elev_test_d, $wet_density_d, $dry_density_d, $moisture_content_d, $percent_comp_d, $comments_d, $result_proctor_id_d, $material_d;
     public $test_results_e, $test_num_e, $location_e, $test_dept_e, $elev_test_e, $wet_density_e, $dry_density_e, $moisture_content_e, $percent_comp_e, $comments_e, $result_proctor_id_e, $material_e;
+    public $test_results_f, $test_num_f, $location_f, $test_dept_f, $elev_test_f, $wet_density_f, $dry_density_f, $moisture_content_f, $percent_comp_f, $comments_f, $result_proctor_id_f, $material_f;
 
     public function updated($fields)
     {
@@ -63,28 +64,22 @@ class CreateSoilAggregateComponent extends Component
         }
     }
 
-    // get proctor information
-    public $selected_a_proctor_ids = [];
+    // ======================= get proctor information ============================
     public function proctorInfoA()
     {
         $data = Proctor::where('proctorid', $this->proctor_id_a)->first();
-
         if ($data) {
-            
-            $this->selected_a_proctor_ids = $this->proctor_id_a;
-            $this->description_a = $data->description_a;
-            $this->test_method_a = $data->test_method_a;
-            $this->max_dry_density_a = $data->max_dry_density_a;
-            $this->optimum_moisture_a = $data->optimum_moisture_a;
+            $this->description_a = $data->material_description;
+            $this->test_method_a = $data->test_method;
+            $this->max_dry_density_a = $data->max_dry_density;
+            $this->optimum_moisture_a = $data->optimum_moisture;
         } else {
             $this->description_a = '';
             $this->test_method_a = '';
             $this->max_dry_density_a = '';
             $this->optimum_moisture_a = '';
-            unset($this->selected_a_proctor_ids);
         }
     }
-    public $selected_b_proctor_ids = [];
     public function proctorInfoB()
     {
         $data = Proctor::where('proctorid', $this->proctor_id_b)->first();
@@ -103,7 +98,6 @@ class CreateSoilAggregateComponent extends Component
             unset($this->selected_b_proctor_ids);
         }
     }
-    public $selected_c_proctor_ids = [];
     public function proctorInfoC()
     {
         $data = Proctor::where('proctorid', $this->proctor_id_c)->first();
@@ -122,7 +116,6 @@ class CreateSoilAggregateComponent extends Component
             unset($this->selected_c_proctor_ids);
         }
     }
-    public $selected_d_proctor_ids = [];
     public function proctorInfoD()
     {
         $data = Proctor::where('proctorid', $this->proctor_id_d)->first();
@@ -141,7 +134,6 @@ class CreateSoilAggregateComponent extends Component
             unset($this->selected_d_proctor_ids);
         }
     }
-    public $selected_e_proctor_ids = [];
     public function proctorInfoE()
     {
         $data = Proctor::where('proctorid', $this->proctor_id_e)->first();
@@ -160,7 +152,7 @@ class CreateSoilAggregateComponent extends Component
             unset($this->selected_e_proctor_ids);
         }
     }
-    // Test Results
+    // ======================= Test Results ============================
     public function changeTestResultA()
     {
         $proctor = Proctor::where('proctorid', $this->result_proctor_id_a)->first();
@@ -185,21 +177,54 @@ class CreateSoilAggregateComponent extends Component
             $this->percent_comp_b = 0;
         }
     }
-
-    // public function mount()
-    // {
-    //     $this->test_num[0] = 0;
-    //     $this->location[0] = 0;
-    //     $this->result_proctor_id[0] = 0;
-    //     $this->elev_test[0] = 0;
-    //     $this->wet_density[0] = 0;
-    //     $this->moisture_content[0] = 0;
-    //     $this->percent_comp[0] = 0;
-    //     $this->comments[0] = 0;
-    //     $this->material[0] = 0;
-    //     $this->dry_density[0] = 0;
-    //     $this->test_dept[0] = 0;
-    // }
+    public function changeTestResultC()
+    {
+        $proctor = Proctor::where('proctorid', $this->result_proctor_id_c)->first();
+        if ($proctor) {
+            if (!$this->dry_density_c) {
+                $this->dry_density_c = 0;
+            }
+            $this->percent_comp_c = round(($this->dry_density_c / $proctor->max_dry_density_c) * 100, 1);
+        } else {
+            $this->percent_comp_c = 0;
+        }
+    }
+    public function changeTestResultD()
+    {
+        $proctor = Proctor::where('proctorid', $this->result_proctor_id_d)->first();
+        if ($proctor) {
+            if (!$this->dry_density_d) {
+                $this->dry_density_d = 0;
+            }
+            $this->percent_comp_d = round(($this->dry_density_d / $proctor->max_dry_density_d) * 100, 1);
+        } else {
+            $this->percent_comp_d = 0;
+        }
+    }
+    public function changeTestResultE()
+    {
+        $proctor = Proctor::where('proctorid', $this->result_proctor_id_e)->first();
+        if ($proctor) {
+            if (!$this->dry_density_e) {
+                $this->dry_density_e = 0;
+            }
+            $this->percent_comp_e = round(($this->dry_density_e / $proctor->max_dry_density_e) * 100, 1);
+        } else {
+            $this->percent_comp_e = 0;
+        }
+    }
+    public function changeTestResultF()
+    {
+        $proctor = Proctor::where('proctorid', $this->result_proctor_id_f)->first();
+        if ($proctor) {
+            if (!$this->dry_density_f) {
+                $this->dry_density_f = 0;
+            }
+            $this->percent_comp_f = round(($this->dry_density_f / $proctor->max_dry_density_f) * 100, 1);
+        } else {
+            $this->percent_comp_f = 0;
+        }
+    }
 
     public function storeData()
     {
