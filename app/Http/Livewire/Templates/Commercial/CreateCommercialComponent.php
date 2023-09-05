@@ -445,7 +445,6 @@ class CreateCommercialComponent extends Component
                 }
             });
         }
-
         session()->flash('message', 'Commercial file created successfully');
         return redirect()->route('template.commercial');
     }
