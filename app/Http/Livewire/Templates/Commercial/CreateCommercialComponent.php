@@ -50,13 +50,10 @@ class CreateCommercialComponent extends Component
     }
 
     // ==================== get mix information =================
-    public $selected_mix_a_ids = []; // Initialize as an array
     public function mixInfoA()
     {
         $mixInfoA = MixInfo::where('mix_id', $this->mix_a_id)->first();
         if ($mixInfoA) {
-            $this->selected_mix_a_ids[] = $this->mix_a_id;
-
             $this->supplier_a = $mixInfoA->supplier;
             $this->plant_a = $mixInfoA->plant;
             $this->mix_type_a = $mixInfoA->mix_type;
@@ -68,16 +65,21 @@ class CreateCommercialComponent extends Component
             $this->mix_type_a = '';
             $this->max_theoretical_density_a = '';
             $this->max_theoretical_specific_gravity_a = '';
-            $this->selected_mix_a_ids = []; // Reset the array
         }
     }
-    public $selected_mix_b_ids = []; // Initialize as an array
+    public function resultMixIDA()
+    {
+        $resultMixIDA = MixInfo::where('mix_id', $this->result_mix_id_a)->first();
+        if ($resultMixIDA) {
+            $this->max_theory_density_a = $resultMixIDA->max_theoretical_density;
+        } else {
+            $this->max_theory_density_a = '';
+        }
+    }
     public function mixInfoB()
     {
         $mixInfoB = MixInfo::where('mix_id', $this->mix_b_id)->first();
         if ($mixInfoB) {
-            $this->selected_mix_b_ids[] = $this->mix_b_id;
-
             $this->supplier_b = $mixInfoB->supplier;
             $this->plant_b = $mixInfoB->plant;
             $this->mix_type_b = $mixInfoB->mix_type;
@@ -89,16 +91,21 @@ class CreateCommercialComponent extends Component
             $this->mix_type_b = '';
             $this->max_theoretical_density_b = '';
             $this->max_theoretical_specific_gravity_b = '';
-            $this->selected_mix_b_ids = []; // Reset the array
         }
     }
-    public $selected_mix_c_ids = []; // Initialize as an array
+    public function resultMixIDB()
+    {
+        $resultMixIDB = MixInfo::where('mix_id', $this->result_mix_id_b)->first();
+        if ($resultMixIDB) {
+            $this->max_theory_density_b = $resultMixIDB->max_theoretical_density;
+        } else {
+            $this->max_theory_density_b = '';
+        }
+    }
     public function mixInfoC()
     {
         $mixInfoC = MixInfo::where('mix_id', $this->mix_c_id)->first();
         if ($mixInfoC) {
-            $this->selected_mix_c_ids[] = $this->mix_c_id;
-
             $this->supplier_c = $mixInfoC->supplier;
             $this->plant_c = $mixInfoC->plant;
             $this->mix_type_c = $mixInfoC->mix_type;
@@ -110,16 +117,21 @@ class CreateCommercialComponent extends Component
             $this->mix_type_c = '';
             $this->max_theoretical_density_c = '';
             $this->max_theoretical_specific_gravity_c = '';
-            $this->selected_mix_c_ids = []; // Reset the array
         }
     }
-    public $selected_mix_d_ids = []; // Initialize as an array
+    public function resultMixIDC()
+    {
+        $resultMixIDC = MixInfo::where('mix_id', $this->result_mix_id_c)->first();
+        if ($resultMixIDC) {
+            $this->max_theory_density_c = $resultMixIDC->max_theoretical_density;
+        } else {
+            $this->max_theory_density_c = '';
+        }
+    }
     public function mixInfoD()
     {
         $mixInfoD = MixInfo::where('mix_id', $this->mix_d_id)->first();
         if ($mixInfoD) {
-            $this->selected_mix_d_ids[] = $this->mix_d_id;
-
             $this->supplier_d = $mixInfoD->supplier;
             $this->plant_d = $mixInfoD->plant;
             $this->mix_type_d = $mixInfoD->mix_type;
@@ -131,16 +143,21 @@ class CreateCommercialComponent extends Component
             $this->mix_type_d = '';
             $this->max_theoretical_density_d = '';
             $this->max_theoretical_specific_gravity_d = '';
-            $this->selected_mix_d_ids = []; // Reset the array
         }
     }
-    public $selected_mix_e_ids = []; // Initialize as an array
+    public function resultMixIDD()
+    {
+        $resultMixIDD = MixInfo::where('mix_id', $this->result_mix_id_d)->first();
+        if ($resultMixIDD) {
+            $this->max_theory_density_d = $resultMixIDD->max_theoretical_density;
+        } else {
+            $this->max_theory_density_d = '';
+        }
+    }
     public function mixInfoE()
     {
         $mixInfoE = MixInfo::where('mix_id', $this->mix_e_id)->first();
         if ($mixInfoE) {
-            $this->selected_mix_e_ids[] = $this->mix_e_id;
-
             $this->supplier_e = $mixInfoE->supplier;
             $this->plant_e = $mixInfoE->plant;
             $this->mix_type_e = $mixInfoE->mix_type;
@@ -152,7 +169,15 @@ class CreateCommercialComponent extends Component
             $this->mix_type_e = '';
             $this->max_theoretical_density_e = '';
             $this->max_theoretical_specific_gravity_e = '';
-            $this->selected_mix_e_ids = []; // Reset the array
+        }
+    }
+    public function resultMixIDE()
+    {
+        $resultMixIDE = MixInfo::where('mix_id', $this->result_mix_id_e)->first();
+        if ($resultMixIDE) {
+            $this->max_theory_density_e = $resultMixIDE->max_theoretical_density;
+        } else {
+            $this->max_theory_density_e = '';
         }
     }
 
