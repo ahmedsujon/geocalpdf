@@ -145,6 +145,15 @@ class CreateSoilAggregateComponent extends Component
         }
     }
     // ======================= Test Results ============================
+
+    // if ($this->max_load[$value] != null) {
+    //     $this->measured_strength[$value] = round($this->max_load[$value] / $this->area_cyl[$value], -1);
+    //     $this->measured_strength[$value] = round($this->max_load[$value] / ($this->area_cyl[$value] == 0 ? 1:$this->area_cyl[$value]), -1);
+    // } else {
+    //     $this->measured_strength[$value] = 0;
+    // }
+
+
     public function changeTestResultA()
     {
         $proctor = Proctor::where('proctorid', $this->result_proctor_id_a)->first();
