@@ -44,16 +44,16 @@ class CreateInspectionConcretesTable extends Migration
             $table->text('water_cement_ratio')->nullable();
 
             // Physical Properties
-            $table->string('air_content')->nullable();
-            $table->string('air_min')->nullable();
-            $table->string('air_max')->nullable();
-            $table->string('slump')->nullable();
-            $table->string('slump_min')->nullable();
-            $table->string('slump_max')->nullable();
-            $table->string('concrete_temp')->nullable();
-            $table->string('concrete_temp_min')->nullable();
-            $table->string('concrete_temp_max')->nullable();
-            $table->string('unit_weight')->nullable();
+            $table->text('air_content')->nullable();
+            $table->text('air_min')->nullable();
+            $table->text('air_max')->nullable();
+            $table->text('slump')->nullable();
+            $table->text('slump_min')->nullable();
+            $table->text('slump_max')->nullable();
+            $table->text('concrete_temp')->nullable();
+            $table->text('concrete_temp_min')->nullable();
+            $table->text('concrete_temp_max')->nullable();
+            $table->text('unit_weight')->nullable();
 
             $table->text('min_a')->nullable();
             $table->text('min_b')->nullable();
@@ -78,46 +78,46 @@ class CreateInspectionConcretesTable extends Migration
             $table->text('unit_weight_measure_id')->nullable();
             $table->text('weather_scale_id')->nullable();
 
-            $table->string('cement')->nullable();
-            $table->string('other_cementitious_matl')->nullable();
-            $table->string('other_cementitious_matl_a')->nullable();
-            $table->string('water')->nullable();
-            $table->string('fine_aggregate')->nullable();
-            $table->string('course_aggregate')->nullable();
-            $table->string('max_aggregate_size')->nullable();
-            $table->string('admixture_a')->nullable();
-            $table->string('admixture_a_a')->nullable();
-            $table->string('admixture_b')->nullable();
-            $table->string('admixture_b_b')->nullable();
-            $table->string('admixture_c')->nullable();
-            $table->string('admixture_c_c')->nullable();
-            $table->string('total_batch_weight')->nullable();
+            $table->text('cement')->nullable();
+            $table->text('other_cementitious_matl')->nullable();
+            $table->text('other_cementitious_matl_a')->nullable();
+            $table->text('water')->nullable();
+            $table->text('fine_aggregate')->nullable();
+            $table->text('course_aggregate')->nullable();
+            $table->text('max_aggregate_size')->nullable();
+            $table->text('admixture_a')->nullable();
+            $table->text('admixture_a_a')->nullable();
+            $table->text('admixture_b')->nullable();
+            $table->text('admixture_b_b')->nullable();
+            $table->text('admixture_c')->nullable();
+            $table->text('admixture_c_c')->nullable();
+            $table->text('total_batch_weight')->nullable();
 
-            $table->string('conc_comp_machine_id')->nullable();
-            $table->string('caliper_id')->nullable();
-            $table->string('scale_id')->nullable();
+            $table->text('conc_comp_machine_id')->nullable();
+            $table->text('caliper_id')->nullable();
+            $table->text('scale_id')->nullable();
 
-            $table->string('field')->nullable();
-            $table->string('lab')->nullable();
-            $table->string('time_cylinders_molded')->nullable();
-            $table->string('cylinders_temperature_24h')->nullable();
-            $table->string('where_cylinders_cured')->nullable();
-            $table->string('field_placement_observations')->nullable();
-            $table->string('remark')->nullable();
+            $table->text('field')->nullable();
+            $table->text('lab')->nullable();
+            $table->text('time_cylinders_molded')->nullable();
+            $table->text('cylinders_temperature_24h')->nullable();
+            $table->text('where_cylinders_cured')->nullable();
+            $table->text('field_placement_observations')->nullable();
+            $table->text('remark')->nullable();
 
-            $table->string('date_cylinders_received_lab')->nullable();
-            $table->string('pick_up_by')->nullable();
-            $table->string('cylinders_condition')->nullable();
-            $table->string('good')->nullable();
-            $table->string('fair')->nullable();
-            $table->string('poor')->nullable();
-            $table->string('test_hours')->nullable();
-            $table->string('pick_up_hours')->nullable();
-            $table->string('delayed_hours')->nullable();
-            $table->string('why')->nullable();
+            $table->text('date_cylinders_received_lab')->nullable();
+            $table->text('pick_up_by')->nullable();
+            $table->text('cylinders_condition')->nullable();
+            $table->text('good')->nullable();
+            $table->text('fair')->nullable();
+            $table->text('poor')->nullable();
+            $table->text('test_hours')->nullable();
+            $table->text('pick_up_hours')->nullable();
+            $table->text('delayed_hours')->nullable();
+            $table->text('why')->nullable();
 
-            $table->string('status')->nullable();
-            $table->string('responsible_person')->nullable();
+            $table->text('status')->nullable();
+            $table->text('responsible_person')->nullable();
 
             // COMPRESSIVE STRENGTHS
             $table->text('age_a')->nullable();
@@ -161,7 +161,7 @@ class CreateInspectionConcretesTable extends Migration
             $table->text('specified_strength_c')->nullable();
             $table->text('type_fracture_c')->nullable();
             $table->text('person_performing_c')->nullable();
-            
+
             $table->text('age_d')->nullable();
             $table->text('test_date_d')->nullable();
             $table->text('diameter_d')->nullable();

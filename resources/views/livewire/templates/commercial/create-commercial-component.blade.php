@@ -604,13 +604,13 @@
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <select class="form-select moistureremoveinput"
-                                                            wire:model="result_mix_id_a" wire:change='mixResultInfoA'
-                                                            required>
+                                                        <select class="form-select" wire:model="result_mix_id_a"
+                                                            wire:change="resultMixIDA">
                                                             <option value="">Select id</option>
-                                                            @foreach ($selected_mix_a_ids as $s_mix_info)
-                                                            <option value="{{ $s_mix_info }}">
-                                                                {{ $s_mix_info }}</option>
+                                                            @foreach ($mix_infos as $mix_info)
+                                                            <option value="{{ mixInfo($mix_info->id)->mix_id }}">
+                                                                {{ mixInfo($mix_info->id)->mix_id }}
+                                                            </option>
                                                             @endforeach
                                                         </select>
                                                         @error('result_mix_id_a')
@@ -750,13 +750,13 @@
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <select class="form-select moistureremoveinput"
-                                                            wire:model="result_mix_id_b" wire:change='mixResultInfoB'
-                                                            required>
+                                                        <select class="form-select" wire:model="result_mix_id_b"
+                                                            wire:change="resultMixIDB">
                                                             <option value="">Select id</option>
-                                                            @foreach ($selected_mix_b_ids as $s_mix_info)
-                                                            <option value="{{ $s_mix_info }}">
-                                                                {{ $s_mix_info }}</option>
+                                                            @foreach ($mix_infos as $mix_info)
+                                                            <option value="{{ mixInfo($mix_info->id)->mix_id }}">
+                                                                {{ mixInfo($mix_info->id)->mix_id }}
+                                                            </option>
                                                             @endforeach
                                                         </select>
                                                         @error('result_mix_id_b')
@@ -894,13 +894,13 @@
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <select class="form-select moistureremoveinput"
-                                                            wire:model="result_mix_id_c" wire:change='mixResultInfoC'
-                                                            required>
+                                                        <select class="form-select" wire:model="result_mix_id_c"
+                                                            wire:change="resultMixIDC">
                                                             <option value="">Select id</option>
-                                                            @foreach ($selected_mix_c_ids as $s_mix_info)
-                                                            <option value="{{ $s_mix_info }}">
-                                                                {{ $s_mix_info }}</option>
+                                                            @foreach ($mix_infos as $mix_info)
+                                                            <option value="{{ mixInfo($mix_info->id)->mix_id }}">
+                                                                {{ mixInfo($mix_info->id)->mix_id }}
+                                                            </option>
                                                             @endforeach
                                                         </select>
                                                         @error('result_mix_id_c')
@@ -1039,13 +1039,13 @@
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <select class="form-select moistureremoveinput"
-                                                            wire:model="result_mix_id_d" wire:change='mixResultInfoD'
-                                                            required>
+                                                        <select class="form-select" wire:model="result_mix_id_d"
+                                                            wire:change="resultMixIDD">
                                                             <option value="">Select id</option>
-                                                            @foreach ($selected_mix_d_ids as $s_mix_info)
-                                                            <option value="{{ $s_mix_info }}">
-                                                                {{ $s_mix_info }}</option>
+                                                            @foreach ($mix_infos as $mix_info)
+                                                            <option value="{{ mixInfo($mix_info->id)->mix_id }}">
+                                                                {{ mixInfo($mix_info->id)->mix_id }}
+                                                            </option>
                                                             @endforeach
                                                         </select>
                                                         @error('result_mix_id_d')
@@ -1184,13 +1184,13 @@
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <select class="form-select moistureremoveinput"
-                                                            wire:model="result_mix_id_e" wire:change='mixResultInfoE'
-                                                            required>
+                                                        <select class="form-select" wire:model="result_mix_id_e"
+                                                            wire:change="resultMixIDE">
                                                             <option value="">Select id</option>
-                                                            @foreach ($selected_mix_e_ids as $s_mix_info)
-                                                            <option value="{{ $s_mix_info }}">
-                                                                {{ $s_mix_info }}</option>
+                                                            @foreach ($mix_infos as $mix_info)
+                                                            <option value="{{ mixInfo($mix_info->id)->mix_id }}">
+                                                                {{ mixInfo($mix_info->id)->mix_id }}
+                                                            </option>
                                                             @endforeach
                                                         </select>
                                                         @error('result_mix_id_e')
