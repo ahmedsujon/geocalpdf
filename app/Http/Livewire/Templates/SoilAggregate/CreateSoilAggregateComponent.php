@@ -255,15 +255,116 @@ class CreateSoilAggregateComponent extends Component
         $data->density_count = $this->density_count;
         $data->moisture_count = $this->moisture_count;
         $data->moisture_equation = $this->moisture_equation;
-
         $data->test_mode = $this->test_mode;
         $data->main_test_method = $this->main_test_method;
-
         $data->compaction_requirement = $this->compaction_requirement;
         $data->requirment_plus = $this->requirment_plus;
         $data->requirment_minus = $this->requirment_minus;
         $data->general_info = $this->general_info;
         $data->observation = $this->observation;
+        // Proctor Information
+        $data->proctor_id_a = $this->proctor_id_a;
+        $data->description_a = $this->description_a;
+        $data->test_method_a = $this->test_method_a;
+        $data->max_dry_density_a = $this->max_dry_density_a;
+        $data->optimum_moisture_a = $this->optimum_moisture_a;
+        
+        $data->proctor_id_b = $this->proctor_id_b;
+        $data->description_b = $this->description_b;
+        $data->test_method_b = $this->test_method_b;
+        $data->max_dry_density_b = $this->max_dry_density_b;
+        $data->optimum_moisture_b = $this->optimum_moisture_b;
+
+        $data->proctor_id_c = $this->proctor_id_c;
+        $data->description_c = $this->description_c;
+        $data->test_method_c = $this->test_method_c;
+        $data->max_dry_density_c = $this->max_dry_density_c;
+        $data->optimum_moisture_c = $this->optimum_moisture_c;
+
+        $data->proctor_id_d = $this->proctor_id_d;
+        $data->description_d = $this->description_d;
+        $data->test_method_d = $this->test_method_d;
+        $data->max_dry_density_d = $this->max_dry_density_d;
+        $data->optimum_moisture_d = $this->optimum_moisture_d;
+
+        $data->proctor_id_e = $this->proctor_id_e;
+        $data->description_e = $this->description_e;
+        $data->test_method_e = $this->test_method_e;
+        $data->max_dry_density_e = $this->max_dry_density_e;
+        $data->optimum_moisture_e = $this->optimum_moisture_e;
+
+        // Test Results
+        $data->result_proctor_id_a = $this->result_proctor_id_a;
+        $data->test_num_a = $this->test_num_a;
+        $data->location_a = $this->location_a;
+        $data->test_dept_a = $this->test_dept_a;
+        $data->elev_test_a = $this->elev_test_a;
+        $data->wet_density_a = $this->wet_density_a;
+        $data->dry_density_a = $this->dry_density_a;
+        $data->moisture_content_a = $this->moisture_content_a;
+        $data->percent_comp_a = $this->percent_comp_a;
+        $data->comments_a = $this->comments_a;
+        $data->material_a = $this->material_a;
+        
+        $data->result_proctor_id_b = $this->result_proctor_id_b;
+        $data->test_num_b = $this->test_num_b;
+        $data->location_b = $this->location_b;
+        $data->test_dept_b = $this->test_dept_b;
+        $data->elev_test_b = $this->elev_test_b;
+        $data->wet_density_b = $this->wet_density_b;
+        $data->dry_density_b = $this->dry_density_b;
+        $data->moisture_content_b = $this->moisture_content_b;
+        $data->percent_comp_b = $this->percent_comp_b;
+        $data->comments_b = $this->comments_b;
+        $data->material_b = $this->material_b;
+
+        $data->result_proctor_id_c = $this->result_proctor_id_c;
+        $data->test_num_c = $this->test_num_c;
+        $data->location_c = $this->location_c;
+        $data->test_dept_c = $this->test_dept_c;
+        $data->elev_test_c = $this->elev_test_c;
+        $data->wet_density_c = $this->wet_density_c;
+        $data->dry_density_c = $this->dry_density_c;
+        $data->moisture_content_c = $this->moisture_content_c;
+        $data->percent_comp_c = $this->percent_comp_c;
+        $data->comments_c = $this->comments_c;
+        $data->material_c = $this->material_a;
+
+        $data->result_proctor_id_d = $this->result_proctor_id_d;
+        $data->test_num_d = $this->test_num_d;
+        $data->location_d = $this->location_d;
+        $data->test_dept_d = $this->test_dept_d;
+        $data->elev_test_d = $this->elev_test_d;
+        $data->wet_density_d = $this->wet_density_d;
+        $data->dry_density_d = $this->dry_density_d;
+        $data->moisture_content_d = $this->moisture_content_d;
+        $data->percent_comp_d = $this->percent_comp_d;
+        $data->comments_d = $this->comments_d;
+        $data->material_d = $this->material_d;
+
+        $data->result_proctor_id_e = $this->result_proctor_id_e;
+        $data->test_num_e = $this->test_num_e;
+        $data->location_e = $this->location_e;
+        $data->test_dept_e = $this->test_dept_e;
+        $data->elev_test_e = $this->elev_test_e;
+        $data->wet_density_e = $this->wet_density_e;
+        $data->dry_density_e = $this->dry_density_e;
+        $data->moisture_content_e = $this->moisture_content_e;
+        $data->percent_comp_e = $this->percent_comp_e;
+        $data->comments_e = $this->comments_e;
+        $data->material_e = $this->material_e;
+
+        $data->result_proctor_id_f = $this->result_proctor_id_f;
+        $data->test_num_f = $this->test_num_f;
+        $data->location_f = $this->location_f;
+        $data->test_dept_f = $this->test_dept_f;
+        $data->elev_test_f = $this->elev_test_f;
+        $data->wet_density_f = $this->wet_density_f;
+        $data->dry_density_f = $this->dry_density_f;
+        $data->moisture_content_f = $this->moisture_content_f;
+        $data->percent_comp_f = $this->percent_comp_f;
+        $data->comments_f = $this->comments_f;
+        $data->material_f = $this->material_f;
 
         if (Auth::user()->role_id == '1') {
             $data['status'] = "SuperAdminCreated";
