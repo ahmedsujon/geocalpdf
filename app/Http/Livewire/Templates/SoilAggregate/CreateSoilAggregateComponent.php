@@ -85,17 +85,15 @@ class CreateSoilAggregateComponent extends Component
         $data = Proctor::where('proctorid', $this->proctor_id_b)->first();
 
         if ($data) {
-            $this->selected_b_proctor_ids = $this->proctor_id_b;
-            $this->description_b = $data->description_b;
-            $this->test_method_b = $data->test_method_b;
-            $this->max_dry_density_b = $data->max_dry_density_b;
-            $this->optimum_moisture_b = $data->optimum_moisture_b;
+            $this->description_b = $data->material_description;
+            $this->test_method_b = $data->test_method;
+            $this->max_dry_density_b = $data->max_dry_density;
+            $this->optimum_moisture_b = $data->optimum_moisture;
         } else {
             $this->description_b = '';
             $this->test_method_b = '';
             $this->max_dry_density_b = '';
             $this->optimum_moisture_b = '';
-            unset($this->selected_b_proctor_ids);
         }
     }
     public function proctorInfoC()
@@ -103,17 +101,15 @@ class CreateSoilAggregateComponent extends Component
         $data = Proctor::where('proctorid', $this->proctor_id_c)->first();
 
         if ($data) {
-            $this->selected_c_proctor_ids = $this->proctor_id_c;
-            $this->description_c = $data->description_c;
-            $this->test_method_c = $data->test_method_c;
-            $this->max_dry_density_c = $data->max_dry_density_c;
-            $this->optimum_moisture_c = $data->optimum_moisture_c;
+            $this->description_c = $data->material_description;
+            $this->test_method_c = $data->test_method;
+            $this->max_dry_density_c = $data->max_dry_density;
+            $this->optimum_moisture_c = $data->optimum_moisture;
         } else {
             $this->description_c = '';
             $this->test_method_c = '';
             $this->max_dry_density_c = '';
             $this->optimum_moisture_c = '';
-            unset($this->selected_c_proctor_ids);
         }
     }
     public function proctorInfoD()
@@ -121,17 +117,15 @@ class CreateSoilAggregateComponent extends Component
         $data = Proctor::where('proctorid', $this->proctor_id_d)->first();
 
         if ($data) {
-            $this->selected_d_proctor_ids = $this->proctor_id_d;
-            $this->description_d = $data->description_d;
-            $this->test_method_d = $data->test_method_d;
-            $this->max_dry_density_d = $data->max_dry_density_d;
-            $this->optimum_moisture_d = $data->optimum_moisture_d;
+            $this->description_d = $data->material_description;
+            $this->test_method_d = $data->test_method;
+            $this->max_dry_density_d = $data->max_dry_density;
+            $this->optimum_moisture_d = $data->optimum_moisture;
         } else {
             $this->description_d = '';
             $this->test_method_d = '';
             $this->max_dry_density_d = '';
             $this->optimum_moisture_d = '';
-            unset($this->selected_d_proctor_ids);
         }
     }
     public function proctorInfoE()
@@ -139,17 +133,15 @@ class CreateSoilAggregateComponent extends Component
         $data = Proctor::where('proctorid', $this->proctor_id_e)->first();
 
         if ($data) {
-            $this->selected_e_proctor_ids = $this->proctor_id_e;
-            $this->description_e = $data->description_e;
-            $this->test_method_e = $data->test_method_e;
-            $this->max_dry_density_e = $data->max_dry_density_e;
-            $this->optimum_moisture_e = $data->optimum_moisture_e;
+            $this->description_e = $data->material_description;
+            $this->test_method_e = $data->test_method;
+            $this->max_dry_density_e = $data->max_dry_density;
+            $this->optimum_moisture_e = $data->optimum_moisture;
         } else {
             $this->description_e = '';
             $this->test_method_e = '';
             $this->max_dry_density_e = '';
             $this->optimum_moisture_e = '';
-            unset($this->selected_e_proctor_ids);
         }
     }
     // ======================= Test Results ============================
@@ -258,10 +250,11 @@ class CreateSoilAggregateComponent extends Component
         $data->test_mode = $this->test_mode;
         $data->main_test_method = $this->main_test_method;
         $data->compaction_requirement = $this->compaction_requirement;
-        $data->requirment_plus = $this->requirment_plus;
-        $data->requirment_minus = $this->requirment_minus;
+        $data->requirement_plus = $this->requirement_plus;
+        $data->requirement_minus = $this->requirement_minus;
         $data->general_info = $this->general_info;
         $data->observation = $this->observation;
+        
         // Proctor Information
         $data->proctor_id_a = $this->proctor_id_a;
         $data->description_a = $this->description_a;

@@ -503,13 +503,13 @@
                             <div class="col-md-5">
                                 <div class="input-group">
                                     <span class="input-group-text">Moisture Requirements (-/+ %) Minus:</span>
-                                    <input type="number" class="form-control form-color" wire:model="requirment_minus">
-                                    @error('requirment_minus')
+                                    <input type="number" class="form-control form-color" wire:model="requirement_minus">
+                                    @error('requirement_minus')
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
                                     <span class="input-group-text">Plus:</span>
-                                    <input type="number" class="form-control form-color" wire:model="requirment_plus">
-                                    @error('requirment_plus')
+                                    <input type="number" class="form-control form-color" wire:model="requirement_plus">
+                                    @error('requirement_plus')
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
                                 </div>
