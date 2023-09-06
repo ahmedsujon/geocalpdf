@@ -57,7 +57,11 @@
                                         Commercial</h6>
                                 </div>
                             </div>
-                            <div class="col-md-4"></div>
+                            <div class="col-md-4">
+                                <div class="content text-center pt-2 pb-2">
+                                    <button type="button" class="btn btn-success">Status: {{ $status }}</button>
+                                </div>
+                            </div>
                         </div>
                         <div class="row offset-1">
                             <div class="col-lg-5">

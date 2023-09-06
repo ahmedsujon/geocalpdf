@@ -135,6 +135,18 @@ class CreateSoilAggregatesTable extends Migration
             $table->text('comments_e')->nullable();
             $table->text('location_e')->nullable();
             $table->text('material_e')->nullable();
+
+            $table->text('test_num_f')->nullable();
+            $table->text('result_proctor_id_f')->nullable();
+            $table->text('test_dept_f')->nullable();
+            $table->text('elev_test_f')->nullable();
+            $table->text('wet_density_f')->nullable();
+            $table->text('dry_density_f')->nullable();
+            $table->text('moisture_content_f')->nullable();
+            $table->text('percent_comp_f')->nullable();
+            $table->text('comments_f')->nullable();
+            $table->text('location_f')->nullable();
+            $table->text('material_f')->nullable();
             $table->timestamps();
         });
     }
