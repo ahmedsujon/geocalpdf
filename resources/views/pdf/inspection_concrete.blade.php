@@ -512,7 +512,8 @@
                     </h4>
                 </td>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400;">{{ \Carbon\Carbon::parse($data->test_date_a)->format('m/d/Y') }}
+                    <h4 style="font-size: 14px; font-weight: 400;">{{
+                        \Carbon\Carbon::parse($data->test_date_a)->format('m/d/Y') }}
                     </h4>
                 </td>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
@@ -564,7 +565,8 @@
                     </h4>
                 </td>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400;">{{ \Carbon\Carbon::parse($data->test_date_b)->format('m/d/Y') }}
+                    <h4 style="font-size: 14px; font-weight: 400;">{{
+                        \Carbon\Carbon::parse($data->test_date_b)->format('m/d/Y') }}
                     </h4>
                 </td>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
@@ -616,7 +618,8 @@
                     </h4>
                 </td>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400;">{{ \Carbon\Carbon::parse($data->test_date_c)->format('m/d/Y') }}
+                    <h4 style="font-size: 14px; font-weight: 400;">{{
+                        \Carbon\Carbon::parse($data->test_date_c)->format('m/d/Y') }}
                     </h4>
                 </td>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
@@ -668,7 +671,8 @@
                     </h4>
                 </td>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400;">{{ \Carbon\Carbon::parse($data->test_date_d)->format('m/d/Y') }}
+                    <h4 style="font-size: 14px; font-weight: 400;">{{
+                        \Carbon\Carbon::parse($data->test_date_d)->format('m/d/Y') }}
                     </h4>
                 </td>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
@@ -720,7 +724,8 @@
                     </h4>
                 </td>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400;">{{ \Carbon\Carbon::parse($data->test_date_e)->format('m/d/Y') }}
+                    <h4 style="font-size: 14px; font-weight: 400;">{{
+                        \Carbon\Carbon::parse($data->test_date_e)->format('m/d/Y') }}
                     </h4>
                 </td>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
@@ -773,7 +778,8 @@
                     </h4>
                 </td>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400;">{{ \Carbon\Carbon::parse($data->test_date_f)->format('m/d/Y') }}
+                    <h4 style="font-size: 14px; font-weight: 400;">{{
+                        \Carbon\Carbon::parse($data->test_date_f)->format('m/d/Y') }}
                     </h4>
                 </td>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
@@ -827,7 +833,8 @@
                     </h4>
                 </td>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400;">{{ \Carbon\Carbon::parse($data->test_date_g)->format('m/d/Y') }}
+                    <h4 style="font-size: 14px; font-weight: 400;">{{
+                        \Carbon\Carbon::parse($data->test_date_g)->format('m/d/Y') }}
                     </h4>
                 </td>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
@@ -872,7 +879,7 @@
             </tr>
             @endif
             @if ($data->age_h)
-              <tr>
+            <tr>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
                     <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->cylinder_id }}</h4>
                 </td>
@@ -881,7 +888,8 @@
                     </h4>
                 </td>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400;">{{ \Carbon\Carbon::parse($data->test_date_h)->format('m/d/Y') }}
+                    <h4 style="font-size: 14px; font-weight: 400;">{{
+                        \Carbon\Carbon::parse($data->test_date_h)->format('m/d/Y') }}
                     </h4>
                 </td>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
@@ -923,7 +931,7 @@
                         $data->measured_strength_h }}
                     </h4>
                 </td>
-            </tr>  
+            </tr>
             @endif
             @if ($data->age_i)
             <tr>
@@ -935,7 +943,8 @@
                     </h4>
                 </td>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400;">{{ \Carbon\Carbon::parse($data->test_date_i)->format('m/d/Y') }}
+                    <h4 style="font-size: 14px; font-weight: 400;">{{
+                        \Carbon\Carbon::parse($data->test_date_i)->format('m/d/Y') }}
                     </h4>
                 </td>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
@@ -977,19 +986,40 @@
                         $data->measured_strength_i }}
                     </h4>
                 </td>
-            </tr> 
+            </tr>
             @endif
         </table>
         @php
-            $specified_strength_total = sum($specified_strength_a + $specified_strength_b + $specified_strength_c + $specified_strength_d + $specified_strength_e + $specified_strength_f + $specified_strength_g + $specified_strength_h + $specified_strength_i)
+        $value1 = 10;
+        $value2 = null;
+        $value3 = 30;
+        $value4 = 0;
+        $value5 = 50;
+
+        $values = [$data->specified_strength_a, $data->specified_strength_b, $data->specified_strength_c,
+        $data->specified_strength_d, $data->specified_strength_e, $data->specified_strength_f,
+        $data->specified_strength_g, $data->specified_strength_g, $data->specified_strength_i];
+
+        // Filter out null and zero values
+        $filteredValues = array_filter($values, fn($v) => $v !== null && $v !== 0);
+
+        if (count($filteredValues) > 0) {
+        $total = array_sum($filteredValues);
+        $average = $total / count($filteredValues);
+        } else {
+        $average = 0;
+        }
         @endphp
+
         <table style="width: 100%; border-collapse: collapse;">
             <tr>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:right;">Average 28 Day Compressive Strength (psi)</h4>
+                    <h4 style="font-size: 14px; font-weight: 400; text-align:right;">Average 28 Day Compressive Strength
+                        (psi)</h4>
                 </td>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $specified_strength_total }}</h4>
+                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $average }}
+                    </h4>
                 </td>
             </tr>
             <tr>
@@ -997,7 +1027,8 @@
                     <h4 style="font-size: 14px; font-weight: 400; text-align:right;">Required 28 Day Strength (psi)</h4>
                 </td>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->required_strength }}</h4>
+                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->required_strength }}
+                    </h4>
                 </td>
             </tr>
         </table>
@@ -1031,31 +1062,36 @@
                     <h4 style="font-size: 14px; font-weight: 400; text-align:left;">4-Diagonal Fracture;</h4>
                 </td>
                 <td>
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:left;">5-Side fracture at top or bottom;</h4>
+                    <h4 style="font-size: 14px; font-weight: 400; text-align:left;">5-Side fracture at top or bottom;
+                    </h4>
                 </td>
                 <td>
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:left;">6-Side fractures at top or bottom with pointed</h4>
+                    <h4 style="font-size: 14px; font-weight: 400; text-align:left;">6-Side fractures at top or bottom
+                        with pointed</h4>
                 </td>
             </tr>
         </table>
         <table style="width: 100%; border-collapse: collapse; padding-top: 7px; padding-bottom: 5px;">
             <tr>
                 <td>
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:left;">Concrete sample in accordance with ASTM C172 and/or AASHTO R60</h4>
+                    <h4 style="font-size: 14px; font-weight: 400; text-align:left;">Concrete sample in accordance with
+                        ASTM C172 and/or AASHTO R60</h4>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:left;">Compressive Strength determined in accordance with ASTM C-39 and/or AASHTO T-22</h4>
+                    <h4 style="font-size: 14px; font-weight: 400; text-align:left;">Compressive Strength determined in
+                        accordance with ASTM C-39 and/or AASHTO T-22</h4>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:left;">Capping: U = Unbonded (ASTM C1231); B = Bonded (ASTM C617); G = Ground</h4>
+                    <h4 style="font-size: 14px; font-weight: 400; text-align:left;">Capping: U = Unbonded (ASTM C1231);
+                        B = Bonded (ASTM C617); G = Ground</h4>
                 </td>
             </tr>
         </table>
-     
+
         <table style="width: 100%; border-collapse: collapse">
             <tr>
                 <td>
