@@ -69,16 +69,16 @@
             width: 18%;
         }
 
-        .commercial-form .width16 {
-            width: 16.5%;
+        .commercial-form .width17 {
+            width: 17.3%;
         }
 
         .commercial-form .width12 {
             width: 12%;
         }
 
-        .commercial-form .width8 {
-            width: 9.09%;
+        .commercial-form .width9 {
+            width: 9.1%;
         }
 
         .select2-container--bootstrap-5 .select2-selection {
@@ -152,14 +152,14 @@
             }
 
             .commercial-form .width28 {
-                width: 42%;
+                width: 46%;
             }
 
             .commercial-form .width18 {
                 width: 42%;
             }
 
-            .commercial-form .width8 {
+            .commercial-form .width9 {
                 width: 21%;
             }
 
@@ -295,14 +295,14 @@
                                 <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                             @enderror
                             <div class="input-group mt-2">
-                                <span class="input-group-text width8">Make:</span>
-                                <span class="input-group-text width8">Troxler:</span>
+                                <span class="input-group-text width9">Make:</span>
+                                <span class="input-group-text width9">Troxler:</span>
                                 <select class="form-select" wire:model="troxler">
                                     <option value="">Select</option>
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
                                 </select>
-                                <span class="input-group-text width8">Other:</span>
+                                <span class="input-group-text width9">Other:</span>
                                 <select class="form-select" wire:model="other">
                                     <option value="">Select</option>
                                     <option value="Yes">Yes</option>
@@ -715,7 +715,7 @@
                     <div class="row justify-content-md-center">
                         <div class="col-lg-12">
                             <div class="input-group mt-2">
-                                <span class="input-group-text width16">General Location:</span>
+                                <span class="input-group-text width17">General Location:</span>
                                 <input type="text" class="form-control form-color" wire:model="general_location">
                             </div>
                             @error('general_location')
@@ -728,7 +728,7 @@
 
 
 
-                <div class="row">
+                <div class="row mt-3">
                     <div class="col-lg-12">
                         <h6>Test Results</h6>
                         <div class="table-responsive">
