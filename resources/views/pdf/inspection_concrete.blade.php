@@ -980,13 +980,16 @@
             </tr> 
             @endif
         </table>
+        @php
+            $specified_strength_total = sum($specified_strength_a + $specified_strength_b + $specified_strength_c + $specified_strength_d + $specified_strength_e + $specified_strength_f + $specified_strength_g + $specified_strength_h + $specified_strength_i)
+        @endphp
         <table style="width: 100%; border-collapse: collapse;">
             <tr>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
                     <h4 style="font-size: 14px; font-weight: 400; text-align:right;">Average 28 Day Compressive Strength (psi)</h4>
                 </td>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">56453</h4>
+                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $specified_strength_total }}</h4>
                 </td>
             </tr>
             <tr>
