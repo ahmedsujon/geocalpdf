@@ -28,6 +28,11 @@
             font-weight: 600;
         }
 
+        .commercial-form {
+            padding: 25px;
+            border: 3px solid #ddd !important
+        }
+
         .commercial-form .input-group-text {
             padding: 0.1rem 0.3rem;
             font-size: 0.8rem;
@@ -36,19 +41,24 @@
             border-radius: 0
         }
 
-        .commercial-form .form-control{
+        .commercial-form .form-control {
             padding: 0.1rem 1rem 0.1rem 0.5rem;
             font-size: 0.8rem;
             line-height: 1.4;
             border: 1px solid #000000;
             border-radius: 0
         }
+
         .commercial-form .form-select {
             padding: 0.1rem 1rem 0.1rem 0.5rem;
             font-size: 0.8rem;
             line-height: 1.4;
             border: 0px solid #000000;
             border-radius: 0
+        }
+
+        .commercial-form .select-border .form-select {
+            border: 1px solid #000000;
         }
 
         .commercial-form .width28 {
@@ -119,6 +129,7 @@
             border-bottom: 1px solid #000000;
             border-left: 1px solid #000000;
         }
+
         .commercial-form thead>tr th:last-child {
             border-top: 1px solid #000000;
             border-right: 1px solid #000000;
@@ -132,6 +143,26 @@
             border-right: 1px solid #000000;
             border-bottom: 1px solid #000000;
             border-left: 1px solid #000000;
+        }
+
+        @media screen and (max-width:1370px) {
+
+            .commercial-form {
+                padding: 10px;
+            }
+
+            .commercial-form .width28 {
+                width: 42%;
+            }
+
+            .commercial-form .width18 {
+                width: 42%;
+            }
+
+            .commercial-form .width8 {
+                width: 21%;
+            }
+
         }
     </style>
     <div class="container-fluid">
@@ -156,27 +187,20 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-body commercial-form" style="margin: 25px; border: 3px solid #ddd; !important">
+                    <div class="card-body commercial-form">
                         <div class="row">
                             <div class="col-md-4"></div>
                             <div class="col-md-4">
                                 <div class="content text-center pt-2 pb-2">
-                                    <h6 style="text-transform: uppercase;">Asphalt Field Density by Nuclear Method -
-                                        Commercial</h6>
-
-
                                     <h6>GEOCAL, INC.<br>
                                         FIELD DENSITY OF ASPHALT / BITUMINOUS by Nuclear Method<br>
                                         ASTM D 2950 / AASHTO T355</h6>
-
-
-
                                 </div>
                             </div>
                             <div class="col-md-4"></div>
                         </div>
                         <div class="row offset-1">
-                            <div class="col-lg-5">
+                            <div class="col-lg-5 select-border">
                                 <h6>Project Information</h6>
                                 <div class="input-group">
                                     <span class="input-group-text width18">Project Name:</span>
@@ -249,7 +273,7 @@
                                 @enderror
                             </div>
 
-                            <div class="col-lg-5">
+                            <div class="col-lg-5 select-border">
                                 <h6>Gauge Information</h6>
                                 <div class="input-group mt-2">
                                     <span class="input-group-text width18">Office Address:</span>
@@ -833,7 +857,7 @@
                                                         <input type="number" step="any"
                                                             class="form-control moistureremoveinput"
                                                             wire:model="relative_compaction_a"
-                                                            style="@if($compaction_requirement_max < $relative_compaction_a || $compaction_requirement_min > $relative_compaction_a) color: red; @endif"
+                                                            style="@if ($compaction_requirement_max < $relative_compaction_a || $compaction_requirement_min > $relative_compaction_a) color: red; @endif"
                                                             readonly>
                                                         @error('relative_compaction_a')
                                                             <span class="text-danger"
@@ -843,8 +867,7 @@
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="text"
-                                                            class="form-control moistureremoveinput"
+                                                        <input type="text" class="form-control moistureremoveinput"
                                                             wire:model="pass_fail_a">
                                                         @error('pass_fail_a')
                                                             <span class="text-danger"
@@ -973,7 +996,7 @@
                                                         <input type="number" step="any"
                                                             class="form-control moistureremoveinput"
                                                             wire:model="relative_compaction_b"
-                                                            style="@if($compaction_requirement_max < $relative_compaction_b || $compaction_requirement_min > $relative_compaction_b) color: red; @endif"
+                                                            style="@if ($compaction_requirement_max < $relative_compaction_b || $compaction_requirement_min > $relative_compaction_b) color: red; @endif"
                                                             readonly>
                                                         @error('relative_compaction_b')
                                                             <span class="text-danger"
@@ -1112,7 +1135,7 @@
                                                         <input type="number" step="any"
                                                             class="form-control moistureremoveinput"
                                                             wire:model="relative_compaction_c"
-                                                            style="@if($compaction_requirement_max < $relative_compaction_c || $compaction_requirement_min > $relative_compaction_c) color: red; @endif"
+                                                            style="@if ($compaction_requirement_max < $relative_compaction_c || $compaction_requirement_min > $relative_compaction_c) color: red; @endif"
                                                             readonly>
                                                         @error('relative_compaction_c')
                                                             <span class="text-danger"
@@ -1251,7 +1274,7 @@
                                                         <input type="number" step="any"
                                                             class="form-control moistureremoveinput"
                                                             wire:model="relative_compaction_d"
-                                                            style="@if($compaction_requirement_max < $relative_compaction_d || $compaction_requirement_min > $relative_compaction_d) color: red; @endif"
+                                                            style="@if ($compaction_requirement_max < $relative_compaction_d || $compaction_requirement_min > $relative_compaction_d) color: red; @endif"
                                                             readonly>
                                                         @error('relative_compaction_d')
                                                             <span class="text-danger"
@@ -1390,7 +1413,7 @@
                                                         <input type="number" step="any"
                                                             class="form-control moistureremoveinput"
                                                             wire:model="relative_compaction_e"
-                                                            style="@if($compaction_requirement_max < $relative_compaction_e || $compaction_requirement_min > $relative_compaction_e) color: red; @endif"
+                                                            style="@if ($compaction_requirement_max < $relative_compaction_e || $compaction_requirement_min > $relative_compaction_e) color: red; @endif"
                                                             readonly>
                                                         @error('relative_compaction_e')
                                                             <span class="text-danger"
@@ -1416,8 +1439,8 @@
                                                             class="form-control form-color moistureremoveinput"
                                                             wire:model="test_no_f">
                                                         @error('test_no_f')
-                                                        <span class="text-danger" style="font-size: 12px;">{{ $message
-                                                            }}</span>
+                                                            <span class="text-danger"
+                                                                style="font-size: 12px;">{{ $message }}</span>
                                                         @enderror
                                                     </div>
                                                 </td>
@@ -1427,14 +1450,14 @@
                                                             wire:change="resultMixF">
                                                             <option value="">Select id</option>
                                                             @foreach ($mix_infos as $mix_info)
-                                                            <option value="{{ mixInfo($mix_info->id)->mix_id }}">
-                                                                {{ mixInfo($mix_info->id)->mix_id }}
-                                                            </option>
+                                                                <option value="{{ mixInfo($mix_info->id)->mix_id }}">
+                                                                    {{ mixInfo($mix_info->id)->mix_id }}
+                                                                </option>
                                                             @endforeach
                                                         </select>
                                                         @error('result_mix_id_f')
-                                                        <span class="text-danger" style="font-size: 12px;">{{ $message
-                                                            }}</span>
+                                                            <span class="text-danger"
+                                                                style="font-size: 12px;">{{ $message }}</span>
                                                         @enderror
                                                     </div>
                                                 </td>
@@ -1444,8 +1467,8 @@
                                                             class="form-control form-color moistureremoveinput"
                                                             wire:model="location_f">
                                                         @error('location_f')
-                                                        <span class="text-danger" style="font-size: 12px;">{{ $message
-                                                            }}</span>
+                                                            <span class="text-danger"
+                                                                style="font-size: 12px;">{{ $message }}</span>
                                                         @enderror
                                                     </div>
                                                 </td>
@@ -1460,8 +1483,8 @@
                                                         </select>
                                                     </div>
                                                     @error('count_period_f')
-                                                    <span class="text-danger" style="font-size: 12px;">{{ $message
-                                                        }}</span>
+                                                        <span class="text-danger"
+                                                            style="font-size: 12px;">{{ $message }}</span>
                                                     @enderror
                                                 </td>
                                                 <td class="moistureremove">
@@ -1475,8 +1498,8 @@
                                                         </select>
                                                     </div>
                                                     @error('material_f')
-                                                    <span class="text-danger" style="font-size: 12px;">{{ $message
-                                                        }}</span>
+                                                        <span class="text-danger"
+                                                            style="font-size: 12px;">{{ $message }}</span>
                                                     @enderror
                                                 </td>
                                                 <td class="moistureremove">
@@ -1485,8 +1508,8 @@
                                                             class="form-control form-color moistureremoveinput"
                                                             wire:model="lift_f">
                                                         @error('lift_f')
-                                                        <span class="text-danger" style="font-size: 12px;">{{ $message
-                                                            }}</span>
+                                                            <span class="text-danger"
+                                                                style="font-size: 12px;">{{ $message }}</span>
                                                         @enderror
                                                     </div>
                                                 </td>
@@ -1496,8 +1519,8 @@
                                                             class="form-control form-color moistureremoveinput"
                                                             wire:model="layer_thickness_f">
                                                         @error('layer_thickness_f')
-                                                        <span class="text-danger" style="font-size: 12px;">{{ $message
-                                                            }}</span>
+                                                            <span class="text-danger"
+                                                                style="font-size: 12px;">{{ $message }}</span>
                                                         @enderror
                                                     </div>
                                                 </td>
@@ -1507,8 +1530,8 @@
                                                             class="form-control moistureremoveinput"
                                                             wire:model="max_theory_density_f" readonly>
                                                         @error('max_theory_density_f')
-                                                        <span class="text-danger" style="font-size: 12px;">{{ $message
-                                                            }}</span>
+                                                            <span class="text-danger"
+                                                                style="font-size: 12px;">{{ $message }}</span>
                                                         @enderror
                                                     </div>
                                                 </td>
@@ -1519,8 +1542,8 @@
                                                             wire:model="field_wet_density_f"
                                                             wire:keyup='changeTestResultF'>
                                                         @error('field_wet_density_f')
-                                                        <span class="text-danger" style="font-size: 12px;">{{ $message
-                                                            }}</span>
+                                                            <span class="text-danger"
+                                                                style="font-size: 12px;">{{ $message }}</span>
                                                         @enderror
                                                     </div>
                                                 </td>
@@ -1529,11 +1552,11 @@
                                                         <input type="number" step="any"
                                                             class="form-control moistureremoveinput"
                                                             wire:model="relative_compaction_f"
-                                                            style="@if($compaction_requirement_max < $relative_compaction_f || $compaction_requirement_min > $relative_compaction_f) color: red; @endif"
+                                                            style="@if ($compaction_requirement_max < $relative_compaction_f || $compaction_requirement_min > $relative_compaction_f) color: red; @endif"
                                                             readonly>
                                                         @error('relative_compaction_f')
-                                                        <span class="text-danger" style="font-size: 12px;">{{ $message
-                                                            }}</span>
+                                                            <span class="text-danger"
+                                                                style="font-size: 12px;">{{ $message }}</span>
                                                         @enderror
                                                     </div>
                                                 </td>
@@ -1542,8 +1565,8 @@
                                                         <input type="text" class="form-control moistureremoveinput"
                                                             wire:model="pass_fail_f">
                                                         @error('pass_fail_f')
-                                                        <span class="text-danger" style="font-size: 12px;">{{ $message
-                                                            }}</span>
+                                                            <span class="text-danger"
+                                                                style="font-size: 12px;">{{ $message }}</span>
                                                         @enderror
                                                     </div>
                                                 </td>
@@ -1614,28 +1637,24 @@
                             </div>
                         </div>
 
+                        <div class="row mt-3 mb-5">
+                            <div class="col-md-12 text-center">
+                                <form wire:submit.prevent='storeData'>
+                                    <button type="submit" class="btn btn-primary submit_btn"
+                                        style="background: green;">{!! loadingState(
+                                            'storeData',
+                                            'Save
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                and Send',
+                                        ) !!}</button>
+                                </form>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
         </div>
-        <form wire:submit.prevent='storeData'>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="card">
-                        <div class="row mb-3 mt-3">
-                            <div class="col-md-12" style="text-align: center;">
-                                <button type="submit" class="btn btn-primary submit_btn"
-                                    style="background: green;">{!! loadingState(
-                                        'storeData',
-                                        'Save
-                                                                                                                                                                                                                                                                                                                    and Send',
-                                    ) !!}</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </form>
+
     </div>
 
 
