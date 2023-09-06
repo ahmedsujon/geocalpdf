@@ -728,7 +728,7 @@
 
 
 
-                <div class="row">
+                <div class="row mt-3">
                     <div class="col-lg-12">
                         <h6>Test Results</h6>
                         <div class="table-responsive">
