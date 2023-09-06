@@ -146,11 +146,23 @@ class CreateSoilAggregateComponent extends Component
     }
     // ======================= Test Results ============================
 
-    // if ($this->max_load[$value] != null) {
-    //     $this->measured_strength[$value] = round($this->max_load[$value] / $this->area_cyl[$value], -1);
-    //     $this->measured_strength[$value] = round($this->max_load[$value] / ($this->area_cyl[$value] == 0 ? 1:$this->area_cyl[$value]), -1);
-    // } else {
-    //     $this->measured_strength[$value] = 0;
+    // public function measuredStrength($value)
+    // {
+    //     if ($this->max_load[$value] != null) {
+    //         $this->measured_strength[$value] = round($this->max_load[$value] / ($this->area_cyl[$value] == 0 ? 1:$this->area_cyl[$value]), -1);
+    //     } else {
+    //         $this->measured_strength[$value] = 0;
+    //     }
+    // }
+
+    // public function mixResultInfoA()
+    // {
+    //     $mixInfoA = MixInfo::where('mix_id', $this->result_mix_id_a)->first();
+    //     if ($mixInfoA) {
+    //         $this->max_theory_density_a = $mixInfoA->max_theoretical_density;
+    //     } else {
+    //         $this->max_theory_density_a = '';
+    //     }
     // }
 
 
@@ -161,11 +173,13 @@ class CreateSoilAggregateComponent extends Component
             if (!$this->dry_density_a) {
                 $this->dry_density_a = 0;
             }
-            $this->percent_comp_a = round(($this->dry_density_a / $proctor->max_dry_density_a) * 100, 1);
+            $value = round(($this->dry_density_a / $proctor->max_dry_density) * 100, 1);
+            $this->percent_comp_a = is_numeric($value) && floor($value) == $value ? $value . '.0' : $value;
         } else {
             $this->percent_comp_a = 0;
         }
     }
+
     public function changeTestResultB()
     {
         $proctor = Proctor::where('proctorid', $this->result_proctor_id_b)->first();
@@ -173,7 +187,8 @@ class CreateSoilAggregateComponent extends Component
             if (!$this->dry_density_b) {
                 $this->dry_density_b = 0;
             }
-            $this->percent_comp_b = round(($this->dry_density_b / $proctor->max_dry_density_b) * 100, 1);
+            $value = round(($this->dry_density_b / $proctor->max_dry_density) * 100, 1);
+            $this->percent_comp_b = is_numeric($value) && floor($value) == $value ? $value . '.0' : $value;
         } else {
             $this->percent_comp_b = 0;
         }
@@ -185,7 +200,8 @@ class CreateSoilAggregateComponent extends Component
             if (!$this->dry_density_c) {
                 $this->dry_density_c = 0;
             }
-            $this->percent_comp_c = round(($this->dry_density_c / $proctor->max_dry_density_c) * 100, 1);
+            $value = round(($this->dry_density_c / $proctor->max_dry_density) * 100, 1);
+            $this->percent_comp_c = is_numeric($value) && floor($value) == $value ? $value . '.0' : $value;
         } else {
             $this->percent_comp_c = 0;
         }
@@ -197,7 +213,8 @@ class CreateSoilAggregateComponent extends Component
             if (!$this->dry_density_d) {
                 $this->dry_density_d = 0;
             }
-            $this->percent_comp_d = round(($this->dry_density_d / $proctor->max_dry_density_d) * 100, 1);
+            $value = round(($this->dry_density_d / $proctor->max_dry_density) * 100, 1);
+            $this->percent_comp_d = is_numeric($value) && floor($value) == $value ? $value . '.0' : $value;
         } else {
             $this->percent_comp_d = 0;
         }
@@ -209,7 +226,8 @@ class CreateSoilAggregateComponent extends Component
             if (!$this->dry_density_e) {
                 $this->dry_density_e = 0;
             }
-            $this->percent_comp_e = round(($this->dry_density_e / $proctor->max_dry_density_e) * 100, 1);
+            $value = round(($this->dry_density_e / $proctor->max_dry_density) * 100, 1);
+            $this->percent_comp_e = is_numeric($value) && floor($value) == $value ? $value . '.0' : $value;
         } else {
             $this->percent_comp_e = 0;
         }
@@ -221,7 +239,8 @@ class CreateSoilAggregateComponent extends Component
             if (!$this->dry_density_f) {
                 $this->dry_density_f = 0;
             }
-            $this->percent_comp_f = round(($this->dry_density_f / $proctor->max_dry_density_f) * 100, 1);
+            $value = round(($this->dry_density_f / $proctor->max_dry_density) * 100, 1);
+            $this->percent_comp_f = is_numeric($value) && floor($value) == $value ? $value . '.0' : $value;
         } else {
             $this->percent_comp_f = 0;
         }
@@ -263,14 +282,14 @@ class CreateSoilAggregateComponent extends Component
         $data->requirement_minus = $this->requirement_minus;
         $data->general_info = $this->general_info;
         $data->observation = $this->observation;
-        
+
         // Proctor Information
         $data->proctor_id_a = $this->proctor_id_a;
         $data->description_a = $this->description_a;
         $data->test_method_a = $this->test_method_a;
         $data->max_dry_density_a = $this->max_dry_density_a;
         $data->optimum_moisture_a = $this->optimum_moisture_a;
-        
+
         $data->proctor_id_b = $this->proctor_id_b;
         $data->description_b = $this->description_b;
         $data->test_method_b = $this->test_method_b;
@@ -307,7 +326,7 @@ class CreateSoilAggregateComponent extends Component
         $data->percent_comp_a = $this->percent_comp_a;
         $data->comments_a = $this->comments_a;
         $data->material_a = $this->material_a;
-        
+
         $data->result_proctor_id_b = $this->result_proctor_id_b;
         $data->test_num_b = $this->test_num_b;
         $data->location_b = $this->location_b;

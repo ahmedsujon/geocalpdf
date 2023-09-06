@@ -643,7 +643,7 @@
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control form-color moistureremoveinput"
+                                                        <input step="any" class="form-control moistureremoveinput"
                                                             wire:model="percent_comp_a"
                                                             style="@if($compaction_requirement > $percent_comp_a) color: red; @endif"
                                                             readonly>
@@ -787,7 +787,7 @@
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control form-color moistureremoveinput"
+                                                        <input step="any" class="form-control moistureremoveinput"
                                                             wire:model="percent_comp_b"
                                                             style="@if($compaction_requirement > $percent_comp_b) color: red; @endif"
                                                             readonly>
@@ -935,7 +935,7 @@
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control form-color moistureremoveinput"
+                                                        <input type="text" class="form-control moistureremoveinput"
                                                             wire:model="percent_comp_c"
                                                             style="@if($compaction_requirement > $percent_comp_c) color: red; @endif"
                                                             readonly>
@@ -1083,7 +1083,7 @@
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control form-color moistureremoveinput"
+                                                        <input type="text" class="form-control moistureremoveinput"
                                                             wire:model="percent_comp_d"
                                                             style="@if($compaction_requirement > $percent_comp_d) color: red; @endif"
                                                             readonly>
@@ -1231,7 +1231,7 @@
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control form-color moistureremoveinput"
+                                                        <input type="text" class="form-control moistureremoveinput"
                                                             wire:model="percent_comp_e"
                                                             style="@if($compaction_requirement > $percent_comp_e) color: red; @endif"
                                                             readonly>
@@ -1379,7 +1379,7 @@
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control form-color moistureremoveinput"
+                                                        <input type="text" class="form-control moistureremoveinput"
                                                             wire:model="percent_comp_f"
                                                             style="@if($compaction_requirement > $percent_comp_f) color: red; @endif"
                                                             readonly>
