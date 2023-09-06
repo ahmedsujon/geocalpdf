@@ -256,7 +256,7 @@ class CreateCommercialComponent extends Component
         $mix_info = MixInfo::where('mix_id', $this->result_mix_id_a)->first();
         if ($mix_info) {
             if (!$this->field_wet_density_a) {
-                $this->field_wet_density_a = 0;
+                $this->field_wet_density_a = null;
             }
             $this->relative_compaction_a = round(($this->field_wet_density_a / $mix_info->max_theoretical_density) * 100, 1);
         } else {
@@ -268,7 +268,7 @@ class CreateCommercialComponent extends Component
         $mix_info = MixInfo::where('mix_id', $this->result_mix_id_b)->first();
         if ($mix_info) {
             if (!$this->field_wet_density_b) {
-                $this->field_wet_density_b = 0;
+                $this->field_wet_density_b = null;
             }
             $this->relative_compaction_b = round(($this->field_wet_density_b / $mix_info->max_theoretical_density) * 100, 1);
         } else {
@@ -280,7 +280,7 @@ class CreateCommercialComponent extends Component
         $mix_info = MixInfo::where('mix_id', $this->result_mix_id_c)->first();
         if ($mix_info) {
             if (!$this->field_wet_density_c) {
-                $this->field_wet_density_c = 0;
+                $this->field_wet_density_c = null;
             }
             $this->relative_compaction_c = round(($this->field_wet_density_c / $mix_info->max_theoretical_density) * 100, 1);
         } else {
@@ -292,7 +292,7 @@ class CreateCommercialComponent extends Component
         $mix_info = MixInfo::where('mix_id', $this->result_mix_id_d)->first();
         if ($mix_info) {
             if (!$this->field_wet_density_d) {
-                $this->field_wet_density_d = 0;
+                $this->field_wet_density_d = null;
             }
             $this->relative_compaction_d = round(($this->field_wet_density_d / $mix_info->max_theoretical_density) * 100, 1);
         } else {
@@ -304,7 +304,7 @@ class CreateCommercialComponent extends Component
         $mix_info = MixInfo::where('mix_id', $this->result_mix_id_e)->first();
         if ($mix_info) {
             if (!$this->field_wet_density_e) {
-                $this->field_wet_density_e = 0;
+                $this->field_wet_density_e = null;
             }
             $this->relative_compaction_e = round(($this->field_wet_density_e / $mix_info->max_theoretical_density) * 100, 1);
         } else {
@@ -316,7 +316,7 @@ class CreateCommercialComponent extends Component
         $mix_info = MixInfo::where('mix_id', $this->result_mix_id_f)->first();
         if ($mix_info) {
             if (!$this->field_wet_density_f) {
-                $this->field_wet_density_f = 0;
+                $this->field_wet_density_f = null;
             }
             $this->relative_compaction_f = round(($this->field_wet_density_f / $mix_info->max_theoretical_density) * 100, 1);
         } else {
