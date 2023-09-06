@@ -28,7 +28,11 @@ class CreateCommercialComponent extends Component
         $test_no_d, $result_mix_id_d, $location_d, $count_period_d, $material_d, $lift_d, $layer_thickness_d, $max_theory_density_d, $field_wet_density_d, $relative_compaction_d, $pass_fail_d,
         $test_no_e, $result_mix_id_e, $location_e, $count_period_e, $material_e, $lift_e, $layer_thickness_e, $max_theory_density_e, $field_wet_density_e, $relative_compaction_e, $pass_fail_e,
         $test_no_f, $result_mix_id_f, $location_f, $count_period_f, $material_f, $lift_f, $layer_thickness_f, $max_theory_density_f, $field_wet_density_f, $relative_compaction_f, $pass_fail_f;
-
+        
+    public function mount()
+    {
+        // You can perform any other initializations here if needed
+    }
     // get project information
     public $selected_project_ids = [];
     public function selectInfo()
@@ -179,7 +183,7 @@ class CreateCommercialComponent extends Component
             $this->max_theory_density_e = '';
         }
     }
- 
+
     public function resultMixIDF()
     {
         $resultMixIDE = MixInfo::where('mix_id', $this->result_mix_id_f)->first();
@@ -509,33 +513,45 @@ class CreateCommercialComponent extends Component
     {
         if ($this->compaction_requirement_max < $this->relative_compaction_a || $this->compaction_requirement_min > $this->relative_compaction_a) {
             $this->pass_fail_a = 'Fail';
-        } else {
+        } elseif ($this->compaction_requirement_max > $this->relative_compaction_a || $this->compaction_requirement_min < $this->relative_compaction_a) {
             $this->pass_fail_a = 'Pass';
+        } else {
+            $this->pass_fail_a = '';
         }
         if ($this->compaction_requirement_max < $this->relative_compaction_b || $this->compaction_requirement_min > $this->relative_compaction_b) {
             $this->pass_fail_b = 'Fail';
-        } else {
+        } elseif ($this->compaction_requirement_max > $this->relative_compaction_b || $this->compaction_requirement_min < $this->relative_compaction_b) {
             $this->pass_fail_b = 'Pass';
+        } else {
+            $this->pass_fail_b = '';
         }
         if ($this->compaction_requirement_max < $this->relative_compaction_c || $this->compaction_requirement_min > $this->relative_compaction_c) {
             $this->pass_fail_c = 'Fail';
-        } else {
+        } elseif ($this->compaction_requirement_max > $this->relative_compaction_c || $this->compaction_requirement_min < $this->relative_compaction_c) {
             $this->pass_fail_c = 'Pass';
+        } else {
+            $this->pass_fail_c = '';
         }
         if ($this->compaction_requirement_max < $this->relative_compaction_d || $this->compaction_requirement_min > $this->relative_compaction_d) {
             $this->pass_fail_d = 'Fail';
-        } else {
+        } elseif ($this->compaction_requirement_max > $this->relative_compaction_d || $this->compaction_requirement_min < $this->relative_compaction_d) {
             $this->pass_fail_d = 'Pass';
+        } else {
+            $this->pass_fail_d = '';
         }
         if ($this->compaction_requirement_max < $this->relative_compaction_e || $this->compaction_requirement_min > $this->relative_compaction_e) {
             $this->pass_fail_e = 'Fail';
-        } else {
+        } elseif ($this->compaction_requirement_max > $this->relative_compaction_e || $this->compaction_requirement_min < $this->relative_compaction_e) {
             $this->pass_fail_e = 'Pass';
+        } else {
+            $this->pass_fail_e = '';
         }
         if ($this->compaction_requirement_max < $this->relative_compaction_f || $this->compaction_requirement_min > $this->relative_compaction_f) {
             $this->pass_fail_f = 'Fail';
-        } else {
+        } elseif ($this->compaction_requirement_max > $this->relative_compaction_f || $this->compaction_requirement_min < $this->relative_compaction_f) {
             $this->pass_fail_f = 'Pass';
+        } else {
+            $this->pass_fail_f = '';
         }
 
         $projects = Project::orderBy('id', 'DESC')->get();

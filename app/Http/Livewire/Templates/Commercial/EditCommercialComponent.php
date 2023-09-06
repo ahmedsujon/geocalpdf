@@ -634,33 +634,45 @@ class EditCommercialComponent extends Component
     {
         if ($this->compaction_requirement_max < $this->relative_compaction_a || $this->compaction_requirement_min > $this->relative_compaction_a) {
             $this->pass_fail_a = 'Fail';
-        } else {
+        } elseif ($this->compaction_requirement_max > $this->relative_compaction_a || $this->compaction_requirement_min < $this->relative_compaction_a) {
             $this->pass_fail_a = 'Pass';
+        } else {
+            $this->pass_fail_a = '';
         }
         if ($this->compaction_requirement_max < $this->relative_compaction_b || $this->compaction_requirement_min > $this->relative_compaction_b) {
             $this->pass_fail_b = 'Fail';
-        } else {
+        } elseif ($this->compaction_requirement_max > $this->relative_compaction_b || $this->compaction_requirement_min < $this->relative_compaction_b) {
             $this->pass_fail_b = 'Pass';
+        } else {
+            $this->pass_fail_b = '';
         }
         if ($this->compaction_requirement_max < $this->relative_compaction_c || $this->compaction_requirement_min > $this->relative_compaction_c) {
             $this->pass_fail_c = 'Fail';
-        } else {
+        } elseif ($this->compaction_requirement_max > $this->relative_compaction_c || $this->compaction_requirement_min < $this->relative_compaction_c) {
             $this->pass_fail_c = 'Pass';
+        } else {
+            $this->pass_fail_c = '';
         }
         if ($this->compaction_requirement_max < $this->relative_compaction_d || $this->compaction_requirement_min > $this->relative_compaction_d) {
             $this->pass_fail_d = 'Fail';
-        } else {
+        } elseif ($this->compaction_requirement_max > $this->relative_compaction_d || $this->compaction_requirement_min < $this->relative_compaction_d) {
             $this->pass_fail_d = 'Pass';
+        } else {
+            $this->pass_fail_d = '';
         }
         if ($this->compaction_requirement_max < $this->relative_compaction_e || $this->compaction_requirement_min > $this->relative_compaction_e) {
             $this->pass_fail_e = 'Fail';
-        } else {
+        } elseif ($this->compaction_requirement_max > $this->relative_compaction_e || $this->compaction_requirement_min < $this->relative_compaction_e) {
             $this->pass_fail_e = 'Pass';
+        } else {
+            $this->pass_fail_e = '';
         }
         if ($this->compaction_requirement_max < $this->relative_compaction_f || $this->compaction_requirement_min > $this->relative_compaction_f) {
             $this->pass_fail_f = 'Fail';
-        } else {
+        } elseif ($this->compaction_requirement_max > $this->relative_compaction_f || $this->compaction_requirement_min < $this->relative_compaction_f) {
             $this->pass_fail_f = 'Pass';
+        } else {
+            $this->pass_fail_f = '';
         }
 
         $projects = Project::orderBy('id', 'DESC')->get();
