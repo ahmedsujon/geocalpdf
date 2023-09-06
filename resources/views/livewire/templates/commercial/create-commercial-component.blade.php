@@ -607,7 +607,7 @@
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <select class="form-select" wire:model="result_mix_id_a"
-                                                            wire:change="resultMixIDA">
+                                                            wire:change="resultMixA">
                                                             <option value="">Select id</option>
                                                             @foreach ($mix_infos as $mix_info)
                                                             <option value="{{ mixInfo($mix_info->id)->mix_id }}">
@@ -747,7 +747,7 @@
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <select class="form-select" wire:model="result_mix_id_b"
-                                                            wire:change="resultMixIDB">
+                                                            wire:change="resultMixB">
                                                             <option value="">Select id</option>
                                                             @foreach ($mix_infos as $mix_info)
                                                             <option value="{{ mixInfo($mix_info->id)->mix_id }}">
@@ -886,7 +886,7 @@
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <select class="form-select" wire:model="result_mix_id_c"
-                                                            wire:change="resultMixIDC">
+                                                            wire:change="resultMixC">
                                                             <option value="">Select id</option>
                                                             @foreach ($mix_infos as $mix_info)
                                                             <option value="{{ mixInfo($mix_info->id)->mix_id }}">
@@ -1025,7 +1025,7 @@
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <select class="form-select" wire:model="result_mix_id_d"
-                                                            wire:change="resultMixIDD">
+                                                            wire:change="resultMixD">
                                                             <option value="">Select id</option>
                                                             @foreach ($mix_infos as $mix_info)
                                                             <option value="{{ mixInfo($mix_info->id)->mix_id }}">
@@ -1164,7 +1164,7 @@
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <select class="form-select" wire:model="result_mix_id_e"
-                                                            wire:change="resultMixIDE">
+                                                            wire:change="resultMixE">
                                                             <option value="">Select id</option>
                                                             @foreach ($mix_infos as $mix_info)
                                                             <option value="{{ mixInfo($mix_info->id)->mix_id }}">
@@ -1303,7 +1303,7 @@
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <select class="form-select" wire:model="result_mix_id_f"
-                                                            wire:change="resultMixIDF">
+                                                            wire:change="resultMixF">
                                                             <option value="">Select id</option>
                                                             @foreach ($mix_infos as $mix_info)
                                                             <option value="{{ mixInfo($mix_info->id)->mix_id }}">
