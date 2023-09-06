@@ -14,15 +14,14 @@ use Livewire\Component;
 
 class CreateSoilAggregateComponent extends Component
 {
-    public $fields = [], $i = 1, $j = 1, $client_name, $responsible_person = [];
-
-    public $project_id, $client_id, $project_number, $date, $user_id, $weather, $troxler, $other, $model, $serial_number, $density_count, $moisture_count, $moisture_equation, $compaction_requirement, $requirement_plus, $requirement_minus, $general_info, $remark, $created_by, $status, $test_mode, $main_test_method, $observation, $office_address;
+    public $project_id, $client_id, $project_number, $date, $user_id, $weather, $troxler, $other, $model, $serial_number, $density_count, $moisture_count, $moisture_equation, $compaction_requirement, $requirement_plus, $requirement_minus, $general_info, $remark, $created_by, $status, $test_mode, $main_test_method, $observation, $office_address, $client_name, $responsible_person = [];
 
     public $proctor_id_a, $description_a, $test_method_a, $max_dry_density_a, $optimum_moisture_a, $proctor_info_a;
     public $proctor_id_b, $description_b, $test_method_b, $max_dry_density_b, $optimum_moisture_b, $proctor_info_b;
     public $proctor_id_c, $description_c, $test_method_c, $max_dry_density_c, $optimum_moisture_c, $proctor_info_c;
     public $proctor_id_d, $description_d, $test_method_d, $max_dry_density_d, $optimum_moisture_d, $proctor_info_d;
     public $proctor_id_e, $description_e, $test_method_e, $max_dry_density_e, $optimum_moisture_e, $proctor_info_e;
+    public $proctor_id_f, $description_f, $test_method_f, $max_dry_density_f, $optimum_moisture_f, $proctor_info_f;
 
     public $test_results_a, $test_num_a, $location_a, $test_dept_a, $elev_test_a, $wet_density_a, $dry_density_a, $moisture_content_a, $percent_comp_a, $comments_a, $result_proctor_id_a, $material_a;
     public $test_results_b, $test_num_b, $location_b, $test_dept_b, $elev_test_b, $wet_density_b, $dry_density_b, $moisture_content_b, $percent_comp_b, $comments_b, $result_proctor_id_b, $material_b;
@@ -30,20 +29,6 @@ class CreateSoilAggregateComponent extends Component
     public $test_results_d, $test_num_d, $location_d, $test_dept_d, $elev_test_d, $wet_density_d, $dry_density_d, $moisture_content_d, $percent_comp_d, $comments_d, $result_proctor_id_d, $material_d;
     public $test_results_e, $test_num_e, $location_e, $test_dept_e, $elev_test_e, $wet_density_e, $dry_density_e, $moisture_content_e, $percent_comp_e, $comments_e, $result_proctor_id_e, $material_e;
     public $test_results_f, $test_num_f, $location_f, $test_dept_f, $elev_test_f, $wet_density_f, $dry_density_f, $moisture_content_f, $percent_comp_f, $comments_f, $result_proctor_id_f, $material_f;
-
-    public function updated($fields)
-    {
-        $this->validateOnly($fields, [
-            'project_id' => 'required',
-            'client_id' => 'required',
-            'user_id' => 'required',
-            'date' => 'required',
-            'compaction_requirement' => 'required',
-            'general_info' => 'required',
-            'responsible_person' => 'required',
-            'office_address' => 'required',
-        ]);
-    }
 
     // get project information
     public $selected_project_ids = [];
@@ -144,6 +129,22 @@ class CreateSoilAggregateComponent extends Component
             $this->optimum_moisture_e = '';
         }
     }
+    public function proctorInfoF()
+    {
+        $data = Proctor::where('proctorid', $this->proctor_id_e)->first();
+
+        if ($data) {
+            $this->description_f = $data->material_description;
+            $this->test_method_f = $data->test_method;
+            $this->max_dry_density_f = $data->max_dry_density;
+            $this->optimum_moisture_f = $data->optimum_moisture;
+        } else {
+            $this->description_f = '';
+            $this->test_method_f = '';
+            $this->max_dry_density_f = '';
+            $this->optimum_moisture_f = '';
+        }
+    }
     // ======================= Test Results ============================
     public function changeTestResultA()
     {
@@ -152,11 +153,13 @@ class CreateSoilAggregateComponent extends Component
             if (!$this->dry_density_a) {
                 $this->dry_density_a = 0;
             }
-            $this->percent_comp_a = round(($this->dry_density_a / $proctor->max_dry_density_a) * 100, 1);
+            $value = round(($this->dry_density_a / $proctor->max_dry_density) * 100, 1);
+            $this->percent_comp_a = is_numeric($value) && floor($value) == $value ? $value . '.0' : $value;
         } else {
             $this->percent_comp_a = 0;
         }
     }
+
     public function changeTestResultB()
     {
         $proctor = Proctor::where('proctorid', $this->result_proctor_id_b)->first();
@@ -164,7 +167,8 @@ class CreateSoilAggregateComponent extends Component
             if (!$this->dry_density_b) {
                 $this->dry_density_b = 0;
             }
-            $this->percent_comp_b = round(($this->dry_density_b / $proctor->max_dry_density_b) * 100, 1);
+            $value = round(($this->dry_density_b / $proctor->max_dry_density) * 100, 1);
+            $this->percent_comp_b = is_numeric($value) && floor($value) == $value ? $value . '.0' : $value;
         } else {
             $this->percent_comp_b = 0;
         }
@@ -176,7 +180,8 @@ class CreateSoilAggregateComponent extends Component
             if (!$this->dry_density_c) {
                 $this->dry_density_c = 0;
             }
-            $this->percent_comp_c = round(($this->dry_density_c / $proctor->max_dry_density_c) * 100, 1);
+            $value = round(($this->dry_density_c / $proctor->max_dry_density) * 100, 1);
+            $this->percent_comp_c = is_numeric($value) && floor($value) == $value ? $value . '.0' : $value;
         } else {
             $this->percent_comp_c = 0;
         }
@@ -188,7 +193,8 @@ class CreateSoilAggregateComponent extends Component
             if (!$this->dry_density_d) {
                 $this->dry_density_d = 0;
             }
-            $this->percent_comp_d = round(($this->dry_density_d / $proctor->max_dry_density_d) * 100, 1);
+            $value = round(($this->dry_density_d / $proctor->max_dry_density) * 100, 1);
+            $this->percent_comp_d = is_numeric($value) && floor($value) == $value ? $value . '.0' : $value;
         } else {
             $this->percent_comp_d = 0;
         }
@@ -200,7 +206,8 @@ class CreateSoilAggregateComponent extends Component
             if (!$this->dry_density_e) {
                 $this->dry_density_e = 0;
             }
-            $this->percent_comp_e = round(($this->dry_density_e / $proctor->max_dry_density_e) * 100, 1);
+            $value = round(($this->dry_density_e / $proctor->max_dry_density) * 100, 1);
+            $this->percent_comp_e = is_numeric($value) && floor($value) == $value ? $value . '.0' : $value;
         } else {
             $this->percent_comp_e = 0;
         }
@@ -212,24 +219,38 @@ class CreateSoilAggregateComponent extends Component
             if (!$this->dry_density_f) {
                 $this->dry_density_f = 0;
             }
-            $this->percent_comp_f = round(($this->dry_density_f / $proctor->max_dry_density_f) * 100, 1);
+            $value = round(($this->dry_density_f / $proctor->max_dry_density) * 100, 1);
+            $this->percent_comp_f = is_numeric($value) && floor($value) == $value ? $value . '.0' : $value;
         } else {
             $this->percent_comp_f = 0;
         }
+    }
+
+    public function updated($fields)
+    {
+        $this->validateOnly($fields, [
+            'project_id' => 'required',
+            'user_id' => 'required',
+            'date' => 'required',
+            'compaction_requirement' => 'required',
+            'general_info' => 'required',
+            'responsible_person' => 'required',
+            'office_address' => 'required',
+            'observation' => 'required',
+        ]);
     }
 
     public function storeData()
     {
         $this->validate([
             'project_id' => 'required',
-            'client_id' => 'required',
             'user_id' => 'required',
             'date' => 'required',
             'compaction_requirement' => 'required',
             'general_info' => 'required',
             'responsible_person' => 'required',
-            'proctor_id' => 'required',
             'office_address' => 'required',
+            'observation' => 'required',
         ]);
 
         $data = new SoilAggregate();
@@ -254,14 +275,14 @@ class CreateSoilAggregateComponent extends Component
         $data->requirement_minus = $this->requirement_minus;
         $data->general_info = $this->general_info;
         $data->observation = $this->observation;
-        
+
         // Proctor Information
         $data->proctor_id_a = $this->proctor_id_a;
         $data->description_a = $this->description_a;
         $data->test_method_a = $this->test_method_a;
         $data->max_dry_density_a = $this->max_dry_density_a;
         $data->optimum_moisture_a = $this->optimum_moisture_a;
-        
+
         $data->proctor_id_b = $this->proctor_id_b;
         $data->description_b = $this->description_b;
         $data->test_method_b = $this->test_method_b;
@@ -298,7 +319,7 @@ class CreateSoilAggregateComponent extends Component
         $data->percent_comp_a = $this->percent_comp_a;
         $data->comments_a = $this->comments_a;
         $data->material_a = $this->material_a;
-        
+
         $data->result_proctor_id_b = $this->result_proctor_id_b;
         $data->test_num_b = $this->test_num_b;
         $data->location_b = $this->location_b;
@@ -397,7 +418,7 @@ class CreateSoilAggregateComponent extends Component
         }
 
         session()->flash('message', 'File created successfully');
-        return redirect()->route('template.commercial');
+        return redirect()->route('template.soil.aggregate');
     }
 
     public function render()

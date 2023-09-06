@@ -22,6 +22,7 @@
 
         .moistureremoveinput {
             background: #CCFFFF;
+            text-align: center;
         }
     </style>
     <div class="container-fluid">
@@ -70,30 +71,30 @@
                                     </select>
                                 </div>
                                 @error('project_id')
-                                <span class="text-danger mb-3" style="font-size: 12px;">{{ $message }}</span>
+                                <span class="text-danger mt-2" style="font-size: 12px;">{{ $message }}</span>
                                 @enderror
-                                <div class="input-group mt-3">
+                                <div class="input-group mt-2">
                                     <span class="input-group-text">Client Name:</span>
                                     <input type="text" class="form-control form-color" wire:model="client_name" readonly>
                                 </div>
                                 @error('client_id')
                                 <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                 @enderror
-                                <div class="input-group mt-3">
+                                <div class="input-group mt-2">
                                     <span class="input-group-text">Project Number:</span>
                                     <input type="text" class="form-control form-color" wire:model="project_number" readonly>
                                 </div>
                                 @error('project_number')
                                 <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                 @enderror
-                                <div class="input-group mt-3">
+                                <div class="input-group mt-2">
                                     <span class="input-group-text">Date:</span>
                                     <input type="date" class="form-control form-color" wire:model="date">
                                 </div>
                                 @error('date')
                                 <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                 @enderror
-                                <div class="input-group mt-3">
+                                <div class="input-group mt-2">
                                     <span class="input-group-text">Technician:</span>
                                     <select class="form-select" wire:model="user_id">
                                         <option value="">Select Technician</option>
@@ -107,7 +108,7 @@
                                 <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                 @enderror
 
-                                <div class="input-group mt-3">
+                                <div class="input-group mt-2">
                                     <span class="input-group-text">Weather:</span>
                                     <input type="text" class="form-control form-color" wire:model="weather">
                                 </div>
@@ -115,7 +116,7 @@
                                 <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                 @enderror
 
-                                <div class="input-group mt-3">
+                                <div class="input-group mt-2">
                                     <span class="input-group-text">Test Method:</span>
                                     <select class="form-select" wire:model="main_test_method">
                                         <option value="">Select Test Method</option>
@@ -168,7 +169,7 @@
                                 <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                 @enderror
 
-                                <div class="input-group mt-3">
+                                <div class="input-group mt-2">
                                     <span class="input-group-text">Model:</span>
                                     <select class="form-select" wire:model="model">
                                         <option value="">Select Model</option>
@@ -181,7 +182,7 @@
                                     @enderror
                                 </div>
 
-                                <div class="input-group mt-3">
+                                <div class="input-group mt-2">
                                     <span class="input-group-text">Serial No:</span>
                                     <select class="form-select" wire:model="serial_number">
                                         <option value="">Select Serial No</option>
@@ -219,7 +220,7 @@
                                     @enderror
                                 </div>
 
-                                <div class="input-group mt-3">
+                                <div class="input-group mt-2">
                                     <span class="input-group-text">Density Standard Count:</span>
                                     <input type="number" class="form-control form-color" wire:model="density_count">
                                     @error('density_count')
@@ -227,7 +228,7 @@
                                     @enderror
                                 </div>
 
-                                <div class="input-group mt-3">
+                                <div class="input-group mt-2">
                                     <span class="input-group-text">Moisture Standard Count:</span>
                                     <input type="number" class="form-control form-color" wire:model="moisture_count">
                                     @error('moisture_count')
@@ -235,7 +236,7 @@
                                     @enderror
                                 </div>
 
-                                <div class="input-group mt-3">
+                                <div class="input-group mt-2">
                                     <span class="input-group-text">Moisture/Density Equations used? (yes/no):</span>
                                     <select class="form-select" wire:model="moisture_equation">
                                         <option value="">Select</option>
@@ -247,7 +248,7 @@
                                     @enderror
                                 </div>
 
-                                <div class="input-group mt-3">
+                                <div class="input-group mt-2">
                                     <span class="input-group-text">Test Mode:</span>
                                     <select class="form-select" wire:model="test_mode">
                                         <option value="">Select Test Mode</option>
@@ -515,7 +516,7 @@
                                 </div>
                             </div>
                             <div class="col-md-10">
-                                <div class="input-group mt-3">
+                                <div class="input-group mt-2">
                                     <span class="input-group-text">General Location:</span>
                                     <input type="text" class="form-control form-color" wire:model="general_info">
                                 </div>
@@ -580,7 +581,7 @@
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <select class="form-select moistureremoveinput"
+                                                        <select class="form-select"
                                                             wire:model="test_dept_a" required>
                                                             <option value="">Select</option>
                                                             <option value="BS">BS</option>
@@ -643,7 +644,7 @@
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control form-color moistureremoveinput"
+                                                        <input step="any" class="form-control moistureremoveinput"
                                                             wire:model="percent_comp_a"
                                                             style="@if($compaction_requirement > $percent_comp_a) color: red; @endif"
                                                             readonly>
@@ -724,7 +725,7 @@
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <select class="form-select moistureremoveinput"
+                                                        <select class="form-select"
                                                             wire:model="test_dept_b" required>
                                                             <option value="">Select</option>
                                                             <option value="BS">BS</option>
@@ -787,7 +788,7 @@
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control form-color moistureremoveinput"
+                                                        <input step="any" class="form-control moistureremoveinput"
                                                             wire:model="percent_comp_b"
                                                             style="@if($compaction_requirement > $percent_comp_b) color: red; @endif"
                                                             readonly>
@@ -872,7 +873,7 @@
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <select class="form-select moistureremoveinput"
+                                                        <select class="form-select"
                                                             wire:model="test_dept_c" required>
                                                             <option value="">Select</option>
                                                             <option value="BS">BS</option>
@@ -935,7 +936,7 @@
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control form-color moistureremoveinput"
+                                                        <input type="text" class="form-control moistureremoveinput"
                                                             wire:model="percent_comp_c"
                                                             style="@if($compaction_requirement > $percent_comp_c) color: red; @endif"
                                                             readonly>
@@ -1020,7 +1021,7 @@
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <select class="form-select moistureremoveinput"
+                                                        <select class="form-select"
                                                             wire:model="test_dept_d" required>
                                                             <option value="">Select</option>
                                                             <option value="BS">BS</option>
@@ -1083,7 +1084,7 @@
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control form-color moistureremoveinput"
+                                                        <input type="text" class="form-control moistureremoveinput"
                                                             wire:model="percent_comp_d"
                                                             style="@if($compaction_requirement > $percent_comp_d) color: red; @endif"
                                                             readonly>
@@ -1168,7 +1169,7 @@
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <select class="form-select moistureremoveinput"
+                                                        <select class="form-select"
                                                             wire:model="test_dept_e" required>
                                                             <option value="">Select</option>
                                                             <option value="BS">BS</option>
@@ -1231,7 +1232,7 @@
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control form-color moistureremoveinput"
+                                                        <input type="text" class="form-control moistureremoveinput"
                                                             wire:model="percent_comp_e"
                                                             style="@if($compaction_requirement > $percent_comp_e) color: red; @endif"
                                                             readonly>
@@ -1316,7 +1317,7 @@
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <select class="form-select moistureremoveinput"
+                                                        <select class="form-select"
                                                             wire:model="test_dept_f" required>
                                                             <option value="">Select</option>
                                                             <option value="BS">BS</option>
@@ -1379,7 +1380,7 @@
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control form-color moistureremoveinput"
+                                                        <input type="text" class="form-control moistureremoveinput"
                                                             wire:model="percent_comp_f"
                                                             style="@if($compaction_requirement > $percent_comp_f) color: red; @endif"
                                                             readonly>
@@ -1473,8 +1474,8 @@
                             <span class="text-danger" style="font-size: 12px;">{{ $message
                                 }}</span>
                             @enderror
-                            <div class="col-md-3 mt-3"></div>
-                            <div class="col-md-10 mb-3 mt-3">
+                            <div class="col-md-3 mt-2"></div>
+                            <div class="col-md-10 mt-2">
                                 <div class="input-group">
                                     <span class="input-group-text">Remark</span>
                                     <textarea class="form-control form-color" aria-label="With textarea" spellcheck="false"
@@ -1487,7 +1488,7 @@
                                         class="cGcvT"></grammarly-extension>
                                 </div>
                             </div>
-                            <div class="col-md-10" wire:ignore>
+                            <div class="col-md-10 mt-2" wire:ignore>
                                 <div class="input-group">
                                     <span class="input-group-text">Responsible Persons:</span>
                                     <select class="form-select moistureremoveinput multiple_selector" id="action"
@@ -1510,7 +1511,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="row mb-5 mt-3">
+                    <div class="row mb-5 mt-2">
                         <div class="col-md-12" style="text-align: right;">
                             <button type="submit" class="btn btn-primary submit_btn" style="background: green;">{!! loadingState('storeData', 'Save
                                 and Send') !!}</button>

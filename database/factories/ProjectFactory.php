@@ -17,7 +17,7 @@ class ProjectFactory extends Factory
             'project_number' => $this->faker->randomNumber(),
             'name' => $this->faker->name,
             'location' => $this->faker->text(10),
-            'client_id' => $this->faker->numberBetween(1, 5),
+            'client_id' => $this->faker->numberBetween(1, 2),
         ];
     }
 }

@@ -32,7 +32,7 @@ class SoilAggregateComponent extends Component
         $this->dispatchBrowserEvent('FileDeleted');
     }
 
-    public function getCommercialRepresentative(Request $request)
+    public function getSoilRepresentative(Request $request)
     {
         $output = '';
         $project_id = $request->get('project_id');
@@ -61,7 +61,7 @@ class SoilAggregateComponent extends Component
         echo $output;
     }
 
-    public function editCommercialRepresentative(Request $request)
+    public function editSoilRepresentative(Request $request)
     {
         $output = '';
         $value = $request->get('value');
