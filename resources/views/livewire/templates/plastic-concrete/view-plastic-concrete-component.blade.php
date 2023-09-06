@@ -57,7 +57,7 @@
                             <div class="col-md-4">
                                 <div class="content text-center pt-2 pb-2">
                                     <button type="button"
-                                        class="btn btn-outline-success waves-effect waves-light">Status: {{ $status
+                                        class="btn btn-success">Status: {{ $status
                                         }}</button>
                                 </div>
                             </div>

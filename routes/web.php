@@ -132,7 +132,7 @@ Route::get('/soil-aggregate/show/{file_id}', ViewSoilAggregateComponent::class)-
 
 // // Get Representative for Aggregate
 Route::post('/soil-representative', [SoilAggregateComponent::class, 'getSoilRepresentative'])->name('fetch_soil_representative');
-Route::post('/aggregate-representative', [SoilAggregateComponent::class, 'editSoilRepresentative'])->name('update_aggregate_representative');
+Route::post('/aggregate-representative', [SoilAggregateComponent::class, 'editSoilRepresentative'])->name('edit_soil_aggregate_representative');
 
 // LogActivity
 Route::get('add-to-log', LogActivityComponent::class);

@@ -82,10 +82,10 @@
                                         <td>{{ user($file->created_by)->name }}</td>
                                         <td>{{ $file->created_at }}</td>
                                         <td style="text-align: center;">
-                                            <a href="{{ route('commercial.show', ['file_id' => $file->id]) }}" type="button"
+                                            <a href="{{ route('soil.aggregate.show', ['file_id' => $file->id]) }}" type="button"
                                                 class="btn btn-outline-success btn-icon-circle btn-icon-circle-sm"><i
                                                     class="ti ti-eye"></i></a>
-                                            <a href="{{ route('commercial.update', ['file_id' => $file->id]) }}" type="button"
+                                            <a href="{{ route('soil.aggregate.update', ['file_id' => $file->id]) }}" type="button"
                                                 class="btn btn-outline-warning btn-icon-circle btn-icon-circle-sm"><i
                                                     class="ti ti-edit"></i></a>
                                             <a wire:click.prevent="deleteConfirmation({{ $file->id }})" type="button"
