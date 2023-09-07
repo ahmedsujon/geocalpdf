@@ -25,7 +25,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">REPORT OF FIELD INSPECTION OF CONCRETE – SINGLE MIX</h4>
+                        <h4 class="card-title">REPORT OF FIELD INSPECTION OF CONCRETE – SINGLE MIX (DATA SET 1)</h4>
                         <a style="float: right" href="{{ route('concrete.create') }}"
                             class="card-button btn btn-sm btn-primary"><i class="ti ti-plus"></i> ADD NEW</a>
                     </div>

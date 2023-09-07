@@ -139,7 +139,34 @@
                                 id="sidebarInspection">
                                 <ul class="nav flex-column">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('template.concrete') }}">Single Mix Form</a>
+                                        <a class="nav-link" href="{{ route('template.concrete') }}">Field Data (Set 1)</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('template.concrete.two') }}">Field Data (Set 2)</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('template.concrete.three') }}">Field Data (Set 3)</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('template.concrete.four') }}">Field Data (Set 4)</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('template.concrete.five') }}">Field Data (Set 5)</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('template.concrete.six') }}">Field Data (Set 6)</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('template.concrete.seven') }}">Field Data (Set 7)</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('template.concrete.eight') }}">Field Data (Set 8)</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('template.concrete.nine') }}">Field Data (Set 9)</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('template.concrete.ten') }}">Field Data (Set 10)</a>
                                     </li>
                                 </ul>
                             </div>

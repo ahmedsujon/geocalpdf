@@ -21,9 +21,148 @@
 
         .moistureremoveinput {
             background: #CCFFFF;
+            text-align: center;
         }
-        h6{
+
+        h6 {
             font-weight: 600;
+        }
+
+        .commercial-form {
+            padding: 25px;
+            border: 3px solid #ddd !important
+        }
+
+        .commercial-form .input-group-text {
+            padding: 0.1rem 0.3rem;
+            font-size: 0.8rem;
+            line-height: 1.4;
+            border: 1px solid #000000;
+            border-radius: 0
+        }
+
+        .commercial-form .form-control {
+            padding: 0.1rem 1rem 0.1rem 0.5rem;
+            font-size: 0.8rem;
+            line-height: 1.4;
+            border: 1px solid #000000;
+            border-radius: 0
+        }
+
+        .commercial-form .form-select {
+            padding: 0.1rem 1rem 0.1rem 0.5rem;
+            font-size: 0.8rem;
+            line-height: 1.4;
+            border: 0px solid #000000;
+            border-radius: 0
+        }
+
+        .commercial-form .select-border .form-select {
+            border: 1px solid #000000;
+        }
+
+        .commercial-form .width28 {
+            width: 28%;
+        }
+
+        .commercial-form .width18 {
+            width: 18%;
+        }
+
+        .commercial-form .width17 {
+            width: 17.3%;
+        }
+
+        .commercial-form .width12 {
+            width: 12%;
+        }
+
+        .commercial-form .width9 {
+            width: 9.1%;
+        }
+
+        .select2-container--bootstrap-5 .select2-selection {
+            min-height: calc(1.5em + 0.75rem + 2px);
+            padding: 0.1rem 1rem 0.1rem 0.5rem;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            border: 1px solid #000000;
+        }
+
+        .commercial-form .select2-container--bootstrap-5 .select2-selection--multiple .select2-search .select2-search__field {
+            width: 100%;
+            height: 1.5rem;
+            margin-top: 4px;
+            margin-left: 0;
+            font-family: inherit;
+            line-height: 1.5;
+            background-color: transparent;
+            font-size: 0.8rem;
+            color: red;
+        }
+
+        .commercial-form tbody>tr td {
+            border-top: 1px solid #000000;
+            border-right: 1px solid #000000;
+            border-bottom: 1px solid #000000;
+            border-left: 1px solid #000000;
+        }
+
+        .commercial-form thead>tr th {
+            border-top: 1px solid #000000;
+            border-right: 1px solid #000000;
+            border-bottom: 1px solid #000000;
+            border-left: 1px solid #000000;
+        }
+
+        .commercial-form tbody>tr td:first-child {
+            border-top: 1px solid #000000;
+            border-right: 1px solid #000000;
+            border-bottom: 1px solid #000000;
+            border-left: 1px solid #000000;
+        }
+
+        .commercial-form thead>tr th:first-child {
+            border-top: 1px solid #000000;
+            border-right: 1px solid #000000;
+            border-bottom: 1px solid #000000;
+            border-left: 1px solid #000000;
+        }
+
+        .commercial-form thead>tr th:last-child {
+            border-top: 1px solid #000000;
+            border-right: 1px solid #000000;
+            border-bottom: 1px solid #000000;
+            border-left: 1px solid #000000;
+        }
+
+        .commercial-form .table tbody tr:last-child td,
+        .commercial-form .table tbody tr:last-child th {
+            border-top: 1px solid #000000;
+            border-right: 1px solid #000000;
+            border-bottom: 1px solid #000000;
+            border-left: 1px solid #000000;
+        }
+
+        @media screen and (max-width:1370px) {
+
+            .commercial-form {
+                padding: 10px;
+            }
+
+            .commercial-form .width28 {
+                width: 46%;
+            }
+
+            .commercial-form .width18 {
+                width: 42%;
+            }
+
+            .commercial-form .width9 {
+                width: 21%;
+            }
+
         }
     </style>
     <div class="container-fluid">

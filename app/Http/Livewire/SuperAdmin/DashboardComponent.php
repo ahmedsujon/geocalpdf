@@ -2,10 +2,9 @@
 
 namespace App\Http\Livewire\SuperAdmin;
 
+use App\Models\Commercial;
 use App\Models\Concrete;
 use App\Models\FieldDensityCdot;
-use App\Models\FieldDensityCommercial;
-use App\Models\File;
 use App\Models\PlasticConcrete;
 use App\Models\SoilAggregate;
 use App\Models\TemplateOne;
@@ -56,7 +55,7 @@ class DashboardComponent extends Component
     {
         $commercial_forms = SoilAggregate::orderBy('id', 'DESC')->take(5)->get();
         $cdot_forms = FieldDensityCdot::orderBy('id', 'DESC')->take(5)->get();
-        $soil_aggregates = FieldDensityCommercial::orderBy('id', 'DESC')->take(5)->get();
+        $soil_aggregates = Commercial::orderBy('id', 'DESC')->take(5)->get();
         $concretes = Concrete::orderBy('id', 'DESC')->take(5)->get();
         $plastic_concretes = PlasticConcrete::orderBy('id', 'DESC')->take(5)->get();
         return view('livewire.super-admin.dashboard-component', ['cdot_forms'=>$cdot_forms, 'commercial_forms'=>$commercial_forms, 'soil_aggregates'=>$soil_aggregates, 'concretes'=>$concretes, 'plastic_concretes'=>$plastic_concretes])->layout('livewire.layouts.base');

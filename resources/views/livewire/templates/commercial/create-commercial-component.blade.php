@@ -166,7 +166,6 @@
         }
     </style>
     <div class="container-fluid">
-
         <div class="row">
             <div class="col-sm-12">
                 <div class="page-title-box">
@@ -199,8 +198,6 @@
                     </div>
                     <div class="col-md-4"></div>
                 </div>
-
-
                 <div class="container">
                     <div class="row justify-content-md-center">
                         <div class="col col-lg-6 select-border">
@@ -1683,10 +1680,7 @@
 
             </div>
         </div>
-
     </div>
-
-
 </div>
 </div>
 
