@@ -2,8 +2,9 @@
 
 namespace App\Http\Livewire\Project;
 
+use App\Models\Commercial;
 use App\Models\FieldDensityCdot;
-use App\Models\FieldDensityCommercial;
+use App\Models\InspectionConcrete;
 use App\Models\Project;
 use App\Models\TemplateOne;
 use Livewire\Component;
@@ -26,8 +27,8 @@ class ProjectComponent extends Component
     public function deleteData()
     {
         $cdot = FieldDensityCdot::where('project_id', $this->delete_id)->get();
-        $commercial = FieldDensityCommercial::where('project_id', $this->delete_id)->get();
-        $temp_one = TemplateOne::where('project_id', $this->delete_id)->get();
+        $commercial = Commercial::where('project_id', $this->delete_id)->get();
+        $temp_one = InspectionConcrete::where('project_id', $this->delete_id)->get();
 
         if ($cdot->count() > 0 || $commercial->count() > 0 || $temp_one->count() > 0) {
             $this->dispatchBrowserEvent('projectDeleteError');

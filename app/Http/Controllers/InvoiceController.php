@@ -3,19 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Commercial;
-use App\Models\CommercialTestResult;
-use App\Models\Concrete;
-use App\Models\ConcreteData;
 use App\Models\FieldDensityCdot;
-use App\Models\FieldDensityCommercial;
 use App\Models\InspectionConcrete;
 use App\Models\PlasticConcrete;
 use App\Models\ProctorData;
 use App\Models\SoilAggregate;
 use App\Models\SoilAggregateMixData;
 use App\Models\SoilAggregateTestResult;
-use App\Models\TemplateOne;
-use App\Models\TemplateOneData;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 
@@ -45,9 +39,6 @@ class InvoiceController extends Controller
         $data->client_email = client($data->client_id)->email;
         $data->client_phone = client($data->client_id)->phone;
         $data->client_company_name = client($data->client_id)->company_name;
-
-        $data->proctor_infos = SoilAggregateMixData::where('soil_aggregate_id', $data->id)->get();
-        $data->test_results = SoilAggregateTestResult::where('soil_aggregate_id', $data->id)->get();
 
         $pdf = Pdf::loadView('pdf.commercial', compact('data'));
         return $pdf->stream('asphalt-field-density-commercial-report.pdf');

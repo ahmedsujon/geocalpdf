@@ -53,7 +53,7 @@
 
                 <div class="col">
                     <div style="text-align: center" class="card">
-                        <a href="{{ route('template-one.create') }}">
+                        <a href="{{ route('concrete.create') }}">
                             <div class="card-body">
                                 <h5 class="card-title"></h5>
                             </div>

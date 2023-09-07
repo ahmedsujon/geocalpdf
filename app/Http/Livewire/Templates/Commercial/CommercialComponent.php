@@ -3,7 +3,6 @@
 namespace App\Http\Livewire\Templates\Commercial;
 
 use App\Models\Commercial;
-use App\Models\FieldDensityCommercial;
 use App\Models\Project;
 use App\Models\SubClient;
 use App\Models\User;

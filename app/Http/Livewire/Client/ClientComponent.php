@@ -3,8 +3,8 @@
 namespace App\Http\Livewire\Client;
 
 use App\Models\Client;
+use App\Models\Commercial;
 use App\Models\FieldDensityCdot;
-use App\Models\FieldDensityCommercial;
 use App\Models\TemplateOne;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -27,10 +27,9 @@ class ClientComponent extends Component
     public function deleteData()
     {
         $cdot = FieldDensityCdot::where('client_id', $this->delete_id)->get();
-        $commercial = FieldDensityCommercial::where('client_id', $this->delete_id)->get();
-        $temp_one = TemplateOne::where('client_id', $this->delete_id)->get();
+        $commercial = Commercial::where('client_id', $this->delete_id)->get();
 
-        if ($cdot->count() > 0 || $commercial->count() > 0 || $temp_one->count() > 0) {
+        if ($cdot->count() > 0 || $commercial->count() > 0) {
             $this->dispatchBrowserEvent('clientDeleteError');
         } else {
             $data = Client::find($this->delete_id);
@@ -39,7 +38,6 @@ class ClientComponent extends Component
             $this->dispatchBrowserEvent('ClientDeleted');
         }
     }
-
 
     public function render()
     {
