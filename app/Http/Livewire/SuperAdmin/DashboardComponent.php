@@ -6,6 +6,7 @@ use App\Models\Concrete;
 use App\Models\FieldDensityCdot;
 use App\Models\FieldDensityCommercial;
 use App\Models\File;
+use App\Models\PlasticConcrete;
 use App\Models\SoilAggregate;
 use App\Models\TemplateOne;
 use DateTime;
@@ -57,8 +58,7 @@ class DashboardComponent extends Component
         $cdot_forms = FieldDensityCdot::orderBy('id', 'DESC')->take(5)->get();
         $soil_aggregates = FieldDensityCommercial::orderBy('id', 'DESC')->take(5)->get();
         $concretes = Concrete::orderBy('id', 'DESC')->take(5)->get();
-        $temp_one_forms = TemplateOne::orderBy('id', 'DESC')->take(5)->get();
-        // $activities = FieldDensityCdot::orderBy('id', 'DESC')->paginate($this->sortingValue);
-        return view('livewire.super-admin.dashboard-component', ['cdot_forms'=>$cdot_forms, 'commercial_forms'=>$commercial_forms, 'soil_aggregates'=>$soil_aggregates, 'concretes'=>$concretes, 'temp_one_forms'=>$temp_one_forms])->layout('livewire.layouts.base');
+        $plastic_concretes = PlasticConcrete::orderBy('id', 'DESC')->take(5)->get();
+        return view('livewire.super-admin.dashboard-component', ['cdot_forms'=>$cdot_forms, 'commercial_forms'=>$commercial_forms, 'soil_aggregates'=>$soil_aggregates, 'concretes'=>$concretes, 'plastic_concretes'=>$plastic_concretes])->layout('livewire.layouts.base');
     }
 }

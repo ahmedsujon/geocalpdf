@@ -210,8 +210,8 @@
                                 </thead>
                                 <tbody>
 
-                                    @if ($temp_one_forms->count() > 0)
-                                    @foreach ($temp_one_forms as $file)
+                                    @if ($plastic_concretes->count() > 0)
+                                    @foreach ($plastic_concretes as $file)
                                     <tr>
                                         <td>
                                             @if ( project($file->project_id)->avatar)
@@ -230,7 +230,7 @@
                                                 }}</span></td>
                                         <td>{{ $file->created_at }}</td>
                                         <td style="text-align: center;">
-                                            <a href="{{ route('template.one.update', ['file_id' => $file->id]) }}"
+                                            <a href="{{ route('plastic.concrete.update', ['file_id' => $file->id]) }}"
                                                 type="button"
                                                 class="btn btn-outline-warning btn-icon-circle btn-icon-circle-sm"><i
                                                     class="ti ti-edit"></i></a>
@@ -432,15 +432,15 @@
                     <!--end card-header-->
                     <div class="card-body">
                         <div class="main-timeline mt-3">
-                            @if ($temp_one_forms->count() > 0)
-                            @foreach ($temp_one_forms as $file)
+                            @if ($plastic_concretes->count() > 0)
+                            @foreach ($plastic_concretes as $file)
                             <div class="timeline">
                                 <span class="timeline-icon"></span>
                                 <span class="year">
                                     <?php echo App\Http\Livewire\SuperAdmin\DashboardComponent::ago($file->created_at); ?>
                                 </span>
                                 <div class="timeline-content">
-                                    <a href="{{ route('template.one.update', ['file_id' => $file->id]) }}"
+                                    <a href="{{ route('plastic.concrete.update', ['file_id' => $file->id]) }}"
                                         class="title">{{ getProject($file->project_id)->name }} - {{$file->status }} ({{
                                         getUser($file->created_by)->name }}) - Created Time: <span class="post">{{
                                             $file->created_at }}</span></a>

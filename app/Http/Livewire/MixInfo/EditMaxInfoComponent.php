@@ -20,6 +20,18 @@ class EditMaxInfoComponent extends Component
         $this->max_theoretical_specificGravity = $mixInfo->max_theoretical_specificGravity;
     }
 
+    public function updated($fields)
+    {
+        $this->validateOnly($fields, [
+            'mix_id' => 'required',
+            'supplier' => 'required',
+            'plant' => 'required',
+            'mix_type' => 'required',
+            'max_theoretical_density' => 'required',
+            'max_theoretical_specificGravity' => 'required',
+        ]);
+    }
+    
     public function updateData()
     {
         $this->validate([

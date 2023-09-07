@@ -34,6 +34,20 @@ class EditProjectComponent extends Component
         $this->responsible_pe = json_decode($project->responsible_pe);
     }
 
+    public function updated($fields)
+    {
+        $this->validateOnly($fields, [
+            'project_number'=>'required|unique:projects,project_number',
+            'name'=>'required',
+            'location'=>'required',
+            'client_id'=>'required',
+            'responsible_ft'=>'required',
+            'responsible_supervisor'=>'required',
+            'responsible_clerk'=>'required',
+            'responsible_pe'=>'required',
+        ]);
+    }
+
     public function storeData()
     {
         $this->validate([

@@ -4,25 +4,10 @@ use App\Http\Controllers\BaseController;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Livewire\Auth\LoginComponent;
 use App\Http\Livewire\Auth\RegistrationComponent;
-use App\Http\Livewire\Clerk\DashboardComponent as ClerkDashboardComponent;
 use App\Http\Livewire\Client\AddClientComponent;
 use App\Http\Livewire\Client\ClientComponent;
 use App\Http\Livewire\Client\EditClientComponent;
 use App\Http\Livewire\Client\ShowClientComponent;
-use App\Http\Livewire\FieldMoisture\Cdot\AddCdotComponent;
-use App\Http\Livewire\FieldMoisture\Cdot\CdotComponent;
-use App\Http\Livewire\FieldMoisture\Cdot\EditCdotComponent;
-use App\Http\Livewire\FieldMoisture\Cdot\ViewCdotComponent;
-use App\Http\Livewire\FieldMoisture\Commercial\AddCommercialComponent;
-use App\Http\Livewire\FieldMoisture\Commercial\ArchiveCommercialComponent;
-use App\Http\Livewire\FieldMoisture\Commercial\CommercialComponent;
-use App\Http\Livewire\FieldMoisture\Commercial\EditCommercialComponent;
-use App\Http\Livewire\FieldMoisture\Commercial\ViewCommercialComponent;
-use App\Http\Livewire\FieldTech\DashboardComponent as FieldTechDashboardComponent;
-use App\Http\Livewire\InspectionOfConcrete\AddConcreteComponent;
-use App\Http\Livewire\InspectionOfConcrete\ConcreteComponent;
-use App\Http\Livewire\InspectionOfConcrete\EditConcreteComponent;
-use App\Http\Livewire\InspectionOfConcrete\ViewConcreteComponent;
 use App\Http\Livewire\LogActivity\LogActivityComponent;
 use App\Http\Livewire\MixInfo\AddMaxInfoComponent;
 use App\Http\Livewire\MixInfo\EditMaxInfoComponent;
@@ -36,18 +21,28 @@ use App\Http\Livewire\Project\AddProjectComponent;
 use App\Http\Livewire\Project\EditProjectComponent;
 use App\Http\Livewire\Project\ProjectComponent;
 use App\Http\Livewire\Project\ViewProjectComponent;
-use App\Http\Livewire\ProjectEng\DashboardComponent as ProjectEngDashboardComponent;
-use App\Http\Livewire\SoilAggregate\AddSoilAggregateComponent;
-use App\Http\Livewire\SoilAggregate\EditSoilAggregateComponent;
-use App\Http\Livewire\SoilAggregate\SoilAggregateComponent;
-use App\Http\Livewire\SoilAggregate\ViewSoilAggregateComponent;
 use App\Http\Livewire\SuperAdmin\DashboardComponent;
-use App\Http\Livewire\Supervisor\DashboardComponent as SupervisorDashboardComponent;
+use App\Http\Livewire\Templates\Cdot\CdotComponent;
+use App\Http\Livewire\Templates\Cdot\CreateCdotComponent;
+use App\Http\Livewire\Templates\Cdot\EditCdotComponent;
+use App\Http\Livewire\Templates\Cdot\ViewCdotComponent;
+use App\Http\Livewire\Templates\Commercial\CommercialComponent;
+use App\Http\Livewire\Templates\Commercial\CreateCommercialComponent;
+use App\Http\Livewire\Templates\Commercial\EditCommercialComponent;
+use App\Http\Livewire\Templates\Commercial\ViewCommercialComponent;
+use App\Http\Livewire\Templates\InspectionConcrete\CreateInspectionConcreteComponent;
+use App\Http\Livewire\Templates\InspectionConcrete\EditInspectionConcreteComponent;
+use App\Http\Livewire\Templates\InspectionConcrete\InspectionConcreteComponent;
+use App\Http\Livewire\Templates\InspectionConcrete\ViewInspectionConcreteComponent;
+use App\Http\Livewire\Templates\PlasticConcrete\CreatePlasticConcreteComponent;
+use App\Http\Livewire\Templates\PlasticConcrete\EditPlasticConcreteComponent;
+use App\Http\Livewire\Templates\PlasticConcrete\PlasticConcreteComponent;
+use App\Http\Livewire\Templates\PlasticConcrete\ViewPlasticConcreteComponent;
+use App\Http\Livewire\Templates\SoilAggregate\CreateSoilAggregateComponent;
+use App\Http\Livewire\Templates\SoilAggregate\EditSoilAggregateComponent;
+use App\Http\Livewire\Templates\SoilAggregate\SoilAggregateComponent;
+use App\Http\Livewire\Templates\SoilAggregate\ViewSoilAggregateComponent;
 use App\Http\Livewire\Templates\TemplateComponent;
-use App\Http\Livewire\Templates\TemplatesOne\TemplateOneAddComponent;
-use App\Http\Livewire\Templates\TemplatesOne\TemplateOneComponent;
-use App\Http\Livewire\Templates\TemplatesOne\TemplateOneEditComponent;
-use App\Http\Livewire\Templates\TemplatesOne\TemplateOneViewComponent;
 use App\Http\Livewire\User\AddUserComponent;
 use App\Http\Livewire\User\EditUserComponent;
 use App\Http\Livewire\User\UserComponent;
@@ -85,72 +80,64 @@ Route::get('/project/add', AddProjectComponent::class)->name('project.create');
 Route::get('/project/edit/{project_id}', EditProjectComponent::class)->name('project.update');
 Route::get('/project/show/{project_id}', ViewProjectComponent::class)->name('project.show');
 
+// ====================Templates Routes List ===================
+// Templates
+Route::get('/templates', TemplateComponent::class)->name('templates');
 
+// CDOT
+Route::get('/cdot', CdotComponent::class)->name('template.cdot');
+Route::get('/cdot/create', CreateCdotComponent::class)->name('cdot.create');
+Route::get('/cdot/edit/{file_id}', EditCdotComponent::class)->name('cdot.update');
+Route::get('/cdot/show/{file_id}', ViewCdotComponent::class)->name('cdot.show');
 
-// Get Representative for template one
-Route::post('/get-representative-one', [TemplateOneComponent::class, 'getOneRepresentative'])->name('get_representative_one');
-Route::post('/edit-representative-one', [TemplateOneComponent::class, 'editOneRepresentative'])->name('edit_representative_one');
+// // Get Representative for CDOT
+Route::post('/get-representative', [CdotComponent::class, 'getCdotRepresentative'])->name('get_cdot_representative');
+Route::post('/edit-representative', [CdotComponent::class, 'editCdotRepresentative'])->name('edit_cdot_representative');
 
+// // Commercial
+Route::get('/commercial', CommercialComponent::class)->name('template.commercial');
+Route::get('/commercial/create', CreateCommercialComponent::class)->name('commercial.create');
+Route::get('/commercial/edit/{file_id}', EditCommercialComponent::class)->name('commercial.update');
+Route::get('/commercial/show/{file_id}', ViewCommercialComponent::class)->name('commercial.show');
+
+// // Get Representative for Commercial
+Route::post('/get-com-representative', [CommercialComponent::class, 'getCommercialRepresentative'])->name('get_commercial_representative');
+Route::post('/edit-com-representative', [CommercialComponent::class, 'editCommercialRepresentative'])->name('edit_commercial_representative');
+
+// // INSPECTION OF CONCRETE – SINGLE MIX ROUTE
+Route::get('/inspection/concrete', InspectionConcreteComponent::class)->name('template.concrete');
+Route::get('/inspection/concrete/create', CreateInspectionConcreteComponent::class)->name('concrete.create');
+Route::get('/inspection/concrete/edit/{file_id}', EditInspectionConcreteComponent::class)->name('concrete.update');
+Route::get('/inspection/concrete/{file_id}', ViewInspectionConcreteComponent::class)->name('concrete.show');
+
+// // Get Representative for INSPECTION OF CONCRETE – SINGLE MIX ROUTE
+Route::post('/get-inspection-representative', [InspectionConcreteComponent::class, 'getInspectionRepresentative'])->name('get_inspection_representative');
+Route::post('/edit-inspection-representative', [InspectionConcreteComponent::class, 'editInspectionRepresentative'])->name('edit_inspection_representative');
+
+// Plastic Concrete Routes
+Route::get('/plastic-concrete', PlasticConcreteComponent::class)->name('template.plastic.concrete.list');
+Route::get('/plastic-concrete-create', CreatePlasticConcreteComponent::class)->name('plastic.concrete.create');
+Route::get('/plastic-concrete/edit/{file_id}', EditPlasticConcreteComponent::class)->name('plastic.concrete.update');
+Route::get('/plastic-concrete/show/{file_id}', ViewPlasticConcreteComponent::class)->name('plastic.concrete.show');
+
+// // Get Representative for Template One
+Route::post('/get-plastic-concrete-representative', [PlasticConcreteComponent::class, 'getTempOneRepresentative'])->name('get_plastic_concrete_representative');
+Route::post('/edit-plastic-concrete-representative', [PlasticConcreteComponent::class, 'editTempOneRepresentative'])->name('edit_plastic_concrete_representative');
+
+// // Soil Aggregate
+Route::get('/soil-aggregate', SoilAggregateComponent::class)->name('template.soil.aggregate');
+Route::get('/soil-aggregate/create', CreateSoilAggregateComponent::class)->name('soil.aggregate.create');
+Route::get('/soil-aggregate/edit/{file_id}', EditSoilAggregateComponent::class)->name('soil.aggregate.update');
+Route::get('/soil-aggregate/show/{file_id}', ViewSoilAggregateComponent::class)->name('soil.aggregate.show');
+
+// // Get Representative for Aggregate
+Route::post('/soil-representative', [SoilAggregateComponent::class, 'getSoilRepresentative'])->name('fetch_soil_representative');
+Route::post('/aggregate-representative', [SoilAggregateComponent::class, 'editSoilRepresentative'])->name('edit_soil_aggregate_representative');
 
 // LogActivity
 Route::get('add-to-log', LogActivityComponent::class);
 Route::get('logActivity', LogActivityComponent::class);
 
-// Templates
-Route::get('/templates', TemplateComponent::class)->name('templates');
-
-// Soil Aggregate
-Route::get('/commercial', SoilAggregateComponent::class)->name('template.soil.aggregate');
-Route::get('/commercial/create', AddSoilAggregateComponent::class)->name('soil.aggregate.create');
-Route::get('/commercial/edit/{file_id}', EditSoilAggregateComponent::class)->name('soil.aggregate.update');
-Route::get('/commercial/show/{file_id}', ViewSoilAggregateComponent::class)->name('soil.aggregate.show');
-
-// Get Representative for Aggregate
-Route::post('/soil-representative', [SoilAggregateComponent::class, 'getSoilRepresentative'])->name('fetch_soil_representative');
-Route::post('/aggregate-representative', [SoilAggregateComponent::class, 'editSoilRepresentative'])->name('update_aggregate_representative');
-
-// Commercial
-Route::get('/soil-aggregate', CommercialComponent::class)->name('template.commercial');
-Route::get('/soil-aggregate/create', AddCommercialComponent::class)->name('commercial.create');
-Route::get('/soil-aggregate/edit/{file_id}', EditCommercialComponent::class)->name('commercial.update');
-Route::get('/soil-aggregate/show/{file_id}', ViewCommercialComponent::class)->name('commercial.show');
-Route::get('/archive/soil-aggregate', ArchiveCommercialComponent::class)->name('archive.commercial');
-
-
-// Get Representative for Commercial
-Route::post('/get-com-representative', [CommercialComponent::class, 'getCommercialRepresentative'])->name('get_commercial_representative');
-Route::post('/edit-com-representative', [CommercialComponent::class, 'editCommercialRepresentative'])->name('edit_commercial_representative');
-
-// CDOT
-Route::get('/cdot', CdotComponent::class)->name('template.cdot');
-Route::get('/cdot/create', AddCdotComponent::class)->name('cdot.create');
-Route::get('/cdot/edit/{file_id}', EditCdotComponent::class)->name('cdot.update');
-Route::get('/cdot/show/{file_id}', ViewCdotComponent::class)->name('cdot.show');
-
-// Get Representative for CDOT
-Route::post('/get-representative', [CdotComponent::class, 'getCdotRepresentative'])->name('get_cdot_representative');
-Route::post('/edit-representative', [CdotComponent::class, 'editCdotRepresentative'])->name('edit_cdot_representative');
-
-
-// Templates One Routes
-Route::get('/templateOne', TemplateOneComponent::class)->name('template-one.list');
-Route::get('/templateOne-create', TemplateOneAddComponent::class)->name('template-one.create');
-Route::get('/templateOne/edit/{file_id}', TemplateOneEditComponent::class)->name('template.one.update');
-Route::get('/templateOne/show/{file_id}', TemplateOneViewComponent::class)->name('template.one.show');
-
-// Get Representative for Template One
-Route::post('/get-one-representative', [TemplateOneComponent::class, 'getTempOneRepresentative'])->name('get_temp_one_representative');
-Route::post('/edit-one-representative', [TemplateOneComponent::class, 'editTempOneRepresentative'])->name('edit_temp_one_representative');
-
-// INSPECTION OF CONCRETE – SINGLE MIX ROUTE
-Route::get('/inspection/concrete', ConcreteComponent::class)->name('template.concrete');
-Route::get('/inspection/concrete/create', AddConcreteComponent::class)->name('concrete.create');
-Route::get('/inspection/concrete/edit/{file_id}', EditConcreteComponent::class)->name('concrete.update');
-Route::get('/inspection/concrete/{file_id}', ViewConcreteComponent::class)->name('concrete.show');
-
-// Get Representative for INSPECTION OF CONCRETE – SINGLE MIX ROUTE
-Route::post('/get-inspection-representative', [ConcreteComponent::class, 'getInspectionRepresentative'])->name('get_inspection_representative');
-Route::post('/edit-inspection-representative', [ConcreteComponent::class, 'editInspectionRepresentative'])->name('edit_inspection_representative');
 
 // Login Register Route
 Route::get('/', LoginComponent::class)->middleware('guest')->name('login');
@@ -164,7 +151,7 @@ Route::post('/upload', 'app\http\controllers\BaseController@uploadckimage')->nam
 // PDF Generate
 Route::get('/invoice/ijP6ERmmdeLfFi57209633311{id}4ijP6ERmmdeLfFi5RiwZATmrI2SMOYYVSmdtcmjxJe2K31U5knK', [InvoiceController::class, 'commercialPDF'])->name('invoice.commercial');
 Route::get('/cdot-form/ijP6ERmmdeLfFi55958194244{id}4ijP6ERmmdeLfFi5RiwZATmrI2SMOYYVSmdtcmjxJe2K31U5knK', [InvoiceController::class, 'cdotPDF'])->name('cdot.form.generate');
-Route::get('/temp-one/ijP6ERmmdeLfFi54426715493{id}4ijP6ERmmdeLfFi5RiwZATmrI2SMOYYVSmdtcmjxJe2K31U5knK', [InvoiceController::class, 'templateOnePDF'])->name('template.one.generate');
+Route::get('/plastic/concrete/ijP6ERmmdeLfFi54426715493{id}4ijP6ERmmdeLfFi5RiwZATmrI2SMOYYVSmdtcmjxJe2K31U5knK', [InvoiceController::class, 'plasticConcretePDF'])->name('plastic.concrete.generate');
 Route::get('/inspection/concrete/report/ijP6ERmmdeLfFi56595438805{id}4ijP6ERmmdeLfFi5RiwZATmrI2SMOYYVSmdtcmjxJe2K31U5knK', [InvoiceController::class, 'templateInspectionConcrete'])->name('inspection.concrete.generate');
 Route::get('/commercial/report/ijP6ERmmdeLfFi51864136533{id}4ijP6ERmmdeLfFi5RiwZATmrI2SMOYYVSmdtcmjxJe2K31U5knK', [InvoiceController::class, 'templateSoilAggregate'])->name('soil.aggregate.generate');
 

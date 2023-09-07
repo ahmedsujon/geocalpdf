@@ -16,10 +16,23 @@ class AddUserComponent extends Component
 
     public $role_id, $name, $email, $avatar, $password, $confirm_password, $phone;
 
+    public function updated($fields)
+    {
+        $this->validateOnly($fields, [
+            'name' => 'required',
+            'phone' => 'required',
+            'email' => 'required|unique:users,email,',
+            'password' => 'min:8|same:confirm_password',
+            'confirm_password' => 'min:8',
+            'role_id' => 'required',
+        ]);
+    }
+
     public function storeData()
     {
         $this->validate([
             'name' => 'required',
+            'phone' => 'required',
             'email' => 'required|unique:users,email,',
             'password' => 'min:8|same:confirm_password',
             'confirm_password' => 'min:8',
