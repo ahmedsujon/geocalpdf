@@ -267,7 +267,29 @@ Route::post('/upload', 'app\http\controllers\BaseController@uploadckimage')->nam
 Route::get('/invoice/ijP6ERmmdeLfFi57209633311{id}4ijP6ERmmdeLfFi5RiwZATmrI2SMOYYVSmdtcmjxJe2K31U5knK', [InvoiceController::class, 'commercialPDF'])->name('invoice.commercial');
 Route::get('/cdot-form/ijP6ERmmdeLfFi55958194244{id}4ijP6ERmmdeLfFi5RiwZATmrI2SMOYYVSmdtcmjxJe2K31U5knK', [InvoiceController::class, 'cdotPDF'])->name('cdot.form.generate');
 Route::get('/plastic/concrete/ijP6ERmmdeLfFi54426715493{id}4ijP6ERmmdeLfFi5RiwZATmrI2SMOYYVSmdtcmjxJe2K31U5knK', [InvoiceController::class, 'plasticConcretePDF'])->name('plastic.concrete.generate');
-Route::get('/inspection/concrete/report/ijP6ERmmdeLfFi56595438805{id}4ijP6ERmmdeLfFi5RiwZATmrI2SMOYYVSmdtcmjxJe2K31U5knK', [InvoiceController::class, 'templateInspectionConcrete'])->name('inspection.concrete.generate');
+
+
+Route::get('/inspection/data/set/one/report/ijP6ERmmdeLfFi56595438805{id}4ijP6ERmmdeLfFi5RiwZATmrI2SMOYYVSmdtcmjxJe2K31U5knK', [InvoiceController::class, 'InspectionConcreteDataSetOne'])->name('inspection.concrete.generate.one');
+
+Route::get('/inspection/data/set/two/report/ijP6ERmmdeLfFi56595438805{id}4ijP6ERmmdeLfFi5RiwZATmrI2SMOYYVSmdtcmjxJe2K31U5knK', [InvoiceController::class, 'InspectionConcreteDataSetTwo'])->name('inspection.concrete.generate.two');
+
+Route::get('/inspection/data/set/three/report/ijP6ERmmdeLfFi56595438805{id}4ijP6ERmmdeLfFi5RiwZATmrI2SMOYYVSmdtcmjxJe2', [InvoiceController::class, 'InspectionConcreteDataSetThree'])->name('inspection.concrete.generate.three');
+
+Route::get('/inspection/data/set/four/report/ijP6ERmmdeLfFi56595438805{id}4ijP6ERmmdeLfFi5RiwZATmrI2SMOYYVSmdtcmjxJe2K31U5knK', [InvoiceController::class, 'InspectionConcreteDataSetFour'])->name('inspection.concrete.generate.four');
+
+Route::get('/inspection/data/set/five/report/ijP6ERmmdeLfFi56595438805{id}4ijP6ERmmdeLfFi5RiwZATmrI2SMOYYVSmdtcmjxJe2K31U5knK', [InvoiceController::class, 'InspectionConcreteDataSetFive'])->name('inspection.concrete.generate.five');
+
+Route::get('/inspection/data/set/six/report/ijP6ERmmdeLfFi56595438805{id}4ijP6ERmmdeLfFi5RiwZATmrI2SMOYYVSmdtcmjxJe2K31U5knK', [InvoiceController::class, 'InspectionConcreteDataSetSix'])->name('inspection.concrete.generate.six');
+
+Route::get('/inspection/data/set/seven/report/ijP6ERmmdeLfFi56595438805{id}4ijP6ERmmdeLfFi5RiwZATmrI2SMOYYVSmdtcmjxJe2K31U5', [InvoiceController::class, 'InspectionConcreteDataSetSeven'])->name('inspection.concrete.generate.seven');
+
+Route::get('/inspection/data/set/eight/report/ijP6ERmmdeLfFi56595438805{id}4ijP6ERmmdeLfFi5RiwZATmrI2SMOYYVSmdtcmjxJe2K31U5kn', [InvoiceController::class, 'InspectionConcreteDataSetEight'])->name('inspection.concrete.generate.eight');
+
+Route::get('/inspection/data/set/nine/report/ijP6ERmmdeLfFi56595438805{id}4ijP6ERmmdeLfFi5RiwZATmrI2SMOYYVSmdtcmjxJe2K31U5knK', [InvoiceController::class, 'InspectionConcreteDataSetNine'])->name('inspection.concrete.generate.nine');
+
+Route::get('/inspection/data/set/ten/report/ijP6ERmmdeLfFi56595438805{id}4ijP6ERmmdeLfFi5RiwZATmrI2SMOYYVSmdtcmjxJe2K31U5knK', [InvoiceController::class, 'InspectionConcreteDataSetTen'])->name('inspection.concrete.generate.ten');
+
+
 Route::get('/commercial/report/ijP6ERmmdeLfFi51864136533{id}4ijP6ERmmdeLfFi5RiwZATmrI2SMOYYVSmdtcmjxJe2K31U5knK', [InvoiceController::class, 'templateSoilAggregate'])->name('soil.aggregate.generate');
 
 //authSuperAdmin
