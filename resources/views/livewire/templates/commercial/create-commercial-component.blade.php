@@ -719,10 +719,6 @@
                         </div>
                     </div>
                 </div>
-
-
-
-
                 <div class="row mt-3">
                     <div class="col-lg-12">
                         <h6>Test Results</h6>
@@ -878,7 +874,7 @@
                                         <td class="moistureremove">
                                             <div class="input-group">
                                                 <input type="text" class="form-control moistureremoveinput"
-                                                    wire:model="pass_fail_a">
+                                                    wire:model="pass_fail_a" @if($field_wet_density_a == null) style="display: none" @endif readonly>
                                                 @error('pass_fail_a')
                                                     <span class="text-danger"
                                                         style="font-size: 12px;">{{ $message }}</span>
@@ -1015,7 +1011,7 @@
                                         <td class="moistureremove">
                                             <div class="input-group">
                                                 <input type="text" class="form-control moistureremoveinput"
-                                                    wire:model="pass_fail_b">
+                                                    wire:model="pass_fail_b" @if($field_wet_density_b == null) style="display: none" @endif readonly>
                                                 @error('pass_fail_b')
                                                     <span class="text-danger"
                                                         style="font-size: 12px;">{{ $message }}</span>
@@ -1152,7 +1148,7 @@
                                         <td class="moistureremove">
                                             <div class="input-group">
                                                 <input type="text" class="form-control moistureremoveinput"
-                                                    wire:model="pass_fail_c">
+                                                    wire:model="pass_fail_c" @if($field_wet_density_c == null) style="display: none" @endif readonly>
                                                 @error('pass_fail_c')
                                                     <span class="text-danger"
                                                         style="font-size: 12px;">{{ $message }}</span>
@@ -1289,7 +1285,7 @@
                                         <td class="moistureremove">
                                             <div class="input-group">
                                                 <input type="text" class="form-control moistureremoveinput"
-                                                    wire:model="pass_fail_d">
+                                                    wire:model="pass_fail_d" @if($field_wet_density_d == null) style="display: none" @endif readonly>
                                                 @error('pass_fail_d')
                                                     <span class="text-danger"
                                                         style="font-size: 12px;">{{ $message }}</span>
@@ -1426,7 +1422,7 @@
                                         <td class="moistureremove">
                                             <div class="input-group">
                                                 <input type="text" class="form-control moistureremoveinput"
-                                                    wire:model="pass_fail_e">
+                                                    wire:model="pass_fail_e" @if($field_wet_density_e == null) style="display: none" @endif readonly>
                                                 @error('pass_fail_e')
                                                     <span class="text-danger"
                                                         style="font-size: 12px;">{{ $message }}</span>
@@ -1563,7 +1559,7 @@
                                         <td class="moistureremove">
                                             <div class="input-group">
                                                 <input type="text" class="form-control moistureremoveinput"
-                                                    wire:model="pass_fail_f">
+                                                    wire:model="pass_fail_f" @if($field_wet_density_f == null) style="display: none" @endif readonly>
                                                 @error('pass_fail_f')
                                                     <span class="text-danger"
                                                         style="font-size: 12px;">{{ $message }}</span>

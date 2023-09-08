@@ -558,7 +558,7 @@
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <select class="form-select" wire:model="result_proctor_id_a"
-                                                            wire:change="proctorInfoA">
+                                                            wire:change="resultMixA">
                                                             <option value="">Select id</option>
                                                             @foreach ($proctors as $proctor)
                                                             <option value="{{ proctor($proctor->id)->proctorid }}">
@@ -702,7 +702,7 @@
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <select class="form-select" wire:model="result_proctor_id_b"
-                                                            wire:change="proctorInfoB">
+                                                        wire:change="resultMixB">
                                                             <option value="">Select id</option>
                                                             @foreach ($proctors as $proctor)
                                                             <option value="{{ proctor($proctor->id)->proctorid }}">
@@ -846,7 +846,7 @@
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <select class="form-select" wire:model="result_proctor_id_c"
-                                                            wire:change="proctorInfoC">
+                                                            wire:change="resultMixC">
                                                             <option value="">Select id</option>
                                                             @foreach ($proctors as $proctor)
                                                             <option value="{{ proctor($proctor->id)->proctorid }}">
@@ -994,7 +994,7 @@
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <select class="form-select" wire:model="result_proctor_id_d"
-                                                            wire:change="proctorInfoD">
+                                                            wire:change="resultMixD">
                                                             <option value="">Select id</option>
                                                             @foreach ($proctors as $proctor)
                                                             <option value="{{ proctor($proctor->id)->proctorid }}">
@@ -1142,7 +1142,7 @@
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <select class="form-select" wire:model="result_proctor_id_e"
-                                                            wire:change="proctorInfoE">
+                                                            wire:change="resultMixE">
                                                             <option value="">Select id</option>
                                                             @foreach ($proctors as $proctor)
                                                             <option value="{{ proctor($proctor->id)->proctorid }}">
@@ -1290,7 +1290,7 @@
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <select class="form-select" wire:model="result_proctor_id_f"
-                                                            wire:change="proctorInfoF">
+                                                            wire:change="resultMixF">
                                                             <option value="">Select id</option>
                                                             @foreach ($proctors as $proctor)
                                                             <option value="{{ proctor($proctor->id)->proctorid }}">
