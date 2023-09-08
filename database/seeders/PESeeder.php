@@ -17,8 +17,8 @@ class PESeeder extends Seeder
     {
         User::updateOrCreate([
             'role_id' => '2',
-            'name' => 'Nur Hossain',
-            'email' => 'nurhossain@geocal.us',
+            'name' => 'Jim Smith',
+            'email' => 'jimsmith@geocal.us',
             'password' => Hash::make('12345678'),
         ]);
     }
