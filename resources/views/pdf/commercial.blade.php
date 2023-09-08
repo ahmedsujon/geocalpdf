@@ -625,14 +625,24 @@
             <tr>
                 <td
                     style="width: 28%; padding-top: 10px; padding-left: 10px; padding-right: 10px; padding-bottom: 20px;">
-                    <h5 style="padding-bottom: 4px; padding-left: 23px;">{{ $data->report_status }}</h5>
-                    <h5><span
-                            style="padding: 1px 5px; border-top: 2px solid #000; border-bottom: 2px solid #000;">X</span>
-                        Part Time Observation</h5>
+                    <h6
+                        style="padding-bottom: 4px; padding-left: 23px; font-weight: normal; 
+                    font-size: 14px;
+                    font-weight: normal;">
+                        {{ $data->report_status }}</h6>
+                    <h6
+                        style=" 
+                    font-size: 14px;
+                    font-weight: normal; ">
+                        <span style="padding: 1px 5px; border-top: 2px solid #000; border-bottom: 2px solid #000;">X</span>
+                        Part Time Observation</h6>
                 </td>
                 <td style="width: 32%; padding-top: 10px; padding-bottom: 20px;">
-                    <h5>{{ user($data->user_id)->name }}</h5>
-                    <h4
+                    <h6 style="
+                    font-size: 14px;
+                    font-weight: normal;">
+                        {{ user($data->user_id)->name }}</h6>
+                    <h6
                         style="
                 font-size: 14px;
                 font-weight: normal;
@@ -641,12 +651,15 @@
                 width: 160px;
               ">
                         Materials Technician:
-                    </h4>
+                    </h6>
                 </td>
                 <td
                     style="width: 40%; padding-top: 10px; padding-left: 10px; padding-right: 20px; padding-bottom: 20px;">
-                    <h5>{{ user($data->created_by)->name }}</h5>
-                    <h4
+                    <h6 style="
+                    font-size: 14px;
+                    font-weight: normal;">
+                        {{ user($data->created_by)->name }}</h6>
+                    <h6
                         style="
                 font-size: 14px;
                 font-weight: normal;
@@ -654,7 +667,7 @@
                 padding-top: 2px;
               ">
                         Reviewed By
-                    </h4>
+                    </h6>
                 </td>
             </tr>
         </table>
