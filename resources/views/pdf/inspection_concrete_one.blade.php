@@ -18,111 +18,55 @@
 
 <body>
     <div style="
-        padding: 15px;
+    padding: 15px 25px 25px 25px;
       ">
-        <table style="width: 100%; border-collapse: collapse">
+
+        <table style="width: 100%; border-collapse: collapse;">
             <tr>
-                <td>
-                    <table style="width: 100%; border-collapse: collapse">
-                        <tr>
-                            <td style="padding: 2px 6px">
-                                <h4 style="font-size: 14px; font-weight: 400;">
-                                    Client:
-                                </h4>
-                            </td>
-                            <td style="padding: 2px 0px; border-bottom: 1px solid lightgray">
-                                <h4 style="font-size: 14px; font-weight: 400">{{ $data->client_name }}</h4>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 2px 6px">
-                                <h4 style="font-size: 14px; font-weight: 400;">
-                                    Email:
-                                </h4>
-                            </td>
-                            <td style="padding: 2px 0px; border-bottom: 1px solid lightgray">
-                                <h4 style="font-size: 14px; font-weight: 400">{{ $data->client_email }}</h4>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 2px 6px">
-                                <h4 style="font-size: 14px; font-weight: 400;">
-                                    Phone:
-                                </h4>
-                            </td>
-                            <td style="padding: 2px 0px; border-bottom: 1px solid lightgray">
-                                <h4 style="font-size: 14px; font-weight: 400">{{ $data->client_phone }}</h4>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 2px 6px">
-                                <h4 style="font-size: 14px; font-weight: 400;">
-                                    Company Name:
-                                </h4>
-                            </td>
-                            <td style="padding: 2px 0px; border-bottom: 1px solid lightgray">
-                                <h4 style="font-size: 14px; font-weight: 400">{{ $data->client_company_name }}</h4>
-                            </td>
-                        </tr>
-                    </table>
+
+                <td style="width: 28%; text-align: left;">
+
+                    <h4 style="font-size: 14px; font-weight: 400;">
+                        Client: {{ $data->client_name }}
+                    </h4>
+                    <h4 style="font-size: 14px; font-weight: 400;">
+                        Email: {{ $data->client_email }}
+                    </h4>
+                    <h4 style="font-size: 14px; font-weight: 400;">
+                        Phone: {{ $data->client_phone }}
+                    </h4>
+                    <h4 style="font-size: 14px; font-weight: 400;">
+                        Company Name: {{ $data->client_company_name }}
+                    </h4>
                 </td>
-                <td style="padding: 0px 5px 10px 5px; text-align: center;">
-                    <div>
-                        <img src="https://i0.wp.com/geocal.us/wp-content/uploads/2019/05/logo-new.png" alt="logo"
-                            style="max-width: 100px" />
-                        <h4 style="font-size: 14px; font-weight: 600; padding-top: 4px">
-                            {{ $data->office_address }}
-                        </h4>
-                    </div>
+                <td style="width: 40%; text-align: center;">
+                    <img src="https://i0.wp.com/geocal.us/wp-content/uploads/2019/05/logo-new.png" alt="logo"
+                        style="max-width: 100px" />
+                    <h4 style="font-size: 13px; font-weight: 700; padding-top: 5px">
+                        {{ $data->office_address }}
+                    </h4>
+                </td>
+                <td style="width: 28%; text-align: left;">
+                    <h4 style="font-size: 14px; font-weight: 400;">
+                        Date: {{ $data->created_at->format('Y-m-d') }}
+                    </h4>
+                    <h4 style="font-size: 14px; font-weight: 400;">
+                        Project No: {{ $data->project_number }}
+                    </h4>
+                    <h4 style="font-size: 14px; font-weight: 400;">
+                        Project Name: {{ $data->project_name }}
+                    </h4>
+                    <h4 style="font-size: 14px; font-weight: 400;">
+                        Weather: {{ $data->weather }}
+                    </h4>
+
                 </td>
 
-                <td>
-                    <table style="width: 100%; border-collapse: collapse">
-                        <tr>
-                            <td style="padding: 2px 6px">
-                                <h4 style="font-size: 14px; font-weight: 400;">
-                                    Date Cast:
-                                </h4>
-                            </td>
-                            <td style="padding: 2px 0px; border-bottom: 1px solid lightgray">
-                                <h4 style="font-size: 14px; font-weight: 400">{{ $data->created_at->format('Y-m-d') }}
-                                </h4>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 2px 6px">
-                                <h4 style="font-size: 14px; font-weight: 400;">
-                                    Project No:
-                                </h4>
-                            </td>
-                            <td style="padding: 2px 0px; border-bottom: 1px solid lightgray">
-                                <h4 style="font-size: 14px; font-weight: 400">{{ $data->project_number }}</h4>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 2px 6px">
-                                <h4 style="font-size: 14px; font-weight: 400;">
-                                    Project Name:
-                                </h4>
-                            </td>
-                            <td style="padding: 2px 0px; border-bottom: 1px solid lightgray">
-                                <h4 style="font-size: 14px; font-weight: 400">{{ $data->project_name }}</h4>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 2px 6px">
-                                <h4 style="font-size: 14px; font-weight: 400;">
-                                    Weather
-                                </h4>
-                            </td>
-                            <td style="padding: 2px 0px; border-bottom: 1px solid lightgray">
-                                <h4 style="font-size: 14px; font-weight: 400">{{ $data->weather }}</h4>
-                            </td>
-                        </tr>
-                    </table>
-                </td>
             </tr>
+
         </table>
+
+
 
         <h4 style="text-align: center; padding-top: 5px;">CONCRETE TEST REPORT</h4>
         <table style="width: 100%; border-collapse: collapse;">
@@ -279,7 +223,8 @@
                     <h4 style="font-size: 14px; font-weight: 400">{{ $data->slump }}</h4>
                 </td>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400">{{ $data->slump_min }} - {{ $data->slump_max }} </h4>
+                    <h4 style="font-size: 14px; font-weight: 400">{{ $data->slump_min }} - {{ $data->slump_max }}
+                    </h4>
                 </td>
             </tr>
             <tr>
@@ -317,8 +262,8 @@
                     <h4 style="font-size: 14px; font-weight: 400">{{ $data->concrete_temp }}</h4>
                 </td>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400">{{ $data->concrete_temp_min }} - {{
-                        $data->concrete_temp_max }} </h4>
+                    <h4 style="font-size: 14px; font-weight: 400">{{ $data->concrete_temp_min }} -
+                        {{ $data->concrete_temp_max }} </h4>
                 </td>
             </tr>
             <tr>
@@ -399,10 +344,10 @@
             </tr>
 
             @php
-            $startTimestamp = strtotime($data->batch_time);
-            $endTimestamp = strtotime($data->ttf_unloading);
-
-            $timeDifferenceInMinutes = round(($endTimestamp - $startTimestamp) / 60);
+                $startTimestamp = strtotime($data->batch_time);
+                $endTimestamp = strtotime($data->ttf_unloading);
+                
+                $timeDifferenceInMinutes = round(($endTimestamp - $startTimestamp) / 60);
             @endphp
 
             <tr>
@@ -512,8 +457,8 @@
                     </h4>
                 </td>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400;">{{
-                        \Carbon\Carbon::parse($data->test_date_a)->format('m/d/Y') }}
+                    <h4 style="font-size: 14px; font-weight: 400;">
+                        {{ \Carbon\Carbon::parse($data->test_date_a)->format('m/d/Y') }}
                     </h4>
                 </td>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
@@ -525,8 +470,7 @@
                     </h4>
                 </td>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{
-                        $data->avg_length_a }}</h4>
+                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->avg_length_a }}</h4>
                 </td>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
                     <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->area_cyl_a }}
@@ -541,18 +485,15 @@
                     </h4>
                 </td>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->type_fracture_a
-                        }}
+                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->type_fracture_a }}
                     </h4>
                 </td>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{
-                        $data->person_performing_a }}
+                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->person_performing_a }}
                     </h4>
                 </td>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{
-                        $data->measured_strength_a }}
+                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->measured_strength_a }}
                     </h4>
                 </td>
             </tr>
@@ -565,8 +506,8 @@
                     </h4>
                 </td>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400;">{{
-                        \Carbon\Carbon::parse($data->test_date_b)->format('m/d/Y') }}
+                    <h4 style="font-size: 14px; font-weight: 400;">
+                        {{ \Carbon\Carbon::parse($data->test_date_b)->format('m/d/Y') }}
                     </h4>
                 </td>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
@@ -578,8 +519,7 @@
                     </h4>
                 </td>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{
-                        $data->avg_length_a }}</h4>
+                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->avg_length_a }}</h4>
                 </td>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
                     <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->area_cyl_b }}
@@ -594,18 +534,15 @@
                     </h4>
                 </td>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->type_fracture_b
-                        }}
+                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->type_fracture_b }}
                     </h4>
                 </td>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{
-                        $data->person_performing_b }}
+                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->person_performing_b }}
                     </h4>
                 </td>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{
-                        $data->measured_strength_b }}
+                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->measured_strength_b }}
                     </h4>
                 </td>
             </tr>
@@ -618,8 +555,8 @@
                     </h4>
                 </td>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400;">{{
-                        \Carbon\Carbon::parse($data->test_date_c)->format('m/d/Y') }}
+                    <h4 style="font-size: 14px; font-weight: 400;">
+                        {{ \Carbon\Carbon::parse($data->test_date_c)->format('m/d/Y') }}
                     </h4>
                 </td>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
@@ -631,8 +568,7 @@
                     </h4>
                 </td>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{
-                        $data->avg_length_c }}</h4>
+                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->avg_length_c }}</h4>
                 </td>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
                     <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->area_cyl_c }}
@@ -647,18 +583,15 @@
                     </h4>
                 </td>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->type_fracture_c
-                        }}
+                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->type_fracture_c }}
                     </h4>
                 </td>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{
-                        $data->person_performing_c }}
+                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->person_performing_c }}
                     </h4>
                 </td>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{
-                        $data->measured_strength_c }}
+                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->measured_strength_c }}
                     </h4>
                 </td>
             </tr>
@@ -671,8 +604,8 @@
                     </h4>
                 </td>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400;">{{
-                        \Carbon\Carbon::parse($data->test_date_d)->format('m/d/Y') }}
+                    <h4 style="font-size: 14px; font-weight: 400;">
+                        {{ \Carbon\Carbon::parse($data->test_date_d)->format('m/d/Y') }}
                     </h4>
                 </td>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
@@ -684,8 +617,7 @@
                     </h4>
                 </td>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{
-                        $data->avg_length_d }}</h4>
+                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->avg_length_d }}</h4>
                 </td>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
                     <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->area_cyl_d }}
@@ -700,18 +632,15 @@
                     </h4>
                 </td>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->type_fracture_d
-                        }}
+                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->type_fracture_d }}
                     </h4>
                 </td>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{
-                        $data->person_performing_d }}
+                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->person_performing_d }}
                     </h4>
                 </td>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{
-                        $data->measured_strength_d }}
+                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->measured_strength_d }}
                     </h4>
                 </td>
             </tr>
@@ -724,8 +653,8 @@
                     </h4>
                 </td>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400;">{{
-                        \Carbon\Carbon::parse($data->test_date_e)->format('m/d/Y') }}
+                    <h4 style="font-size: 14px; font-weight: 400;">
+                        {{ \Carbon\Carbon::parse($data->test_date_e)->format('m/d/Y') }}
                     </h4>
                 </td>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
@@ -737,8 +666,7 @@
                     </h4>
                 </td>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{
-                        $data->avg_length_e }}</h4>
+                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->avg_length_e }}</h4>
                 </td>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
                     <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->area_cyl_e }}
@@ -753,268 +681,270 @@
                     </h4>
                 </td>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->type_fracture_e
-                        }}
+                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->type_fracture_e }}
                     </h4>
                 </td>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{
-                        $data->person_performing_e }}
+                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                        {{ $data->person_performing_e }}
                     </h4>
                 </td>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{
-                        $data->measured_strength_e }}
+                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                        {{ $data->measured_strength_e }}
                     </h4>
                 </td>
             </tr>
             @if ($data->age_g)
-            <tr>
-                <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->cylinder_id }}</h4>
-                </td>
-                <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">F
-                    </h4>
-                </td>
-                <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400;">{{
-                        \Carbon\Carbon::parse($data->test_date_f)->format('m/d/Y') }}
-                    </h4>
-                </td>
-                <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->age_f }}
-                    </h4>
-                </td>
-                <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->diameter_f }}
-                    </h4>
-                </td>
-                <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{
-                        $data->avg_length_f }}</h4>
-                </td>
-                <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->area_cyl_f }}
-                    </h4>
-                </td>
-                <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->type_cap_f }}
-                    </h4>
-                </td>
-                <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->max_load_f }}
-                    </h4>
-                </td>
-                <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->type_fracture_f
-                        }}
-                    </h4>
-                </td>
-                <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{
-                        $data->person_performing_f }}
-                    </h4>
-                </td>
-                <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{
-                        $data->measured_strength_f }}
-                    </h4>
-                </td>
-            </tr>
+                <tr>
+                    <td style="padding: 2px 6px; border: 1px solid lightgray">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->cylinder_id }}
+                        </h4>
+                    </td>
+                    <td style="padding: 2px 6px; border: 1px solid lightgray">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">F
+                        </h4>
+                    </td>
+                    <td style="padding: 2px 6px; border: 1px solid lightgray">
+                        <h4 style="font-size: 14px; font-weight: 400;">
+                            {{ \Carbon\Carbon::parse($data->test_date_f)->format('m/d/Y') }}
+                        </h4>
+                    </td>
+                    <td style="padding: 2px 6px; border: 1px solid lightgray">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->age_f }}
+                        </h4>
+                    </td>
+                    <td style="padding: 2px 6px; border: 1px solid lightgray">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->diameter_f }}
+                        </h4>
+                    </td>
+                    <td style="padding: 2px 6px; border: 1px solid lightgray">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->avg_length_f }}
+                        </h4>
+                    </td>
+                    <td style="padding: 2px 6px; border: 1px solid lightgray">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->area_cyl_f }}
+                        </h4>
+                    </td>
+                    <td style="padding: 2px 6px; border: 1px solid lightgray">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->type_cap_f }}
+                        </h4>
+                    </td>
+                    <td style="padding: 2px 6px; border: 1px solid lightgray">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->max_load_f }}
+                        </h4>
+                    </td>
+                    <td style="padding: 2px 6px; border: 1px solid lightgray">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                            {{ $data->type_fracture_f }}
+                        </h4>
+                    </td>
+                    <td style="padding: 2px 6px; border: 1px solid lightgray">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                            {{ $data->person_performing_f }}
+                        </h4>
+                    </td>
+                    <td style="padding: 2px 6px; border: 1px solid lightgray">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                            {{ $data->measured_strength_f }}
+                        </h4>
+                    </td>
+                </tr>
             @endif
             @if ($data->age_g)
-            <tr>
-                <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->cylinder_id }}</h4>
-                </td>
-                <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">G
-                    </h4>
-                </td>
-                <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400;">{{
-                        \Carbon\Carbon::parse($data->test_date_g)->format('m/d/Y') }}
-                    </h4>
-                </td>
-                <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->age_g }}
-                    </h4>
-                </td>
-                <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->diameter_g }}
-                    </h4>
-                </td>
-                <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{
-                        $data->avg_length_g }}</h4>
-                </td>
-                <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->area_cyl_g }}
-                    </h4>
-                </td>
-                <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->type_cap_g }}
-                    </h4>
-                </td>
-                <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->max_load_g }}
-                    </h4>
-                </td>
-                <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->type_fracture_g
-                        }}
-                    </h4>
-                </td>
-                <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{
-                        $data->person_performing_g }}
-                    </h4>
-                </td>
-                <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{
-                        $data->measured_strength_g }}
-                    </h4>
-                </td>
-            </tr>
+                <tr>
+                    <td style="padding: 2px 6px; border: 1px solid lightgray">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->cylinder_id }}
+                        </h4>
+                    </td>
+                    <td style="padding: 2px 6px; border: 1px solid lightgray">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">G
+                        </h4>
+                    </td>
+                    <td style="padding: 2px 6px; border: 1px solid lightgray">
+                        <h4 style="font-size: 14px; font-weight: 400;">
+                            {{ \Carbon\Carbon::parse($data->test_date_g)->format('m/d/Y') }}
+                        </h4>
+                    </td>
+                    <td style="padding: 2px 6px; border: 1px solid lightgray">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->age_g }}
+                        </h4>
+                    </td>
+                    <td style="padding: 2px 6px; border: 1px solid lightgray">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->diameter_g }}
+                        </h4>
+                    </td>
+                    <td style="padding: 2px 6px; border: 1px solid lightgray">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->avg_length_g }}
+                        </h4>
+                    </td>
+                    <td style="padding: 2px 6px; border: 1px solid lightgray">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->area_cyl_g }}
+                        </h4>
+                    </td>
+                    <td style="padding: 2px 6px; border: 1px solid lightgray">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->type_cap_g }}
+                        </h4>
+                    </td>
+                    <td style="padding: 2px 6px; border: 1px solid lightgray">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->max_load_g }}
+                        </h4>
+                    </td>
+                    <td style="padding: 2px 6px; border: 1px solid lightgray">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                            {{ $data->type_fracture_g }}
+                        </h4>
+                    </td>
+                    <td style="padding: 2px 6px; border: 1px solid lightgray">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                            {{ $data->person_performing_g }}
+                        </h4>
+                    </td>
+                    <td style="padding: 2px 6px; border: 1px solid lightgray">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                            {{ $data->measured_strength_g }}
+                        </h4>
+                    </td>
+                </tr>
             @endif
             @if ($data->age_h)
-            <tr>
-                <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->cylinder_id }}</h4>
-                </td>
-                <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">H
-                    </h4>
-                </td>
-                <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400;">{{
-                        \Carbon\Carbon::parse($data->test_date_h)->format('m/d/Y') }}
-                    </h4>
-                </td>
-                <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->age_h }}
-                    </h4>
-                </td>
-                <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->diameter_h }}
-                    </h4>
-                </td>
-                <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{
-                        $data->avg_length_h }}</h4>
-                </td>
-                <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->area_cyl_h }}
-                    </h4>
-                </td>
-                <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->type_cap_h }}
-                    </h4>
-                </td>
-                <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->max_load_h }}
-                    </h4>
-                </td>
-                <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->type_fracture_h
-                        }}
-                    </h4>
-                </td>
-                <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{
-                        $data->person_performing_h }}
-                    </h4>
-                </td>
-                <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{
-                        $data->measured_strength_h }}
-                    </h4>
-                </td>
-            </tr>
+                <tr>
+                    <td style="padding: 2px 6px; border: 1px solid lightgray">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->cylinder_id }}
+                        </h4>
+                    </td>
+                    <td style="padding: 2px 6px; border: 1px solid lightgray">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">H
+                        </h4>
+                    </td>
+                    <td style="padding: 2px 6px; border: 1px solid lightgray">
+                        <h4 style="font-size: 14px; font-weight: 400;">
+                            {{ \Carbon\Carbon::parse($data->test_date_h)->format('m/d/Y') }}
+                        </h4>
+                    </td>
+                    <td style="padding: 2px 6px; border: 1px solid lightgray">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->age_h }}
+                        </h4>
+                    </td>
+                    <td style="padding: 2px 6px; border: 1px solid lightgray">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->diameter_h }}
+                        </h4>
+                    </td>
+                    <td style="padding: 2px 6px; border: 1px solid lightgray">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->avg_length_h }}
+                        </h4>
+                    </td>
+                    <td style="padding: 2px 6px; border: 1px solid lightgray">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->area_cyl_h }}
+                        </h4>
+                    </td>
+                    <td style="padding: 2px 6px; border: 1px solid lightgray">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->type_cap_h }}
+                        </h4>
+                    </td>
+                    <td style="padding: 2px 6px; border: 1px solid lightgray">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->max_load_h }}
+                        </h4>
+                    </td>
+                    <td style="padding: 2px 6px; border: 1px solid lightgray">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                            {{ $data->type_fracture_h }}
+                        </h4>
+                    </td>
+                    <td style="padding: 2px 6px; border: 1px solid lightgray">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                            {{ $data->person_performing_h }}
+                        </h4>
+                    </td>
+                    <td style="padding: 2px 6px; border: 1px solid lightgray">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                            {{ $data->measured_strength_h }}
+                        </h4>
+                    </td>
+                </tr>
             @endif
             @if ($data->age_i)
-            <tr>
-                <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->cylinder_id }}</h4>
-                </td>
-                <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">I
-                    </h4>
-                </td>
-                <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400;">{{
-                        \Carbon\Carbon::parse($data->test_date_i)->format('m/d/Y') }}
-                    </h4>
-                </td>
-                <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->age_i }}
-                    </h4>
-                </td>
-                <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->diameter_i }}
-                    </h4>
-                </td>
-                <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{
-                        $data->avg_length_i }}</h4>
-                </td>
-                <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->area_cyl_i }}
-                    </h4>
-                </td>
-                <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->type_cap_i }}
-                    </h4>
-                </td>
-                <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->max_load_i }}
-                    </h4>
-                </td>
-                <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->type_fracture_i
-                        }}
-                    </h4>
-                </td>
-                <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{
-                        $data->person_performing_i }}
-                    </h4>
-                </td>
-                <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{
-                        $data->measured_strength_i }}
-                    </h4>
-                </td>
-            </tr>
+                <tr>
+                    <td style="padding: 2px 6px; border: 1px solid lightgray">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->cylinder_id }}
+                        </h4>
+                    </td>
+                    <td style="padding: 2px 6px; border: 1px solid lightgray">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">I
+                        </h4>
+                    </td>
+                    <td style="padding: 2px 6px; border: 1px solid lightgray">
+                        <h4 style="font-size: 14px; font-weight: 400;">
+                            {{ \Carbon\Carbon::parse($data->test_date_i)->format('m/d/Y') }}
+                        </h4>
+                    </td>
+                    <td style="padding: 2px 6px; border: 1px solid lightgray">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->age_i }}
+                        </h4>
+                    </td>
+                    <td style="padding: 2px 6px; border: 1px solid lightgray">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->diameter_i }}
+                        </h4>
+                    </td>
+                    <td style="padding: 2px 6px; border: 1px solid lightgray">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->avg_length_i }}
+                        </h4>
+                    </td>
+                    <td style="padding: 2px 6px; border: 1px solid lightgray">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->area_cyl_i }}
+                        </h4>
+                    </td>
+                    <td style="padding: 2px 6px; border: 1px solid lightgray">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->type_cap_i }}
+                        </h4>
+                    </td>
+                    <td style="padding: 2px 6px; border: 1px solid lightgray">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->max_load_i }}
+                        </h4>
+                    </td>
+                    <td style="padding: 2px 6px; border: 1px solid lightgray">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                            {{ $data->type_fracture_i }}
+                        </h4>
+                    </td>
+                    <td style="padding: 2px 6px; border: 1px solid lightgray">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                            {{ $data->person_performing_i }}
+                        </h4>
+                    </td>
+                    <td style="padding: 2px 6px; border: 1px solid lightgray">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                            {{ $data->measured_strength_i }}
+                        </h4>
+                    </td>
+                </tr>
             @endif
         </table>
         @php
-        $value1 = 10;
-        $value2 = null;
-        $value3 = 30;
-        $value4 = 0;
-        $value5 = 50;
-
-        $values = [$data->specified_strength_a, $data->specified_strength_b, $data->specified_strength_c,
-        $data->specified_strength_d, $data->specified_strength_e, $data->specified_strength_f,
-        $data->specified_strength_g, $data->specified_strength_g, $data->specified_strength_i];
-
-        // Filter out null and zero values
-        $filteredValues = array_filter($values, fn($v) => $v !== null && $v !== 0);
-
-        if (count($filteredValues) > 0) {
-        $total = array_sum($filteredValues);
-        $average = $total / count($filteredValues);
-        } else {
-        $average = 0;
-        }
+            $value1 = 10;
+            $value2 = null;
+            $value3 = 30;
+            $value4 = 0;
+            $value5 = 50;
+            
+            $values = [$data->specified_strength_a, $data->specified_strength_b, $data->specified_strength_c, $data->specified_strength_d, $data->specified_strength_e, $data->specified_strength_f, $data->specified_strength_g, $data->specified_strength_g, $data->specified_strength_i];
+            
+            // Filter out null and zero values
+            $filteredValues = array_filter($values, fn($v) => $v !== null && $v !== 0);
+            
+            if (count($filteredValues) > 0) {
+                $total = array_sum($filteredValues);
+                $average = $total / count($filteredValues);
+            } else {
+                $average = 0;
+            }
         @endphp
 
         <table style="width: 100%; border-collapse: collapse;">
             <tr>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:right;">Average 28 Day Compressive Strength
+                    <h4 style="font-size: 14px; font-weight: 400; text-align:right;">Average 28 Day Compressive
+                        Strength
                         (psi)</h4>
                 </td>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
@@ -1024,7 +954,8 @@
             </tr>
             <tr>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:right;">Required 28 Day Strength (psi)</h4>
+                    <h4 style="font-size: 14px; font-weight: 400; text-align:right;">Required 28 Day Strength (psi)
+                    </h4>
                 </td>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
                     <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->required_strength }}
@@ -1103,7 +1034,8 @@
                 <td></td>
                 <td>
                     <h5>{{ user($data->created_by)->name }}</h5>
-                    <h4 style="
+                    <h4
+                        style="
                 font-size: 14px;
                 font-weight: 400;
                 border-top: 1px solid black;

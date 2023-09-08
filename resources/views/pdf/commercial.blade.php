@@ -45,7 +45,7 @@
                 <td style="width: 40%; text-align: center;">
                     <img src="https://i0.wp.com/geocal.us/wp-content/uploads/2019/05/logo-new.png" alt="logo"
                         style="max-width: 100px" />
-                    <h4 style="font-size: 14px; font-weight: 700; padding-top: 5px">
+                    <h4 style="font-size: 13px; font-weight: 700; padding-top: 5px">
                         {{ $data->office_address }}
                     </h4>
                 </td>
@@ -71,7 +71,7 @@
 
 
         <div
-            style="border-top: 3px solid #000; border-right: 3px solid #000; border-bottom: 1px solid #000; border-left: 3px solid #000;">
+            style="margin-top: 5px; border-top: 3px solid #000; border-right: 3px solid #000; border-bottom: 1px solid #000; border-left: 3px solid #000;">
             <table style="width: 100%; border-collapse: collapse; border: none">
                 <caption
                     style="text-align:left; font-size: 14px; font-weight: 500; padding: 0; letter-spacing: -1px; background-color: #689A3D; border: none">
