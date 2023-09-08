@@ -246,6 +246,6 @@ class ViewInspectionConcreteComponent extends Component
     public function render()
     {
         $projects = Project::orderBy('id', 'DESC')->get();
-        return view('livewire.templates.inspection-concrete.view-inspection-concrete-component', ['projects'=>$projects])->layout('livewire.layouts.base');;
+        return view('livewire.templates.inspection-concrete.view-inspection-concrete-component', ['projects'=>$projects])->layout('livewire.layouts.base');
     }
 }

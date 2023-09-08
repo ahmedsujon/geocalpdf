@@ -275,17 +275,15 @@
                         <div class="col col-lg-6 select-border">
                             <h6>Gauge Information</h6>
                             <div class="input-group mt-2">
-                                <span class="input-group-text text-left width18">Office Address:</span>
+                                <span class="input-group-text">Office Address:</span>
                                 <select class="form-select" wire:model="office_address">
                                     <option value="">Select office addres</option>
-                                    <option value="7290 South Fraser St. Centennial, CO 80112 (303)-337-0338">7290
-                                        South Fraser St. Centennial, CO 80112 (303)-337-0338</option>
-                                    <option value="4763 Town Center Drive Colorado Springs, CO 80916 (719)-265-9003">
-                                        4763 Town Center Drive Colorado Springs, CO 80916 (719)-265-9003</option>
-                                    <option value="542 W. 66th St. Loveland, CO 80538(970) 685-4316">542 W. 66th St.
-                                        Loveland, CO 80538(970) 685-4316</option>
-                                    <option value="5709 SE 74th St., Suite A Oklahoma City, OK 73135">5709 SE 74th
-                                        St., Suite A Oklahoma City, OK 73135</option>
+                                    <option value="7290 South Fraser St.Centennial, CO 80112">7290 South Fraser
+                                        St.Centennial, CO 80112</option>
+                                    <option value="4763 Town Center Drive Colorado Springs, CO 80916">
+                                        4763 Town Center Drive Colorado Springs, CO 80916</option>
+                                    <option value="5709 SE 74th Street, Suite A: Oklahoma City, OK 73135">5709 SE
+                                        74th Street, Suite A: Oklahoma City, OK 73135</option>
                                 </select>
                             </div>
                             @error('office_address')
@@ -721,10 +719,6 @@
                         </div>
                     </div>
                 </div>
-
-
-
-
                 <div class="row mt-3">
                     <div class="col-lg-12">
                         <h6>Test Results</h6>
@@ -880,7 +874,7 @@
                                         <td class="moistureremove">
                                             <div class="input-group">
                                                 <input type="text" class="form-control moistureremoveinput"
-                                                    wire:model="pass_fail_a">
+                                                    wire:model="pass_fail_a" @if($field_wet_density_a == null) style="display: none" @endif readonly>
                                                 @error('pass_fail_a')
                                                     <span class="text-danger"
                                                         style="font-size: 12px;">{{ $message }}</span>
@@ -1017,7 +1011,7 @@
                                         <td class="moistureremove">
                                             <div class="input-group">
                                                 <input type="text" class="form-control moistureremoveinput"
-                                                    wire:model="pass_fail_b">
+                                                    wire:model="pass_fail_b" @if($field_wet_density_b == null) style="display: none" @endif readonly>
                                                 @error('pass_fail_b')
                                                     <span class="text-danger"
                                                         style="font-size: 12px;">{{ $message }}</span>
@@ -1154,7 +1148,7 @@
                                         <td class="moistureremove">
                                             <div class="input-group">
                                                 <input type="text" class="form-control moistureremoveinput"
-                                                    wire:model="pass_fail_c">
+                                                    wire:model="pass_fail_c" @if($field_wet_density_c == null) style="display: none" @endif readonly>
                                                 @error('pass_fail_c')
                                                     <span class="text-danger"
                                                         style="font-size: 12px;">{{ $message }}</span>
@@ -1291,7 +1285,7 @@
                                         <td class="moistureremove">
                                             <div class="input-group">
                                                 <input type="text" class="form-control moistureremoveinput"
-                                                    wire:model="pass_fail_d">
+                                                    wire:model="pass_fail_d" @if($field_wet_density_d == null) style="display: none" @endif readonly>
                                                 @error('pass_fail_d')
                                                     <span class="text-danger"
                                                         style="font-size: 12px;">{{ $message }}</span>
@@ -1428,7 +1422,7 @@
                                         <td class="moistureremove">
                                             <div class="input-group">
                                                 <input type="text" class="form-control moistureremoveinput"
-                                                    wire:model="pass_fail_e">
+                                                    wire:model="pass_fail_e" @if($field_wet_density_e == null) style="display: none" @endif readonly>
                                                 @error('pass_fail_e')
                                                     <span class="text-danger"
                                                         style="font-size: 12px;">{{ $message }}</span>
@@ -1565,7 +1559,7 @@
                                         <td class="moistureremove">
                                             <div class="input-group">
                                                 <input type="text" class="form-control moistureremoveinput"
-                                                    wire:model="pass_fail_f">
+                                                    wire:model="pass_fail_f" @if($field_wet_density_f == null) style="display: none" @endif readonly>
                                                 @error('pass_fail_f')
                                                     <span class="text-danger"
                                                         style="font-size: 12px;">{{ $message }}</span>

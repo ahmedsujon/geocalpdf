@@ -26,7 +26,7 @@
                 <div class="card">
                     <div class="card-header">
                         <h4 class="card-title">REPORT OF FIELD INSPECTION OF CONCRETE – SINGLE MIX (DATA SET 2)</h4>
-                        <a style="float: right" href="{{ route('concrete.create') }}"
+                        <a style="float: right" href="{{ route('concrete.create.two') }}"
                             class="card-button btn btn-sm btn-primary"><i class="ti ti-plus"></i> ADD NEW</a>
                     </div>
                     <div class="card-body">
@@ -82,10 +82,10 @@
                                         <td>{{ user($file->created_by)->name }}</td>
                                         <td>{{ $file->created_at }}</td>
                                         <td style="text-align: center;">
-                                            <a href="{{ route('concrete.show', ['file_id' => $file->id]) }}" type="button"
+                                            <a href="{{ route('concrete.show.two', ['file_id' => $file->id]) }}" type="button"
                                                 class="btn btn-outline-success btn-icon-circle btn-icon-circle-sm"><i
                                                     class="ti ti-eye"></i></a>
-                                            <a href="{{ route('concrete.update', ['file_id' => $file->id]) }}" type="button"
+                                            <a href="{{ route('concrete.update.two', ['file_id' => $file->id]) }}" type="button"
                                                 class="btn btn-outline-warning btn-icon-circle btn-icon-circle-sm"><i
                                                     class="ti ti-edit"></i></a>
                                             <a wire:click.prevent="deleteConfirmation({{ $file->id }})" type="button"

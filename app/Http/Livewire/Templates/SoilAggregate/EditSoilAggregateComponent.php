@@ -357,7 +357,30 @@ class EditSoilAggregateComponent extends Component
             $this->percent_comp_f = 0;
         }
     }
-
+    public function resultMixA()
+    {
+        $this->changeTestResultA();
+    }
+    public function resultMixB()
+    {
+        $this->changeTestResultB();
+    }
+    public function resultMixC()
+    {
+        $this->changeTestResultC();
+    }
+    public function resultMixD()
+    {
+        $this->changeTestResultD();
+    }
+    public function resultMixE()
+    {
+        $this->changeTestResultE();
+    }
+    public function resultMixF()
+    {
+        $this->changeTestResultF();
+    }
     public function updated($fields)
     {
         $this->validateOnly($fields, [
