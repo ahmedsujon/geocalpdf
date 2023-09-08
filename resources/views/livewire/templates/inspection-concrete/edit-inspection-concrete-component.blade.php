@@ -341,11 +341,7 @@
                                 <div class="input-group mt-3">
                                     <span class="input-group-text">Required Strength (psi):</span>
                                     <input type="text" class="form-control form-color" wire:model="required_strength"
-                                        wire:keyup='specifiedStrengthA' wire:keyup='specifiedStrengthB'
-                                        wire:keyup='specifiedStrengthC' wire:keyup='specifiedStrengthD'
-                                        wire:keyup='specifiedStrengthE' wire:keyup='specifiedStrengthF'
-                                        wire:keyup='specifiedStrengthG' wire:keyup='specifiedStrengthH'
-                                        wire:keyup='specifiedStrengthI' wire:keyup='specifiedStrengthJ' required>
+                                        wire:keyup='specifiedStrength' required>
                                 </div>
                                 @error('required_strength')
                                 <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
@@ -1988,7 +1984,6 @@
                                     @enderror
                                 </div>
                             </div>
-
                             <div class="col-lg-5">
                                 <div class="input-group mt-3">
                                     <span class="input-group-text">Date Cylinders received in lab:</span>
@@ -2088,29 +2083,11 @@
                                         class="cGcvT"></grammarly-extension>
                                 </div>
                             </div>
-                            <div class="col-md-10">
-                                <div class="input-group">
-                                    <span class="input-group-text">Next Action:</span>
-                                    <select class="form-select moistureremoveinput dependent" wire:model='status'
-                                        data-file_id="{{ $file_id }}">
-                                        <option value="">Select an action...</option>
-                                        <option value="sentToPE">Send to Project Engineer</option>
-                                        <option value="sentToClerk">Send to Clerk</option>
-                                        <option value="sentToSupervisor">Send to Supervisor</option>
-                                        <option value="sentToTech">Send to Tech</option>
-                                        <option value="sentToClient">Send to Client</option>
-                                    </select>
-                                </div>
-                                @error('status')
-                                <span class="text-danger" style="font-size: 12px;">{{ $message
-                                    }}</span>
-                                @enderror
-                            </div>
-                            <div class="col-md-10 mt-3" wire:ignore>
+                            <div class="col-md-10" wire:ignore>
                                 <div class="input-group">
                                     <span class="input-group-text">Responsible Persons:</span>
-                                    <select class="form-select moistureremoveinput multiple_selector"
-                                        wire:model="responsible_person" id="action" multiple required>
+                                    <select class="form-select moistureremoveinput multiple_selector" id="action"
+                                        multiple>
                                     </select>
                                 </div>
                             </div>

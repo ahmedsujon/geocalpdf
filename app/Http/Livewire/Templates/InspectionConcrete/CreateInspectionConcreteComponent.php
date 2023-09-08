@@ -69,14 +69,19 @@ class CreateInspectionConcreteComponent extends Component
     {
         if ($this->age_a == 28) {
             $this->specified_strength_a = $this->required_strength;
+        } elseif ($this->age_a == null) {
+            $this->age_a = null;
         } else {
             $this->specified_strength_a = 0;
         }
     }
+
     public function specifiedStrengthB()
     {
         if ($this->age_b == 28) {
             $this->specified_strength_b = $this->required_strength;
+        } elseif ($this->age_b == null) {
+            $this->age_b = null;
         } else {
             $this->specified_strength_b = 0;
         }
@@ -86,6 +91,8 @@ class CreateInspectionConcreteComponent extends Component
     {
         if ($this->age_c == 28) {
             $this->specified_strength_c = $this->required_strength;
+        } elseif ($this->age_c == null) {
+            $this->age_c = null;
         } else {
             $this->specified_strength_c = 0;
         }
@@ -94,6 +101,8 @@ class CreateInspectionConcreteComponent extends Component
     {
         if ($this->age_d == 28) {
             $this->specified_strength_d = $this->required_strength;
+        } elseif ($this->age_d == null) {
+            $this->age_d = null;
         } else {
             $this->specified_strength_d = 0;
         }
@@ -102,6 +111,8 @@ class CreateInspectionConcreteComponent extends Component
     {
         if ($this->age_e == 28) {
             $this->specified_strength_e = $this->required_strength;
+        } elseif ($this->age_e == null) {
+            $this->age_e = null;
         } else {
             $this->specified_strength_e = 0;
         }
@@ -110,6 +121,8 @@ class CreateInspectionConcreteComponent extends Component
     {
         if ($this->age_f == 28) {
             $this->specified_strength_f = $this->required_strength;
+        } elseif ($this->age_f == null) {
+            $this->age_f = null;
         } else {
             $this->specified_strength_f = 0;
         }
@@ -118,6 +131,8 @@ class CreateInspectionConcreteComponent extends Component
     {
         if ($this->age_g == 28) {
             $this->specified_strength_g = $this->required_strength;
+        } elseif ($this->age_g == null) {
+            $this->age_g = null;
         } else {
             $this->specified_strength_g = 0;
         }
@@ -126,6 +141,8 @@ class CreateInspectionConcreteComponent extends Component
     {
         if ($this->age_h == 28) {
             $this->specified_strength_h = $this->required_strength;
+        } elseif ($this->age_h == null) {
+            $this->age_h = null;
         } else {
             $this->specified_strength_h = 0;
         }
@@ -134,6 +151,8 @@ class CreateInspectionConcreteComponent extends Component
     {
         if ($this->age_i == 28) {
             $this->specified_strength_i = $this->required_strength;
+        } elseif ($this->age_i == null) {
+            $this->age_i = null;
         } else {
             $this->specified_strength_i = 0;
         }

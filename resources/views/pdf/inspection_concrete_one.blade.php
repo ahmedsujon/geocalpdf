@@ -990,15 +990,9 @@
             @endif
         </table>
         @php
-        $value1 = 10;
-        $value2 = null;
-        $value3 = 30;
-        $value4 = 0;
-        $value5 = 50;
-
-        $values = [$data->specified_strength_a, $data->specified_strength_b, $data->specified_strength_c,
-        $data->specified_strength_d, $data->specified_strength_e, $data->specified_strength_f,
-        $data->specified_strength_g, $data->specified_strength_g, $data->specified_strength_i];
+        $values = [$data->measured_strength_a, $data->measured_strength_b, $data->measured_strength_c,
+        $data->measured_strength_d, $data->measured_strength_e, $data->measured_strength_f,
+        $data->measured_strength_g, $data->measured_strength_g, $data->measured_strength_i];
 
         // Filter out null and zero values
         $filteredValues = array_filter($values, fn($v) => $v !== null && $v !== 0);
