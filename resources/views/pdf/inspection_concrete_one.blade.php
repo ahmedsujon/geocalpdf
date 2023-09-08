@@ -989,21 +989,19 @@
             </tr>
             @endif
         </table>
+
         @php
-        $values = [$data->measured_strength_a, $data->measured_strength_b, $data->measured_strength_c,
-        $data->measured_strength_d, $data->measured_strength_e, $data->measured_strength_f,
-        $data->measured_strength_g, $data->measured_strength_g, $data->measured_strength_i];
-
-        // Filter out null and zero values
-        $filteredValues = array_filter($values, fn($v) => $v !== null && $v !== 0);
-
-        if (count($filteredValues) > 0) {
-        $total = array_sum($filteredValues);
-        $average = $total / count($filteredValues);
-        } else {
-        $average = 0;
-        }
+        $totalSum = 0;
         @endphp
+        
+        @foreach ($data as $item)
+            @if ($item->age_a == 28 && $item->age_b == 28 && $item->age_c == 28 && $item->age_d == 28)
+                @php
+                $totalSum += $item->measured_strength_a + $item->measured_strength_b + $item->measured_strength_c + $item->measured_strength_d;
+                @endphp
+            @endif
+        @endforeach
+        
 
         <table style="width: 100%; border-collapse: collapse;">
             <tr>
@@ -1012,7 +1010,7 @@
                         (psi)</h4>
                 </td>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $average }}
+                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $totalSum }}
                     </h4>
                 </td>
             </tr>
