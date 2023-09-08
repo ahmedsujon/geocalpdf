@@ -139,7 +139,7 @@
                     </th>
                 </tr>
                 @if ($data->mix_a_id)
-                <tr style="text-align: center">
+                    <tr style="text-align: center">
                         <td style="padding: 4px 6px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->mix_a_id }}
                             </h4>
@@ -161,7 +161,7 @@
                     </tr>
                 @endif
                 @if ($data->mix_b_id)
-                <tr style="text-align: center">
+                    <tr style="text-align: center">
                         <td style="padding: 4px 6px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->mix_b_id }}
                             </h4>
@@ -183,7 +183,7 @@
                     </tr>
                 @endif
                 @if ($data->mix_c_id)
-                <tr style="text-align: center">
+                    <tr style="text-align: center">
                         <td style="padding: 4px 6px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->mix_c_id }}
                             </h4>
@@ -206,7 +206,7 @@
                     </tr>
                 @endif
                 @if ($data->mix_d_id)
-                <tr style="text-align: center">
+                    <tr style="text-align: center">
                         <td style="padding: 4px 6px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->mix_d_id }}
                             </h4>
@@ -229,7 +229,7 @@
                     </tr>
                 @endif
                 @if ($data->mix_e_id)
-                <tr style="text-align: center">
+                    <tr style="text-align: center">
                         <td style="padding: 4px 6px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->mix_e_id }}
                             </h4>
@@ -625,43 +625,49 @@
             <tr>
                 <td
                     style="width: 28%; padding-top: 10px; padding-left: 10px; padding-right: 10px; padding-bottom: 20px;">
-                    <h5>{{ $data->report_status }}</h5>
-                    <h4
-                        style="
-                font-size: 14px;
-                font-weight: 400;
-                border-top: 1px solid black;
-                padding-top: 2px;
-                width: 160px;
-              ">
-                        Observation
-                    </h4>
+                    <h6
+                        style="padding-bottom: 4px; padding-left: 23px; font-weight: normal; 
+                    font-size: 14px;
+                    font-weight: normal;">
+                        {{ $data->report_status }}</h6>
+                    <h6
+                        style=" 
+                    font-size: 14px;
+                    font-weight: normal; ">
+                        <span style="padding: 1px 5px; border-top: 2px solid #000; border-bottom: 2px solid #000;">X</span>
+                        Part Time Observation</h6>
                 </td>
                 <td style="width: 32%; padding-top: 10px; padding-bottom: 20px;">
-                    <h5 style="padding-top: 30px;">{{ user($data->user_id)->name }}</h5>
-                    <h4
+                    <h6 style="
+                    font-size: 14px;
+                    font-weight: normal;">
+                        {{ user($data->user_id)->name }}</h6>
+                    <h6
                         style="
                 font-size: 14px;
-                font-weight: 400;
+                font-weight: normal;
                 border-top: 1px solid black;
                 padding-top: 2px;
                 width: 160px;
               ">
                         Materials Technician:
-                    </h4>
+                    </h6>
                 </td>
                 <td
                     style="width: 40%; padding-top: 10px; padding-left: 10px; padding-right: 20px; padding-bottom: 20px;">
-                    <h5 style="padding-top: 30px;">{{ user($data->created_by)->name }}</h5>
-                    <h4
+                    <h6 style="
+                    font-size: 14px;
+                    font-weight: normal;">
+                        {{ user($data->created_by)->name }}</h6>
+                    <h6
                         style="
                 font-size: 14px;
-                font-weight: 400;
+                font-weight: normal;
                 border-top: 1px solid black;
                 padding-top: 2px;
               ">
                         Reviewed By
-                    </h4>
+                    </h6>
                 </td>
             </tr>
         </table>
