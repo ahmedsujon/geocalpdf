@@ -89,6 +89,38 @@ class InvoiceController extends Controller
         $data->client_email = client($data->client_id)->email;
         $data->client_phone = client($data->client_id)->phone;
         $data->client_company_name = client($data->client_id)->company_name;
+
+        $avarage_array = array();
+        if ($data->age_a == 28) {
+            $avarage_array[] = $data->measured_strength_a;
+        }
+        if ($data->age_b == 28) {
+            $avarage_array[] = $data->measured_strength_b;
+        }
+        if ($data->age_c == 28) {
+            $avarage_array[] = $data->measured_strength_c;
+        }
+        if ($data->age_d == 28) {
+            $avarage_array[] = $data->measured_strength_d;
+        }
+        if ($data->age_e == 28) {
+            $avarage_array[] = $data->measured_strength_e;
+        }
+        if ($data->age_f == 28) {
+            $avarage_array[] = $data->measured_strength_f;
+        }
+        if ($data->age_g == 28) {
+            $avarage_array[] = $data->measured_strength_g;
+        }
+        if ($data->age_h == 28) {
+            $avarage_array[] = $data->measured_strength_h;
+        }
+        if ($data->age_i == 28) {
+            $avarage_array[] = $data->measured_strength_i;
+        }
+        $data->avarage = array_sum($avarage_array) / count($avarage_array);
+
+
         $pdf = Pdf::loadView('pdf.inspection_concrete_one', compact('data'));
         return $pdf->stream('inspection_concrete_report.pdf');
     }
@@ -209,5 +241,4 @@ class InvoiceController extends Controller
         $pdf = Pdf::loadView('pdf.inspection_concrete_ten', compact('data'));
         return $pdf->stream('inspection_concrete_report.pdf');
     }
-
 }

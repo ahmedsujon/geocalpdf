@@ -398,19 +398,12 @@
                 </td>
             </tr>
 
-            @php
-            $startTimestamp = strtotime($data->batch_time);
-            $endTimestamp = strtotime($data->ttf_unloading);
-
-            $timeDifferenceInMinutes = round(($endTimestamp - $startTimestamp) / 60);
-            @endphp
-
             <tr>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
                     <h4 style="font-size: 14px; font-weight: 400">Time in Truck: (min):</h4>
                 </td>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400">{{ $timeDifferenceInMinutes }}</h4>
+                    <h4 style="font-size: 14px; font-weight: 400">432</h4>
                 </td>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
                     <h4 style="font-size: 14px; font-weight: 400">Batch Size:</h4>
@@ -990,19 +983,6 @@
             @endif
         </table>
 
-        @php
-        $totalSum = 0;
-        @endphp
-        
-        @foreach ($data as $item)
-            @if ($item->age_a == 28 && $item->age_b == 28 && $item->age_c == 28 && $item->age_d == 28)
-                @php
-                $totalSum += $item->measured_strength_a + $item->measured_strength_b + $item->measured_strength_c + $item->measured_strength_d;
-                @endphp
-            @endif
-        @endforeach
-        
-
         <table style="width: 100%; border-collapse: collapse;">
             <tr>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
@@ -1010,7 +990,7 @@
                         (psi)</h4>
                 </td>
                 <td style="padding: 2px 6px; border: 1px solid lightgray">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $totalSum }}
+                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->avarage }}
                     </h4>
                 </td>
             </tr>
