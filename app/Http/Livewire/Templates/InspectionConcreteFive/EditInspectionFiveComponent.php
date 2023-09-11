@@ -791,7 +791,7 @@ class EditInspectionFiveComponent extends Component
         }
 
         session()->flash('message', 'Inspection concrete updated successfully');
-        return redirect()->route('template.concrete');
+        return redirect()->route('template.concrete.five');
     }
 
     public function render()
@@ -823,6 +823,7 @@ class EditInspectionFiveComponent extends Component
         if ($this->area_cyl_i) {
             $this->measuredStrengthI();
         }
+
         $projects = Project::orderBy('id', 'DESC')->get();
         return view('livewire.templates.inspection-concrete-five.edit-inspection-five-component', ['projects' => $projects])->layout('livewire.layouts.base');
     }

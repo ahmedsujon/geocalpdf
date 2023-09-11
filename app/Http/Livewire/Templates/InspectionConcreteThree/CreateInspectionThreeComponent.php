@@ -2,9 +2,12 @@
 
 namespace App\Http\Livewire\Templates\InspectionConcreteThree;
 
-use App\Models\InspectionConcreteSetThree;
+use App\Models\User;
 use App\Models\Project;
 use Livewire\Component;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
+use App\Models\InspectionConcreteSetThree;
 
 class CreateInspectionThreeComponent extends Component
 {
@@ -572,7 +575,7 @@ class CreateInspectionThreeComponent extends Component
         }
 
         session()->flash('message', 'Inspection concrete created successfully');
-        return redirect()->route('template.concrete');
+        return redirect()->route('template.concrete.three');
     }
 
 

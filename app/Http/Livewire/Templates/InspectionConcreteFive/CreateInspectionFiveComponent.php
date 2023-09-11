@@ -575,7 +575,7 @@ class CreateInspectionFiveComponent extends Component
         }
 
         session()->flash('message', 'Inspection concrete created successfully');
-        return redirect()->route('template.concrete');
+        return redirect()->route('template.concrete.five');
     }
 
     public function render()

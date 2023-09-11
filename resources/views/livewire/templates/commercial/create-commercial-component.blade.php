@@ -194,15 +194,15 @@
             <div class="card-body commercial-form">
 
                 <div class="row">
-                    <div class="col-md-4"></div>
-                    <div class="col-md-4">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
                         <div class="content text-center pt-2 pb-2">
-                            <h6>GEOCAL, INC.<br>
+                            <h5>GEOCAL, INC.<br>
                                 FIELD DENSITY OF ASPHALT / BITUMINOUS by Nuclear Method<br>
-                                ASTM D 2950 / AASHTO T355</h6>
+                                ASTM D 2950 / AASHTO T355</h5>
                         </div>
                     </div>
-                    <div class="col-md-4"></div>
+                    <div class="col-md-3"></div>
                 </div>
                 <div class="container">
                     <div class="row justify-content-md-center">

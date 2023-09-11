@@ -26,7 +26,7 @@
                 <div class="card">
                     <div class="card-header">
                         <h4 class="card-title">REPORT OF FIELD INSPECTION OF CONCRETE – SINGLE MIX (DATA SET 5)</h4>
-                        <a style="float: right" href="{{ route('concrete.create') }}"
+                        <a style="float: right" href="{{ route('concrete.create.five') }}"
                             class="card-button btn btn-sm btn-primary"><i class="ti ti-plus"></i> ADD NEW</a>
                     </div>
                     <div class="card-body">
@@ -86,10 +86,10 @@
                                                 type="button"
                                                 class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm"><i
                                                     class="ti ti-file-invoice"></i></a>
-                                            <a href="{{ route('concrete.show', ['file_id' => $file->id]) }}" type="button"
+                                            <a href="{{ route('concrete.show.five', ['file_id' => $file->id]) }}" type="button"
                                                 class="btn btn-outline-success btn-icon-circle btn-icon-circle-sm"><i
                                                     class="ti ti-eye"></i></a>
-                                            <a href="{{ route('concrete.update', ['file_id' => $file->id]) }}" type="button"
+                                            <a href="{{ route('concrete.update.five', ['file_id' => $file->id]) }}" type="button"
                                                 class="btn btn-outline-warning btn-icon-circle btn-icon-circle-sm"><i
                                                     class="ti ti-edit"></i></a>
                                             <a wire:click.prevent="deleteConfirmation({{ $file->id }})" type="button"

@@ -225,17 +225,16 @@
                 <div class="card">
                     <div class="card-body commercial-form">
                         <div class="row mb-3">
-                            <div class="col-md-4"></div>
-                            <div class="col-md-4">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-6">
                                 <div class="content text-center pt-2 pb-2">
-                                    <h6 style="font-weight: 700;">REPORT OF FIELD INSPECTION OF CONCRETE – SINGLE MIX
+                                    <h5 style="font-weight: 700;">REPORT OF FIELD INSPECTION OF CONCRETE – SINGLE MIX
                                         (DATA SET 1)
-                                    </h6>
+                                    </h5>
                                 </div>
                             </div>
-                            <div class="col-md-4"></div>
+                            <div class="col-md-3"></div>
                         </div>
-
 
                         <div class="container">
                             <div class="row mb-3">
@@ -542,8 +541,6 @@
                             </div>
                         </div>
 
-
-
                         <div class="container">
                             <div class="row mb-3">
                                 <div class="col-lg-6">
@@ -720,7 +717,6 @@
                                 </div>
                             </div>
                         </div>
-
 
                         <div class="row mb-3">
                             <div class="col-md-12">
@@ -2137,7 +2133,6 @@
                             </div>
                         </div>
 
-
                         <div class="container">
                             <div class="row mb-3">
                                 <div class="col-lg-6">
@@ -2273,8 +2268,6 @@
                                 </div>
                             </div>
                         </div>
-
-
 
                         <div class="container">
                             <div class="row mb-3">
