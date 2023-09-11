@@ -1984,7 +1984,6 @@
                                     @enderror
                                 </div>
                             </div>
-
                             <div class="col-lg-5">
                                 <div class="input-group mt-3">
                                     <span class="input-group-text">Date Cylinders received in lab:</span>
