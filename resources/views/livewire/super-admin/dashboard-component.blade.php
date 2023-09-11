@@ -12,8 +12,8 @@
                     <!--end card-header-->
                     <div class="card-body">
                         <div class="main-timeline mt-3">
-                            @if ($soil_aggregates->count() > 0)
-                            @foreach ($soil_aggregates as $file)
+                            @if ($commercial_forms->count() > 0)
+                            @foreach ($commercial_forms as $file)
                             <div class="timeline">
                                 <span class="timeline-icon"></span>
                                 <span class="year">
@@ -46,8 +46,8 @@
                     <!--end card-header-->
                     <div class="card-body">
                         <div class="main-timeline mt-3">
-                            @if ($soil_aggregates->count() > 0)
-                            @foreach ($soil_aggregates as $file)
+                            @if ($cdot_forms->count() > 0)
+                            @foreach ($cdot_forms as $file)
                             <div class="timeline">
                                 <span class="timeline-icon"></span>
                                 <span class="year">
@@ -112,8 +112,8 @@
                     <!--end card-header-->
                     <div class="card-body">
                         <div class="main-timeline mt-3">
-                            @if ($soil_aggregates->count() > 0)
-                            @foreach ($soil_aggregates as $file)
+                            @if ($plastic_concretes->count() > 0)
+                            @foreach ($plastic_concretes as $file)
                             <div class="timeline">
                                 <span class="timeline-icon"></span>
                                 <span class="year">
@@ -146,8 +146,8 @@
                     <!--end card-header-->
                     <div class="card-body">
                         <div class="main-timeline mt-3">
-                            @if ($soil_aggregates->count() > 0)
-                            @foreach ($soil_aggregates as $file)
+                            @if ($concrete_ones->count() > 0)
+                            @foreach ($concrete_ones as $file)
                             <div class="timeline">
                                 <span class="timeline-icon"></span>
                                 <span class="year">
@@ -180,8 +180,8 @@
                     <!--end card-header-->
                     <div class="card-body">
                         <div class="main-timeline mt-3">
-                            @if ($soil_aggregates->count() > 0)
-                            @foreach ($soil_aggregates as $file)
+                            @if ($concrete_twos->count() > 0)
+                            @foreach ($concrete_twos as $file)
                             <div class="timeline">
                                 <span class="timeline-icon"></span>
                                 <span class="year">
@@ -214,8 +214,8 @@
                     <!--end card-header-->
                     <div class="card-body">
                         <div class="main-timeline mt-3">
-                            @if ($soil_aggregates->count() > 0)
-                            @foreach ($soil_aggregates as $file)
+                            @if ($concrete_threes->count() > 0)
+                            @foreach ($concrete_threes as $file)
                             <div class="timeline">
                                 <span class="timeline-icon"></span>
                                 <span class="year">
@@ -248,8 +248,8 @@
                     <!--end card-header-->
                     <div class="card-body">
                         <div class="main-timeline mt-3">
-                            @if ($soil_aggregates->count() > 0)
-                            @foreach ($soil_aggregates as $file)
+                            @if ($concrete_fours->count() > 0)
+                            @foreach ($concrete_fours as $file)
                             <div class="timeline">
                                 <span class="timeline-icon"></span>
                                 <span class="year">
@@ -282,8 +282,8 @@
                     <!--end card-header-->
                     <div class="card-body">
                         <div class="main-timeline mt-3">
-                            @if ($soil_aggregates->count() > 0)
-                            @foreach ($soil_aggregates as $file)
+                            @if ($concrete_fives->count() > 0)
+                            @foreach ($concrete_fives as $file)
                             <div class="timeline">
                                 <span class="timeline-icon"></span>
                                 <span class="year">
@@ -316,8 +316,8 @@
                     <!--end card-header-->
                     <div class="card-body">
                         <div class="main-timeline mt-3">
-                            @if ($soil_aggregates->count() > 0)
-                            @foreach ($soil_aggregates as $file)
+                            @if ($concrete_sixs->count() > 0)
+                            @foreach ($concrete_sixs as $file)
                             <div class="timeline">
                                 <span class="timeline-icon"></span>
                                 <span class="year">
@@ -350,8 +350,8 @@
                     <!--end card-header-->
                     <div class="card-body">
                         <div class="main-timeline mt-3">
-                            @if ($soil_aggregates->count() > 0)
-                            @foreach ($soil_aggregates as $file)
+                            @if ($concrete_sevens->count() > 0)
+                            @foreach ($concrete_sevens as $file)
                             <div class="timeline">
                                 <span class="timeline-icon"></span>
                                 <span class="year">
@@ -384,8 +384,8 @@
                     <!--end card-header-->
                     <div class="card-body">
                         <div class="main-timeline mt-3">
-                            @if ($soil_aggregates->count() > 0)
-                            @foreach ($soil_aggregates as $file)
+                            @if ($concrete_eights->count() > 0)
+                            @foreach ($concrete_eights as $file)
                             <div class="timeline">
                                 <span class="timeline-icon"></span>
                                 <span class="year">
@@ -418,8 +418,8 @@
                     <!--end card-header-->
                     <div class="card-body">
                         <div class="main-timeline mt-3">
-                            @if ($soil_aggregates->count() > 0)
-                            @foreach ($soil_aggregates as $file)
+                            @if ($concrete_nines->count() > 0)
+                            @foreach ($concrete_nines as $file)
                             <div class="timeline">
                                 <span class="timeline-icon"></span>
                                 <span class="year">
@@ -452,8 +452,8 @@
                     <!--end card-header-->
                     <div class="card-body">
                         <div class="main-timeline mt-3">
-                            @if ($soil_aggregates->count() > 0)
-                            @foreach ($soil_aggregates as $file)
+                            @if ($concrete_tens->count() > 0)
+                            @foreach ($concrete_tens as $file)
                             <div class="timeline">
                                 <span class="timeline-icon"></span>
                                 <span class="year">
