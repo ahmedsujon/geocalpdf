@@ -119,132 +119,131 @@ class EditInspectionConcreteComponent extends Component
         $this->status = $file->status;
 
         // COMPRESSIVE STRENGTHS DATA
-        $this->age_a =$file->age_a;
-        $this->test_date_a =$file->test_date_a;
-        $this->diameter_a =$file->diameter_a;
-        $this->diameter_a_a =$file->diameter_a_a;
-        $this->avg_length_a =$file->avg_length_a;
-        $this->mass_a =$file->mass_a;
-        $this->max_load_a =$file->max_load_a;
-        $this->type_cap_a =$file->type_cap_a;
-        $this->area_cyl_a =$file->area_cyl_a;
-        $this->measured_strength_a =$file->measured_strength_a;
-        $this->specified_strength_a =$file->specified_strength_a;
-        $this->type_fracture_a =$file->type_fracture_a;
-        $this->person_performing_a =$file->person_performing_a;
+        $this->age_a = $file->age_a;
+        $this->test_date_a = $file->test_date_a;
+        $this->diameter_a = $file->diameter_a;
+        $this->diameter_a_a = $file->diameter_a_a;
+        $this->avg_length_a = $file->avg_length_a;
+        $this->mass_a = $file->mass_a;
+        $this->max_load_a = $file->max_load_a;
+        $this->type_cap_a = $file->type_cap_a;
+        $this->area_cyl_a = $file->area_cyl_a;
+        $this->measured_strength_a = $file->measured_strength_a;
+        $this->specified_strength_a = $file->specified_strength_a;
+        $this->type_fracture_a = $file->type_fracture_a;
+        $this->person_performing_a = $file->person_performing_a;
 
-        $this->age_b =$file->age_b;
-        $this->test_date_b =$file->test_date_b;
-        $this->diameter_b =$file->diameter_b;
-        $this->diameter_a_b =$file->diameter_a_b;
-        $this->avg_length_b =$file->avg_length_b;
-        $this->mass_b =$file->mass_b;
-        $this->max_load_b =$file->max_load_b;
-        $this->type_cap_b =$file->type_cap_b;
-        $this->area_cyl_b =$file->area_cyl_b;
-        $this->measured_strength_b =$file->measured_strength_b;
-        $this->specified_strength_b =$file->specified_strength_b;
-        $this->type_fracture_b =$file->type_fracture_b;
-        $this->person_performing_b =$file->person_performing_b;
+        $this->age_b = $file->age_b;
+        $this->test_date_b = $file->test_date_b;
+        $this->diameter_b = $file->diameter_b;
+        $this->diameter_a_b = $file->diameter_a_b;
+        $this->avg_length_b = $file->avg_length_b;
+        $this->mass_b = $file->mass_b;
+        $this->max_load_b = $file->max_load_b;
+        $this->type_cap_b = $file->type_cap_b;
+        $this->area_cyl_b = $file->area_cyl_b;
+        $this->measured_strength_b = $file->measured_strength_b;
+        $this->specified_strength_b = $file->specified_strength_b;
+        $this->type_fracture_b = $file->type_fracture_b;
+        $this->person_performing_b = $file->person_performing_b;
 
-        $this->age_c =$file->age_c;
-        $this->test_date_c =$file->test_date_c;
-        $this->diameter_c =$file->diameter_c;
-        $this->diameter_a_c =$file->diameter_a_c;
-        $this->avg_length_c =$file->avg_length_c;
-        $this->mass_c =$file->mass_c;
-        $this->max_load_c =$file->max_load_c;
-        $this->type_cap_c =$file->type_cap_c;
-        $this->area_cyl_c =$file->area_cyl_c;
-        $this->measured_strength_c =$file->measured_strength_c;
-        $this->specified_strength_c =$file->specified_strength_c;
-        $this->type_fracture_c =$file->type_fracture_c;
-        $this->person_performing_c =$file->person_performing_c;
+        $this->age_c = $file->age_c;
+        $this->test_date_c = $file->test_date_c;
+        $this->diameter_c = $file->diameter_c;
+        $this->diameter_a_c = $file->diameter_a_c;
+        $this->avg_length_c = $file->avg_length_c;
+        $this->mass_c = $file->mass_c;
+        $this->max_load_c = $file->max_load_c;
+        $this->type_cap_c = $file->type_cap_c;
+        $this->area_cyl_c = $file->area_cyl_c;
+        $this->measured_strength_c = $file->measured_strength_c;
+        $this->specified_strength_c = $file->specified_strength_c;
+        $this->type_fracture_c = $file->type_fracture_c;
+        $this->person_performing_c = $file->person_performing_c;
 
-        $this->age_d =$file->age_d;
-        $this->test_date_d =$file->test_date_d;
-        $this->diameter_d =$file->diameter_d;
-        $this->diameter_a_d =$file->diameter_a_d;
-        $this->avg_length_d =$file->avg_length_d;
-        $this->mass_d =$file->mass_d;
-        $this->max_load_d =$file->max_load_d;
-        $this->type_cap_d =$file->type_cap_d;
-        $this->area_cyl_d =$file->area_cyl_d;
-        $this->measured_strength_d =$file->measured_strength_d;
-        $this->specified_strength_d =$file->specified_strength_d;
-        $this->type_fracture_d =$file->type_fracture_d;
-        $this->person_performing_d =$file->person_performing_d;
+        $this->age_d = $file->age_d;
+        $this->test_date_d = $file->test_date_d;
+        $this->diameter_d = $file->diameter_d;
+        $this->diameter_a_d = $file->diameter_a_d;
+        $this->avg_length_d = $file->avg_length_d;
+        $this->mass_d = $file->mass_d;
+        $this->max_load_d = $file->max_load_d;
+        $this->type_cap_d = $file->type_cap_d;
+        $this->area_cyl_d = $file->area_cyl_d;
+        $this->measured_strength_d = $file->measured_strength_d;
+        $this->specified_strength_d = $file->specified_strength_d;
+        $this->type_fracture_d = $file->type_fracture_d;
+        $this->person_performing_d = $file->person_performing_d;
 
-        $this->age_e =$file->age_e;
-        $this->test_date_e =$file->test_date_e;
-        $this->diameter_e =$file->diameter_e;
-        $this->diameter_a_e =$file->diameter_a_e;
-        $this->avg_length_e =$file->avg_length_e;
-        $this->mass_e =$file->mass_e;
-        $this->max_load_e =$file->max_load_e;
-        $this->type_cap_e =$file->type_cap_e;
-        $this->area_cyl_e =$file->area_cyl_e;
-        $this->measured_strength_e =$file->measured_strength_e;
-        $this->specified_strength_e =$file->specified_strength_e;
-        $this->type_fracture_e =$file->type_fracture_e;
-        $this->person_performing_e =$file->person_performing_e;
+        $this->age_e = $file->age_e;
+        $this->test_date_e = $file->test_date_e;
+        $this->diameter_e = $file->diameter_e;
+        $this->diameter_a_e = $file->diameter_a_e;
+        $this->avg_length_e = $file->avg_length_e;
+        $this->mass_e = $file->mass_e;
+        $this->max_load_e = $file->max_load_e;
+        $this->type_cap_e = $file->type_cap_e;
+        $this->area_cyl_e = $file->area_cyl_e;
+        $this->measured_strength_e = $file->measured_strength_e;
+        $this->specified_strength_e = $file->specified_strength_e;
+        $this->type_fracture_e = $file->type_fracture_e;
+        $this->person_performing_e = $file->person_performing_e;
 
-        $this->age_f =$file->age_f;
-        $this->test_date_f =$file->test_date_f;
-        $this->diameter_f =$file->diameter_f;
-        $this->diameter_a_f =$file->diameter_a_f;
-        $this->avg_length_f =$file->avg_length_f;
-        $this->mass_f =$file->mass_f;
-        $this->max_load_f =$file->max_load_f;
-        $this->type_cap_f =$file->type_cap_f;
-        $this->area_cyl_f =$file->area_cyl_f;
-        $this->measured_strength_f =$file->measured_strength_f;
-        $this->specified_strength_f =$file->specified_strength_f;
-        $this->type_fracture_f =$file->type_fracture_f;
-        $this->person_performing_f =$file->person_performing_f;
+        $this->age_f = $file->age_f;
+        $this->test_date_f = $file->test_date_f;
+        $this->diameter_f = $file->diameter_f;
+        $this->diameter_a_f = $file->diameter_a_f;
+        $this->avg_length_f = $file->avg_length_f;
+        $this->mass_f = $file->mass_f;
+        $this->max_load_f = $file->max_load_f;
+        $this->type_cap_f = $file->type_cap_f;
+        $this->area_cyl_f = $file->area_cyl_f;
+        $this->measured_strength_f = $file->measured_strength_f;
+        $this->specified_strength_f = $file->specified_strength_f;
+        $this->type_fracture_f = $file->type_fracture_f;
+        $this->person_performing_f = $file->person_performing_f;
 
-        $this->age_g =$file->age_g;
-        $this->test_date_g =$file->test_date_g;
-        $this->diameter_g =$file->diameter_g;
-        $this->diameter_a_g =$file->diameter_a_g;
-        $this->avg_length_g =$file->avg_length_g;
-        $this->mass_g =$file->mass_g;
-        $this->max_load_g =$file->max_load_g;
-        $this->type_cap_g =$file->type_cap_g;
-        $this->area_cyl_g =$file->area_cyl_g;
-        $this->measured_strength_g =$file->measured_strength_g;
-        $this->specified_strength_g =$file->specified_strength_g;
-        $this->type_fracture_g =$file->type_fracture_g;
-        $this->person_performing_g =$file->person_performing_g;
+        $this->age_g = $file->age_g;
+        $this->test_date_g = $file->test_date_g;
+        $this->diameter_g = $file->diameter_g;
+        $this->diameter_a_g = $file->diameter_a_g;
+        $this->avg_length_g = $file->avg_length_g;
+        $this->mass_g = $file->mass_g;
+        $this->max_load_g = $file->max_load_g;
+        $this->type_cap_g = $file->type_cap_g;
+        $this->area_cyl_g = $file->area_cyl_g;
+        $this->measured_strength_g = $file->measured_strength_g;
+        $this->specified_strength_g = $file->specified_strength_g;
+        $this->type_fracture_g = $file->type_fracture_g;
+        $this->person_performing_g = $file->person_performing_g;
 
-        $this->age_h =$file->age_h;
-        $this->test_date_h =$file->test_date_h;
-        $this->diameter_h =$file->diameter_h;
-        $this->diameter_a_h =$file->diameter_a_h;
-        $this->avg_length_h =$file->avg_length_h;
-        $this->mass_h =$file->mass_h;
-        $this->max_load_h =$file->max_load_h;
-        $this->type_cap_h =$file->type_cap_h;
-        $this->area_cyl_h =$file->area_cyl_h;
-        $this->measured_strength_h =$file->measured_strength_h;
-        $this->specified_strength_h =$file->specified_strength_h;
-        $this->type_fracture_h =$file->type_fracture_h;
-        $this->person_performing_h =$file->person_performing_h;
+        $this->age_h = $file->age_h;
+        $this->test_date_h = $file->test_date_h;
+        $this->diameter_h = $file->diameter_h;
+        $this->diameter_a_h = $file->diameter_a_h;
+        $this->avg_length_h = $file->avg_length_h;
+        $this->mass_h = $file->mass_h;
+        $this->max_load_h = $file->max_load_h;
+        $this->type_cap_h = $file->type_cap_h;
+        $this->area_cyl_h = $file->area_cyl_h;
+        $this->measured_strength_h = $file->measured_strength_h;
+        $this->specified_strength_h = $file->specified_strength_h;
+        $this->type_fracture_h = $file->type_fracture_h;
+        $this->person_performing_h = $file->person_performing_h;
 
-        $this->age_i =$file->age_i;
-        $this->test_date_i =$file->test_date_i;
-        $this->diameter_i =$file->diameter_i;
-        $this->diameter_a_i =$file->diameter_a_i;
-        $this->avg_length_i =$file->avg_length_i;
-        $this->mass_i =$file->mass_i;
-        $this->max_load_i =$file->max_load_i;
-        $this->type_cap_i =$file->type_cap_i;
-        $this->area_cyl_i =$file->area_cyl_i;
-        $this->measured_strength_i =$file->measured_strength_i;
-        $this->specified_strength_i =$file->specified_strength_i;
-        $this->type_fracture_i =$file->type_fracture_i;
-        $this->person_performing_i =$file->person_performing_i;
-
+        $this->age_i = $file->age_i;
+        $this->test_date_i = $file->test_date_i;
+        $this->diameter_i = $file->diameter_i;
+        $this->diameter_a_i = $file->diameter_a_i;
+        $this->avg_length_i = $file->avg_length_i;
+        $this->mass_i = $file->mass_i;
+        $this->max_load_i = $file->max_load_i;
+        $this->type_cap_i = $file->type_cap_i;
+        $this->area_cyl_i = $file->area_cyl_i;
+        $this->measured_strength_i = $file->measured_strength_i;
+        $this->specified_strength_i = $file->specified_strength_i;
+        $this->type_fracture_i = $file->type_fracture_i;
+        $this->person_performing_i = $file->person_performing_i;
     }
 
     // get project and client information
@@ -266,18 +265,37 @@ class EditInspectionConcreteComponent extends Component
         }
     }
     // ================== specified strength ===================
+
+    public function specifiedStrength()
+    {
+        $this->specifiedStrengthA();
+        $this->specifiedStrengthB();
+        $this->specifiedStrengthC();
+        $this->specifiedStrengthD();
+        $this->specifiedStrengthE();
+        $this->specifiedStrengthF();
+        $this->specifiedStrengthG();
+        $this->specifiedStrengthH();
+        $this->specifiedStrengthI();
+    }
+
     public function specifiedStrengthA()
     {
         if ($this->age_a == 28) {
             $this->specified_strength_a = $this->required_strength;
+        } elseif ($this->age_a == null) {
+            $this->age_a = null;
         } else {
             $this->specified_strength_a = 0;
         }
     }
+
     public function specifiedStrengthB()
     {
         if ($this->age_b == 28) {
             $this->specified_strength_b = $this->required_strength;
+        } elseif ($this->age_b == null) {
+            $this->age_b = null;
         } else {
             $this->specified_strength_b = 0;
         }
@@ -287,6 +305,8 @@ class EditInspectionConcreteComponent extends Component
     {
         if ($this->age_c == 28) {
             $this->specified_strength_c = $this->required_strength;
+        } elseif ($this->age_c == null) {
+            $this->age_c = null;
         } else {
             $this->specified_strength_c = 0;
         }
@@ -295,6 +315,8 @@ class EditInspectionConcreteComponent extends Component
     {
         if ($this->age_d == 28) {
             $this->specified_strength_d = $this->required_strength;
+        } elseif ($this->age_d == null) {
+            $this->age_d = null;
         } else {
             $this->specified_strength_d = 0;
         }
@@ -303,6 +325,8 @@ class EditInspectionConcreteComponent extends Component
     {
         if ($this->age_e == 28) {
             $this->specified_strength_e = $this->required_strength;
+        } elseif ($this->age_e == null) {
+            $this->age_e = null;
         } else {
             $this->specified_strength_e = 0;
         }
@@ -311,6 +335,8 @@ class EditInspectionConcreteComponent extends Component
     {
         if ($this->age_f == 28) {
             $this->specified_strength_f = $this->required_strength;
+        } elseif ($this->age_f == null) {
+            $this->age_f = null;
         } else {
             $this->specified_strength_f = 0;
         }
@@ -319,6 +345,8 @@ class EditInspectionConcreteComponent extends Component
     {
         if ($this->age_g == 28) {
             $this->specified_strength_g = $this->required_strength;
+        } elseif ($this->age_g == null) {
+            $this->age_g = null;
         } else {
             $this->specified_strength_g = 0;
         }
@@ -327,6 +355,8 @@ class EditInspectionConcreteComponent extends Component
     {
         if ($this->age_h == 28) {
             $this->specified_strength_h = $this->required_strength;
+        } elseif ($this->age_h == null) {
+            $this->age_h = null;
         } else {
             $this->specified_strength_h = 0;
         }
@@ -335,6 +365,8 @@ class EditInspectionConcreteComponent extends Component
     {
         if ($this->age_i == 28) {
             $this->specified_strength_i = $this->required_strength;
+        } elseif ($this->age_i == null) {
+            $this->age_i = null;
         } else {
             $this->specified_strength_i = 0;
         }
@@ -792,6 +824,6 @@ class EditInspectionConcreteComponent extends Component
             $this->measuredStrengthI();
         }
         $projects = Project::orderBy('id', 'DESC')->get();
-        return view('livewire.templates.inspection-concrete.edit-inspection-concrete-component', ['projects'=>$projects])->layout('livewire.layouts.base');
+        return view('livewire.templates.inspection-concrete.edit-inspection-concrete-component', ['projects' => $projects])->layout('livewire.layouts.base');
     }
 }

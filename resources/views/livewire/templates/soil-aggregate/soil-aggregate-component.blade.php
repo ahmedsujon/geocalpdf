@@ -72,8 +72,8 @@
                                             <img src="{{ asset('uploads/project') }}/{{ project($file->project_id)->avatar }}"
                                                 alt="user" class="rounded-circle thumb-md">
                                             @else
-                                            <img src="{{ asset('assets/images/defaults/default_project.jpg') }}" alt="user"
-                                                class="rounded-circle thumb-md">
+                                            <img src="{{ asset('assets/images/defaults/default_project.jpg') }}"
+                                                alt="user" class="rounded-circle thumb-md">
                                             @endif
                                         </td>
                                         <td>{{ project($file->project_id)->name }}</td>
@@ -82,10 +82,16 @@
                                         <td>{{ user($file->created_by)->name }}</td>
                                         <td>{{ $file->created_at }}</td>
                                         <td style="text-align: center;">
-                                            <a href="{{ route('soil.aggregate.show', ['file_id' => $file->id]) }}" type="button"
+                                            <a href="{{ route('soil.aggregate.generate',['id'=>$file->id]) }}"
+                                                type="button"
+                                                class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm"><i
+                                                    class="ti ti-file-invoice"></i></a>
+                                            <a href="{{ route('soil.aggregate.show', ['file_id' => $file->id]) }}"
+                                                type="button"
                                                 class="btn btn-outline-success btn-icon-circle btn-icon-circle-sm"><i
                                                     class="ti ti-eye"></i></a>
-                                            <a href="{{ route('soil.aggregate.update', ['file_id' => $file->id]) }}" type="button"
+                                            <a href="{{ route('soil.aggregate.update', ['file_id' => $file->id]) }}"
+                                                type="button"
                                                 class="btn btn-outline-warning btn-icon-circle btn-icon-circle-sm"><i
                                                     class="ti ti-edit"></i></a>
                                             <a wire:click.prevent="deleteConfirmation({{ $file->id }})" type="button"

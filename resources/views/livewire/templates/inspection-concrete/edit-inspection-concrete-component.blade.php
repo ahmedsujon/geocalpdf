@@ -513,7 +513,6 @@
                                     @error('yield')
                                         <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
-
                                     <div class="input-group mt-3">
                                         <span class="input-group-text width28">Mix Design Strength (psi):</span>
                                         <input type="text" class="form-control form-color"
@@ -536,6 +535,10 @@
                                     @error('required_strength')
                                         <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
+                                <div class="input-group mt-3">
+                                    <span class="input-group-text">Required Strength (psi):</span>
+                                    <input type="text" class="form-control form-color" wire:model="required_strength"
+                                        wire:keyup='specifiedStrength' required>
                                 </div>
                             </div>
                         </div>
@@ -2308,9 +2311,24 @@
                                     </div>
                                 </div>
                             </div>
-
                         </div>
+                            <div class="col-lg-5">
+                                <div class="input-group mt-3">
+                                    <span class="input-group-text">Date Cylinders received in lab:</span>
+                                    <input type="date" class="form-control form-color"
+                                        wire:model="date_cylinders_received_lab">
+                                    @error('date_cylinders_received_lab')
+                                    <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
+                                    @enderror
+                                </div>
 
+                                <div class="input-group mt-3">
+                                    <span class="input-group-text">Pick up by:</span>
+                                    <input type="text" class="form-control form-color" wire:model="pick_up_by">
+                                    @error('pick_up_by')
+                                    <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
+                                    @enderror
+                                </div>
                         <div class="container">
                             <div class="row mb-3 justify-content-md-center">
                                 @error('observation')
@@ -2363,7 +2381,6 @@
 
                         </div>
 
-
                         <div class="container">
                             <div class="row mt-5 mb-5 justify-content-md-center">
                                 <div class="col-md-12 text-center">
@@ -2375,6 +2392,31 @@
                                                                                                                                                                                                                                                                                                                         and Send',
                                             ) !!}</button>
                                     </form>
+                        <div class="row mb-3 offset-1">
+                            @error('observation')
+                            <span class="text-danger" style="font-size: 12px;">{{ $message
+                                }}</span>
+                            @enderror
+                            <div class="col-md-3 mt-3"></div>
+                            <div class="col-md-10 mb-3 mt-3">
+                                <div class="input-group">
+                                    <span class="input-group-text">Remark</span>
+                                    <textarea class="form-control form-color" aria-label="With textarea"
+                                        spellcheck="false" wire:model="remark"></textarea>
+                                    <grammarly-extension data-grammarly-shadow-root="true"
+                                        style="position: absolute; top: 0px; left: 0px; pointer-events: none; z-index: 3;"
+                                        class="cGcvT"></grammarly-extension>
+                                    <grammarly-extension data-grammarly-shadow-root="true"
+                                        style="mix-blend-mode: darken; position: absolute; top: 0px; left: 0px; pointer-events: none; z-index: 3;"
+                                        class="cGcvT"></grammarly-extension>
+                                </div>
+                            </div>
+                            <div class="col-md-10" wire:ignore>
+                                <div class="input-group">
+                                    <span class="input-group-text">Responsible Persons:</span>
+                                    <select class="form-select moistureremoveinput multiple_selector" id="action"
+                                        multiple>
+                                    </select>
                                 </div>
                             </div>
                         </div>

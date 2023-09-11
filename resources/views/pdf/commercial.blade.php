@@ -624,19 +624,34 @@
             style="width: 100%; padding-bottom: 10px; border-collapse: collapse; border-top: 0px solid #000; border-right: 3px solid #000; border-bottom: 3px solid #000; border-left: 3px solid #000">
             <tr>
                 <td
-                    style="width: 28%; padding-top: 10px; padding-left: 10px; padding-right: 10px; padding-bottom: 20px;">
-                    <h6
-                        style="padding-bottom: 4px; padding-left: 23px; font-weight: normal; 
-                    font-size: 14px;
-                    font-weight: normal;">
-                        {{ $data->report_status }}</h6>
-                    <h6
-                        style=" 
-                    font-size: 14px;
-                    font-weight: normal; ">
-                        <span style="padding: 1px 5px; border-top: 2px solid #000; border-bottom: 2px solid #000;">X</span>
-                        Part Time Observation</h6>
-                </td>
+                style="width: 28%; padding-top: 10px; padding-left: 10px; padding-right: 10px; padding-bottom: 20px;">
+                <h6 style="padding-bottom: 4px; font-weight: normal; 
+                font-size: 14px;
+                font-weight: normal;">
+                    @if ($data->report_status == 'Part Time Observation')
+                    <span style="padding: 1px 5px; border-bottom: 2px solid #000;"></span>
+                    <span style="padding-left: 25px;">Part Time Observation</span>
+                    @else
+                    <span
+                        style="padding: 1px 5px; border-bottom: 2px solid #000; border-top: 2px solid #000;">X</span>
+                        <span>Part Time Observation</span>
+                    @endif 
+                </h6>
+
+                <h6 style="padding-bottom: 4px; font-weight: normal; 
+                font-size: 14px;
+                font-weight: normal;">
+                    @if ($data->report_status == 'Full Time Observation')
+                    <span style="padding: 1px 5px; border-bottom: 2px solid #000;"></span>
+                    <span style="padding-left: 25px;">Full Time Observation</span>
+                    @else
+                    <span
+                        style="padding: 1px 5px; border-bottom: 2px solid #000; border-top: 2px solid #000;">X</span>
+                        <span>Full Time Observation</span>
+                    @endif 
+                </h6>
+            </td>
+
                 <td style="width: 32%; padding-top: 10px; padding-bottom: 20px;">
                     <h6 style="
                     font-size: 14px;
