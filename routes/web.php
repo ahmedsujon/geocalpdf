@@ -132,7 +132,7 @@ Route::post('/edit-representative', [CdotComponent::class, 'editCdotRepresentati
 Route::get('/commercial', CommercialComponent::class)->name('template.commercial');
 Route::get('/commercial/create', CreateCommercialComponent::class)->name('commercial.create');
 Route::get('/commercial/edit/{file_id}', EditCommercialComponent::class)->name('commercial.update');
-Route::get('/commercial/show/{file_id}', ViewCommercialComponent::class)->name('commercial.show');
+Route::get('/commercial/show/{file_id}', ViewCommercialComponent::class)->name('commercial.show'); 
 
 // Get Representative for Commercial
 Route::post('/get-com-representative', [CommercialComponent::class, 'getCommercialRepresentative'])->name('get_commercial_representative');
