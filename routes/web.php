@@ -155,7 +155,7 @@ Route::get('/inspection/data-set-two/edit/{file_id}', EditInspectionTwoComponent
 Route::get('/inspection/data-set-two/{file_id}', ViewInspectionTwoComponent::class)->name('concrete.show.two');
 // Get Representative
 Route::post('/get-inspection-representative/data-set/two', [InspectionTwoComponent::class, 'getDataSetTwoRepresentative'])->name('get_data_set_two_representative');
-Route::post('/edit-inspection-representative/data-set/two', [InspectionTwoComponent::class, 'editDataSetTwoRepresentative'])->name('edit_data_set_two_representative');
+Route::post('/edit-inspection-representative/data-set/two', [InspectionTwoComponent::class, 'editDataSetTwoRepresentative'])->name('edit_data_set_two_representative'); 
 
 // Data Set Three
 Route::get('/inspection/data-set-three', InspectionThreeComponent::class)->name('template.concrete.three');
