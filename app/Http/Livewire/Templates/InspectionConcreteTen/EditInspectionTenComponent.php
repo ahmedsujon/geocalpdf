@@ -791,7 +791,7 @@ class EditInspectionTenComponent extends Component
         }
 
         session()->flash('message', 'Inspection concrete updated successfully');
-        return redirect()->route('template.concrete');
+        return redirect()->route('template.concrete.ten');
     }
 
     public function render()
