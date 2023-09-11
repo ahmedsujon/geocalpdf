@@ -164,6 +164,12 @@
             }
 
         }
+
+        @media screen and (max-width:1024px) {
+            .commercial-form .width12 {
+                width: 20%;
+            }
+        }
     </style>
     <div class="container-fluid">
         <div class="row">
@@ -874,7 +880,9 @@
                                         <td class="moistureremove">
                                             <div class="input-group">
                                                 <input type="text" class="form-control moistureremoveinput"
-                                                    wire:model="pass_fail_a" @if($field_wet_density_a == null) style="display: none" @endif readonly>
+                                                    wire:model="pass_fail_a"
+                                                    @if ($field_wet_density_a == null) style="display: none" @endif
+                                                    readonly>
                                                 @error('pass_fail_a')
                                                     <span class="text-danger"
                                                         style="font-size: 12px;">{{ $message }}</span>
@@ -1011,7 +1019,9 @@
                                         <td class="moistureremove">
                                             <div class="input-group">
                                                 <input type="text" class="form-control moistureremoveinput"
-                                                    wire:model="pass_fail_b" @if($field_wet_density_b == null) style="display: none" @endif readonly>
+                                                    wire:model="pass_fail_b"
+                                                    @if ($field_wet_density_b == null) style="display: none" @endif
+                                                    readonly>
                                                 @error('pass_fail_b')
                                                     <span class="text-danger"
                                                         style="font-size: 12px;">{{ $message }}</span>
@@ -1148,7 +1158,9 @@
                                         <td class="moistureremove">
                                             <div class="input-group">
                                                 <input type="text" class="form-control moistureremoveinput"
-                                                    wire:model="pass_fail_c" @if($field_wet_density_c == null) style="display: none" @endif readonly>
+                                                    wire:model="pass_fail_c"
+                                                    @if ($field_wet_density_c == null) style="display: none" @endif
+                                                    readonly>
                                                 @error('pass_fail_c')
                                                     <span class="text-danger"
                                                         style="font-size: 12px;">{{ $message }}</span>
@@ -1285,7 +1297,9 @@
                                         <td class="moistureremove">
                                             <div class="input-group">
                                                 <input type="text" class="form-control moistureremoveinput"
-                                                    wire:model="pass_fail_d" @if($field_wet_density_d == null) style="display: none" @endif readonly>
+                                                    wire:model="pass_fail_d"
+                                                    @if ($field_wet_density_d == null) style="display: none" @endif
+                                                    readonly>
                                                 @error('pass_fail_d')
                                                     <span class="text-danger"
                                                         style="font-size: 12px;">{{ $message }}</span>
@@ -1422,7 +1436,9 @@
                                         <td class="moistureremove">
                                             <div class="input-group">
                                                 <input type="text" class="form-control moistureremoveinput"
-                                                    wire:model="pass_fail_e" @if($field_wet_density_e == null) style="display: none" @endif readonly>
+                                                    wire:model="pass_fail_e"
+                                                    @if ($field_wet_density_e == null) style="display: none" @endif
+                                                    readonly>
                                                 @error('pass_fail_e')
                                                     <span class="text-danger"
                                                         style="font-size: 12px;">{{ $message }}</span>
@@ -1559,7 +1575,9 @@
                                         <td class="moistureremove">
                                             <div class="input-group">
                                                 <input type="text" class="form-control moistureremoveinput"
-                                                    wire:model="pass_fail_f" @if($field_wet_density_f == null) style="display: none" @endif readonly>
+                                                    wire:model="pass_fail_f"
+                                                    @if ($field_wet_density_f == null) style="display: none" @endif
+                                                    readonly>
                                                 @error('pass_fail_f')
                                                     <span class="text-danger"
                                                         style="font-size: 12px;">{{ $message }}</span>
@@ -1664,7 +1682,7 @@
                                     style="background: green;">{!! loadingState(
                                         'storeData',
                                         'Save
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                and Send',
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    and Send',
                                     ) !!}</button>
                             </form>
                         </div>

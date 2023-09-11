@@ -76,6 +76,10 @@
             width: 25%;
         }
 
+        .commercial-form .width22 {
+            width: 22%;
+        }
+
         .commercial-form .width20 {
             width: 20%;
         }
@@ -86,6 +90,10 @@
 
         .commercial-form .width17 {
             width: 17.3%;
+        }
+
+        .commercial-form .width15 {
+            width: 15%;
         }
 
         .commercial-form .width12 {
@@ -195,6 +203,13 @@
             }
 
         }
+
+
+        @media screen and (max-width:1024px) { 
+            .commercial-form .width12 {
+                width: 20%;
+            }
+        }
     </style>
     <div class="container-fluid">
         <div class="row">
@@ -235,7 +250,7 @@
                                 <div class="col-lg-6">
                                     <h6>Project Information</h6>
                                     <div class="input-group">
-                                        <span class="input-group-text">Project Name:</span>
+                                        <span class="input-group-text width18">Project Name:</span>
                                         <select class="form-select" wire:model="project_id" wire:change="selectInfo"
                                             id="selectInfo">
                                             <option value="">Select Project:</option>
@@ -248,14 +263,14 @@
                                         <span class="text-danger mb-3" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
                                     <div class="input-group mt-3">
-                                        <span class="input-group-text">Client Name:</span>
+                                        <span class="input-group-text width18">Client Name:</span>
                                         <input type="text" class="form-control" wire:model="client_name" readonly>
                                     </div>
                                     @error('client_id')
                                         <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
                                     <div class="input-group mt-3">
-                                        <span class="input-group-text">Project Number:</span>
+                                        <span class="input-group-text width18">Project Number:</span>
                                         <input type="text" class="form-control" wire:model="project_number" readonly>
                                     </div>
                                     @error('project_number')
@@ -263,7 +278,7 @@
                                     @enderror
 
                                     <div class="input-group mt-3">
-                                        <span class="input-group-text">Geocal Proj #:</span>
+                                        <span class="input-group-text width18">Geocal Proj #:</span>
                                         <input type="text" class="form-control" wire:model="geocal_project_num">
                                     </div>
                                     @error('geocal_project_num')
@@ -271,7 +286,7 @@
                                     @enderror
 
                                     <div class="input-group mt-3">
-                                        <span class="input-group-text">Geocal Project Name:</span>
+                                        <span class="input-group-text width22">Geocal Project Name:</span>
                                         <input type="text" class="form-control" wire:model="geocal_project_name">
                                     </div>
                                     @error('geocal_project_name')
@@ -279,7 +294,7 @@
                                     @enderror
 
                                     <div class="input-group mt-3">
-                                        <span class="input-group-text">CDOT Project Name:</span>
+                                        <span class="input-group-text width22">CDOT Project Name:</span>
                                         <input type="text" class="form-control" wire:model="cdot_project_name">
                                     </div>
                                     @error('cdot_project_name')
@@ -287,7 +302,7 @@
                                     @enderror
 
                                     <div class="input-group mt-3">
-                                        <span class="input-group-text">Weather:</span>
+                                        <span class="input-group-text width12">Weather:</span>
                                         <input type="text" class="form-control" wire:model="weather">
                                     </div>
                                     @error('weather')
@@ -295,7 +310,7 @@
                                     @enderror
 
                                     <div class="input-group mt-3">
-                                        <span class="input-group-text">Date:</span>
+                                        <span class="input-group-text width12">Date:</span>
                                         <input type="date" class="form-control" wire:model="date">
                                     </div>
                                     @error('date')
@@ -307,7 +322,7 @@
                                 <div class="col-lg-6">
                                     <h6>Gauge Information</h6>
                                     <div class="input-group mt-2">
-                                        <span class="input-group-text">Office Address:</span>
+                                        <span class="input-group-text width18">Office Address:</span>
                                         <select class="form-select" wire:model="office_address">
                                             <option value="">Select office addres</option>
                                             <option value="7290 South Fraser St.Centennial, CO 80112">7290 South Fraser
@@ -324,7 +339,7 @@
                                     @enderror
 
                                     <div class="input-group mt-3">
-                                        <span class="input-group-text">Test Method:</span>
+                                        <span class="input-group-text width18">Test Method:</span>
                                         <select class="form-select" wire:model="test_method">
                                             <option value="">Select Test Method</option>
                                             <option value="ASTM D6938">ASTM D6938</option>
@@ -336,7 +351,7 @@
                                     @enderror
 
                                     <div class="input-group mt-2">
-                                        <span class="input-group-text">Make: Troxler:</span>
+                                        <span class="input-group-text width18">Make: Troxler:</span>
                                         <select class="form-select" wire:model="troxler">
                                             <option value="">Select</option>
                                             <option value="Yes">Yes</option>
@@ -357,7 +372,7 @@
                                     @enderror
 
                                     <div class="input-group mt-3">
-                                        <span class="input-group-text">Model:</span>
+                                        <span class="input-group-text width18">Model:</span>
                                         <select class="form-select" wire:model="model">
                                             <option value="">Select Model</option>
                                             <option value="3430">3430</option>
@@ -370,7 +385,7 @@
                                     </div>
 
                                     <div class="input-group mt-3">
-                                        <span class="input-group-text">Serial No:</span>
+                                        <span class="input-group-text width18">Serial No:</span>
                                         <select class="form-select" wire:model="serial_no">
                                             <option value="">Select Serial No</option>
                                             <option value="22392">22392</option>
@@ -408,7 +423,7 @@
                                     </div>
 
                                     <div class="input-group mt-3">
-                                        <span class="input-group-text">Density Standard Count:</span>
+                                        <span class="input-group-text width25">Density Standard Count:</span>
                                         <input type="number" class="form-control" wire:model="density_std_count">
                                         @error('density_std_count')
                                             <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
@@ -416,7 +431,7 @@
                                     </div>
 
                                     <div class="input-group mt-3">
-                                        <span class="input-group-text">Moisture Standard Count:</span>
+                                        <span class="input-group-text width25">Moisture Standard Count:</span>
                                         <input type="number" class="form-control" wire:model="moisture_std_count">
                                         @error('moisture_std_count')
                                             <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
@@ -1480,7 +1495,7 @@
                                             {!! loadingState(
                                                 'storeData',
                                                 'Save
-                                                                                                                                                                                                                                                                                        and Send',
+                                                                                                                                                                                                                                                                                                                                                                                                                            and Send',
                                             ) !!}</button>
                                     </form>
                                 </div>

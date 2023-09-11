@@ -195,6 +195,11 @@
             }
 
         }
+        @media screen and (max-width:1024px) { 
+            .commercial-form .width12 {
+                width: 20%;
+            }
+        }
     </style>
     <div class="container-fluid">
         <div class="row">
