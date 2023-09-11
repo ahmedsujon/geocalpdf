@@ -231,7 +231,6 @@
                             <div class="col-md-3"></div>
                         </div>
 
-
                         <div class="container">
                             <div class="row mb-3">
                                 <div class="col-lg-6 select-border">
@@ -537,8 +536,6 @@
                             </div>
                         </div>
 
-
-
                         <div class="container">
                             <div class="row mb-3">
                                 <div class="col-lg-6">
@@ -715,7 +712,6 @@
                                 </div>
                             </div>
                         </div>
-
 
                         <div class="row mb-3">
                             <div class="col-md-12">
@@ -2132,7 +2128,6 @@
                             </div>
                         </div>
 
-
                         <div class="container">
                             <div class="row mb-3">
                                 <div class="col-lg-6">
@@ -2268,8 +2263,6 @@
                                 </div>
                             </div>
                         </div>
-
-
 
                         <div class="container">
                             <div class="row mb-3">
