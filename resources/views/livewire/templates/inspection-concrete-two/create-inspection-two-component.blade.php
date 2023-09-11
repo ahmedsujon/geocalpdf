@@ -220,15 +220,15 @@
                 <div class="card">
                     <div class="card-body commercial-form">
                         <div class="row mb-3">
-                            <div class="col-md-4"></div>
-                            <div class="col-md-4">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-6">
                                 <div class="content text-center pt-2 pb-2">
-                                    <h6 style="font-weight: 700;">REPORT OF FIELD INSPECTION OF CONCRETE – SINGLE MIX
+                                    <h5 style="font-weight: 700;">REPORT OF FIELD INSPECTION OF CONCRETE – SINGLE MIX
                                         (DATA SET 2)
-                                    </h6>
+                                    </h5>
                                 </div>
                             </div>
-                            <div class="col-md-4"></div>
+                            <div class="col-md-3"></div>
                         </div>
 
                         <div class="container">
