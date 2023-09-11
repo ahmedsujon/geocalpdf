@@ -64,6 +64,7 @@
                             <a class="nav-link" href="{{ route('templates') }}"><i class="ti ti-brand-codepen
                                 menu-icon"></i><span>Templates</span></a>
                         </li>
+                        <li class="menu-label mt-0 text-primary font-12 fw-semibold">F<span>orms</span></li>
                         <li class="nav-item">
                             <a class="nav-link" href="#sidebarCommercial" data-bs-toggle="collapse" role="button"
                                 aria-expanded="false" aria-controls="sidebarCommercial">
