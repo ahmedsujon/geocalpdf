@@ -1,16 +1,4 @@
 @push('styles')
-<style>
-    .btn-icon-circle-sm {
-        height: 20px !important;
-        width: 20px !important;
-    }
-
-    .main-timeline .timeline:nth-child(2n) .year {
-        right: auto;
-        left: 25% !important;
-    }
-
-</style>
 @endpush
 <div>
     <div class="container-fluid">
@@ -30,9 +18,6 @@
                                 <span class="timeline-icon"></span>
                                 <span class="year">
                                     <?php echo App\Http\Livewire\SuperAdmin\DashboardComponent::ago($file->created_at); ?>
-                                    <a href="#" type="button"
-                                        class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm"><i
-                                            class="ti ti-file-invoice"></i></a>
                                 </span>
                                 <div class="timeline-content">
                                     <a href="{{ route('commercial.update', ['file_id' => $file->id]) }}"
@@ -67,9 +52,6 @@
                                 <span class="timeline-icon"></span>
                                 <span class="year">
                                     <?php echo App\Http\Livewire\SuperAdmin\DashboardComponent::ago($file->created_at); ?>
-                                    <a href="#" type="button"
-                                        class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm"><i
-                                            class="ti ti-file-invoice"></i></a>
                                 </span>
                                 <div class="timeline-content">
                                     <a href="{{ route('commercial.update', ['file_id' => $file->id]) }}"
@@ -103,9 +85,6 @@
                                 <span class="timeline-icon"></span>
                                 <span class="year">
                                     <?php echo App\Http\Livewire\SuperAdmin\DashboardComponent::ago($file->created_at); ?>
-                                    <a href="#" type="button"
-                                        class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm"><i
-                                            class="ti ti-file-invoice"></i></a>
                                 </span>
                                 <div class="timeline-content">
                                     <a href="{{ route('commercial.update', ['file_id' => $file->id]) }}"
@@ -139,9 +118,6 @@
                                 <span class="timeline-icon"></span>
                                 <span class="year">
                                     <?php echo App\Http\Livewire\SuperAdmin\DashboardComponent::ago($file->created_at); ?>
-                                    <a href="#" type="button"
-                                        class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm"><i
-                                            class="ti ti-file-invoice"></i></a>
                                 </span>
                                 <div class="timeline-content">
                                     <a href="{{ route('commercial.update', ['file_id' => $file->id]) }}"
@@ -176,9 +152,6 @@
                                 <span class="timeline-icon"></span>
                                 <span class="year">
                                     <?php echo App\Http\Livewire\SuperAdmin\DashboardComponent::ago($file->created_at); ?>
-                                    <a href="#" type="button"
-                                        class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm"><i
-                                            class="ti ti-file-invoice"></i></a>
                                 </span>
                                 <div class="timeline-content">
                                     <a href="{{ route('commercial.update', ['file_id' => $file->id]) }}"
@@ -213,9 +186,6 @@
                                 <span class="timeline-icon"></span>
                                 <span class="year">
                                     <?php echo App\Http\Livewire\SuperAdmin\DashboardComponent::ago($file->created_at); ?>
-                                    <a href="#" type="button"
-                                        class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm"><i
-                                            class="ti ti-file-invoice"></i></a>
                                 </span>
                                 <div class="timeline-content">
                                     <a href="{{ route('commercial.update', ['file_id' => $file->id]) }}"
@@ -250,9 +220,6 @@
                                 <span class="timeline-icon"></span>
                                 <span class="year">
                                     <?php echo App\Http\Livewire\SuperAdmin\DashboardComponent::ago($file->created_at); ?>
-                                    <a href="#" type="button"
-                                        class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm"><i
-                                            class="ti ti-file-invoice"></i></a>
                                 </span>
                                 <div class="timeline-content">
                                     <a href="{{ route('commercial.update', ['file_id' => $file->id]) }}"
@@ -287,9 +254,6 @@
                                 <span class="timeline-icon"></span>
                                 <span class="year">
                                     <?php echo App\Http\Livewire\SuperAdmin\DashboardComponent::ago($file->created_at); ?>
-                                    <a href="#" type="button"
-                                        class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm"><i
-                                            class="ti ti-file-invoice"></i></a>
                                 </span>
                                 <div class="timeline-content">
                                     <a href="{{ route('commercial.update', ['file_id' => $file->id]) }}"
@@ -324,9 +288,6 @@
                                 <span class="timeline-icon"></span>
                                 <span class="year">
                                     <?php echo App\Http\Livewire\SuperAdmin\DashboardComponent::ago($file->created_at); ?>
-                                    <a href="#" type="button"
-                                        class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm"><i
-                                            class="ti ti-file-invoice"></i></a>
                                 </span>
                                 <div class="timeline-content">
                                     <a href="{{ route('commercial.update', ['file_id' => $file->id]) }}"
@@ -361,9 +322,6 @@
                                 <span class="timeline-icon"></span>
                                 <span class="year">
                                     <?php echo App\Http\Livewire\SuperAdmin\DashboardComponent::ago($file->created_at); ?>
-                                    <a href="#" type="button"
-                                        class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm"><i
-                                            class="ti ti-file-invoice"></i></a>
                                 </span>
                                 <div class="timeline-content">
                                     <a href="{{ route('commercial.update', ['file_id' => $file->id]) }}"
@@ -398,9 +356,6 @@
                                 <span class="timeline-icon"></span>
                                 <span class="year">
                                     <?php echo App\Http\Livewire\SuperAdmin\DashboardComponent::ago($file->created_at); ?>
-                                    <a href="#" type="button"
-                                        class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm"><i
-                                            class="ti ti-file-invoice"></i></a>
                                 </span>
                                 <div class="timeline-content">
                                     <a href="{{ route('commercial.update', ['file_id' => $file->id]) }}"
@@ -435,9 +390,6 @@
                                 <span class="timeline-icon"></span>
                                 <span class="year">
                                     <?php echo App\Http\Livewire\SuperAdmin\DashboardComponent::ago($file->created_at); ?>
-                                    <a href="#" type="button"
-                                        class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm"><i
-                                            class="ti ti-file-invoice"></i></a>
                                 </span>
                                 <div class="timeline-content">
                                     <a href="{{ route('commercial.update', ['file_id' => $file->id]) }}"
@@ -472,9 +424,6 @@
                                 <span class="timeline-icon"></span>
                                 <span class="year">
                                     <?php echo App\Http\Livewire\SuperAdmin\DashboardComponent::ago($file->created_at); ?>
-                                    <a href="#" type="button"
-                                        class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm"><i
-                                            class="ti ti-file-invoice"></i></a>
                                 </span>
                                 <div class="timeline-content">
                                     <a href="{{ route('commercial.update', ['file_id' => $file->id]) }}"
@@ -509,9 +458,6 @@
                                 <span class="timeline-icon"></span>
                                 <span class="year">
                                     <?php echo App\Http\Livewire\SuperAdmin\DashboardComponent::ago($file->created_at); ?>
-                                    <a href="#" type="button"
-                                        class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm"><i
-                                            class="ti ti-file-invoice"></i></a>
                                 </span>
                                 <div class="timeline-content">
                                     <a href="{{ route('commercial.update', ['file_id' => $file->id]) }}"
