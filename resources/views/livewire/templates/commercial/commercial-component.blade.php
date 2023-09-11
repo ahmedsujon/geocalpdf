@@ -81,8 +81,8 @@
                                         <td>{{ $file->project_number }}</td>
                                         <td>{{ user($file->created_by)->name }}</td>
                                         <td>{{ $file->created_at }}</td>
-                                        <td style="text-align: center;">
-                                            <a href="{{ route('inspection.concrete.generate.one',['id'=>$file->id]) }}"
+                                        <td target="_blank" style="text-align: center;">
+                                            <a href="{{ route('invoice.commercial',['id'=>$file->id]) }}"
                                                 type="button"
                                                 class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm"><i
                                                     class="ti ti-file-invoice"></i></a>
