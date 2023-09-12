@@ -966,7 +966,6 @@
                         </tr>
                     @endif
 
-
                     <tr>
                         <td colspan="9" style="padding: 1px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400; text-align:right;">Average 28 Day Compressive
