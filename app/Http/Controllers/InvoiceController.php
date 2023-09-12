@@ -49,10 +49,9 @@ class InvoiceController extends Controller
         $data->client_phone = client($data->client_id)->phone;
         $data->client_company_name = client($data->client_id)->company_name;
 
-        $pdf = Pdf::loadView('pdf.commercial', compact('data'));
-        return $pdf->stream('asphalt-field-density-commercial-report.pdf');
+        $pdf = Pdf::loadView('pdf.soil_aggregate', compact('data'));
+        return $pdf->stream('field-density-soil-aggregate-report.pdf');
     }
-
     public function cdotPDF($id)
     {
         $data = FieldDensityCdot::findOrFail($id);
