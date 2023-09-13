@@ -30,6 +30,7 @@ use App\Http\Livewire\Templates\Commercial\CommercialComponent;
 use App\Http\Livewire\Templates\Commercial\CreateCommercialComponent;
 use App\Http\Livewire\Templates\Commercial\EditCommercialComponent;
 use App\Http\Livewire\Templates\Commercial\ViewCommercialComponent;
+use App\Http\Livewire\Templates\ConcreteFieldReport\ConcreteFieldReportComponent;
 use App\Http\Livewire\Templates\InspectionConcrete\CreateInspectionConcreteComponent;
 use App\Http\Livewire\Templates\InspectionConcrete\EditInspectionConcreteComponent;
 use App\Http\Livewire\Templates\InspectionConcrete\InspectionConcreteComponent;
@@ -248,6 +249,10 @@ Route::get('/soil-aggregate/show/{file_id}', ViewSoilAggregateComponent::class)-
 // Get Representative for Aggregate
 Route::post('/soil-representative', [SoilAggregateComponent::class, 'getSoilRepresentative'])->name('fetch_soil_representative');
 Route::post('/aggregate-representative', [SoilAggregateComponent::class, 'editSoilRepresentative'])->name('edit_soil_aggregate_representative');
+
+// Report of ten set
+Route::get('/concrete-field-report', ConcreteFieldReportComponent::class)->name('concrete.field.report');
+
 
 // LogActivity
 Route::get('add-to-log', LogActivityComponent::class);

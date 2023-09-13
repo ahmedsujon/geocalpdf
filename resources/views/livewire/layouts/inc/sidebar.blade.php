@@ -170,7 +170,7 @@
                                         <a class="nav-link" href="{{ route('template.concrete.ten') }}">Field Data (Set 10)</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('template.concrete.ten') }}">Concrete Field Report</a>
+                                        <a class="nav-link" href="{{ route('concrete.field.report') }}">Concrete Field Report</a>
                                     </li>
                                 </ul>
                             </div>
