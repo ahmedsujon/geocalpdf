@@ -84,7 +84,8 @@
                                         <td>{{ user($temp->created_by)->name }}</td>
                                         <td>{{ $temp->created_at }}</td>
                                         <td style="text-align: center;">
-                                            <a href="{{ route('plastic.concrete.generate',['id'=>$file->id]) }}"
+                                            <a target="_blank"
+                                                href="{{ route('plastic.concrete.generate',['id'=>$temp->id]) }}"
                                                 type="button"
                                                 class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm"><i
                                                     class="ti ti-file-invoice"></i></a>

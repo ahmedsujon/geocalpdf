@@ -235,7 +235,7 @@ Route::get('/plastic-concrete-create', CreatePlasticConcreteComponent::class)->n
 Route::get('/plastic-concrete/edit/{file_id}', EditPlasticConcreteComponent::class)->name('plastic.concrete.update');
 Route::get('/plastic-concrete/show/{file_id}', ViewPlasticConcreteComponent::class)->name('plastic.concrete.show');
 
-// Get Representative for Template One
+// Get Representative for Plastic Concrete
 Route::post('/get-plastic-concrete-representative', [PlasticConcreteComponent::class, 'getTempOneRepresentative'])->name('get_plastic_concrete_representative');
 Route::post('/edit-plastic-concrete-representative', [PlasticConcreteComponent::class, 'editTempOneRepresentative'])->name('edit_plastic_concrete_representative');
 
