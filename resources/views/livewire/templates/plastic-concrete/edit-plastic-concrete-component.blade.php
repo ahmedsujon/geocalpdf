@@ -168,12 +168,14 @@
                                     <span class="input-group-text">Office Address:</span>
                                     <select class="form-select" wire:model="office_address">
                                         <option value="">Select office addres</option>
-                                        <option value="7290 South Fraser St.Centennial, CO 80112">7290 South Fraser
-                                            St.Centennial, CO 80112</option>
-                                        <option value="4763 Town Center Drive Colorado Springs, CO 80916">
-                                            4763 Town Center Drive Colorado Springs, CO 80916</option>
-                                        <option value="5709 SE 74th Street, Suite A: Oklahoma City, OK 73135">5709 SE
-                                            74th Street, Suite A: Oklahoma City, OK 73135</option>
+                                        <option value="7290 South Fraser St. Centennial, CO 80112 (303)-337-0338">7290
+                                            South Fraser St. Centennial, CO 80112 (303)-337-0338</option>
+                                        <option
+                                            value="4763 Town Center Drive Colorado Springs, CO 80916 (719)-265-9003">
+                                            4763 Town Center Drive Colorado Springs, CO 80916 (719)-265-9003</option>
+                                        <option value="542 W. 66th St. Loveland, CO 80538(970) 685-4316">542 W. 66th St.
+                                            Loveland, CO 80538(970) 685-4316</option>
+                                            <option value="5709 SE 74th St., Suite A Oklahoma City, OK 73135">5709 SE 74th St., Suite A Oklahoma City, OK 73135</option>
                                     </select>
                                 </div>
                                 @error('office_address')
