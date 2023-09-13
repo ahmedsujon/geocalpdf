@@ -1394,10 +1394,10 @@
                             <div class="row mt-5 mb-5 justify-content-md-center">
                                 <div class="col-md-12 text-center">
                                     <form wire:submit.prevent='updateData'>
-                                        <a href="{{ route('cdot.form.generate',['id'=>$file_id]) }}" target="_blank"
-                                            class="btn btn-success submit_btn">Download PDF</a>
                                         <a href="{{ route('template.cdot') }}" class="btn btn-primary submit_btn">Back
                                             To list</a>
+                                        <a href="{{ route('cdot.form.generate',['id'=>$file_id]) }}" target="_blank"
+                                            class="btn btn-success submit_btn">Download PDF</a>
                                     </form>
                                 </div>
                             </div>

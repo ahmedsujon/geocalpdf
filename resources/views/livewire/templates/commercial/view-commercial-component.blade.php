@@ -1539,10 +1539,9 @@
                 <div class="container">
                     <div class="row mt-3 mb-5 justify-content-md-center">
                         <div class="col-md-12 text-center">
-                            <a href="{{ route('invoice.commercial',['id'=>$file_id]) }}" target="_blank"
-                                class="btn btn-primary submit_btn" style="background: green;">Download PDF</a>
-                            <a href="{{ route('template.commercial') }}" class="btn btn-primary submit_btn"
-                                style="background: green;">Back To list</a>
+                            <a href="{{ route('template.commercial') }}" class="btn btn-primary submit_btn">Back To list</a>
+                                <a href="{{ route('invoice.commercial',['id'=>$file_id]) }}" target="_blank"
+                                    class="btn btn-success submit_btn">Download PDF</a>
                         </div>
                     </div>
                 </div>

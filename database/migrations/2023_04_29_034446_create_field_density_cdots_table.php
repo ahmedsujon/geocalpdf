@@ -158,7 +158,6 @@ class CreateFieldDensityCdotsTable extends Migration
             $table->text('compaction_c')->nullable();
             $table->text('compaction_d')->nullable();
             $table->text('compaction_e')->nullable();
-
             $table->string('status')->nullable();
             $table->text('remark')->nullable();
             $table->string('responsible_person')->nullable();

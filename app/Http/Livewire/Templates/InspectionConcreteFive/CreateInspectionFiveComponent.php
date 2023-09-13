@@ -566,7 +566,7 @@ class CreateInspectionFiveComponent extends Component
                     $mailData['role_id'] = $user->role_id;
                     $mailData['id'] = $f_id;
                     $mailData['subject'] = 'New file waiting for your review';
-                    Mail::send('emails.inspection_concrete', $mailData, function ($message) use ($mailData) {
+                    Mail::send('emails.inspection_concrete_set_five', $mailData, function ($message) use ($mailData) {
                         $message->to($mailData['email'])
                             ->subject($mailData['subject']);
                     });

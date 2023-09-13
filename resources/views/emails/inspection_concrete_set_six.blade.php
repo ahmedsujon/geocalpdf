@@ -26,12 +26,11 @@
 
 <body>
   <h1>Files Information</h1>
-  <p>Report Of Field Inspection Of Concrete – Single Mix has been created.</p>
+  <p>Report Of Field Inspection Of Concrete – Single Mix (Data Set 6) has been created.</p>
   <p>Please check the attachment report for your next action.</p> <br>
 
-  
   @if ($id)
-  <a class="button button1" href="{{ route('inspection.concrete.generate',['id'=>$id]) }}">Download</a>
+  <a class="button button1" href="{{ route('inspection.concrete.generate.six',['id'=>$id]) }}">Download</a>
   @endif
 
   <br><br>
