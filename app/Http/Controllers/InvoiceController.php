@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Client;
 use App\Models\Commercial;
 use App\Models\FieldDensityCdot;
 use App\Models\InspectionConcrete;
@@ -16,6 +17,7 @@ use App\Models\InspectionConcreteSetThree;
 use App\Models\InspectionConcreteSetTwo;
 use App\Models\PlasticConcrete;
 use App\Models\ProctorData;
+use App\Models\Project;
 use App\Models\SoilAggregate;
 use App\Models\SoilAggregateMixData;
 use App\Models\SoilAggregateTestResult;
@@ -500,5 +502,24 @@ class InvoiceController extends Controller
         $data->avarage = array_sum($avarage_array) / count($avarage_array);
         $pdf = Pdf::loadView('pdf.inspection_concrete_ten', compact('data'));
         return $pdf->stream('inspection_concrete_report.pdf');
+    }
+
+    public function concreteFieldReport(Request $request)
+    {
+        $project_id = $request->id;
+        $project = Project::findOrFail($project_id);
+        $client = Client::findOrFail($project->client_id);
+        $set_one = InspectionConcrete::where('project_id', $project_id)->orderBy('updated_at', 'DESC')->first();
+        $set_two = InspectionConcreteSetTwo::where('project_id', $project_id)->orderBy('updated_at', 'DESC')->first();
+        $set_three = InspectionConcreteSetThree::where('project_id', $project_id)->orderBy('updated_at', 'DESC')->first();
+        $set_four = InspectionConcreteSetFour::where('project_id', $project_id)->orderBy('updated_at', 'DESC')->first();
+        $set_five = InspectionConcreteSetFive::where('project_id', $project_id)->orderBy('updated_at', 'DESC')->first();
+        $set_six = InspectionConcreteSetSix::where('project_id', $project_id)->orderBy('updated_at', 'DESC')->first();
+        $set_seven = InspectionConcreteSetSeven::where('project_id', $project_id)->orderBy('updated_at', 'DESC')->first();
+        $set_eight = InspectionConcreteSetEight::where('project_id', $project_id)->orderBy('updated_at', 'DESC')->first();
+        $set_nine = InspectionConcreteSetNine::where('project_id', $project_id)->orderBy('updated_at', 'DESC')->first();
+        $set_ten = InspectionConcreteSetTen::where('project_id', $project_id)->orderBy('updated_at', 'DESC')->first();
+        $pdf = Pdf::loadView('pdf.inspection_concrete_ten', compact('set_one', 'set_two', 'set_three', 'set_four', 'set_five', 'set_six', 'set_seven', 'set_eight', 'set_nine', 'set_ten', 'project', 'client'));
+        return $pdf->stream('concreteF_feld_report.pdf');
     }
 }

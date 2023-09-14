@@ -297,6 +297,9 @@ Route::get('/inspection/data/set/ten/report/ijP6ERmmdeLfFi56595438805{id}4ijP6ER
 
 Route::get('/commercial/report/ijP6ERmmdeLfFi51864136533{id}4ijP6ERmmdeLfFi5RiwZATmrI2SMOYYVSmdtcmjxJe2K31U5knK', [InvoiceController::class, 'templateSoilAggregate'])->name('soil.aggregate.generate');
 
+// Concrete Field Report
+Route::get('/concrete/field/report/ijP6ERmmdeLfFi51864136533{id}4ijP6ERmmdeLfFi5RiwZATmrI2SMOYYVSmdtcmjxJe2K31U5knK', [InvoiceController::class, 'concreteFieldReport'])->name('concrete.field.report.generate');
+
 //authSuperAdmin
 Route::middleware(['auth:sanctum', 'verified'])->name('admin.')->group(function () {
     Route::get('/admin/super/admin', DashboardComponent::class)->name('super.admin.dashboard');

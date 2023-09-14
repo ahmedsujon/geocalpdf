@@ -49,50 +49,25 @@
                             <table class="table custom_tbl">
                                 <thead class="thead-light">
                                     <tr>
-                                        <th>Image</th>
                                         <th>Project Name</th>
-                                        <th>Client Name</th>
-                                        <th>Project Number</th>
-                                        <th>Updated By</th>
-                                        <th>Created Date</th>
+                                        <th>Project Name</th>
                                         <th style="text-align: center;">Options</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @php
-                                    $sl = $files->perPage() * $files->currentPage() - ($files->perPage() - 1);
+                                    $sl = $projects->perPage() * $projects->currentPage() - ($projects->perPage() - 1);
                                     @endphp
-                                    @if ($files->count() > 0)
-                                    @foreach ($files as $file)
+                                    @if ($projects->count() > 0)
+                                    @foreach ($projects as $file)
                                     <tr>
-                                        <td>
-                                            @if ( project($file->project_id)->avatar)
-                                            <img src="{{ asset('uploads/project') }}/{{ project($file->project_id)->avatar }}"
-                                                alt="user" class="rounded-circle thumb-md">
-                                            @else
-                                            <img src="{{ asset('assets/images/defaults/default_project.jpg') }}" alt="user"
-                                                class="rounded-circle thumb-md">
-                                            @endif
-                                        </td>
-                                        <td>{{ project($file->project_id)->name }}</td>
-                                        <td>{{ client($file->client_id)->name }}</td>
-                                        <td>{{ $file->project_number }}</td>
-                                        <td>{{ user($file->created_by)->name }}</td>
+                                        <td>{{ $file->name }}</td>
                                         <td>{{ $file->created_at }}</td>
                                         <td style="text-align: center;">
-                                            <a target="_blank" href="{{ route('inspection.concrete.generate.one',['id'=>$file->id]) }}"
+                                            <a target="_blank" href="{{ route('concrete.field.report.generate',['id'=>$file->id]) }}"
                                                 type="button"
                                                 class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm"><i
                                                     class="ti ti-file-invoice"></i></a>
-                                            <a href="{{ route('concrete.show', ['file_id' => $file->id]) }}" type="button"
-                                                class="btn btn-outline-success btn-icon-circle btn-icon-circle-sm"><i
-                                                    class="ti ti-eye"></i></a>
-                                            <a href="{{ route('concrete.update', ['file_id' => $file->id]) }}" type="button"
-                                                class="btn btn-outline-warning btn-icon-circle btn-icon-circle-sm"><i
-                                                    class="ti ti-edit"></i></a>
-                                            <a wire:click.prevent="deleteConfirmation({{ $file->id }})" type="button"
-                                                class="btn btn-outline-danger btn-icon-circle btn-icon-circle-sm"><i
-                                                    class="ti ti-trash"></i></a>
                                         </td>
                                     </tr>
                                     @endforeach
@@ -104,7 +79,7 @@
                                 </tbody>
                             </table>
                         </div>
-                        {{ $files->links('pagination-links-table') }}
+                        {{ $projects->links('pagination-links-table') }}
                     </div>
                 </div>
             </div>
