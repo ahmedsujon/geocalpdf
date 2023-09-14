@@ -17,7 +17,9 @@
           border-radius: 10px;
         }
         
-        .button1 {background-color: #4D2C98;}
+        .button1 {
+      border: 2px solid #111111;
+    }
         </style>
 </head>
 <body>

@@ -19,7 +19,7 @@
     }
 
     .button1 {
-      background-color: #4D2C98;
+      border: 2px solid #111111;
     }
   </style>
 </head>

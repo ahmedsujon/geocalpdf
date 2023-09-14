@@ -26,7 +26,7 @@ class AddProjectComponent extends Component
     {
         $this->validateOnly($fields, [
             'project_number'=>'required|unique:projects,project_number',
-            'name'=>'required',
+            'name'=>'required|unique:projects,name',
             'location'=>'required',
             'client_id'=>'required',
             'responsible_ft'=>'required',
@@ -40,7 +40,7 @@ class AddProjectComponent extends Component
     {
         $this->validate([
             'project_number'=>'required|unique:projects,project_number',
-            'name'=>'required',
+            'name'=>'required|unique:projects,name',
             'location'=>'required',
             'client_id'=>'required',
             'responsible_ft'=>'required',
