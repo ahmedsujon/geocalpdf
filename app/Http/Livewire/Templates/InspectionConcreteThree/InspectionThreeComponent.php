@@ -89,10 +89,14 @@ class InspectionThreeComponent extends Component
         }
         echo $output;
     }
-    
+
     public function render()
     {
-        $files = InspectionConcreteSetThree::orderBy('id', 'DESC')->paginate($this->sortingValue);
-        return view('livewire.templates.inspection-concrete-three.inspection-three-component', ['files'=>$files])->layout('livewire.layouts.base');
+        $files = InspectionConcreteSetThree::orderBy('id', 'DESC')
+            ->join('projects', 'inspection_concrete_set_threes.project_id', '=', 'projects.id')
+            ->where('projects.name', 'like', '%' . $this->searchTerm . '%')
+            ->select('inspection_concrete_set_threes.*')
+            ->paginate($this->sortingValue);
+        return view('livewire.templates.inspection-concrete-three.inspection-three-component', ['files' => $files])->layout('livewire.layouts.base');
     }
 }

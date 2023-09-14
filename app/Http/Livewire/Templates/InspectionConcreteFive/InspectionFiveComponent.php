@@ -92,7 +92,11 @@ class InspectionFiveComponent extends Component
 
     public function render()
     {
-        $files = InspectionConcreteSetFive::orderBy('id', 'DESC')->paginate($this->sortingValue);
-        return view('livewire.templates.inspection-concrete-five.inspection-five-component', ['files'=>$files])->layout('livewire.layouts.base');
+        $files = InspectionConcreteSetFive::orderBy('id', 'DESC')
+            ->join('projects', 'inspection_concrete_set_fives.project_id', '=', 'projects.id')
+            ->where('projects.name', 'like', '%' . $this->searchTerm . '%')
+            ->select('inspection_concrete_set_fives.*')
+            ->paginate($this->sortingValue);
+        return view('livewire.templates.inspection-concrete-five.inspection-five-component', ['files' => $files])->layout('livewire.layouts.base');
     }
 }

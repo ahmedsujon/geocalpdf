@@ -13,9 +13,9 @@ use Livewire\WithPagination;
 
 class PlasticConcreteComponent extends Component
 {
-     use WithPagination;
+    use WithPagination;
     public $sortingValue = 10, $searchTerm;
-    protected $listeners = ['deleteConfirmed'=>'deleteData'];
+    protected $listeners = ['deleteConfirmed' => 'deleteData'];
     public $edit_id, $delete_id;
 
     public function deleteConfirmation($id)
@@ -86,7 +86,11 @@ class PlasticConcreteComponent extends Component
 
     public function render()
     {
-        $plastic_concretes = PlasticConcrete::orderBy('id', 'DESC')->paginate($this->sortingValue);
-        return view('livewire.templates.plastic-concrete.plastic-concrete-component', ['plastic_concretes'=>$plastic_concretes])->layout('livewire.layouts.base');
+        $plastic_concretes = PlasticConcrete::orderBy('id', 'DESC')
+            ->join('projects', 'plastic_concretes.project_id', '=', 'projects.id')
+            ->where('projects.name', 'like', '%' . $this->searchTerm . '%')
+            ->select('plastic_concretes.*')
+            ->paginate($this->sortingValue);
+        return view('livewire.templates.plastic-concrete.plastic-concrete-component', ['plastic_concretes' => $plastic_concretes])->layout('livewire.layouts.base');
     }
 }

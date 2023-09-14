@@ -92,7 +92,11 @@ class InspectionSevenComponent extends Component
 
     public function render()
     {
-        $files = InspectionConcreteSetSeven::orderBy('id', 'DESC')->paginate($this->sortingValue);
-        return view('livewire.templates.inspection-concrete-seven.inspection-seven-component', ['files'=>$files])->layout('livewire.layouts.base');
+        $files = InspectionConcreteSetSeven::orderBy('id', 'DESC')
+            ->join('projects', 'inspection_concrete_set_sevens.project_id', '=', 'projects.id')
+            ->where('projects.name', 'like', '%' . $this->searchTerm . '%')
+            ->select('inspection_concrete_set_sevens.*')
+            ->paginate($this->sortingValue);
+        return view('livewire.templates.inspection-concrete-seven.inspection-seven-component', ['files' => $files])->layout('livewire.layouts.base');
     }
 }

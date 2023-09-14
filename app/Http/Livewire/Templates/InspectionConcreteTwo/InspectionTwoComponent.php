@@ -92,7 +92,11 @@ class InspectionTwoComponent extends Component
 
     public function render()
     {
-        $files = InspectionConcreteSetTwo::orderBy('id', 'DESC')->paginate($this->sortingValue);
+        $files = InspectionConcreteSetTwo::orderBy('id', 'DESC')
+            ->join('projects', 'inspection_concrete_set_twos.project_id', '=', 'projects.id')
+            ->where('projects.name', 'like', '%' . $this->searchTerm . '%')
+            ->select('inspection_concrete_set_twos.*')
+            ->paginate($this->sortingValue);
         return view('livewire.templates.inspection-concrete-two.inspection-two-component', ['files' => $files])->layout('livewire.layouts.base');
     }
 }

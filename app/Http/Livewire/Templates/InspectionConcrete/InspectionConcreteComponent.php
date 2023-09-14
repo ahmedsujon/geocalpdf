@@ -93,7 +93,11 @@ class InspectionConcreteComponent extends Component
 
     public function render()
     {
-        $files = InspectionConcrete::orderBy('id', 'DESC')->paginate($this->sortingValue);
-        return view('livewire.templates.inspection-concrete.inspection-concrete-component', ['files'=>$files])->layout('livewire.layouts.base');
+        $files = InspectionConcrete::orderBy('id', 'DESC')
+            ->join('projects', 'inspection_concretes.project_id', '=', 'projects.id')
+            ->where('projects.name', 'like', '%' . $this->searchTerm . '%')
+            ->select('inspection_concretes.*')
+            ->paginate($this->sortingValue);
+        return view('livewire.templates.inspection-concrete.inspection-concrete-component', ['files' => $files])->layout('livewire.layouts.base');
     }
 }

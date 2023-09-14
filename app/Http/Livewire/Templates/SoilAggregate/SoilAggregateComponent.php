@@ -92,7 +92,11 @@ class SoilAggregateComponent extends Component
 
     public function render()
     {
-        $files = SoilAggregate::orderBy('id', 'DESC')->paginate($this->sortingValue);
-        return view('livewire.templates.soil-aggregate.soil-aggregate-component', ['files'=>$files])->layout('livewire.layouts.base');
+        $files = SoilAggregate::orderBy('id', 'DESC')
+            ->join('projects', 'soil_aggregates.project_id', '=', 'projects.id')
+            ->where('projects.name', 'like', '%' . $this->searchTerm . '%')
+            ->select('soil_aggregates.*')
+            ->paginate($this->sortingValue);
+        return view('livewire.templates.soil-aggregate.soil-aggregate-component', ['files' => $files])->layout('livewire.layouts.base');
     }
 }

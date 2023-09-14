@@ -89,10 +89,14 @@ class InspectionNineComponent extends Component
         }
         echo $output;
     }
-    
+
     public function render()
     {
-        $files = InspectionConcreteSetNine::orderBy('id', 'DESC')->paginate($this->sortingValue);
-        return view('livewire.templates.inspection-concrete-nine.inspection-nine-component', ['files'=>$files])->layout('livewire.layouts.base');
+        $files = InspectionConcreteSetNine::orderBy('id', 'DESC')
+            ->join('projects', 'inspection_concrete_set_nines.project_id', '=', 'projects.id')
+            ->where('projects.name', 'like', '%' . $this->searchTerm . '%')
+            ->select('inspection_concrete_set_nines.*')
+            ->paginate($this->sortingValue);
+        return view('livewire.templates.inspection-concrete-nine.inspection-nine-component', ['files' => $files])->layout('livewire.layouts.base');
     }
 }

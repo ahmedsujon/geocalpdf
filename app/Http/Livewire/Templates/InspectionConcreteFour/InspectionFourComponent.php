@@ -92,7 +92,11 @@ class InspectionFourComponent extends Component
 
     public function render()
     {
-        $files = InspectionConcreteSetFour::orderBy('id', 'DESC')->paginate($this->sortingValue);
-        return view('livewire.templates.inspection-concrete-four.inspection-four-component', ['files'=>$files])->layout('livewire.layouts.base');
+        $files = InspectionConcreteSetFour::orderBy('id', 'DESC')
+            ->join('projects', 'inspection_concrete_set_fours.project_id', '=', 'projects.id')
+            ->where('projects.name', 'like', '%' . $this->searchTerm . '%')
+            ->select('inspection_concrete_set_fours.*')
+            ->paginate($this->sortingValue);
+        return view('livewire.templates.inspection-concrete-four.inspection-four-component', ['files' => $files])->layout('livewire.layouts.base');
     }
 }

@@ -92,7 +92,11 @@ class CommercialComponent extends Component
 
     public function render()
     {
-        $files = Commercial::orderBy('id', 'DESC')->paginate($this->sortingValue);
-        return view('livewire.templates.commercial.commercial-component', ['files'=>$files])->layout('livewire.layouts.base');
+        $files = Commercial::orderBy('id', 'DESC')
+            ->join('projects', 'commercials.project_id', '=', 'projects.id')
+            ->where('projects.name', 'like', '%' . $this->searchTerm . '%')
+            ->select('commercials.*')
+            ->paginate($this->sortingValue);
+        return view('livewire.templates.commercial.commercial-component', ['files' => $files])->layout('livewire.layouts.base');
     }
 }
