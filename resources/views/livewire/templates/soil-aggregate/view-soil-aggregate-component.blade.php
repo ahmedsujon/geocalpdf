@@ -290,7 +290,8 @@
                                         <select class="form-select" wire:model="user_id">
                                             <option value="">Select Technician</option>
                                             @foreach ($supervisors as $supervisor)
-                                            <option value="{{ $supervisor->id }}">{{ user($supervisor->id)->name }}
+                                            <option disabled value="{{ $supervisor->id }}">{{
+                                                user($supervisor->id)->name }}
                                             </option>
                                             @endforeach
                                         </select>
@@ -301,7 +302,8 @@
 
                                     <div class="input-group mt-2">
                                         <span class="input-group-text width18">Weather:</span>
-                                        <input type="text" class="form-control form-color" wire:model="weather">
+                                        <input type="text" class="form-control form-color" wire:model="weather"
+                                            readonly>
                                     </div>
                                     @error('weather')
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
@@ -411,7 +413,8 @@
 
                                     <div class="input-group mt-2">
                                         <span class="input-group-text width27">Density Standard Count:</span>
-                                        <input type="number" class="form-control form-color" wire:model="density_count">
+                                        <input type="number" class="form-control form-color" wire:model="density_count"
+                                            readonly>
                                         @error('density_count')
                                         <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                         @enderror
@@ -419,8 +422,8 @@
 
                                     <div class="input-group mt-2">
                                         <span class="input-group-text width27">Moisture Standard Count:</span>
-                                        <input type="number" class="form-control form-color"
-                                            wire:model="moisture_count">
+                                        <input type="number" class="form-control form-color" wire:model="moisture_count"
+                                            readonly>
                                         @error('moisture_count')
                                         <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                         @enderror
@@ -478,7 +481,8 @@
                                                                 wire:change="proctorInfoA">
                                                                 <option value="">Select id</option>
                                                                 @foreach ($proctors as $proctor)
-                                                                <option value="{{ proctor($proctor->id)->proctorid }}">
+                                                                <option disabled
+                                                                    value="{{ proctor($proctor->id)->proctorid }}">
                                                                     {{ proctor($proctor->id)->proctorid }}</option>
                                                                 @endforeach
                                                             </select>
@@ -524,7 +528,8 @@
                                                                 wire:change="proctorInfoB">
                                                                 <option value="">Select id</option>
                                                                 @foreach ($proctors as $proctor)
-                                                                <option value="{{ proctor($proctor->id)->proctorid }}">
+                                                                <option disabled
+                                                                    value="{{ proctor($proctor->id)->proctorid }}">
                                                                     {{ proctor($proctor->id)->proctorid }}</option>
                                                                 @endforeach
                                                             </select>
@@ -570,7 +575,8 @@
                                                                 wire:change="proctorInfoC">
                                                                 <option value="">Select id</option>
                                                                 @foreach ($proctors as $proctor)
-                                                                <option value="{{ proctor($proctor->id)->proctorid }}">
+                                                                <option disabled
+                                                                    value="{{ proctor($proctor->id)->proctorid }}">
                                                                     {{ proctor($proctor->id)->proctorid }}</option>
                                                                 @endforeach
                                                             </select>
@@ -616,7 +622,8 @@
                                                                 wire:change="proctorInfoD">
                                                                 <option value="">Select id</option>
                                                                 @foreach ($proctors as $proctor)
-                                                                <option value="{{ proctor($proctor->id)->proctorid }}">
+                                                                <option disabled
+                                                                    value="{{ proctor($proctor->id)->proctorid }}">
                                                                     {{ proctor($proctor->id)->proctorid }}</option>
                                                                 @endforeach
                                                             </select>
@@ -662,7 +669,8 @@
                                                                 wire:change="proctorInfoE">
                                                                 <option value="">Select id</option>
                                                                 @foreach ($proctors as $proctor)
-                                                                <option value="{{ proctor($proctor->id)->proctorid }}">
+                                                                <option disabled
+                                                                    value="{{ proctor($proctor->id)->proctorid }}">
                                                                     {{ proctor($proctor->id)->proctorid }}</option>
                                                                 @endforeach
                                                             </select>
@@ -715,7 +723,7 @@
                                     <div class="input-group">
                                         <span class="input-group-text width30">Compaction Requirements (%):</span>
                                         <input type="number" class="form-control form-color"
-                                            wire:model="compaction_requirement">
+                                            wire:model="compaction_requirement" readonly>
                                     </div>
                                     @error('compaction_requirement')
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
@@ -725,13 +733,13 @@
                                     <div class="input-group">
                                         <span class="input-group-text">Moisture Requirements (-/+ %) Minus:</span>
                                         <input type="number" class="form-control form-color"
-                                            wire:model="requirement_minus">
+                                            wire:model="requirement_minus" readonly>
                                         @error('requirement_minus')
                                         <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                         @enderror
                                         <span class="input-group-text">Plus:</span>
                                         <input type="number" class="form-control form-color"
-                                            wire:model="requirement_plus">
+                                            wire:model="requirement_plus" readonly>
                                         @error('requirement_plus')
                                         <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                         @enderror
@@ -745,7 +753,8 @@
                                 <div class="col-md-12">
                                     <div class="input-group mt-2">
                                         <span class="input-group-text width15">General Location:</span>
-                                        <input type="text" class="form-control form-color" wire:model="general_info">
+                                        <input type="text" class="form-control form-color" wire:model="general_info"
+                                            readonly>
                                     </div>
                                     @error('general_info')
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
@@ -781,7 +790,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="test_num_a">
+                                                            wire:model="test_num_a" readonly>
                                                         @error('test_num_a')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
@@ -794,7 +803,8 @@
                                                             wire:change="resultMixA">
                                                             <option value="">Select id</option>
                                                             @foreach ($proctors as $proctor)
-                                                            <option value="{{ proctor($proctor->id)->proctorid }}">
+                                                            <option disabled
+                                                                value="{{ proctor($proctor->id)->proctorid }}">
                                                                 {{ proctor($proctor->id)->proctorid }}</option>
                                                             @endforeach
                                                         </select>
@@ -804,7 +814,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="location_a">
+                                                            wire:model="location_a" readonly>
                                                         @error('location_a')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
@@ -833,7 +843,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="elev_test_a">
+                                                            wire:model="elev_test_a" readonly>
                                                         @error('elev_test_a')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
@@ -844,7 +854,7 @@
                                                     <div class="input-group">
                                                         <input type="number" step="any"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="wet_density_a">
+                                                            wire:model="wet_density_a" readonly>
                                                         @error('wet_density_a')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
@@ -867,7 +877,7 @@
                                                     <div class="input-group">
                                                         <input type="number" step="any"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="moisture_content_a">
+                                                            wire:model="moisture_content_a" readonly>
                                                         @error('moisture_content_a')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
@@ -894,8 +904,7 @@
                                                             <option value="Base">Base</option>
                                                             <option value="Subbase">Subbase</option>
                                                             <option value="Subgrade">Subgrade</option>
-                                                            <option value="Improved Subgrade">Improved Subgrade
-                                                            </option>
+                                                            <option value="Improved Subgrade">Improved Subgrade</option>
                                                             <option value="Surface">Surface</option>
                                                             <option value="Fill">Fill</option>
                                                         </select>
@@ -928,7 +937,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="test_num_b">
+                                                            wire:model="test_num_b" readonly>
                                                         @error('test_num_b')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
@@ -941,7 +950,8 @@
                                                             wire:change="resultMixB">
                                                             <option value="">Select id</option>
                                                             @foreach ($proctors as $proctor)
-                                                            <option value="{{ proctor($proctor->id)->proctorid }}">
+                                                            <option disabled
+                                                                value="{{ proctor($proctor->id)->proctorid }}">
                                                                 {{ proctor($proctor->id)->proctorid }}</option>
                                                             @endforeach
                                                         </select>
@@ -951,7 +961,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="location_b">
+                                                            wire:model="location_b" readonly>
                                                         @error('location_b')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
@@ -980,7 +990,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="elev_test_b">
+                                                            wire:model="elev_test_b" readonly>
                                                         @error('elev_test_b')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
@@ -991,7 +1001,7 @@
                                                     <div class="input-group">
                                                         <input type="number" step="any"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="wet_density_b">
+                                                            wire:model="wet_density_b" readonly>
                                                         @error('wet_density_b')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
@@ -1014,7 +1024,7 @@
                                                     <div class="input-group">
                                                         <input type="number" step="any"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="moisture_content_b">
+                                                            wire:model="moisture_content_b" readonly>
                                                         @error('moisture_content_b')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
@@ -1075,7 +1085,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="test_num_c">
+                                                            wire:model="test_num_c" readonly>
                                                         @error('test_num_c')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
@@ -1088,7 +1098,8 @@
                                                             wire:change="resultMixC">
                                                             <option value="">Select id</option>
                                                             @foreach ($proctors as $proctor)
-                                                            <option value="{{ proctor($proctor->id)->proctorid }}">
+                                                            <option disabled
+                                                                value="{{ proctor($proctor->id)->proctorid }}">
                                                                 {{ proctor($proctor->id)->proctorid }}</option>
                                                             @endforeach
                                                         </select>
@@ -1102,7 +1113,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="location_c">
+                                                            wire:model="location_c" readonly>
                                                         @error('location_c')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
@@ -1131,7 +1142,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="elev_test_c">
+                                                            wire:model="elev_test_c" readonly>
                                                         @error('elev_test_c')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
@@ -1142,7 +1153,7 @@
                                                     <div class="input-group">
                                                         <input type="number" step="any"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="wet_density_c">
+                                                            wire:model="wet_density_c" readonly>
                                                         @error('wet_density_c')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
@@ -1165,7 +1176,7 @@
                                                     <div class="input-group">
                                                         <input type="number" step="any"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="moisture_content_c">
+                                                            wire:model="moisture_content_c" readonly>
                                                         @error('moisture_content_c')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
@@ -1226,7 +1237,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="test_num_d">
+                                                            wire:model="test_num_d" readonly>
                                                         @error('test_num_d')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
@@ -1239,7 +1250,8 @@
                                                             wire:change="resultMixD">
                                                             <option value="">Select id</option>
                                                             @foreach ($proctors as $proctor)
-                                                            <option value="{{ proctor($proctor->id)->proctorid }}">
+                                                            <option disabled
+                                                                value="{{ proctor($proctor->id)->proctorid }}">
                                                                 {{ proctor($proctor->id)->proctorid }}</option>
                                                             @endforeach
                                                         </select>
@@ -1253,7 +1265,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="location_d">
+                                                            wire:model="location_d" readonly>
                                                         @error('location_d')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
@@ -1282,7 +1294,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="elev_test_d">
+                                                            wire:model="elev_test_d" readonly>
                                                         @error('elev_test_d')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
@@ -1293,7 +1305,7 @@
                                                     <div class="input-group">
                                                         <input type="number" step="any"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="wet_density_d">
+                                                            wire:model="wet_density_d" readonly>
                                                         @error('wet_density_d')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
@@ -1316,7 +1328,7 @@
                                                     <div class="input-group">
                                                         <input type="number" step="any"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="moisture_content_d">
+                                                            wire:model="moisture_content_d" readonly>
                                                         @error('moisture_content_d')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
@@ -1377,7 +1389,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="test_num_e">
+                                                            wire:model="test_num_e" readonly>
                                                         @error('test_num_e')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
@@ -1390,7 +1402,8 @@
                                                             wire:change="resultMixE">
                                                             <option value="">Select id</option>
                                                             @foreach ($proctors as $proctor)
-                                                            <option value="{{ proctor($proctor->id)->proctorid }}">
+                                                            <option disabled
+                                                                value="{{ proctor($proctor->id)->proctorid }}">
                                                                 {{ proctor($proctor->id)->proctorid }}</option>
                                                             @endforeach
                                                         </select>
@@ -1404,7 +1417,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="location_e">
+                                                            wire:model="location_e" readonly>
                                                         @error('location_e')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
@@ -1433,7 +1446,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="elev_test_e">
+                                                            wire:model="elev_test_e" readonly>
                                                         @error('elev_test_e')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
@@ -1444,7 +1457,7 @@
                                                     <div class="input-group">
                                                         <input type="number" step="any"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="wet_density_e">
+                                                            wire:model="wet_density_e" readonly>
                                                         @error('wet_density_e')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
@@ -1467,7 +1480,7 @@
                                                     <div class="input-group">
                                                         <input type="number" step="any"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="moisture_content_e">
+                                                            wire:model="moisture_content_e" readonly>
                                                         @error('moisture_content_e')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
@@ -1528,7 +1541,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="test_num_f">
+                                                            wire:model="test_num_f" readonly>
                                                         @error('test_num_f')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
@@ -1541,7 +1554,8 @@
                                                             wire:change="resultMixF">
                                                             <option value="">Select id</option>
                                                             @foreach ($proctors as $proctor)
-                                                            <option value="{{ proctor($proctor->id)->proctorid }}">
+                                                            <option disabled
+                                                                value="{{ proctor($proctor->id)->proctorid }}">
                                                                 {{ proctor($proctor->id)->proctorid }}</option>
                                                             @endforeach
                                                         </select>
@@ -1555,7 +1569,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="location_f">
+                                                            wire:model="location_f" readonly>
                                                         @error('location_f')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
@@ -1584,7 +1598,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="elev_test_f">
+                                                            wire:model="elev_test_f" readonly>
                                                         @error('elev_test_f')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
@@ -1595,7 +1609,7 @@
                                                     <div class="input-group">
                                                         <input type="number" step="any"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="wet_density_f">
+                                                            wire:model="wet_density_f" readonly>
                                                         @error('wet_density_f')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
@@ -1618,7 +1632,7 @@
                                                     <div class="input-group">
                                                         <input type="number" step="any"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="moisture_content_f">
+                                                            wire:model="moisture_content_f" readonly>
                                                         @error('moisture_content_f')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
@@ -1793,7 +1807,8 @@
                         <div class="container">
                             <div class="row mt-3 mb-3">
                                 <div class="col-md-12 text-center">
-                                    <a href="{{ route('template.soil.aggregate') }}" class="btn btn-primary submit_btn">Back To list</a>
+                                    <a href="{{ route('template.soil.aggregate') }}"
+                                        class="btn btn-primary submit_btn">Back To list</a>
                                     <a href="{{ route('soil.aggregate.generate',['id'=>$file_id]) }}" target="_blank"
                                         class="btn btn-success submit_btn">Download PDF</a>
                                 </div>
