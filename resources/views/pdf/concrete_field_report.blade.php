@@ -67,7 +67,8 @@
         </table>
 
         <table style="width: 100%; border-collapse: collapse; padding-top: 25px; margin-bottom: 5px;">
-            <h4 style="font-size: 13px; font-weight: 700; text-align:center;">PHYSICAL PROPERTIES OF PLASTIC CONCRETE</h4>
+            <h4 style="font-size: 13px; font-weight: 700; text-align:center;">PHYSICAL PROPERTIES OF PLASTIC CONCRETE
+            </h4>
             <tr>
                 <td style="padding: 1px; border: 1px solid #000">
                     <h4 style="font-size: 14px; font-weight: 400">Specifications: Slump:</h4>
@@ -106,9 +107,7 @@
             </tr>
         </table>
 
-
-        <div
-            style="padding-top: 5px;">
+        <div style="padding-top: 5px;">
             <table style="width: 100%; border-collapse: collapse;">
                 <caption
                     style="text-align:left; font-size: 14px; font-weight: 500; padding: 0; letter-spacing: -1px; background-color: #689A3D; border-top: 2px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
@@ -157,7 +156,7 @@
                         <h3 style="font-size: 12px; font-weight: 400">CYL SET ID NUMBER</h3>
                     </th>
                 </tr>
-                @if ($set_one->truck_no)
+                @if ($set_one->truck_no != null)
                 <tr>
                     <td style="border: 1px solid #000">
                         <h4 style="font-size: 14px; font-weight: 400; text-align:center;">1
@@ -178,7 +177,8 @@
                         </h4>
                     </td>
                     <td style="border: 1px solid #000">
-                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $set_one->sample_time }}</h4>
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $set_one->sample_time }}
+                        </h4>
                     </td>
                     <td style="border: 1px solid #000">
                         <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
@@ -201,7 +201,8 @@
                         </h4>
                     </td>
                     <td style="border: 1px solid #000">
-                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $set_one->water_cement_ratio }}
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{
+                            $set_one->water_cement_ratio }}
                         </h4>
                     </td>
                     <td style="border: 1px solid #000">
@@ -218,7 +219,7 @@
                     </td>
                 </tr>
                 @endif
-                @if ($set_two->truck_no == null)
+                {{-- @if ($set_two->truck_no != null)
                 <tr>
                     <td style="border: 1px solid #000">
                         <h4 style="font-size: 14px; font-weight: 400; text-align:center;">1
@@ -239,7 +240,8 @@
                         </h4>
                     </td>
                     <td style="border: 1px solid #000">
-                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $set_two->sample_time }}</h4>
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $set_two->sample_time }}
+                        </h4>
                     </td>
                     <td style="border: 1px solid #000">
                         <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
@@ -262,7 +264,8 @@
                         </h4>
                     </td>
                     <td style="border: 1px solid #000">
-                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $set_two->water_cement_ratio }}
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{
+                            $set_two->water_cement_ratio }}
                         </h4>
                     </td>
                     <td style="border: 1px solid #000">
@@ -279,7 +282,7 @@
                     </td>
                 </tr>
                 @endif
-                @if ($set_three->truck_no)
+                @if ($set_three->truck_no != null)
                 <tr>
                     <td style="border: 1px solid #000">
                         <h4 style="font-size: 14px; font-weight: 400; text-align:center;">1
@@ -300,7 +303,8 @@
                         </h4>
                     </td>
                     <td style="border: 1px solid #000">
-                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $set_three->sample_time }}</h4>
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $set_three->sample_time }}
+                        </h4>
                     </td>
                     <td style="border: 1px solid #000">
                         <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
@@ -319,15 +323,18 @@
                         </h4>
                     </td>
                     <td style="border: 1px solid #000">
-                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $set_three->relative_yield }}
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $set_three->relative_yield
+                            }}
                         </h4>
                     </td>
                     <td style="border: 1px solid #000">
-                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $set_three->water_cement_ratio }}
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{
+                            $set_three->water_cement_ratio }}
                         </h4>
                     </td>
                     <td style="border: 1px solid #000">
-                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $set_three->concrete_temp }}
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $set_three->concrete_temp
+                            }}
                         </h4>
                     </td>
                     <td style="border: 1px solid #000">
@@ -340,7 +347,7 @@
                     </td>
                 </tr>
                 @endif
-                @if ($set_four->truck_no)
+                @if ($set_four->truck_no != null)
                 <tr>
                     <td style="border: 1px solid #000">
                         <h4 style="font-size: 14px; font-weight: 400; text-align:center;">1
@@ -361,7 +368,8 @@
                         </h4>
                     </td>
                     <td style="border: 1px solid #000">
-                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $set_four->sample_time }}</h4>
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $set_four->sample_time }}
+                        </h4>
                     </td>
                     <td style="border: 1px solid #000">
                         <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
@@ -380,11 +388,13 @@
                         </h4>
                     </td>
                     <td style="border: 1px solid #000">
-                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $set_four->relative_yield }}
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $set_four->relative_yield
+                            }}
                         </h4>
                     </td>
                     <td style="border: 1px solid #000">
-                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $set_four->water_cement_ratio }}
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{
+                            $set_four->water_cement_ratio }}
                         </h4>
                     </td>
                     <td style="border: 1px solid #000">
@@ -401,7 +411,7 @@
                     </td>
                 </tr>
                 @endif
-                @if ($set_five->truck_no)
+                @if ($set_five->truck_no != null)
                 <tr>
                     <td style="border: 1px solid #000">
                         <h4 style="font-size: 14px; font-weight: 400; text-align:center;">1
@@ -422,7 +432,8 @@
                         </h4>
                     </td>
                     <td style="border: 1px solid #000">
-                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $set_five->sample_time }}</h4>
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $set_five->sample_time }}
+                        </h4>
                     </td>
                     <td style="border: 1px solid #000">
                         <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
@@ -441,11 +452,13 @@
                         </h4>
                     </td>
                     <td style="border: 1px solid #000">
-                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $set_five->relative_yield }}
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $set_five->relative_yield
+                            }}
                         </h4>
                     </td>
                     <td style="border: 1px solid #000">
-                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $set_five->water_cement_ratio }}
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{
+                            $set_five->water_cement_ratio }}
                         </h4>
                     </td>
                     <td style="border: 1px solid #000">
@@ -462,7 +475,7 @@
                     </td>
                 </tr>
                 @endif
-                @if ($set_six->truck_no)
+                @if ($set_six->truck_no != null)
                 <tr>
                     <td style="border: 1px solid #000">
                         <h4 style="font-size: 14px; font-weight: 400; text-align:center;">1
@@ -483,7 +496,8 @@
                         </h4>
                     </td>
                     <td style="border: 1px solid #000">
-                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $set_six->sample_time }}</h4>
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $set_six->sample_time }}
+                        </h4>
                     </td>
                     <td style="border: 1px solid #000">
                         <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
@@ -506,7 +520,8 @@
                         </h4>
                     </td>
                     <td style="border: 1px solid #000">
-                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $set_six->water_cement_ratio }}
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{
+                            $set_six->water_cement_ratio }}
                         </h4>
                     </td>
                     <td style="border: 1px solid #000">
@@ -523,7 +538,7 @@
                     </td>
                 </tr>
                 @endif
-                @if ($set_seven->truck_no)
+                @if ($set_seven->truck_no != null)
                 <tr>
                     <td style="border: 1px solid #000">
                         <h4 style="font-size: 14px; font-weight: 400; text-align:center;">1
@@ -544,7 +559,8 @@
                         </h4>
                     </td>
                     <td style="border: 1px solid #000">
-                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $set_seven->sample_time }}</h4>
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $set_seven->sample_time }}
+                        </h4>
                     </td>
                     <td style="border: 1px solid #000">
                         <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
@@ -563,15 +579,18 @@
                         </h4>
                     </td>
                     <td style="border: 1px solid #000">
-                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $set_seven->relative_yield }}
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $set_seven->relative_yield
+                            }}
                         </h4>
                     </td>
                     <td style="border: 1px solid #000">
-                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $set_seven->water_cement_ratio }}
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{
+                            $set_seven->water_cement_ratio }}
                         </h4>
                     </td>
                     <td style="border: 1px solid #000">
-                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $set_seven->concrete_temp }}
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $set_seven->concrete_temp
+                            }}
                         </h4>
                     </td>
                     <td style="border: 1px solid #000">
@@ -584,7 +603,7 @@
                     </td>
                 </tr>
                 @endif
-                @if ($set_eight->truck_no)
+                @if ($set_eight->truck_no != null)
                 <tr>
                     <td style="border: 1px solid #000">
                         <h4 style="font-size: 14px; font-weight: 400; text-align:center;">1
@@ -605,7 +624,8 @@
                         </h4>
                     </td>
                     <td style="border: 1px solid #000">
-                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $set_eight->sample_time }}</h4>
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $set_eight->sample_time }}
+                        </h4>
                     </td>
                     <td style="border: 1px solid #000">
                         <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
@@ -624,15 +644,18 @@
                         </h4>
                     </td>
                     <td style="border: 1px solid #000">
-                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $set_eight->relative_yield }}
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $set_eight->relative_yield
+                            }}
                         </h4>
                     </td>
                     <td style="border: 1px solid #000">
-                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $set_eight->water_cement_ratio }}
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{
+                            $set_eight->water_cement_ratio }}
                         </h4>
                     </td>
                     <td style="border: 1px solid #000">
-                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $set_eight->concrete_temp }}
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $set_eight->concrete_temp
+                            }}
                         </h4>
                     </td>
                     <td style="border: 1px solid #000">
@@ -645,7 +668,7 @@
                     </td>
                 </tr>
                 @endif
-                @if ($set_nine->truck_no)
+                @if ($set_nine->truck_no != null)
                 <tr>
                     <td style="border: 1px solid #000">
                         <h4 style="font-size: 14px; font-weight: 400; text-align:center;">1
@@ -666,7 +689,8 @@
                         </h4>
                     </td>
                     <td style="border: 1px solid #000">
-                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $set_nine->sample_time }}</h4>
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $set_nine->sample_time }}
+                        </h4>
                     </td>
                     <td style="border: 1px solid #000">
                         <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
@@ -685,11 +709,13 @@
                         </h4>
                     </td>
                     <td style="border: 1px solid #000">
-                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $set_nine->relative_yield }}
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $set_nine->relative_yield
+                            }}
                         </h4>
                     </td>
                     <td style="border: 1px solid #000">
-                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $set_nine->water_cement_ratio }}
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{
+                            $set_nine->water_cement_ratio }}
                         </h4>
                     </td>
                     <td style="border: 1px solid #000">
@@ -706,7 +732,7 @@
                     </td>
                 </tr>
                 @endif
-                @if ($set_ten->truck_no)
+                @if ($set_ten->truck_no != null)
                 <tr>
                     <td style="border: 1px solid #000">
                         <h4 style="font-size: 14px; font-weight: 400; text-align:center;">1
@@ -727,7 +753,8 @@
                         </h4>
                     </td>
                     <td style="border: 1px solid #000">
-                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $set_ten->sample_time }}</h4>
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $set_ten->sample_time }}
+                        </h4>
                     </td>
                     <td style="border: 1px solid #000">
                         <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
@@ -750,7 +777,8 @@
                         </h4>
                     </td>
                     <td style="border: 1px solid #000">
-                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $set_ten->water_cement_ratio }}
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{
+                            $set_ten->water_cement_ratio }}
                         </h4>
                     </td>
                     <td style="border: 1px solid #000">
@@ -766,168 +794,161 @@
                         </h4>
                     </td>
                 </tr>
-                @endif
+                @endif --}}
             </table>
-
         </div>
 
-        {{-- <div
+        <div
             style="padding-top: 5px; border-top: 1px solid #000; border-right: 3px solid #000; border-bottom: 0px solid #000; border-left: 3px solid #000;">
             <table style="width: 100%; border-collapse: collapse;">
                 <caption
                     style="text-align:left; font-size: 14px; font-weight: 500; padding: 0; letter-spacing: -1px; background-color: #689A3D; border-top: 2px solid #000; border-right: 1px solid #000; border-bottom: 2px solid #000; border-left: 1px solid #000;">
-                    LOCATION</caption>
+                    LOCATION & REMARK </caption>
                 <tr>
                     <td>
                         <h4 style="padding: 1px; font-size: 14px; font-weight: 400">
-                            <b> General Location: </b> {{ $data->general_location }}
+                            <b> General Location: </b> {{ $set_one->general_location }}
                         </h4>
                     </td>
                 </tr>
             </table>
+        </div>
 
-        </div> --}}
-
-        {{-- <table
+        <table
             style="width: 100%; border-collapse: collapse; border-top: 0px solid #000; border-right: 3px solid #000; border-bottom: 0px solid #000; border-left: 3px solid #000;">
             <tr>
                 <th style="padding: 10px 6px 5px 6px; border: 1px solid #000">
                     <h3 style="font-size: 14px; font-weight: 700">Test No.</h3>
                 </th>
                 <th style="padding: 10px 6px 5px 6px; text-align: left; border: 1px solid #000">
+                    <h3 style="font-size: 14px; font-weight: 700">Type of Structure:</h3>
+                </th>
+                <th style="padding: 10px 6px 5px 6px; text-align: left; border: 1px solid #000">
                     <h3 style="font-size: 14px; font-weight: 700">Location</h3>
                 </th>
+                <th style="padding: 10px 6px 5px 6px; text-align: left; border: 1px solid #000">
+                    <h3 style="font-size: 14px; font-weight: 700">Remark</h3>
+                </th>
             </tr>
-            @if ($data->test_no_a)
+            @if ($set_one->truck_no)
             <tr>
                 <td style="padding: 4px 6px; border: 1px solid #000; width: 50px">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->test_no_a }}</h4>
+                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">1</h4>
                 </td>
                 <td style="padding: 4px 6px; border: 1px solid #000">
-                    <h4 style="font-size: 14px; font-weight: 400">{{ $data->location_a }}</h4>
+                    <h4 style="font-size: 14px; font-weight: 400">{{ $set_one->type_of_structure }}</h4>
+                </td>
+                <td style="padding: 4px 6px; border: 1px solid #000">
+                    <h4 style="font-size: 14px; font-weight: 400">{{ $set_one->general_location }}</h4>
+                </td>
+                <td style="padding: 4px 6px; border: 1px solid #000">
+                    <h4 style="font-size: 14px; font-weight: 400">{{ $set_one->remark }}</h4>
                 </td>
             </tr>
             @endif
-            @if ($data->test_no_b)
-            <tr>
-                <td style="padding: 4px 6px; border: 1px solid #000; width: 50px">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->test_no_b }}</h4>
-                </td>
-                <td style="padding: 4px 6px; border: 1px solid #000">
-                    <h4 style="font-size: 14px; font-weight: 400">{{ $data->location_b }}</h4>
-                </td>
-            </tr>
-            @endif
-            @if ($data->test_no_c)
-            <tr>
-                <td style="padding: 4px 6px; border: 1px solid #000; width: 50px">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->test_no_c }}</h4>
-                </td>
-                <td style="padding: 4px 6px; border: 1px solid #000">
-                    <h4 style="font-size: 14px; font-weight: 400">{{ $data->location_c }}</h4>
-                </td>
-            </tr>
-            @endif
-            @if ($data->test_no_d)
-            <tr>
-                <td style="padding: 4px 6px; border: 1px solid #000; width: 50px">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->test_no_d }}</h4>
-                </td>
-                <td style="padding: 4px 6px; border: 1px solid #000">
-                    <h4 style="font-size: 14px; font-weight: 400">{{ $data->location_d }}</h4>
-                </td>
-            </tr>
-            @endif
-            @if ($data->test_no_e)
-            <tr>
-                <td style="padding: 4px 6px; border: 1px solid #000; width: 50px">
-                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->test_no_e }}</h4>
-                </td>
-                <td style="padding: 4px 6px; border: 1px solid #000">
-                    <h4 style="font-size: 14px; font-weight: 400">{{ $data->location_e }}</h4>
-                </td>
-            </tr>
-            @endif
-        </table> --}}
+        </table>
 
-        {{-- <div
-            style="padding-top: 5px; border-top: 1px solid #000; border-right: 3px solid #000; border-bottom: 1px solid #000; border-left: 3px solid #000;">
+
+        <div style="padding-top: 5px;">
             <table style="width: 100%; border-collapse: collapse;">
                 <caption
-                    style="text-align:left; font-size: 14px; font-weight: 500; padding: 0; letter-spacing: -1px; background-color: #689A3D; border-top: 2px solid #000; border-right: 0px solid #000; border-bottom: 0px solid #000; border-left: 0px solid #000;">
-                    COMMENTS</caption>
+                    style="text-align:left; font-size: 14px; font-weight: 500; padding: 0; letter-spacing: -1px; background-color: #689A3D; border-top: 2px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
+                    MIX DATA</caption>
                 <tr>
-                    <td style="padding: 25px 0 10px 4px;">
-                        <p>{{ $data->remark }}</p>
+                    <th style="border: 1px solid #000">
+                        <h3 style="font-size: 12px; font-weight: 400">TEST NO.</h3>
+                    </th>
+                    <th style="border: 1px solid #000">
+                        <h3 style="font-size: 12px; font-weight: 400">Supplier</h3>
+                    </th>
+                    <th style="border: 1px solid #000">
+                        <h3 style="font-size: 12px; font-weight: 400">Mix</h3>
+                    </th>
+                    <th style="border: 1px solid #000">
+                        <h3 style="font-size: 12px; font-weight: 400">Design Strength (psi)</h3>
+                    </th>
+                </tr>
+                @if ($set_one->truck_no != null)
+                <tr>
+                    <td style="border: 1px solid #000">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">1
+                        </h4>
+                    </td>
+                    <td style="border: 1px solid #000">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                            {{ $set_one->supplier }}
+                        </h4>
+                    </td>
+                    <td style="border: 1px solid #000">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                            {{ $set_one->mix_id }}
+                        </h4>
+                    </td>
+                    <td style="border: 1px solid #000">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{
+                            $set_one->mix_design_strength }}
+                        </h4>
                     </td>
                 </tr>
+                @endif
             </table>
-        </div> --}}
+        </div>
+        <div
+            style="padding-top: 5px; border-top: 1px solid #000; border-right: 3px solid #000; border-bottom: 0px solid #000; border-left: 3px solid #000;">
+            <table style="width: 100%; border-collapse: collapse; padding: 5px;">
+                <caption
+                    style="text-align:left; font-size: 14px; text-transform: uppercase; font-weight: 500; padding: 0; letter-spacing: -1px; background-color: #689A3D; border-top: 2px solid #000; border-right: 0px solid #000; border-bottom: 2px solid #000; border-left: 0px solid #000;">
+                    Nodes:</caption>
 
-        {{-- <table
-            style="width: 100%; padding-bottom: 10px; border-collapse: collapse; border-top: 0px solid #000; border-right: 3px solid #000; border-bottom: 3px solid #000; border-left: 3px solid #000">
+                <tr>
+                    <td style="font-size: 14px;">1. Applicable ASTM/AASHTO standards unless otherwise indicated:
+                        Sampling,
+                        C172/R60</td>
+                </tr>
+                <tr>
+                    <td style="font-size: 14px;">Slump: C143/T119; Air Content: C231/T152; Temperature: C1064/T309;
+                        Unit
+                        Weight C138/T121</td>
+                </tr>
+            </table>
+        </div>
+
+        <table
+            style="width: 100%; border-collapse: collapse; border-top: 0px solid #000; border-right: 3px solid #000; border-bottom: 3px solid #000; border-left: 3px solid #000">
             <tr>
-                <td
-                    style="width: 28%; padding-top: 10px; padding-left: 10px; padding-right: 10px; padding-bottom: 20px;">
-                    <h6 style="padding-bottom: 4px; font-weight: normal; 
-                font-size: 14px;
-                font-weight: normal;">
-                        @if ($data->report_status == 'Part Time Observation')
-                        <span style="padding: 1px 5px; border-bottom: 2px solid #000;"></span>
-                        <span style="padding-left: 25px;">Part Time Observation</span>
-                        @else
-                        <span
-                            style="padding: 1px 5px; border-bottom: 2px solid #000; border-top: 2px solid #000;">X</span>
-                        <span>Part Time Observation</span>
-                        @endif
-                    </h6>
-
-                    <h6 style="padding-bottom: 4px; font-weight: normal; 
-                font-size: 14px;
-                font-weight: normal;">
-                        @if ($data->report_status == 'Full Time Observation')
-                        <span style="padding: 1px 5px; border-bottom: 2px solid #000;"></span>
-                        <span style="padding-left: 25px;">Full Time Observation</span>
-                        @else
-                        <span
-                            style="padding: 1px 5px; border-bottom: 2px solid #000; border-top: 2px solid #000;">X</span>
-                        <span>Full Time Observation</span>
-                        @endif
-                    </h6>
-                </td>
-
                 <td style="width: 32%; padding-top: 10px; padding-bottom: 20px;">
                     <h6 style="
-                    font-size: 14px;
-                    font-weight: normal;">
-                        {{ user($data->user_id)->name }}</h6>
-                    <h6 style="
                 font-size: 14px;
-                font-weight: normal;
-                border-top: 1px solid black;
-                padding-top: 2px;
-                width: 160px;
-              ">
-                        Materials Technician:
+                font-weight: normal;">
+                        {{ user($set_one->created_by)->name }}</h6>
+                    <h6 style="
+            font-size: 14px;
+            font-weight: normal;
+            border-top: 1px solid black;
+            padding-top: 2px;
+            width: 160px;
+          ">
+                        Field Representative:
                     </h6>
                 </td>
                 <td
                     style="width: 40%; padding-top: 10px; padding-left: 10px; padding-right: 20px; padding-bottom: 20px;">
                     <h6 style="
-                    font-size: 14px;
-                    font-weight: normal;">
-                        {{ user($data->created_by)->name }}</h6>
-                    <h6 style="
                 font-size: 14px;
-                font-weight: normal;
-                border-top: 1px solid black;
-                padding-top: 2px;
-              ">
+                font-weight: normal;">
+                        {{ user($set_one->created_by)->name }}</h6>
+                    <h6 style="
+            font-size: 14px;
+            font-weight: normal;
+            border-top: 1px solid black;
+            padding-top: 2px;
+          ">
                         Reviewed By
                     </h6>
                 </td>
             </tr>
-        </table> --}}
+        </table>
+
         <p style="padding-bottom: 30px; font-size: 13px; font-weight: 400; text-align: left">
             These test results apply only to the specific samples/location/materials noted and may not be
             representative
