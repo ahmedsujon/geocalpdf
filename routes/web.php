@@ -31,6 +31,7 @@ use App\Http\Livewire\Templates\Commercial\CreateCommercialComponent;
 use App\Http\Livewire\Templates\Commercial\EditCommercialComponent;
 use App\Http\Livewire\Templates\Commercial\ViewCommercialComponent;
 use App\Http\Livewire\Templates\ConcreteFieldReport\ConcreteFieldReportComponent;
+use App\Http\Livewire\Templates\ConcreteFieldReport\EditConcreteFieldReportComponent;
 use App\Http\Livewire\Templates\InspectionConcrete\CreateInspectionConcreteComponent;
 use App\Http\Livewire\Templates\InspectionConcrete\EditInspectionConcreteComponent;
 use App\Http\Livewire\Templates\InspectionConcrete\InspectionConcreteComponent;
@@ -298,6 +299,8 @@ Route::get('/inspection/data/set/ten/report/ijP6ERmmdeLfFi56595438805{id}4ijP6ER
 Route::get('/commercial/report/ijP6ERmmdeLfFi51864136533{id}4ijP6ERmmdeLfFi5RiwZATmrI2SMOYYVSmdtcmjxJe2K31U5knK', [InvoiceController::class, 'templateSoilAggregate'])->name('soil.aggregate.generate');
 
 // Concrete Field Report
+Route::get('/concrete/field/report/edit/{id}', [EditConcreteFieldReportComponent::class])->name('update.concrete.field.report');
+
 Route::get('/concrete/field/report/ijP6ERmmdeLfFi51864136533{id}4ijP6ERmmdeLfFi5RiwZATmrI2SMOYYVSmdtcmjxJe2K31U5knK', [InvoiceController::class, 'concreteFieldReport'])->name('concrete.field.report.generate');
 
 //authSuperAdmin

@@ -49,8 +49,10 @@
                             <table class="table custom_tbl">
                                 <thead class="thead-light">
                                     <tr>
+                                        <th>Image</th>
                                         <th>Project Name</th>
-                                        <th>Project Name</th>
+                                        <th>Client Name</th>
+                                        <th>Project Number</th>
                                         <th style="text-align: center;">Options</th>
                                     </tr>
                                 </thead>
@@ -61,10 +63,25 @@
                                     @if ($projects->count() > 0)
                                     @foreach ($projects as $file)
                                     <tr>
+                                        <td>
+                                            @if ($file->avatar)
+                                            <img src="{{ asset('uploads/project') }}/{{ $file->avatar }}" alt="user"
+                                                class="rounded-circle thumb-md">
+                                            @else
+                                            <img src="{{ asset('assets/images/defaults/default_project.jpg') }}"
+                                                alt="user" class="rounded-circle thumb-md">
+                                            @endif
+                                        </td>
                                         <td>{{ $file->name }}</td>
-                                        <td>{{ $file->created_at }}</td>
+                                        <td>{{ client($file->client_id)->name }}</td>
+                                        <td>{{ $file->project_number }}</td>
                                         <td style="text-align: center;">
-                                            <a target="_blank" href="{{ route('concrete.field.report.generate',['id'=>$file->id]) }}"
+                                            <a href="{{ route('update.concrete.field.report',['id'=>$file->id]) }}"
+                                                type="button"
+                                                class="btn btn-outline-warning btn-icon-circle btn-icon-circle-sm"><i
+                                                    class="ti ti-edit"></i></a>
+                                            <a target="_blank"
+                                                href="{{ route('concrete.field.report.generate',['id'=>$file->id]) }}"
                                                 type="button"
                                                 class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm"><i
                                                     class="ti ti-file-invoice"></i></a>

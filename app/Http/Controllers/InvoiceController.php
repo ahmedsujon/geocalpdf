@@ -519,7 +519,7 @@ class InvoiceController extends Controller
         $set_eight = InspectionConcreteSetEight::where('project_id', $project_id)->orderBy('updated_at', 'DESC')->first();
         $set_nine = InspectionConcreteSetNine::where('project_id', $project_id)->orderBy('updated_at', 'DESC')->first();
         $set_ten = InspectionConcreteSetTen::where('project_id', $project_id)->orderBy('updated_at', 'DESC')->first();
-        $pdf = Pdf::loadView('pdf.inspection_concrete_ten', compact('set_one', 'set_two', 'set_three', 'set_four', 'set_five', 'set_six', 'set_seven', 'set_eight', 'set_nine', 'set_ten', 'project', 'client'));
-        return $pdf->stream('concreteF_feld_report.pdf');
+        $pdf = Pdf::loadView('pdf.concrete_field_report', compact('set_one', 'set_two', 'set_three', 'set_four', 'set_five', 'set_six', 'set_seven', 'set_eight', 'set_nine', 'set_ten', 'project', 'client'));
+        return $pdf->stream('concrete_field_report.pdf');
     }
 }
