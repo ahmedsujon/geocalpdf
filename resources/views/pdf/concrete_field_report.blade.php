@@ -156,7 +156,7 @@
                         <h3 style="font-size: 12px; font-weight: 400">CYL SET ID NUMBER</h3>
                     </th>
                 </tr>
-                @if ($set_one->truck_no != null)
+                @if ($set_one)
                 <tr>
                     <td style="border: 1px solid #000">
                         <h4 style="font-size: 14px; font-weight: 400; text-align:center;">1
@@ -219,7 +219,7 @@
                     </td>
                 </tr>
                 @endif
-                {{-- @if ($set_two->truck_no != null)
+                @if ($set_two)
                 <tr>
                     <td style="border: 1px solid #000">
                         <h4 style="font-size: 14px; font-weight: 400; text-align:center;">1
@@ -282,7 +282,7 @@
                     </td>
                 </tr>
                 @endif
-                @if ($set_three->truck_no != null)
+                @if ($set_three)
                 <tr>
                     <td style="border: 1px solid #000">
                         <h4 style="font-size: 14px; font-weight: 400; text-align:center;">1
@@ -347,7 +347,7 @@
                     </td>
                 </tr>
                 @endif
-                @if ($set_four->truck_no != null)
+                @if ($set_four)
                 <tr>
                     <td style="border: 1px solid #000">
                         <h4 style="font-size: 14px; font-weight: 400; text-align:center;">1
@@ -411,7 +411,7 @@
                     </td>
                 </tr>
                 @endif
-                @if ($set_five->truck_no != null)
+                @if ($set_five)
                 <tr>
                     <td style="border: 1px solid #000">
                         <h4 style="font-size: 14px; font-weight: 400; text-align:center;">1
@@ -475,7 +475,7 @@
                     </td>
                 </tr>
                 @endif
-                @if ($set_six->truck_no != null)
+                @if ($set_six)
                 <tr>
                     <td style="border: 1px solid #000">
                         <h4 style="font-size: 14px; font-weight: 400; text-align:center;">1
@@ -538,7 +538,7 @@
                     </td>
                 </tr>
                 @endif
-                @if ($set_seven->truck_no != null)
+                @if ($set_seven)
                 <tr>
                     <td style="border: 1px solid #000">
                         <h4 style="font-size: 14px; font-weight: 400; text-align:center;">1
@@ -603,7 +603,7 @@
                     </td>
                 </tr>
                 @endif
-                @if ($set_eight->truck_no != null)
+                @if ($set_eight)
                 <tr>
                     <td style="border: 1px solid #000">
                         <h4 style="font-size: 14px; font-weight: 400; text-align:center;">1
@@ -668,7 +668,7 @@
                     </td>
                 </tr>
                 @endif
-                @if ($set_nine->truck_no != null)
+                @if ($set_nine)
                 <tr>
                     <td style="border: 1px solid #000">
                         <h4 style="font-size: 14px; font-weight: 400; text-align:center;">1
@@ -732,7 +732,7 @@
                     </td>
                 </tr>
                 @endif
-                @if ($set_ten->truck_no != null)
+                @if ($set_ten)
                 <tr>
                     <td style="border: 1px solid #000">
                         <h4 style="font-size: 14px; font-weight: 400; text-align:center;">1
@@ -794,7 +794,7 @@
                         </h4>
                     </td>
                 </tr>
-                @endif --}}
+                @endif
             </table>
         </div>
 
@@ -830,7 +830,7 @@
                     <h3 style="font-size: 14px; font-weight: 700">Remark</h3>
                 </th>
             </tr>
-            @if ($set_one->truck_no)
+            @if ($set_one->truck_no != null)
             <tr>
                 <td style="padding: 4px 6px; border: 1px solid #000; width: 50px">
                     <h4 style="font-size: 14px; font-weight: 400; text-align:center;">1</h4>
