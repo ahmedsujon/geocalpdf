@@ -119,8 +119,8 @@ class InvoiceController extends Controller
         if ($data->age_i == 28) {
             $avarage_array[] = $data->measured_strength_i;
         }
-        $data->avarage = array_sum($avarage_array) / count($avarage_array);
-
+        $data->avarage = round(array_sum($avarage_array) / count($avarage_array), -1);
+       
 
         $pdf = Pdf::loadView('pdf.inspection_concrete_one', compact('data'));
         return $pdf->stream('inspection_concrete_report.pdf');
@@ -163,7 +163,7 @@ class InvoiceController extends Controller
         if ($data->age_i == 28) {
             $avarage_array[] = $data->measured_strength_i;
         }
-        $data->avarage = array_sum($avarage_array) / count($avarage_array);
+        $data->avarage = round(array_sum($avarage_array) / count($avarage_array), -1);
         $pdf = Pdf::loadView('pdf.inspection_concrete_two', compact('data'));
         return $pdf->stream('inspection_concrete_report.pdf');
     }
@@ -205,7 +205,7 @@ class InvoiceController extends Controller
         if ($data->age_i == 28) {
             $avarage_array[] = $data->measured_strength_i;
         }
-        $data->avarage = array_sum($avarage_array) / count($avarage_array);
+        $data->avarage = round(array_sum($avarage_array) / count($avarage_array), -1);
         $pdf = Pdf::loadView('pdf.inspection_concrete_three', compact('data'));
         return $pdf->stream('inspection_concrete_report.pdf');
     }
@@ -247,7 +247,7 @@ class InvoiceController extends Controller
         if ($data->age_i == 28) {
             $avarage_array[] = $data->measured_strength_i;
         }
-        $data->avarage = array_sum($avarage_array) / count($avarage_array);
+        $data->avarage = round(array_sum($avarage_array) / count($avarage_array), -1);
         $pdf = Pdf::loadView('pdf.inspection_concrete_four', compact('data'));
         return $pdf->stream('inspection_concrete_report.pdf');
     }
@@ -289,7 +289,7 @@ class InvoiceController extends Controller
         if ($data->age_i == 28) {
             $avarage_array[] = $data->measured_strength_i;
         }
-        $data->avarage = array_sum($avarage_array) / count($avarage_array);
+        $data->avarage = round(array_sum($avarage_array) / count($avarage_array), -1);
         $pdf = Pdf::loadView('pdf.inspection_concrete_five', compact('data'));
         return $pdf->stream('inspection_concrete_report.pdf');
     }
@@ -331,7 +331,7 @@ class InvoiceController extends Controller
         if ($data->age_i == 28) {
             $avarage_array[] = $data->measured_strength_i;
         }
-        $data->avarage = array_sum($avarage_array) / count($avarage_array);
+        $data->avarage = round(array_sum($avarage_array) / count($avarage_array), -1);
         $pdf = Pdf::loadView('pdf.inspection_concrete_six', compact('data'));
         return $pdf->stream('inspection_concrete_report.pdf');
     }
@@ -373,7 +373,7 @@ class InvoiceController extends Controller
         if ($data->age_i == 28) {
             $avarage_array[] = $data->measured_strength_i;
         }
-        $data->avarage = array_sum($avarage_array) / count($avarage_array);
+        $data->avarage = round(array_sum($avarage_array) / count($avarage_array), -1);
         $pdf = Pdf::loadView('pdf.inspection_concrete_seven', compact('data'));
         return $pdf->stream('inspection_concrete_report.pdf');
     }
@@ -415,7 +415,7 @@ class InvoiceController extends Controller
         if ($data->age_i == 28) {
             $avarage_array[] = $data->measured_strength_i;
         }
-        $data->avarage = array_sum($avarage_array) / count($avarage_array);
+        $data->avarage = round(array_sum($avarage_array) / count($avarage_array), -1);
         $pdf = Pdf::loadView('pdf.inspection_concrete_eight', compact('data'));
         return $pdf->stream('inspection_concrete_report.pdf');
     }
@@ -457,7 +457,7 @@ class InvoiceController extends Controller
         if ($data->age_i == 28) {
             $avarage_array[] = $data->measured_strength_i;
         }
-        $data->avarage = array_sum($avarage_array) / count($avarage_array);
+        $data->avarage = round(array_sum($avarage_array) / count($avarage_array), -1);
         $pdf = Pdf::loadView('pdf.inspection_concrete_nine', compact('data'));
         return $pdf->stream('inspection_concrete_report.pdf');
     }
@@ -499,7 +499,7 @@ class InvoiceController extends Controller
         if ($data->age_i == 28) {
             $avarage_array[] = $data->measured_strength_i;
         }
-        $data->avarage = array_sum($avarage_array) / count($avarage_array);
+        $data->avarage = round(array_sum($avarage_array) / count($avarage_array), -1);
         $pdf = Pdf::loadView('pdf.inspection_concrete_ten', compact('data'));
         return $pdf->stream('inspection_concrete_report.pdf');
     }

@@ -30,16 +30,16 @@
                 <td style="width: 28%; text-align: left;">
 
                     <h4 style="font-size: 14px; font-weight: 400;">
-                        Client: {{ $set_one->client_name }}
+                        Client: {{ $client->client_name }}
                     </h4>
                     <h4 style="font-size: 14px; font-weight: 400;">
-                        Email: {{ $set_one->client_email }}
+                        Email: {{ $client->client_email }}
                     </h4>
                     <h4 style="font-size: 14px; font-weight: 400;">
-                        Phone: {{ $set_one->client_phone }}
+                        Phone: {{ $client->client_phone }}
                     </h4>
                     <h4 style="font-size: 14px; font-weight: 400;">
-                        Company Name: {{ $set_one->client_company_name }}
+                        Company Name: {{ $client->client_company_name }}
                     </h4>
                 </td>
                 <td style="width: 40%; text-align: center;">
@@ -67,8 +67,6 @@
         </table>
 
         <table style="width: 100%; border-collapse: collapse; padding-top: 25px; margin-bottom: 5px;">
-            <h4 style="font-size: 13px; font-weight: 700; text-align:center;">PHYSICAL PROPERTIES OF PLASTIC CONCRETE
-            </h4>
             <tr>
                 <td style="padding: 1px; border: 1px solid #000">
                     <h4 style="font-size: 14px; font-weight: 400">Specifications: Slump:</h4>
@@ -222,7 +220,7 @@
                 @if ($set_two)
                 <tr>
                     <td style="border: 1px solid #000">
-                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">1
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">2
                         </h4>
                     </td>
                     <td style="border: 1px solid #000">
@@ -285,7 +283,7 @@
                 @if ($set_three)
                 <tr>
                     <td style="border: 1px solid #000">
-                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">1
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">3
                         </h4>
                     </td>
                     <td style="border: 1px solid #000">
@@ -350,7 +348,7 @@
                 @if ($set_four)
                 <tr>
                     <td style="border: 1px solid #000">
-                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">1
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">4
                         </h4>
                     </td>
                     <td style="border: 1px solid #000">
@@ -414,7 +412,7 @@
                 @if ($set_five)
                 <tr>
                     <td style="border: 1px solid #000">
-                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">1
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">5
                         </h4>
                     </td>
                     <td style="border: 1px solid #000">
@@ -478,7 +476,7 @@
                 @if ($set_six)
                 <tr>
                     <td style="border: 1px solid #000">
-                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">1
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">6
                         </h4>
                     </td>
                     <td style="border: 1px solid #000">
@@ -541,7 +539,7 @@
                 @if ($set_seven)
                 <tr>
                     <td style="border: 1px solid #000">
-                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">1
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">7
                         </h4>
                     </td>
                     <td style="border: 1px solid #000">
@@ -606,7 +604,7 @@
                 @if ($set_eight)
                 <tr>
                     <td style="border: 1px solid #000">
-                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">1
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">8
                         </h4>
                     </td>
                     <td style="border: 1px solid #000">
@@ -671,7 +669,7 @@
                 @if ($set_nine)
                 <tr>
                     <td style="border: 1px solid #000">
-                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">1
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">9
                         </h4>
                     </td>
                     <td style="border: 1px solid #000">
@@ -735,7 +733,7 @@
                 @if ($set_ten)
                 <tr>
                     <td style="border: 1px solid #000">
-                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">1
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">10
                         </h4>
                     </td>
                     <td style="border: 1px solid #000">
@@ -830,7 +828,7 @@
                     <h3 style="font-size: 14px; font-weight: 700">Remark</h3>
                 </th>
             </tr>
-            @if ($set_one->truck_no != null)
+            @if ($set_one)
             <tr>
                 <td style="padding: 4px 6px; border: 1px solid #000; width: 50px">
                     <h4 style="font-size: 14px; font-weight: 400; text-align:center;">1</h4>
@@ -843,6 +841,150 @@
                 </td>
                 <td style="padding: 4px 6px; border: 1px solid #000">
                     <h4 style="font-size: 14px; font-weight: 400">{{ $set_one->remark }}</h4>
+                </td>
+            </tr>
+            @endif
+            @if ($set_two)
+            <tr>
+                <td style="padding: 4px 6px; border: 1px solid #000; width: 50px">
+                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">2</h4>
+                </td>
+                <td style="padding: 4px 6px; border: 1px solid #000">
+                    <h4 style="font-size: 14px; font-weight: 400">{{ $set_two->type_of_structure }}</h4>
+                </td>
+                <td style="padding: 4px 6px; border: 1px solid #000">
+                    <h4 style="font-size: 14px; font-weight: 400">{{ $set_two->general_location }}</h4>
+                </td>
+                <td style="padding: 4px 6px; border: 1px solid #000">
+                    <h4 style="font-size: 14px; font-weight: 400">{{ $set_two->remark }}</h4>
+                </td>
+            </tr>
+            @endif
+            @if ($set_three)
+            <tr>
+                <td style="padding: 4px 6px; border: 1px solid #000; width: 50px">
+                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">3</h4>
+                </td>
+                <td style="padding: 4px 6px; border: 1px solid #000">
+                    <h4 style="font-size: 14px; font-weight: 400">{{ $set_three->type_of_structure }}</h4>
+                </td>
+                <td style="padding: 4px 6px; border: 1px solid #000">
+                    <h4 style="font-size: 14px; font-weight: 400">{{ $set_three->general_location }}</h4>
+                </td>
+                <td style="padding: 4px 6px; border: 1px solid #000">
+                    <h4 style="font-size: 14px; font-weight: 400">{{ $set_three->remark }}</h4>
+                </td>
+            </tr>
+            @endif
+            @if ($set_four)
+            <tr>
+                <td style="padding: 4px 6px; border: 1px solid #000; width: 50px">
+                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">4</h4>
+                </td>
+                <td style="padding: 4px 6px; border: 1px solid #000">
+                    <h4 style="font-size: 14px; font-weight: 400">{{ $set_four->type_of_structure }}</h4>
+                </td>
+                <td style="padding: 4px 6px; border: 1px solid #000">
+                    <h4 style="font-size: 14px; font-weight: 400">{{ $set_four->general_location }}</h4>
+                </td>
+                <td style="padding: 4px 6px; border: 1px solid #000">
+                    <h4 style="font-size: 14px; font-weight: 400">{{ $set_four->remark }}</h4>
+                </td>
+            </tr>
+            @endif
+            @if ($set_five)
+            <tr>
+                <td style="padding: 4px 6px; border: 1px solid #000; width: 50px">
+                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">5</h4>
+                </td>
+                <td style="padding: 4px 6px; border: 1px solid #000">
+                    <h4 style="font-size: 14px; font-weight: 400">{{ $set_five->type_of_structure }}</h4>
+                </td>
+                <td style="padding: 4px 6px; border: 1px solid #000">
+                    <h4 style="font-size: 14px; font-weight: 400">{{ $set_five->general_location }}</h4>
+                </td>
+                <td style="padding: 4px 6px; border: 1px solid #000">
+                    <h4 style="font-size: 14px; font-weight: 400">{{ $set_five->remark }}</h4>
+                </td>
+            </tr>
+            @endif
+            @if ($set_six)
+            <tr>
+                <td style="padding: 4px 6px; border: 1px solid #000; width: 50px">
+                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">6</h4>
+                </td>
+                <td style="padding: 4px 6px; border: 1px solid #000">
+                    <h4 style="font-size: 14px; font-weight: 400">{{ $set_six->type_of_structure }}</h4>
+                </td>
+                <td style="padding: 4px 6px; border: 1px solid #000">
+                    <h4 style="font-size: 14px; font-weight: 400">{{ $set_six->general_location }}</h4>
+                </td>
+                <td style="padding: 4px 6px; border: 1px solid #000">
+                    <h4 style="font-size: 14px; font-weight: 400">{{ $set_six->remark }}</h4>
+                </td>
+            </tr>
+            @endif
+            @if ($set_seven)
+            <tr>
+                <td style="padding: 4px 6px; border: 1px solid #000; width: 50px">
+                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">7</h4>
+                </td>
+                <td style="padding: 4px 6px; border: 1px solid #000">
+                    <h4 style="font-size: 14px; font-weight: 400">{{ $set_seven->type_of_structure }}</h4>
+                </td>
+                <td style="padding: 4px 6px; border: 1px solid #000">
+                    <h4 style="font-size: 14px; font-weight: 400">{{ $set_seven->general_location }}</h4>
+                </td>
+                <td style="padding: 4px 6px; border: 1px solid #000">
+                    <h4 style="font-size: 14px; font-weight: 400">{{ $set_seven->remark }}</h4>
+                </td>
+            </tr>
+            @endif
+            @if ($set_eight)
+            <tr>
+                <td style="padding: 4px 6px; border: 1px solid #000; width: 50px">
+                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">8</h4>
+                </td>
+                <td style="padding: 4px 6px; border: 1px solid #000">
+                    <h4 style="font-size: 14px; font-weight: 400">{{ $set_eight->type_of_structure }}</h4>
+                </td>
+                <td style="padding: 4px 6px; border: 1px solid #000">
+                    <h4 style="font-size: 14px; font-weight: 400">{{ $set_eight->general_location }}</h4>
+                </td>
+                <td style="padding: 4px 6px; border: 1px solid #000">
+                    <h4 style="font-size: 14px; font-weight: 400">{{ $set_eight->remark }}</h4>
+                </td>
+            </tr>
+            @endif
+            @if ($set_nine)
+            <tr>
+                <td style="padding: 4px 6px; border: 1px solid #000; width: 50px">
+                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">9</h4>
+                </td>
+                <td style="padding: 4px 6px; border: 1px solid #000">
+                    <h4 style="font-size: 14px; font-weight: 400">{{ $set_nine->type_of_structure }}</h4>
+                </td>
+                <td style="padding: 4px 6px; border: 1px solid #000">
+                    <h4 style="font-size: 14px; font-weight: 400">{{ $set_nine->general_location }}</h4>
+                </td>
+                <td style="padding: 4px 6px; border: 1px solid #000">
+                    <h4 style="font-size: 14px; font-weight: 400">{{ $set_nine->remark }}</h4>
+                </td>
+            </tr>
+            @endif
+            @if ($set_ten)
+            <tr>
+                <td style="padding: 4px 6px; border: 1px solid #000; width: 50px">
+                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">10</h4>
+                </td>
+                <td style="padding: 4px 6px; border: 1px solid #000">
+                    <h4 style="font-size: 14px; font-weight: 400">{{ $set_ten->type_of_structure }}</h4>
+                </td>
+                <td style="padding: 4px 6px; border: 1px solid #000">
+                    <h4 style="font-size: 14px; font-weight: 400">{{ $set_ten->general_location }}</h4>
+                </td>
+                <td style="padding: 4px 6px; border: 1px solid #000">
+                    <h4 style="font-size: 14px; font-weight: 400">{{ $set_ten->remark }}</h4>
                 </td>
             </tr>
             @endif
@@ -868,7 +1010,7 @@
                         <h3 style="font-size: 12px; font-weight: 400">Design Strength (psi)</h3>
                     </th>
                 </tr>
-                @if ($set_one->truck_no != null)
+                @if ($set_one)
                 <tr>
                     <td style="border: 1px solid #000">
                         <h4 style="font-size: 14px; font-weight: 400; text-align:center;">1
@@ -887,6 +1029,213 @@
                     <td style="border: 1px solid #000">
                         <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{
                             $set_one->mix_design_strength }}
+                        </h4>
+                    </td>
+                </tr>
+                @endif
+                @if ($set_two)
+                <tr>
+                    <td style="border: 1px solid #000">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">2
+                        </h4>
+                    </td>
+                    <td style="border: 1px solid #000">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                            {{ $set_two->supplier }}
+                        </h4>
+                    </td>
+                    <td style="border: 1px solid #000">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                            {{ $set_two->mix_id }}
+                        </h4>
+                    </td>
+                    <td style="border: 1px solid #000">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{
+                            $set_two->mix_design_strength }}
+                        </h4>
+                    </td>
+                </tr>
+                @endif
+                @if ($set_three)
+                <tr>
+                    <td style="border: 1px solid #000">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">3
+                        </h4>
+                    </td>
+                    <td style="border: 1px solid #000">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                            {{ $set_three->supplier }}
+                        </h4>
+                    </td>
+                    <td style="border: 1px solid #000">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                            {{ $set_three->mix_id }}
+                        </h4>
+                    </td>
+                    <td style="border: 1px solid #000">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{
+                            $set_three->mix_design_strength }}
+                        </h4>
+                    </td>
+                </tr>
+                @endif
+                @if ($set_four)
+                <tr>
+                    <td style="border: 1px solid #000">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">4
+                        </h4>
+                    </td>
+                    <td style="border: 1px solid #000">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                            {{ $set_four->supplier }}
+                        </h4>
+                    </td>
+                    <td style="border: 1px solid #000">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                            {{ $set_four->mix_id }}
+                        </h4>
+                    </td>
+                    <td style="border: 1px solid #000">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{
+                            $set_four->mix_design_strength }}
+                        </h4>
+                    </td>
+                </tr>
+                @endif
+                @if ($set_five)
+                <tr>
+                    <td style="border: 1px solid #000">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">5
+                        </h4>
+                    </td>
+                    <td style="border: 1px solid #000">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                            {{ $set_five->supplier }}
+                        </h4>
+                    </td>
+                    <td style="border: 1px solid #000">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                            {{ $set_five->mix_id }}
+                        </h4>
+                    </td>
+                    <td style="border: 1px solid #000">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{
+                            $set_five->mix_design_strength }}
+                        </h4>
+                    </td>
+                </tr>
+                @endif
+                @if ($set_six)
+                <tr>
+                    <td style="border: 1px solid #000">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">6
+                        </h4>
+                    </td>
+                    <td style="border: 1px solid #000">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                            {{ $set_six->supplier }}
+                        </h4>
+                    </td>
+                    <td style="border: 1px solid #000">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                            {{ $set_six->mix_id }}
+                        </h4>
+                    </td>
+                    <td style="border: 1px solid #000">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{
+                            $set_six->mix_design_strength }}
+                        </h4>
+                    </td>
+                </tr>
+                @endif
+                @if ($set_seven)
+                <tr>
+                    <td style="border: 1px solid #000">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">7
+                        </h4>
+                    </td>
+                    <td style="border: 1px solid #000">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                            {{ $set_seven->supplier }}
+                        </h4>
+                    </td>
+                    <td style="border: 1px solid #000">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                            {{ $set_seven->mix_id }}
+                        </h4>
+                    </td>
+                    <td style="border: 1px solid #000">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{
+                            $set_seven->mix_design_strength }}
+                        </h4>
+                    </td>
+                </tr>
+                @endif
+                @if ($set_eight)
+                <tr>
+                    <td style="border: 1px solid #000">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">8
+                        </h4>
+                    </td>
+                    <td style="border: 1px solid #000">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                            {{ $set_eight->supplier }}
+                        </h4>
+                    </td>
+                    <td style="border: 1px solid #000">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                            {{ $set_eight->mix_id }}
+                        </h4>
+                    </td>
+                    <td style="border: 1px solid #000">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{
+                            $set_eight->mix_design_strength }}
+                        </h4>
+                    </td>
+                </tr>
+                @endif
+                @if ($set_nine)
+                <tr>
+                    <td style="border: 1px solid #000">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">9
+                        </h4>
+                    </td>
+                    <td style="border: 1px solid #000">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                            {{ $set_nine->supplier }}
+                        </h4>
+                    </td>
+                    <td style="border: 1px solid #000">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                            {{ $set_nine->mix_id }}
+                        </h4>
+                    </td>
+                    <td style="border: 1px solid #000">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{
+                            $set_nine->mix_design_strength }}
+                        </h4>
+                    </td>
+                </tr>
+                @endif
+                @if ($set_ten)
+                <tr>
+                    <td style="border: 1px solid #000">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">10
+                        </h4>
+                    </td>
+                    <td style="border: 1px solid #000">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                            {{ $set_ten->supplier }}
+                        </h4>
+                    </td>
+                    <td style="border: 1px solid #000">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                            {{ $set_ten->mix_id }}
+                        </h4>
+                    </td>
+                    <td style="border: 1px solid #000">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{
+                            $set_ten->mix_design_strength }}
                         </h4>
                     </td>
                 </tr>

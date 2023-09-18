@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+
     <style>
         * {
             margin: 0;
@@ -58,10 +59,10 @@
                     <h4 style="font-size: 14px; font-weight: 400;">
                         Weather: {{ $data->weather }}
                     </h4>
-
                 </td>
             </tr>
         </table>
+
         <div
             style="margin-top: 5px; border-top: 3px solid #000; border-right: 3px solid #000; border-bottom: 1px solid #000; border-left: 3px solid #000;">
             <table style="width: 100%; border-collapse: collapse; border: none">
@@ -136,12 +137,11 @@
                 </table>
         </div>
 
-
         <div
             style="padding-top: 5px; border-top: 1px solid #000; border-right: 3px solid #000; border-bottom: 0px solid #000; border-left: 3px solid #000;">
             <table style="width: 100%; border-collapse: collapse;">
                 <caption
-                    style="text-align:left; font-size: 14px; font-weight: 500; padding: 0; letter-spacing: -1px; background-color: #689A3D; border-top: 2px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
+                    style="text-align:left; font-size: 14px; font-weight: 500; padding: 0; letter-spacing: -1px; background-color: #689A3D; border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
                     SAMPLE DATA</caption>
 
                 <table style="width: 100%; border-collapse: collapse">
@@ -150,7 +150,7 @@
                             <h4 style="font-size: 14px; font-weight: 400">Date Sampled:</h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400">
+                            <h4 style="font-size: 14px; font-weight: 400; text-align: center;">
                                 {{ $data->created_at->format('Y-m-d') }}
                             </h4>
                         </td>
@@ -158,7 +158,8 @@
                             <h4 style="font-size: 14px; font-weight: 400">Date Received in Lab: </h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400">{{ $data->created_at->format('Y-m-d') }}</h4>
+                            <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{
+                                $data->created_at->format('Y-m-d') }}</h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400"></h4>
@@ -169,7 +170,7 @@
                             <h4 style="font-size: 14px; font-weight: 400">General Location:</h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400">
+                            <h4 style="font-size: 14px; font-weight: 400; text-align: center;">
                                 {{ $data->general_location }}
                             </h4>
                         </td>
@@ -188,7 +189,7 @@
                             <h4 style="font-size: 14px; font-weight: 400">Specific Location:</h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400">
+                            <h4 style="font-size: 14px; font-weight: 400; text-align: center;">
                                 {{ $data->specific_location }}
                             </h4>
                         </td>
@@ -196,10 +197,10 @@
                             <h4 style="font-size: 14px; font-weight: 400"></h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400">Measured</h4>
+                            <h4 style="font-size: 14px; font-weight: 400; text-align: center;">Measured</h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400">Specified</h4>
+                            <h4 style="font-size: 14px; font-weight: 400; text-align: center;">Specified</h4>
                         </td>
                     </tr>
                     <tr>
@@ -207,7 +208,7 @@
                             <h4 style="font-size: 14px; font-weight: 400">Truck No.:</h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400">
+                            <h4 style="font-size: 14px; font-weight: 400; text-align: center;">
                                 {{ $data->truck_no }}
                             </h4>
                         </td>
@@ -215,10 +216,10 @@
                             <h4 style="font-size: 14px; font-weight: 400">Slump (in):</h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400">{{ $data->slump }}</h4>
+                            <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->slump }}</h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400">{{ $data->slump_min }} -
+                            <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->slump_min }} -
                                 {{ $data->slump_max }}
                             </h4>
                         </td>
@@ -228,7 +229,7 @@
                             <h4 style="font-size: 14px; font-weight: 400">Truck No.:</h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400">
+                            <h4 style="font-size: 14px; font-weight: 400; text-align: center;">
                                 {{ $data->truck_no }}
                             </h4>
                         </td>
@@ -236,7 +237,8 @@
                             <h4 style="font-size: 14px; font-weight: 400">Air Temp (°F):</h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400">{{ $data->ambient_temp }}</h4>
+                            <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->ambient_temp }}
+                            </h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400"></h4>
@@ -247,7 +249,7 @@
                             <h4 style="font-size: 14px; font-weight: 400">Sample By:</h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400">
+                            <h4 style="font-size: 14px; font-weight: 400; text-align: center;">
                                 {{ $data->sampled_by }}
                             </h4>
                         </td>
@@ -255,10 +257,12 @@
                             <h4 style="font-size: 14px; font-weight: 400">Conc Temp (°F):</h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400">{{ $data->concrete_temp }}</h4>
+                            <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->concrete_temp
+                                }}</h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400">{{ $data->concrete_temp_min }} -
+                            <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{
+                                $data->concrete_temp_min }} -
                                 {{ $data->concrete_temp_max }} </h4>
                         </td>
                     </tr>
@@ -267,7 +271,7 @@
                             <h4 style="font-size: 14px; font-weight: 400">Weather:</h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400">
+                            <h4 style="font-size: 14px; font-weight: 400; text-align: center;">
                                 {{ $data->weather }}
                             </h4>
                         </td>
@@ -275,10 +279,12 @@
                             <h4 style="font-size: 14px; font-weight: 400">Air Content (%):</h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400">{{ $data->air_content }}</h4>
+                            <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->air_content }}
+                            </h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400">{{ $data->air_min }} - {{ $data->air_max }}
+                            <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->air_min }} - {{
+                                $data->air_max }}
                             </h4>
                         </td>
                     </tr>
@@ -287,7 +293,7 @@
                             <h4 style="font-size: 14px; font-weight: 400">Time Batched:</h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400">
+                            <h4 style="font-size: 14px; font-weight: 400; text-align: center;">
                                 {{ date('h:i a', strtotime($data->batch_time)) }}
                             </h4>
                         </td>
@@ -295,7 +301,8 @@
                             <h4 style="font-size: 14px; font-weight: 400">Unit Weight (pcf):</h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400">{{ $data->unit_weight }}</h4>
+                            <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->unit_weight }}
+                            </h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400"></h4>
@@ -306,7 +313,7 @@
                             <h4 style="font-size: 14px; font-weight: 400">Time Sampled:</h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400">
+                            <h4 style="font-size: 14px; font-weight: 400; text-align: center;">
                                 {{ date('h:i a', strtotime($data->sample_time)) }}
                             </h4>
                         </td>
@@ -314,7 +321,8 @@
                             <h4 style="font-size: 14px; font-weight: 400">Relative Yield:</h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400">{{ $data->relative_yield }}</h4>
+                            <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->relative_yield
+                                }}</h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400"></h4>
@@ -325,7 +333,7 @@
                             <h4 style="font-size: 14px; font-weight: 400">Time Unloaded:</h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400">
+                            <h4 style="font-size: 14px; font-weight: 400; text-align: center;">
                                 {{ date('h:i a', strtotime($data->ttf_unloading)) }}
                             </h4>
                         </td>
@@ -333,25 +341,32 @@
                             <h4 style="font-size: 14px; font-weight: 400">W/C Ratio:</h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400">{{ $data->water_cement_ratio }}</h4>
+                            <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{
+                                $data->water_cement_ratio }}</h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400"></h4>
                         </td>
                     </tr>
-
+                    @php
+                    $startTimestamp = strtotime($data->batch_time);
+                    $endTimestamp = strtotime($data->ttf_unloading);
+                    $timeDifferenceInMinutes = round(($endTimestamp - $startTimestamp) / 60);
+                    @endphp
                     <tr>
                         <td style="padding: 1px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400">Time in Truck: (min):</h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400">432</h4>
+                            <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{
+                                $timeDifferenceInMinutes }}</h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400">Batch Size:</h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400">{{ $data->yards_at_sampling }}</h4>
+                            <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{
+                                $data->yards_at_sampling }}</h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400"></h4>
@@ -368,7 +383,8 @@
                             <h4 style="font-size: 14px; font-weight: 400">CY Placed:</h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400">{{ $data->total_yard_placement }}</h4>
+                            <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{
+                                $data->total_yard_placement }}</h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400"></h4>
@@ -385,7 +401,8 @@
                             <h4 style="font-size: 14px; font-weight: 400">Water Added (gal):</h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400">{{ $data->water_added }}</h4>
+                            <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->water_added }}
+                            </h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400"></h4>
@@ -393,6 +410,7 @@
                     </tr>
                 </table>
         </div>
+
         <div
             style="padding-top: 5px; border-top: 2px solid #000; border-right: 3px solid #000; border-bottom: 0px solid #000; border-left: 3px solid #000;">
             <table style="width: 100%; border-collapse: collapse;">
@@ -957,6 +975,7 @@
                         </td>
                     </tr>
                     @endif
+
                     <tr>
                         <td colspan="9" style="padding: 1px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400; text-align:right;">Average 28 Day Compressive
@@ -980,9 +999,9 @@
                             </h4>
                         </td>
                     </tr>
-
                 </table>
         </div>
+
         <div
             style="padding-top: 5px; border-top: 1px solid #000; border-right: 3px solid #000; border-bottom: 0px solid #000; border-left: 3px solid #000;">
             <table style="width: 100%; border-collapse: collapse;">
@@ -1024,7 +1043,9 @@
                         </td>
                     </tr>
                 </table>
+
         </div>
+
         <div
             style="padding-top: 5px; border-top: 1px solid #000; border-right: 3px solid #000; border-bottom: 0px solid #000; border-left: 3px solid #000;">
             <table style="width: 100%; border-collapse: collapse;">
@@ -1054,6 +1075,7 @@
                 </table>
         </div>
 
+
         <div
             style="padding-top: 5px; border-top: 1px solid #000; border-right: 3px solid #000; border-bottom: 3px solid #000; border-left: 3px solid #000;">
 
@@ -1067,6 +1089,7 @@
                     </td>
                 </tr>
             </table>
+
             <table style="width: 100%; border-collapse: collapse">
                 <tr>
                     <td></td>
@@ -1097,7 +1120,6 @@
             written
             authorization by Geocal, Inc.
         </p>
-
     </div>
 </body>
 
