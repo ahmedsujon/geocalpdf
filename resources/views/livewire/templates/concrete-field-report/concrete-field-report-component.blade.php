@@ -52,7 +52,6 @@
                                         <th>Image</th>
                                         <th>Project Name</th>
                                         <th>Client Name</th>
-                                        <th>Project Number</th>
                                         <th style="text-align: center;">Options</th>
                                     </tr>
                                 </thead>
@@ -74,12 +73,7 @@
                                         </td>
                                         <td>{{ $file->name }}</td>
                                         <td>{{ client($file->client_id)->name }}</td>
-                                        <td>{{ $file->project_number }}</td>
                                         <td style="text-align: center;">
-                                            <a href="{{ route('update.concrete.field.report',['id'=>$file->id]) }}"
-                                                type="button"
-                                                class="btn btn-outline-warning btn-icon-circle btn-icon-circle-sm"><i
-                                                    class="ti ti-edit"></i></a>
                                             <a target="_blank"
                                                 href="{{ route('concrete.field.report.generate',['id'=>$file->id]) }}"
                                                 type="button"

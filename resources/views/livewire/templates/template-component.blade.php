@@ -153,7 +153,8 @@
                                         class="btn btn-soft-primary">Asphalt Field Density by Nuclear Method -
                                         Commercial </a></li>
                                 <li class="mb-3"><a href="{{ route('cdot.create') }}" type="button"
-                                        class="btn btn-soft-primary">Asphalt Field Density by Nuclear Method - CDOT Form</a></li>
+                                        class="btn btn-soft-primary">Asphalt Field Density by Nuclear Method - CDOT
+                                        Form</a></li>
                             </ul>
                         </div>
                     </div>
@@ -197,6 +198,8 @@
                                         class="btn btn-soft-primary">Concrete Field Data (Set 9)</a></li>
                                 <li class="mb-3"><a href="{{ route('template.concrete.ten') }}"
                                         class="btn btn-soft-primary">Concrete Field Data (Set 10)</a></li>
+                                <li class="mb-3"><a href="{{ route('concrete.field.report') }}"
+                                        class="btn btn-soft-primary">Concrete Field Report</a></li>
                             </ul>
                         </div>
                     </div>

@@ -20,6 +20,7 @@
 
     .button1 {
       border: 2px solid #111111;
+      color: #111111;
     }
   </style>
 </head>
@@ -30,7 +31,11 @@
   <p>Please check the attachment report for your next action.</p> <br>
 
   @if ($id)
-  <a class="button button1" href="{{ route('inspection.concrete.generate.one',['id'=>$id]) }}">Download</a>
+  <a class="button button1" href="{{ route('inspection.concrete.generate.one',['id'=>$id]) }}">Concrete Test Report</a>
+  @endif
+
+  @if ($id)
+  <a class="button button1" href="{{ route('concrete.field.report.generate',['id'=>$id]) }}">Concrete Field Report</a>
   @endif
 
   <br><br>
