@@ -195,7 +195,8 @@
             }
 
         }
-        @media screen and (max-width:1024px) { 
+
+        @media screen and (max-width:1024px) {
             .commercial-form .width12 {
                 width: 20%;
             }
@@ -2343,10 +2344,9 @@
                                     <div class="col-md-12 text-center">
                                         <form wire:submit.prevent='updateData'>
                                             <a href="{{ route('template.commercial') }}"
-                                                class="btn btn-primary submit_btn" style="background: green;">Back to
+                                                class="btn btn-primary submit_btn">Back to
                                                 List</a>
-                                            <button type="submit" class="btn btn-primary submit_btn"
-                                                style="background: green;">{!! loadingState(
+                                            <button type="submit" class="btn btn-success submit_btn">{!! loadingState(
                                                 'updateData',
                                                 'Save
                                                 and Send',

@@ -2343,10 +2343,9 @@
                                     <div class="col-md-12 text-center">
                                         <form wire:submit.prevent='updateData'>
                                             <a href="{{ route('template.commercial') }}"
-                                                class="btn btn-primary submit_btn" style="background: green;">Back to
+                                                class="btn btn-primary submit_btn">Back to
                                                 List</a>
-                                            <button type="submit" class="btn btn-primary submit_btn"
-                                                style="background: green;">{!! loadingState(
+                                            <button type="submit" class="btn btn-success submit_btn">{!! loadingState(
                                                 'updateData',
                                                 'Save
                                                 and Send',
