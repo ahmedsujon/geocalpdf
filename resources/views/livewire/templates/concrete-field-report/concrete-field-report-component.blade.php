@@ -52,6 +52,7 @@
                                         <th>Image</th>
                                         <th>Project Name</th>
                                         <th>Client Name</th>
+                                        <th>Available Sets</th>
                                         <th style="text-align: center;">Options</th>
                                     </tr>
                                 </thead>
@@ -71,8 +72,15 @@
                                                 alt="user" class="rounded-circle thumb-md">
                                             @endif
                                         </td>
-                                        <td>{{ $file->name }}</td>
+                                        <td>{{ $file->name }} ({{ totalSet($file->id) }})</td>
                                         <td>{{ client($file->client_id)->name }}</td>
+
+                                        <td>
+                                            @foreach (displayTotalSet($file->id) as $data_set)
+                                              <a href="#" class="badge rounded-pill bg-success">{{ $data_set }}</a>  
+                                            @endforeach
+                                        </td>
+
                                         <td style="text-align: center;">
                                             <a target="_blank"
                                                 href="{{ route('concrete.field.report.generate',['id'=>$file->id]) }}"

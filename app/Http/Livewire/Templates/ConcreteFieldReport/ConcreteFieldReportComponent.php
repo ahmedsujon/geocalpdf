@@ -15,9 +15,10 @@ class ConcreteFieldReportComponent extends Component
 
     public function render()
     {
-        // $files = InspectionConcrete::orderBy('id', 'DESC')
-        DB::statement("SET SQL_MODE=''");
+        
+        
 
+        DB::statement("SET SQL_MODE=''");
         $project_ids = InspectionConcrete::groupBy('project_id')->pluck('project_id')->toArray();
         $projects = Project::whereIn('id', $project_ids)->paginate($this->sortingValue);
         return view('livewire.templates.concrete-field-report.concrete-field-report-component', ['projects' => $projects])->layout('livewire.layouts.base');

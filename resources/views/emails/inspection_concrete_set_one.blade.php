@@ -35,7 +35,7 @@
   @endif
 
   @if ($id)
-  <a class="button button1" href="{{ route('concrete.field.report.generate',['id'=>$id]) }}">Concrete Field Report</a>
+  <a class="button button1" href="{{ route('concrete.field.report.generate',['id'=>$project_id]) }}">Concrete Field Report</a>
   @endif
 
   <br><br>
