@@ -774,13 +774,15 @@ class EditInspectionEightComponent extends Component
         if ($this->responsible_person) {
             $persons = $this->responsible_person;
             $f_id = $data->id;
-            dispatch(function () use ($persons, $f_id) {
+            $project_id = InspectionEightComponent::find($f_id)->project_id;
+            dispatch(function () use ($persons, $f_id, $project_id) {
                 foreach ($persons as $key => $re_id) {
                     $user = User::find($re_id);
                     $mailData['email'] = $user->email;
                     $mailData['name'] = $user->name;
                     $mailData['role_id'] = $user->role_id;
                     $mailData['id'] = $f_id;
+                    $mailData['project_id'] = $project_id;
                     $mailData['subject'] = 'New file waiting for your review';
                     Mail::send('emails.inspection_concrete_set_eight', $mailData, function ($message) use ($mailData) {
                         $message->to($mailData['email'])

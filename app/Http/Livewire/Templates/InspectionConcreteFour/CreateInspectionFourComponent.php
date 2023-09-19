@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Templates\InspectionConcreteFour;
 
+use App\Http\Livewire\Templates\InspectionConcreteSix\InspectionSixComponent;
 use App\Models\User;
 use App\Models\Project;
 use Livewire\Component;
@@ -558,13 +559,15 @@ class CreateInspectionFourComponent extends Component
         if ($this->responsible_person) {
             $persons = $this->responsible_person;
             $f_id = $data->id;
-            dispatch(function () use ($persons, $f_id) {
+            $project_id = InspectionFourComponent::find($f_id)->project_id;
+            dispatch(function () use ($persons, $f_id, $project_id) {
                 foreach ($persons as $key => $re_id) {
                     $user = User::find($re_id);
                     $mailData['email'] = $user->email;
                     $mailData['name'] = $user->name;
                     $mailData['role_id'] = $user->role_id;
                     $mailData['id'] = $f_id;
+                    $mailData['project_id'] = $project_id;
                     $mailData['subject'] = 'New file waiting for your review';
                     Mail::send('emails.inspection_concrete_set_four', $mailData, function ($message) use ($mailData) {
                         $message->to($mailData['email'])
