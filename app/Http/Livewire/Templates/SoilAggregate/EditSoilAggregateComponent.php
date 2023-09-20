@@ -283,7 +283,7 @@ class EditSoilAggregateComponent extends Component
         $proctor = Proctor::where('proctorid', $this->result_proctor_id_a)->first();
         if ($proctor) {
             if (!$this->dry_density_a) {
-                $this->dry_density_a = 0;
+                $this->dry_density_a = null;
             }
             $value = round(($this->dry_density_a / $proctor->max_dry_density) * 100, 1);
             $this->percent_comp_a = is_numeric($value) && floor($value) == $value ? $value . '.0' : $value;
@@ -297,7 +297,7 @@ class EditSoilAggregateComponent extends Component
         $proctor = Proctor::where('proctorid', $this->result_proctor_id_b)->first();
         if ($proctor) {
             if (!$this->dry_density_b) {
-                $this->dry_density_b = 0;
+                $this->dry_density_b = null;
             }
             $value = round(($this->dry_density_b / $proctor->max_dry_density) * 100, 1);
             $this->percent_comp_b = is_numeric($value) && floor($value) == $value ? $value . '.0' : $value;
@@ -310,7 +310,7 @@ class EditSoilAggregateComponent extends Component
         $proctor = Proctor::where('proctorid', $this->result_proctor_id_c)->first();
         if ($proctor) {
             if (!$this->dry_density_c) {
-                $this->dry_density_c = 0;
+                $this->dry_density_c = null;
             }
             $value = round(($this->dry_density_c / $proctor->max_dry_density) * 100, 1);
             $this->percent_comp_c = is_numeric($value) && floor($value) == $value ? $value . '.0' : $value;
@@ -323,7 +323,7 @@ class EditSoilAggregateComponent extends Component
         $proctor = Proctor::where('proctorid', $this->result_proctor_id_d)->first();
         if ($proctor) {
             if (!$this->dry_density_d) {
-                $this->dry_density_d = 0;
+                $this->dry_density_d = null;
             }
             $value = round(($this->dry_density_d / $proctor->max_dry_density) * 100, 1);
             $this->percent_comp_d = is_numeric($value) && floor($value) == $value ? $value . '.0' : $value;
@@ -336,7 +336,7 @@ class EditSoilAggregateComponent extends Component
         $proctor = Proctor::where('proctorid', $this->result_proctor_id_e)->first();
         if ($proctor) {
             if (!$this->dry_density_e) {
-                $this->dry_density_e = 0;
+                $this->dry_density_e = null;
             }
             $value = round(($this->dry_density_e / $proctor->max_dry_density) * 100, 1);
             $this->percent_comp_e = is_numeric($value) && floor($value) == $value ? $value . '.0' : $value;
@@ -349,7 +349,7 @@ class EditSoilAggregateComponent extends Component
         $proctor = Proctor::where('proctorid', $this->result_proctor_id_f)->first();
         if ($proctor) {
             if (!$this->dry_density_f) {
-                $this->dry_density_f = 0;
+                $this->dry_density_f = null;
             }
             $value = round(($this->dry_density_f / $proctor->max_dry_density) * 100, 1);
             $this->percent_comp_f = is_numeric($value) && floor($value) == $value ? $value . '.0' : $value;
