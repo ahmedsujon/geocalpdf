@@ -613,7 +613,6 @@
                 </td>
             </tr>
         </table>
-        <div style="page-break-before:always"></div>
         <table style="width: 100%; border-collapse: collapse;">
             <tr>
                 <td style="padding: 1px; text-align: center; border: 1px solid #000;">
