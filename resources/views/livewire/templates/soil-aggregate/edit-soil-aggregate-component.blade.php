@@ -1794,8 +1794,10 @@
                             <div class="row mt-3 mb-3">
                                 <div class="col-md-12 text-center">
                                     <form wire:submit.prevent='updateData'>
-                                        <button type="submit" class="btn btn-primary submit_btn"
-                                            style="background: green;">{!! loadingState(
+                                        <a href="{{ route('template.soil.aggregate') }}"
+                                            class="btn btn-primary submit_btn">Back to
+                                            List</a>
+                                        <button type="submit" class="btn btn-success submit_btn">{!! loadingState(
                                             'updateData',
                                             'Save
                                             and Send',
@@ -1809,22 +1811,6 @@
             </div>
         </div>
     </div>
-
-    <form wire:submit.prevent='updateData'>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="row mb-5 mt-2">
-                        <div class="col-md-12" style="text-align: right;">
-                            <button type="submit" class="btn btn-primary submit_btn" style="background: green;">{!!
-                                loadingState('updateData', 'Save
-                                and Send') !!}</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </form>
 </div>
 </div>
 

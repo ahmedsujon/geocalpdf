@@ -1772,8 +1772,7 @@
                             <div class="row mt-3 mb-3">
                                 <div class="col-md-12 text-center">
                                     <form wire:submit.prevent='storeData'>
-                                        <button type="submit" class="btn btn-primary submit_btn"
-                                            style="background: green;">{!! loadingState(
+                                        <button type="submit" class="btn btn-success submit_btn">{!! loadingState(
                                             'storeData',
                                             'Save
                                             and Send',
