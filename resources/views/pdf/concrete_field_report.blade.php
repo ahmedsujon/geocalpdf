@@ -28,18 +28,17 @@
             <tr>
 
                 <td style="width: 28%; text-align: left;">
-
                     <h4 style="font-size: 14px; font-weight: 400;">
-                        Client: {{ $client->client_name }}
+                        Client: {{ $client->name }}
                     </h4>
                     <h4 style="font-size: 14px; font-weight: 400;">
-                        Email: {{ $client->client_email }}
+                        Email: {{ $client->email }}
                     </h4>
                     <h4 style="font-size: 14px; font-weight: 400;">
-                        Phone: {{ $client->client_phone }}
+                        Phone: {{ $client->phone }}
                     </h4>
                     <h4 style="font-size: 14px; font-weight: 400;">
-                        Company Name: {{ $client->client_company_name }}
+                        Company Name: {{ $client->company_name }}
                     </h4>
                 </td>
                 <td style="width: 40%; text-align: center;">
@@ -57,7 +56,7 @@
                         Project No: {{ $project->project_number }}
                     </h4>
                     <h4 style="font-size: 14px; font-weight: 400;">
-                        Project Name: {{ $project->project_name }}
+                        Project Name: {{ $project->name }}
                     </h4>
                     <h4 style="font-size: 14px; font-weight: 400;">
                         Weather: {{ $set_one->weather }}
