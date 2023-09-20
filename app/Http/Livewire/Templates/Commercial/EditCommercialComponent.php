@@ -151,6 +151,18 @@ class EditCommercialComponent extends Component
         $this->field_wet_density_e = $file->field_wet_density_e;
         $this->relative_compaction_e = $file->relative_compaction_e;
         $this->pass_fail_e = $file->pass_fail_e;
+
+        $this->test_no_f = $file->test_no_f;
+        $this->result_mix_id_f = $file->result_mix_id_f;
+        $this->location_f = $file->location_f;
+        $this->count_period_f = $file->count_period_f;
+        $this->material_f = $file->material_f;
+        $this->lift_f = $file->lift_f;
+        $this->layer_thickness_f = $file->layer_thickness_f;
+        $this->max_theory_density_f = $file->max_theory_density_f;
+        $this->field_wet_density_f = $file->field_wet_density_f;
+        $this->relative_compaction_f = $file->relative_compaction_f;
+        $this->pass_fail_f = $file->pass_fail_f;
     }
 
     // get project information
@@ -378,7 +390,8 @@ class EditCommercialComponent extends Component
             if (!$this->field_wet_density_a) {
                 $this->field_wet_density_a = null;
             }
-            $this->relative_compaction_a = round(($this->field_wet_density_a / $mix_info->max_theoretical_density) * 100, 1);
+            $value = round(($this->field_wet_density_a / $mix_info->max_theoretical_density) * 100, 1);
+            $this->relative_compaction_a = is_numeric($value) && floor($value) == $value ? $value . '.0' : $value;
         } else {
             $this->relative_compaction_a = '';
         }
@@ -390,7 +403,8 @@ class EditCommercialComponent extends Component
             if (!$this->field_wet_density_b) {
                 $this->field_wet_density_b = null;
             }
-            $this->relative_compaction_b = round(($this->field_wet_density_b / $mix_info->max_theoretical_density) * 100, 1);
+            $value = round(($this->field_wet_density_b / $mix_info->max_theoretical_density) * 100, 1);
+            $this->relative_compaction_b = is_numeric($value) && floor($value) == $value ? $value . '.0' : $value;
         } else {
             $this->relative_compaction_b = '';
         }
@@ -402,7 +416,8 @@ class EditCommercialComponent extends Component
             if (!$this->field_wet_density_c) {
                 $this->field_wet_density_c = null;
             }
-            $this->relative_compaction_c = round(($this->field_wet_density_c / $mix_info->max_theoretical_density) * 100, 1);
+            $value = round(($this->field_wet_density_c / $mix_info->max_theoretical_density) * 100, 1);
+            $this->relative_compaction_c = is_numeric($value) && floor($value) == $value ? $value . '.0' : $value;
         } else {
             $this->relative_compaction_c = '';
         }
@@ -414,7 +429,8 @@ class EditCommercialComponent extends Component
             if (!$this->field_wet_density_d) {
                 $this->field_wet_density_d = null;
             }
-            $this->relative_compaction_d = round(($this->field_wet_density_d / $mix_info->max_theoretical_density) * 100, 1);
+            $value = round(($this->field_wet_density_d / $mix_info->max_theoretical_density) * 100, 1);
+            $this->relative_compaction_d = is_numeric($value) && floor($value) == $value ? $value . '.0' : $value;
         } else {
             $this->relative_compaction_d = '';
         }
@@ -426,7 +442,8 @@ class EditCommercialComponent extends Component
             if (!$this->field_wet_density_e) {
                 $this->field_wet_density_e = null;
             }
-            $this->relative_compaction_e = round(($this->field_wet_density_e / $mix_info->max_theoretical_density) * 100, 1);
+            $value = round(($this->field_wet_density_e / $mix_info->max_theoretical_density) * 100, 1);
+            $this->relative_compaction_e = is_numeric($value) && floor($value) == $value ? $value . '.0' : $value;
         } else {
             $this->relative_compaction_e = '';
         }
@@ -438,7 +455,8 @@ class EditCommercialComponent extends Component
             if (!$this->field_wet_density_f) {
                 $this->field_wet_density_f = null;
             }
-            $this->relative_compaction_f = round(($this->field_wet_density_f / $mix_info->max_theoretical_density) * 100, 1);
+            $value = round(($this->field_wet_density_f / $mix_info->max_theoretical_density) * 100, 1);
+            $this->relative_compaction_f = is_numeric($value) && floor($value) == $value ? $value . '.0' : $value;
         } else {
             $this->relative_compaction_f = '';
         }
@@ -618,6 +636,18 @@ class EditCommercialComponent extends Component
         $data->field_wet_density_e = $this->field_wet_density_e;
         $data->relative_compaction_e = $this->relative_compaction_e;
         $data->pass_fail_e = $this->pass_fail_e;
+
+        $data->test_no_f = $this->test_no_f;
+        $data->result_mix_id_f = $this->result_mix_id_f;
+        $data->location_f = $this->location_f;
+        $data->count_period_f = $this->count_period_f;
+        $data->material_f = $this->material_f;
+        $data->lift_f = $this->lift_f;
+        $data->layer_thickness_f = $this->layer_thickness_f;
+        $data->max_theory_density_f = $this->max_theory_density_f;
+        $data->field_wet_density_f = $this->field_wet_density_f;
+        $data->relative_compaction_f = $this->relative_compaction_f;
+        $data->pass_fail_f = $this->pass_fail_f;
 
         if (Auth::user()->role_id == '1') {
             $data['status'] = "SuperAdminCreated";

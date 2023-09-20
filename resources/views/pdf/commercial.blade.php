@@ -330,7 +330,7 @@
                         </td>
                         <td style="border: 1px solid #000">
                             <h4
-                                style="font-size: 14px; font-weight: 400; text-align:center; @if ($data->compaction_requirement_max < $data->relative_compaction_a) color: red; @endif">
+                                style="font-size: 14px; font-weight: 400; text-align:center; @if ($data->compaction_requirement_max < $data->relative_compaction_a || $data->compaction_requirement_min > $data->relative_compaction_a) color: red; @endif">
                                 {{ $data->relative_compaction_a }}</h4>
                         </td>
                         <td style="border: 1px solid #000">
@@ -376,7 +376,7 @@
                         </td>
                         <td style="border: 1px solid #000">
                             <h4
-                                style="font-size: 14px; font-weight: 400; text-align:center; @if ($data->compaction_requirement_max < $data->relative_compaction_b) color: red; @endif">
+                                style="font-size: 14px; font-weight: 400; text-align:center; @if ($data->compaction_requirement_max < $data->relative_compaction_b || $data->compaction_requirement_min > $data->relative_compaction_b) color: red; @endif">
                                 {{ $data->relative_compaction_b }}</h4>
                         </td>
                         <td style="border: 1px solid #000">
@@ -422,7 +422,7 @@
                         </td>
                         <td style="border: 1px solid #000">
                             <h4
-                                style="font-size: 14px; font-weight: 400; text-align:center; @if ($data->compaction_requirement_max < $data->relative_compaction_c) color: red; @endif">
+                                style="font-size: 14px; font-weight: 400; text-align:center; @if ($data->compaction_requirement_max < $data->relative_compaction_c || $data->compaction_requirement_min > $data->relative_compaction_c) color: red; @endif">
                                 {{ $data->relative_compaction_c }}</h4>
                         </td>
                         <td style="border: 1px solid #000">
@@ -468,7 +468,7 @@
                         </td>
                         <td style="border: 1px solid #000">
                             <h4
-                                style="font-size: 14px; font-weight: 400; text-align:center; @if ($data->compaction_requirement_max < $data->relative_compaction_d) color: red; @endif">
+                                style="font-size: 14px; font-weight: 400; text-align:center; @if ($data->compaction_requirement_max < $data->relative_compaction_d || $data->compaction_requirement_min > $data->relative_compaction_d) color: red; @endif">
                                 {{ $data->relative_compaction_d }}</h4>
                         </td>
                         <td style="border: 1px solid #000">
@@ -514,7 +514,7 @@
                         </td>
                         <td style="border: 1px solid #000">
                             <h4
-                                style="font-size: 14px; font-weight: 400; text-align:center; @if ($data->compaction_requirement_max < $data->relative_compaction_e) color: red; @endif">
+                                style="font-size: 14px; font-weight: 400; text-align:center; @if ($data->compaction_requirement_max < $data->relative_compaction_e || $data->compaction_requirement_min > $data->relative_compaction_e) color: red; @endif">
                                 {{ $data->relative_compaction_e }}</h4>
                         </td>
                         <td style="border: 1px solid #000">
@@ -523,6 +523,52 @@
                         </td>
                     </tr>
                 @endif
+                @if ($data->result_mix_id_f)
+                <tr>
+                    <td style="border: 1px solid #000">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->test_no_f }}
+                        </h4>
+                    </td>
+                    <td style="border: 1px solid #000">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                            {{ $data->result_mix_id_f }}
+                        </h4>
+                    </td>
+                    <td style="border: 1px solid #000">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                            {{ $data->count_period_f }}
+                        </h4>
+                    </td>
+                    <td style="border: 1px solid #000">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->material_f }}
+                        </h4>
+                    </td>
+                    <td style="border: 1px solid #000">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->lift_f }}</h4>
+                    </td>
+                    <td style="border: 1px solid #000">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                            {{ $data->layer_thickness_f }}</h4>
+                    </td>
+                    <td style="border: 1px solid #000">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                            {{ $data->max_theory_density_f }}</h4>
+                    </td>
+                    <td style="border: 1px solid #000">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                            {{ $data->field_wet_density_f }}</h4>
+                    </td>
+                    <td style="border: 1px solid #000">
+                        <h4
+                            style="font-size: 14px; font-weight: 400; text-align:center; @if ($data->compaction_requirement_max < $data->relative_compaction_f || $data->compaction_requirement_min > $data->relative_compaction_f) color: red; @endif">
+                            {{ $data->relative_compaction_f }}</h4>
+                    </td>
+                    <td style="border: 1px solid #000">
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->pass_fail_f }}
+                        </h4>
+                    </td>
+                </tr>
+            @endif
             </table>
 
         </div>
