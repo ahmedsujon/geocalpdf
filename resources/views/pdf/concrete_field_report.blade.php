@@ -71,35 +71,24 @@
                     <h4 style="font-size: 14px; font-weight: 400">Specifications: Slump:</h4>
                 </td>
                 <td style="padding: 1px; border: 1px solid #000">
-                    <h4 style="font-size: 14px; font-weight: 400">
-                        {{ $set_one->specified_slump_min }}
+                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                        {{ $set_one->slump_min }} - {{ $set_one->slump_max }}
                     </h4>
                 </td>
                 <td style="padding: 1px; border: 1px solid #000">
-                    <h4 style="font-size: 14px; font-weight: 400">
-                        - {{ $set_one->specified_slump_max }}
-                    </h4>
+                    <h4 style="font-size: 14px; font-weight: 400">Air Content:</h4>
                 </td>
                 <td style="padding: 1px; border: 1px solid #000">
-                    <h4 style="font-size: 14px; font-weight: 400">Air Content</h4>
+                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $set_one->air_min }} - {{ $set_one->air_max }}</h4>
                 </td>
                 <td style="padding: 1px; border: 1px solid #000">
-                    <h4 style="font-size: 14px; font-weight: 400">{{ $set_one->specified_air_min }}</h4>
-                </td>
-                <td style="padding: 1px; border: 1px solid #000">
-                    <h4 style="font-size: 14px; font-weight: 400">- {{ $set_one->specified_air_max }}</h4>
-                </td>
-                <td style="padding: 1px; border: 1px solid #000">
-                    <h4 style="font-size: 14px; font-weight: 400">Strength: {{ $set_one->required_strength }}</h4>
+                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">Strength: {{ $set_one->required_strength }}</h4>
                 </td>
                 <td style="padding: 1px; border: 1px solid #000">
                     <h4 style="font-size: 14px; font-weight: 400">Temperature: </h4>
                 </td>
                 <td style="padding: 1px; border: 1px solid #000">
-                    <h4 style="font-size: 14px; font-weight: 400">{{ $set_one->conc_temp_min }}</h4>
-                </td>
-                <td style="padding: 1px; border: 1px solid #000">
-                    <h4 style="font-size: 14px; font-weight: 400">- {{ $set_one->conc_temp_max }}</h4>
+                    <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $set_one->concrete_temp_min }} - {{ $set_one->concrete_temp_max }}</h4>
                 </td>
             </tr>
         </table>
