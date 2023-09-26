@@ -31,7 +31,7 @@
                             </div>
                             @endforeach
                             @else
-                            <h5>No Activity Available!</h5>
+                            <h5 style="color: #c7c7c7">No Activity Available!</h5>
                             @endif
                         </div>
                     </div>
@@ -65,7 +65,7 @@
                             </div>
                             @endforeach
                             @else
-                            <h5>No Activity Available!</h5>
+                            <h5 style="color: #c7c7c7">No Activity Available!</h5>
                             @endif
                         </div>
                     </div>
@@ -98,7 +98,7 @@
                             </div>
                             @endforeach
                             @else
-                            <h5>No Activity Available!</h5>
+                            <h5 style="color: #c7c7c7">No Activity Available!</h5>
                             @endif
                         </div>
                     </div>
@@ -131,7 +131,7 @@
                             </div>
                             @endforeach
                             @else
-                            <h5>No Activity Available!</h5>
+                            <h5 style="color: #c7c7c7">No Activity Available!</h5>
                             @endif
                         </div>
                     </div>
@@ -165,7 +165,7 @@
                             </div>
                             @endforeach
                             @else
-                            <h5>No Activity Available!</h5>
+                            <h5 style="color: #c7c7c7">No Activity Available!</h5>
                             @endif
                         </div>
                     </div>
@@ -199,7 +199,7 @@
                             </div>
                             @endforeach
                             @else
-                            <h5>No Activity Available!</h5>
+                            <h5 style="color: #c7c7c7">No Activity Available!</h5>
                             @endif
                         </div>
                     </div>
@@ -233,7 +233,7 @@
                             </div>
                             @endforeach
                             @else
-                            <h5>No Activity Available!</h5>
+                            <h5 style="color: #c7c7c7">No Activity Available!</h5>
                             @endif
                         </div>
                     </div>
@@ -267,7 +267,7 @@
                             </div>
                             @endforeach
                             @else
-                            <h5>No Activity Available!</h5>
+                            <h5 style="color: #c7c7c7">No Activity Available!</h5>
                             @endif
                         </div>
                     </div>
@@ -301,7 +301,7 @@
                             </div>
                             @endforeach
                             @else
-                            <h5>No Activity Available!</h5>
+                            <h5 style="color: #c7c7c7">No Activity Available!</h5>
                             @endif
                         </div>
                     </div>
@@ -335,7 +335,7 @@
                             </div>
                             @endforeach
                             @else
-                            <h5>No Activity Available!</h5>
+                            <h5 style="color: #c7c7c7">No Activity Available!</h5>
                             @endif
                         </div>
                     </div>
@@ -369,7 +369,7 @@
                             </div>
                             @endforeach
                             @else
-                            <h5>No Activity Available!</h5>
+                            <h5 style="color: #c7c7c7">No Activity Available!</h5>
                             @endif
                         </div>
                     </div>
@@ -403,7 +403,7 @@
                             </div>
                             @endforeach
                             @else
-                            <h5>No Activity Available!</h5>
+                            <h5 style="color: #c7c7c7">No Activity Available!</h5>
                             @endif
                         </div>
                     </div>
@@ -437,7 +437,7 @@
                             </div>
                             @endforeach
                             @else
-                            <h5>No Activity Available!</h5>
+                            <h5 style="color: #c7c7c7">No Activity Available!</h5>
                             @endif
                         </div>
                     </div>
@@ -471,7 +471,7 @@
                             </div>
                             @endforeach
                             @else
-                            <h5>No Activity Available!</h5>
+                            <h5 style="color: #c7c7c7">No Activity Available!</h5>
                             @endif
                         </div>
                     </div>
