@@ -93,9 +93,9 @@ Add Proctor
                                 <label class="col-sm-3 col-form-label" for="optimum_moisture">Max Theoretical SpecificGravity<span
                                         class="text-danger">*</span></label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" wire:model="max_theoretical_specificGravity"
+                                    <input type="text" class="form-control" wire:model="max_theoretical_specific_gravity"
                                         placeholder="Enter max theoretical specificGravity" />
-                                    @error('max_theoretical_specificGravity')
+                                    @error('max_theoretical_specific_gravity')
                                     <span class="text-danger" style="font-size: 12.5px;">{{ $message }}</span>
                                     @enderror
                                 </div>

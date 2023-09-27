@@ -7,7 +7,7 @@ use Livewire\Component;
 
 class AddMaxInfoComponent extends Component
 {
-    public $mix_id, $supplier, $plant, $mix_type, $max_theoretical_density, $max_theoretical_specificGravity;
+    public $mix_id, $supplier, $plant, $mix_type, $max_theoretical_density, $max_theoretical_specific_gravity;
 
     public function updated($fields)
     {
@@ -17,7 +17,7 @@ class AddMaxInfoComponent extends Component
             'plant' => 'required',
             'mix_type' => 'required',
             'max_theoretical_density' => 'required',
-            'max_theoretical_specificGravity' => 'required',
+            'max_theoretical_specific_gravity' => 'required',
         ]);
     }
 
@@ -29,7 +29,7 @@ class AddMaxInfoComponent extends Component
             'plant' => 'required',
             'mix_type' => 'required',
             'max_theoretical_density' => 'required',
-            'max_theoretical_specificGravity' => 'required',
+            'max_theoretical_specific_gravity' => 'required',
         ]);
 
         $proctor = new MixInfo();
@@ -38,7 +38,7 @@ class AddMaxInfoComponent extends Component
         $proctor->plant = $this->plant;
         $proctor->mix_type = $this->mix_type;
         $proctor->max_theoretical_density = $this->max_theoretical_density;
-        $proctor->max_theoretical_specificGravity = $this->max_theoretical_specificGravity;
+        $proctor->max_theoretical_specific_gravity = $this->max_theoretical_specific_gravity;
         $proctor->save();
 
         session()->flash('success', 'Mix Info added successfully');
@@ -53,7 +53,7 @@ class AddMaxInfoComponent extends Component
         $this->plant = '';
         $this->mix_type = '';
         $this->max_theoretical_density = '';
-        $this->max_theoretical_specificGravity = '';
+        $this->max_theoretical_specific_gravity = '';
     }
 
     public function render()
