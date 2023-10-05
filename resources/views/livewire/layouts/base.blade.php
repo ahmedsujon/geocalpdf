@@ -11,7 +11,7 @@
 
     <!-- App favicon -->
     <link rel="shortcut icon" href="{{ asset('assets/images/favicon.png') }}">
-
+    <link href="{{ asset('assets/css/datatable.css') }}" rel="stylesheet" type="text/css" />
     <!-- App css -->
     <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
@@ -53,6 +53,10 @@
     <script src="{{ asset('assets/plugins/select2/js/select2.full.min.js') }}"></script>
 
     <script src="{{ asset('assets/js/select2.min.js') }}"></script>
+
+    <script src="{{ asset('assets/js/simple-datatables.js') }}"></script>
+    <script src="{{ asset('assets/js/datatable.init.js') }}"></script>
+    
     {{-- sweet alert 2 --}}
     <script src="{{ asset('assets/js/sweetalert2.js') }}"></script>
 

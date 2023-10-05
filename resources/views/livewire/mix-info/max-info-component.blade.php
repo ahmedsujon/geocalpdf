@@ -73,7 +73,7 @@
                                         <td style="text-align: center;">{{ $mix_info->plant }}</td>
                                         <td style="text-align: center;">{{ $mix_info->mix_type }}</td>
                                         <td style="text-align: center;">{{ $mix_info->max_theoretical_density }}</td>
-                                        <td style="text-align: center;">{{ $mix_info->max_theoretical_specificGravity }}</td>
+                                        <td style="text-align: center;">{{ $mix_info->max_theoretical_specific_gravity }}</td>
                                        
                                         <td style="text-align: center;">
                                             <a href="{{ route('mixInfo.update', ['mix_info_id' => $mix_info->id]) }}"
