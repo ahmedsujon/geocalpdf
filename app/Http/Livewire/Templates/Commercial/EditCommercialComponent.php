@@ -497,6 +497,7 @@ class EditCommercialComponent extends Component
         $this->validateOnly($fields, [
             'project_id' => 'required',
             'date' => 'required',
+            'user_id' => 'required',
             'general_location' => 'required',
             'responsible_person' => 'required',
             'office_address' => 'required',
@@ -511,6 +512,7 @@ class EditCommercialComponent extends Component
         $this->validate([
             'project_id' => 'required',
             'date' => 'required',
+            'user_id' => 'required',
             'general_location' => 'required',
             'responsible_person' => 'required',
             'office_address' => 'required',
@@ -736,7 +738,7 @@ class EditCommercialComponent extends Component
         }
 
         $projects = Project::orderBy('id', 'DESC')->get();
-        $supervisors = User::orderBy('id', 'DESC')->get();
+        $supervisors = User::orderBy('id', 'DESC')->where('role_id', 5)->get();
         $mix_infos = MixInfo::orderBy('id', 'DESC')->get();
         return view('livewire.templates.commercial.edit-commercial-component', [
             'projects' => $projects, 'supervisors' => $supervisors, 'mix_infos' => $mix_infos

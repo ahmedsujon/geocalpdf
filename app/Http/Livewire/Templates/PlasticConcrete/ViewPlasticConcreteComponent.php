@@ -185,7 +185,7 @@ class ViewPlasticConcreteComponent extends Component
     public function render()
     {
         $projects = Project::orderBy('id', 'DESC')->get();
-        $supervisors = User::orderBy('id', 'DESC')->get();
+        $supervisors = User::orderBy('id', 'DESC')->where('role_id', 5)->get();
         return view('livewire.templates.plastic-concrete.view-plastic-concrete-component', ['projects' => $projects, 'supervisors' => $supervisors])->layout('livewire.layouts.base');
     }
 }

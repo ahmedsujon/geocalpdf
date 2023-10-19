@@ -154,7 +154,7 @@ class ViewCommercialComponent extends Component
     public function render()
     {
         $projects = Project::orderBy('id', 'DESC')->get();
-        $supervisors = User::orderBy('id', 'DESC')->get();
+        $supervisors = User::orderBy('id', 'DESC')->where('role_id', 5)->get();
         $mix_infos = MixInfo::orderBy('id', 'DESC')->get();
         return view('livewire.templates.commercial.view-commercial-component', [
             'projects' => $projects, 'supervisors' => $supervisors, 'mix_infos' => $mix_infos

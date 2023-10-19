@@ -448,7 +448,7 @@ class CreateSoilAggregateComponent extends Component
     public function render()
     {
         $projects = Project::orderBy('id', 'DESC')->get();
-        $supervisors = User::orderBy('id', 'DESC')->get();
+        $supervisors = User::orderBy('id', 'DESC')->where('role_id', 5)->get();
         $proctors = Proctor::orderBy('id', 'DESC')->get();
         return view('livewire.templates.soil-aggregate.create-soil-aggregate-component', ['projects' => $projects, 'supervisors' => $supervisors, 'proctors' => $proctors])->layout('livewire.layouts.base');
     }
