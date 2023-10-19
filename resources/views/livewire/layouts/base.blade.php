@@ -11,7 +11,7 @@
 
     <!-- App favicon -->
     <link rel="shortcut icon" href="{{ asset('assets/images/favicon.png') }}">
-    <link href="{{ asset('assets/css/datatable.css') }}" rel="stylesheet" type="text/css" />
+    {{-- <link href="{{ asset('assets/plugins/datatables/datatable.css') }}" rel="stylesheet" type="text/css" /> --}}
     <!-- App css -->
     <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
@@ -63,6 +63,8 @@
     {{-- Toaster --}}
     <script src="{{ asset('assets/js/toastr.min.js') }}"></script>
 
+    {{-- <link href="{{ asset('assets/plugins/datatables/simple-datatables.js') }}" />
+    <link href="{{ asset('assets/plugins/datatables/datatable.init.js') }}"> --}}
     <!-- App js -->
     <script src="{{ asset('assets/js/app.js') }}"></script>
 
