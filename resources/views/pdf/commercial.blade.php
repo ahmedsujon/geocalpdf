@@ -333,10 +333,17 @@
                                 style="font-size: 14px; font-weight: 400; text-align:center; @if ($data->compaction_requirement_max < $data->relative_compaction_a || $data->compaction_requirement_min > $data->relative_compaction_a) color: red; @endif">
                                 {{ $data->relative_compaction_a }}</h4>
                         </td>
+                        @if ($data->pass_fail_a == 'Pass')
                         <td style="border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->pass_fail_a }}
                             </h4>
                         </td>
+                        @else
+                        <td style="border: 1px solid #000">
+                            <h4 style="font-size: 14px; font-weight: 400; text-align:center; color: red">{{ $data->pass_fail_a }}
+                            </h4>
+                        </td>
+                        @endif
                     </tr>
                 @endif
                 @if ($data->result_mix_id_a)
