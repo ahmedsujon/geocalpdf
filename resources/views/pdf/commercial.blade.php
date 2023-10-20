@@ -107,7 +107,7 @@
 
                         <h4 style="font-size: 14px; font-weight: 400">Compaction Requirements: &nbsp;&nbsp;
                             {{ $data->compaction_requirement_min }} to
-                            {{ $data->compaction_requirement_max }}</h4>
+                            {{ $data->compaction_requirement_max }} %</h4>
                     </td>
 
                 </tr>
