@@ -386,10 +386,17 @@
                                 style="font-size: 14px; font-weight: 400; text-align:center; @if ($data->compaction_requirement_max < $data->relative_compaction_b || $data->compaction_requirement_min > $data->relative_compaction_b) color: red; @endif">
                                 {{ $data->relative_compaction_b }}</h4>
                         </td>
+                        @if (@if ($data->pass_fail_b == 'Pass'))
                         <td style="border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->pass_fail_b }}
                             </h4>
                         </td>
+                        @else
+                        <td style="border: 1px solid #000">
+                            <h4 style="font-size: 14px; font-weight: 400; text-align:center; color:red;">{{ $data->pass_fail_b }}
+                            </h4>
+                        </td>
+                        @endif
                     </tr>
                 @endif
                 @if ($data->result_mix_id_c)
@@ -432,10 +439,18 @@
                                 style="font-size: 14px; font-weight: 400; text-align:center; @if ($data->compaction_requirement_max < $data->relative_compaction_c || $data->compaction_requirement_min > $data->relative_compaction_c) color: red; @endif">
                                 {{ $data->relative_compaction_c }}</h4>
                         </td>
+                        @if (@if ($data->pass_fail_c == 'Pass'))
                         <td style="border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->pass_fail_c }}
                             </h4>
                         </td>
+                        @else
+
+                        <td style="border: 1px solid #000">
+                            <h4 style="font-size: 14px; font-weight: 400; text-align:center; color:red;">{{ $data->pass_fail_c }}
+                            </h4>
+                        </td>
+                        @endif
                     </tr>
                 @endif
                 @if ($data->result_mix_id_d)
@@ -478,10 +493,18 @@
                                 style="font-size: 14px; font-weight: 400; text-align:center; @if ($data->compaction_requirement_max < $data->relative_compaction_d || $data->compaction_requirement_min > $data->relative_compaction_d) color: red; @endif">
                                 {{ $data->relative_compaction_d }}</h4>
                         </td>
+                        @if (@if ($data->pass_fail_d == 'Pass'))
                         <td style="border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->pass_fail_d }}
                             </h4>
                         </td>
+                        @else
+                        
+                        <td style="border: 1px solid #000">
+                            <h4 style="font-size: 14px; font-weight: 400; text-align:center; color:red;">{{ $data->pass_fail_d }}
+                            </h4>
+                        </td>
+                        @endif
                     </tr>
                 @endif
                 @if ($data->result_mix_id_e)
@@ -524,10 +547,18 @@
                                 style="font-size: 14px; font-weight: 400; text-align:center; @if ($data->compaction_requirement_max < $data->relative_compaction_e || $data->compaction_requirement_min > $data->relative_compaction_e) color: red; @endif">
                                 {{ $data->relative_compaction_e }}</h4>
                         </td>
+                        @if (@if ($data->pass_fail_e == 'Pass'))
                         <td style="border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->pass_fail_e }}
                             </h4>
                         </td>
+                        @else
+                        
+                        <td style="border: 1px solid #000">
+                            <h4 style="font-size: 14px; font-weight: 400; text-align:center; color:red;">{{ $data->pass_fail_e }}
+                            </h4>
+                        </td>
+                        @endif
                     </tr>
                 @endif
                 @if ($data->result_mix_id_f)
@@ -570,10 +601,18 @@
                             style="font-size: 14px; font-weight: 400; text-align:center; @if ($data->compaction_requirement_max < $data->relative_compaction_f || $data->compaction_requirement_min > $data->relative_compaction_f) color: red; @endif">
                             {{ $data->relative_compaction_f }}</h4>
                     </td>
-                    <td style="border: 1px solid #000">
-                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->pass_fail_f }}
-                        </h4>
-                    </td>
+                    @if (@if ($data->pass_fail_f == 'Pass'))
+                        <td style="border: 1px solid #000">
+                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->pass_fail_f }}
+                            </h4>
+                        </td>
+                        @else
+                        
+                        <td style="border: 1px solid #000">
+                            <h4 style="font-size: 14px; font-weight: 400; text-align:center; color:red;">{{ $data->pass_fail_f }}
+                            </h4>
+                        </td>
+                        @endif
                 </tr>
             @endif
             </table>
