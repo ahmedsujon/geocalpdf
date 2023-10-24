@@ -72,8 +72,8 @@
                                             <img src="{{ asset('uploads/project') }}/{{ project($file->project_id)->avatar }}"
                                                 alt="user" class="rounded-circle thumb-md">
                                             @else
-                                            <img src="{{ asset('assets/images/defaults/default_project.jpg') }}" alt="user"
-                                                class="rounded-circle thumb-md">
+                                            <img src="{{ asset('assets/images/defaults/default_project.jpg') }}"
+                                                alt="user" class="rounded-circle thumb-md">
                                             @endif
                                         </td>
                                         <td>{{ project($file->project_id)->name }}</td>
@@ -82,19 +82,19 @@
                                         <td>{{ user($file->created_by)->name }}</td>
                                         <td>{{ $file->created_at }}</td>
                                         <td style="text-align: center;">
-                                            <a target="_blank" href="{{ route('inspection.concrete.generate.one',['id'=>$file->id]) }}"
-                                                type="button"
-                                                class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm"><i
+                                            <a target="_blank"
+                                                href="{{ route('inspection.concrete.generate.one',['id'=>$file->id]) }}"
+                                                class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Download Report"><i
                                                     class="ti ti-file-invoice"></i></a>
-                                            <a href="{{ route('concrete.show', ['file_id' => $file->id]) }}" type="button"
-                                                class="btn btn-outline-success btn-icon-circle btn-icon-circle-sm"><i
+                                            <a href="{{ route('concrete.show', ['file_id' => $file->id]) }}"
+                                                class="btn btn-outline-success btn-icon-circle btn-icon-circle-sm" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="View Details"><i
                                                     class="ti ti-eye"></i></a>
-                                            <a href="{{ route('concrete.update', ['file_id' => $file->id]) }}" type="button"
+                                            <a href="{{ route('concrete.update', ['file_id' => $file->id]) }}"
                                                 class="btn btn-outline-warning btn-icon-circle btn-icon-circle-sm"><i
-                                                    class="ti ti-edit"></i></a>
+                                                    class="ti ti-edit" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Edit Form"></i></a>
                                             <a wire:click.prevent="deleteConfirmation({{ $file->id }})" type="button"
                                                 class="btn btn-outline-danger btn-icon-circle btn-icon-circle-sm"><i
-                                                    class="ti ti-trash"></i></a>
+                                                    class="ti ti-trash" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Delete Form"></i></a>
                                         </td>
                                     </tr>
                                     @endforeach

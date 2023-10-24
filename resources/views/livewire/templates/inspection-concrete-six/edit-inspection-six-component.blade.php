@@ -2384,7 +2384,7 @@
 <script>
     $(document).ready(function() {
             $('.multiple_selector').select2({
-                placeholder: 'Select Project',
+                placeholder: 'Select Person / name',
                 dropdownAutoWidth: true,
                 theme: 'bootstrap-5'
             });

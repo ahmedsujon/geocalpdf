@@ -35,7 +35,8 @@ class EditCdotComponent extends Component
     }
     public function calculateAAA()
     {
-        $this->ave_daily_rice_a = round((float)$this->daily_rice_a * 62.4, 1);
+        $value = round((float)$this->daily_rice_a * 62.4, 1);
+        $this->ave_daily_rice_a = is_numeric($value) && floor($value) == $value ? $value . '.0' : $value;
     }
     public function compactionAAA()
     {
@@ -51,7 +52,8 @@ class EditCdotComponent extends Component
     }
     public function calculateBBB()
     {
-        $this->ave_daily_rice_b = round((float)$this->daily_rice_b * 62.4, 1);
+        $value = round((float)$this->daily_rice_a * 62.4, 1);
+        $this->ave_daily_rice_b = is_numeric($value) && floor($value) == $value ? $value . '.0' : $value;
     }
     public function compactionBBB()
     {
@@ -67,7 +69,8 @@ class EditCdotComponent extends Component
     }
     public function calculateCCC()
     {
-        $this->ave_daily_rice_c = round((float)$this->daily_rice_c * 62.4, 1);
+        $value = round((float)$this->daily_rice_a * 62.4, 1);
+        $this->ave_daily_rice_c = is_numeric($value) && floor($value) == $value ? $value . '.0' : $value;
     }
     public function compactionCCC()
     {
@@ -83,7 +86,8 @@ class EditCdotComponent extends Component
     }
     public function calculateDDD()
     {
-        $this->ave_daily_rice_d = round((float)$this->daily_rice_d * 62.4, 1);
+        $value = round((float)$this->daily_rice_a * 62.4, 1);
+        $this->ave_daily_rice_d = is_numeric($value) && floor($value) == $value ? $value . '.0' : $value;
     }
     public function compactionDDD()
     {
@@ -99,7 +103,8 @@ class EditCdotComponent extends Component
     }
     public function calculateEEE()
     {
-        $this->ave_daily_rice_e = round((float)$this->daily_rice_e * 62.4, 1);
+        $value = round((float)$this->daily_rice_a * 62.4, 1);
+        $this->ave_daily_rice_e = is_numeric($value) && floor($value) == $value ? $value . '.0' : $value;
     }
     public function compactionEEE()
     {

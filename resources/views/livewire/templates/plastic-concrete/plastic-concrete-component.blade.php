@@ -86,19 +86,16 @@
                                         <td style="text-align: center;">
                                             <a target="_blank"
                                                 href="{{ route('plastic.concrete.generate',['id'=>$temp->id]) }}"
-                                                type="button"
-                                                class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm"><i
+                                                class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Download Report"><i
                                                     class="ti ti-file-invoice"></i></a>
                                             <a href="{{ route('plastic.concrete.show', ['file_id' => $temp->id]) }}"
-                                                type="button"
-                                                class="btn btn-outline-success btn-icon-circle btn-icon-circle-sm"><i
+                                                class="btn btn-outline-success btn-icon-circle btn-icon-circle-sm" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="View Details"><i
                                                     class="ti ti-eye"></i></a>
                                             <a href="{{ route('plastic.concrete.update', ['file_id' => $temp->id]) }}"
-                                                type="button"
-                                                class="btn btn-outline-warning btn-icon-circle btn-icon-circle-sm"><i
+                                                class="btn btn-outline-warning btn-icon-circle btn-icon-circle-sm" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Edit Form"><i
                                                     class="ti ti-edit"></i></a>
-                                            <a wire:click.prevent="deleteConfirmation({{ $temp->id }})" type="button"
-                                                class="btn btn-outline-danger btn-icon-circle btn-icon-circle-sm"><i
+                                            <a wire:click.prevent="deleteConfirmation({{ $temp->id }})"
+                                                class="btn btn-outline-danger btn-icon-circle btn-icon-circle-sm" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Delete Form"><i
                                                     class="ti ti-trash"></i></a>
                                         </td>
                                     </tr>
