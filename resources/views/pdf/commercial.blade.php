@@ -12,6 +12,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: Arial, sans-serif;
         }
 
         .page-break {
@@ -19,6 +20,7 @@
         }
     </style>
 </head>
+
 
 <body>
     <div style="
@@ -138,7 +140,7 @@
                         <h3 style="font-size: 14px; font-weight: 500">Mix Type </h3>
                     </th>
                     <th style="padding: 5px 6px 5px 6px; border: 1px solid #000">
-                        <h3 style="font-size: 14px; font-weight: 500">Max Density, (lb/ft3)</h3>
+                        <h3 style="font-size: 14px; font-weight: 500">Max Density, (lb/ft <sup>3</sup>)</h3>
                     </th>
                 </tr>
                 @if ($data->mix_a_id)
@@ -265,34 +267,34 @@
                     style="text-align:left; font-size: 14px; font-weight: 500; padding: 0; letter-spacing: -1px; background-color: #689A3D; border-top: 2px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
                     TEST RESULTS</caption>
                 <tr>
-                    <th style="border: 1px solid #000">
+                    <th width="5%" style="border: 1px solid #000">
                         <h3 style="font-size: 14px; font-weight: 500">Test No.</h3>
                     </th>
-                    <th style="border: 1px solid #000">
+                    <th width="15%" style="border: 1px solid #000">
                         <h3 style="font-size: 14px; font-weight: 500">Mix ID</h3>
                     </th>
-                    <th style="border: 1px solid #000">
+                    <th width="10%" style="border: 1px solid #000">
                         <h3 style="font-size: 14px; font-weight: 500">Test Count Period</h3>
                     </th>
-                    <th style="border: 1px solid #000">
-                        <h3 style="font-size: 14px; font-weight: 500">Material (Base, Surface, Bit Agg Mix)</h3>
+                    <th width="10%" style="border: 1px solid #000">
+                        <h3 style="font-size: 14px; font-weight: 500">Material <br> (Base, <br> Surface, <br> Bit Agg)</h3>
                     </th>
-                    <th style="border: 1px solid #000">
+                    <th width="5%" style="border: 1px solid #000">
                         <h3 style="font-size: 14px; font-weight: 500">Lift</h3>
                     </th>
-                    <th style="border: 1px solid #000">
+                    <th width="10%" style="border: 1px solid #000">
                         <h3 style="font-size: 14px; font-weight: 500">Layer Thickness (in)</h3>
                     </th>
-                    <th style="border: 1px solid #000">
-                        <h3 style="font-size: 14px; font-weight: 500">Maximum Theo. Density (pcf)</h3>
+                    <th width="10%" style="border: 1px solid #000">
+                        <h3 style="font-size: 14px; font-weight: 500">Maximum <br> Theo. <br> Density (pcf)</h3>
                     </th>
-                    <th style="border: 1px solid #000">
-                        <h3 style="font-size: 14px; font-weight: 500">In Situ Density (lb/ft3)</h3>
+                    <th width="10%" style="border: 1px solid #000">
+                        <h3 style="font-size: 14px; font-weight: 500">In Situ <br> Density (lb/ft3)</h3>
                     </th>
-                    <th style="border: 1px solid #000">
+                    <th width="15%" style="border: 1px solid #000">
                         <h3 style="font-size: 14px; font-weight: 500">% Relative Compaction</h3>
                     </th>
-                    <th style="border: 1px solid #000">
+                    <th width="10%" style="border: 1px solid #000">
                         <h3 style="font-size: 14px; font-weight: 500">Pass / Fail</h3>
                     </th>
                 </tr>
@@ -724,19 +726,6 @@
                     <h6 style="padding-bottom: 4px; font-weight: normal; 
                 font-size: 14px;
                 font-weight: normal;">
-                        @if ($data->report_status == 'Part Time Observation')
-                        <span style="padding: 1px 5px; border-bottom: 2px solid #000;"></span>
-                        <span style="padding-left: 25px;">Part Time Observation</span>
-                        @else
-                        <span
-                            style="padding: 1px 5px; border-bottom: 2px solid #000; border-top: 2px solid #000;">X</span>
-                        <span>Part Time Observation</span>
-                        @endif
-                    </h6>
-
-                    <h6 style="padding-bottom: 4px; font-weight: normal; 
-                font-size: 14px;
-                font-weight: normal;">
                         @if ($data->report_status == 'Full Time Observation')
                         <span style="padding: 1px 5px; border-bottom: 2px solid #000;"></span>
                         <span style="padding-left: 25px;">Full Time Observation</span>
@@ -744,6 +733,18 @@
                         <span
                             style="padding: 1px 5px; border-bottom: 2px solid #000; border-top: 2px solid #000;">X</span>
                         <span>Full Time Observation</span>
+                        @endif
+                    </h6>
+                    <h6 style="padding-bottom: 4px; font-weight: normal; 
+                font-size: 14px;
+                font-weight: normal;">
+                        @if ($data->report_status == 'Part Time Observation')
+                        <span style="padding: 1px 5px; border-bottom: 2px solid #000;"></span>
+                        <span style="padding-left: 25px;">Part Time Observation</span>
+                        @else
+                        <span
+                            style="padding: 1px 5px; border-bottom: 2px solid #000; border-top: 2px solid #000;">X</span>
+                        <span>Part Time Observation</span>
                         @endif
                     </h6>
                 </td>

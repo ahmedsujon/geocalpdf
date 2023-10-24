@@ -744,7 +744,7 @@
                                         <th class="customcolor" scope="col">Layer Thickness (in)</th>
                                         <th class="customcolor" scope="col">Maximum Theo. Density (pcf)
                                         </th>
-                                        <th class="customcolor" scope="col">Field Wet Density (lb/ft3)</th>
+                                        <th class="customcolor" scope="col">Field Wet Density (lb/ft <sup>3</sup> )</th>
                                         <th class="customcolor" scope="col">% Relative Compaction</th>
                                         <th class="customcolor" scope="col">Pass / Fail</th>
                                     </tr>
