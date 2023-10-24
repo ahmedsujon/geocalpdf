@@ -5,7 +5,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>FIELD DENSITY OF ASPHALT / BITUMINOUS by Nuclear Method
+        ASTM D 2950 / AASHTO T355</title>
 
     <style>
         * {
@@ -14,13 +15,8 @@
             box-sizing: border-box;
             font-family: Arial, sans-serif;
         }
-
-        .page-break {
-            page-break-after: always;
-        }
     </style>
 </head>
-
 
 <body>
     <div style="
@@ -140,7 +136,7 @@
                         <h3 style="font-size: 14px; font-weight: 500">Mix Type </h3>
                     </th>
                     <th style="padding: 5px 6px 5px 6px; border: 1px solid #000">
-                        <h3 style="font-size: 14px; font-weight: 500">Max Density, (lb/ft <sup>3</sup>)</h3>
+                        <h3 style="font-size: 14px; font-weight: 500">Max Density, (lb/ft<sup>3</sup>)</h3>
                     </th>
                 </tr>
                 @if ($data->mix_a_id)
@@ -289,7 +285,7 @@
                         <h3 style="font-size: 14px; font-weight: 500">Maximum <br> Theo. <br> Density (pcf)</h3>
                     </th>
                     <th width="10%" style="border: 1px solid #000">
-                        <h3 style="font-size: 14px; font-weight: 500">In Situ <br> Density (lb/ft3)</h3>
+                        <h3 style="font-size: 14px; font-weight: 500">In Situ <br> Density (lb/ft<sup>3</sup>)</h3>
                     </th>
                     <th width="15%" style="border: 1px solid #000">
                         <h3 style="font-size: 14px; font-weight: 500">% Relative Compaction</h3>
@@ -781,7 +777,7 @@
                 </td>
             </tr>
         </table>
-        <p style="padding-bottom: 30px; font-size: 13px; font-weight: 400; text-align: left">
+        <p style="padding-bottom: 30px; font-size: 12px; font-style: italic; font-weight: 400; text-align: left;">
             These test results apply only to the specific samples/location/materials noted and may not be
             representative
             of other areas or similar materials. This report may not be reproduced, except in full, without

@@ -296,7 +296,7 @@ Route::get('/inspection/data/set/nine/report/ijP6ERmmdeLfFi56595438805{id}4ijP6E
 Route::get('/inspection/data/set/ten/report/ijP6ERmmdeLfFi56595438805{id}4ijP6ERmmdeLfFi5RiwZATmrI2SMOYYVSmdtcmjxJe2K31U5knK', [InvoiceController::class, 'InspectionConcreteDataSetTen'])->name('inspection.concrete.generate.ten');
 
 
-Route::get('/commercial/report/ijP6ERmmdeLfFi51864136533{id}4ijP6ERmmdeLfFi5RiwZATmrI2SMOYYVSmdtcmjxJe2K31U5knK', [InvoiceController::class, 'templateSoilAggregate'])->name('soil.aggregate.generate');
+Route::get('/soil-aggregate/report/ijP6ERmmdeLfFi51864136533{id}4ijP6ERmmdeLfFi5RiwZATmrI2SMOYYVSmdtcmjxJe2K31U5knK', [InvoiceController::class, 'templateSoilAggregate'])->name('soil.aggregate.generate');
 
 
 Route::get('/concrete/field/report/ijP6ERmmdeLfFi51864136533{id}4ijP6ERmmdeLfFi5RiwZATmrI2SMOYYVSmdtcmjxJe2K31U5knK', [InvoiceController::class, 'concreteFieldReport'])->name('concrete.field.report.generate');

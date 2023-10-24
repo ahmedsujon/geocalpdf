@@ -12,10 +12,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }
-
-        .page-break {
-            page-break-after: always;
+            font-family: Arial, sans-serif;
         }
     </style>
 </head>

@@ -12,6 +12,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: Arial, sans-serif;
         }
     </style>
 </head>
@@ -1113,7 +1114,7 @@
             </table>
 
         </div>
-        <p style="padding-top: 10px; padding-bottom: 30px; font-size: 13px; font-weight: 400; text-align: left">
+        <p style="padding-top: 10px; padding-bottom: 30px; font-size: 12px; font-style: italic; font-weight: 400; text-align: left">
             These test results apply only to the specific samples/location/materials noted and may not be
             representative
             of other areas or similar materials. This report may not be reproduced, except in full, without

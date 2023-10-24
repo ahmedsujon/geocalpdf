@@ -38,7 +38,7 @@ class InvoiceController extends Controller
         $data->client_company_name = client($data->client_id)->company_name;
 
         $pdf = Pdf::loadView('pdf.commercial', compact('data'));
-        return $pdf->stream('report.pdf');
+        return $pdf->stream('asphalt-field-density-by-nuclear-method-commercial-report.pdf');
     }
 
     public function templateSoilAggregate($id)
@@ -54,6 +54,7 @@ class InvoiceController extends Controller
         $pdf = Pdf::loadView('pdf.soil_aggregate', compact('data'));
         return $pdf->stream('field-density-soil-aggregate-report.pdf');
     }
+    
     public function cdotPDF($id)
     {
         $data = FieldDensityCdot::findOrFail($id);
@@ -64,7 +65,7 @@ class InvoiceController extends Controller
         $data->client_company_name = client($data->client_id)->company_name;
 
         $pdf = Pdf::loadView('pdf.cdot_form', compact('data'));
-        return $pdf->stream('report.pdf');
+        return $pdf->stream('asphalt-field-density-by-nuclear-mMethod-cdot-report.pdf');
     }
 
     public function plasticConcretePDF($id)

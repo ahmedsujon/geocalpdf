@@ -221,28 +221,28 @@
                             @error('project_id')
                             <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                             @enderror
-                            <div class="input-group mt-2">
+                            <div class="input-group">
                                 <span class="input-group-text width18">Client Name:</span>
                                 <input type="text" class="form-control form-color" wire:model="client_name" readonly>
                             </div>
                             @error('client_id')
                             <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                             @enderror
-                            <div class="input-group mt-2">
+                            <div class="input-group">
                                 <span class="input-group-text width18">Project Number:</span>
                                 <input type="text" class="form-control form-color" wire:model="project_number" readonly>
                             </div>
                             @error('project_number')
                             <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                             @enderror
-                            <div class="input-group mt-2">
+                            <div class="input-group">
                                 <span class="input-group-text width18">Date:</span>
                                 <input type="date" class="form-control form-color" wire:model="date">
                             </div>
                             @error('date')
                             <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                             @enderror
-                            <div class="input-group mt-2">
+                            <div class="input-group">
                                 <span class="input-group-text width18">Technician:</span>
                                 <select class="form-select" wire:model="user_id">
                                     <option value="">Select Technician</option>
@@ -256,7 +256,7 @@
                             <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                             @enderror
 
-                            <div class="input-group mt-2">
+                            <div class="input-group">
                                 <span class="input-group-text width18">Weather:</span>
                                 <input type="text" class="form-control form-color" wire:model="weather">
                             </div>
@@ -264,7 +264,7 @@
                             <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                             @enderror
 
-                            <div class="input-group mt-2">
+                            <div class="input-group">
                                 <span class="input-group-text width18">Test Method:</span>
                                 <select class="form-select" wire:model="test_method">
                                     <option value="">Select Test Method</option>
@@ -279,7 +279,7 @@
 
                         <div class="col col-lg-6 select-border">
                             <h6>Gauge Information</h6>
-                            <div class="input-group mt-2">
+                            <div class="input-group">
                                 <span class="input-group-text">Office Address:</span>
                                 <select class="form-select" wire:model="office_address">
                                     <option value="">Select office addres</option>
@@ -294,7 +294,7 @@
                             @error('office_address')
                             <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                             @enderror
-                            <div class="input-group mt-2">
+                            <div class="input-group">
                                 <span class="input-group-text width9">Make:</span>
                                 <span class="input-group-text width9">Troxler:</span>
                                 <select class="form-select" wire:model="troxler">
@@ -316,7 +316,7 @@
                             <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                             @enderror
 
-                            <div class="input-group mt-2">
+                            <div class="input-group">
                                 <span class="input-group-text width18">Model:</span>
                                 <select class="form-select" wire:model="model">
                                     <option value="">Select Model</option>
@@ -329,7 +329,7 @@
                                 @enderror
                             </div>
 
-                            <div class="input-group mt-2">
+                            <div class="input-group">
                                 <span class="input-group-text width18">Serial No:</span>
                                 <select class="form-select" wire:model="serial_no">
                                     <option value="">Select Serial No</option>
@@ -367,7 +367,7 @@
                                 @enderror
                             </div>
 
-                            <div class="input-group mt-2">
+                            <div class="input-group">
                                 <span class="input-group-text width28">Density Standard Count:</span>
                                 <input type="number" class="form-control form-color" wire:model="density_count">
                                 @error('density_count')
@@ -375,7 +375,7 @@
                                 @enderror
                             </div>
 
-                            <div class="input-group mt-2">
+                            <div class="input-group">
                                 <span class="input-group-text width28">Moisture Standard Count:</span>
                                 <input type="number" class="form-control form-color" wire:model="moisture_count">
                                 @error('moisture_count')
@@ -383,7 +383,7 @@
                                 @enderror
                             </div>
 
-                            <div class="input-group mt-2">
+                            <div class="input-group">
                                 <span class="input-group-text">Moisture/Density Equations used? (yes/no):</span>
                                 <select class="form-select" wire:model="moisture_equation">
                                     <option value="">Select</option>
@@ -395,7 +395,7 @@
                                 @enderror
                             </div>
 
-                            <div class="input-group mt-2">
+                            <div class="input-group">
                                 <span class="input-group-text width18">Test Mode:</span>
                                 <select class="form-select" wire:model="test_mode">
                                     <option value="">Select Test Mode</option>
@@ -410,8 +410,6 @@
                     </div>
                 </div>
 
-
-
                 <div class="container">
                     <div class="row justify-content-md-center pb-3">
                         <div class="col-lg-12">
@@ -425,7 +423,7 @@
                                             <th class="customcolor" scope="col">Plant</th>
                                             <th class="customcolor" scope="col">Mix Type</th>
                                             <th class="customcolor" scope="col">Max Theoretical Density,
-                                                (lb/ft3)
+                                                (lb/ft<sup>3</sup>)
                                             </th>
                                             <th class="customcolor" scope="col">Max Theoretical SpecificGravity
                                             </th>
@@ -724,9 +722,10 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="row mt-3">
                     <div class="col-lg-12">
-                        <h6>Test Results</h6>
+                        <h6>Test Results :</h6>
                         <div class="table-responsive">
                             <table class="table table-bordered" style="margin-bottom: 0;">
                                 <thead>
