@@ -260,9 +260,9 @@
                                         </select>
                                     </div>
                                     @error('project_id')
-                                    <span class="text-danger mt-2" style="font-size: 12px;">{{ $message }}</span>
+                                    <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
-                                    <div class="input-group mt-2">
+                                    <div class="input-group">
                                         <span class="input-group-text width18">Client Name:</span>
                                         <input type="text" class="form-control form-color" wire:model="client_name"
                                             readonly>
@@ -270,7 +270,7 @@
                                     @error('client_id')
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
-                                    <div class="input-group mt-2">
+                                    <div class="input-group">
                                         <span class="input-group-text width18">Project Number:</span>
                                         <input type="text" class="form-control form-color" wire:model="project_number"
                                             readonly>
@@ -278,14 +278,14 @@
                                     @error('project_number')
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
-                                    <div class="input-group mt-2">
+                                    <div class="input-group">
                                         <span class="input-group-text width18">Date:</span>
                                         <input type="date" class="form-control form-color" wire:model="date">
                                     </div>
                                     @error('date')
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
-                                    <div class="input-group mt-2">
+                                    <div class="input-group">
                                         <span class="input-group-text width18">Technician:</span>
                                         <select class="form-select" wire:model="user_id">
                                             <option value="">Select Technician</option>
@@ -300,7 +300,7 @@
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
 
-                                    <div class="input-group mt-2">
+                                    <div class="input-group">
                                         <span class="input-group-text width18">Weather:</span>
                                         <input type="text" class="form-control form-color" wire:model="weather"
                                             readonly>
@@ -309,7 +309,7 @@
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
 
-                                    <div class="input-group mt-2">
+                                    <div class="input-group">
                                         <span class="input-group-text width18">Test Method:</span>
                                         <select class="form-select" wire:model="main_test_method">
                                             <option value="">Select Test Method</option>
@@ -323,7 +323,7 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <h6>Gauge Information</h6>
-                                    <div class="input-group mt-2">
+                                    <div class="input-group">
                                         <span class="input-group-text width18">Office Address:</span>
                                         <select class="form-select" wire:model="office_address">
                                             <option value="">Select office addres</option>
@@ -339,7 +339,7 @@
                                     @error('office_address')
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
-                                    <div class="input-group mt-2">
+                                    <div class="input-group">
                                         <span class="input-group-text width18">Troxler:</span>
                                         <select class="form-select" wire:model="troxler">
                                             <option value="">Select</option>
@@ -360,7 +360,7 @@
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
 
-                                    <div class="input-group mt-2">
+                                    <div class="input-group">
                                         <span class="input-group-text width18">Model:</span>
                                         <select class="form-select" wire:model="model">
                                             <option value="">Select Model</option>
@@ -373,7 +373,7 @@
                                         @enderror
                                     </div>
 
-                                    <div class="input-group mt-2">
+                                    <div class="input-group">
                                         <span class="input-group-text width18">Serial No:</span>
                                         <select class="form-select" wire:model="serial_number">
                                             <option value="">Select Serial No</option>
@@ -411,7 +411,7 @@
                                         @enderror
                                     </div>
 
-                                    <div class="input-group mt-2">
+                                    <div class="input-group">
                                         <span class="input-group-text width27">Density Standard Count:</span>
                                         <input type="number" class="form-control form-color" wire:model="density_count"
                                             readonly>
@@ -420,7 +420,7 @@
                                         @enderror
                                     </div>
 
-                                    <div class="input-group mt-2">
+                                    <div class="input-group">
                                         <span class="input-group-text width27">Moisture Standard Count:</span>
                                         <input type="number" class="form-control form-color" wire:model="moisture_count"
                                             readonly>
@@ -429,7 +429,7 @@
                                         @enderror
                                     </div>
 
-                                    <div class="input-group mt-2">
+                                    <div class="input-group">
                                         <span class="input-group-text">Moisture/Density Equations used?
                                             (yes/no):</span>
                                         <select class="form-select" wire:model="moisture_equation">
@@ -442,7 +442,7 @@
                                         @enderror
                                     </div>
 
-                                    <div class="input-group mt-2">
+                                    <div class="input-group">
                                         <span class="input-group-text width18">Test Mode:</span>
                                         <select class="form-select" wire:model="test_mode">
                                             <option value="">Select Test Mode</option>
