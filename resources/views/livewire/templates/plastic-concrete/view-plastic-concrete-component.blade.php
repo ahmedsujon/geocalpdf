@@ -243,7 +243,7 @@
                         </div>
 
                         <div class="container">
-                            <div class="row mb-2 select-border">
+                            <div class="row select-border">
                                 <div class="col-lg-6">
                                     <h5>Project Information</h5>
                                     <div class="input-group">
@@ -257,10 +257,10 @@
                                         </select>
                                     </div>
                                     @error('project_id')
-                                    <span class="text-danger mb-2" style="font-size: 12px;">{{ $message }}</span>
+                                    <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
 
-                                    <div class="input-group mt-2">
+                                    <div class="input-group">
                                         <span class="input-group-text width18">Client Name:</span>
                                         <input type="text" class="form-control form-color" wire:model="client_name"
                                             readonly>
@@ -268,7 +268,7 @@
                                     @error('client_id')
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
-                                    <div class="input-group mt-2">
+                                    <div class="input-group">
                                         <span class="input-group-text width18">Project Number:</span>
                                         <input type="text" class="form-control form-color" wire:model="project_number"
                                             readonly>
@@ -276,14 +276,14 @@
                                     @error('project_number')
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
-                                    <div class="input-group mt-2">
+                                    <div class="input-group">
                                         <span class="input-group-text width18">Date:</span>
                                         <input type="date" class="form-control form-color" wire:model="date" readonly>
                                     </div>
                                     @error('date')
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
-                                    <div class="input-group mt-2">
+                                    <div class="input-group">
                                         <span class="input-group-text width18">Technician:</span>
                                         <select class="form-select" wire:model="user_id">
                                             <option value="">Select Technician</option>
@@ -297,14 +297,14 @@
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
                                     <h5>Weather Information</h5>
-                                    <div class="input-group mb-2">
+                                    <div class="input-group">
                                         <span class="input-group-text width18">Weather:</span>
                                         <input type="text" class="form-control form-color" wire:model="weather" readonly>
                                         @error('weather')
                                         <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                         @enderror
                                     </div>
-                                    <div class="input-group mb-2">
+                                    <div class="input-group">
                                         <span class="input-group-text width18">Est. Wind (mph):</span>
                                         <input type="text" class="form-control form-color" wire:model="est_wind" readonly>
                                         @error('est_wind')
@@ -317,28 +317,28 @@
                                         @enderror
                                     </div>
                                     <h5>Equipment Identification</h5>
-                                    <div class="input-group mb-2">
+                                    <div class="input-group">
                                         <span class="input-group-text width18">Slump Cone ID:</span>
                                         <input type="text" class="form-control form-color" wire:model="slump_cone" readonly>
                                         @error('slump_cone')
                                         <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                         @enderror
                                     </div>
-                                    <div class="input-group mb-2">
+                                    <div class="input-group">
                                         <span class="input-group-text width18">Thermometer ID:</span>
                                         <input type="text" class="form-control form-color" wire:model="thermometer" readonly>
                                         @error('thermometer')
                                         <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                         @enderror
                                     </div>
-                                    <div class="input-group mb-2">
+                                    <div class="input-group">
                                         <span class="input-group-text width18">Air Meter ID:</span>
                                         <input type="text" class="form-control form-color" wire:model="air_meter" readonly>
                                         @error('air_meter')
                                         <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                         @enderror
                                     </div>
-                                    <div class="input-group mb-2">
+                                    <div class="input-group">
                                         <span class="input-group-text">Unit Weight Measure ID:</span>
                                         <input type="text" class="form-control form-color"
                                             wire:model="unit_weight_measure" readonly>
@@ -346,7 +346,7 @@
                                         <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                         @enderror
                                     </div>
-                                    <div class="input-group mb-2">
+                                    <div class="input-group">
                                         <span class="input-group-text width18">Scale ID:</span>
                                         <input type="text" class="form-control form-color" wire:model="scale_id" readonly>
                                         @error('scale_id')
@@ -356,7 +356,7 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <h5>Mix Information</h5>
-                                    <div class="input-group mt-2">
+                                    <div class="input-group">
                                         <span class="input-group-text width18">Office Address:</span>
                                         <select class="form-select" wire:model="office_address">
                                             <option value="">Select office addres</option>
@@ -377,14 +377,14 @@
                                     @error('office_address')
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
-                                    <div class="input-group mb-2 mt-2">
+                                    <div class="input-group">
                                         <span class="input-group-text width18">Contractor:</span>
                                         <input type="text" class="form-control form-color" wire:model='contractor' readonly>
                                         @error('contractor')
                                         <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                         @enderror
                                     </div>
-                                    <div class="input-group mb-2">
+                                    <div class="input-group">
                                         <span class="input-group-text width18">Mix Supplier:</span>
                                         <input type="text" class="form-control form-color" wire:model="mix_supplier" readonly>
                                         @error('mix_supplier')
@@ -396,14 +396,14 @@
                                         <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                         @enderror
                                     </div>
-                                    <div class="input-group mb-2">
+                                    <div class="input-group">
                                         <span class="input-group-text width18">Mix ID:</span>
                                         <input type="text" class="form-control form-color" wire:model='mix_id' readonly>
                                         @error('mix_id')
                                         <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                         @enderror
                                     </div>
-                                    <div class="input-group mt-2">
+                                    <div class="input-group">
                                         <span class="input-group-text width23">Design Strength (psi):</span>
                                         <input type="number" step="any" class="form-control form-color"
                                             wire:model='design_strength' readonly>
@@ -411,7 +411,7 @@
                                     @error('design_strength')
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
-                                    <div class="input-group mt-2">
+                                    <div class="input-group">
                                         <span class="input-group-text width23">Required Strength (psi):</span>
                                         <input type="number" step="any" class="form-control form-color"
                                             wire:model='required_strength' readonly>
@@ -419,7 +419,7 @@
                                     @error('required_strength')
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
-                                    <div class="input-group mt-2">
+                                    <div class="input-group">
                                         <span class="input-group-text width27">Specified Slump:</span>
                                         <span class="input-group-text">Min:</span>
                                         <input type="number" step="any" class="form-control form-color"
@@ -434,7 +434,7 @@
                                         <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                         @enderror
                                     </div>
-                                    <div class="input-group mt-2">
+                                    <div class="input-group">
                                         <span class="input-group-text width27">Specified Air Content:</span>
                                         <span class="input-group-text">Min:</span>
                                         <input type="number" step="any" class="form-control form-color"
@@ -449,7 +449,7 @@
                                         <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                         @enderror
                                     </div>
-                                    <div class="input-group mt-2">
+                                    <div class="input-group">
                                         <span class="input-group-text width27">Conc Temp Requirements:</span>
                                         <span class="input-group-text">Min:</span>
                                         <input type="number" step="any" class="form-control form-color"
@@ -464,14 +464,14 @@
                                         <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                         @enderror
                                     </div>
-                                    <div class="input-group mt-2">
+                                    <div class="input-group">
                                         <span class="input-group-text width15">Cement (lb):</span>
                                         <input type="text" class="form-control form-color" wire:model='cement_ib' readonly>
                                         @error('cement_ib')
                                         <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                         @enderror
                                     </div>
-                                    <div class="input-group mt-2">
+                                    <div class="input-group">
                                         <span class="input-group-text">Other Cementitious Matl (fly ash/slag/etc)
                                             (lb):</span>
                                         <input type="text" class="form-control form-color"
@@ -480,21 +480,21 @@
                                         <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                         @enderror
                                     </div>
-                                    <div class="input-group mt-2">
+                                    <div class="input-group">
                                         <span class="input-group-text width25">Water (gal/lb):</span>
                                         <input type="text" class="form-control form-color" wire:model='water' readonly>
                                         @error('water')
                                         <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                         @enderror
                                     </div>
-                                    <div class="input-group mt-2">
+                                    <div class="input-group">
                                         <span class="input-group-text width25">Fine Aggregate (lb):</span>
                                         <input type="text" class="form-control form-color" wire:model='fine_aggregate' readonly>
                                         @error('fine_aggregate')
                                         <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                         @enderror
                                     </div>
-                                    <div class="input-group mt-2">
+                                    <div class="input-group">
                                         <span class="input-group-text width25">Course Aggregate (lb):</span>
                                         <input type="text" class="form-control form-color"
                                             wire:model='course_aggregate' readonly>
@@ -502,28 +502,28 @@
                                         <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                         @enderror
                                     </div>
-                                    <div class="input-group mt-2">
+                                    <div class="input-group">
                                         <span class="input-group-text width25">Max Aggregate Size (in):</span>
                                         <input type="text" class="form-control form-color" wire:model='max_aggregate' readonly>
                                         @error('max_aggregate')
                                         <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                         @enderror
                                     </div>
-                                    <div class="input-group mt-2">
+                                    <div class="input-group">
                                         <span class="input-group-text width25">Admixture 1 (oz):</span>
                                         <input type="text" class="form-control form-color" wire:model='admixture_one' readonly>
                                         @error('admixture_one')
                                         <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                         @enderror
                                     </div>
-                                    <div class="input-group mt-2">
+                                    <div class="input-group">
                                         <span class="input-group-text width25">Admixture 2 (oz):</span>
                                         <input type="text" class="form-control form-color" wire:model='admixture_two' readonly>
                                         @error('admixture_two')
                                         <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                         @enderror
                                     </div>
-                                    <div class="input-group mt-2">
+                                    <div class="input-group">
                                         <span class="input-group-text width25">Admixture 3 (oz):</span>
                                         <input type="text" class="form-control form-color" wire:model='admixture_three' readonly>
                                         @error('admixture_three')

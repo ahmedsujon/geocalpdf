@@ -238,10 +238,10 @@
                         </div>
 
                         <div class="container">
-                            <div class="row mb-3">
+                            <div class="row">
                                 <div class="col-lg-6 select-border">
                                     <h6 style="font-weight: 700;">REFERENCE DATA</h6>
-                                    <div class="input-group mt-3">
+                                    <div class="input-group">
                                         <span class="input-group-text width20">Type of Structure:</span>
                                         <input type="text" class="form-control form-color"
                                             wire:model="type_of_structure">
@@ -250,7 +250,7 @@
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
 
-                                    <div class="input-group mt-3">
+                                    <div class="input-group">
                                         <span class="input-group-text width20">General Location:</span>
                                         <input type="text" class="form-control form-color"
                                             wire:model="general_location">
@@ -259,7 +259,7 @@
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
 
-                                    <div class="input-group mt-3">
+                                    <div class="input-group">
                                         <span class="input-group-text width20">Specific Location:</span>
                                         <input type="text" class="form-control form-color"
                                             wire:model="specific_location">
@@ -268,7 +268,7 @@
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
 
-                                    <div class="input-group mt-3">
+                                    <div class="input-group">
                                         <span class="input-group-text width20">Mix ID:</span>
                                         <input type="text" class="form-control form-color" wire:model="mix_id">
                                         @error('mix_id')
@@ -281,7 +281,7 @@
                                         @enderror
                                     </div>
 
-                                    <div class="input-group mt-3">
+                                    <div class="input-group">
                                         <span class="input-group-text width20">Ticket No:</span>
                                         <input type="text" class="form-control form-color" wire:model="ticket_no">
                                     </div>
@@ -289,7 +289,7 @@
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
 
-                                    <div class="input-group mt-3">
+                                    <div class="input-group">
                                         <span class="input-group-text width20">Batch Time:</span>
                                         <input type="time" class="form-control form-color" wire:model="batch_time">
                                     </div>
@@ -297,7 +297,7 @@
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
 
-                                    <div class="input-group mt-3">
+                                    <div class="input-group">
                                         <span class="input-group-text width20">Sample Time:</span>
                                         <input type="time" class="form-control form-color" wire:model="sample_time">
                                     </div>
@@ -305,7 +305,7 @@
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
 
-                                    <div class="input-group mt-3">
+                                    <div class="input-group">
                                         <span class="input-group-text">Time Truck Finished Unloading:</span>
                                         <input type="time" class="form-control form-color" wire:model="ttf_unloading">
                                     </div>
@@ -313,7 +313,7 @@
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
 
-                                    <div class="input-group mt-3">
+                                    <div class="input-group">
                                         <span class="input-group-text width20">Ambient Temp:</span>
                                         <input type="text" class="form-control form-color" wire:model="ambient_temp">
                                     </div>
@@ -321,7 +321,7 @@
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
 
-                                    <div class="input-group mt-3">
+                                    <div class="input-group">
                                         <span class="input-group-text width20">Yards at Sampling:</span>
                                         <input type="text" class="form-control form-color"
                                             wire:model="yards_at_sampling">
@@ -330,7 +330,7 @@
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
 
-                                    <div class="input-group mt-3">
+                                    <div class="input-group">
                                         <span class="input-group-text">Total Yard of Placement:</span>
                                         <input type="text" class="form-control form-color"
                                             wire:model="total_yard_placement">
@@ -339,7 +339,7 @@
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
 
-                                    <div class="input-group mt-3">
+                                    <div class="input-group">
                                         <span class="input-group-text width20">Water Added (gals):</span>
                                         <input type="text" class="form-control form-color" wire:model="water_added">
                                     </div>
@@ -347,7 +347,7 @@
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
 
-                                    <div class="input-group mt-3">
+                                    <div class="input-group">
                                         <span class="input-group-text width20">Water/Cement Ratio:</span>
                                         <input type="text" class="form-control form-color"
                                             wire:model="water_cement_ratio">
@@ -356,7 +356,6 @@
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
                                 </div>
-
                                 <div class="col-lg-6 select-border">
                                     <h6>&nbsp;</h6>
                                     <div class="input-group mt-2">
@@ -376,7 +375,7 @@
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
 
-                                    <div class="input-group mt-3">
+                                    <div class="input-group">
                                         <span class="input-group-text width20">Cylinder ID:</span>
                                         <input type="text" class="form-control form-color" wire:model='cylinder_id'>
                                     </div>
@@ -384,7 +383,7 @@
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
 
-                                    <div class="input-group mt-3">
+                                    <div class="input-group">
                                         <span class="input-group-text width20">Project Name:</span>
                                         <select class="form-select" wire:model="project_id" wire:change="selectInfo"
                                             id="selectInfo">
@@ -398,7 +397,7 @@
                                     <span class="text-danger mb-3" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
 
-                                    <div class="input-group mt-3">
+                                    <div class="input-group">
                                         <span class="input-group-text width20">Client Name:</span>
                                         <input type="text" class="form-control form-color" wire:model="client_name"
                                             readonly>
@@ -407,7 +406,7 @@
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
 
-                                    <div class="input-group mt-3">
+                                    <div class="input-group">
                                         <span class="input-group-text width20">Project Number:</span>
                                         <input type="text" class="form-control form-color" wire:model="project_number"
                                             readonly>
@@ -416,7 +415,7 @@
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
 
-                                    <div class="input-group mt-3">
+                                    <div class="input-group">
                                         <span class="input-group-text width20">Date:</span>
                                         <input type="date" class="form-control form-color" wire:model="date">
                                     </div>
@@ -424,7 +423,7 @@
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
 
-                                    <div class="input-group mt-3">
+                                    <div class="input-group">
                                         <span class="input-group-text width20">Supplier:</span>
                                         <input type="text" class="form-control form-color" wire:model="supplier">
                                         @error('supplier')
@@ -437,7 +436,7 @@
                                         @enderror
                                     </div>
 
-                                    <div class="input-group mt-3">
+                                    <div class="input-group">
                                         <span class="input-group-text width20">Sampled By:</span>
                                         <input type="text" class="form-control form-color" wire:model="sampled_by">
                                     </div>
@@ -445,14 +444,14 @@
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
 
-                                    <div class="input-group mt-3">
+                                    <div class="input-group">
                                         <span class="input-group-text" style="width: 45%; font-weight: 700;">PHYSICAL
                                             PROPERTIES</span>
                                         <span class="input-group-text"
                                             style="width: 55%; font-weight: 700;">SPECIFICATION</span>
                                     </div>
 
-                                    <div class="input-group mt-3">
+                                    <div class="input-group">
                                         <span class="input-group-text width25">Air Content (%): &nbsp; &nbsp; &nbsp;
                                             &nbsp;</span>
                                         <input type="number" step="any" class="form-control form-color"
@@ -468,7 +467,7 @@
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
 
-                                    <div class="input-group mt-3">
+                                    <div class="input-group">
                                         <span class="input-group-text width25">Slump (in): &nbsp; &nbsp; &nbsp; &nbsp;
                                             &nbsp;
                                             &nbsp;
@@ -486,7 +485,7 @@
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
 
-                                    <div class="input-group mt-3">
+                                    <div class="input-group">
                                         <span class="input-group-text width25">Concrete Temp (°F):</span>
                                         <input type="number" step="any" class="form-control form-color"
                                             wire:model="concrete_temp">
@@ -503,7 +502,7 @@
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
 
-                                    <div class="input-group mt-3">
+                                    <div class="input-group">
                                         <span class="input-group-text width25">Unit Weight (pcf):</span>
                                         <input type="text" class="form-control form-color" wire:model="unit_weight">
                                         @error('unit_weight')
@@ -511,7 +510,7 @@
                                         @enderror
                                     </div>
 
-                                    <div class="input-group mt-3">
+                                    <div class="input-group">
                                         <span class="input-group-text width25">Yield: (CY):</span>
                                         <input type="text" class="form-control form-color" wire:model="yield">
                                         <span class="input-group-text">Relative Yield:</span>
@@ -521,7 +520,7 @@
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
 
-                                    <div class="input-group mt-3">
+                                    <div class="input-group">
                                         <span class="input-group-text width25">Mix Design Strength (psi):</span>
                                         <input type="text" class="form-control form-color"
                                             wire:model="mix_design_strength">
@@ -530,7 +529,7 @@
                                         @enderror
                                     </div>
 
-                                    <div class="input-group mt-3">
+                                    <div class="input-group">
                                         <span class="input-group-text width25">Required Strength (psi):</span>
                                         <input type="text" class="form-control form-color"
                                             wire:model="required_strength" wire:keyup='specifiedStrength' required>
@@ -543,10 +542,10 @@
                         </div>
 
                         <div class="container">
-                            <div class="row mb-3">
+                            <div class="row">
                                 <div class="col-lg-6">
                                     <h6 style="font-weight: 700;">Weather</h6>
-                                    <div class="input-group mt-3">
+                                    <div class="input-group">
                                         <span class="input-group-text width20">Weather:</span>
                                         <input type="text" class="form-control form-color" wire:model="weather">
                                     </div>
@@ -554,7 +553,7 @@
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
 
-                                    <div class="input-group mt-3">
+                                    <div class="input-group">
                                         <span class="input-group-text width20">Est. Wind (mph):</span>
                                         <input type="text" class="form-control form-color" wire:model="est_wind">
                                         <span class="input-group-text">Est. RH %:</span>
@@ -567,7 +566,7 @@
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
 
-                                    <div class="input-group mt-3">
+                                    <div class="input-group">
                                         <span class="input-group-text width20">Slump Cone ID:</span>
                                         <input type="text" class="form-control form-color" wire:model="slump_cone_id">
                                     </div>
@@ -575,7 +574,7 @@
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
 
-                                    <div class="input-group mt-3">
+                                    <div class="input-group">
                                         <span class="input-group-text width20">Thermometer ID:</span>
                                         <input type="text" class="form-control form-color" wire:model="thermometer_id">
                                     </div>
@@ -583,7 +582,7 @@
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
 
-                                    <div class="input-group mt-3">
+                                    <div class="input-group">
                                         <span class="input-group-text width20">Air Meter ID:</span>
                                         <input type="text" class="form-control form-color" wire:model="air_meter_id">
                                     </div>
@@ -591,7 +590,7 @@
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
 
-                                    <div class="input-group mt-3">
+                                    <div class="input-group">
                                         <span class="input-group-text">Unit Weight Measure ID:</span>
                                         <input type="text" class="form-control form-color"
                                             wire:model="unit_weight_measure_id">
@@ -600,7 +599,7 @@
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
 
-                                    <div class="input-group mt-3">
+                                    <div class="input-group">
                                         <span class="input-group-text width20">Scale ID:</span>
                                         <input type="text" class="form-control form-color"
                                             wire:model="weather_scale_id">
@@ -612,7 +611,7 @@
 
                                 <div class="col-lg-6">
                                     <h6>&nbsp;</h6>
-                                    <div class="input-group mt-3">
+                                    <div class="input-group">
                                         <span class="input-group-text width26">Cement (lb):</span>
                                         <input type="text" class="form-control form-color" wire:model="cement">
                                     </div>
@@ -620,7 +619,7 @@
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
 
-                                    <div class="input-group mt-3">
+                                    <div class="input-group">
                                         <span class="input-group-text">Other Cementitious Matl (fly
                                             ash/slag/etc)/(lb):</span>
                                         <input type="text" class="form-control form-color"
@@ -633,7 +632,7 @@
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
 
-                                    <div class="input-group mt-3">
+                                    <div class="input-group">
                                         <span class="input-group-text width26">Water (lb):</span>
                                         <input type="text" class="form-control form-color" wire:model="water">
                                     </div>
@@ -641,7 +640,7 @@
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
 
-                                    <div class="input-group mt-3">
+                                    <div class="input-group">
                                         <span class="input-group-text width26">Fine Aggregate (lb):</span>
                                         <input type="text" class="form-control form-color" wire:model="fine_aggregate">
                                     </div>
@@ -649,7 +648,7 @@
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
 
-                                    <div class="input-group mt-3">
+                                    <div class="input-group">
                                         <span class="input-group-text width26">Course Aggregate (lb):</span>
                                         <input type="text" class="form-control form-color"
                                             wire:model="course_aggregate">
@@ -658,7 +657,7 @@
                                         @enderror
                                     </div>
 
-                                    <div class="input-group mt-3">
+                                    <div class="input-group">
                                         <span class="input-group-text width26">Max Aggregate Size (in):</span>
                                         <input type="text" class="form-control form-color"
                                             wire:model="max_aggregate_size">
@@ -667,7 +666,7 @@
                                         @enderror
                                     </div>
 
-                                    <div class="input-group mt-3">
+                                    <div class="input-group">
                                         <span class="input-group-text width26">Admixture 1: Type / (oz)</span>
                                         <input type="text" class="form-control form-color" wire:model="admixture_a">
                                         <span class="input-group-text"></span>
@@ -680,7 +679,7 @@
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
 
-                                    <div class="input-group mt-3">
+                                    <div class="input-group">
                                         <span class="input-group-text width26">Admixture 2: Type / (oz)</span>
                                         <input type="text" class="form-control form-color" wire:model="admixture_b">
                                         <span class="input-group-text"></span>
@@ -693,7 +692,7 @@
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
 
-                                    <div class="input-group mt-3">
+                                    <div class="input-group">
                                         <span class="input-group-text width26">Admixture 3: Type / (oz)</span>
                                         <input type="text" class="form-control form-color" wire:model="admixture_c">
                                         <span class="input-group-text"></span>
@@ -706,7 +705,7 @@
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
 
-                                    <div class="input-group mt-3">
+                                    <div class="input-group">
                                         <span class="input-group-text width26">Total Batch Weight (lb):</span>
                                         <input type="text" class="form-control form-color"
                                             wire:model="total_batch_weight">
@@ -719,8 +718,7 @@
                             </div>
                         </div>
 
-
-                        <div class="row mb-3">
+                        <div class="row">
                             <div class="col-md-12">
                                 <h6 style="font-weight: 700;">COMPRESSIVE STRENGTHS</h6>
                                 <div class="table-responsive">
@@ -2101,7 +2099,7 @@
                         </div>
 
                         <div class="container">
-                            <div class="row mb-3">
+                            <div class="row">
                                 <div class="col-lg-4">
                                     <div class="input-group mt-3">
                                         <span class="input-group-text">Conc Comp Machine ID:</span>
