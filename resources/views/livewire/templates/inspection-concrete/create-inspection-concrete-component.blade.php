@@ -2226,6 +2226,9 @@
                                             </div>
                                         </div>
                                     </div>
+                                    @error('cylinders_condition')
+                                    <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
+                                    @enderror
 
                                     <div class="input-group mt-3">
                                         <label class="input-group-text">Chargeable Time:</label>

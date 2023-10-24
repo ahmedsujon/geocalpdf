@@ -108,9 +108,6 @@ class CreateInspectionConcreteSetEightsTable extends Migration
             $table->text('date_cylinders_received_lab')->nullable();
             $table->text('pick_up_by')->nullable();
             $table->text('cylinders_condition')->nullable();
-            $table->text('good')->nullable();
-            $table->text('fair')->nullable();
-            $table->text('poor')->nullable();
             $table->text('test_hours')->nullable();
             $table->text('pick_up_hours')->nullable();
             $table->text('delayed_hours')->nullable();
