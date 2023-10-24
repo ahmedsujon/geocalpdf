@@ -196,7 +196,7 @@
 
         }
 
-        @media screen and (max-width:1024px) { 
+        @media screen and (max-width:1024px) {
             .commercial-form .width12 {
                 width: 20%;
             }
@@ -2207,22 +2207,25 @@
                                     </div>
 
                                     <div class="input-group mt-3">
-                                        <span class="input-group-text">Cylinders condition:</span>
-                                        <input type="text" class="form-control form-color"
-                                            wire:model="cylinders_condition">
-                                        <span class="input-group-text">Good:</span>
-                                        <input type="text" class="form-control form-color" wire:model="good">
-                                        <span class="input-group-text">Fair:</span>
-                                        <input type="text" class="form-control form-color" wire:model="fair">
-                                        <span class="input-group-text">Poor:</span>
-                                        <input type="text" class="form-control form-color" wire:model="weather">
-                                        @error('poor')
-                                        <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
-                                        @enderror
+                                        <label class="col-md-3 my-1 control-label">Cylinders condition:</label>
+                                        <div class="col-md-9">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" wire:model="cylinders_condition"
+                                                    id="good" value="good">
+                                                <label class="form-check-label" for="good">Good</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" wire:model="cylinders_condition"
+                                                    id="fair" value="fair">
+                                                <label class="form-check-label" for="fair">Fair</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" wire:model="cylinders_condition"
+                                                    id="poor" value="poor">
+                                                <label class="form-check-label" for="poor">Poor</label>
+                                            </div>
+                                        </div>
                                     </div>
-                                    @error('troxler')
-                                    <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
-                                    @enderror
 
                                     <div class="input-group mt-3">
                                         <label class="input-group-text">Chargeable Time:</label>

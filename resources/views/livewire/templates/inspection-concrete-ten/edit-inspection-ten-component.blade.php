@@ -2209,14 +2209,13 @@
                                     <div class="input-group mt-3">
                                         <span class="input-group-text">Cylinders condition:</span>
                                         <input type="text" class="form-control form-color"
-                                            wire:model="cylinders_condition">
+                                            wire:model="good">
                                         <span class="input-group-text">Good:</span>
-                                        <input type="text" class="form-control form-color" wire:model="good">
-                                        <span class="input-group-text">Fair:</span>
                                         <input type="text" class="form-control form-color" wire:model="fair">
+                                        <span class="input-group-text">Fair:</span>
+                                        <input type="text" class="form-control form-color" wire:model="poor">
                                         <span class="input-group-text">Poor:</span>
-                                        <input type="text" class="form-control form-color" wire:model="weather">
-                                        @error('poor')
+                                        @error('good')
                                         <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                         @enderror
                                     </div>
