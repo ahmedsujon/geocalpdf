@@ -259,16 +259,16 @@
                                         </select>
                                     </div>
                                     @error('project_id')
-                                    <span class="text-danger mb-3" style="font-size: 12px;">{{ $message }}</span>
+                                    <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
-                                    <div class="input-group mt-3">
+                                    <div class="input-group">
                                         <span class="input-group-text width18">Client Name:</span>
                                         <input type="text" class="form-control form-color" readonly wire:model="client_name" readonly>
                                     </div>
                                     @error('client_id')
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
-                                    <div class="input-group mt-3">
+                                    <div class="input-group">
                                         <span class="input-group-text width18">Project Number:</span>
                                         <input type="text" class="form-control form-color" readonly wire:model="project_number" readonly>
                                     </div>
@@ -276,7 +276,7 @@
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
 
-                                    <div class="input-group mt-3">
+                                    <div class="input-group">
                                         <span class="input-group-text width18">Geocal Proj #:</span>
                                         <input type="text" class="form-control form-color" readonly wire:model="geocal_project_num">
                                     </div>
@@ -284,7 +284,7 @@
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
 
-                                    <div class="input-group mt-3">
+                                    <div class="input-group">
                                         <span class="input-group-text width22">Geocal Project Name:</span>
                                         <input type="text" class="form-control form-color" readonly wire:model="geocal_project_name">
                                     </div>
@@ -292,7 +292,7 @@
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
 
-                                    <div class="input-group mt-3">
+                                    <div class="input-group">
                                         <span class="input-group-text width22">CDOT Project Name:</span>
                                         <input type="text" class="form-control form-color" readonly wire:model="cdot_project_name">
                                     </div>
@@ -300,7 +300,7 @@
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
 
-                                    <div class="input-group mt-3">
+                                    <div class="input-group">
                                         <span class="input-group-text width12">Weather:</span>
                                         <input type="text" class="form-control form-color" readonly wire:model="weather">
                                     </div>
@@ -308,7 +308,7 @@
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
 
-                                    <div class="input-group mt-3">
+                                    <div class="input-group">
                                         <span class="input-group-text width12">Date:</span>
                                         <input type="date" class="form-control form-color" readonly wire:model="date">
                                     </div>
@@ -320,7 +320,7 @@
 
                                 <div class="col-lg-6">
                                     <h6>Gauge Information</h6>
-                                    <div class="input-group mt-2">
+                                    <div class="input-group">
                                         <span class="input-group-text width18">Office Address:</span>
                                         <select class="form-select" wire:model="office_address">
                                             <option value="">Select office addres</option>
@@ -337,7 +337,7 @@
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
 
-                                    <div class="input-group mt-3">
+                                    <div class="input-group">
                                         <span class="input-group-text width18">Test Method:</span>
                                         <select class="form-select" wire:model="test_method">
                                             <option value="">Select Test Method</option>
@@ -349,7 +349,7 @@
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
 
-                                    <div class="input-group mt-2">
+                                    <div class="input-group">
                                         <span class="input-group-text width18">Make: Troxler:</span>
                                         <select class="form-select" wire:model="troxler">
                                             <option value="">Select</option>
@@ -370,7 +370,7 @@
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
 
-                                    <div class="input-group mt-3">
+                                    <div class="input-group">
                                         <span class="input-group-text width18">Model:</span>
                                         <select class="form-select" wire:model="model">
                                             <option value="">Select Model</option>
@@ -383,7 +383,7 @@
                                         @enderror
                                     </div>
 
-                                    <div class="input-group mt-3">
+                                    <div class="input-group">
                                         <span class="input-group-text width18">Serial No:</span>
                                         <select class="form-select" wire:model="serial_no">
                                             <option value="">Select Serial No</option>
@@ -421,7 +421,7 @@
                                         @enderror
                                     </div>
 
-                                    <div class="input-group mt-3">
+                                    <div class="input-group">
                                         <span class="input-group-text width25">Density Standard Count:</span>
                                         <input type="number" class="form-control form-color" readonly wire:model="density_std_count">
                                         @error('density_std_count')
@@ -429,7 +429,7 @@
                                         @enderror
                                     </div>
 
-                                    <div class="input-group mt-3">
+                                    <div class="input-group">
                                         <span class="input-group-text width25">Moisture Standard Count:</span>
                                         <input type="number" class="form-control form-color" readonly wire:model="moisture_std_count">
                                         @error('moisture_std_count')
@@ -437,7 +437,7 @@
                                         @enderror
                                     </div>
 
-                                    <div class="input-group mt-3">
+                                    <div class="input-group">
                                         <span class="input-group-text">Moisture/Density Equations used?
                                             (yes/no):</span>
                                         <select class="form-select" wire:model="moisture_equations">
@@ -449,15 +449,12 @@
                                         <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                         @enderror
                                     </div>
-
                                 </div>
                             </div>
                         </div>
 
-
-
                         <div class="container">
-                            <div class="row mt-5 justify-content-md-center">
+                            <div class="row mt-3 justify-content-md-center">
                                 <div class="col-md-12">
                                     <div class="table-responsive">
                                         <table class="table table-bordered" style="margin-bottom: 0;">
@@ -528,14 +525,14 @@
                         </div>
 
                         <div class="container">
-                            <div class="row mt-5 justify-content-md-center">
+                            <div class="row mt-3 justify-content-md-center">
                                 <div class="col-md-12">
                                     <div class="table-responsive">
                                         <table class="table table-bordered" style="margin-bottom: 0;">
                                             <thead>
                                                 <tr>
-                                                    <th class="customcolor" scope="col">Tester Name</th>
-                                                    <th class="customcolor" scope="col">Sampled By</th>
+                                                    <th class="customcolor" scope="col">Tester (print name)</th>
+                                                    <th class="customcolor" scope="col">Sampled by (print name)</th>
                                                     <th class="customcolor" scope="col">Company Name or CDOT</th>
                                                     <th class="customcolor" scope="col">Gauge ID</th>
                                                 </tr>
@@ -581,7 +578,7 @@
                         </div>
 
                         <div class="container">
-                            <div class="row mt-5 justify-content-md-center">
+                            <div class="row mt-3 justify-content-md-center">
                                 <div class="col-md-12">
                                     <div class="table-responsive">
                                         <table class="table table-bordered" style="margin-bottom: 0;">
@@ -1002,7 +999,7 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="moistureremove text-center" width="9%">minute
+                                                    <td style="border-top: none !important" class="moistureremove text-center" width="9%">minute
                                                         readings
                                                     </td>
 
@@ -1046,7 +1043,7 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="moistureremove text-center" width="9%">
+                                                    <td style="border-bottom: none !important" class="moistureremove text-center" width="9%">
                                                         Turn Gauge
                                                     </td>
                                                     <td class="moistureremove text-center" width="9%">Wet Density
@@ -1089,7 +1086,7 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="moistureremove text-center" width="9%">180°</td>
+                                                    <td style="border-top: none !important" class="moistureremove text-center" width="9%">180°</td>
                                                     <td class="moistureremove text-center" width="9%">Wet Density
                                                         #4
                                                     </td>
