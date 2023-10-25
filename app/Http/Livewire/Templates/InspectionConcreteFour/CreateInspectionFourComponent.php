@@ -12,7 +12,7 @@ use App\Models\InspectionConcreteSetFour;
 
 class CreateInspectionFourComponent extends Component
 {
-    public $project_id, $client_id, $client_name, $project_number, $office_address, $cylinder_id, $date, $supplier, $plant, $sampled_by, $created_by, $type_of_structure, $general_location, $specific_location, $mix_id, $truck_no, $ticket_no, $batch_time, $sample_time, $ttf_unloading, $ambient_temp, $yards_at_sampling, $total_yard_placement, $water_added, $water_cement_ratio, $air_content, $slump, $concrete_temp, $unit_weight, $air_min, $air_max, $slump_min, $slump_max, $concrete_temp_min, $concrete_temp_max, $yield, $relative_yield, $mix_design_strength, $required_strength, $weather, $est_wind, $est_rh, $slump_cone_id, $thermometer_id, $air_meter_id, $unit_weight_measure_id, $weather_scale_id, $informed_by, $cement, $other_cementitious_matl, $other_cementitious_matl_a, $fly_ash, $water, $fine_aggregate, $course_aggregate, $max_aggregate_size, $admixture_a, $admixture_a_a, $admixture_b, $admixture_b_b, $admixture_c, $admixture_c_c, $total_batch_weight, $conc_comp_machine_id, $caliper_id, $scale_id, $field, $lab, $time_cylinders_molded, $cylinders_temperature_24h, $where_cylinders_cured, $field_placement_observations, $remark, $date_cylinders_received_lab, $pick_up_by, $cylinders_condition, $test_hours, $pick_up_hours, $delayed_hours, $why, $status, $responsible_person = [];
+    public $project_id, $client_id, $client_name, $project_number, $office_address, $cylinder_id, $date, $supplier, $plant, $sampled_by, $created_by, $type_of_structure, $general_location, $specific_location, $mix_id, $truck_no, $ticket_no, $batch_time, $sample_time, $ttf_unloading, $ambient_temp, $yards_at_sampling, $total_yard_placement, $water_added, $water_cement_ratio, $air_content, $slump, $concrete_temp, $unit_weight, $air_min, $air_max, $slump_min, $slump_max, $concrete_temp_min, $concrete_temp_max, $yield, $relative_yield, $mix_design_strength, $required_strength, $weather, $est_wind, $est_rh, $slump_cone_id, $thermometer_id, $air_meter_id, $unit_weight_measure_id, $weather_scale_id, $informed_by, $cement, $other_cementitious_matl, $other_cementitious_matl_a, $fly_ash, $water, $fine_aggregate, $course_aggregate, $max_aggregate_size, $admixture_a, $admixture_a_a, $admixture_b, $admixture_b_b, $admixture_c, $admixture_c_c, $total_batch_weight, $conc_comp_machine_id, $caliper_id, $scale_id, $cylinders_cast, $time_cylinders_molded, $cylinders_temperature_24h, $where_cylinders_cured, $field_placement_observations, $remark, $date_cylinders_received_lab, $pick_up_by, $cylinders_condition, $test_hours, $pick_up_hours, $delayed_hours, $why, $status, $responsible_person = [];
 
     public $age_a, $test_date_a, $diameter_a, $diameter_a_a, $avg_length_a, $mass_a, $max_load_a, $type_cap_a, $area_cyl_a, $measured_strength_a, $specified_strength_a, $type_fracture_a, $person_performing_a;
 
@@ -395,8 +395,7 @@ class CreateInspectionFourComponent extends Component
         $data->conc_comp_machine_id = $this->conc_comp_machine_id;
         $data->caliper_id = $this->caliper_id;
         $data->scale_id = $this->scale_id;
-        $data->field = $this->field;
-        $data->lab = $this->lab;
+        $data->cylinders_cast = $this->cylinders_cast;
         $data->time_cylinders_molded = $this->time_cylinders_molded;
         $data->cylinders_temperature_24h = $this->cylinders_temperature_24h;
         $data->where_cylinders_cured = $this->where_cylinders_cured;

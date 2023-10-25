@@ -98,8 +98,7 @@ class CreateInspectionConcretesTable extends Migration
             $table->text('caliper_id')->nullable();
             $table->text('scale_id')->nullable();
 
-            $table->text('field')->nullable();
-            $table->text('lab')->nullable();
+            $table->string('cylinders_cast')->nullable();
             $table->text('time_cylinders_molded')->nullable();
             $table->text('cylinders_temperature_24h')->nullable();
             $table->text('where_cylinders_cured')->nullable();

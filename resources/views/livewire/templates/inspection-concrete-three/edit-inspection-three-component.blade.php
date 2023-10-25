@@ -563,9 +563,10 @@
                                     @enderror
 
                                     <div class="input-group">
-                                        <label style="font-size: 15px; font-weight: 600;">Equipment Identification</label>
+                                        <label style="font-size: 15px; font-weight: 600;">Equipment
+                                            Identification</label>
                                     </div>
-                                    
+
                                     <div class="input-group">
                                         <span class="input-group-text width20">Slump Cone ID:</span>
                                         <input type="text" class="form-control form-color" wire:model="slump_cone_id">
@@ -607,10 +608,9 @@
                                     @error('weather_scale_id')
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
-                                    
+
                                     <div class="input-group">
-                                        <input type="text" class="form-control form-color"
-                                            wire:model="informed_by">
+                                        <input type="text" class="form-control form-color" wire:model="informed_by">
                                         <span class="input-group-text">was informed of our test results</span>
                                     </div>
                                     @error('informed_by')
@@ -2144,23 +2144,29 @@
 
 
                         <div class="container">
-                            <div class="row mb-3">
+                            <div class="row">
                                 <div class="col-lg-6">
-                                    <div class="input-group mt-3">
-                                        <span class="input-group-text">Cylinders cast in:</span>
-                                        <span class="input-group-text"> Field:</span>
-                                        <input type="text" class="form-control form-color" wire:model="field">
-                                        <span class="input-group-text">Lab:</span>
-                                        <input type="text" class="form-control form-color" wire:model="lab">
-                                        @error('lab')
-                                        <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
-                                        @enderror
+
+                                    <div class="input-group mt-1">
+                                        <label class="col-md-3 my-1 control-label">Cylinders cast in:</label>
+                                        <div class="col-md-9">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" wire:model="cylinders_cast"
+                                                    id="field" value="field">
+                                                <label class="form-check-label" for="field">Field</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" wire:model="cylinders_cast"
+                                                    id="lab" value="lab">
+                                                <label class="form-check-label" for="lab">Lab</label>
+                                            </div>
+                                        </div>
                                     </div>
-                                    @error('field')
+                                    @error('cylinders_cast')
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
 
-                                    <div class="input-group mt-3">
+                                    <div class="input-group">
                                         <span class="input-group-text">Time cylinders molded:</span>
                                         <input type="time" class="form-control form-color"
                                             wire:model="time_cylinders_molded">
@@ -2220,18 +2226,18 @@
                                         <label class="col-md-3 my-1 control-label">Cylinders condition:</label>
                                         <div class="col-md-9">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" wire:model="cylinders_condition"
-                                                    id="good" value="good">
+                                                <input class="form-check-input" type="radio"
+                                                    wire:model="cylinders_condition" id="good" value="good">
                                                 <label class="form-check-label" for="good">Good</label>
                                             </div>
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" wire:model="cylinders_condition"
-                                                    id="fair" value="fair">
+                                                <input class="form-check-input" type="radio"
+                                                    wire:model="cylinders_condition" id="fair" value="fair">
                                                 <label class="form-check-label" for="fair">Fair</label>
                                             </div>
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" wire:model="cylinders_condition"
-                                                    id="poor" value="poor">
+                                                <input class="form-check-input" type="radio"
+                                                    wire:model="cylinders_condition" id="poor" value="poor">
                                                 <label class="form-check-label" for="poor">Poor</label>
                                             </div>
                                         </div>
