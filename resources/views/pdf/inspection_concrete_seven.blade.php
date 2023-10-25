@@ -215,7 +215,7 @@
                             </h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400">Slump (in):</h4>
+                            <h4 style="font-size: 14px; font-weight: 400">Slump (in) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (C143/T119)</h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->slump }}</h4>
@@ -228,11 +228,11 @@
                     </tr>
                     <tr>
                         <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400">Truck No.:</h4>
+                            <h4 style="font-size: 14px; font-weight: 400">Ticket No.:</h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400; text-align: center;">
-                                {{ $data->truck_no }}
+                                {{ $data->ticket_no }}
                             </h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
@@ -256,7 +256,7 @@
                             </h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400">Conc Temp (°F):</h4>
+                            <h4 style="font-size: 14px; font-weight: 400">Conc Temp (°F) &nbsp; &nbsp; (C1064/T309)</h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->concrete_temp
@@ -278,7 +278,7 @@
                             </h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400">Air Content (%):</h4>
+                            <h4 style="font-size: 14px; font-weight: 400">Air Content (%) &nbsp; &nbsp; &nbsp; (C231/T152)</h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->air_content }}
@@ -300,7 +300,7 @@
                             </h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400">Unit Weight (pcf):</h4>
+                            <h4 style="font-size: 14px; font-weight: 400">Unit Weight (pcf) &nbsp; &nbsp; (C138/T121)</h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->unit_weight }}
@@ -1040,8 +1040,7 @@
                         </td>
                         <td>
                             <h4 style="font-size: 14px; font-weight: 400; text-align:left;">6-Side fractures at top or
-                                bottom
-                                with pointed</h4>
+                                bottom with pointed end</h4>
                         </td>
                     </tr>
                 </table>
