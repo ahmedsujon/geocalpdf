@@ -77,6 +77,7 @@ class CreateInspectionConcreteSetEightsTable extends Migration
             $table->text('air_meter_id')->nullable();
             $table->text('unit_weight_measure_id')->nullable();
             $table->text('weather_scale_id')->nullable();
+            $table->text('informed_by')->nullable();
 
             $table->text('cement')->nullable();
             $table->text('other_cementitious_matl')->nullable();

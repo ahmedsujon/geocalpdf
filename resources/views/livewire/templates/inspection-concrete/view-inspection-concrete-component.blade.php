@@ -620,6 +620,15 @@
                                     @error('weather_scale_id')
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
+
+                                    <div class="input-group">
+                                        <input type="text" class="form-control form-color"
+                                            wire:model="informed_by">
+                                        <span class="input-group-text">was informed of our test results</span>
+                                    </div>
+                                    @error('informed_by')
+                                    <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
+                                    @enderror
                                 </div>
 
                                 <div class="col-lg-6">
