@@ -79,7 +79,7 @@
                         <h4 style="font-size: 14px; font-weight: 400">Tested by:
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ $data->technician }}</h4>
                         <h4 style="font-size: 14px; font-weight: 400">Date Tested:
-                            &nbsp;&nbsp;&nbsp;&nbsp;{{ $data->date }}</h4>
+                            &nbsp;&nbsp;&nbsp;&nbsp;{{ \Carbon\Carbon::parse($data->date)->format('m/d/Y') }}</h4>
                         <h4 style="font-size: 14px; font-weight: 400">Test Method:
                             &nbsp;&nbsp;&nbsp;{{ $data->test_method }}</h4>
                         <h4 style="font-size: 14px; font-weight: 400">Gauge Make: &nbsp;&nbsp; @if ($data->troxler ==
