@@ -69,15 +69,15 @@
         }
 
         .commercial-form .width26 {
-            width: 26%;
+            width: 28%;
         }
 
         .commercial-form .width25 {
-            width: 25%;
+            width: 28%;
         }
 
         .commercial-form .width20 {
-            width: 20%;
+            width: 28%;
         }
 
         .commercial-form .width18 {
@@ -360,7 +360,7 @@
                                 <div class="col-lg-6 select-border">
                                     <h6>&nbsp;</h6>
                                     <div class="input-group mt-2">
-                                        <span class="input-group-text width20">Office Address:</span>
+                                        <span class="input-group-text width28">Office Address:</span>
                                         <select class="form-select" wire:model="office_address">
                                             <option value="">Select office addres</option>
                                             <option value="7290 South Fraser St.Centennial, CO 80112">7290 South Fraser
@@ -377,7 +377,7 @@
                                     @enderror
 
                                     <div class="input-group">
-                                        <span class="input-group-text width20">Cylinder ID:</span>
+                                        <span class="input-group-text width28">Cylinder ID:</span>
                                         <input type="text" class="form-control form-color" wire:model='cylinder_id'>
                                     </div>
                                     @error('cylinder_id')
@@ -385,7 +385,7 @@
                                     @enderror
 
                                     <div class="input-group">
-                                        <span class="input-group-text width20">Project Name:</span>
+                                        <span class="input-group-text width28">Project Name:</span>
                                         <select class="form-select" wire:model="project_id" wire:change="selectInfo"
                                             id="selectInfo">
                                             <option value="">Select Project:</option>
@@ -399,7 +399,7 @@
                                     @enderror
 
                                     <div class="input-group">
-                                        <span class="input-group-text width20">Client Name:</span>
+                                        <span class="input-group-text width28">Client Name:</span>
                                         <input type="text" class="form-control form-color" wire:model="client_name"
                                             readonly>
                                     </div>
@@ -408,7 +408,7 @@
                                     @enderror
 
                                     <div class="input-group">
-                                        <span class="input-group-text width20">Project Number:</span>
+                                        <span class="input-group-text width28">Project Number:</span>
                                         <input type="text" class="form-control form-color" wire:model="project_number"
                                             readonly>
                                     </div>
@@ -417,7 +417,7 @@
                                     @enderror
 
                                     <div class="input-group">
-                                        <span class="input-group-text width20">Date:</span>
+                                        <span class="input-group-text width28">Date:</span>
                                         <input type="date" class="form-control form-color" wire:model="date">
                                     </div>
                                     @error('date')
@@ -425,12 +425,12 @@
                                     @enderror
 
                                     <div class="input-group">
-                                        <span class="input-group-text width20">Supplier:</span>
+                                        <span class="input-group-text width28">Supplier:</span>
                                         <input type="text" class="form-control form-color" wire:model="supplier">
                                         @error('supplier')
                                         <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                         @enderror
-                                        <span class="input-group-text width20">Plant:</span>
+                                        <span class="input-group-text width28">Plant:</span>
                                         <input type="text" class="form-control form-color" wire:model="plant">
                                         @error('plant')
                                         <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
@@ -438,7 +438,7 @@
                                     </div>
 
                                     <div class="input-group">
-                                        <span class="input-group-text width20">Sampled By:</span>
+                                        <span class="input-group-text width28">Sampled By:</span>
                                         <input type="text" class="form-control form-color" wire:model="sampled_by">
                                     </div>
                                     @error('sampled_by')
@@ -453,7 +453,7 @@
                                     </div>
 
                                     <div class="input-group">
-                                        <span class="input-group-text width25">Air Content (%): &nbsp; &nbsp; &nbsp;
+                                        <span class="input-group-text width28">Air Content (%): &nbsp; &nbsp; &nbsp;
                                             &nbsp;</span>
                                         <input type="number" step="any" class="form-control form-color"
                                             wire:model="air_content">
@@ -469,7 +469,7 @@
                                     @enderror
 
                                     <div class="input-group">
-                                        <span class="input-group-text width25">Slump (in): &nbsp; &nbsp; &nbsp; &nbsp;
+                                        <span class="input-group-text width28">Slump (in): &nbsp; &nbsp; &nbsp; &nbsp;
                                             &nbsp;
                                             &nbsp;
                                             &nbsp; &nbsp;</span>
@@ -487,7 +487,7 @@
                                     @enderror
 
                                     <div class="input-group">
-                                        <span class="input-group-text width25">Concrete Temp (°F):</span>
+                                        <span class="input-group-text width28">Concrete Temp (°F):</span>
                                         <input type="number" step="any" class="form-control form-color"
                                             wire:model="concrete_temp">
 
@@ -504,7 +504,7 @@
                                     @enderror
 
                                     <div class="input-group">
-                                        <span class="input-group-text width25">Unit Weight (pcf):</span>
+                                        <span class="input-group-text width28">Unit Weight (pcf):</span>
                                         <input type="text" class="form-control form-color" wire:model="unit_weight">
                                         @error('unit_weight')
                                         <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
@@ -512,7 +512,7 @@
                                     </div>
 
                                     <div class="input-group">
-                                        <span class="input-group-text width25">Yield: (CY):</span>
+                                        <span class="input-group-text width28">Yield: (CY):</span>
                                         <input type="text" class="form-control form-color" wire:model="yield">
                                         <span class="input-group-text">Relative Yield:</span>
                                         <input type="text" class="form-control form-color" wire:model="relative_yield">
@@ -522,7 +522,7 @@
                                     @enderror
 
                                     <div class="input-group">
-                                        <span class="input-group-text width25">Mix Design Strength (psi):</span>
+                                        <span class="input-group-text width28">Mix Design Strength (psi):</span>
                                         <input type="text" class="form-control form-color"
                                             wire:model="mix_design_strength">
                                         @error('mix_design_strength')
@@ -531,7 +531,7 @@
                                     </div>
 
                                     <div class="input-group">
-                                        <span class="input-group-text width25">Required Strength (psi):</span>
+                                        <span class="input-group-text width28">Required Strength (psi):</span>
                                         <input type="text" class="form-control form-color"
                                             wire:model="required_strength" wire:keyup='specifiedStrength' required>
                                     </div>

@@ -69,15 +69,15 @@
         }
 
         .commercial-form .width26 {
-            width: 26%;
+            width: 28%;
         }
 
         .commercial-form .width25 {
-            width: 25%;
+            width: 28%;
         }
 
         .commercial-form .width20 {
-            width: 20%;
+            width: 28%;
         }
 
         .commercial-form .width18 {
@@ -452,7 +452,7 @@
                                     </div>
 
                                     <div class="input-group">
-                                        <span class="input-group-text width25">Air Content (%): &nbsp; &nbsp; &nbsp;
+                                        <span class="input-group-text width28">Air Content (%): &nbsp; &nbsp; &nbsp;
                                             &nbsp;</span>
                                         <input type="number" step="any" class="form-control form-color"
                                             wire:model="air_content">
@@ -468,7 +468,7 @@
                                     @enderror
 
                                     <div class="input-group">
-                                        <span class="input-group-text width25">Slump (in): &nbsp; &nbsp; &nbsp; &nbsp;
+                                        <span class="input-group-text width28">Slump (in): &nbsp; &nbsp; &nbsp; &nbsp;
                                             &nbsp;
                                             &nbsp;
                                             &nbsp; &nbsp;</span>
@@ -486,7 +486,7 @@
                                     @enderror
 
                                     <div class="input-group">
-                                        <span class="input-group-text width25">Concrete Temp (°F):</span>
+                                        <span class="input-group-text width28">Concrete Temp (°F):</span>
                                         <input type="number" step="any" class="form-control form-color"
                                             wire:model="concrete_temp">
 
@@ -503,7 +503,7 @@
                                     @enderror
 
                                     <div class="input-group">
-                                        <span class="input-group-text width25">Unit Weight (pcf):</span>
+                                        <span class="input-group-text width28">Unit Weight (pcf):</span>
                                         <input type="text" class="form-control form-color" wire:model="unit_weight">
                                         @error('unit_weight')
                                         <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
@@ -511,7 +511,7 @@
                                     </div>
 
                                     <div class="input-group">
-                                        <span class="input-group-text width25">Yield: (CY):</span>
+                                        <span class="input-group-text width28">Yield: (CY):</span>
                                         <input type="text" class="form-control form-color" wire:model="yield">
                                         <span class="input-group-text">Relative Yield:</span>
                                         <input type="text" class="form-control form-color" wire:model="relative_yield">
@@ -521,7 +521,7 @@
                                     @enderror
 
                                     <div class="input-group">
-                                        <span class="input-group-text width25">Mix Design Strength (psi):</span>
+                                        <span class="input-group-text width28">Mix Design Strength (psi):</span>
                                         <input type="text" class="form-control form-color"
                                             wire:model="mix_design_strength">
                                         @error('mix_design_strength')
@@ -530,7 +530,7 @@
                                     </div>
 
                                     <div class="input-group">
-                                        <span class="input-group-text width25">Required Strength (psi):</span>
+                                        <span class="input-group-text width28">Required Strength (psi):</span>
                                         <input type="text" class="form-control form-color"
                                             wire:model="required_strength" wire:keyup='specifiedStrength' required>
                                     </div>
@@ -625,7 +625,7 @@
                                 <div class="col-lg-6">
                                     <h6>&nbsp;</h6>
                                     <div class="input-group">
-                                        <span class="input-group-text width26">Cement (lb):</span>
+                                        <span class="input-group-text width28">Cement (lb):</span>
                                         <input type="text" class="form-control form-color" wire:model="cement">
                                     </div>
                                     @error('cement')
@@ -646,7 +646,7 @@
                                     @enderror
 
                                     <div class="input-group">
-                                        <span class="input-group-text width26">Water (lb):</span>
+                                        <span class="input-group-text width28">Water (lb):</span>
                                         <input type="text" class="form-control form-color" wire:model="water">
                                     </div>
                                     @error('water')
@@ -654,7 +654,7 @@
                                     @enderror
 
                                     <div class="input-group">
-                                        <span class="input-group-text width26">Fine Aggregate (lb):</span>
+                                        <span class="input-group-text width28">Fine Aggregate (lb):</span>
                                         <input type="text" class="form-control form-color" wire:model="fine_aggregate">
                                     </div>
                                     @error('fine_aggregate')
@@ -662,7 +662,7 @@
                                     @enderror
 
                                     <div class="input-group">
-                                        <span class="input-group-text width26">Course Aggregate (lb):</span>
+                                        <span class="input-group-text width28">Course Aggregate (lb):</span>
                                         <input type="text" class="form-control form-color"
                                             wire:model="course_aggregate">
                                         @error('course_aggregate')
@@ -671,7 +671,7 @@
                                     </div>
 
                                     <div class="input-group">
-                                        <span class="input-group-text width26">Max Aggregate Size (in):</span>
+                                        <span class="input-group-text width28">Max Aggregate Size (in):</span>
                                         <input type="text" class="form-control form-color"
                                             wire:model="max_aggregate_size">
                                         @error('max_aggregate_size')
@@ -680,7 +680,7 @@
                                     </div>
 
                                     <div class="input-group">
-                                        <span class="input-group-text width26">Admixture 1: Type / (oz)</span>
+                                        <span class="input-group-text width28">Admixture 1: Type / (oz)</span>
                                         <input type="text" class="form-control form-color" wire:model="admixture_a">
                                         <span class="input-group-text"></span>
                                         <input type="text" class="form-control form-color" wire:model="admixture_a_a">
@@ -693,7 +693,7 @@
                                     @enderror
 
                                     <div class="input-group">
-                                        <span class="input-group-text width26">Admixture 2: Type / (oz)</span>
+                                        <span class="input-group-text width28">Admixture 2: Type / (oz)</span>
                                         <input type="text" class="form-control form-color" wire:model="admixture_b">
                                         <span class="input-group-text"></span>
                                         <input type="text" class="form-control form-color" wire:model="admixture_b_b">
@@ -706,7 +706,7 @@
                                     @enderror
 
                                     <div class="input-group">
-                                        <span class="input-group-text width26">Admixture 3: Type / (oz)</span>
+                                        <span class="input-group-text width28">Admixture 3: Type / (oz)</span>
                                         <input type="text" class="form-control form-color" wire:model="admixture_c">
                                         <span class="input-group-text"></span>
                                         <input type="text" class="form-control form-color" wire:model="admixture_c_c">
@@ -719,7 +719,7 @@
                                     @enderror
 
                                     <div class="input-group">
-                                        <span class="input-group-text width26">Total Batch Weight (lb):</span>
+                                        <span class="input-group-text width28">Total Batch Weight (lb):</span>
                                         <input type="text" class="form-control form-color"
                                             wire:model="total_batch_weight">
                                         @error('total_batch_weight')

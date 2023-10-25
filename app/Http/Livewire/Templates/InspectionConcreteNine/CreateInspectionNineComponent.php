@@ -555,7 +555,7 @@ class CreateInspectionNineComponent extends Component
         if ($this->responsible_person) {
             $persons = $this->responsible_person;
             $f_id = $data->id;
-            $project_id = InspectionNineComponent::find($f_id)->project_id;
+            $project_id = InspectionConcreteSetNine::find($f_id)->project_id;
             dispatch(function () use ($persons, $f_id, $project_id) {
                 foreach ($persons as $key => $re_id) {
                     $user = User::find($re_id);

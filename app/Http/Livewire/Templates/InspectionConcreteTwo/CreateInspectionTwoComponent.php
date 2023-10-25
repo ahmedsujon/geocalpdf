@@ -2,12 +2,13 @@
 
 namespace App\Http\Livewire\Templates\InspectionConcreteTwo;
 
-use App\Models\InspectionConcreteSetTwo;
-use App\Models\Project;
 use App\Models\User;
+use App\Models\Project;
+use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
-use Livewire\Component;
+use App\Models\InspectionConcreteSetTwo;
+use App\Http\Livewire\Templates\InspectionConcreteTwo\InspectionTwoComponent;
 
 class CreateInspectionTwoComponent extends Component
 {
@@ -555,7 +556,7 @@ class CreateInspectionTwoComponent extends Component
         if ($this->responsible_person) {
             $persons = $this->responsible_person;
             $f_id = $data->id;
-            $project_id = InspectionTwoComponent::find($f_id)->project_id;
+            $project_id = InspectionConcreteSetTwo::find($f_id)->project_id;
             dispatch(function () use ($persons, $f_id, $project_id) {
                 foreach ($persons as $key => $re_id) {
                     $user = User::find($re_id);

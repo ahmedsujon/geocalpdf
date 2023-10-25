@@ -69,15 +69,15 @@
         }
 
         .commercial-form .width26 {
-            width: 26%;
+            width: 28%;
         }
 
         .commercial-form .width25 {
-            width: 25%;
+            width: 28%;
         }
 
         .commercial-form .width20 {
-            width: 20%;
+            width: 28%;
         }
 
         .commercial-form .width18 {

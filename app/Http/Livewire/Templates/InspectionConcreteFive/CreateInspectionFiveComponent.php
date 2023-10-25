@@ -555,7 +555,7 @@ class CreateInspectionFiveComponent extends Component
         if ($this->responsible_person) {
             $persons = $this->responsible_person;
             $f_id = $data->id;
-            $project_id = InspectionFiveComponent::find($f_id)->project_id;
+            $project_id = InspectionConcreteSetFive::find($f_id)->project_id;
             dispatch(function () use ($persons, $f_id, $project_id) {
                 foreach ($persons as $key => $re_id) {
                     $user = User::find($re_id);
