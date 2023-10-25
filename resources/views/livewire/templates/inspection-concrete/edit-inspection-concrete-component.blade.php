@@ -568,6 +568,10 @@
                                     @enderror
 
                                     <div class="input-group">
+                                        <label style="font-size: 15px; font-weight: 600;">Equipment Identification</label>
+                                    </div>
+                                    
+                                    <div class="input-group">
                                         <span class="input-group-text width20">Slump Cone ID:</span>
                                         <input type="text" class="form-control form-color" wire:model="slump_cone_id">
                                     </div>

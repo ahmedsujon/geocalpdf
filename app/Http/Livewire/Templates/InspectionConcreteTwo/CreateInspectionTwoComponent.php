@@ -192,7 +192,7 @@ class CreateInspectionTwoComponent extends Component
     public function AreaCylE()
     {
         if ($this->diameter_e != null && $this->diameter_a_e != null) {
-            $this->area_cyl_e = round(pow((($this->diameter_e + $this->diameter_a_a) / 2 / 2), 2) * 3.14159265, 2);
+            $this->area_cyl_e = round(pow((($this->diameter_e + $this->diameter_a_e) / 2 / 2), 2) * 3.14159265, 2);
         } else {
             $this->area_cyl_e = 0;
         }
@@ -200,7 +200,7 @@ class CreateInspectionTwoComponent extends Component
     public function AreaCylF()
     {
         if ($this->diameter_f != null && $this->diameter_a_f != null) {
-            $this->area_cyl_f = round(pow((($this->diameter_f + $this->diameter_a_a) / 2 / 2), 2) * 3.14159265, 2);
+            $this->area_cyl_f = round(pow((($this->diameter_f + $this->diameter_a_f) / 2 / 2), 2) * 3.14159265, 2);
         } else {
             $this->area_cyl_f = 0;
         }
@@ -208,7 +208,7 @@ class CreateInspectionTwoComponent extends Component
     public function AreaCylG()
     {
         if ($this->diameter_g != null && $this->diameter_a_g != null) {
-            $this->area_cyl_g = round(pow((($this->diameter_g + $this->diameter_a_a) / 2 / 2), 2) * 3.14159265, 2);
+            $this->area_cyl_g = round(pow((($this->diameter_g + $this->diameter_a_g) / 2 / 2), 2) * 3.14159265, 2);
         } else {
             $this->area_cyl_g = 0;
         }
@@ -216,7 +216,7 @@ class CreateInspectionTwoComponent extends Component
     public function AreaCylH()
     {
         if ($this->diameter_h != null && $this->diameter_a_h != null) {
-            $this->area_cyl_h = round(pow((($this->diameter_h + $this->diameter_a_a) / 2 / 2), 2) * 3.14159265, 2);
+            $this->area_cyl_h = round(pow((($this->diameter_h + $this->diameter_a_h) / 2 / 2), 2) * 3.14159265, 2);
         } else {
             $this->area_cyl_h = 0;
         }
@@ -224,7 +224,7 @@ class CreateInspectionTwoComponent extends Component
     public function AreaCylI()
     {
         if ($this->diameter_i != null && $this->diameter_a_i != null) {
-            $this->area_cyl_i = round(pow((($this->diameter_i + $this->diameter_a_a) / 2 / 2), 2) * 3.14159265, 2);
+            $this->area_cyl_i = round(pow((($this->diameter_i + $this->diameter_a_i) / 2 / 2), 2) * 3.14159265, 2);
         } else {
             $this->area_cyl_i = 0;
         }
