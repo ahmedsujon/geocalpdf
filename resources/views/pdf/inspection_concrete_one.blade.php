@@ -50,7 +50,7 @@
                 </td>
                 <td style="width: 28%; text-align: left;">
                     <h4 style="font-size: 14px; font-weight: 400;">
-                        Date: {{ $data->created_at->format('Y-m-d') }}
+                        Date: {{ $data->created_at->format('m/d/Y') }}
                     </h4>
                     <h4 style="font-size: 14px; font-weight: 400;">
                         Project No: {{ $data->project_number }}
@@ -153,7 +153,7 @@
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400; text-align: center;">
-                                {{ $data->created_at->format('Y-m-d') }}
+                                {{ $data->created_at->format('m/d/Y') }}
                             </h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
@@ -161,7 +161,7 @@
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{
-                                $data->created_at->format('Y-m-d') }}</h4>
+                                $data->created_at->format('m/d/Y') }}</h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400"></h4>
@@ -1094,7 +1094,7 @@
 
             <table style="width: 100%; border-collapse: collapse">
                 <tr>
-                    <td></td>
+                    <p style="font-size: 15px; padding: 1px;">Copies:</p>
                     <td></td>
                     <td
                         style="width: 40%; padding-top: 10px; padding-left: 10px; padding-right: 20px; padding-bottom: 10px;">

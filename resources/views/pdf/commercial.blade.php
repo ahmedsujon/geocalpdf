@@ -49,7 +49,7 @@
                 </td>
                 <td style="width: 28%; text-align: left;">
                     <h4 style="font-size: 14px; font-weight: 400;">
-                        Date: {{ $data->created_at->format('Y-m-d') }}
+                        Date: {{ $data->created_at->format('m/d/Y') }}
                     </h4>
                     <h4 style="font-size: 14px; font-weight: 400;">
                         Project No: {{ $data->project_number }}

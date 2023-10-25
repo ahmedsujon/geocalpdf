@@ -48,7 +48,7 @@
                 </td>
                 <td style="width: 28%; text-align: left;">
                     <h4 style="font-size: 13px; font-weight: 400;">
-                        Date: {{ $data->created_at->format('Y-m-d') }}
+                        Date: {{ $data->created_at->format('m/d/Y') }}
                     </h4>
                     <h4 style="font-size: 13px; font-weight: 400;">
                         Project No: {{ $data->project_number }}
@@ -61,12 +61,18 @@
                     </h4>
 
                 </td>
-
             </tr>
-
         </table>
 
-        <table style="width: 100%; border-collapse: collapse; padding-top: 25px;">
+        <table style="width: 100%; border-collapse: collapse; padding-top: 3px;">
+            <tr>
+                <td style="padding: 1px;">
+                    <h3 style="font-size: 14px; font-weight: 500; text-align: center">PHYSICAL PROPERTIES OF PLASTIC CONCRETE</h3>
+                </td>
+            </tr>
+        </table>
+
+        <table style="width: 100%; border-collapse: collapse; padding-top: 5px;">
             <tr>
                 <td style="padding: 1px; border: 1px solid #000">
                     <h4 style="font-size: 14px; font-weight: 400">Specifications: Slump:</h4>
@@ -744,7 +750,7 @@
             <table style="width: 100%; border-collapse: collapse; padding: 5px;">
                 <caption
                     style="text-align:left; font-size: 14px; text-transform: uppercase; font-weight: 500; padding: 0; letter-spacing: -1px; background-color: #689A3D; border-top: 2px solid #000; border-right: 0px solid #000; border-bottom: 2px solid #000; border-left: 0px solid #000;">
-                    Nodes:</caption>
+                    Notes:</caption>
 
                 <tr>
                     <td style="font-size: 14px;">1. Applicable ASTM/AASHTO standards unless otherwise indicated:
@@ -803,7 +809,7 @@
             padding-top: 2px;
             width: 160px;
           ">
-                        Field Representative:
+                        Field Observer:
                     </h6>
                 </td>
                 <td

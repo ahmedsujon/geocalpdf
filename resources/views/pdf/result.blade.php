@@ -85,7 +85,7 @@
                 </h4>
               </td>
               <td style="padding: 4px 0px; border-bottom: 1px solid lightgray">
-                <h4 style="font-size: 14px; font-weight: 400">{{ $data->created_at->format('Y-m-d') }}</h4>
+                <h4 style="font-size: 14px; font-weight: 400">{{ $data->created_at->format('m/d/Y') }}</h4>
               </td>
             </tr>
             <tr>
