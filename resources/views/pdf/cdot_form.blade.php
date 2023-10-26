@@ -70,10 +70,6 @@
 
         </table>
 
-
-
-
-
         <table style="width: 100%; border-collapse: collapse; margin-top: 5px">
             <tr>
                 <th style="padding: 10px 6px 8px 6px; border: 1px solid #000">
@@ -126,7 +122,7 @@
                 </td>
             </tr>
         </table>
-        <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+        <table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
             <tr>
                 <td style="width: 200px; padding: 1px; text-align: center; border: 1px solid #000;">
                     <h4 style="font-size: 13px; font-weight: 400">Tester Name</h4>
@@ -150,7 +146,7 @@
                 </td>
             </tr>
         </table>
-        <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+        <table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
             <tr>
                 <td style="width: 200px; padding: 1px; border: 1px solid #000;">
                     <h4 style="font-size: 13px; font-weight: 400">Sample ID</h4>
@@ -172,7 +168,7 @@
                 </td>
             </tr>
         </table>
-        <table style="width: 100%; margin-top: 5px; border-collapse: collapse;">
+        <table style="width: 100%; border-collapse: collapse;">
             <tr>
                 <td style="width: 99px; padding: 1px; border: 1px solid #000;">
                     <h4 style="font-size: 13px; font-weight: 400">Test#</h4>
@@ -212,7 +208,7 @@
                 </td>
             </tr>
         </table>
-        <table style="width: 100%; border-collapse: collapse; margin-top: 5px;">
+        <table style="width: 100%; border-collapse: collapse;">
             <tr>
                 <td style="width: 200px; padding: 1px; border: 1px solid #000;">
                     <h4 style="font-size: 13px; font-weight: 400">Sample ID (For IAT)</h4>
@@ -359,7 +355,7 @@
                 </td>
             </tr>
         </table>
-        <table style="width: 100%; border-collapse: collapse; margin-top: 5px;">
+        <table style="width: 100%; border-collapse: collapse;">
             <tr>
                 <td rowspan="2" style="width: 99px; padding: 1px; border: 1px solid #000;">
                     <h4 style="font-size: 13px; font-weight: 400">Backscatter 4, 1 minute readings</h4>
@@ -468,7 +464,7 @@
                 </td>
             </tr>
         </table>
-        <table style="width: 100%; border-collapse: collapse; margin-top: 5px;">
+        <table style="width: 100%; border-collapse: collapse;">
             <tr>
                 <td style="width: 200px; padding: 1px; border: 1px solid #00;">
                     <h4 style="font-size: 13px; font-weight: 400">Sum of Wet Densities</h4>
