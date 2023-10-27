@@ -2298,7 +2298,7 @@
                                 @error('observation')
                                 <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                 @enderror
-                                <div class="col-md-12 mb-3 mt-3">
+                                <div class="col-md-12 mt-3">
                                     <div class="input-group">
                                         <span class="input-group-text width12">Remark</span>
                                         <textarea class="form-control form-color" aria-label="With textarea"
