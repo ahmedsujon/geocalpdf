@@ -236,6 +236,22 @@
                             <div class="row">
                                 <div class="col-lg-6 select-border">
                                     <h6 style="font-weight: 700;">REFERENCE DATA</h6>
+                                    <div class="input-group mt-2">
+                                        <span class="input-group-text width20">Office Address:</span>
+                                        <select class="form-select" wire:model="office_address">
+                                            <option value="">Select office addres</option>
+                                            <option value="7290 South Fraser St.Centennial, CO 80112">7290 South Fraser
+                                                St.Centennial, CO 80112</option>
+                                            <option value="4763 Town Center Drive Colorado Springs, CO 80916">
+                                                4763 Town Center Drive Colorado Springs, CO 80916</option>
+                                            <option value="5709 SE 74th Street, Suite A: Oklahoma City, OK 73135">5709
+                                                SE
+                                                74th Street, Suite A: Oklahoma City, OK 73135</option>
+                                        </select>
+                                    </div>
+                                    @error('office_address')
+                                    <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
+                                    @enderror
                                     <div class="input-group">
                                         <span class="input-group-text width20">Type of Structure:</span>
                                         <input type="text" class="form-control form-color"
@@ -361,23 +377,6 @@
 
                                 <div class="col-lg-6 select-border">
                                     <h6>&nbsp;</h6>
-                                    <div class="input-group mt-2">
-                                        <span class="input-group-text width20">Office Address:</span>
-                                        <select class="form-select" wire:model="office_address" readonly>
-                                            <option value="">Select office addres</option>
-                                            <option value="7290 South Fraser St.Centennial, CO 80112">7290 South Fraser
-                                                St.Centennial, CO 80112</option>
-                                            <option value="4763 Town Center Drive Colorado Springs, CO 80916">
-                                                4763 Town Center Drive Colorado Springs, CO 80916</option>
-                                            <option value="5709 SE 74th Street, Suite A: Oklahoma City, OK 73135">5709
-                                                SE
-                                                74th Street, Suite A: Oklahoma City, OK 73135</option>
-                                        </select>
-                                    </div>
-                                    @error('office_address')
-                                    <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
-                                    @enderror
-
                                     <div class="input-group">
                                         <span class="input-group-text width20">Cylinder ID:</span>
                                         <input type="text" class="form-control form-color" wire:model='cylinder_id'
