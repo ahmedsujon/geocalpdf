@@ -6,7 +6,7 @@
             <div class="col-lg-6">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">Asphalt Field Density by Nuclear Method - Commercial 
+                        <h4 class="card-title">ASPHALT FIELD DENSITY BY NUCLEAR METHOD - COMMERCIAL 
                         </h4>
                     </div>
                     <!--end card-header-->
@@ -40,7 +40,7 @@
             <div class="col-lg-6">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">Asphalt Field Density by Nuclear Method - CDOT Form
+                        <h4 class="card-title">ASPHALT FIELD DENSITY BY NUCLEAR METHOD - CDOT FORM
                         </h4>
                     </div>
                     <!--end card-header-->
