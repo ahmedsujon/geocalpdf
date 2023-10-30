@@ -13,7 +13,7 @@
         }
 
         .form-select {
-            background: #CCFFFF;
+            background-color: #CCFFFF !important;
         }
 
         .form-color {
@@ -21,7 +21,7 @@
         }
 
         .moistureremoveinput {
-            background: #CCFFFF;
+            background-color: #CCFFFF !important;
         }
 
         .commercial-form {
@@ -62,6 +62,7 @@
 
         .commercial-form .select-border .form-select {
             border: 1px solid #000000;
+            background-color: #CCFFFF !important;
         }
 
         .commercial-form .width28 {
@@ -831,7 +832,7 @@
                                                     <div class="input-group">
                                                         <select class="form-select moistureremoveinput"
                                                             wire:model="type_cap_a" required>
-                                                            <option value="">Select type cap</option>
+                                                            <option value="">Select </option>
                                                             <option value="Unbonded">Unbonded</option>
                                                             <option value="Gypsum cement">Gypsum cement</option>
                                                             <option value="Neat Cement">Neat Cement</option>
@@ -981,7 +982,7 @@
                                                     <div class="input-group">
                                                         <select class="form-select moistureremoveinput"
                                                             wire:model="type_cap_b" required>
-                                                            <option value="">Select type cap</option>
+                                                            <option value="">Select </option>
                                                             <option value="Unbonded">Unbonded</option>
                                                             <option value="Gypsum cement">Gypsum cement</option>
                                                             <option value="Neat Cement">Neat Cement</option>
@@ -1131,7 +1132,7 @@
                                                     <div class="input-group">
                                                         <select class="form-select moistureremoveinput"
                                                             wire:model="type_cap_c" required>
-                                                            <option value="">Select type cap</option>
+                                                            <option value="">Select </option>
                                                             <option value="Unbonded">Unbonded</option>
                                                             <option value="Gypsum cement">Gypsum cement</option>
                                                             <option value="Neat Cement">Neat Cement</option>
@@ -1281,7 +1282,7 @@
                                                     <div class="input-group">
                                                         <select class="form-select moistureremoveinput"
                                                             wire:model="type_cap_d" required>
-                                                            <option value="">Select type cap</option>
+                                                            <option value="">Select </option>
                                                             <option value="Unbonded">Unbonded</option>
                                                             <option value="Gypsum cement">Gypsum cement</option>
                                                             <option value="Neat Cement">Neat Cement</option>
@@ -1431,7 +1432,7 @@
                                                     <div class="input-group">
                                                         <select class="form-select moistureremoveinput"
                                                             wire:model="type_cap_e" required>
-                                                            <option value="">Select type cap</option>
+                                                            <option value="">Select </option>
                                                             <option value="Unbonded">Unbonded</option>
                                                             <option value="Gypsum cement">Gypsum cement</option>
                                                             <option value="Neat Cement">Neat Cement</option>
@@ -1581,7 +1582,7 @@
                                                     <div class="input-group">
                                                         <select class="form-select moistureremoveinput"
                                                             wire:model="type_cap_f" required>
-                                                            <option value="">Select type cap</option>
+                                                            <option value="">Select </option>
                                                             <option value="Unbonded">Unbonded</option>
                                                             <option value="Gypsum cement">Gypsum cement</option>
                                                             <option value="Neat Cement">Neat Cement</option>
@@ -1731,7 +1732,7 @@
                                                     <div class="input-group">
                                                         <select class="form-select moistureremoveinput"
                                                             wire:model="type_cap_g" required>
-                                                            <option value="">Select type cap</option>
+                                                            <option value="">Select </option>
                                                             <option value="Unbonded">Unbonded</option>
                                                             <option value="Gypsum cement">Gypsum cement</option>
                                                             <option value="Neat Cement">Neat Cement</option>
@@ -1881,7 +1882,7 @@
                                                     <div class="input-group">
                                                         <select class="form-select moistureremoveinput"
                                                             wire:model="type_cap_h" required>
-                                                            <option value="">Select type cap</option>
+                                                            <option value="">Select </option>
                                                             <option value="Unbonded">Unbonded</option>
                                                             <option value="Gypsum cement">Gypsum cement</option>
                                                             <option value="Neat Cement">Neat Cement</option>
@@ -2031,7 +2032,7 @@
                                                     <div class="input-group">
                                                         <select class="form-select moistureremoveinput"
                                                             wire:model="type_cap_i" required>
-                                                            <option value="">Select type cap</option>
+                                                            <option value="">Select </option>
                                                             <option value="Unbonded">Unbonded</option>
                                                             <option value="Gypsum cement">Gypsum cement</option>
                                                             <option value="Neat Cement">Neat Cement</option>
@@ -2172,7 +2173,7 @@
                                         @enderror
                                     </div>
 
-                                    <div class="input-group mt-1">
+                                    <div class="input-group mt-3">
                                         <span class="input-group-text">Cylinders temperature range for first 24
                                             hours:</span>
                                         <input type="text" class="form-control form-color"
@@ -2182,7 +2183,7 @@
                                         @enderror
                                     </div>
 
-                                    <div class="input-group mt-1">
+                                    <div class="input-group mt-3">
                                         <span class="input-group-text">Where cylinders cured:</span>
                                         <input type="text" class="form-control form-color"
                                             wire:model="where_cylinders_cured">
@@ -2191,7 +2192,7 @@
                                         @enderror
                                     </div>
 
-                                    <div class="input-group mt-1">
+                                    <div class="input-group mt-3">
                                         <span class="input-group-text">Field placement observations:</span>
                                         <input type="text" class="form-control form-color"
                                             wire:model="field_placement_observations">
@@ -2202,7 +2203,7 @@
                                 </div>
 
                                 <div class="col-lg-6">
-                                    <div class="input-group mt-1">
+                                    <div class="input-group mt-3">
                                         <span class="input-group-text">Date Cylinders received in lab:</span>
                                         <input type="date" class="form-control form-color"
                                             wire:model="date_cylinders_received_lab">
@@ -2211,7 +2212,7 @@
                                         @enderror
                                     </div>
 
-                                    <div class="input-group mt-1">
+                                    <div class="input-group mt-3">
                                         <span class="input-group-text">Pick up by:</span>
                                         <input type="text" class="form-control form-color" wire:model="pick_up_by">
                                         @error('pick_up_by')
@@ -2219,7 +2220,7 @@
                                         @enderror
                                     </div>
 
-                                    <div class="input-group mt-1">
+                                    <div class="input-group mt-3">
                                         <label class="col-md-3 control-label">Cylinders condition:</label>
                                         <div class="col-md-9">
                                             <div class="form-check form-check-inline">
@@ -2243,14 +2244,14 @@
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
 
-                                    <div class="input-group mt-1">
+                                    <div class="input-group mt-3">
                                         <label class="input-group-text">Chargeable Time:</label>
                                     </div>
                                     @error('troxler')
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
 
-                                    <div class="input-group mt-1">
+                                    <div class="input-group mt-3">
                                         <span class="input-group-text width12">Test:</span>
                                         <input type="text" class="form-control form-color" wire:model="test_hours">
                                         <span class="input-group-text">hour(s)</span>
@@ -2259,7 +2260,7 @@
                                         @enderror
                                     </div>
 
-                                    <div class="input-group mt-1">
+                                    <div class="input-group mt-3">
                                         <span class="input-group-text width12">Pick up:</span>
                                         <input type="text" class="form-control form-color" wire:model="pick_up_hours">
                                         <span class="input-group-text">hour(s)</span>
@@ -2268,7 +2269,7 @@
                                         @enderror
                                     </div>
 
-                                    <div class="input-group mt-1">
+                                    <div class="input-group mt-3">
                                         <span class="input-group-text width12">Delayed:</span>
                                         <input type="text" class="form-control form-color" wire:model="delayed_hours">
                                         <span class="input-group-text">minute(s)</span>
@@ -2277,7 +2278,7 @@
                                         @enderror
                                     </div>
 
-                                    <div class="input-group mt-1">
+                                    <div class="input-group mt-3">
                                         <span class="input-group-text width12">Why?:</span>
                                         <input type="text" class="form-control form-color" wire:model="why">
                                         @error('why')

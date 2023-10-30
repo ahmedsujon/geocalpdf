@@ -12,7 +12,7 @@
         }
 
         .form-select {
-            background: #CCFFFF;
+            background-color: #CCFFFF !important;
         }
 
         .form-color {
@@ -20,7 +20,7 @@
         }
 
         .moistureremoveinput {
-            background: #CCFFFF;
+            background-color: #CCFFFF !important;
             text-align: center;
         }
 
@@ -46,6 +46,7 @@
             font-size: 0.8rem;
             line-height: 1.4;
             border: 1px solid #000000;
+            background-color: #CCFFFF !important;
             border-radius: 0
         }
 

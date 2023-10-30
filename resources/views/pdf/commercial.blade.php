@@ -98,7 +98,7 @@
                         </h4>
                         <h4 style="font-size: 14px; font-weight: 400">Standard Density Count:
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ $data->density_count }}</h4>
-                        <h4 style="font-size: 14px; font-weight: 400">Moisture Standard Count:
+                        <h4 style="font-size: 14px; font-weight: 400">Standard Moisture Count:
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ $data->moisture_count }}</h4>
 
                         <h4 style="font-size: 14px; font-weight: 400">Test Mode:

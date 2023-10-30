@@ -12,7 +12,7 @@
         }
 
         .form-select {
-            background: #CCFFFF;
+            background-color: #CCFFFF !important;
         }
 
         .form-color {
@@ -20,7 +20,7 @@
         }
 
         .moistureremoveinput {
-            background: #CCFFFF;
+            background-color: #CCFFFF !important;
             text-align: center;
         }
 
@@ -747,7 +747,7 @@
                                                     </div>
                                                 </td>
                                                 <td class="moistureremove text-center">After Test</td>
-                                                <td class="moistureremove">
+                                                <td class="moistureremove" colspan="2">
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
@@ -1042,7 +1042,7 @@
                                                     </div>
                                                 </td>
                                                 <td class="moistureremove text-center">After Test</td>
-                                                <td class="moistureremove">
+                                                <td class="moistureremove" colspan="2">
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
@@ -1337,7 +1337,7 @@
                                                     </div>
                                                 </td>
                                                 <td class="moistureremove text-center">After Test</td>
-                                                <td class="moistureremove">
+                                                <td class="moistureremove" colspan="2">
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
@@ -1632,7 +1632,7 @@
                                                     </div>
                                                 </td>
                                                 <td class="moistureremove text-center">After Test</td>
-                                                <td class="moistureremove">
+                                                <td class="moistureremove" colspan="2">
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"

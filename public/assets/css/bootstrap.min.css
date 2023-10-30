@@ -3012,6 +3012,7 @@ textarea.form-control.is-invalid {
     -webkit-box-shadow: 0 0 0 0.1rem rgba(239, 77, 86, 0.25);
     box-shadow: 0 0 0 0.1rem rgba(239, 77, 86, 0.25);
 }
+
 .form-check-input.is-invalid ~ .form-check-label,
 .was-validated .form-check-input:invalid ~ .form-check-label {
     color: #ef4d56;

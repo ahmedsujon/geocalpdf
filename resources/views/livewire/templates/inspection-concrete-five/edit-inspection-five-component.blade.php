@@ -13,7 +13,7 @@
         }
 
         .form-select {
-            background: #CCFFFF;
+            background: #CCFFFF !important;
         }
 
         .form-color {
@@ -21,7 +21,7 @@
         }
 
         .moistureremoveinput {
-            background: #CCFFFF;
+            background: #CCFFFF !important;
         }
 
         .commercial-form {
@@ -831,7 +831,7 @@
                                                     <div class="input-group">
                                                         <select class="form-select moistureremoveinput"
                                                             wire:model="type_cap_a" required>
-                                                            <option value="">Select type cap</option>
+                                                            <option value="">Select </option>
                                                             <option value="Unbonded">Unbonded</option>
                                                             <option value="Gypsum cement">Gypsum cement</option>
                                                             <option value="Neat Cement">Neat Cement</option>
@@ -981,7 +981,7 @@
                                                     <div class="input-group">
                                                         <select class="form-select moistureremoveinput"
                                                             wire:model="type_cap_b" required>
-                                                            <option value="">Select type cap</option>
+                                                            <option value="">Select </option>
                                                             <option value="Unbonded">Unbonded</option>
                                                             <option value="Gypsum cement">Gypsum cement</option>
                                                             <option value="Neat Cement">Neat Cement</option>
@@ -1131,7 +1131,7 @@
                                                     <div class="input-group">
                                                         <select class="form-select moistureremoveinput"
                                                             wire:model="type_cap_c" required>
-                                                            <option value="">Select type cap</option>
+                                                            <option value="">Select </option>
                                                             <option value="Unbonded">Unbonded</option>
                                                             <option value="Gypsum cement">Gypsum cement</option>
                                                             <option value="Neat Cement">Neat Cement</option>
@@ -1281,7 +1281,7 @@
                                                     <div class="input-group">
                                                         <select class="form-select moistureremoveinput"
                                                             wire:model="type_cap_d" required>
-                                                            <option value="">Select type cap</option>
+                                                            <option value="">Select </option>
                                                             <option value="Unbonded">Unbonded</option>
                                                             <option value="Gypsum cement">Gypsum cement</option>
                                                             <option value="Neat Cement">Neat Cement</option>
@@ -1431,7 +1431,7 @@
                                                     <div class="input-group">
                                                         <select class="form-select moistureremoveinput"
                                                             wire:model="type_cap_e" required>
-                                                            <option value="">Select type cap</option>
+                                                            <option value="">Select </option>
                                                             <option value="Unbonded">Unbonded</option>
                                                             <option value="Gypsum cement">Gypsum cement</option>
                                                             <option value="Neat Cement">Neat Cement</option>
@@ -1581,7 +1581,7 @@
                                                     <div class="input-group">
                                                         <select class="form-select moistureremoveinput"
                                                             wire:model="type_cap_f" required>
-                                                            <option value="">Select type cap</option>
+                                                            <option value="">Select </option>
                                                             <option value="Unbonded">Unbonded</option>
                                                             <option value="Gypsum cement">Gypsum cement</option>
                                                             <option value="Neat Cement">Neat Cement</option>
@@ -1731,7 +1731,7 @@
                                                     <div class="input-group">
                                                         <select class="form-select moistureremoveinput"
                                                             wire:model="type_cap_g" required>
-                                                            <option value="">Select type cap</option>
+                                                            <option value="">Select </option>
                                                             <option value="Unbonded">Unbonded</option>
                                                             <option value="Gypsum cement">Gypsum cement</option>
                                                             <option value="Neat Cement">Neat Cement</option>
@@ -1881,7 +1881,7 @@
                                                     <div class="input-group">
                                                         <select class="form-select moistureremoveinput"
                                                             wire:model="type_cap_h" required>
-                                                            <option value="">Select type cap</option>
+                                                            <option value="">Select </option>
                                                             <option value="Unbonded">Unbonded</option>
                                                             <option value="Gypsum cement">Gypsum cement</option>
                                                             <option value="Neat Cement">Neat Cement</option>
@@ -2031,7 +2031,7 @@
                                                     <div class="input-group">
                                                         <select class="form-select moistureremoveinput"
                                                             wire:model="type_cap_i" required>
-                                                            <option value="">Select type cap</option>
+                                                            <option value="">Select </option>
                                                             <option value="Unbonded">Unbonded</option>
                                                             <option value="Gypsum cement">Gypsum cement</option>
                                                             <option value="Neat Cement">Neat Cement</option>
