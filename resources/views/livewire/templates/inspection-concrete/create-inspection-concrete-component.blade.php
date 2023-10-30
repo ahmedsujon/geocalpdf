@@ -2149,7 +2149,7 @@
                                 <div class="col-lg-6">
 
                                     <div class="input-group mt-1">
-                                        <label class="col-md-3 my-1 control-label">Cylinders cast in:</label>
+                                        <label class="col-md-3 control-label">Cylinders cast in:</label>
                                         <div class="col-md-9">
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="radio" wire:model="cylinders_cast"
@@ -2176,7 +2176,7 @@
                                         @enderror
                                     </div>
 
-                                    <div class="input-group mt-3">
+                                    <div class="input-group mt-1">
                                         <span class="input-group-text">Cylinders temperature range for first 24
                                             hours:</span>
                                         <input type="text" class="form-control form-color"
@@ -2186,7 +2186,7 @@
                                         @enderror
                                     </div>
 
-                                    <div class="input-group mt-3">
+                                    <div class="input-group mt-1">
                                         <span class="input-group-text">Where cylinders cured:</span>
                                         <input type="text" class="form-control form-color"
                                             wire:model="where_cylinders_cured">
@@ -2195,7 +2195,7 @@
                                         @enderror
                                     </div>
 
-                                    <div class="input-group mt-3">
+                                    <div class="input-group mt-1">
                                         <span class="input-group-text">Field placement observations:</span>
                                         <input type="text" class="form-control form-color"
                                             wire:model="field_placement_observations">
@@ -2206,7 +2206,7 @@
                                 </div>
 
                                 <div class="col-lg-6">
-                                    <div class="input-group mt-3">
+                                    <div class="input-group mt-1">
                                         <span class="input-group-text">Date Cylinders received in lab:</span>
                                         <input type="date" class="form-control form-color"
                                             wire:model="date_cylinders_received_lab">
@@ -2215,7 +2215,7 @@
                                         @enderror
                                     </div>
 
-                                    <div class="input-group mt-3">
+                                    <div class="input-group mt-1">
                                         <span class="input-group-text">Pick up by:</span>
                                         <input type="text" class="form-control form-color" wire:model="pick_up_by">
                                         @error('pick_up_by')
@@ -2223,8 +2223,8 @@
                                         @enderror
                                     </div>
 
-                                    <div class="input-group mt-3">
-                                        <label class="col-md-3 my-1 control-label">Cylinders condition:</label>
+                                    <div class="input-group mt-1">
+                                        <label class="col-md-3 control-label">Cylinders condition:</label>
                                         <div class="col-md-9">
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="radio" wire:model="cylinders_condition"
@@ -2247,7 +2247,7 @@
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
 
-                                    <div class="input-group mt-3">
+                                    <div class="input-group mt-1">
                                         <label class="input-group-text">Chargeable Time:</label>
                                     </div>
                                     @error('troxler')
@@ -2263,7 +2263,7 @@
                                         @enderror
                                     </div>
 
-                                    <div class="input-group mt-3">
+                                    <div class="input-group mt-1">
                                         <span class="input-group-text width12">Pick up:</span>
                                         <input type="text" class="form-control form-color" wire:model="pick_up_hours">
                                         <span class="input-group-text">hour(s)</span>
@@ -2272,7 +2272,7 @@
                                         @enderror
                                     </div>
 
-                                    <div class="input-group mt-3">
+                                    <div class="input-group mt-1">
                                         <span class="input-group-text width12">Delayed:</span>
                                         <input type="text" class="form-control form-color" wire:model="delayed_hours">
                                         <span class="input-group-text">minute(s)</span>
@@ -2281,8 +2281,8 @@
                                         @enderror
                                     </div>
 
-                                    <div class="input-group mt-3">
-                                        <span class="input-group-text width12">Why:</span>
+                                    <div class="input-group mt-1">
+                                        <span class="input-group-text width12">Why?:</span>
                                         <input type="text" class="form-control form-color" wire:model="why">
                                         @error('why')
                                         <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>

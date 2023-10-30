@@ -22,8 +22,8 @@ class AddUserComponent extends Component
             'name' => 'required',
             'phone' => 'required',
             'email' => 'required|unique:users,email,',
-            'password' => 'min:8|same:confirm_password',
-            'confirm_password' => 'min:8',
+            'password' => 'required|min:8',
+            'confirm_password' => 'required|min:8|same:password',
             'role_id' => 'required',
         ]);
     }
@@ -34,8 +34,8 @@ class AddUserComponent extends Component
             'name' => 'required',
             'phone' => 'required',
             'email' => 'required|unique:users,email,',
-            'password' => 'min:8|same:confirm_password',
-            'confirm_password' => 'min:8',
+            'password' => 'required|min:8',
+            'confirm_password' => 'required|min:8|same:password',
             'role_id' => 'required',
         ]);
 

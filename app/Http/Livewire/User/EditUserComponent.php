@@ -33,8 +33,6 @@ class EditUserComponent extends Component
             'name' => 'required',
             'phone' => 'required',
             'email' => 'required|unique:users,email,',
-            'password' => 'min:8|same:confirm_password',
-            'confirm_password' => 'min:8',
             'role_id' => 'required',
         ]);
     }

@@ -530,6 +530,9 @@
                                         <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                         @enderror
                                     </div>
+                                    <div class="input-group">
+                                        <h6>Use AGE DAYS to indicate number of specimens in set.</h6>
+                                    </div>
                                 </div>
                             </div>
 

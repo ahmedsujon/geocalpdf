@@ -78,7 +78,7 @@
                                 <label class="col-sm-3 col-form-label" for="confirm_password">Confirm Password <span
                                         class="text-danger">*</span></label>
                                 <div class="col-sm-9">
-                                    <input type="password" class="form-control" id="confirm_password"
+                                    <input type="password" class="form-control"
                                         placeholder="Confirm password" wire:model="confirm_password" />
                                     @error('confirm_password')
                                     <span class="text-danger" style="font-size: 12.5px;">{{ $message }}</span>
