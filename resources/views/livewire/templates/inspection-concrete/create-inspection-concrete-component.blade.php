@@ -866,10 +866,10 @@
                                                         <select class="form-select moistureremoveinput"
                                                             wire:model="type_cap_a" required>
                                                             <option value="">Select</option>
-                                                            <option value="Unbonded">Unbonded</option>
-                                                            <option value="Gypsum cement">Gypsum cement</option>
-                                                            <option value="Neat Cement">Neat Cement</option>
-                                                            <option value="Sulfur">Sulfur</option>
+                                                            <option value="U">Unbonded</option>
+                                                            <option value="G">Gypsum cement</option>
+                                                            <option value="N">Neat Cement</option>
+                                                            <option value="S">Sulfur</option>
                                                         </select>
                                                         @error('type_cap_a')
                                                             <span class="text-danger"
@@ -2440,45 +2440,116 @@
         });
     </script>
 
-    <script>
-        document.getElementById('mix_design_strength').addEventListener('input', function(e) {
-            // Remove commas and any non-digit characters
-            const value = e.target.value.replace(/[^\d]/g, '');
+<script>
+    document.getElementById('mix_design_strength').addEventListener('input', function(e) {
+        // Remove commas and any non-digit characters
+        let value = e.target.value.replace(/[^\d.]/g, '');
 
-            // Format the number with commas
-            e.target.value = parseFloat(value).toLocaleString('en-US');
-        });
-    </script>
-    <script>
-        document.getElementById('required_strength').addEventListener('input', function(e) {
-            const value = e.target.value.replace(/[^\d]/g, '');
-            e.target.value = parseFloat(value).toLocaleString('en-US');
-        });
-    </script>
+        // Convert the string to a numeric format
+        value = parseFloat(value);
 
-    <script>
-        document.getElementById('water').addEventListener('input', function(e) {
-            const value = e.target.value.replace(/[^\d]/g, '');
-            e.target.value = parseFloat(value).toLocaleString('en-US');
-        });
-    </script>
-    <script>
-        document.getElementById('fine_aggregate').addEventListener('input', function(e) {
-            const value = e.target.value.replace(/[^\d]/g, '');
-            e.target.value = parseFloat(value).toLocaleString('en-US');
-        });
-    </script>
-    <script>
-        document.getElementById('course_aggregate').addEventListener('input', function(e) {
-            const value = e.target.value.replace(/[^\d]/g, '');
-            e.target.value = parseFloat(value).toLocaleString('en-US');
-        });
-    </script>
-    <script>
-        document.getElementById('total_batch_weight').addEventListener('input', function(e) {
-            const value = e.target.value.replace(/[^\d]/g, '');
-            e.target.value = parseFloat(value).toLocaleString('en-US');
-        });
-    </script>
+        // Check if it's a valid number
+        if (!isNaN(value)) {
+            // Format the number with commas and update the input value
+            e.target.value = value.toLocaleString('en-US');
+        }
+    });
+</script>
+
+<script>
+    document.getElementById('required_strength').addEventListener('input', function(e) {
+        // Remove commas and any non-digit characters
+        let value = e.target.value.replace(/[^\d.]/g, '');
+
+        // Convert the string to a numeric format
+        value = parseFloat(value);
+
+        // Check if it's a valid number
+        if (!isNaN(value)) {
+            // Format the number with commas and update the input value
+            e.target.value = value.toLocaleString('en-US');
+        }
+    });
+</script>
+
+<script>
+    document.getElementById('water').addEventListener('input', function(e) {
+        // Remove commas and any non-digit characters
+        let value = e.target.value.replace(/[^\d.]/g, '');
+
+        // Convert the string to a numeric format
+        value = parseFloat(value);
+
+        // Check if it's a valid number
+        if (!isNaN(value)) {
+            // Format the number with commas and update the input value
+            e.target.value = value.toLocaleString('en-US');
+        }
+    });
+</script>
+
+<script>
+    document.getElementById('fine_aggregate').addEventListener('input', function(e) {
+        // Remove commas and any non-digit characters
+        let value = e.target.value.replace(/[^\d.]/g, '');
+
+        // Convert the string to a numeric format
+        value = parseFloat(value);
+
+        // Check if it's a valid number
+        if (!isNaN(value)) {
+            // Format the number with commas and update the input value
+            e.target.value = value.toLocaleString('en-US');
+        }
+    });
+</script>
+
+<script>
+    document.getElementById('fine_aggregate').addEventListener('input', function(e) {
+        // Remove commas and any non-digit characters
+        let value = e.target.value.replace(/[^\d.]/g, '');
+
+        // Convert the string to a numeric format
+        value = parseFloat(value);
+
+        // Check if it's a valid number
+        if (!isNaN(value)) {
+            // Format the number with commas and update the input value
+            e.target.value = value.toLocaleString('en-US');
+        }
+    });
+</script>
+
+<script>
+    document.getElementById('course_aggregate').addEventListener('input', function(e) {
+        // Remove commas and any non-digit characters
+        let value = e.target.value.replace(/[^\d.]/g, '');
+
+        // Convert the string to a numeric format
+        value = parseFloat(value);
+
+        // Check if it's a valid number
+        if (!isNaN(value)) {
+            // Format the number with commas and update the input value
+            e.target.value = value.toLocaleString('en-US');
+        }
+    });
+</script>
+
+<script>
+    document.getElementById('total_batch_weight').addEventListener('input', function(e) {
+        // Remove commas and any non-digit characters
+        let value = e.target.value.replace(/[^\d.]/g, '');
+
+        // Convert the string to a numeric format
+        value = parseFloat(value);
+
+        // Check if it's a valid number
+        if (!isNaN(value)) {
+            // Format the number with commas and update the input value
+            e.target.value = value.toLocaleString('en-US');
+        }
+    });
+</script>
 
 @endpush

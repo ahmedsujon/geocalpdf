@@ -372,6 +372,7 @@ class CreateInspectionConcreteComponent extends Component
             'required_strength' => 'required',
         ]);
 
+        
         $data = new InspectionConcrete();
         $data->project_id = $this->project_id;
         $data->client_id = $this->client_id;

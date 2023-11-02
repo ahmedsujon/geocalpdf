@@ -27,6 +27,8 @@ class CreateInspectionConcretesTable extends Migration
             $table->string('sampled_by')->nullable();
             $table->string('created_by')->nullable();
 
+            $table->string('publish_status')->nullable();
+
             // Reference Data
             $table->text('type_of_structure')->nullable();
             $table->text('general_location')->nullable();
