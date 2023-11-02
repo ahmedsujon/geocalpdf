@@ -8,7 +8,7 @@ use Livewire\Component;
 
 class EditClientComponent extends Component
 {
-    public $name, $email, $phone, $company_name, $designation, $client_id, $fields = [], $contact_name = [], $contact_email = [], $i = 1, $subClients = [];
+    public $name, $email, $phone, $address, $company_name, $designation, $client_id, $fields = [], $contact_name = [], $contact_email = [], $i = 1, $subClients = [];
 
     public function mount($client_id)
     {
@@ -16,6 +16,7 @@ class EditClientComponent extends Component
         $this->name = $client->name;
         $this->email = $client->email;
         $this->phone = $client->phone;
+        $this->address = $client->address;
         $this->company_name = $client->company_name;
         $this->designation = $client->designation;
 
@@ -52,12 +53,14 @@ class EditClientComponent extends Component
             'email' => 'required|unique:clients,email,'.$this->client_id.'',
             'company_name' => 'required',
             'phone' => 'required',
+            'address' => 'required',
         ]);
 
         $client = Client::where('id', $this->client_id)->first();
         $client->name = $this->name;
         $client->email = $this->email;
         $client->phone = $this->phone;
+        $client->address = $this->address;
         $client->company_name = $this->company_name;
         $client->designation = $this->designation;
         $client->save();

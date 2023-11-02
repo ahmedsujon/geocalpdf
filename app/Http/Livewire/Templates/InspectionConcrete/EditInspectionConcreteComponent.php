@@ -5,6 +5,7 @@ namespace App\Http\Livewire\Templates\InspectionConcrete;
 use App\Models\InspectionConcrete;
 use App\Models\Project;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Livewire\Component;
@@ -276,8 +277,13 @@ class EditInspectionConcreteComponent extends Component
         $this->specifiedStrengthI();
     }
 
+ 
     public function specifiedStrengthA()
     {
+        if ($this->age_a != null) {
+           $this->test_date_a = Carbon::parse($this->date)->addDays($this->age_a)->format('Y-m-d');  
+        }
+        
         if ($this->age_a == 28) {
             $this->specified_strength_a = $this->required_strength;
         } elseif ($this->age_a == null) {
@@ -286,9 +292,12 @@ class EditInspectionConcreteComponent extends Component
             $this->specified_strength_a = 0;
         }
     }
-
     public function specifiedStrengthB()
     {
+        if ($this->age_b != null) {
+            $this->test_date_b = Carbon::parse($this->date)->addDays($this->age_b)->format('Y-m-d');  
+         }
+
         if ($this->age_b == 28) {
             $this->specified_strength_b = $this->required_strength;
         } elseif ($this->age_b == null) {
@@ -297,9 +306,12 @@ class EditInspectionConcreteComponent extends Component
             $this->specified_strength_b = 0;
         }
     }
-
     public function specifiedStrengthC()
     {
+        if ($this->age_c != null) {
+            $this->test_date_c = Carbon::parse($this->date)->addDays($this->age_c)->format('Y-m-d');  
+         }
+
         if ($this->age_c == 28) {
             $this->specified_strength_c = $this->required_strength;
         } elseif ($this->age_c == null) {
@@ -310,6 +322,10 @@ class EditInspectionConcreteComponent extends Component
     }
     public function specifiedStrengthD()
     {
+        if ($this->age_d != null) {
+            $this->test_date_d = Carbon::parse($this->date)->addDays($this->age_d)->format('Y-m-d');  
+         }
+
         if ($this->age_d == 28) {
             $this->specified_strength_d = $this->required_strength;
         } elseif ($this->age_d == null) {
@@ -320,6 +336,10 @@ class EditInspectionConcreteComponent extends Component
     }
     public function specifiedStrengthE()
     {
+        if ($this->age_e != null) {
+            $this->test_date_e = Carbon::parse($this->date)->addDays($this->age_e)->format('Y-m-d');  
+         }
+
         if ($this->age_e == 28) {
             $this->specified_strength_e = $this->required_strength;
         } elseif ($this->age_e == null) {
@@ -330,6 +350,10 @@ class EditInspectionConcreteComponent extends Component
     }
     public function specifiedStrengthF()
     {
+        if ($this->age_f != null) {
+            $this->test_date_f = Carbon::parse($this->date)->addDays($this->age_f)->format('Y-m-d');  
+         }
+
         if ($this->age_f == 28) {
             $this->specified_strength_f = $this->required_strength;
         } elseif ($this->age_f == null) {
@@ -340,6 +364,10 @@ class EditInspectionConcreteComponent extends Component
     }
     public function specifiedStrengthG()
     {
+        if ($this->age_g != null) {
+            $this->test_date_g = Carbon::parse($this->date)->addDays($this->age_g)->format('Y-m-d');  
+         }
+
         if ($this->age_g == 28) {
             $this->specified_strength_g = $this->required_strength;
         } elseif ($this->age_g == null) {
@@ -350,6 +378,10 @@ class EditInspectionConcreteComponent extends Component
     }
     public function specifiedStrengthH()
     {
+        if ($this->age_h != null) {
+            $this->test_date_h = Carbon::parse($this->date)->addDays($this->age_h)->format('Y-m-d');  
+         }
+
         if ($this->age_h == 28) {
             $this->specified_strength_h = $this->required_strength;
         } elseif ($this->age_h == null) {
@@ -360,6 +392,10 @@ class EditInspectionConcreteComponent extends Component
     }
     public function specifiedStrengthI()
     {
+        if ($this->age_i != null) {
+            $this->test_date_i = Carbon::parse($this->date)->addDays($this->age_i)->format('Y-m-d');  
+         }
+
         if ($this->age_i == 28) {
             $this->specified_strength_i = $this->required_strength;
         } elseif ($this->age_i == null) {

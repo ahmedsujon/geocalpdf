@@ -7,7 +7,7 @@ use Livewire\Component;
 
 class ShowClientComponent extends Component
 {
-    public $name, $email, $phone, $company_name, $designation, $client_id;
+    public $name, $email, $phone, $address, $company_name, $designation, $client_id;
 
     public function mount($client_id){
         $client = Client::where('id', $client_id)->first();

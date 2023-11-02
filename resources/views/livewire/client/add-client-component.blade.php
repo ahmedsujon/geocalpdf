@@ -79,6 +79,19 @@ Add Clients
                                     @enderror
                                 </div>
                             </div>
+
+                            <div class="row mb-3">
+                                <label class="col-sm-3 col-form-label" for="address">Address<span
+                                        class="text-danger">*</span></label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="address" placeholder="Company Address"
+                                        wire:model="address" />
+                                    @error('address')
+                                    <span class="text-danger" style="font-size: 12.5px;">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+
                             <div class="row mb-3">
                                 <label class="col-sm-3 col-form-label" for="designation">Designation </label>
                                 <div class="col-sm-9">

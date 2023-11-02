@@ -8,7 +8,7 @@ use Livewire\Component;
 
 class AddClientComponent extends Component
 {
-    public$name, $email, $phone, $company_name, $designation, $fields = [], $contact_name = [], $contact_email = [], $i = 1;
+    public$name, $email, $phone, $address, $company_name, $designation, $fields = [], $contact_name = [], $contact_email = [], $i = 1;
 
     public function addField($i)
     {
@@ -29,12 +29,14 @@ class AddClientComponent extends Component
             'email' => 'required|unique:clients,email',
             'company_name' => 'required',
             'phone' => 'required',
+            'address' => 'required',
         ]);
 
         $client = new Client();
         $client->name = $this->name;
         $client->email = $this->email;
         $client->phone = $this->phone;
+        $client->address = $this->address;
         $client->company_name = $this->company_name;
         $client->designation = $this->designation;
         $client->save();
@@ -57,6 +59,7 @@ class AddClientComponent extends Component
         $this->name = '';
         $this->email = '';
         $this->phone = '';
+        $this->address = '';
         $this->company_name = '';
         $this->designation = '';
     }

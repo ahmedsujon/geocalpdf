@@ -52,6 +52,15 @@
                                     <p>{{ $client->phone }}</p>
                                 </div>
                             </div>
+
+                            <div class="row mb-3">
+                                <label class="col-sm-3 col-form-label" for="Address">Address <span
+                                        class="text-danger">*</span></label>
+                                <div class="col-sm-9">
+                                    <p>{{ $client->address }}</p>
+                                </div>
+                            </div>
+
                             <div class="row mb-3">
                                 <label class="col-sm-3 col-form-label" for="company_name">Company Name <span
                                         class="text-danger">*</span></label>
