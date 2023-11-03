@@ -765,7 +765,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model='cylinder_set_no_a'>
+                                                            wire:model='cylinder_set_no_a' id="cylinder_set_no_a">
                                                         @error('cylinder_set_no_a')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
@@ -1060,7 +1060,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model='cylinder_set_no_b'>
+                                                            wire:model='cylinder_set_no_b' id="cylinder_set_no_b">
                                                         @error('cylinder_set_no_b')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
@@ -1355,7 +1355,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model='cylinder_set_no_c'>
+                                                            wire:model='cylinder_set_no_c' id="cylinder_set_no_c">
                                                         @error('cylinder_set_no_c')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
@@ -1650,7 +1650,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model='cylinder_set_no_d'>
+                                                            wire:model='cylinder_set_no_d' id="cylinder_set_no_d">
                                                         @error('cylinder_set_no_d')
                                                         <span class="text-danger" style="font-size: 12px;">{{ $message
                                                             }}</span>
@@ -1890,5 +1890,82 @@
                 @this.set('responsible_person', value);
             });
         });
+</script>
+
+<script>
+    document.getElementById('cylinder_set_no_a').addEventListener('input', function(e) {
+        // Remove commas and any non-digit characters
+        let value = e.target.value.replace(/[^\d.]/g, '');
+
+        // Convert the string to a numeric format
+        value = parseFloat(value);
+
+        // Check if it's a valid number
+        if (!isNaN(value)) {
+            // Format the number with commas and update the input value
+            e.target.value = value.toLocaleString('en-US');
+        }
+    });
+</script>
+
+<script>
+    document.getElementById('cylinder_set_no_a').addEventListener('input', function(e) {
+        // Remove commas and any non-digit characters
+        let value = e.target.value.replace(/[^\d.]/g, '');
+
+        // Convert the string to a numeric format
+        value = parseFloat(value);
+
+        // Check if it's a valid number
+        if (!isNaN(value)) {
+            // Format the number with commas and update the input value
+            e.target.value = value.toLocaleString('en-US');
+        }
+    });
+</script>
+<script>
+    document.getElementById('cylinder_set_no_b').addEventListener('input', function(e) {
+        // Remove commas and any non-digit characters
+        let value = e.target.value.replace(/[^\d.]/g, '');
+
+        // Convert the string to a numeric format
+        value = parseFloat(value);
+
+        // Check if it's a valid number
+        if (!isNaN(value)) {
+            // Format the number with commas and update the input value
+            e.target.value = value.toLocaleString('en-US');
+        }
+    });
+</script>
+<script>
+    document.getElementById('cylinder_set_no_c').addEventListener('input', function(e) {
+        // Remove commas and any non-digit characters
+        let value = e.target.value.replace(/[^\d.]/g, '');
+
+        // Convert the string to a numeric format
+        value = parseFloat(value);
+
+        // Check if it's a valid number
+        if (!isNaN(value)) {
+            // Format the number with commas and update the input value
+            e.target.value = value.toLocaleString('en-US');
+        }
+    });
+</script>
+<script>
+    document.getElementById('cylinder_set_no_d').addEventListener('input', function(e) {
+        // Remove commas and any non-digit characters
+        let value = e.target.value.replace(/[^\d.]/g, '');
+
+        // Convert the string to a numeric format
+        value = parseFloat(value);
+
+        // Check if it's a valid number
+        if (!isNaN(value)) {
+            // Format the number with commas and update the input value
+            e.target.value = value.toLocaleString('en-US');
+        }
+    });
 </script>
 @endpush
