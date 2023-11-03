@@ -12,15 +12,15 @@
         }
 
         .form-select {
-            background: #CCFFFF;
+            background: #ccecff;
         }
 
         .form-color {
-            background: #CCFFFF !important;
+            background: #ccecff !important;
         }
 
         .moistureremoveinput {
-            background: #CCFFFF;
+            background: #ccecff;
             text-align: center;
         }
 
@@ -241,7 +241,28 @@
                             </div>
                             <div class="col-md-4"></div>
                         </div>
-
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="input-group" style="border: 1px solid #111;">
+                                        <span class="input-group-text" style="border: none">Office Address:</span>
+                                        <select class="form-select" wire:model="office_address">
+                                            <option value="">Select office addres</option>
+                                            <option value="7290 South Fraser St.Centennial, CO 80112">7290 South Fraser
+                                                St.Centennial, CO 80112</option>
+                                            <option value="4763 Town Center Drive Colorado Springs, CO 80916">
+                                                4763 Town Center Drive Colorado Springs, CO 80916</option>
+                                            <option value="5709 SE 74th Street, Suite A: Oklahoma City, OK 73135">5709
+                                                SE
+                                                74th Street, Suite A: Oklahoma City, OK 73135</option>
+                                        </select>
+                                    </div>
+                                    @error('office_address')
+                                        <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
                         <div class="container">
                             <div class="row mb-2 select-border">
                                 <div class="col-lg-6">
@@ -356,27 +377,6 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <h5>Mix Information</h5>
-                                    <div class="input-group">
-                                        <span class="input-group-text width18">Office Address:</span>
-                                        <select class="form-select" wire:model="office_address">
-                                            <option value="">Select office addres</option>
-                                            <option value="7290 South Fraser St. Centennial, CO 80112 (303)-337-0338">
-                                                7290
-                                                South Fraser St. Centennial, CO 80112 (303)-337-0338</option>
-                                            <option
-                                                value="4763 Town Center Drive Colorado Springs, CO 80916 (719)-265-9003">
-                                                4763 Town Center Drive Colorado Springs, CO 80916 (719)-265-9003
-                                            </option>
-                                            <option value="542 W. 66th St. Loveland, CO 80538(970) 685-4316">542 W.
-                                                66th St.
-                                                Loveland, CO 80538(970) 685-4316</option>
-                                            <option value="5709 SE 74th St., Suite A Oklahoma City, OK 73135">5709 SE
-                                                74th St., Suite A Oklahoma City, OK 73135</option>
-                                        </select>
-                                    </div>
-                                    @error('office_address')
-                                    <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
-                                    @enderror
                                     <div class="input-group">
                                         <span class="input-group-text width18">Contractor:</span>
                                         <input type="text" class="form-control form-color" wire:model='contractor'>

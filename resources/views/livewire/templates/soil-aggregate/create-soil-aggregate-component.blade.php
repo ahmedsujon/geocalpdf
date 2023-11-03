@@ -12,11 +12,11 @@
         }
 
         .form-color {
-            background: #CCFFFF !important;
+            background: #ccecff !important;
         }
 
         .moistureremoveinput {
-            background-color: #CCFFFF;
+            background-color: #ccecff;
             text-align: center;
         }
 
@@ -55,13 +55,13 @@
             font-size: 0.8rem;
             line-height: 1.4;
             border: 0px solid #000000;
-            background-color: #CCFFFF !important;
+            background-color: #ccecff !important;
             border-radius: 0
         }
 
         .commercial-form .select-border .form-select {
             border: 1px solid #000000;
-            background-color: #CCFFFF !important;
+            background-color: #ccecff !important;
         }
         .commercial-form .width30 {
             width: 50%;
@@ -242,11 +242,10 @@
                             <div class="col-md-4"></div>
                         </div>
                         <div class="container">
-                            <div class="row mb-3 select-border">
-                                <div class="col-lg-6">
-                                    <h6>Project Information</h6>
-                                    <div class="input-group">
-                                        <span class="input-group-text width18">Office Address:</span>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="input-group" style="border: 1px solid #111;">
+                                        <span class="input-group-text" style="border: none">Office Address:</span>
                                         <select class="form-select" wire:model="office_address">
                                             <option value="">Select office addres</option>
                                             <option value="7290 South Fraser St.Centennial, CO 80112">7290 South Fraser
@@ -259,8 +258,15 @@
                                         </select>
                                     </div>
                                     @error('office_address')
-                                    <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
+                                        <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="row mb-3 select-border">
+                                <div class="col-lg-6">
+                                    <h6>Project Information</h6>
                                     <div class="input-group">
                                         <span class="input-group-text width18">Project Name:</span>
                                         <select class="form-select" wire:model="project_id" wire:change="selectInfo"

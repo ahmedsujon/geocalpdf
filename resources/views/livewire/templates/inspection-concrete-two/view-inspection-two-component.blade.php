@@ -9,19 +9,19 @@
         .form-control form-color form-color:focus {
             outline: none;
             box-shadow: none;
-            background: #CCFFFF;
+            background: #ccecff;
         }
 
         .form-select {
-            background: #CCFFFF !important;
+            background: #ccecff !important;
         }
 
         .form-color {
-            background: #CCFFFF !important;
+            background: #ccecff !important;
         }
 
         .moistureremoveinput {
-            background: #CCFFFF !important;
+            background: #ccecff !important;
         }
 
         .commercial-form {
@@ -230,14 +230,11 @@
                             </div>
                             <div class="col-md-3"></div>
                         </div>
-
-
                         <div class="container">
                             <div class="row">
-                                <div class="col-lg-6 select-border">
-                                    <h6 style="font-weight: 700;">REFERENCE DATA</h6>
-                                    <div class="input-group mt-2">
-                                        <span class="input-group-text width20">Office Address:</span>
+                                <div class="col-md-12">
+                                    <div class="input-group" style="border: 1px solid #111;">
+                                        <span class="input-group-text" style="border: none">Office Address:</span>
                                         <select class="form-select" wire:model="office_address">
                                             <option value="">Select office addres</option>
                                             <option value="7290 South Fraser St.Centennial, CO 80112">7290 South Fraser
@@ -250,8 +247,15 @@
                                         </select>
                                     </div>
                                     @error('office_address')
-                                    <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
+                                        <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-6 select-border">
+                                    <h6 style="font-weight: 700;">REFERENCE DATA</h6>
                                     <div class="input-group">
                                         <span class="input-group-text width20">Type of Structure:</span>
                                         <input type="text" class="form-control form-color"

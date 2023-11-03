@@ -12,15 +12,15 @@
         }
 
         .form-select {
-            background-color: #CCFFFF !important;
+            background-color: #ccecff !important;
         }
 
         .form-color {
-            background: #CCFFFF !important;
+            background: #ccecff !important;
         }
 
         .moistureremoveinput {
-            background-color: #CCFFFF !important;
+            background-color: #ccecff !important;
             text-align: center;
         }
 
@@ -199,24 +199,31 @@
                     <div class="col-md-4"></div>
                 </div>
                 <div class="container">
-                    <div class="row justify-content-md-center">
-                        <div class="col col-lg-6 select-border">
-                            <h6>Project Information</h6>
-                            <div class="input-group">
-                                <span class="input-group-text width18">Office Address:</span>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="input-group" style="border: 1px solid #111;">
+                                <span class="input-group-text" style="border: none">Office Address:</span>
                                 <select class="form-select" wire:model="office_address">
                                     <option value="">Select office addres</option>
                                     <option value="7290 South Fraser St.Centennial, CO 80112">7290 South Fraser
                                         St.Centennial, CO 80112</option>
                                     <option value="4763 Town Center Drive Colorado Springs, CO 80916">
                                         4763 Town Center Drive Colorado Springs, CO 80916</option>
-                                    <option value="5709 SE 74th Street, Suite A: Oklahoma City, OK 73135">5709 SE
+                                    <option value="5709 SE 74th Street, Suite A: Oklahoma City, OK 73135">5709
+                                        SE
                                         74th Street, Suite A: Oklahoma City, OK 73135</option>
                                 </select>
                             </div>
                             @error('office_address')
-                            <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
+                                <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                             @enderror
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row justify-content-md-center">
+                        <div class="col col-lg-6 select-border">
+                            <h6>Project Information</h6>
                             <div class="input-group">
                                 <span class="input-group-text text-left width18">Project Name:</span>
                                 <select class="form-select" wire:model="project_id" wire:change="selectInfo"

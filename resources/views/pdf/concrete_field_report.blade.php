@@ -21,43 +21,42 @@
     <div style="
         padding: 15px 25px 25px 25px;
       ">
-        <table style="width: 100%; border-collapse: collapse;">
+        <table style="width: 100%; border-collapse: collapse; padding-bottom: 5px;">
             <tr>
                 <td style="width: 28%; text-align: left;">
-
                     <h4 style="font-size: 14px; font-weight: 700;">
                         Client
                     </h4>
-                    <h4 style="font-size: 14px; font-weight: 400;">
+                    <h4 style="font-size: 12px; font-weight: 400;">
                         {{ $client->company_name }}
                     </h4>
-                    <h4 style="font-size: 14px; font-weight: 400;">
+                    <h4 style="font-size: 12px; font-weight: 400;">
                         {{ $client->address }}
                     </h4>
                 </td>
-                
                 <td style="width: 40%; text-align: center;">
                     <img src="https://i0.wp.com/geocal.us/wp-content/uploads/2019/05/logo-new.png" alt="logo"
                         style="max-width: 100px" />
                     <h4 style="font-size: 13px; font-weight: 700; padding-top: 5px">
                         {{ $set_one->office_address }}
                     </h4>
+                    <h6 style="text-align:center;  padding-top: 25px">PHYSICAL PROPERTIES OF PLASTIC CONCRETE</h6>
                 </td>
                 <td style="width: 28%; text-align: left;">
-                    <h4 style="font-size: 14px; font-weight: 400;">
-                        Date: {{ $set_one->created_at->format('m/d/Y') }}
+                    <h4 style="font-size: 14px; font-weight: 500;">
+                        Date: <span style="font-weight: 400; font-size: 12px;">{{ $set_one->created_at->format('m/d/Y') }}</span>
                     </h4>
-                    <h4 style="font-size: 14px; font-weight: 400;">
-                        Project No: {{ $project->project_number }}
+                    <h4 style="font-size: 14px; font-weight: 500;">
+                        Project No: <span style="font-weight: 400; font-size: 12px;">{{ $project->project_number }}</span>
                     </h4>
-                    <h4 style="font-size: 14px; font-weight: 400;">
-                        Project Name: {{ $project->name }}
+                    <h4 style="font-size: 14px; font-weight: 500;">
+                        Project Name: <span style="font-weight: 400; font-size: 12px;">{{ $project->name }}</span>
                     </h4>
                 </td>
             </tr>
         </table>
 
-        <table style="width: 100%; border-collapse: collapse; padding-top: 25px; margin-bottom: 5px;">
+        <table style="width: 100%; border-collapse: collapse; padding-top: 3px; margin-bottom: 5px;">
             <tr>
                 <td style="padding: 1px; border: 1px solid #000">
                     <h4 style="font-size: 14px; font-weight: 400">Specifications: Slump:</h4>
@@ -1286,7 +1285,7 @@
                 @endif
             </table>
         </div>
-  
+
         <table style="width: 100%; border-collapse: collapse;">
             <tr>
                 <td style="padding: 5px; border: 1px solid #000; width: 70%;">

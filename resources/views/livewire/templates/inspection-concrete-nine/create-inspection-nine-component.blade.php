@@ -9,19 +9,19 @@
         .form-control form-color form-color:focus {
             outline: none;
             box-shadow: none;
-            background: #CCFFFF;
+            background: #ccecff;
         }
 
         .form-select {
-            background-color: #CCFFFF !important;
+            background-color: #ccecff !important;
         }
 
         .form-color {
-            background: #CCFFFF !important;
+            background: #ccecff !important;
         }
 
         .moistureremoveinput {
-            background-color: #CCFFFF !important;
+            background-color: #ccecff !important;
         }
 
         .commercial-form {

@@ -45,14 +45,14 @@
                     <h4 style="font-size: 13px; font-weight: 700; padding-top: 5px">CONCRETE TEST REPORT</h4>
                 </td>
                 <td style="width: 28%; text-align: left;">
-                    <h4 style="font-size: 14px; font-weight: 400;">
-                        Date Cast: {{ $data->created_at->format('m/d/Y') }}
+                    <h4 style="font-size: 14px; font-weight: 500;">
+                        Date Cast: <span style="font-size: 14px; font-weight: 400;">{{ $data->created_at->format('m/d/Y') }}</span>
                     </h4>
-                    <h4 style="font-size: 14px; font-weight: 400;">
-                        Project No: {{ $data->project_number }}
+                    <h4 style="font-size: 14px; font-weight: 500;">
+                        Project No: <span style="font-size: 14px; font-weight: 400;">{{ $data->project_number }}</span>
                     </h4>
-                    <h4 style="font-size: 14px; font-weight: 400;">
-                        Project Name: {{ $data->project_name }}
+                    <h4 style="font-size: 14px; font-weight: 500;">
+                        Project Name: <span style="font-size: 14px; font-weight: 400;">{{ $data->project_name }}</span>
                     </h4>
                 </td>
             </tr>
