@@ -23,7 +23,6 @@
   ">
         <table style="width: 100%; border-collapse: collapse;">
             <tr>
-
                 <td style="width: 28%; text-align: left;">
 
                     <h4 style="font-size: 14px; font-weight: 700;">
@@ -31,6 +30,9 @@
                     </h4>
                     <h4 style="font-size: 14px; font-weight: 400;">
                         {{ $data->client_company_name }}
+                    </h4>
+                    <h4 style="font-size: 14px; font-weight: 400;">
+                        {{ $data->client_address }}
                     </h4>
                 </td>
                 <td style="width: 40%; text-align: center;">

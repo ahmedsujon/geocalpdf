@@ -32,6 +32,9 @@
                     <h4 style="font-size: 14px; font-weight: 400;">
                         {{ $data->client_company_name }}
                     </h4>
+                    <h4 style="font-size: 14px; font-weight: 400;">
+                        {{ $data->client_address }}
+                    </h4>
                 </td>
                 <td style="width: 40%; text-align: center;">
                     <img src="https://i0.wp.com/geocal.us/wp-content/uploads/2019/05/logo-new.png" alt="logo"

@@ -23,21 +23,19 @@
       ">
         <table style="width: 100%; border-collapse: collapse;">
             <tr>
-
                 <td style="width: 28%; text-align: left;">
-                    <h4 style="font-size: 14px; font-weight: 400;">
-                        Client: {{ $client->name }}
+
+                    <h4 style="font-size: 14px; font-weight: 700;">
+                        Client
                     </h4>
                     <h4 style="font-size: 14px; font-weight: 400;">
-                        Email: {{ $client->email }}
+                        {{ $client->company_name }}
                     </h4>
                     <h4 style="font-size: 14px; font-weight: 400;">
-                        Phone: {{ $client->phone }}
-                    </h4>
-                    <h4 style="font-size: 14px; font-weight: 400;">
-                        Company Name: {{ $client->company_name }}
+                        {{ $client->address }}
                     </h4>
                 </td>
+                
                 <td style="width: 40%; text-align: center;">
                     <img src="https://i0.wp.com/geocal.us/wp-content/uploads/2019/05/logo-new.png" alt="logo"
                         style="max-width: 100px" />
@@ -54,9 +52,6 @@
                     </h4>
                     <h4 style="font-size: 14px; font-weight: 400;">
                         Project Name: {{ $project->name }}
-                    </h4>
-                    <h4 style="font-size: 14px; font-weight: 400;">
-                        Weather: {{ $set_one->weather }}
                     </h4>
                 </td>
             </tr>
@@ -1321,7 +1316,7 @@
                 </td>
                 <td style="padding: 1px; border: 1px solid #000; width: 50%; padding-top: 5px;">
                     <h6 style="padding-bottom: 5px;">Field Observer: <span
-                            style="border-bottom: 1px solid gray;">{{ user($set_one->created_by)->name }}</span></h6>
+                            style="border-bottom: 1px solid gray;">{{ $set_one->sampled_by }}</span></h6>
                     <h6>Reviewed By: <span style="border-bottom: 1px solid gray">
                             {{ user($set_one->created_by)->name }}</span></h6>
                 </td>

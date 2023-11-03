@@ -35,6 +35,7 @@ class InvoiceController extends Controller
         $data->client_name = client($data->client_id)->name;
         $data->client_email = client($data->client_id)->email;
         $data->client_phone = client($data->client_id)->phone;
+        $data->client_address = client($data->client_id)->address;
         $data->client_company_name = client($data->client_id)->company_name;
 
         $pdf = Pdf::loadView('pdf.commercial', compact('data'));
@@ -49,6 +50,7 @@ class InvoiceController extends Controller
         $data->client_name = client($data->client_id)->name;
         $data->client_email = client($data->client_id)->email;
         $data->client_phone = client($data->client_id)->phone;
+        $data->client_address = client($data->client_id)->address;
         $data->client_company_name = client($data->client_id)->company_name;
 
         $pdf = Pdf::loadView('pdf.soil_aggregate', compact('data'));
@@ -62,6 +64,7 @@ class InvoiceController extends Controller
         $data->client_name = client($data->client_id)->name;
         $data->client_email = client($data->client_id)->email;
         $data->client_phone = client($data->client_id)->phone;
+        $data->client_address = client($data->client_id)->address;
         $data->client_company_name = client($data->client_id)->company_name;
 
         $pdf = Pdf::loadView('pdf.cdot_form', compact('data'));
@@ -76,6 +79,7 @@ class InvoiceController extends Controller
         $data->client_name = client($data->client_id)->name;
         $data->client_email = client($data->client_id)->email;
         $data->client_phone = client($data->client_id)->phone;
+        $data->client_address = client($data->client_id)->address;
         $data->client_company_name = client($data->client_id)->company_name;
 
         $pdf = Pdf::loadView('pdf.plastic_concrete', compact('data'));
@@ -89,6 +93,7 @@ class InvoiceController extends Controller
         $data->technician = user($data->created_by)->name;
         $data->client_name = client($data->client_id)->name;
         $data->client_email = client($data->client_id)->email;
+        $data->client_address = client($data->client_id)->address;
         $data->client_phone = client($data->client_id)->phone;
         $data->client_company_name = client($data->client_id)->company_name;
 
@@ -135,6 +140,7 @@ class InvoiceController extends Controller
         $data->client_name = client($data->client_id)->name;
         $data->client_email = client($data->client_id)->email;
         $data->client_phone = client($data->client_id)->phone;
+        $data->client_address = client($data->client_id)->address;
         $data->client_company_name = client($data->client_id)->company_name;
         $avarage_array = array();
         if ($data->age_a == 28) {
@@ -177,6 +183,7 @@ class InvoiceController extends Controller
         $data->client_name = client($data->client_id)->name;
         $data->client_email = client($data->client_id)->email;
         $data->client_phone = client($data->client_id)->phone;
+        $data->client_address = client($data->client_id)->address;
         $data->client_company_name = client($data->client_id)->company_name;
         $avarage_array = array();
         if ($data->age_a == 28) {
@@ -219,6 +226,7 @@ class InvoiceController extends Controller
         $data->client_name = client($data->client_id)->name;
         $data->client_email = client($data->client_id)->email;
         $data->client_phone = client($data->client_id)->phone;
+        $data->client_address = client($data->client_id)->address;
         $data->client_company_name = client($data->client_id)->company_name;
         $avarage_array = array();
         if ($data->age_a == 28) {
@@ -261,6 +269,7 @@ class InvoiceController extends Controller
         $data->client_name = client($data->client_id)->name;
         $data->client_email = client($data->client_id)->email;
         $data->client_phone = client($data->client_id)->phone;
+        $data->client_address = client($data->client_id)->address;
         $data->client_company_name = client($data->client_id)->company_name;
         $avarage_array = array();
         if ($data->age_a == 28) {
@@ -303,6 +312,7 @@ class InvoiceController extends Controller
         $data->client_name = client($data->client_id)->name;
         $data->client_email = client($data->client_id)->email;
         $data->client_phone = client($data->client_id)->phone;
+        $data->client_address = client($data->client_id)->address;
         $data->client_company_name = client($data->client_id)->company_name;
         $avarage_array = array();
         if ($data->age_a == 28) {
@@ -345,6 +355,7 @@ class InvoiceController extends Controller
         $data->client_name = client($data->client_id)->name;
         $data->client_email = client($data->client_id)->email;
         $data->client_phone = client($data->client_id)->phone;
+        $data->client_address = client($data->client_id)->address;
         $data->client_company_name = client($data->client_id)->company_name;
         $avarage_array = array();
         if ($data->age_a == 28) {
@@ -387,6 +398,7 @@ class InvoiceController extends Controller
         $data->client_name = client($data->client_id)->name;
         $data->client_email = client($data->client_id)->email;
         $data->client_phone = client($data->client_id)->phone;
+        $data->client_address = client($data->client_id)->address;
         $data->client_company_name = client($data->client_id)->company_name;
         $avarage_array = array();
         if ($data->age_a == 28) {
@@ -429,6 +441,7 @@ class InvoiceController extends Controller
         $data->client_name = client($data->client_id)->name;
         $data->client_email = client($data->client_id)->email;
         $data->client_phone = client($data->client_id)->phone;
+        $data->client_address = client($data->client_id)->address;
         $data->client_company_name = client($data->client_id)->company_name;
         $avarage_array = array();
         if ($data->age_a == 28) {
@@ -471,6 +484,7 @@ class InvoiceController extends Controller
         $data->client_name = client($data->client_id)->name;
         $data->client_email = client($data->client_id)->email;
         $data->client_phone = client($data->client_id)->phone;
+        $data->client_address = client($data->client_id)->address;
         $data->client_company_name = client($data->client_id)->company_name;
         $avarage_array = array();
         if ($data->age_a == 28) {
