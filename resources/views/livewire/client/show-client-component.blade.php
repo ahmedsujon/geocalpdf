@@ -76,26 +76,35 @@
                             </div>
 
                             {{-- Contact Person --}}
-                            <h4 class="card-title" style="padding-top: 30px; padding-bottom:8px;">Add Contact Person</h4> <hr>
-                            <div style="padding-bottom: 10px; padding-letft: 25%" class="row">
-                                <div class="col-md-4 offset-2">
-                                    <div class="form-group">
-                                        <label for="name">Name</label>
-                                        <input type="text"
-                                            class="form-control {{ $errors->has('name') ? 'error' : '' }}"
-                                            name="contact_name[]" id="name" required>
+                            @foreach ($fields as $key => $field)
+                                <div style="padding-bottom: 10px; padding-letft: 25%" class="row">
+                                    <div class="col-md-4 offset-2">
+                                        <div class="form-group">
+                                            <label for="name">Name</label>
+                                            <input type="text" class="form-control" wire:model="contact_name.{{ $field }}" required>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group dd">
-                                        <label for="">Email</label>
-                                        <input type="email"
-                                            class="form-control {{ $errors->has('email') ? 'error' : '' }}"
-                                            name="contact_email[]" id="email" required>
+                                    <div class="col-md-4">
+                                        <div class="form-group dd">
+                                            <label for="">Email</label>
+                                            <input type="email" class="form-control" wire:model="contact_email.{{ $field }}" required>
+                                        </div>
                                     </div>
+                                    @if ($key == 0)
+                                        <div style="padding-top: 20px;" class="col-md-2">
+                                            <button type="button" class="btn btn-success" wire:click.prevent='addField({{ $i }})'>
+                                                {!! loadingState('addField('.$i.')', 'Add') !!}
+                                            </button>
+                                        </div>
+                                    @else
+                                        <div style="padding-top: 20px;" class="col-md-2">
+                                            <button type="button" class="btn btn-danger" wire:click.prevent='removeField({{ $key }})'>
+                                                {!! loadingState('removeField('.$key.')', 'Remove') !!}
+                                            </button>
+                                        </div>
+                                    @endif
                                 </div>
-                            </div>
-                            <div id="dynamic_field"></div>
+                            @endforeach
 
                         </div>
                     </div>

@@ -236,6 +236,7 @@
                             </div>
                             <div class="col-md-3"></div>
                         </div>
+                        
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
@@ -1017,10 +1018,10 @@
                                                         <select class="form-select moistureremoveinput"
                                                             wire:model="type_cap_b" required>
                                                             <option value="">Select</option>
-                                                            <option value="Unbonded">Unbonded</option>
-                                                            <option value="Gypsum cement">Gypsum cement</option>
-                                                            <option value="Neat Cement">Neat Cement</option>
-                                                            <option value="Sulfur">Sulfur</option>
+                                                            <option value="U">Unbonded</option>
+                                                            <option value="G">Gypsum cement</option>
+                                                            <option value="N">Neat Cement</option>
+                                                            <option value="S">Sulfur</option>
                                                         </select>
                                                         @error('type_cap_b')
                                                             <span class="text-danger"
@@ -1168,10 +1169,10 @@
                                                         <select class="form-select moistureremoveinput"
                                                             wire:model="type_cap_c" required>
                                                             <option value="">Select</option>
-                                                            <option value="Unbonded">Unbonded</option>
-                                                            <option value="Gypsum cement">Gypsum cement</option>
-                                                            <option value="Neat Cement">Neat Cement</option>
-                                                            <option value="Sulfur">Sulfur</option>
+                                                            <option value="U">Unbonded</option>
+                                                            <option value="G">Gypsum cement</option>
+                                                            <option value="N">Neat Cement</option>
+                                                            <option value="S">Sulfur</option>
                                                         </select>
                                                         @error('type_cap_c')
                                                             <span class="text-danger"
@@ -1319,10 +1320,10 @@
                                                         <select class="form-select moistureremoveinput"
                                                             wire:model="type_cap_d" required>
                                                             <option value="">Select</option>
-                                                            <option value="Unbonded">Unbonded</option>
-                                                            <option value="Gypsum cement">Gypsum cement</option>
-                                                            <option value="Neat Cement">Neat Cement</option>
-                                                            <option value="Sulfur">Sulfur</option>
+                                                            <option value="U">Unbonded</option>
+                                                            <option value="G">Gypsum cement</option>
+                                                            <option value="N">Neat Cement</option>
+                                                            <option value="S">Sulfur</option>
                                                         </select>
                                                         @error('type_cap_d')
                                                             <span class="text-danger"
@@ -1470,10 +1471,10 @@
                                                         <select class="form-select moistureremoveinput"
                                                             wire:model="type_cap_e" required>
                                                             <option value="">Select</option>
-                                                            <option value="Unbonded">Unbonded</option>
-                                                            <option value="Gypsum cement">Gypsum cement</option>
-                                                            <option value="Neat Cement">Neat Cement</option>
-                                                            <option value="Sulfur">Sulfur</option>
+                                                            <option value="U">Unbonded</option>
+                                                            <option value="G">Gypsum cement</option>
+                                                            <option value="N">Neat Cement</option>
+                                                            <option value="S">Sulfur</option>
                                                         </select>
                                                         @error('type_cap_e')
                                                             <span class="text-danger"
@@ -1621,10 +1622,10 @@
                                                         <select class="form-select moistureremoveinput"
                                                             wire:model="type_cap_f" required>
                                                             <option value="">Select</option>
-                                                            <option value="Unbonded">Unbonded</option>
-                                                            <option value="Gypsum cement">Gypsum cement</option>
-                                                            <option value="Neat Cement">Neat Cement</option>
-                                                            <option value="Sulfur">Sulfur</option>
+                                                            <option value="U">Unbonded</option>
+                                                            <option value="G">Gypsum cement</option>
+                                                            <option value="N">Neat Cement</option>
+                                                            <option value="S">Sulfur</option>
                                                         </select>
                                                         @error('type_cap_f')
                                                             <span class="text-danger"
@@ -1772,10 +1773,10 @@
                                                         <select class="form-select moistureremoveinput"
                                                             wire:model="type_cap_g" required>
                                                             <option value="">Select</option>
-                                                            <option value="Unbonded">Unbonded</option>
-                                                            <option value="Gypsum cement">Gypsum cement</option>
-                                                            <option value="Neat Cement">Neat Cement</option>
-                                                            <option value="Sulfur">Sulfur</option>
+                                                            <option value="U">Unbonded</option>
+                                                            <option value="G">Gypsum cement</option>
+                                                            <option value="N">Neat Cement</option>
+                                                            <option value="S">Sulfur</option>
                                                         </select>
                                                         @error('type_cap_g')
                                                             <span class="text-danger"
@@ -1923,10 +1924,10 @@
                                                         <select class="form-select moistureremoveinput"
                                                             wire:model="type_cap_h" required>
                                                             <option value="">Select</option>
-                                                            <option value="Unbonded">Unbonded</option>
-                                                            <option value="Gypsum cement">Gypsum cement</option>
-                                                            <option value="Neat Cement">Neat Cement</option>
-                                                            <option value="Sulfur">Sulfur</option>
+                                                            <option value="U">Unbonded</option>
+                                                            <option value="G">Gypsum cement</option>
+                                                            <option value="N">Neat Cement</option>
+                                                            <option value="S">Sulfur</option>
                                                         </select>
                                                         @error('type_cap_h')
                                                             <span class="text-danger"
@@ -2074,10 +2075,10 @@
                                                         <select class="form-select moistureremoveinput"
                                                             wire:model="type_cap_i" required>
                                                             <option value="">Select</option>
-                                                            <option value="Unbonded">Unbonded</option>
-                                                            <option value="Gypsum cement">Gypsum cement</option>
-                                                            <option value="Neat Cement">Neat Cement</option>
-                                                            <option value="Sulfur">Sulfur</option>
+                                                            <option value="U">Unbonded</option>
+                                                            <option value="G">Gypsum cement</option>
+                                                            <option value="N">Neat Cement</option>
+                                                            <option value="S">Sulfur</option>
                                                         </select>
                                                         @error('type_cap_i')
                                                             <span class="text-danger"

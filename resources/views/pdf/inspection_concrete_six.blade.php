@@ -26,17 +26,11 @@
 
                 <td style="width: 28%; text-align: left;">
 
-                    <h4 style="font-size: 14px; font-weight: 400;">
-                        Client: {{ $data->client_name }}
+                    <h4 style="font-size: 14px; font-weight: 700;">
+                        Client
                     </h4>
                     <h4 style="font-size: 14px; font-weight: 400;">
-                        Email: {{ $data->client_email }}
-                    </h4>
-                    <h4 style="font-size: 14px; font-weight: 400;">
-                        Phone: {{ $data->client_phone }}
-                    </h4>
-                    <h4 style="font-size: 14px; font-weight: 400;">
-                        Company Name: {{ $data->client_company_name }}
+                        {{ $data->client_company_name }}
                     </h4>
                 </td>
                 <td style="width: 40%; text-align: center;">
@@ -49,16 +43,13 @@
                 </td>
                 <td style="width: 28%; text-align: left;">
                     <h4 style="font-size: 14px; font-weight: 400;">
-                        Date: {{ $data->created_at->format('m/d/Y') }}
+                        Date Cast: {{ $data->created_at->format('m/d/Y') }}
                     </h4>
                     <h4 style="font-size: 14px; font-weight: 400;">
                         Project No: {{ $data->project_number }}
                     </h4>
                     <h4 style="font-size: 14px; font-weight: 400;">
                         Project Name: {{ $data->project_name }}
-                    </h4>
-                    <h4 style="font-size: 14px; font-weight: 400;">
-                        Weather: {{ $data->weather }}
                     </h4>
                 </td>
             </tr>
@@ -189,13 +180,10 @@
                         <td style="padding: 1px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400">Specific Location:</h4>
                         </td>
-                        <td style="padding: 1px; border: 1px solid #000">
+                        <td style="padding: 1px; border: 1px solid #000" colspan="2">
                             <h4 style="font-size: 14px; font-weight: 400; text-align: center;">
                                 {{ $data->specific_location }}
                             </h4>
-                        </td>
-                        <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400"></h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400; text-align: center;">Measured</h4>
@@ -493,7 +481,7 @@
                             </h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->max_load_a }}
+                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ number_format($data->max_load_a) }}
                             </h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
@@ -508,7 +496,7 @@
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
-                                {{ $data->measured_strength_a }}
+                                {{ number_format($data->measured_strength_a) }}
                             </h4>
                         </td>
                     </tr>
@@ -547,7 +535,7 @@
                             </h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->max_load_b }}
+                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ number_format($data->max_load_b) }}
                             </h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
@@ -562,7 +550,7 @@
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
-                                {{ $data->measured_strength_b }}
+                                {{ number_format($data->measured_strength_b) }}
                             </h4>
                         </td>
                     </tr>
@@ -601,7 +589,7 @@
                             </h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->max_load_c }}
+                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ number_format($data->max_load_c) }}
                             </h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
@@ -616,7 +604,7 @@
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
-                                {{ $data->measured_strength_c }}
+                                {{ number_format($data->measured_strength_c) }}
                             </h4>
                         </td>
                     </tr>
@@ -655,7 +643,7 @@
                             </h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->max_load_d }}
+                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ number_format($data->max_load_d) }}
                             </h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
@@ -670,7 +658,7 @@
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
-                                {{ $data->measured_strength_d }}
+                                {{ number_format($data->measured_strength_d) }}
                             </h4>
                         </td>
                     </tr>
@@ -709,7 +697,7 @@
                             </h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->max_load_e }}
+                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ number_format($data->max_load_e) }}
                             </h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
@@ -724,7 +712,7 @@
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
-                                {{ $data->measured_strength_e }}
+                                {{ number_format($data->measured_strength_e) }}
                             </h4>
                         </td>
                     </tr>
@@ -770,7 +758,7 @@
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
-                                {{ $data->max_load_f }}
+                                {{ number_format($data->max_load_f) }}
                             </h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
@@ -785,7 +773,7 @@
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
-                                {{ $data->measured_strength_f }}
+                                {{ number_format($data->measured_strength_f) }}
                             </h4>
                         </td>
                     </tr>
@@ -832,7 +820,7 @@
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
-                                {{ $data->max_load_g }}
+                                {{ number_format($data->max_load_g) }}
                             </h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
@@ -847,7 +835,7 @@
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
-                                {{ $data->measured_strength_g }}
+                                {{ number_format($data->measured_strength_g) }}
                             </h4>
                         </td>
                     </tr>
@@ -894,7 +882,7 @@
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
-                                {{ $data->max_load_h }}
+                                {{ number_format($data->max_load_h) }}
                             </h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
@@ -909,7 +897,7 @@
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
-                                {{ $data->measured_strength_h }}
+                                {{ number_format($data->measured_strength_h) }}
                             </h4>
                         </td>
                     </tr>
@@ -956,7 +944,7 @@
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
-                                {{ $data->max_load_i }}
+                                {{ number_format($data->max_load_i) }}
                             </h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
@@ -971,7 +959,7 @@
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
-                                {{ $data->measured_strength_i }}
+                                {{ number_format($data->measured_strength_i) }}
                             </h4>
                         </td>
                     </tr>
@@ -1084,36 +1072,27 @@
                     style="text-align:left; font-size: 14px; font-weight: 500; padding: 0; letter-spacing: -1px; background-color: #689A3D; border-top: 2px solid #000; border-right: 0px solid #000; border-bottom: 0px solid #000; border-left: 0px solid #000;">
                     COMMENTS</caption>
                 <tr>
-                    <td style="padding: 10px 5px;">
+                    <td style="padding: 10px 5px; font-size: 15px; font-weight: 500;">
                         <h5>{{ $data->remark }}</h5>
                     </td>
                 </tr>
             </table>
 
-            <table style="width: 100%; border-collapse: collapse">
+            <table style="width: 100%; border-collapse: collapse;">
                 <tr>
-                    <p style="font-size: 15px; padding: 1px;">Copies:</p>
-                    <td></td>
-                    <td
-                        style="width: 40%; padding-top: 10px; padding-left: 10px; padding-right: 20px; padding-bottom: 10px;">
-                        <h6 style="
-                font-size: 14px;
-                font-weight: normal;">
-                            {{ user($data->created_by)->name }}</h6>
-                        <h6 style="
-            font-size: 14px;
-            font-weight: normal;
-            border-top: 1px solid black;
-            padding-top: 2px;
-          ">
-                            Reviewed By
-                        </h6>
+                    <td style="padding: 1px; border: 1px solid #000; width: 50%;">
+                        <h5>Copies:</h5>
+                        @foreach (json_decode($data->responsible_person) as $person)
+                           <p style="font-size: 13px; font-width: 400; padding-left: 40px;">{{ user($person)->email }}</p> 
+                        @endforeach
+                    </td>
+                    <td style="padding: 1px; border: 1px solid #000; width: 50%;">
+                        <h6>Reviewed By: {{ user($data->created_by)->name }}</h6>
                     </td>
                 </tr>
             </table>
-
         </div>
-        <p style="padding-top: 10px; padding-bottom: 30px; font-size: 12px; font-style: italic; font-weight: 400; text-align: left">
+        <p style="padding-top: 10px; padding-bottom: 30px; font-size: 12px; font-weight: 400; text-align: left">
             These test results apply only to the specific samples/location/materials noted and may not be
             representative
             of other areas or similar materials. This report may not be reproduced, except in full, without

@@ -5,6 +5,7 @@ namespace App\Http\Livewire\Templates\InspectionConcreteFive;
 use App\Models\User;
 use App\Models\Project;
 use Livewire\Component;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use App\Models\InspectionConcreteSetFive;
@@ -65,6 +66,10 @@ class CreateInspectionFiveComponent extends Component
 
     public function specifiedStrengthA()
     {
+        if ($this->age_a != null) {
+           $this->test_date_a = Carbon::parse($this->date)->addDays($this->age_a)->format('Y-m-d');  
+        }
+        
         if ($this->age_a == 28) {
             $this->specified_strength_a = $this->required_strength;
         } elseif ($this->age_a == null) {
@@ -73,9 +78,12 @@ class CreateInspectionFiveComponent extends Component
             $this->specified_strength_a = 0;
         }
     }
-
     public function specifiedStrengthB()
     {
+        if ($this->age_b != null) {
+            $this->test_date_b = Carbon::parse($this->date)->addDays($this->age_b)->format('Y-m-d');  
+         }
+
         if ($this->age_b == 28) {
             $this->specified_strength_b = $this->required_strength;
         } elseif ($this->age_b == null) {
@@ -84,9 +92,12 @@ class CreateInspectionFiveComponent extends Component
             $this->specified_strength_b = 0;
         }
     }
-
     public function specifiedStrengthC()
     {
+        if ($this->age_c != null) {
+            $this->test_date_c = Carbon::parse($this->date)->addDays($this->age_c)->format('Y-m-d');  
+         }
+
         if ($this->age_c == 28) {
             $this->specified_strength_c = $this->required_strength;
         } elseif ($this->age_c == null) {
@@ -97,6 +108,10 @@ class CreateInspectionFiveComponent extends Component
     }
     public function specifiedStrengthD()
     {
+        if ($this->age_d != null) {
+            $this->test_date_d = Carbon::parse($this->date)->addDays($this->age_d)->format('Y-m-d');  
+         }
+
         if ($this->age_d == 28) {
             $this->specified_strength_d = $this->required_strength;
         } elseif ($this->age_d == null) {
@@ -107,6 +122,10 @@ class CreateInspectionFiveComponent extends Component
     }
     public function specifiedStrengthE()
     {
+        if ($this->age_e != null) {
+            $this->test_date_e = Carbon::parse($this->date)->addDays($this->age_e)->format('Y-m-d');  
+         }
+
         if ($this->age_e == 28) {
             $this->specified_strength_e = $this->required_strength;
         } elseif ($this->age_e == null) {
@@ -117,6 +136,10 @@ class CreateInspectionFiveComponent extends Component
     }
     public function specifiedStrengthF()
     {
+        if ($this->age_f != null) {
+            $this->test_date_f = Carbon::parse($this->date)->addDays($this->age_f)->format('Y-m-d');  
+         }
+
         if ($this->age_f == 28) {
             $this->specified_strength_f = $this->required_strength;
         } elseif ($this->age_f == null) {
@@ -127,6 +150,10 @@ class CreateInspectionFiveComponent extends Component
     }
     public function specifiedStrengthG()
     {
+        if ($this->age_g != null) {
+            $this->test_date_g = Carbon::parse($this->date)->addDays($this->age_g)->format('Y-m-d');  
+         }
+
         if ($this->age_g == 28) {
             $this->specified_strength_g = $this->required_strength;
         } elseif ($this->age_g == null) {
@@ -137,6 +164,10 @@ class CreateInspectionFiveComponent extends Component
     }
     public function specifiedStrengthH()
     {
+        if ($this->age_h != null) {
+            $this->test_date_h = Carbon::parse($this->date)->addDays($this->age_h)->format('Y-m-d');  
+         }
+
         if ($this->age_h == 28) {
             $this->specified_strength_h = $this->required_strength;
         } elseif ($this->age_h == null) {
@@ -147,6 +178,10 @@ class CreateInspectionFiveComponent extends Component
     }
     public function specifiedStrengthI()
     {
+        if ($this->age_i != null) {
+            $this->test_date_i = Carbon::parse($this->date)->addDays($this->age_i)->format('Y-m-d');  
+         }
+
         if ($this->age_i == 28) {
             $this->specified_strength_i = $this->required_strength;
         } elseif ($this->age_i == null) {
@@ -155,12 +190,11 @@ class CreateInspectionFiveComponent extends Component
             $this->specified_strength_i = 0;
         }
     }
-
     // ================== area of cycle ===================
     public function AreaCylA()
     {
         if ($this->diameter_a != null && $this->diameter_a_a != null) {
-            $this->area_cyl_a = round(pow((($this->diameter_a + $this->diameter_a_a) / 2 / 2), 2) * 3.14159265, 2);
+            $this->area_cyl_a = number_format(pow((($this->diameter_a + $this->diameter_a_a) / 2 / 2), 2) * 3.14159265, 2);
         } else {
             $this->area_cyl_a = 0;
         }
@@ -168,7 +202,7 @@ class CreateInspectionFiveComponent extends Component
     public function AreaCylB()
     {
         if ($this->diameter_b != null && $this->diameter_a_b != null) {
-            $this->area_cyl_b = round(pow((($this->diameter_b + $this->diameter_a_b) / 2 / 2), 2) * 3.14159265, 2);
+            $this->area_cyl_b = number_format(pow((($this->diameter_b + $this->diameter_a_b) / 2 / 2), 2) * 3.14159265, 2);
         } else {
             $this->area_cyl_b = 0;
         }
@@ -176,7 +210,7 @@ class CreateInspectionFiveComponent extends Component
     public function AreaCylC()
     {
         if ($this->diameter_c != null && $this->diameter_a_c != null) {
-            $this->area_cyl_c = round(pow((($this->diameter_c + $this->diameter_a_c) / 2 / 2), 2) * 3.14159265, 2);
+            $this->area_cyl_c = number_format(pow((($this->diameter_c + $this->diameter_a_c) / 2 / 2), 2) * 3.14159265, 2);
         } else {
             $this->area_cyl_c = 0;
         }
@@ -184,7 +218,7 @@ class CreateInspectionFiveComponent extends Component
     public function AreaCylD()
     {
         if ($this->diameter_d != null && $this->diameter_a_d != null) {
-            $this->area_cyl_d = round(pow((($this->diameter_d + $this->diameter_a_d) / 2 / 2), 2) * 3.14159265, 2);
+            $this->area_cyl_d = number_format(pow((($this->diameter_d + $this->diameter_a_d) / 2 / 2), 2) * 3.14159265, 2);
         } else {
             $this->area_cyl_d = 0;
         }
@@ -192,7 +226,7 @@ class CreateInspectionFiveComponent extends Component
     public function AreaCylE()
     {
         if ($this->diameter_e != null && $this->diameter_a_e != null) {
-            $this->area_cyl_e = round(pow((($this->diameter_e + $this->diameter_a_e) / 2 / 2), 2) * 3.14159265, 2);
+            $this->area_cyl_e = number_format(pow((($this->diameter_e + $this->diameter_a_e) / 2 / 2), 2) * 3.14159265, 2);
         } else {
             $this->area_cyl_e = 0;
         }
@@ -200,7 +234,7 @@ class CreateInspectionFiveComponent extends Component
     public function AreaCylF()
     {
         if ($this->diameter_f != null && $this->diameter_a_f != null) {
-            $this->area_cyl_f = round(pow((($this->diameter_f + $this->diameter_a_f) / 2 / 2), 2) * 3.14159265, 2);
+            $this->area_cyl_f = number_format(pow((($this->diameter_f + $this->diameter_a_f) / 2 / 2), 2) * 3.14159265, 2);
         } else {
             $this->area_cyl_f = 0;
         }
@@ -208,7 +242,7 @@ class CreateInspectionFiveComponent extends Component
     public function AreaCylG()
     {
         if ($this->diameter_g != null && $this->diameter_a_g != null) {
-            $this->area_cyl_g = round(pow((($this->diameter_g + $this->diameter_a_g) / 2 / 2), 2) * 3.14159265, 2);
+            $this->area_cyl_g = number_format(pow((($this->diameter_g + $this->diameter_a_g) / 2 / 2), 2) * 3.14159265, 2);
         } else {
             $this->area_cyl_g = 0;
         }
@@ -216,7 +250,7 @@ class CreateInspectionFiveComponent extends Component
     public function AreaCylH()
     {
         if ($this->diameter_h != null && $this->diameter_a_h != null) {
-            $this->area_cyl_h = round(pow((($this->diameter_h + $this->diameter_a_h) / 2 / 2), 2) * 3.14159265, 2);
+            $this->area_cyl_h = number_format(pow((($this->diameter_h + $this->diameter_a_h) / 2 / 2), 2) * 3.14159265, 2);
         } else {
             $this->area_cyl_h = 0;
         }
@@ -224,7 +258,7 @@ class CreateInspectionFiveComponent extends Component
     public function AreaCylI()
     {
         if ($this->diameter_i != null && $this->diameter_a_i != null) {
-            $this->area_cyl_i = round(pow((($this->diameter_i + $this->diameter_a_i) / 2 / 2), 2) * 3.14159265, 2);
+            $this->area_cyl_i = number_format(pow((($this->diameter_i + $this->diameter_a_i) / 2 / 2), 2) * 3.14159265, 2);
         } else {
             $this->area_cyl_i = 0;
         }
