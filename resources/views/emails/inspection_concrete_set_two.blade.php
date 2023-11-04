@@ -30,7 +30,7 @@
   <p>Please check the attachment report for your next action.</p> <br>
 
   @if ($id)
-  <a class="button button1" href="{{ route('inspection.concrete.generate.two',['id'=>$id]) }}">Download</a>
+  <a class="button button1" href="{{ route('inspection.concrete.generate.two',['id'=>$id]) }}">Concrete Test Report</a> <br>
   @endif
 
   @if ($id)

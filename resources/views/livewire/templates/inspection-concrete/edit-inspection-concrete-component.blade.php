@@ -2419,6 +2419,17 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="row pt-3">
+                                <div class="col-md-12">
+                                    <div class="form-check form-switch mb-3" dir="ltr">
+                                        <input class="form-check-input" type="checkbox" id="permission"
+                                            wire:model='permission' value="1">
+                                        <label class="form-check-label" for="avatar">Attach the Concrete Field Report with Concrete Test Report </label>
+                                    </div>
+                                </div>
+                            </div>
+
                             <div class="container">
                                 <div class="row mt-3 mb-5 justify-content-md-center">
                                     <div class="col-md-12 text-center">

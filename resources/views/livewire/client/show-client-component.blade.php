@@ -90,22 +90,17 @@
                                             <input type="email" class="form-control" wire:model="contact_email.{{ $field }}" required>
                                         </div>
                                     </div>
-                                    @if ($key == 0)
-                                        <div style="padding-top: 20px;" class="col-md-2">
-                                            <button type="button" class="btn btn-success" wire:click.prevent='addField({{ $i }})'>
-                                                {!! loadingState('addField('.$i.')', 'Add') !!}
-                                            </button>
-                                        </div>
-                                    @else
-                                        <div style="padding-top: 20px;" class="col-md-2">
-                                            <button type="button" class="btn btn-danger" wire:click.prevent='removeField({{ $key }})'>
-                                                {!! loadingState('removeField('.$key.')', 'Remove') !!}
-                                            </button>
-                                        </div>
-                                    @endif
                                 </div>
                             @endforeach
-
+                            <div class="container">
+                                <div class="row mt-3 mb-5 justify-content-md-center">
+                                    <div class="col-md-12 text-center">
+                                        <form>
+                                            <a href="{{ route('client.list') }}" class="btn btn-primary submit_btn">Back to List</a>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

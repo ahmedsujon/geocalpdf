@@ -45,7 +45,8 @@
                 </td>
                 <td style="width: 28%; text-align: left;">
                     <h4 style="font-size: 14px; font-weight: 500;">
-                        Date Cast: <span style="font-size: 14px; font-weight: 400;">{{ $data->created_at->format('m/d/Y') }}</span>
+                        Date Cast: <span
+                            style="font-size: 14px; font-weight: 400;">{{ $data->created_at->format('m/d/Y') }}</span>
                     </h4>
                     <h4 style="font-size: 14px; font-weight: 500;">
                         Project No: <span style="font-size: 14px; font-weight: 400;">{{ $data->project_number }}</span>
@@ -152,8 +153,8 @@
                             <h4 style="font-size: 14px; font-weight: 400">Date Received in Lab: </h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{
-                                $data->created_at->format('m/d/Y') }}</h4>
+                            <h4 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                {{ $data->created_at->format('m/d/Y') }}</h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400"></h4>
@@ -204,13 +205,16 @@
                             </h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400">Slump (in) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (C143/T119)</h4>
+                            <h4 style="font-size: 14px; font-weight: 400">Slump (in) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                &nbsp; &nbsp; (C143/T119)</h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->slump }}</h4>
+                            <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->slump }}
+                            </h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->slump_min }} -
+                            <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->slump_min }}
+                                -
                                 {{ $data->slump_max }}
                             </h4>
                         </td>
@@ -228,7 +232,8 @@
                             <h4 style="font-size: 14px; font-weight: 400">Air Temp (°F):</h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->ambient_temp }}
+                            <h4 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                {{ $data->ambient_temp }}
                             </h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
@@ -245,15 +250,16 @@
                             </h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400">Conc Temp (°F) &nbsp; &nbsp; (C1064/T309)</h4>
+                            <h4 style="font-size: 14px; font-weight: 400">Conc Temp (°F) &nbsp; &nbsp; (C1064/T309)
+                            </h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->concrete_temp
-                                }}</h4>
+                            <h4 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                {{ $data->concrete_temp }}</h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{
-                                $data->concrete_temp_min }} -
+                            <h4 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                {{ $data->concrete_temp_min }} -
                                 {{ $data->concrete_temp_max }} </h4>
                         </td>
                     </tr>
@@ -267,15 +273,17 @@
                             </h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400">Air Content (%) &nbsp; &nbsp; &nbsp; (C231/T152)</h4>
+                            <h4 style="font-size: 14px; font-weight: 400">Air Content (%) &nbsp; &nbsp; &nbsp;
+                                (C231/T152)</h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->air_content }}
+                            <h4 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                {{ $data->air_content }}
                             </h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->air_min }} - {{
-                                $data->air_max }}
+                            <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->air_min }} -
+                                {{ $data->air_max }}
                             </h4>
                         </td>
                     </tr>
@@ -289,10 +297,12 @@
                             </h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400">Unit Weight (pcf) &nbsp; &nbsp; (C138/T121)</h4>
+                            <h4 style="font-size: 14px; font-weight: 400">Unit Weight (pcf) &nbsp; &nbsp; (C138/T121)
+                            </h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->unit_weight }}
+                            <h4 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                {{ $data->unit_weight }}
                             </h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
@@ -312,8 +322,8 @@
                             <h4 style="font-size: 14px; font-weight: 400">Relative Yield:</h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->relative_yield
-                                }}</h4>
+                            <h4 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                {{ $data->relative_yield }}</h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400"></h4>
@@ -332,32 +342,32 @@
                             <h4 style="font-size: 14px; font-weight: 400">W/C Ratio:</h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{
-                                $data->water_cement_ratio }}</h4>
+                            <h4 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                {{ $data->water_cement_ratio }}</h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400"></h4>
                         </td>
                     </tr>
                     @php
-                    $startTimestamp = strtotime($data->batch_time);
-                    $endTimestamp = strtotime($data->ttf_unloading);
-                    $timeDifferenceInMinutes = round(($endTimestamp - $startTimestamp) / 60);
+                        $startTimestamp = strtotime($data->batch_time);
+                        $endTimestamp = strtotime($data->ttf_unloading);
+                        $timeDifferenceInMinutes = round(($endTimestamp - $startTimestamp) / 60);
                     @endphp
                     <tr>
                         <td style="padding: 1px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400">Time in Truck: (min):</h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{
-                                $timeDifferenceInMinutes }}</h4>
+                            <h4 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                {{ $timeDifferenceInMinutes }}</h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400">Batch Size:</h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{
-                                $data->yards_at_sampling }}</h4>
+                            <h4 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                {{ $data->yards_at_sampling }}</h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400"></h4>
@@ -374,8 +384,8 @@
                             <h4 style="font-size: 14px; font-weight: 400">CY Placed:</h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{
-                                $data->total_yard_placement }}</h4>
+                            <h4 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                {{ $data->total_yard_placement }}</h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400"></h4>
@@ -392,7 +402,8 @@
                             <h4 style="font-size: 14px; font-weight: 400">Water Added (gal):</h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->water_added }}
+                            <h4 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                {{ $data->water_added }}
                             </h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
@@ -483,7 +494,8 @@
                             </h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ number_format($data->max_load_a) }}
+                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                {{ number_format($data->max_load_a) }}
                             </h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
@@ -537,7 +549,8 @@
                             </h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ number_format($data->max_load_b) }}
+                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                {{ number_format($data->max_load_b) }}
                             </h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
@@ -591,7 +604,8 @@
                             </h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ number_format($data->max_load_c) }}
+                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                {{ number_format($data->max_load_c) }}
                             </h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
@@ -645,7 +659,8 @@
                             </h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ number_format($data->max_load_d) }}
+                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                {{ number_format($data->max_load_d) }}
                             </h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
@@ -699,7 +714,8 @@
                             </h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ number_format($data->max_load_e) }}
+                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                {{ number_format($data->max_load_e) }}
                             </h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
@@ -719,252 +735,252 @@
                         </td>
                     </tr>
                     @if ($data->age_g)
-                    <tr>
-                        <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
-                                {{ $data->cylinder_id }}
-                            </h4>
-                        </td>
-                        <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">F
-                            </h4>
-                        </td>
-                        <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400;">
-                                {{ \Carbon\Carbon::parse($data->test_date_f)->format('m/d/Y') }}
-                            </h4>
-                        </td>
-                        <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->age_f }}
-                            </h4>
-                        </td>
-                        <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
-                                {{ $data->diameter_f }}
-                            </h4>
-                        </td>
-                        <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
-                                {{ $data->avg_length_f }}
-                            </h4>
-                        </td>
-                        <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
-                                {{ $data->area_cyl_f }}
-                            </h4>
-                        </td>
-                        <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
-                                {{ $data->type_cap_f }}
-                            </h4>
-                        </td>
-                        <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
-                                {{ number_format($data->max_load_f) }}
-                            </h4>
-                        </td>
-                        <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
-                                {{ $data->type_fracture_f }}
-                            </h4>
-                        </td>
-                        <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
-                                {{ $data->person_performing_f }}
-                            </h4>
-                        </td>
-                        <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
-                                {{ number_format($data->measured_strength_f) }}
-                            </h4>
-                        </td>
-                    </tr>
+                        <tr>
+                            <td style="padding: 1px; border: 1px solid #000">
+                                <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                    {{ $data->cylinder_id }}
+                                </h4>
+                            </td>
+                            <td style="padding: 1px; border: 1px solid #000">
+                                <h4 style="font-size: 14px; font-weight: 400; text-align:center;">F
+                                </h4>
+                            </td>
+                            <td style="padding: 1px; border: 1px solid #000">
+                                <h4 style="font-size: 14px; font-weight: 400;">
+                                    {{ \Carbon\Carbon::parse($data->test_date_f)->format('m/d/Y') }}
+                                </h4>
+                            </td>
+                            <td style="padding: 1px; border: 1px solid #000">
+                                <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->age_f }}
+                                </h4>
+                            </td>
+                            <td style="padding: 1px; border: 1px solid #000">
+                                <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                    {{ $data->diameter_f }}
+                                </h4>
+                            </td>
+                            <td style="padding: 1px; border: 1px solid #000">
+                                <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                    {{ $data->avg_length_f }}
+                                </h4>
+                            </td>
+                            <td style="padding: 1px; border: 1px solid #000">
+                                <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                    {{ $data->area_cyl_f }}
+                                </h4>
+                            </td>
+                            <td style="padding: 1px; border: 1px solid #000">
+                                <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                    {{ $data->type_cap_f }}
+                                </h4>
+                            </td>
+                            <td style="padding: 1px; border: 1px solid #000">
+                                <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                    {{ number_format($data->max_load_f) }}
+                                </h4>
+                            </td>
+                            <td style="padding: 1px; border: 1px solid #000">
+                                <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                    {{ $data->type_fracture_f }}
+                                </h4>
+                            </td>
+                            <td style="padding: 1px; border: 1px solid #000">
+                                <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                    {{ $data->person_performing_f }}
+                                </h4>
+                            </td>
+                            <td style="padding: 1px; border: 1px solid #000">
+                                <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                    {{ number_format($data->measured_strength_f) }}
+                                </h4>
+                            </td>
+                        </tr>
                     @endif
                     @if ($data->age_g)
-                    <tr>
-                        <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
-                                {{ $data->cylinder_id }}
-                            </h4>
-                        </td>
-                        <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">G
-                            </h4>
-                        </td>
-                        <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400;">
-                                {{ \Carbon\Carbon::parse($data->test_date_g)->format('m/d/Y') }}
-                            </h4>
-                        </td>
-                        <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->age_g }}
-                            </h4>
-                        </td>
-                        <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
-                                {{ $data->diameter_g }}
-                            </h4>
-                        </td>
-                        <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
-                                {{ $data->avg_length_g }}
-                            </h4>
-                        </td>
-                        <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
-                                {{ $data->area_cyl_g }}
-                            </h4>
-                        </td>
-                        <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
-                                {{ $data->type_cap_g }}
-                            </h4>
-                        </td>
-                        <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
-                                {{ number_format($data->max_load_g) }}
-                            </h4>
-                        </td>
-                        <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
-                                {{ $data->type_fracture_g }}
-                            </h4>
-                        </td>
-                        <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
-                                {{ $data->person_performing_g }}
-                            </h4>
-                        </td>
-                        <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
-                                {{ number_format($data->measured_strength_g) }}
-                            </h4>
-                        </td>
-                    </tr>
+                        <tr>
+                            <td style="padding: 1px; border: 1px solid #000">
+                                <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                    {{ $data->cylinder_id }}
+                                </h4>
+                            </td>
+                            <td style="padding: 1px; border: 1px solid #000">
+                                <h4 style="font-size: 14px; font-weight: 400; text-align:center;">G
+                                </h4>
+                            </td>
+                            <td style="padding: 1px; border: 1px solid #000">
+                                <h4 style="font-size: 14px; font-weight: 400;">
+                                    {{ \Carbon\Carbon::parse($data->test_date_g)->format('m/d/Y') }}
+                                </h4>
+                            </td>
+                            <td style="padding: 1px; border: 1px solid #000">
+                                <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->age_g }}
+                                </h4>
+                            </td>
+                            <td style="padding: 1px; border: 1px solid #000">
+                                <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                    {{ $data->diameter_g }}
+                                </h4>
+                            </td>
+                            <td style="padding: 1px; border: 1px solid #000">
+                                <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                    {{ $data->avg_length_g }}
+                                </h4>
+                            </td>
+                            <td style="padding: 1px; border: 1px solid #000">
+                                <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                    {{ $data->area_cyl_g }}
+                                </h4>
+                            </td>
+                            <td style="padding: 1px; border: 1px solid #000">
+                                <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                    {{ $data->type_cap_g }}
+                                </h4>
+                            </td>
+                            <td style="padding: 1px; border: 1px solid #000">
+                                <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                    {{ number_format($data->max_load_g) }}
+                                </h4>
+                            </td>
+                            <td style="padding: 1px; border: 1px solid #000">
+                                <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                    {{ $data->type_fracture_g }}
+                                </h4>
+                            </td>
+                            <td style="padding: 1px; border: 1px solid #000">
+                                <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                    {{ $data->person_performing_g }}
+                                </h4>
+                            </td>
+                            <td style="padding: 1px; border: 1px solid #000">
+                                <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                    {{ number_format($data->measured_strength_g) }}
+                                </h4>
+                            </td>
+                        </tr>
                     @endif
                     @if ($data->age_h)
-                    <tr>
-                        <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
-                                {{ $data->cylinder_id }}
-                            </h4>
-                        </td>
-                        <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">H
-                            </h4>
-                        </td>
-                        <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400;">
-                                {{ \Carbon\Carbon::parse($data->test_date_h)->format('m/d/Y') }}
-                            </h4>
-                        </td>
-                        <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->age_h }}
-                            </h4>
-                        </td>
-                        <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
-                                {{ $data->diameter_h }}
-                            </h4>
-                        </td>
-                        <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
-                                {{ $data->avg_length_h }}
-                            </h4>
-                        </td>
-                        <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
-                                {{ $data->area_cyl_h }}
-                            </h4>
-                        </td>
-                        <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
-                                {{ $data->type_cap_h }}
-                            </h4>
-                        </td>
-                        <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
-                                {{ number_format($data->max_load_h) }}
-                            </h4>
-                        </td>
-                        <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
-                                {{ $data->type_fracture_h }}
-                            </h4>
-                        </td>
-                        <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
-                                {{ $data->person_performing_h }}
-                            </h4>
-                        </td>
-                        <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
-                                {{ number_format($data->measured_strength_h) }}
-                            </h4>
-                        </td>
-                    </tr>
+                        <tr>
+                            <td style="padding: 1px; border: 1px solid #000">
+                                <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                    {{ $data->cylinder_id }}
+                                </h4>
+                            </td>
+                            <td style="padding: 1px; border: 1px solid #000">
+                                <h4 style="font-size: 14px; font-weight: 400; text-align:center;">H
+                                </h4>
+                            </td>
+                            <td style="padding: 1px; border: 1px solid #000">
+                                <h4 style="font-size: 14px; font-weight: 400;">
+                                    {{ \Carbon\Carbon::parse($data->test_date_h)->format('m/d/Y') }}
+                                </h4>
+                            </td>
+                            <td style="padding: 1px; border: 1px solid #000">
+                                <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->age_h }}
+                                </h4>
+                            </td>
+                            <td style="padding: 1px; border: 1px solid #000">
+                                <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                    {{ $data->diameter_h }}
+                                </h4>
+                            </td>
+                            <td style="padding: 1px; border: 1px solid #000">
+                                <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                    {{ $data->avg_length_h }}
+                                </h4>
+                            </td>
+                            <td style="padding: 1px; border: 1px solid #000">
+                                <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                    {{ $data->area_cyl_h }}
+                                </h4>
+                            </td>
+                            <td style="padding: 1px; border: 1px solid #000">
+                                <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                    {{ $data->type_cap_h }}
+                                </h4>
+                            </td>
+                            <td style="padding: 1px; border: 1px solid #000">
+                                <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                    {{ number_format($data->max_load_h) }}
+                                </h4>
+                            </td>
+                            <td style="padding: 1px; border: 1px solid #000">
+                                <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                    {{ $data->type_fracture_h }}
+                                </h4>
+                            </td>
+                            <td style="padding: 1px; border: 1px solid #000">
+                                <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                    {{ $data->person_performing_h }}
+                                </h4>
+                            </td>
+                            <td style="padding: 1px; border: 1px solid #000">
+                                <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                    {{ number_format($data->measured_strength_h) }}
+                                </h4>
+                            </td>
+                        </tr>
                     @endif
                     @if ($data->age_i)
-                    <tr>
-                        <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
-                                {{ $data->cylinder_id }}
-                            </h4>
-                        </td>
-                        <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">I
-                            </h4>
-                        </td>
-                        <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400;">
-                                {{ \Carbon\Carbon::parse($data->test_date_i)->format('m/d/Y') }}
-                            </h4>
-                        </td>
-                        <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->age_i }}
-                            </h4>
-                        </td>
-                        <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
-                                {{ $data->diameter_i }}
-                            </h4>
-                        </td>
-                        <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
-                                {{ $data->avg_length_i }}
-                            </h4>
-                        </td>
-                        <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
-                                {{ $data->area_cyl_i }}
-                            </h4>
-                        </td>
-                        <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
-                                {{ $data->type_cap_i }}
-                            </h4>
-                        </td>
-                        <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
-                                {{ number_format($data->max_load_i) }}
-                            </h4>
-                        </td>
-                        <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
-                                {{ $data->type_fracture_i }}
-                            </h4>
-                        </td>
-                        <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
-                                {{ $data->person_performing_i }}
-                            </h4>
-                        </td>
-                        <td style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
-                                {{ number_format($data->measured_strength_i) }}
-                            </h4>
-                        </td>
-                    </tr>
+                        <tr>
+                            <td style="padding: 1px; border: 1px solid #000">
+                                <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                    {{ $data->cylinder_id }}
+                                </h4>
+                            </td>
+                            <td style="padding: 1px; border: 1px solid #000">
+                                <h4 style="font-size: 14px; font-weight: 400; text-align:center;">I
+                                </h4>
+                            </td>
+                            <td style="padding: 1px; border: 1px solid #000">
+                                <h4 style="font-size: 14px; font-weight: 400;">
+                                    {{ \Carbon\Carbon::parse($data->test_date_i)->format('m/d/Y') }}
+                                </h4>
+                            </td>
+                            <td style="padding: 1px; border: 1px solid #000">
+                                <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->age_i }}
+                                </h4>
+                            </td>
+                            <td style="padding: 1px; border: 1px solid #000">
+                                <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                    {{ $data->diameter_i }}
+                                </h4>
+                            </td>
+                            <td style="padding: 1px; border: 1px solid #000">
+                                <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                    {{ $data->avg_length_i }}
+                                </h4>
+                            </td>
+                            <td style="padding: 1px; border: 1px solid #000">
+                                <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                    {{ $data->area_cyl_i }}
+                                </h4>
+                            </td>
+                            <td style="padding: 1px; border: 1px solid #000">
+                                <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                    {{ $data->type_cap_i }}
+                                </h4>
+                            </td>
+                            <td style="padding: 1px; border: 1px solid #000">
+                                <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                    {{ number_format($data->max_load_i) }}
+                                </h4>
+                            </td>
+                            <td style="padding: 1px; border: 1px solid #000">
+                                <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                    {{ $data->type_fracture_i }}
+                                </h4>
+                            </td>
+                            <td style="padding: 1px; border: 1px solid #000">
+                                <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                    {{ $data->person_performing_i }}
+                                </h4>
+                            </td>
+                            <td style="padding: 1px; border: 1px solid #000">
+                                <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                    {{ number_format($data->measured_strength_i) }}
+                                </h4>
+                            </td>
+                        </tr>
                     @endif
 
                     <tr>
@@ -1084,9 +1100,17 @@
                 <tr>
                     <td style="padding: 1px; border: 1px solid #000; width: 50%;">
                         <h5>Copies:</h5>
-                        @foreach (json_decode($data->responsible_person) as $person)
-                           <p style="font-size: 13px; font-width: 400; padding-left: 40px;">{{ user($person)->email }}</p> 
-                        @endforeach
+                        @if ($data->send_to_client == 1)
+                            @foreach (json_decode($data->responsible_person) as $person)
+                                <p style="font-size: 13px; font-width: 400; padding-left: 40px;">
+                                    {{ subClient($person)->email }}</p>
+                            @endforeach
+                        @else
+                            @foreach (json_decode($data->responsible_person) as $person)
+                                <p style="font-size: 13px; font-width: 400; padding-left: 40px;">
+                                    {{ user($person)->email }}</p>
+                            @endforeach
+                        @endif
                     </td>
                     <td style="padding: 1px; border: 1px solid #000; width: 50%;">
                         <h6 style="font-width: 400;">Reviewed By: {{ user($data->created_by)->name }}</h6>

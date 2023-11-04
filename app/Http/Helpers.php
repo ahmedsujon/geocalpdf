@@ -16,11 +16,18 @@ use App\Models\InspectionConcreteSetNine;
 use App\Models\InspectionConcreteSetEight;
 use App\Models\InspectionConcreteSetSeven;
 use App\Models\InspectionConcreteSetThree;
+use App\Models\SubClient;
 
 function user($id)
 {
     $user = User::where('id', $id)->first();
     return $user;
+}
+
+function subClient($id)
+{
+    $subclient = SubClient::where('id', $id)->first();
+    return $subclient;
 }
 
 function userRole($id)

@@ -136,15 +136,15 @@
                                     @endif
                                 </div>
                             @endforeach
-
-                            <div class="row mt-5 mb-3">
-                                <div class="col-sm-12 text-end">
-                                    <button type="submit" class="btn btn-primary">
-                                        {!! loadingState('storeData', 'Submit') !!}
-                                    </button>
+                            <div class="container">
+                                <div class="row mt-3 mb-5 justify-content-md-center">
+                                    <div class="col-md-12 text-center">
+                                        <button type="submit" class="btn btn-primary">
+                                            {!! loadingState('storeData', 'Update') !!}
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
-                            
                         </div>
                     </div>
                 </div>
