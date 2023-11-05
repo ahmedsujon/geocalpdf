@@ -802,12 +802,14 @@ class EditInspectionFourComponent extends Component
         //send Mail
         if ($this->responsible_person) {
             $persons = $this->responsible_person;
+            $permissions = $this->permission;
             $f_id = $data->id;
             $project_id = InspectionConcreteSetFour::find($f_id)->project_id;
-            dispatch(function () use ($persons, $f_id, $project_id) {
+            dispatch(function () use ($persons, $f_id, $project_id, $permissions) {
                 foreach ($persons as $key => $re_id) {
                     $user = User::find($re_id);
                     $mailData['email'] = $user->email;
+                    $mailData['permission'] = $permissions;
                     $mailData['name'] = $user->name;
                     $mailData['role_id'] = $user->role_id;
                     $mailData['id'] = $f_id;

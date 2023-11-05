@@ -2440,8 +2440,7 @@
                                             <button type="submit"
                                                 class="btn btn-success submit_btn">{!! loadingState(
                                                     'updateData',
-                                                    'Save
-                                                                                                and Send',
+                                                    'Save and Send',
                                                 ) !!}</button>
                                         </form>
                                     </div>
