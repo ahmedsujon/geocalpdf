@@ -22,36 +22,38 @@
     padding: 15px 25px 25px 25px;
   ">
         
-        <table style="width: 100%; border-collapse: collapse; padding-bottom: 5px;">
+        <table style="width: 100%; border-collapse: collapse;">
             <tr>
                 <td style="width: 28%; text-align: left;">
+
                     <h4 style="font-size: 14px; font-weight: 700;">
                         Client
                     </h4>
-                    <h4 style="font-size: 12px; font-weight: 400;">
-                        {{ $client->company_name }}
+                    <h4 style="font-size: 14px; font-weight: 400;">
+                        {{ $data->client_company_name }}
                     </h4>
-                    <h4 style="font-size: 12px; font-weight: 400;">
-                        {{ $client->address }}
+                    <h4 style="font-size: 14px; font-weight: 400;">
+                        {{ $data->client_address }}
                     </h4>
                 </td>
                 <td style="width: 40%; text-align: center;">
                     <img src="https://i0.wp.com/geocal.us/wp-content/uploads/2019/05/logo-new.png" alt="logo"
                         style="max-width: 100px" />
                     <h4 style="font-size: 13px; font-weight: 700; padding-top: 5px">
-                        {{ $set_one->office_address }}
+                        {{ $data->office_address }}
                     </h4>
-                    <h6 style="text-align:center;  padding-top: 25px">PHYSICAL PROPERTIES OF PLASTIC CONCRETE</h6>
+                    <h4 style="font-size: 13px; font-weight: 700; padding-top: 5px">CONCRETE TEST REPORT</h4>
                 </td>
                 <td style="width: 28%; text-align: left;">
                     <h4 style="font-size: 14px; font-weight: 500;">
-                        Date: <span style="font-weight: 400; font-size: 12px;">{{ $set_one->created_at->format('m/d/Y') }}</span>
+                        Date Cast: <span
+                            style="font-size: 14px; font-weight: 400;">{{ $data->created_at->format('m/d/Y') }}</span>
                     </h4>
                     <h4 style="font-size: 14px; font-weight: 500;">
-                        Project No: <span style="font-weight: 400; font-size: 12px;">{{ $project->project_number }}</span>
+                        Project No: <span style="font-size: 14px; font-weight: 400;">{{ $data->project_number }}</span>
                     </h4>
                     <h4 style="font-size: 14px; font-weight: 500;">
-                        Project Name: <span style="font-weight: 400; font-size: 12px;">{{ $project->name }}</span>
+                        Project Name: <span style="font-size: 14px; font-weight: 400;">{{ $data->project_name }}</span>
                     </h4>
                 </td>
             </tr>

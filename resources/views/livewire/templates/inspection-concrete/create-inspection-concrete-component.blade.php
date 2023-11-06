@@ -2388,8 +2388,8 @@
                                 <div class="col-md-12">
                                     <div class="form-check form-switch mb-3" dir="ltr">
                                         <input class="form-check-input" type="checkbox" id="permission"
-                                            wire:model='permission' value="0">
-                                        <label class="form-check-label" for="avatar">Attach the Concrete Field Report with Concrete Test Report</label>
+                                            wire:model='permission' value="1">
+                                        <label class="form-check-label" for="permission">Only send Concrete Test Report <span style="color: red">(The Concrete Field Report and Concrete Test Report both will be send by default.)</span></label><br>
                                     </div>
                                 </div>
                             </div>

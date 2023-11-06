@@ -116,7 +116,7 @@ class CreateInspectionConcretesTable extends Migration
             $table->text('why')->nullable();
 
             $table->text('status')->nullable();
-            $table->string('send_to_client')->default(1);
+            $table->string('send_to_client')->default(0);
             $table->text('responsible_person')->nullable();
 
             // COMPRESSIVE STRENGTHS

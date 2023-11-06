@@ -581,6 +581,10 @@ class CreateInspectionTwoComponent extends Component
             $data['status'] = 'FTCreated';
         }
 
+        if($this->status == 'sentToClient'){
+            $data->send_to_client = 1;
+        }
+        
         $data->remark = $this->remark;
         $data->created_by = Auth::user()->id;
         $data->responsible_person = json_encode($this->responsible_person);

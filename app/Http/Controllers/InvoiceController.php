@@ -70,7 +70,7 @@ class InvoiceController extends Controller
         $pdf = Pdf::loadView('pdf.cdot_form', compact('data'));
         return $pdf->stream('asphalt-field-density-by-nuclear-mMethod-cdot-report.pdf');
     }
-
+ 
     public function plasticConcretePDF($id)
     {
         $data = PlasticConcrete::findOrFail($id);
