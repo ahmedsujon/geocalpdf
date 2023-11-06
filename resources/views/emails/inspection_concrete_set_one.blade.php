@@ -35,7 +35,7 @@
             Report</a>
     @endif
     <br>
-    @if ($permission == 1)
+    @if ($permission == 0)
         @if ($id)
             <a class="button button1" href="{{ route('concrete.field.report.generate', ['id' => $project_id]) }}">Concrete
                 Field Report</a>
