@@ -2389,7 +2389,7 @@
                                     <div class="form-check form-switch mb-3" dir="ltr">
                                         <input class="form-check-input" type="checkbox" id="permission"
                                             wire:model='permission' value="1">
-                                        <label class="form-check-label" for="permission">Only send Concrete Test Report <span style="color: red">(The Concrete Field Report and Concrete Test Report both will be send by default.)</span></label><br>
+                                        <label class="form-check-label" for="permission">"Concrete Field Report" and "Concrete Test Report" are both included by default. To only send the "Concrete Test Report", click here.</span></label><br>
                                     </div>
                                 </div>
                             </div>
