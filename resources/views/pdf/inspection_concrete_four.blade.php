@@ -21,38 +21,37 @@
     <div style="
     padding: 15px 25px 25px 25px;
   ">
-        <table style="width: 100%; border-collapse: collapse;">
+
+        <table style="width: 100%; border-collapse: collapse; padding-bottom: 5px;">
             <tr>
-
                 <td style="width: 28%; text-align: left;">
-
                     <h4 style="font-size: 14px; font-weight: 700;">
                         Client
                     </h4>
-                    <h4 style="font-size: 14px; font-weight: 400;">
-                        {{ $data->client_company_name }}
+                    <h4 style="font-size: 12px; font-weight: 400;">
+                        {{ $client->company_name }}
                     </h4>
-                    <h4 style="font-size: 14px; font-weight: 400;">
-                        {{ $data->client_address }}
+                    <h4 style="font-size: 12px; font-weight: 400;">
+                        {{ $client->address }}
                     </h4>
                 </td>
                 <td style="width: 40%; text-align: center;">
                     <img src="https://i0.wp.com/geocal.us/wp-content/uploads/2019/05/logo-new.png" alt="logo"
                         style="max-width: 100px" />
                     <h4 style="font-size: 13px; font-weight: 700; padding-top: 5px">
-                        {{ $data->office_address }}
+                        {{ $set_one->office_address }}
                     </h4>
-                    <h4 style="font-size: 13px; font-weight: 700; padding-top: 5px">CONCRETE TEST REPORT</h4>
+                    <h6 style="text-align:center;  padding-top: 25px">PHYSICAL PROPERTIES OF PLASTIC CONCRETE</h6>
                 </td>
                 <td style="width: 28%; text-align: left;">
                     <h4 style="font-size: 14px; font-weight: 500;">
-                        Date Cast: <span style="font-size: 14px; font-weight: 400;">{{ $data->created_at->format('m/d/Y') }}</span>
+                        Date: <span style="font-weight: 400; font-size: 12px;">{{ $set_one->created_at->format('m/d/Y') }}</span>
                     </h4>
                     <h4 style="font-size: 14px; font-weight: 500;">
-                        Project No: <span style="font-size: 14px; font-weight: 400;">{{ $data->project_number }}</span>
+                        Project No: <span style="font-weight: 400; font-size: 12px;">{{ $project->project_number }}</span>
                     </h4>
                     <h4 style="font-size: 14px; font-weight: 500;">
-                        Project Name: <span style="font-size: 14px; font-weight: 400;">{{ $data->project_name }}</span>
+                        Project Name: <span style="font-weight: 400; font-size: 12px;">{{ $project->name }}</span>
                     </h4>
                 </td>
             </tr>
@@ -1085,12 +1084,20 @@
                 <tr>
                     <td style="padding: 1px; border: 1px solid #000; width: 50%;">
                         <h5>Copies:</h5>
-                        @foreach (json_decode($data->responsible_person) as $person)
-                           <p style="font-size: 13px; font-width: 400; padding-left: 40px;">{{ user($person)->email }}</p> 
-                        @endforeach
+                        @if ($data->send_to_client == 1)
+                            @foreach (json_decode($data->responsible_person) as $person)
+                                <p style="font-size: 13px; font-width: 400; padding-left: 40px;">
+                                    {{ subClient($person)->email }}</p>
+                            @endforeach
+                        @else
+                            @foreach (json_decode($data->responsible_person) as $person)
+                                <p style="font-size: 13px; font-width: 400; padding-left: 40px;">
+                                    {{ user($person)->email }}</p>
+                            @endforeach
+                        @endif
                     </td>
                     <td style="padding: 1px; border: 1px solid #000; width: 50%;">
-                        <h6>Reviewed By: {{ user($data->created_by)->name }}</h6>
+                        <h6 style="font-width: 400;">Reviewed By: {{ user($data->created_by)->name }}</h6>
                     </td>
                 </tr>
             </table>
