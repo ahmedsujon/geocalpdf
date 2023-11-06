@@ -14,7 +14,7 @@ class EditUserComponent extends Component
 {
     use WithFileUploads;
     
-    public $role_id, $name, $email, $avatar, $new_avatar, $password, $confirm_password, $phone, $user_id;
+    public $role_id, $name, $email, $avatar, $new_avatar, $password, $password_confirmation, $phone, $user_id;
 
     public function mount($user_id)
     {

@@ -14,7 +14,7 @@ class AddUserComponent extends Component
 {
     use WithFileUploads;
 
-    public $role_id, $name, $email, $avatar, $password, $confirm_password, $phone;
+    public $role_id, $name, $email, $avatar, $password, $password_confirmation, $phone;
 
     public function updated($fields)
     {
@@ -22,8 +22,7 @@ class AddUserComponent extends Component
             'name' => 'required',
             'phone' => 'required',
             'email' => 'required|unique:users,email,',
-            'password' => 'required|min:8',
-            'confirm_password' => 'required|min:8|same:password',
+            'password' => 'required|min:8|confirmed',
             'role_id' => 'required',
         ]);
     }
@@ -34,8 +33,7 @@ class AddUserComponent extends Component
             'name' => 'required',
             'phone' => 'required',
             'email' => 'required|unique:users,email,',
-            'password' => 'required|min:8',
-            'confirm_password' => 'required|min:8|same:password',
+            'password' => 'required|min:8|confirmed',
             'role_id' => 'required',
         ]);
 
@@ -63,7 +61,7 @@ class AddUserComponent extends Component
         $this->name = '';
         $this->email = '';
         $this->password = '';
-        $this->confirm_password = '';
+        $this->password_confirmation = '';
         $this->phone = '';
         $this->avatar = '';
     }

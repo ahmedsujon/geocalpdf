@@ -75,12 +75,12 @@
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label class="col-sm-3 col-form-label" for="confirm_password">Confirm Password <span
+                                <label class="col-sm-3 col-form-label" for="password_confirmation">Confirm Password <span
                                         class="text-danger">*</span></label>
                                 <div class="col-sm-9">
                                     <input type="password" class="form-control"
-                                        placeholder="Confirm password" wire:model="confirm_password" />
-                                    @error('confirm_password')
+                                        placeholder="Confirm password" wire:model="password_confirmation" />
+                                    @error('password_confirmation')
                                     <span class="text-danger" style="font-size: 12.5px;">{{ $message }}</span>
                                     @enderror
                                 </div>
