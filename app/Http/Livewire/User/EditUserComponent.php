@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Hash;
 class EditUserComponent extends Component
 {
     use WithFileUploads;
-    
+
     public $role_id, $name, $email, $avatar, $new_avatar, $password, $password_confirmation, $phone, $user_id;
 
     public function mount($user_id)
@@ -36,35 +36,46 @@ class EditUserComponent extends Component
             'role_id' => 'required',
         ]);
     }
-    
+
     public function updateData()
     {
-        $this->validate([
-            'role_id'=>'required',
-            'email' => 'required|unique:users,email,'.Auth::user()->id.'',
-            'name'=>'required',
-            'email'=>'required',
-            'phone'=>'required',
-        ]);
+        if ($this->password) {
+            $this->validate([
+                'role_id' => 'required',
+                'email' => 'required|unique:users,email,' . Auth::user()->id . '',
+                'name' => 'required',
+                'email' => 'required',
+                'phone' => 'required',
+                'password' => 'required|min:8|confirmed',
+            ]);
+        } else {
+            $this->validate([
+                'role_id' => 'required',
+                'email' => 'required|unique:users,email,' . Auth::user()->id . '',
+                'name' => 'required',
+                'email' => 'required',
+                'phone' => 'required',
+            ]);
+        }
 
         $user = User::where('id', $this->user_id)->first();
         $user->role_id = $this->role_id;
         $user->name = $this->name;
         $user->email = $this->email;
         $user->phone = $this->phone;
-        if($this->password != ''){
+        if ($this->password != '') {
             $user->password = Hash::make($this->password);
         }
-        
 
-        if($this->avatar != ''){
-            $imageName = Carbon::now()->timestamp. '.' . $this->avatar->extension();
-            $this->avatar->storeAs('user',$imageName);
+
+        if ($this->avatar != '') {
+            $imageName = Carbon::now()->timestamp . '.' . $this->avatar->extension();
+            $this->avatar->storeAs('user', $imageName);
             $user->avatar = $imageName;
         }
 
         $user->save();
-        $this->dispatchBrowserEvent('success', ['message'=>'User Updated successfully']);
+        $this->dispatchBrowserEvent('success', ['message' => 'User Updated successfully']);
         return redirect()->back();
     }
 
