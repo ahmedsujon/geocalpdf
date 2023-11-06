@@ -24,20 +24,16 @@
       ">
         <table style="width: 100%; border-collapse: collapse;">
             <tr>
-
                 <td style="width: 28%; text-align: left;">
 
-                    <h4 style="font-size: 14px; font-weight: 400;">
-                        Client: {{ $data->client_name }}
+                    <h4 style="font-size: 14px; font-weight: 700;">
+                        Client
                     </h4>
                     <h4 style="font-size: 14px; font-weight: 400;">
-                        Email: {{ $data->client_email }}
+                        {{ $data->client_company_name }}
                     </h4>
                     <h4 style="font-size: 14px; font-weight: 400;">
-                        Phone: {{ $data->client_phone }}
-                    </h4>
-                    <h4 style="font-size: 14px; font-weight: 400;">
-                        Company Name: {{ $data->client_company_name }}
+                        {{ $data->client_address }}
                     </h4>
                 </td>
                 <td style="width: 40%; text-align: center;">
@@ -48,23 +44,21 @@
                     </h4>
                 </td>
                 <td style="width: 28%; text-align: left;">
-                    <h4 style="font-size: 14px; font-weight: 400;">
-                        Date: {{ $data->created_at->format('m/d/Y') }}
+                    <h4 style="font-size: 14px; font-weight: 500;">
+                        Date Cast: <span
+                            style="font-size: 14px; font-weight: 400;">{{ $data->created_at->format('m/d/Y') }}</span>
                     </h4>
-                    <h4 style="font-size: 14px; font-weight: 400;">
-                        Project No: {{ $data->project_number }}
+                    <h4 style="font-size: 14px; font-weight: 500;">
+                        Project No: <span style="font-size: 14px; font-weight: 400;">{{ $data->project_number }}</span>
                     </h4>
-                    <h4 style="font-size: 14px; font-weight: 400;">
-                        Project Name: {{ $data->project_name }}
+                    <h4 style="font-size: 14px; font-weight: 500;">
+                        Project Name: <span style="font-size: 14px; font-weight: 400;">{{ $data->project_name }}</span>
                     </h4>
-                    <h4 style="font-size: 14px; font-weight: 400;">
-                        Weather: {{ $data->weather }}
+                    <h4 style="font-size: 14px; font-weight: 500;">
+                        Weather: <span style="font-size: 14px; font-weight: 400;">{{ $data->weather }}</span>
                     </h4>
-
                 </td>
-
             </tr>
-
         </table>
 
 
