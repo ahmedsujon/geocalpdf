@@ -6,7 +6,7 @@
             <div class="col-lg-6">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">Asphalt Field Density by Nuclear Method - Commercial 
+                        <h4 class="card-title">ASPHALT FIELD DENSITY BY NUCLEAR METHOD - COMMERCIAL 
                         </h4>
                     </div>
                     <!--end card-header-->
@@ -21,8 +21,15 @@
                                 </span>
                                 <div class="timeline-content">
                                     <a href="{{ route('commercial.update', ['file_id' => $file->id]) }}"
-                                        class="title">{{ getProject($file->project_id)->name }} - {{$file->status }} ({{
-                                        getUser($file->created_by)->name }}) - : <span class="post">{{
+                                        class="title">
+                                        {{ getProject($file->project_id)->name }} -
+                                        @if ($file->status)
+                                        {{$file->status }} 
+                                        @else
+                                            New Project Created 
+                                        @endif
+                                        - by ({{
+                                        getUser($file->created_by)->name }}) : <span class="post">{{
                                             $file->created_at }}</span></a>
                                     <p class="description">
                                         {{ $file->remark }}
@@ -40,7 +47,7 @@
             <div class="col-lg-6">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">Asphalt Field Density by Nuclear Method - CDOT Form
+                        <h4 class="card-title">ASPHALT FIELD DENSITY BY NUCLEAR METHOD - CDOT FORM
                         </h4>
                     </div>
                     <!--end card-header-->
@@ -54,9 +61,16 @@
                                     <?php echo App\Http\Livewire\SuperAdmin\DashboardComponent::ago($file->created_at); ?>
                                 </span>
                                 <div class="timeline-content">
-                                    <a href="{{ route('commercial.update', ['file_id' => $file->id]) }}"
-                                        class="title">{{ getProject($file->project_id)->name }} - {{$file->status }} ({{
-                                        getUser($file->created_by)->name }}) -: <span class="post">{{
+                                    <a href="{{ route('cdot.update', ['file_id' => $file->id]) }}"
+                                        class="title">
+                                        {{ getProject($file->project_id)->name }} -
+                                        @if ($file->status)
+                                        {{$file->status }} 
+                                        @else
+                                            New Project Created 
+                                        @endif
+                                        - by ({{
+                                        getUser($file->created_by)->name }}) : <span class="post">{{
                                             $file->created_at }}</span></a>
                                     <p class="description">
                                         {{ $file->remark }}
@@ -87,9 +101,16 @@
                                     <?php echo App\Http\Livewire\SuperAdmin\DashboardComponent::ago($file->created_at); ?>
                                 </span>
                                 <div class="timeline-content">
-                                    <a href="{{ route('commercial.update', ['file_id' => $file->id]) }}"
-                                        class="title">{{ getProject($file->project_id)->name }} - {{$file->status }} ({{
-                                        getUser($file->created_by)->name }}) - : <span class="post">{{
+                                    <a href="{{ route('soil.aggregate.update', ['file_id' => $file->id]) }}"
+                                        class="title">
+                                        {{ getProject($file->project_id)->name }} -
+                                        @if ($file->status)
+                                        {{$file->status }} 
+                                        @else
+                                            New Project Created 
+                                        @endif
+                                        - by ({{
+                                        getUser($file->created_by)->name }}) : <span class="post">{{
                                             $file->created_at }}</span></a>
                                     <p class="description">
                                         {{ $file->remark }}
@@ -120,9 +141,16 @@
                                     <?php echo App\Http\Livewire\SuperAdmin\DashboardComponent::ago($file->created_at); ?>
                                 </span>
                                 <div class="timeline-content">
-                                    <a href="{{ route('commercial.update', ['file_id' => $file->id]) }}"
-                                        class="title">{{ getProject($file->project_id)->name }} - {{$file->status }} ({{
-                                        getUser($file->created_by)->name }}) -: <span class="post">{{
+                                    <a href="{{ route('plastic.concrete.update', ['file_id' => $temp->id]) }}"
+                                        class="title">
+                                        {{ getProject($file->project_id)->name }} -
+                                        @if ($file->status)
+                                        {{$file->status }} 
+                                        @else
+                                            New Project Created 
+                                        @endif
+                                        - by ({{
+                                        getUser($file->created_by)->name }}) : <span class="post">{{
                                             $file->created_at }}</span></a>
                                     <p class="description">
                                         {{ $file->remark }}
@@ -154,9 +182,16 @@
                                     <?php echo App\Http\Livewire\SuperAdmin\DashboardComponent::ago($file->created_at); ?>
                                 </span>
                                 <div class="timeline-content">
-                                    <a href="{{ route('commercial.update', ['file_id' => $file->id]) }}"
-                                        class="title">{{ getProject($file->project_id)->name }} - {{$file->status }} ({{
-                                        getUser($file->created_by)->name }}) - : <span class="post">{{
+                                    <a href="{{ route('concrete.update', ['file_id' => $file->id]) }}"
+                                        class="title">
+                                        {{ getProject($file->project_id)->name }} -
+                                        @if ($file->status)
+                                        {{$file->status }} 
+                                        @else
+                                            New Project Created 
+                                        @endif
+                                        - by ({{
+                                        getUser($file->created_by)->name }}) : <span class="post">{{
                                             $file->created_at }}</span></a>
                                     <p class="description">
                                         {{ $file->remark }}
@@ -188,9 +223,16 @@
                                     <?php echo App\Http\Livewire\SuperAdmin\DashboardComponent::ago($file->created_at); ?>
                                 </span>
                                 <div class="timeline-content">
-                                    <a href="{{ route('commercial.update', ['file_id' => $file->id]) }}"
-                                        class="title">{{ getProject($file->project_id)->name }} - {{$file->status }} ({{
-                                        getUser($file->created_by)->name }}) -: <span class="post">{{
+                                    <a href="{{ route('concrete.update.two', ['file_id' => $file->id]) }}"
+                                        class="title">
+                                        {{ getProject($file->project_id)->name }} -
+                                        @if ($file->status)
+                                        {{$file->status }} 
+                                        @else
+                                            New Project Created 
+                                        @endif
+                                        - by ({{
+                                        getUser($file->created_by)->name }}) : <span class="post">{{
                                             $file->created_at }}</span></a>
                                     <p class="description">
                                         {{ $file->remark }}
@@ -222,9 +264,16 @@
                                     <?php echo App\Http\Livewire\SuperAdmin\DashboardComponent::ago($file->created_at); ?>
                                 </span>
                                 <div class="timeline-content">
-                                    <a href="{{ route('commercial.update', ['file_id' => $file->id]) }}"
-                                        class="title">{{ getProject($file->project_id)->name }} - {{$file->status }} ({{
-                                        getUser($file->created_by)->name }}) - : <span class="post">{{
+                                    <a href="{{ route('concrete.update.three', ['file_id' => $file->id]) }}"
+                                        class="title">
+                                        {{ getProject($file->project_id)->name }} -
+                                        @if ($file->status)
+                                        {{$file->status }} 
+                                        @else
+                                            New Project Created 
+                                        @endif
+                                        - by ({{
+                                        getUser($file->created_by)->name }}) : <span class="post">{{
                                             $file->created_at }}</span></a>
                                     <p class="description">
                                         {{ $file->remark }}
@@ -256,9 +305,16 @@
                                     <?php echo App\Http\Livewire\SuperAdmin\DashboardComponent::ago($file->created_at); ?>
                                 </span>
                                 <div class="timeline-content">
-                                    <a href="{{ route('commercial.update', ['file_id' => $file->id]) }}"
-                                        class="title">{{ getProject($file->project_id)->name }} - {{$file->status }} ({{
-                                        getUser($file->created_by)->name }}) -: <span class="post">{{
+                                    <a href="{{ route('concrete.update.four', ['file_id' => $file->id]) }}"
+                                        class="title">
+                                        {{ getProject($file->project_id)->name }} -
+                                        @if ($file->status)
+                                        {{$file->status }} 
+                                        @else
+                                            New Project Created 
+                                        @endif
+                                        - by ({{
+                                        getUser($file->created_by)->name }}) : <span class="post">{{
                                             $file->created_at }}</span></a>
                                     <p class="description">
                                         {{ $file->remark }}
@@ -290,9 +346,16 @@
                                     <?php echo App\Http\Livewire\SuperAdmin\DashboardComponent::ago($file->created_at); ?>
                                 </span>
                                 <div class="timeline-content">
-                                    <a href="{{ route('commercial.update', ['file_id' => $file->id]) }}"
-                                        class="title">{{ getProject($file->project_id)->name }} - {{$file->status }} ({{
-                                        getUser($file->created_by)->name }}) - : <span class="post">{{
+                                    <a href="{{ route('concrete.update.five', ['file_id' => $file->id]) }}"
+                                        class="title">
+                                        {{ getProject($file->project_id)->name }} -
+                                        @if ($file->status)
+                                        {{$file->status }} 
+                                        @else
+                                            New Project Created 
+                                        @endif
+                                        - by ({{
+                                        getUser($file->created_by)->name }}) : <span class="post">{{
                                             $file->created_at }}</span></a>
                                     <p class="description">
                                         {{ $file->remark }}
@@ -324,9 +387,16 @@
                                     <?php echo App\Http\Livewire\SuperAdmin\DashboardComponent::ago($file->created_at); ?>
                                 </span>
                                 <div class="timeline-content">
-                                    <a href="{{ route('commercial.update', ['file_id' => $file->id]) }}"
-                                        class="title">{{ getProject($file->project_id)->name }} - {{$file->status }} ({{
-                                        getUser($file->created_by)->name }}) -: <span class="post">{{
+                                    <a href="{{ route('concrete.update.six', ['file_id' => $file->id]) }}"
+                                        class="title">
+                                        {{ getProject($file->project_id)->name }} -
+                                        @if ($file->status)
+                                        {{$file->status }} 
+                                        @else
+                                            New Project Created 
+                                        @endif
+                                        - by ({{
+                                        getUser($file->created_by)->name }}) : <span class="post">{{
                                             $file->created_at }}</span></a>
                                     <p class="description">
                                         {{ $file->remark }}
@@ -358,9 +428,16 @@
                                     <?php echo App\Http\Livewire\SuperAdmin\DashboardComponent::ago($file->created_at); ?>
                                 </span>
                                 <div class="timeline-content">
-                                    <a href="{{ route('commercial.update', ['file_id' => $file->id]) }}"
-                                        class="title">{{ getProject($file->project_id)->name }} - {{$file->status }} ({{
-                                        getUser($file->created_by)->name }}) - : <span class="post">{{
+                                    <a href="{{ route('concrete.update.seven', ['file_id' => $file->id]) }}"
+                                        class="title">
+                                        {{ getProject($file->project_id)->name }} -
+                                        @if ($file->status)
+                                        {{$file->status }} 
+                                        @else
+                                            New Project Created 
+                                        @endif
+                                        - by ({{
+                                        getUser($file->created_by)->name }}) : <span class="post">{{
                                             $file->created_at }}</span></a>
                                     <p class="description">
                                         {{ $file->remark }}
@@ -392,9 +469,16 @@
                                     <?php echo App\Http\Livewire\SuperAdmin\DashboardComponent::ago($file->created_at); ?>
                                 </span>
                                 <div class="timeline-content">
-                                    <a href="{{ route('commercial.update', ['file_id' => $file->id]) }}"
-                                        class="title">{{ getProject($file->project_id)->name }} - {{$file->status }} ({{
-                                        getUser($file->created_by)->name }}) -: <span class="post">{{
+                                    <a href="{{ route('concrete.update.eight', ['file_id' => $file->id]) }}"
+                                        class="title">
+                                        {{ getProject($file->project_id)->name }} -
+                                        @if ($file->status)
+                                        {{$file->status }} 
+                                        @else
+                                            New Project Created 
+                                        @endif
+                                        - by ({{
+                                        getUser($file->created_by)->name }}) : <span class="post">{{
                                             $file->created_at }}</span></a>
                                     <p class="description">
                                         {{ $file->remark }}
@@ -426,9 +510,16 @@
                                     <?php echo App\Http\Livewire\SuperAdmin\DashboardComponent::ago($file->created_at); ?>
                                 </span>
                                 <div class="timeline-content">
-                                    <a href="{{ route('commercial.update', ['file_id' => $file->id]) }}"
-                                        class="title">{{ getProject($file->project_id)->name }} - {{$file->status }} ({{
-                                        getUser($file->created_by)->name }}) - : <span class="post">{{
+                                    <a href="{{ route('concrete.update.nine', ['file_id' => $file->id]) }}"
+                                        class="title">
+                                        {{ getProject($file->project_id)->name }} -
+                                        @if ($file->status)
+                                        {{$file->status }} 
+                                        @else
+                                            New Project Created 
+                                        @endif
+                                        - by ({{
+                                        getUser($file->created_by)->name }}) : <span class="post">{{
                                             $file->created_at }}</span></a>
                                     <p class="description">
                                         {{ $file->remark }}
@@ -460,9 +551,16 @@
                                     <?php echo App\Http\Livewire\SuperAdmin\DashboardComponent::ago($file->created_at); ?>
                                 </span>
                                 <div class="timeline-content">
-                                    <a href="{{ route('commercial.update', ['file_id' => $file->id]) }}"
-                                        class="title">{{ getProject($file->project_id)->name }} - {{$file->status }} ({{
-                                        getUser($file->created_by)->name }}) -: <span class="post">{{
+                                    <a href="{{ route('concrete.update.ten', ['file_id' => $file->id]) }}"
+                                        class="title">
+                                        {{ getProject($file->project_id)->name }} -
+                                        @if ($file->status)
+                                        {{$file->status }} 
+                                        @else
+                                            New Project Created 
+                                        @endif
+                                        - by ({{
+                                        getUser($file->created_by)->name }}) : <span class="post">{{
                                             $file->created_at }}</span></a>
                                     <p class="description">
                                         {{ $file->remark }}

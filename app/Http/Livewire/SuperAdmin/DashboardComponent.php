@@ -63,9 +63,9 @@ class DashboardComponent extends Component
 
     public function render()
     {
-        $commercial_forms = SoilAggregate::orderBy('id', 'DESC')->take(3)->get();
+        $commercial_forms = Commercial::orderBy('id', 'DESC')->take(3)->get();
         $cdot_forms = FieldDensityCdot::orderBy('id', 'DESC')->take(3)->get();
-        $soil_aggregates = Commercial::orderBy('id', 'DESC')->take(3)->get();
+        $soil_aggregates = SoilAggregate::orderBy('id', 'DESC')->take(3)->get();
         $plastic_concretes = PlasticConcrete::orderBy('id', 'DESC')->take(3)->get();
         $concrete_ones = InspectionConcrete::orderBy('id', 'DESC')->take(3)->get();
         $concrete_twos = InspectionConcreteSetTwo::orderBy('id', 'DESC')->take(3)->get();

@@ -139,9 +139,14 @@
                             <div class="container">
                                 <div class="row mt-3 mb-5 justify-content-md-center">
                                     <div class="col-md-12 text-center">
-                                        <button type="submit" class="btn btn-primary">
-                                            {!! loadingState('storeData', 'Update') !!}
-                                        </button>
+                                        <form wire:submit.prevent='updateData'>
+                                            <a href="{{ route('client.list') }}" class="btn btn-primary submit_btn">Back to List</a>
+                                            <button type="submit" class="btn btn-success submit_btn">{!!
+                                                loadingState(
+                                                'updateData',
+                                                'Update Client',
+                                                ) !!}</button>
+                                        </form>
                                     </div>
                                 </div>
                             </div>

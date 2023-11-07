@@ -153,11 +153,18 @@ Add Clients
                             </div>
                             @endforeach
 
-                            <div class="row mt-5 mb-3">
-                                <div class="col-sm-12 text-end">
-                                    <button type="submit" class="btn btn-primary">
-                                        {!! loadingState('storeData', 'Submit') !!}
-                                    </button>
+                            <div class="container">
+                                <div class="row mt-3 mb-5 justify-content-md-center">
+                                    <div class="col-md-12 text-center">
+                                        <form wire:submit.prevent='storeData'>
+                                            <a href="{{ route('client.list') }}" class="btn btn-primary submit_btn">Back to List</a>
+                                            <button type="submit" class="btn btn-success submit_btn">{!!
+                                                loadingState(
+                                                'storeData',
+                                                'Save Client',
+                                                ) !!}</button>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>

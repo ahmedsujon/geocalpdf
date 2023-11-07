@@ -309,18 +309,19 @@ class CreateCdotComponent extends Component
         $data->compaction_d = $this->compaction_d;
         $data->compaction_e = $this->compaction_e;
 
-        if (Auth::user()->role_id == '1') {
-            $data['status'] = "SuperAdminCreated";
-        } elseif (Auth::user()->role_id == '2') {
-            $data['status'] = 'ProjectEngineerCreated';
-        } elseif (Auth::user()->role_id == '3') {
-            $data['status'] = 'ClerkCreated';
-        } elseif (Auth::user()->role_id == '4') {
-            $data['status'] = 'SupervisorCreated';
-        } else {
-            $data['status'] = 'FTCreated';
-        }
+        // if (Auth::user()->role_id == '1') {
+        //     $data['status'] = "SuperAdminCreated";
+        // } elseif (Auth::user()->role_id == '2') {
+        //     $data['status'] = 'ProjectEngineerCreated';
+        // } elseif (Auth::user()->role_id == '3') {
+        //     $data['status'] = 'ClerkCreated';
+        // } elseif (Auth::user()->role_id == '4') {
+        //     $data['status'] = 'SupervisorCreated';
+        // } else {
+        //     $data['status'] = 'FTCreated';
+        // }
 
+        $data->status = $this->status;
         $data->remark = $this->remark;
         $data->responsible_person = json_encode($this->responsible_person);
         $data->save();

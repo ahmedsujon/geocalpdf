@@ -79,7 +79,7 @@ class EditClientComponent extends Component
             $cont->save();
         }
 
-        session()->flash('success', 'Client added successfully');
+        session()->flash('success', 'Client updated successfully');
         return redirect()->route('client.list');
     }
 

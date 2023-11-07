@@ -782,18 +782,7 @@ class EditInspectionTenComponent extends Component
         $data->type_fracture_i = $this->type_fracture_i;
         $data->person_performing_i = $this->person_performing_i;
 
-        if (Auth::user()->role_id == '1') {
-            $data['status'] = "SuperAdminCreated";
-        } elseif (Auth::user()->role_id == '2') {
-            $data['status'] = 'ProjectEngineerCreated';
-        } elseif (Auth::user()->role_id == '3') {
-            $data['status'] = 'ClerkCreated';
-        } elseif (Auth::user()->role_id == '4') {
-            $data['status'] = 'SupervisorCreated';
-        } else {
-            $data['status'] = 'FTCreated';
-        }
-
+        $data->status = $this->status;
         if($this->status == 'sentToClient'){
             $data->send_to_client = 1;
         }

@@ -129,9 +129,19 @@
 
                                 </div>
                             </div>
-                            <div class="row mb-5 mt-3">
-                                <div class="col-md-12" style="text-align: right;">
-                                    <button type="submit" class="btn btn-primary">Save</button>
+
+                            <div class="container">
+                                <div class="row mt-3 mb-5 justify-content-md-center">
+                                    <div class="col-md-12 text-center">
+                                        <form wire:submit.prevent='updateData'>
+                                            <a href="{{ route('user.list') }}" class="btn btn-primary submit_btn">Back to List</a>
+                                            <button type="submit" class="btn btn-success submit_btn">{!!
+                                                loadingState(
+                                                'updateData',
+                                                'Update User',
+                                                ) !!}</button>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -74,14 +74,8 @@
                         <h4 style="font-size: 14px; font-weight: 400">Date Tested:
                             &nbsp;&nbsp;&nbsp;&nbsp;{{ \Carbon\Carbon::parse($data->date)->format('m/d/Y') }}</h4>
                         <h4 style="font-size: 14px; font-weight: 400">Test Method:
-                            &nbsp;&nbsp;&nbsp;{{ $data->test_method }}</h4>
-                        <h4 style="font-size: 14px; font-weight: 400">Gauge Make: &nbsp;&nbsp; @if ($data->troxler ==
-                            'Yes')
-                            Troxler
-                            @else
-                            Other
-                            @endif
-                        </h4>
+                            &nbsp;&nbsp;&nbsp;&nbsp;{{ $data->test_method }}</h4>
+                        <h4 style="font-size: 14px; font-weight: 400">Gauge Make: &nbsp;&nbsp; {{ $data->troxler }}</h4>
                         <h4 style="font-size: 14px; font-weight: 400">Gauge Model: &nbsp;&nbsp;{{ $data->model }}</h4>
                     </td>
                     <td style="width: 40%;">
@@ -700,8 +694,8 @@
                     style="text-align:left; font-size: 14px; font-weight: 500; padding: 0; letter-spacing: -1px; background-color: #689A3D; border-top: 2px solid #000; border-right: 0px solid #000; border-bottom: 0px solid #000; border-left: 0px solid #000;">
                     COMMENTS</caption>
                 <tr>
-                    <td style="padding: 25px 0 10px 4px;">
-                        <p>{{ $data->remark }}</p>
+                    <td style="padding: 5px">
+                        <p style="font-size: 14px; font-weight: 400;">{{ $data->remark }}</p>
                     </td>
                 </tr>
             </table>

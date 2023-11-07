@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
         Client::factory(1)->create();
-        Project::factory(2)->create();
+        Project::factory(1)->create();
 
         $this->call(RoleTableSeeder::class);
         $this->call(SuperAdminSeeder::class);
