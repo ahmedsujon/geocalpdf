@@ -61,7 +61,6 @@
             </tr>
         </table>
 
-
         <div
             style="margin-top: 5px; border-top: 3px solid #000; border-right: 3px solid #000; border-bottom: 1px solid #000; border-left: 3px solid #000;">
             <table style="width: 100%; border-collapse: collapse; border: none">
