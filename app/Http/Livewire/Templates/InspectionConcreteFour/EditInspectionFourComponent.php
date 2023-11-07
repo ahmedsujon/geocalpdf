@@ -2,13 +2,14 @@
 
 namespace App\Http\Livewire\Templates\InspectionConcreteFour;
 
-use App\Models\InspectionConcreteSetFour;
-use App\Models\User;
 use Carbon\Carbon;
+use App\Models\User;
 use App\Models\Project;
 use Livewire\Component;
+use App\Models\SubClient;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
+use App\Models\InspectionConcreteSetFour;
 
 class EditInspectionFourComponent extends Component
 {
@@ -280,9 +281,9 @@ class EditInspectionFourComponent extends Component
     public function specifiedStrengthA()
     {
         if ($this->age_a != null) {
-           $this->test_date_a = Carbon::parse($this->date)->addDays($this->age_a)->format('Y-m-d');  
+            $this->test_date_a = Carbon::parse($this->date)->addDays($this->age_a)->format('Y-m-d');
         }
-        
+
         if ($this->age_a == 28) {
             $this->specified_strength_a = $this->required_strength;
         } elseif ($this->age_a == null) {
@@ -294,8 +295,8 @@ class EditInspectionFourComponent extends Component
     public function specifiedStrengthB()
     {
         if ($this->age_b != null) {
-            $this->test_date_b = Carbon::parse($this->date)->addDays($this->age_b)->format('Y-m-d');  
-         }
+            $this->test_date_b = Carbon::parse($this->date)->addDays($this->age_b)->format('Y-m-d');
+        }
 
         if ($this->age_b == 28) {
             $this->specified_strength_b = $this->required_strength;
@@ -308,8 +309,8 @@ class EditInspectionFourComponent extends Component
     public function specifiedStrengthC()
     {
         if ($this->age_c != null) {
-            $this->test_date_c = Carbon::parse($this->date)->addDays($this->age_c)->format('Y-m-d');  
-         }
+            $this->test_date_c = Carbon::parse($this->date)->addDays($this->age_c)->format('Y-m-d');
+        }
 
         if ($this->age_c == 28) {
             $this->specified_strength_c = $this->required_strength;
@@ -322,8 +323,8 @@ class EditInspectionFourComponent extends Component
     public function specifiedStrengthD()
     {
         if ($this->age_d != null) {
-            $this->test_date_d = Carbon::parse($this->date)->addDays($this->age_d)->format('Y-m-d');  
-         }
+            $this->test_date_d = Carbon::parse($this->date)->addDays($this->age_d)->format('Y-m-d');
+        }
 
         if ($this->age_d == 28) {
             $this->specified_strength_d = $this->required_strength;
@@ -336,8 +337,8 @@ class EditInspectionFourComponent extends Component
     public function specifiedStrengthE()
     {
         if ($this->age_e != null) {
-            $this->test_date_e = Carbon::parse($this->date)->addDays($this->age_e)->format('Y-m-d');  
-         }
+            $this->test_date_e = Carbon::parse($this->date)->addDays($this->age_e)->format('Y-m-d');
+        }
 
         if ($this->age_e == 28) {
             $this->specified_strength_e = $this->required_strength;
@@ -350,8 +351,8 @@ class EditInspectionFourComponent extends Component
     public function specifiedStrengthF()
     {
         if ($this->age_f != null) {
-            $this->test_date_f = Carbon::parse($this->date)->addDays($this->age_f)->format('Y-m-d');  
-         }
+            $this->test_date_f = Carbon::parse($this->date)->addDays($this->age_f)->format('Y-m-d');
+        }
 
         if ($this->age_f == 28) {
             $this->specified_strength_f = $this->required_strength;
@@ -364,8 +365,8 @@ class EditInspectionFourComponent extends Component
     public function specifiedStrengthG()
     {
         if ($this->age_g != null) {
-            $this->test_date_g = Carbon::parse($this->date)->addDays($this->age_g)->format('Y-m-d');  
-         }
+            $this->test_date_g = Carbon::parse($this->date)->addDays($this->age_g)->format('Y-m-d');
+        }
 
         if ($this->age_g == 28) {
             $this->specified_strength_g = $this->required_strength;
@@ -378,8 +379,8 @@ class EditInspectionFourComponent extends Component
     public function specifiedStrengthH()
     {
         if ($this->age_h != null) {
-            $this->test_date_h = Carbon::parse($this->date)->addDays($this->age_h)->format('Y-m-d');  
-         }
+            $this->test_date_h = Carbon::parse($this->date)->addDays($this->age_h)->format('Y-m-d');
+        }
 
         if ($this->age_h == 28) {
             $this->specified_strength_h = $this->required_strength;
@@ -392,8 +393,8 @@ class EditInspectionFourComponent extends Component
     public function specifiedStrengthI()
     {
         if ($this->age_i != null) {
-            $this->test_date_i = Carbon::parse($this->date)->addDays($this->age_i)->format('Y-m-d');  
-         }
+            $this->test_date_i = Carbon::parse($this->date)->addDays($this->age_i)->format('Y-m-d');
+        }
 
         if ($this->age_i == 28) {
             $this->specified_strength_i = $this->required_strength;
@@ -793,10 +794,10 @@ class EditInspectionFourComponent extends Component
             $data['status'] = 'FTCreated';
         }
 
-        if($this->status == 'sentToClient'){
+        if ($this->status == 'sentToClient') {
             $data->send_to_client = 1;
         }
-        
+
         $data->remark = $this->remark;
         $data->created_by = Auth::user()->id;
         $data->responsible_person = json_encode($this->responsible_person);
@@ -808,11 +809,20 @@ class EditInspectionFourComponent extends Component
             $persons = $this->responsible_person;
             $permissions = $this->permission;
             $f_id = $data->id;
+            $auth_user_id = Auth::user()->id;
             $project_id = InspectionConcreteSetFour::find($f_id)->project_id;
-            dispatch(function () use ($persons, $f_id, $project_id, $permissions) {
+            dispatch(function () use ($persons, $f_id, $project_id, $permissions, $auth_user_id) {
                 foreach ($persons as $key => $re_id) {
-                    $user = User::find($re_id);
-                    $mailData['email'] = $user->email;
+
+                    $select_project = InspectionConcreteSetFour::find($f_id);
+                    if ($select_project->send_to_client == 1) {
+                        $sub_client = SubClient::find($re_id);
+                        $mailData['email'] = $sub_client->email;
+                    } else {
+                        $select_user = User::find($re_id);
+                        $mailData['email'] = $select_user->email;
+                    }
+                    $user = User::find($auth_user_id);
                     $mailData['permission'] = $permissions;
                     $mailData['name'] = $user->name;
                     $mailData['role_id'] = $user->role_id;
@@ -860,7 +870,7 @@ class EditInspectionFourComponent extends Component
         if ($this->area_cyl_i) {
             $this->measuredStrengthI();
         }
-        
+
         $projects = Project::orderBy('id', 'DESC')->get();
         return view('livewire.templates.inspection-concrete-four.edit-inspection-four-component', ['projects' => $projects])->layout('livewire.layouts.base');
     }

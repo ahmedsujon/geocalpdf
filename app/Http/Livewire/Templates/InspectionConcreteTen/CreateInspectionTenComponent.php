@@ -595,10 +595,11 @@ class CreateInspectionTenComponent extends Component
             $persons = $this->responsible_person;
             $permissions = $this->permission;
             $f_id = $data->id;
+            $auth_user_id = Auth::user()->id;
             $project_id = InspectionConcreteSetTen::find($f_id)->project_id;
-            dispatch(function () use ($persons, $f_id, $project_id, $permissions) {
+            dispatch(function () use ($persons, $f_id, $project_id, $permissions, $auth_user_id) {
                 foreach ($persons as $key => $re_id) {
-                    $user = User::find($re_id);
+                    $user = User::find($auth_user_id);
                     $mailData['email'] = $user->email;
                     $mailData['permission'] = $permissions;
                     $mailData['name'] = $user->name;

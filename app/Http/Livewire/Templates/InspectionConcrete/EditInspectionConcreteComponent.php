@@ -823,7 +823,6 @@ class EditInspectionConcreteComponent extends Component
                         $select_user = User::find($re_id);
                         $mailData['email'] = $select_user->email;
                     }
-
                     $user = User::find($auth_user_id);
                     $mailData['permission'] = $permissions;
                     $mailData['name'] = $user->name;

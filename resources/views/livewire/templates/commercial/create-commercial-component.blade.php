@@ -291,8 +291,8 @@
                                 <span class="input-group-text width18">Test Method:</span>
                                 <select class="form-select" wire:model="test_method">
                                     <option value="">Select Test Method</option>
-                                    <option value="ASTM D6938">ASTM D6938</option>
-                                    <option value="AASHTO T310">AASHTO T310</option>
+                                    <option value="ASTM D2950">ASTM D2950</option>
+                                    <option value="AASHTO T355">AASHTO T355</option>
                                 </select>
                             </div>
                             @error('test_method')
@@ -733,7 +733,7 @@
 
                 <div class="row mt-3">
                     <div class="col-lg-12">
-                        <h6>Test Results :</h6>
+                        <h6>Test Results : All tests performed in {{ $test_mode }} mode</h6>
                         <div class="table-responsive">
                             <table class="table table-bordered" style="margin-bottom: 0;">
                                 <thead>

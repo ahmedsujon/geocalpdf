@@ -59,6 +59,7 @@ class CreatePlasticConcretesTable extends Migration
             $table->text('remark')->nullable();
             $table->string('created_by')->nullable();
             $table->string('status')->nullable();
+            $table->string('send_to_client')->default(0);
             $table->string('total_yds')->nullable();
             $table->string('representative')->nullable();
             $table->string('responsible_person')->default();

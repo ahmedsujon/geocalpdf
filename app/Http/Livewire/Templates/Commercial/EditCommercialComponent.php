@@ -2,13 +2,14 @@
 
 namespace App\Http\Livewire\Templates\Commercial;
 
-use App\Models\Commercial;
+use App\Models\User;
 use App\Models\MixInfo;
 use App\Models\Project;
-use App\Models\User;
+use Livewire\Component;
+use App\Models\SubClient;
+use App\Models\Commercial;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
-use Livewire\Component;
 
 class EditCommercialComponent extends Component
 {
@@ -662,6 +663,10 @@ class EditCommercialComponent extends Component
         } else {
             $data['status'] = 'FTCreated';
         }
+        
+        if($this->status == 'sentToClient'){
+            $data->send_to_client = 1;
+        }
 
         $data->remark = $this->remark;
         $data->created_by = Auth::user()->id;
@@ -672,10 +677,19 @@ class EditCommercialComponent extends Component
         if ($this->responsible_person) {
             $persons = $this->responsible_person;
             $f_id = $data->id;
-            dispatch(function () use ($persons, $f_id) {
+            $auth_user_id = Auth::user()->id;
+            dispatch(function () use ($persons, $f_id, $auth_user_id) {
                 foreach ($persons as $key => $re_id) {
-                    $user = User::find($re_id);
-                    $mailData['email'] = $user->email;
+                   
+                    $select_project = Commercial::find($f_id);
+                    if ($select_project->send_to_client == 1){
+                        $sub_client = SubClient::find($re_id);
+                        $mailData['email'] = $sub_client->email;
+                    }else{
+                        $select_user = User::find($re_id);
+                        $mailData['email'] = $select_user->email;
+                    }
+                    $user = User::find($auth_user_id);
                     $mailData['name'] = $user->name;
                     $mailData['role_id'] = $user->role_id;
                     $mailData['id'] = $f_id;

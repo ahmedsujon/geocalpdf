@@ -2,13 +2,14 @@
 
 namespace App\Http\Livewire\Templates\InspectionConcreteEight;
 
-use App\Models\InspectionConcreteSetEight;
-use App\Models\User;
 use Carbon\Carbon;
+use App\Models\User;
 use App\Models\Project;
 use Livewire\Component;
+use App\Models\SubClient;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
+use App\Models\InspectionConcreteSetEight;
 
 class EditInspectionEightComponent extends Component
 {
@@ -808,11 +809,20 @@ class EditInspectionEightComponent extends Component
             $persons = $this->responsible_person;
             $permissions = $this->permission;
             $f_id = $data->id;
+            $auth_user_id = Auth::user()->id;
             $project_id = InspectionConcreteSetEight::find($f_id)->project_id;
-            dispatch(function () use ($persons, $f_id, $project_id, $permissions) {
+            dispatch(function () use ($persons, $f_id, $project_id, $permissions, $auth_user_id) {
                 foreach ($persons as $key => $re_id) {
-                    $user = User::find($re_id);
-                    $mailData['email'] = $user->email;
+                    
+                    $select_project = InspectionConcreteSetEight::find($f_id);
+                    if ($select_project->send_to_client == 1){
+                        $sub_client = SubClient::find($re_id);
+                        $mailData['email'] = $sub_client->email;
+                    }else{
+                        $select_user = User::find($re_id);
+                        $mailData['email'] = $select_user->email;
+                    }
+                    $user = User::find($auth_user_id);
                     $mailData['permission'] = $permissions;
                     $mailData['name'] = $user->name;
                     $mailData['role_id'] = $user->role_id;

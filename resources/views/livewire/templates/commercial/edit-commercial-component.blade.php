@@ -284,8 +284,8 @@
                                 <span class="input-group-text width18">Test Method:</span>
                                 <select class="form-select" wire:model="test_method">
                                     <option value="">Select Test Method</option>
-                                    <option value="ASTM D6938">ASTM D6938</option>
-                                    <option value="AASHTO T310">AASHTO T310</option>
+                                    <option value="ASTM D2950">ASTM D2950</option>
+                                    <option value="AASHTO T355">AASHTO T355</option>
                                 </select>
                             </div>
                             @error('test_method')

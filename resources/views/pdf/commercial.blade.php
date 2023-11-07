@@ -341,10 +341,10 @@
                     @endif
                 </tr>
                 @endif
-                @if ($data->result_mix_id_a)
+                @if ($data->result_mix_id_b)
                 <tr>
                     <td style="border: 1px solid #000">
-                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->test_no_a }}
+                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->test_no_b }}
                         </h4>
                     </td>
                     <td style="border: 1px solid #000">

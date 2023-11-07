@@ -20,6 +20,7 @@
 
     .button1 {
       border: 2px solid #111111;
+      color: #111111;
     }
   </style>
 </head>

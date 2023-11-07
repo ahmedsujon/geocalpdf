@@ -49,7 +49,6 @@ class CreateFieldDensityCdotsTable extends Migration
             $table->string('gauge_id')->nullable();
             $table->string('test_id')->nullable();
             $table->string('ia_id')->nullable();
-
             $table->string('test_data_a')->nullable();
             $table->string('test_data_b')->nullable();
             $table->string('test_data_c')->nullable();
@@ -102,32 +101,27 @@ class CreateFieldDensityCdotsTable extends Migration
             $table->string('course_c')->nullable();
             $table->string('course_d')->nullable();
             $table->string('course_e')->nullable();
-
             // Wet Density
             $table->text('wet_density_a_a')->nullable();
             $table->text('wet_density_a_b')->nullable();
             $table->text('wet_density_a_c')->nullable();
             $table->text('wet_density_a_d')->nullable();
             $table->text('wet_density_a_e')->nullable();
-
             $table->text('wet_density_b_a')->nullable();
             $table->text('wet_density_b_b')->nullable();
             $table->text('wet_density_b_c')->nullable();
             $table->text('wet_density_b_d')->nullable();
             $table->text('wet_density_b_e')->nullable();
-
             $table->text('wet_density_c_a')->nullable();
             $table->text('wet_density_c_b')->nullable();
             $table->text('wet_density_c_c')->nullable();
             $table->text('wet_density_c_d')->nullable();
             $table->text('wet_density_c_e')->nullable();
-
             $table->text('wet_density_d_a')->nullable();
             $table->text('wet_density_d_b')->nullable();
             $table->text('wet_density_d_c')->nullable();
             $table->text('wet_density_d_d')->nullable();
             $table->text('wet_density_d_e')->nullable();
-
             $table->text('wet_densities_a')->nullable();
             $table->text('wet_densities_b')->nullable();
             $table->text('wet_densities_c')->nullable();
@@ -159,11 +153,9 @@ class CreateFieldDensityCdotsTable extends Migration
             $table->text('compaction_d')->nullable();
             $table->text('compaction_e')->nullable();
             $table->string('status')->nullable();
+            $table->string('send_to_client')->default(0);
             $table->text('remark')->nullable();
             $table->string('responsible_person')->nullable();
-
-
-
             $table->timestamps();
         });
     }

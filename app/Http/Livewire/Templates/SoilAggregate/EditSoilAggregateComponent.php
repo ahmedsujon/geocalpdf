@@ -2,13 +2,14 @@
 
 namespace App\Http\Livewire\Templates\SoilAggregate;
 
+use App\Models\User;
 use App\Models\Proctor;
 use App\Models\Project;
+use Livewire\Component;
+use App\Models\SubClient;
 use App\Models\SoilAggregate;
-use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
-use Livewire\Component;
 
 class EditSoilAggregateComponent extends Component
 {
@@ -547,6 +548,10 @@ class EditSoilAggregateComponent extends Component
             $data['status'] = 'FTCreated';
         }
 
+        if($this->status == 'sentToClient'){
+            $data->send_to_client = 1;
+        }
+
         $data->remark = $this->remark;
         $data->created_by = Auth::user()->id;
         $data->responsible_person = json_encode($this->responsible_person);
@@ -556,9 +561,19 @@ class EditSoilAggregateComponent extends Component
         if ($this->responsible_person) {
             $persons = $this->responsible_person;
             $f_id = $data->id;
-            dispatch(function () use ($persons, $f_id) {
+            $auth_user_id = Auth::user()->id;
+            dispatch(function () use ($persons, $f_id, $auth_user_id) {
                 foreach ($persons as $key => $re_id) {
-                    $user = User::find($re_id);
+
+                    $select_project = SoilAggregate::find($f_id);
+                    if ($select_project->send_to_client == 1){
+                        $sub_client = SubClient::find($re_id);
+                        $mailData['email'] = $sub_client->email;
+                    }else{
+                        $select_user = User::find($re_id);
+                        $mailData['email'] = $select_user->email;
+                    }
+                    $user = User::find($auth_user_id);
                     $mailData['email'] = $user->email;
                     $mailData['name'] = $user->name;
                     $mailData['role_id'] = $user->role_id;

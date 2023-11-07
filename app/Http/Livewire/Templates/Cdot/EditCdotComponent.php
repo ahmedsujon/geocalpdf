@@ -440,6 +440,10 @@ class EditCdotComponent extends Component
         } else {
             $data['status'] = 'FTCreated';
         }
+        if($this->status == 'sentToClient'){
+            $data->send_to_client = 1;
+        }
+        
         $data->remark = $this->remark;
         $data->responsible_person = json_encode($this->responsible_person);
         $data->save();
@@ -447,19 +451,19 @@ class EditCdotComponent extends Component
         //send Mail
         if ($this->responsible_person) {
             $persons = $this->responsible_person;
-            $status = $this->status;
             $f_id = $data->id;
-            dispatch(function () use ($persons, $status, $f_id) {
+            $auth_user_id = Auth::user()->id;
+            dispatch(function () use ($persons, $f_id, $auth_user_id) {
                 foreach ($persons as $key => $re_id) {
-                    if ($status == 'sentToClient') {
-                        $user = SubClient::find($re_id);
-                        $mailData['field_density_cdot_id'] = $f_id;
-                    } else {
-                        $user = User::find($re_id);
-                        $mailData['field_density_cdot_id'] = NULL;
+                    $select_project = FieldDensityCdot::find($f_id);
+                    if ($select_project->send_to_client == 1){
+                        $sub_client = SubClient::find($re_id);
+                        $mailData['email'] = $sub_client->email;
+                    }else{
+                        $select_user = User::find($re_id);
+                        $mailData['email'] = $select_user->email;
                     }
-
-                    $mailData['email'] = $user->email;
+                    $user = User::find($auth_user_id);
                     $mailData['name'] = $user->name;
                     $mailData['role_id'] = $user->role_id;
                     $mailData['id'] = $f_id;

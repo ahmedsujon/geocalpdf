@@ -153,6 +153,7 @@ class CreateCommercialsTable extends Migration
             $table->text('report_status')->nullable();
             $table->string('created_by')->nullable();
             $table->string('status')->nullable();
+            $table->string('send_to_client')->default(0);
             $table->string('responsible_person')->nullable();
             $table->string('observation')->nullable();
             $table->timestamps();
