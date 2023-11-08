@@ -496,7 +496,11 @@
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
-                                {{ number_format($data->max_load_a) }}
+                                @if ($data->max_load_a)
+                                    {{ number_format($data->max_load_a) }}
+                                @else
+                                    {{ $data->max_load_a }}
+                                @endif
                             </h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
@@ -511,7 +515,11 @@
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
-                                {{ number_format($data->measured_strength_a) }}
+                                @if ($data->measured_strength_a)
+                                    {{ number_format($data->measured_strength_a) }}
+                                @else
+                                    {{ $data->measured_strength_a }}
+                                @endif
                             </h4>
                         </td>
                     </tr>
@@ -551,7 +559,11 @@
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
-                                {{ number_format($data->max_load_b) }}
+                                @if ($data->max_load_b)
+                                    {{ number_format($data->max_load_b) }}
+                                @else
+                                    {{ $data->max_load_b }}
+                                @endif
                             </h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
@@ -566,7 +578,11 @@
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
-                                {{ number_format($data->measured_strength_b) }}
+                                @if ($data->measured_strength_b)
+                                    {{ number_format($data->measured_strength_b) }}
+                                @else
+                                    {{ $data->measured_strength_b }}
+                                @endif
                             </h4>
                         </td>
                     </tr>
@@ -606,7 +622,11 @@
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
-                                {{ number_format($data->max_load_c) }}
+                                @if ($data->max_load_c)
+                                    {{ number_format($data->max_load_c) }}
+                                @else
+                                    {{ $data->max_load_c }}
+                                @endif
                             </h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
@@ -621,7 +641,11 @@
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
-                                {{ number_format($data->measured_strength_c) }}
+                                @if ($data->measured_strength_c)
+                                    {{ number_format($data->measured_strength_c) }}
+                                @else
+                                    {{ $data->measured_strength_c }}
+                                @endif
                             </h4>
                         </td>
                     </tr>
@@ -661,7 +685,11 @@
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
-                                {{ number_format($data->max_load_d) }}
+                                @if ($data->max_load_d)
+                                    {{ number_format($data->max_load_d) }}
+                                @else
+                                    {{ $data->max_load_d }}
+                                @endif
                             </h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
@@ -676,7 +704,11 @@
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
-                                {{ number_format($data->measured_strength_d) }}
+                                @if ($data->measured_strength_d)
+                                    {{ number_format($data->measured_strength_d) }}
+                                @else
+                                    {{ $data->measured_strength_d }}
+                                @endif
                             </h4>
                         </td>
                     </tr>
@@ -716,7 +748,11 @@
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
-                                {{ number_format($data->max_load_e) }}
+                                @if ($data->max_load_e)
+                                    {{ number_format($data->max_load_e) }}
+                                @else
+                                    {{ $data->max_load_e }}
+                                @endif
                             </h4>
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
@@ -731,7 +767,11 @@
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
-                                {{ number_format($data->measured_strength_e) }}
+                                @if ($data->measured_strength_e)
+                                    {{ number_format($data->measured_strength_e) }}
+                                @else
+                                    {{ $data->measured_strength_e }}
+                                @endif
                             </h4>
                         </td>
                     </tr>
@@ -777,7 +817,11 @@
                             </td>
                             <td style="padding: 1px; border: 1px solid #000">
                                 <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
-                                    {{ number_format($data->max_load_f) }}
+                                    @if ($data->max_load_f)
+                                        {{ number_format($data->max_load_f) }}
+                                    @else
+                                        {{ $data->max_load_f }}
+                                    @endif
                                 </h4>
                             </td>
                             <td style="padding: 1px; border: 1px solid #000">
@@ -792,7 +836,11 @@
                             </td>
                             <td style="padding: 1px; border: 1px solid #000">
                                 <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
-                                    {{ number_format($data->measured_strength_f) }}
+                                    @if ($data->measured_strength_f)
+                                        {{ number_format($data->measured_strength_f) }}
+                                    @else
+                                        {{ $data->measured_strength_f }}
+                                    @endif
                                 </h4>
                             </td>
                         </tr>
@@ -839,7 +887,11 @@
                             </td>
                             <td style="padding: 1px; border: 1px solid #000">
                                 <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
-                                    {{ number_format($data->max_load_g) }}
+                                    @if ($data->max_load_g)
+                                        {{ number_format($data->max_load_g) }}
+                                    @else
+                                        {{ $data->max_load_g }}
+                                    @endif
                                 </h4>
                             </td>
                             <td style="padding: 1px; border: 1px solid #000">
@@ -854,7 +906,11 @@
                             </td>
                             <td style="padding: 1px; border: 1px solid #000">
                                 <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
-                                    {{ number_format($data->measured_strength_g) }}
+                                    @if ($data->measured_strength_g)
+                                        {{ number_format($data->measured_strength_g) }}
+                                    @else
+                                        {{ $data->measured_strength_g }}
+                                    @endif
                                 </h4>
                             </td>
                         </tr>
@@ -901,7 +957,11 @@
                             </td>
                             <td style="padding: 1px; border: 1px solid #000">
                                 <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
-                                    {{ number_format($data->max_load_h) }}
+                                    @if ($data->max_load_h)
+                                        {{ number_format($data->max_load_h) }}
+                                    @else
+                                        {{ $data->max_load_h }}
+                                    @endif
                                 </h4>
                             </td>
                             <td style="padding: 1px; border: 1px solid #000">
@@ -916,7 +976,11 @@
                             </td>
                             <td style="padding: 1px; border: 1px solid #000">
                                 <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
-                                    {{ number_format($data->measured_strength_h) }}
+                                    @if ($data->measured_strength_h)
+                                        {{ number_format($data->measured_strength_h) }}
+                                    @else
+                                        {{ $data->measured_strength_h }}
+                                    @endif
                                 </h4>
                             </td>
                         </tr>
@@ -963,7 +1027,11 @@
                             </td>
                             <td style="padding: 1px; border: 1px solid #000">
                                 <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
-                                    {{ number_format($data->max_load_i) }}
+                                    @if ($data->max_load_i)
+                                        {{ number_format($data->max_load_i) }}
+                                    @else
+                                        {{ $data->max_load_i }}
+                                    @endif
                                 </h4>
                             </td>
                             <td style="padding: 1px; border: 1px solid #000">
@@ -978,30 +1046,37 @@
                             </td>
                             <td style="padding: 1px; border: 1px solid #000">
                                 <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
-                                    {{ number_format($data->measured_strength_i) }}
+                                    @if ($data->measured_strength_i)
+                                        {{ number_format($data->measured_strength_i) }}
+                                    @else
+                                        {{ $data->measured_strength_i }}
+                                    @endif
                                 </h4>
                             </td>
                         </tr>
                     @endif
 
                     <tr>
-                        <td colspan="9" style="padding: 1px; border: 1px solid #000">
+                        <td colspan="11" style="padding: 1px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400; text-align:right;">Average 28 Day Compressive
                                 Strength
                                 (psi)</h4>
                         </td>
-                        <td colspan="3" style="padding: 1px; border: 1px solid #000">
-                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->avarage }}
+                        <td colspan="1" style="padding: 1px; border: 1px solid #000">
+                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                @if ($data->avarage)
+                                    {{ $data->avarage }}
+                                @endif
                             </h4>
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="9" style="padding: 1px; border: 1px solid #000">
+                        <td colspan="11" style="padding: 1px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400; text-align:right;">Required 28 Day Strength
                                 (psi)
                             </h4>
                         </td>
-                        <td colspan="3" style="padding: 1px; border: 1px solid #000">
+                        <td colspan="1" style="padding: 1px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
                                 {{ $data->required_strength }}
                             </h4>

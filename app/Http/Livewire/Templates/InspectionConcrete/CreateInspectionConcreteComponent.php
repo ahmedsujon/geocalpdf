@@ -77,7 +77,7 @@ class CreateInspectionConcreteComponent extends Component
         } elseif ($this->age_a == null) {
             $this->age_a = null;
         } else {
-            $this->specified_strength_a = 0;
+            $this->specified_strength_a = null;
         }
     }
     public function specifiedStrengthB()
@@ -91,7 +91,7 @@ class CreateInspectionConcreteComponent extends Component
         } elseif ($this->age_b == null) {
             $this->age_b = null;
         } else {
-            $this->specified_strength_b = 0;
+            $this->specified_strength_b = null;
         }
     }
     public function specifiedStrengthC()
@@ -105,7 +105,7 @@ class CreateInspectionConcreteComponent extends Component
         } elseif ($this->age_c == null) {
             $this->age_c = null;
         } else {
-            $this->specified_strength_c = 0;
+            $this->specified_strength_c = null;
         }
     }
     public function specifiedStrengthD()
@@ -119,7 +119,7 @@ class CreateInspectionConcreteComponent extends Component
         } elseif ($this->age_d == null) {
             $this->age_d = null;
         } else {
-            $this->specified_strength_d = 0;
+            $this->specified_strength_d = null;
         }
     }
     public function specifiedStrengthE()
@@ -133,7 +133,7 @@ class CreateInspectionConcreteComponent extends Component
         } elseif ($this->age_e == null) {
             $this->age_e = null;
         } else {
-            $this->specified_strength_e = 0;
+            $this->specified_strength_e = null;
         }
     }
     public function specifiedStrengthF()
@@ -147,7 +147,7 @@ class CreateInspectionConcreteComponent extends Component
         } elseif ($this->age_f == null) {
             $this->age_f = null;
         } else {
-            $this->specified_strength_f = 0;
+            $this->specified_strength_f = null;
         }
     }
     public function specifiedStrengthG()
@@ -161,7 +161,7 @@ class CreateInspectionConcreteComponent extends Component
         } elseif ($this->age_g == null) {
             $this->age_g = null;
         } else {
-            $this->specified_strength_g = 0;
+            $this->specified_strength_g = null;
         }
     }
     public function specifiedStrengthH()
@@ -175,7 +175,7 @@ class CreateInspectionConcreteComponent extends Component
         } elseif ($this->age_h == null) {
             $this->age_h = null;
         } else {
-            $this->specified_strength_h = 0;
+            $this->specified_strength_h = null;
         }
     }
     public function specifiedStrengthI()
@@ -189,7 +189,7 @@ class CreateInspectionConcreteComponent extends Component
         } elseif ($this->age_i == null) {
             $this->age_i = null;
         } else {
-            $this->specified_strength_i = 0;
+            $this->specified_strength_i = null;
         }
     }
 
@@ -277,7 +277,7 @@ class CreateInspectionConcreteComponent extends Component
         if ($this->max_load_a != null) {
             $this->measured_strength_a = round($this->max_load_a / ($this->area_cyl_a == 0 ? 1 : $this->area_cyl_a), -1);
         } else {
-            $this->measured_strength_a = 0;
+            $this->measured_strength_a = null;
         }
     }
     public function measuredStrengthB()
@@ -285,7 +285,7 @@ class CreateInspectionConcreteComponent extends Component
         if ($this->max_load_b != null) {
             $this->measured_strength_b = round($this->max_load_b / ($this->area_cyl_b == 0 ? 1 : $this->area_cyl_b), -1);
         } else {
-            $this->measured_strength_b = 0;
+            $this->measured_strength_b = null;
         }
     }
     public function measuredStrengthC()
@@ -293,7 +293,7 @@ class CreateInspectionConcreteComponent extends Component
         if ($this->max_load_c != null) {
             $this->measured_strength_c = round($this->max_load_c / ($this->area_cyl_c == 0 ? 1 : $this->area_cyl_c), -1);
         } else {
-            $this->measured_strength_c = 0;
+            $this->measured_strength_c = null;
         }
     }
     public function measuredStrengthD()
@@ -301,7 +301,7 @@ class CreateInspectionConcreteComponent extends Component
         if ($this->max_load_d != null) {
             $this->measured_strength_d = round($this->max_load_d / ($this->area_cyl_d == 0 ? 1 : $this->area_cyl_d), -1);
         } else {
-            $this->measured_strength_d = 0;
+            $this->measured_strength_d = null;
         }
     }
     public function measuredStrengthE()
@@ -309,7 +309,7 @@ class CreateInspectionConcreteComponent extends Component
         if ($this->max_load_e != null) {
             $this->measured_strength_e = round($this->max_load_e / ($this->area_cyl_e == 0 ? 1 : $this->area_cyl_e), -1);
         } else {
-            $this->measured_strength_e = 0;
+            $this->measured_strength_e = null;
         }
     }
     public function measuredStrengthF()
@@ -317,7 +317,7 @@ class CreateInspectionConcreteComponent extends Component
         if ($this->max_load_f != null) {
             $this->measured_strength_f = round($this->max_load_f / ($this->area_cyl_f == 0 ? 1 : $this->area_cyl_f), -1);
         } else {
-            $this->measured_strength_f = 0;
+            $this->measured_strength_f = null;
         }
     }
     public function measuredStrengthG()
@@ -325,7 +325,7 @@ class CreateInspectionConcreteComponent extends Component
         if ($this->max_load_g != null) {
             $this->measured_strength_g = round($this->max_load_g / ($this->area_cyl_g == 0 ? 1 : $this->area_cyl_g), -1);
         } else {
-            $this->measured_strength_g = 0;
+            $this->measured_strength_g = null;
         }
     }
     public function measuredStrengthH()
@@ -333,7 +333,7 @@ class CreateInspectionConcreteComponent extends Component
         if ($this->max_load_h != null) {
             $this->measured_strength_h = round($this->max_load_h / ($this->area_cyl_h == 0 ? 1 : $this->area_cyl_h), -1);
         } else {
-            $this->measured_strength_h = 0;
+            $this->measured_strength_h = null;
         }
     }
     public function measuredStrengthI()
@@ -341,7 +341,7 @@ class CreateInspectionConcreteComponent extends Component
         if ($this->max_load_i != null) {
             $this->measured_strength_i = round($this->max_load_i / ($this->area_cyl_i == 0 ? 1 : $this->area_cyl_i), -1);
         } else {
-            $this->measured_strength_i = 0;
+            $this->measured_strength_i = null;
         }
     }
 
@@ -593,11 +593,12 @@ class CreateInspectionConcreteComponent extends Component
             $project_id = InspectionConcrete::find($f_id)->project_id;
             dispatch(function () use ($persons, $f_id, $project_id, $permissions, $auth_user_id) {
                 foreach ($persons as $key => $re_id) {
-                    $user = User::find($auth_user_id);
+                    $auth_user = User::find($auth_user_id);
+                    $user = User::find($re_id);
                     $mailData['email'] = $user->email;
+                    $mailData['name'] = $auth_user ->name;
+                    $mailData['role_id'] = $auth_user ->role_id;
                     $mailData['permission'] = $permissions;
-                    $mailData['name'] = $user->name;
-                    $mailData['role_id'] = $user->role_id;
                     $mailData['id'] = $f_id;
                     $mailData['project_id'] = $project_id;
                     $mailData['subject'] = 'New file waiting for your review';

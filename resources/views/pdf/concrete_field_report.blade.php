@@ -858,16 +858,13 @@
         <table
             style="width: 100%; border-collapse: collapse; border-top: 0px solid #000; border-right: 3px solid #000; border-bottom: 0px solid #000; border-left: 3px solid #000;">
             <tr>
-                <th style="padding: 10px 6px 5px 6px; border: 1px solid #000">
+                <th style="border: 1px solid #000" width="10%">
                     <h3 style="font-size: 14px; font-weight: 700">Test No.</h3>
                 </th>
-                <th style="padding: 10px 6px 5px 6px; text-align: left; border: 1px solid #000">
-                    <h3 style="font-size: 14px; font-weight: 700">Type of Structure:</h3>
-                </th>
-                <th style="padding: 10px 6px 5px 6px; text-align: left; border: 1px solid #000">
+                <th colspan="2" style="padding: 10px 6px 5px 6px; text-align: center; border: 1px solid #000" width="65%">
                     <h3 style="font-size: 14px; font-weight: 700">Location</h3>
                 </th>
-                <th style="padding: 10px 6px 5px 6px; text-align: left; border: 1px solid #000">
+                <th style="padding: 10px 6px 5px 6px; text-align: center; border: 1px solid #000" width="25%">
                     <h3 style="font-size: 14px; font-weight: 700">Remark</h3>
                 </th>
             </tr>
@@ -880,7 +877,7 @@
                         <h4 style="font-size: 14px; font-weight: 400">{{ $set_one->type_of_structure }}</h4>
                     </td>
                     <td style="padding: 4px 6px; border: 1px solid #000">
-                        <h4 style="font-size: 14px; font-weight: 400">{{ $set_one->general_location }}</h4>
+                        <h4 style="font-size: 14px; font-weight: 400">{{ $set_one->specific_location }}</h4>
                     </td>
                     <td style="padding: 4px 6px; border: 1px solid #000">
                         <h4 style="font-size: 14px; font-weight: 400">{{ $set_one->remark }}</h4>
@@ -896,7 +893,7 @@
                         <h4 style="font-size: 14px; font-weight: 400">{{ $set_two->type_of_structure }}</h4>
                     </td>
                     <td style="padding: 4px 6px; border: 1px solid #000">
-                        <h4 style="font-size: 14px; font-weight: 400">{{ $set_two->general_location }}</h4>
+                        <h4 style="font-size: 14px; font-weight: 400">{{ $set_two->specific_location }}</h4>
                     </td>
                     <td style="padding: 4px 6px; border: 1px solid #000">
                         <h4 style="font-size: 14px; font-weight: 400">{{ $set_two->remark }}</h4>
@@ -912,7 +909,7 @@
                         <h4 style="font-size: 14px; font-weight: 400">{{ $set_three->type_of_structure }}</h4>
                     </td>
                     <td style="padding: 4px 6px; border: 1px solid #000">
-                        <h4 style="font-size: 14px; font-weight: 400">{{ $set_three->general_location }}</h4>
+                        <h4 style="font-size: 14px; font-weight: 400">{{ $set_three->specific_location }}</h4>
                     </td>
                     <td style="padding: 4px 6px; border: 1px solid #000">
                         <h4 style="font-size: 14px; font-weight: 400">{{ $set_three->remark }}</h4>
@@ -928,7 +925,7 @@
                         <h4 style="font-size: 14px; font-weight: 400">{{ $set_four->type_of_structure }}</h4>
                     </td>
                     <td style="padding: 4px 6px; border: 1px solid #000">
-                        <h4 style="font-size: 14px; font-weight: 400">{{ $set_four->general_location }}</h4>
+                        <h4 style="font-size: 14px; font-weight: 400">{{ $set_four->specific_location }}</h4>
                     </td>
                     <td style="padding: 4px 6px; border: 1px solid #000">
                         <h4 style="font-size: 14px; font-weight: 400">{{ $set_four->remark }}</h4>
@@ -944,7 +941,7 @@
                         <h4 style="font-size: 14px; font-weight: 400">{{ $set_five->type_of_structure }}</h4>
                     </td>
                     <td style="padding: 4px 6px; border: 1px solid #000">
-                        <h4 style="font-size: 14px; font-weight: 400">{{ $set_five->general_location }}</h4>
+                        <h4 style="font-size: 14px; font-weight: 400">{{ $set_five->specific_location }}</h4>
                     </td>
                     <td style="padding: 4px 6px; border: 1px solid #000">
                         <h4 style="font-size: 14px; font-weight: 400">{{ $set_five->remark }}</h4>
@@ -960,7 +957,7 @@
                         <h4 style="font-size: 14px; font-weight: 400">{{ $set_six->type_of_structure }}</h4>
                     </td>
                     <td style="padding: 4px 6px; border: 1px solid #000">
-                        <h4 style="font-size: 14px; font-weight: 400">{{ $set_six->general_location }}</h4>
+                        <h4 style="font-size: 14px; font-weight: 400">{{ $set_six->specific_location }}</h4>
                     </td>
                     <td style="padding: 4px 6px; border: 1px solid #000">
                         <h4 style="font-size: 14px; font-weight: 400">{{ $set_six->remark }}</h4>
@@ -976,7 +973,7 @@
                         <h4 style="font-size: 14px; font-weight: 400">{{ $set_seven->type_of_structure }}</h4>
                     </td>
                     <td style="padding: 4px 6px; border: 1px solid #000">
-                        <h4 style="font-size: 14px; font-weight: 400">{{ $set_seven->general_location }}</h4>
+                        <h4 style="font-size: 14px; font-weight: 400">{{ $set_seven->specific_location }}</h4>
                     </td>
                     <td style="padding: 4px 6px; border: 1px solid #000">
                         <h4 style="font-size: 14px; font-weight: 400">{{ $set_seven->remark }}</h4>
@@ -992,7 +989,7 @@
                         <h4 style="font-size: 14px; font-weight: 400">{{ $set_eight->type_of_structure }}</h4>
                     </td>
                     <td style="padding: 4px 6px; border: 1px solid #000">
-                        <h4 style="font-size: 14px; font-weight: 400">{{ $set_eight->general_location }}</h4>
+                        <h4 style="font-size: 14px; font-weight: 400">{{ $set_eight->specific_location }}</h4>
                     </td>
                     <td style="padding: 4px 6px; border: 1px solid #000">
                         <h4 style="font-size: 14px; font-weight: 400">{{ $set_eight->remark }}</h4>
@@ -1008,7 +1005,7 @@
                         <h4 style="font-size: 14px; font-weight: 400">{{ $set_nine->type_of_structure }}</h4>
                     </td>
                     <td style="padding: 4px 6px; border: 1px solid #000">
-                        <h4 style="font-size: 14px; font-weight: 400">{{ $set_nine->general_location }}</h4>
+                        <h4 style="font-size: 14px; font-weight: 400">{{ $set_nine->specific_location }}</h4>
                     </td>
                     <td style="padding: 4px 6px; border: 1px solid #000">
                         <h4 style="font-size: 14px; font-weight: 400">{{ $set_nine->remark }}</h4>
@@ -1024,7 +1021,7 @@
                         <h4 style="font-size: 14px; font-weight: 400">{{ $set_ten->type_of_structure }}</h4>
                     </td>
                     <td style="padding: 4px 6px; border: 1px solid #000">
-                        <h4 style="font-size: 14px; font-weight: 400">{{ $set_ten->general_location }}</h4>
+                        <h4 style="font-size: 14px; font-weight: 400">{{ $set_ten->specific_location }}</h4>
                     </td>
                     <td style="padding: 4px 6px; border: 1px solid #000">
                         <h4 style="font-size: 14px; font-weight: 400">{{ $set_ten->remark }}</h4>

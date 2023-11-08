@@ -342,21 +342,12 @@
                                 <div class="col-lg-6">
                                     <h6>Gauge Information</h6>
                                     <div class="input-group">
-                                        <span class="input-group-text width18">Troxler:</span>
+                                        <span class="input-group-text width18">Gauge Make:</span>
                                         <select class="form-select" wire:model="troxler">
                                             <option value="">Select</option>
-                                            <option value="Yes">Yes</option>
-                                            <option value="No">No</option>
+                                            <option value="Troxler">Troxler</option>
+                                            <option value="Other">Other</option>
                                         </select>
-                                        <span class="input-group-text">Other:</span>
-                                        <select class="form-select" wire:model="other">
-                                            <option value="">Select</option>
-                                            <option value="Yes">Yes</option>
-                                            <option value="No">No</option>
-                                        </select>
-                                        @error('other')
-                                        <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
-                                        @enderror
                                     </div>
                                     @error('troxler')
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
