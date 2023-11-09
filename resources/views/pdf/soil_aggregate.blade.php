@@ -21,23 +21,18 @@
     <div style="
     padding: 15px 25px 25px 25px;
   ">
-
         <table style="width: 100%; border-collapse: collapse;">
             <tr>
-
                 <td style="width: 28%; text-align: left;">
-
-                    <h4 style="font-size: 13px; font-weight: 400;">
-                        Client: {{ $data->client_name }}
+        
+                    <h4 style="font-size: 14px; font-weight: 700;">
+                        Client
                     </h4>
-                    <h4 style="font-size: 13px; font-weight: 400;">
-                        Email: {{ $data->client_email }}
+                    <h4 style="font-size: 14px; font-weight: 400;">
+                        {{ $data->client_company_name }}
                     </h4>
-                    <h4 style="font-size: 13px; font-weight: 400;">
-                        Phone: {{ $data->client_phone }}
-                    </h4>
-                    <h4 style="font-size: 13px; font-weight: 400;">
-                        Company Name: {{ $data->client_company_name }}
+                    <h4 style="font-size: 14px; font-weight: 400;">
+                        {{ $data->client_address }}
                     </h4>
                 </td>
                 <td style="width: 40%; text-align: center;">
@@ -46,30 +41,22 @@
                     <h4 style="font-size: 13px; font-weight: 700; padding-top: 5px">
                         {{ $data->office_address }}
                     </h4>
-                    <h4 style="font-size: 13px; font-weight: 700; padding-top: 5px">Field Density of Soil Aggregate by
-                        Nuclear Method</h4>
+                    <h4 style="font-size: 13px; font-weight: 700; padding-top: 5px">CONCRETE TEST REPORT</h4>
                 </td>
                 <td style="width: 28%; text-align: left;">
-                    <h4 style="font-size: 13px; font-weight: 400;">
-                        Date: {{ $data->created_at->format('m/d/Y') }}
+                    <h4 style="font-size: 14px; font-weight: 500;">
+                        Date Cast: <span
+                            style="font-size: 14px; font-weight: 400;">{{ $data->created_at->format('m/d/Y') }}</span>
                     </h4>
-                    <h4 style="font-size: 13px; font-weight: 400;">
-                        Project No: {{ $data->project_number }}
+                    <h4 style="font-size: 14px; font-weight: 500;">
+                        Project No: <span style="font-size: 14px; font-weight: 400;">{{ $data->project_number }}</span>
                     </h4>
-                    <h4 style="font-size: 13px; font-weight: 400;">
-                        Project Name: {{ $data->project_name }}
+                    <h4 style="font-size: 14px; font-weight: 500;">
+                        Project Name: <span style="font-size: 14px; font-weight: 400;">{{ $data->project_name }}</span>
                     </h4>
-                    <h4 style="font-size: 13px; font-weight: 400;">
-                        Weather: {{ $data->weather }}
-                    </h4>
-
                 </td>
-
             </tr>
-
         </table>
-
-
         <div
             style="margin-top: 5px; border-top: 3px solid #000; border-right: 3px solid #000; border-bottom: 0px solid #000; border-left: 3px solid #000;">
             <table style="width: 100%; border-collapse: collapse; border: none">
@@ -157,8 +144,8 @@
                         <h4 style="font-size: 14px; font-weight: 400">Moisture Requirements:</h4>
                     </td>
                     <td style="padding: 1px; border: 1px solid #000">
-                        <h4 style="font-size: 14px; font-weight: 400">-{{ $data->requirment_minus }} to +
-                            {{ $data->requirment_plus }}
+                        <h4 style="font-size: 14px; font-weight: 400">-{{ $data->requirement_minus }} to +
+                            {{ $data->requirement_plus }}
                         </h4>
                     </td>
                 </tr>
@@ -166,16 +153,12 @@
             </table>
         </div>
 
-
-
         <div
             style="padding-top: 5px; border-top: 1px solid #000; border-right: 3px solid #000; border-bottom: 0px solid #000; border-left: 3px solid #000;">
             <table style="width: 100%; border-collapse: collapse;">
                 <caption
                     style="text-align:left; font-size: 14px; text-transform: uppercase; font-weight: 500; padding: 0; letter-spacing: -1px; background-color: #689A3D; border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
                     Proctor Information</caption>
-
-
                 <tr>
                     <td style="padding: 1px; border: 1px solid #000">
                         <h3 style="font-size: 14px; font-weight: 700; text-align: center">Proctor ID</h3>
@@ -951,13 +934,14 @@
         </table>
 
 
-        
+
 
 
         <table style="width: 100%; border-collapse: collapse; ">
             <tr>
                 <td>
-                    <p style="padding-top: 10px; padding-bottom: 30px; font-size: 13px; font-weight: 400; text-align: left">
+                    <p
+                        style="padding-top: 10px; padding-bottom: 30px; font-size: 13px; font-weight: 400; text-align: left">
                         These test results apply only to the specific samples/location/materials noted and may not
                         be
                         representative

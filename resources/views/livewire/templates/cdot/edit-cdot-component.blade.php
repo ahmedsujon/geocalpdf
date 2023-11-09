@@ -228,7 +228,7 @@
         </div>
 
         @if (Session::has('message'))
-        <div class="alert alert-success" role="alert">{{ Session::get('message') }}</div>
+            <div class="alert alert-success" role="alert">{{ Session::get('message') }}</div>
         @endif
         <div class="row">
             <div class="col-md-12">
@@ -275,12 +275,12 @@
                                             id="selectInfo">
                                             <option value="">Select Project:</option>
                                             @foreach ($projects as $project)
-                                            <option value="{{ $project->id }}">{{ $project->name }}</option>
+                                                <option value="{{ $project->id }}">{{ $project->name }}</option>
                                             @endforeach
                                         </select>
                                     </div>
                                     @error('project_id')
-                                    <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
+                                        <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
                                     <div class="input-group">
                                         <span class="input-group-text width18">Client Name:</span>
@@ -288,15 +288,15 @@
                                             readonly>
                                     </div>
                                     @error('client_id')
-                                    <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
+                                        <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
                                     <div class="input-group">
                                         <span class="input-group-text width18">Project Number:</span>
-                                        <input type="text" class="form-control form-color" wire:model="project_number"
-                                            readonly>
+                                        <input type="text" class="form-control form-color"
+                                            wire:model="project_number" readonly>
                                     </div>
                                     @error('project_number')
-                                    <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
+                                        <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
 
                                     <div class="input-group">
@@ -305,7 +305,7 @@
                                             wire:model="geocal_project_num">
                                     </div>
                                     @error('geocal_project_num')
-                                    <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
+                                        <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
 
                                     <div class="input-group">
@@ -314,7 +314,7 @@
                                             wire:model="geocal_project_name">
                                     </div>
                                     @error('geocal_project_name')
-                                    <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
+                                        <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
 
                                     <div class="input-group">
@@ -323,7 +323,7 @@
                                             wire:model="cdot_project_name">
                                     </div>
                                     @error('cdot_project_name')
-                                    <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
+                                        <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
 
                                     <div class="input-group">
@@ -331,7 +331,7 @@
                                         <input type="text" class="form-control form-color" wire:model="weather">
                                     </div>
                                     @error('weather')
-                                    <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
+                                        <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
 
                                     <div class="input-group">
@@ -339,7 +339,7 @@
                                         <input type="date" class="form-control form-color" wire:model="date">
                                     </div>
                                     @error('date')
-                                    <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
+                                        <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
                                 </div>
 
@@ -354,7 +354,7 @@
                                         </select>
                                     </div>
                                     @error('test_method')
-                                    <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
+                                        <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
 
                                     <div class="input-group">
@@ -366,7 +366,7 @@
                                         </select>
                                     </div>
                                     @error('troxler')
-                                    <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
+                                        <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
 
                                     <div class="input-group">
@@ -378,7 +378,7 @@
                                             <option value="3241">3241</option>
                                         </select>
                                         @error('model')
-                                        <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
+                                            <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                         @enderror
                                     </div>
 
@@ -416,7 +416,7 @@
                                             <option value="2583">2583</option>
                                         </select>
                                         @error('serial_number')
-                                        <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
+                                            <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                         @enderror
                                     </div>
 
@@ -425,7 +425,7 @@
                                         <input type="number" class="form-control form-color"
                                             wire:model="density_std_count">
                                         @error('density_std_count')
-                                        <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
+                                            <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                         @enderror
                                     </div>
 
@@ -434,7 +434,7 @@
                                         <input type="number" class="form-control form-color"
                                             wire:model="moisture_std_count">
                                         @error('moisture_std_count')
-                                        <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
+                                            <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                         @enderror
                                     </div>
 
@@ -447,7 +447,7 @@
                                             <option value="No">No</option>
                                         </select>
                                         @error('moisture_equations')
-                                        <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
+                                            <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                         @enderror
                                     </div>
 
@@ -540,7 +540,8 @@
                                             <thead>
                                                 <tr>
                                                     <th class="customcolor" scope="col">Tester (print name)</th>
-                                                    <th class="customcolor" scope="col">Sampled by (print name)</th>
+                                                    <th class="customcolor" scope="col">Sampled by (print name)
+                                                    </th>
                                                     <th class="customcolor" scope="col">Company Name or CDOT</th>
                                                     <th class="customcolor" scope="col">Gauge ID</th>
                                                 </tr>
@@ -552,9 +553,9 @@
                                                             <select class="form-select" wire:model="taster_id">
                                                                 <option value="">Select Taster</option>
                                                                 @foreach ($supervisors as $supervisor)
-                                                                <option value="{{ $supervisor->id }}">
-                                                                    {{ user($supervisor->id)->name }}
-                                                                </option>
+                                                                    <option value="{{ $supervisor->id }}">
+                                                                        {{ user($supervisor->id)->name }}
+                                                                    </option>
                                                                 @endforeach
                                                             </select>
                                                         </div>
@@ -595,7 +596,8 @@
                                         <table class="table table-bordered" style="margin-bottom: 0;">
                                             <tbody>
                                                 <tr>
-                                                    <td class="moistureremove text-center" width="25%" height="35px;">
+                                                    <td class="moistureremove text-center" width="25%"
+                                                        height="35px;">
                                                         Sample
                                                         ID</td>
                                                     <td class="moistureremove text-center">4A</td>
@@ -624,61 +626,71 @@
                                                     <td class="moistureremove text-center" width="7%"></td>
                                                     <td class="moistureremove text-center">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control moistureremoveinput form-color text-center"
+                                                            <input type="text"
+                                                                class="form-control moistureremoveinput form-color text-center"
                                                                 wire:model="test_data_a">
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove text-center">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control moistureremoveinput form-color text-center"
+                                                            <input type="text"
+                                                                class="form-control moistureremoveinput form-color text-center"
                                                                 wire:model="test_data_b">
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove text-center">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control moistureremoveinput form-color text-center"
+                                                            <input type="text"
+                                                                class="form-control moistureremoveinput form-color text-center"
                                                                 wire:model="test_data_c">
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove text-center">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control moistureremoveinput form-color text-center"
+                                                            <input type="text"
+                                                                class="form-control moistureremoveinput form-color text-center"
                                                                 wire:model="test_data_d">
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove text-center">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control moistureremoveinput form-color text-center"
+                                                            <input type="text"
+                                                                class="form-control moistureremoveinput form-color text-center"
                                                                 wire:model="test_data_e">
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove text-center">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control moistureremoveinput form-color text-center"
+                                                            <input type="text"
+                                                                class="form-control moistureremoveinput form-color text-center"
                                                                 wire:model="test_data_f">
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove text-center">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control moistureremoveinput form-color text-center"
+                                                            <input type="text"
+                                                                class="form-control moistureremoveinput form-color text-center"
                                                                 wire:model="test_data_g">
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove text-center">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control moistureremoveinput form-color text-center"
+                                                            <input type="text"
+                                                                class="form-control moistureremoveinput form-color text-center"
                                                                 wire:model="test_data_h">
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove text-center">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control moistureremoveinput form-color text-center"
+                                                            <input type="text"
+                                                                class="form-control moistureremoveinput form-color text-center"
                                                                 wire:model="test_data_i">
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove text-center">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control moistureremoveinput form-color text-center"
+                                                            <input type="text"
+                                                                class="form-control moistureremoveinput form-color text-center"
                                                                 wire:model="test_data_j">
                                                         </div>
                                                     </td>
@@ -700,31 +712,36 @@
                                                     <td class="moistureremove text-center">Sample ID (For IAT)</td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control moistureremoveinput form-color text-center"
+                                                            <input type="text"
+                                                                class="form-control moistureremoveinput form-color text-center"
                                                                 wire:model="sample_id_a" placeholder="Sample ID 1">
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control moistureremoveinput form-color text-center"
+                                                            <input type="text"
+                                                                class="form-control moistureremoveinput form-color text-center"
                                                                 wire:model="sample_id_b" placeholder="Sample ID 2">
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control moistureremoveinput form-color text-center"
+                                                            <input type="text"
+                                                                class="form-control moistureremoveinput form-color text-center"
                                                                 wire:model="sample_id_c" placeholder="Sample ID 3">
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control moistureremoveinput form-color text-center"
+                                                            <input type="text"
+                                                                class="form-control moistureremoveinput form-color text-center"
                                                                 wire:model="sample_id_d" placeholder="Sample ID 4">
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control moistureremoveinput form-color text-center"
+                                                            <input type="text"
+                                                                class="form-control moistureremoveinput form-color text-center"
                                                                 wire:model="sample_id_e" placeholder="Sample ID 5">
                                                         </div>
                                                     </td>
@@ -733,31 +750,36 @@
                                                     <td class="moistureremove text-center">Date of Test</td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
-                                                            <input type="date" class="form-control moistureremoveinput form-color text-center"
+                                                            <input type="date"
+                                                                class="form-control moistureremoveinput form-color text-center"
                                                                 wire:model="test_date_a" placeholder="Date of Test">
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
-                                                            <input type="date" class="form-control moistureremoveinput form-color text-center"
+                                                            <input type="date"
+                                                                class="form-control moistureremoveinput form-color text-center"
                                                                 wire:model="test_date_b" placeholder="Date of Test">
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
-                                                            <input type="date" class="form-control moistureremoveinput form-color text-center"
+                                                            <input type="date"
+                                                                class="form-control moistureremoveinput form-color text-center"
                                                                 wire:model="test_date_c" placeholder="Date of Test">
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
-                                                            <input type="date" class="form-control moistureremoveinput form-color text-center"
+                                                            <input type="date"
+                                                                class="form-control moistureremoveinput form-color text-center"
                                                                 wire:model="test_date_d" placeholder="Date of Test">
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
-                                                            <input type="date" class="form-control moistureremoveinput form-color text-center"
+                                                            <input type="date"
+                                                                class="form-control moistureremoveinput form-color text-center"
                                                                 wire:model="test_date_e" placeholder="Date of Test">
                                                         </div>
                                                     </td>
@@ -766,31 +788,36 @@
                                                     <td class="moistureremove text-center">Standard Count</td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control moistureremoveinput form-color text-center"
+                                                            <input type="text"
+                                                                class="form-control moistureremoveinput form-color text-center"
                                                                 wire:model="standard_count_a">
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control moistureremoveinput form-color text-center"
+                                                            <input type="text"
+                                                                class="form-control moistureremoveinput form-color text-center"
                                                                 wire:model="standard_count_b">
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control moistureremoveinput form-color text-center"
+                                                            <input type="text"
+                                                                class="form-control moistureremoveinput form-color text-center"
                                                                 wire:model="standard_count_c">
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control moistureremoveinput form-color text-center"
+                                                            <input type="text"
+                                                                class="form-control moistureremoveinput form-color text-center"
                                                                 wire:model="standard_count_d">
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control moistureremoveinput form-color text-center"
+                                                            <input type="text"
+                                                                class="form-control moistureremoveinput form-color text-center"
                                                                 wire:model="standard_count_e">
                                                         </div>
                                                     </td>
@@ -804,8 +831,8 @@
                                                                 wire:model="daily_rice_a" wire:keyup='calculateAAA'>
                                                         </div>
                                                         @error('daily_rice_a')
-                                                        <span class="text-danger" style="font-size: 12px;">{{ $message
-                                                            }}</span>
+                                                            <span class="text-danger"
+                                                                style="font-size: 12px;">{{ $message }}</span>
                                                         @enderror
                                                     </td>
                                                     <td class="moistureremove">
@@ -815,8 +842,8 @@
                                                                 wire:model="daily_rice_b" wire:keyup='calculateBBB'>
                                                         </div>
                                                         @error('daily_rice_b')
-                                                        <span class="text-danger" style="font-size: 12px;">{{ $message
-                                                            }}</span>
+                                                            <span class="text-danger"
+                                                                style="font-size: 12px;">{{ $message }}</span>
                                                         @enderror
                                                     </td>
                                                     <td class="moistureremove">
@@ -826,8 +853,8 @@
                                                                 wire:model="daily_rice_c" wire:keyup='calculateCCC'>
                                                         </div>
                                                         @error('daily_rice_c')
-                                                        <span class="text-danger" style="font-size: 12px;">{{ $message
-                                                            }}</span>
+                                                            <span class="text-danger"
+                                                                style="font-size: 12px;">{{ $message }}</span>
                                                         @enderror
                                                     </td>
                                                     <td class="moistureremove">
@@ -837,8 +864,8 @@
                                                                 wire:model="daily_rice_d" wire:keyup='calculateDDD'>
                                                         </div>
                                                         @error('daily_rice_d')
-                                                        <span class="text-danger" style="font-size: 12px;">{{ $message
-                                                            }}</span>
+                                                            <span class="text-danger"
+                                                                style="font-size: 12px;">{{ $message }}</span>
                                                         @enderror
                                                     </td>
                                                     <td class="moistureremove">
@@ -848,8 +875,8 @@
                                                                 wire:model="daily_rice_e" wire:keyup='calculateEEE'>
                                                         </div>
                                                         @error('daily_rice_e')
-                                                        <span class="text-danger" style="font-size: 12px;">{{ $message
-                                                            }}</span>
+                                                            <span class="text-danger"
+                                                                style="font-size: 12px;">{{ $message }}</span>
                                                         @enderror
                                                     </td>
                                                 </tr>
@@ -857,31 +884,36 @@
                                                     <td class="moistureremove text-center">Station</td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control moistureremoveinput form-color text-center"
+                                                            <input type="text"
+                                                                class="form-control moistureremoveinput form-color text-center"
                                                                 wire:model="station_a">
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control moistureremoveinput form-color text-center"
+                                                            <input type="text"
+                                                                class="form-control moistureremoveinput form-color text-center"
                                                                 wire:model="station_b">
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control moistureremoveinput form-color text-center"
+                                                            <input type="text"
+                                                                class="form-control moistureremoveinput form-color text-center"
                                                                 wire:model="station_c">
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control moistureremoveinput form-color text-center"
+                                                            <input type="text"
+                                                                class="form-control moistureremoveinput form-color text-center"
                                                                 wire:model="station_d">
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control moistureremoveinput form-color text-center"
+                                                            <input type="text"
+                                                                class="form-control moistureremoveinput form-color text-center"
                                                                 wire:model="station_e">
                                                         </div>
                                                     </td>
@@ -890,31 +922,36 @@
                                                     <td class="moistureremove text-center">Offset</td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control moistureremoveinput form-color text-center"
+                                                            <input type="text"
+                                                                class="form-control moistureremoveinput form-color text-center"
                                                                 wire:model="offset_a">
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control moistureremoveinput form-color text-center"
+                                                            <input type="text"
+                                                                class="form-control moistureremoveinput form-color text-center"
                                                                 wire:model="offset_b">
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control moistureremoveinput form-color text-center"
+                                                            <input type="text"
+                                                                class="form-control moistureremoveinput form-color text-center"
                                                                 wire:model="offset_c">
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control moistureremoveinput form-color text-center"
+                                                            <input type="text"
+                                                                class="form-control moistureremoveinput form-color text-center"
                                                                 wire:model="offset_d">
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control moistureremoveinput form-color text-center"
+                                                            <input type="text"
+                                                                class="form-control moistureremoveinput form-color text-center"
                                                                 wire:model="offset_e">
                                                         </div>
                                                     </td>
@@ -923,31 +960,36 @@
                                                     <td class="moistureremove text-center">Course/Lift</td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control moistureremoveinput form-color text-center"
+                                                            <input type="text"
+                                                                class="form-control moistureremoveinput form-color text-center"
                                                                 wire:model="course_a">
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control moistureremoveinput form-color text-center"
+                                                            <input type="text"
+                                                                class="form-control moistureremoveinput form-color text-center"
                                                                 wire:model="course_b">
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control moistureremoveinput form-color text-center"
+                                                            <input type="text"
+                                                                class="form-control moistureremoveinput form-color text-center"
                                                                 wire:model="course_c">
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control moistureremoveinput form-color text-center"
+                                                            <input type="text"
+                                                                class="form-control moistureremoveinput form-color text-center"
                                                                 wire:model="course_d">
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control moistureremoveinput form-color text-center"
+                                                            <input type="text"
+                                                                class="form-control moistureremoveinput form-color text-center"
                                                                 wire:model="course_e">
                                                         </div>
                                                     </td>
@@ -977,40 +1019,46 @@
                                                         <div class="input-group">
                                                             <input type="number" step="any"
                                                                 class="form-control moistureremoveinput form-color text-center"
-                                                                wire:model="wet_densitiesAA.0" wire:keyup='calculateAA'>
+                                                                wire:model="wet_densitiesAA.0"
+                                                                wire:keyup='calculateAA'>
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
                                                             <input type="number" step="any"
                                                                 class="form-control moistureremoveinput form-color text-center"
-                                                                wire:model="wet_densitiesBB.0" wire:keyup='calculateBB'>
+                                                                wire:model="wet_densitiesBB.0"
+                                                                wire:keyup='calculateBB'>
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
                                                             <input type="number" step="any"
                                                                 class="form-control moistureremoveinput form-color text-center"
-                                                                wire:model="wet_densitiesCC.0" wire:keyup='calculateCC'>
+                                                                wire:model="wet_densitiesCC.0"
+                                                                wire:keyup='calculateCC'>
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
                                                             <input type="number" step="any"
                                                                 class="form-control moistureremoveinput form-color text-center"
-                                                                wire:model="wet_densitiesDD.0" wire:keyup='calculateDD'>
+                                                                wire:model="wet_densitiesDD.0"
+                                                                wire:keyup='calculateDD'>
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
                                                             <input type="number" step="any"
                                                                 class="form-control moistureremoveinput form-color text-center"
-                                                                wire:model="wet_densitiesEE.0" wire:keyup='calculateEE'>
+                                                                wire:model="wet_densitiesEE.0"
+                                                                wire:keyup='calculateEE'>
                                                         </div>
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="border-top: none !important" class="moistureremove text-center" width="9%">minute
+                                                    <td style="border-top: none !important"
+                                                        class="moistureremove text-center" width="9%">minute
                                                         readings
                                                     </td>
 
@@ -1021,40 +1069,46 @@
                                                         <div class="input-group">
                                                             <input type="number" step="any"
                                                                 class="form-control moistureremoveinput form-color text-center"
-                                                                wire:model="wet_densitiesAA.1" wire:keyup='calculateAA'>
+                                                                wire:model="wet_densitiesAA.1"
+                                                                wire:keyup='calculateAA'>
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
                                                             <input type="number" step="any"
                                                                 class="form-control moistureremoveinput form-color text-center"
-                                                                wire:model="wet_densitiesBB.1" wire:keyup='calculateBB'>
+                                                                wire:model="wet_densitiesBB.1"
+                                                                wire:keyup='calculateBB'>
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
                                                             <input type="number" step="any"
                                                                 class="form-control moistureremoveinput form-color text-center"
-                                                                wire:model="wet_densitiesCC.1" wire:keyup='calculateCC'>
+                                                                wire:model="wet_densitiesCC.1"
+                                                                wire:keyup='calculateCC'>
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
                                                             <input type="number" step="any"
                                                                 class="form-control moistureremoveinput form-color text-center"
-                                                                wire:model="wet_densitiesDD.1" wire:keyup='calculateDD'>
+                                                                wire:model="wet_densitiesDD.1"
+                                                                wire:keyup='calculateDD'>
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
                                                             <input type="number" step="any"
                                                                 class="form-control moistureremoveinput form-color text-center"
-                                                                wire:model="wet_densitiesEE.1" wire:keyup='calculateEE'>
+                                                                wire:model="wet_densitiesEE.1"
+                                                                wire:keyup='calculateEE'>
                                                         </div>
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="border-bottom: none !important;" class="moistureremove text-center" width="9%">
+                                                    <td style="border-bottom: none !important;"
+                                                        class="moistureremove text-center" width="9%">
                                                         Turn Gauge
                                                     </td>
                                                     <td class="moistureremove text-center" width="9%">Wet Density
@@ -1064,40 +1118,46 @@
                                                         <div class="input-group">
                                                             <input type="number" step="any"
                                                                 class="form-control moistureremoveinput form-color text-center"
-                                                                wire:model="wet_densitiesAA.2" wire:keyup='calculateAA'>
+                                                                wire:model="wet_densitiesAA.2"
+                                                                wire:keyup='calculateAA'>
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
                                                             <input type="number" step="any"
                                                                 class="form-control moistureremoveinput form-color text-center"
-                                                                wire:model="wet_densitiesBB.2" wire:keyup='calculateBB'>
+                                                                wire:model="wet_densitiesBB.2"
+                                                                wire:keyup='calculateBB'>
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
                                                             <input type="number" step="any"
                                                                 class="form-control moistureremoveinput form-color text-center"
-                                                                wire:model="wet_densitiesCC.2" wire:keyup='calculateCC'>
+                                                                wire:model="wet_densitiesCC.2"
+                                                                wire:keyup='calculateCC'>
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
                                                             <input type="number" step="any"
                                                                 class="form-control moistureremoveinput form-color text-center"
-                                                                wire:model="wet_densitiesDD.2" wire:keyup='calculateDD'>
+                                                                wire:model="wet_densitiesDD.2"
+                                                                wire:keyup='calculateDD'>
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
                                                             <input type="number" step="any"
                                                                 class="form-control moistureremoveinput form-color text-center"
-                                                                wire:model="wet_densitiesEE.2" wire:keyup='calculateEE'>
+                                                                wire:model="wet_densitiesEE.2"
+                                                                wire:keyup='calculateEE'>
                                                         </div>
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="border-top: none !important" class="moistureremove text-center" width="9%">180°</td>
+                                                    <td style="border-top: none !important"
+                                                        class="moistureremove text-center" width="9%">180°</td>
                                                     <td class="moistureremove text-center" width="9%">Wet Density
                                                         #4
                                                     </td>
@@ -1105,35 +1165,40 @@
                                                         <div class="input-group">
                                                             <input type="number" step="any"
                                                                 class="form-control moistureremoveinput form-color text-center"
-                                                                wire:model="wet_densitiesAA.3" wire:keyup='calculateAA'>
+                                                                wire:model="wet_densitiesAA.3"
+                                                                wire:keyup='calculateAA'>
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
                                                             <input type="number" step="any"
                                                                 class="form-control moistureremoveinput form-color text-center"
-                                                                wire:model="wet_densitiesBB.3" wire:keyup='calculateBB'>
+                                                                wire:model="wet_densitiesBB.3"
+                                                                wire:keyup='calculateBB'>
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
                                                             <input type="number" step="any"
                                                                 class="form-control moistureremoveinput form-color text-center"
-                                                                wire:model="wet_densitiesCC.3" wire:keyup='calculateCC'>
+                                                                wire:model="wet_densitiesCC.3"
+                                                                wire:keyup='calculateCC'>
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
                                                             <input type="number" step="any"
                                                                 class="form-control moistureremoveinput form-color text-center"
-                                                                wire:model="wet_densitiesDD.3" wire:keyup='calculateDD'>
+                                                                wire:model="wet_densitiesDD.3"
+                                                                wire:keyup='calculateDD'>
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
                                                             <input type="number" step="any"
                                                                 class="form-control moistureremoveinput form-color text-center"
-                                                                wire:model="wet_densitiesEE.3" wire:keyup='calculateEE'>
+                                                                wire:model="wet_densitiesEE.3"
+                                                                wire:keyup='calculateEE'>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -1156,31 +1221,36 @@
                                                     </td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control moistureremoveinput text-center"
+                                                            <input type="text"
+                                                                class="form-control moistureremoveinput text-center"
                                                                 wire:model="wet_densities_a" readonly>
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control moistureremoveinput text-center"
+                                                            <input type="text"
+                                                                class="form-control moistureremoveinput text-center"
                                                                 wire:model="wet_densities_b" readonly>
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control moistureremoveinput text-center"
+                                                            <input type="text"
+                                                                class="form-control moistureremoveinput text-center"
                                                                 wire:model="wet_densities_c" readonly>
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control moistureremoveinput text-center"
+                                                            <input type="text"
+                                                                class="form-control moistureremoveinput text-center"
                                                                 wire:model="wet_densities_d" readonly>
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control moistureremoveinput text-center"
+                                                            <input type="text"
+                                                                class="form-control moistureremoveinput text-center"
                                                                 wire:model="wet_densities_e" readonly>
                                                         </div>
                                                     </td>
@@ -1189,31 +1259,36 @@
                                                     <td class="moistureremove text-center">Average Wet Density</td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control moistureremoveinput text-center"
+                                                            <input type="text"
+                                                                class="form-control moistureremoveinput text-center"
                                                                 wire:model="average_wet_density_a" readonly>
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control moistureremoveinput text-center"
+                                                            <input type="text"
+                                                                class="form-control moistureremoveinput text-center"
                                                                 wire:model="average_wet_density_b" readonly>
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control moistureremoveinput text-center"
+                                                            <input type="text"
+                                                                class="form-control moistureremoveinput text-center"
                                                                 wire:model="average_wet_density_c" readonly>
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control moistureremoveinput text-center"
+                                                            <input type="text"
+                                                                class="form-control moistureremoveinput text-center"
                                                                 wire:model="average_wet_density_d" readonly>
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control moistureremoveinput text-center"
+                                                            <input type="text"
+                                                                class="form-control moistureremoveinput text-center"
                                                                 wire:model="average_wet_density_e" readonly>
                                                         </div>
                                                     </td>
@@ -1223,47 +1298,47 @@
                                                     </td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control moistureremoveinput form-color text-center"
+                                                            <input type="text"
+                                                                class="form-control moistureremoveinput form-color text-center"
                                                                 wire:model="correction_factor_a"
-                                                                wire:keyup='calculateAA' wire:change='compactionAAA' {{
-                                                                !is_null($daily_rice_a) && !empty($daily_rice_a) ? ''
-                                                                : 'disabled' }}>
+                                                                wire:keyup='calculateAA' wire:change='compactionAAA'
+                                                                {{ !is_null($daily_rice_a) && !empty($daily_rice_a) ? '' : 'disabled' }}>
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control moistureremoveinput form-color text-center"
+                                                            <input type="text"
+                                                                class="form-control moistureremoveinput form-color text-center"
                                                                 wire:model="correction_factor_b"
-                                                                wire:keyup='calculateBB' wire:change='compactionBBB' {{
-                                                                !is_null($daily_rice_b) && !empty($daily_rice_b) ? ''
-                                                                : 'disabled' }}>
+                                                                wire:keyup='calculateBB' wire:change='compactionBBB'
+                                                                {{ !is_null($daily_rice_b) && !empty($daily_rice_b) ? '' : 'disabled' }}>
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control moistureremoveinput form-color text-center"
+                                                            <input type="text"
+                                                                class="form-control moistureremoveinput form-color text-center"
                                                                 wire:model="correction_factor_c"
-                                                                wire:keyup='calculateCC' wire:change='compactionCCC' {{
-                                                                !is_null($daily_rice_c) && !empty($daily_rice_c) ? ''
-                                                                : 'disabled' }}>
+                                                                wire:keyup='calculateCC' wire:change='compactionCCC'
+                                                                {{ !is_null($daily_rice_c) && !empty($daily_rice_c) ? '' : 'disabled' }}>
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control moistureremoveinput form-color text-center"
+                                                            <input type="text"
+                                                                class="form-control moistureremoveinput form-color text-center"
                                                                 wire:model="correction_factor_d"
-                                                                wire:keyup='calculateDD' wire:change='compactionDDD' {{
-                                                                !is_null($daily_rice_d) && !empty($daily_rice_d) ? ''
-                                                                : 'disabled' }}>
+                                                                wire:keyup='calculateDD' wire:change='compactionDDD'
+                                                                {{ !is_null($daily_rice_d) && !empty($daily_rice_d) ? '' : 'disabled' }}>
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control moistureremoveinput form-color text-center"
+                                                            <input type="text"
+                                                                class="form-control moistureremoveinput form-color text-center"
                                                                 wire:model="correction_factor_e"
-                                                                wire:keyup='calculateEE' wire:change='compactionEEE' {{
-                                                                !is_null($daily_rice_e) && !empty($daily_rice_e) ? ''
-                                                                : 'disabled' }}>
+                                                                wire:keyup='calculateEE' wire:change='compactionEEE'
+                                                                {{ !is_null($daily_rice_e) && !empty($daily_rice_e) ? '' : 'disabled' }}>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -1271,31 +1346,36 @@
                                                     <td class="moistureremove text-center">Adjusted Wet Density</td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control moistureremoveinput text-center"
+                                                            <input type="text"
+                                                                class="form-control moistureremoveinput text-center"
                                                                 wire:model="adjusted_wet_a" readonly>
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control moistureremoveinput text-center"
+                                                            <input type="text"
+                                                                class="form-control moistureremoveinput text-center"
                                                                 wire:model="adjusted_wet_b" readonly>
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control moistureremoveinput text-center"
+                                                            <input type="text"
+                                                                class="form-control moistureremoveinput text-center"
                                                                 wire:model="adjusted_wet_c" readonly>
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control moistureremoveinput text-center"
+                                                            <input type="text"
+                                                                class="form-control moistureremoveinput text-center"
                                                                 wire:model="adjusted_wet_d" readonly>
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control moistureremoveinput text-center"
+                                                            <input type="text"
+                                                                class="form-control moistureremoveinput text-center"
                                                                 wire:model="adjusted_wet_e" readonly>
                                                         </div>
                                                     </td>
@@ -1305,31 +1385,36 @@
                                                     </td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control moistureremoveinput text-center"
+                                                            <input type="text"
+                                                                class="form-control moistureremoveinput text-center"
                                                                 wire:model="ave_daily_rice_a" readonly>
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control moistureremoveinput text-center"
+                                                            <input type="text"
+                                                                class="form-control moistureremoveinput text-center"
                                                                 wire:model="ave_daily_rice_b" readonly>
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control moistureremoveinput text-center"
+                                                            <input type="text"
+                                                                class="form-control moistureremoveinput text-center"
                                                                 wire:model="ave_daily_rice_c" readonly>
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control moistureremoveinput text-center"
+                                                            <input type="text"
+                                                                class="form-control moistureremoveinput text-center"
                                                                 wire:model="ave_daily_rice_d" readonly>
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control moistureremoveinput text-center"
+                                                            <input type="text"
+                                                                class="form-control moistureremoveinput text-center"
                                                                 wire:model="ave_daily_rice_e" readonly>
                                                         </div>
                                                     </td>
@@ -1338,31 +1423,36 @@
                                                     <td class="moistureremove text-center">% Compaction</td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control moistureremoveinput text-center"
+                                                            <input type="text"
+                                                                class="form-control moistureremoveinput text-center"
                                                                 wire:model="compaction_a" readonly>
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control moistureremoveinput text-center"
+                                                            <input type="text"
+                                                                class="form-control moistureremoveinput text-center"
                                                                 wire:model="compaction_b" readonly>
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control moistureremoveinput text-center"
+                                                            <input type="text"
+                                                                class="form-control moistureremoveinput text-center"
                                                                 wire:model="compaction_c" readonly>
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control moistureremoveinput text-center"
+                                                            <input type="text"
+                                                                class="form-control moistureremoveinput text-center"
                                                                 wire:model="compaction_d" readonly>
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control moistureremoveinput text-center"
+                                                            <input type="text"
+                                                                class="form-control moistureremoveinput text-center"
                                                                 wire:model="compaction_e" readonly>
                                                         </div>
                                                     </td>
@@ -1373,8 +1463,7 @@
                                     <div class="col-md-12 mb-3 mt-3">
                                         <div class="input-group">
                                             <span class="input-group-text width12">Remark</span>
-                                            <textarea class="form-control" aria-label="With textarea" spellcheck="false"
-                                                wire:model="remark"></textarea>
+                                            <textarea class="form-control" aria-label="With textarea" spellcheck="false" wire:model="remark"></textarea>
                                             <grammarly-extension data-grammarly-shadow-root="true"
                                                 style="position: absolute; top: 0px; left: 0px; pointer-events: none; z-index: 3;"
                                                 class="cGcvT"></grammarly-extension>
@@ -1391,8 +1480,8 @@
                                 <div class="col-md-12 mt-3 select-border">
                                     <div class="input-group">
                                         <span class="input-group-text width12">Next Action:</span>
-                                        <select class="form-select moistureremoveinput dependent text-left" wire:model='status'
-                                            data-file_id="{{ $file_id }}">
+                                        <select class="form-select moistureremoveinput dependent text-left"
+                                            wire:model='status' data-file_id="{{ $file_id }}">
                                             <option value="">Select an action...</option>
                                             <option value="sentToPE">Send to Project Engineer</option>
                                             <option value="sentToClerk">Send to Clerk</option>
@@ -1402,7 +1491,7 @@
                                         </select>
                                     </div>
                                     @error('status')
-                                    <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
+                                        <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
                                 </div>
                                 <div class="col-md-12 mt-3" wire:ignore>
@@ -1414,21 +1503,37 @@
                                     </div>
                                 </div>
                                 @error('responsible_person')
-                                <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
+                                    <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                 @enderror
                             </div>
                         </div>
                         <div class="container">
                             <div class="row mt-5 mb-5 justify-content-md-center">
+                                <div class="col-md-12">
+                                    @if ($errors->any())
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Validation Error</h5>
+                                                <ul>
+                                                    @foreach ($errors->all() as $error)
+                                                        <li class="text-danger">
+                                                            {{ $error }}</li>
+                                                    @endforeach
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    @endif
+                                </div>
                                 <div class="col-md-12 text-center">
                                     <form wire:submit.prevent='updateData'>
-                                        <a href="{{ route('template.cdot') }}" class="btn btn-primary submit_btn">Back
+                                        <a href="{{ route('template.cdot') }}"
+                                            class="btn btn-primary submit_btn">Back
                                             to List</a>
                                         <button type="submit" class="btn btn-success submit_btn">
                                             {!! loadingState(
-                                            'updateData',
-                                            'Save
-                                            and Send',
+                                                'updateData',
+                                                'Save
+                                                                                        and Send',
                                             ) !!}</button>
                                     </form>
                                 </div>
@@ -1443,8 +1548,8 @@
 </div>
 
 @push('scripts')
-<script>
-    $(document).ready(function() {
+    <script>
+        $(document).ready(function() {
             $('.dependent').change(function() {
                 if ($(this).val() != '') {
                     var file_id = $(this).data("file_id");
@@ -1464,19 +1569,19 @@
                 }
             });
         });
-</script>
-<script>
-    $(document).ready(function() {
-    $('.multiple_selector').select2({
-        placeholder: 'Select Person / name',
-            dropdownAutoWidth: true,
-            theme: 'bootstrap-5'
-});
- //add model value
- $('#action').on('change', function() {
-            var value = $(this).val();
-            @this.set('responsible_person', value);
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('.multiple_selector').select2({
+                placeholder: 'Select Person / name',
+                dropdownAutoWidth: true,
+                theme: 'bootstrap-5'
+            });
+            //add model value
+            $('#action').on('change', function() {
+                var value = $(this).val();
+                @this.set('responsible_person', value);
+            });
         });
-});
-</script>
+    </script>
 @endpush

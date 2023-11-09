@@ -27,20 +27,16 @@
 
         <table style="width: 100%; border-collapse: collapse;">
             <tr>
-
                 <td style="width: 28%; text-align: left;">
 
-                    <h4 style="font-size: 13px; font-weight: 400;">
-                        Client: {{ $data->client_name }}
+                    <h4 style="font-size: 14px; font-weight: 700;">
+                        Client
                     </h4>
-                    <h4 style="font-size: 13px; font-weight: 400;">
-                        Email: {{ $data->client_email }}
+                    <h4 style="font-size: 14px; font-weight: 400;">
+                        {{ $data->client_company_name }}
                     </h4>
-                    <h4 style="font-size: 13px; font-weight: 400;">
-                        Phone: {{ $data->client_phone }}
-                    </h4>
-                    <h4 style="font-size: 13px; font-weight: 400;">
-                        Company Name: {{ $data->client_company_name }}
+                    <h4 style="font-size: 14px; font-weight: 400;">
+                        {{ $data->client_address }}
                     </h4>
                 </td>
                 <td style="width: 40%; text-align: center;">
@@ -49,25 +45,21 @@
                     <h4 style="font-size: 13px; font-weight: 700; padding-top: 5px">
                         {{ $data->office_address }}
                     </h4>
+                    <h4 style="font-size: 13px; font-weight: 700; padding-top: 5px">CONCRETE TEST REPORT</h4>
                 </td>
                 <td style="width: 28%; text-align: left;">
-                    <h4 style="font-size: 13px; font-weight: 400;">
-                        Date: {{ $data->created_at->format('m/d/Y') }}
+                    <h4 style="font-size: 14px; font-weight: 500;">
+                        Date Cast: <span
+                            style="font-size: 14px; font-weight: 400;">{{ $data->created_at->format('m/d/Y') }}</span>
                     </h4>
-                    <h4 style="font-size: 13px; font-weight: 400;">
-                        Project No: {{ $data->project_number }}
+                    <h4 style="font-size: 14px; font-weight: 500;">
+                        Project No: <span style="font-size: 14px; font-weight: 400;">{{ $data->project_number }}</span>
                     </h4>
-                    <h4 style="font-size: 13px; font-weight: 400;">
-                        Project Name: {{ $data->project_name }}
+                    <h4 style="font-size: 14px; font-weight: 500;">
+                        Project Name: <span style="font-size: 14px; font-weight: 400;">{{ $data->project_name }}</span>
                     </h4>
-                    <h4 style="font-size: 13px; font-weight: 400;">
-                        Weather: {{ $data->weather }}
-                    </h4>
-
                 </td>
-
             </tr>
-
         </table>
 
         <table style="width: 100%; border-collapse: collapse; margin-top: 5px">
@@ -501,7 +493,7 @@
 
         <table style="width: 100%; border-collapse: collapse;">
             <tr>
-            <td style="width: 99px; padding: 1px; border: 1px solid #000;">
+                <td style="width: 99px; padding: 1px; border: 1px solid #000;">
                     <h4 style="font-size: 13px; font-weight: 400">Test#</h4>
                 </td>
                 <td style="width: 98px; padding: 1px; border: 1px solid #000;">
@@ -643,7 +635,8 @@
                     </h4>
                 </td>
                 <td style="padding: 1px; border-right: 1px solid #000; width: 177px;">
-                    <h4 style="font-size: 13px; font-weight: 400; text-align: center; color: #c5c5c5;">Place stampe here:</h4>
+                    <h4 style="font-size: 13px; font-weight: 400; text-align: center; color: #c5c5c5;">Place stampe
+                        here:</h4>
                 </td>
             </tr>
             <tr>
@@ -736,11 +729,13 @@
                     <h4 style="font-size: 13px; font-weight: 400">Correction Factor (#469) PCF</h4>
                 </td>
                 <td style="padding: 1px; border: 1px solid #000;">
-                    <h4 style="font-size: 13px; font-weight: 400; text-align: center">{{ $data->correction_factor_d }}
+                    <h4 style="font-size: 13px; font-weight: 400; text-align: center">
+                        {{ $data->correction_factor_d }}
                     </h4>
                 </td>
                 <td style="padding: 1px; border: 1px solid #000;">
-                    <h4 style="font-size: 13px; font-weight: 400; text-align: center">{{ $data->correction_factor_e }}
+                    <h4 style="font-size: 13px; font-weight: 400; text-align: center">
+                        {{ $data->correction_factor_e }}
                     </h4>
                 </td>
                 <td style="padding: 1px; border-right: 1px solid #000;">

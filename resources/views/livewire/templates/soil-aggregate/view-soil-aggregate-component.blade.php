@@ -761,7 +761,7 @@
                             <div class="col-md-12">
                                 <h6>Test Results</h6>
                                 <div class="table-responsive">
-                                    <table class="table table-bordered moisture" style="margin-bottom: 0;">
+                                    <table class="table table-bordered" style="margin-bottom: 0;">
                                         <thead>
                                             <tr>
                                                 <th class="customcolor" scope="col">Test No.</th>
@@ -1816,7 +1816,7 @@
                                 <div class="col-md-12 mt-3 select-border">
                                     <div class="input-group">
                                         <span class="input-group-text width12">Next Action:</span>
-                                        <select class="form-select moistureremoveinput dependent text-left"
+                                        <select class="form-select dependent"
                                             wire:model='status' data-file_id="{{ $file_id }}">
                                             <option value="">Select an action...</option>
                                             <option value="sentToPE">Send to Project Engineer</option>

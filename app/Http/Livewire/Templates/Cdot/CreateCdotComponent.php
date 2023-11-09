@@ -13,7 +13,7 @@ class CreateCdotComponent extends Component
 {
     public $user_id, $project_id, $client_id, $project_number, $client_name, $geocal_project_num, $geocal_project_name, $cdot_project_name, $weather, $date, $office_address, $test_method, $troxler, $other, $model, $serial_no, $density_std_count, $moisture_std_count, $moisture_equations, $density_count, $moisture_count, $created_by, $remark, $responsible_person = [];
 
-    public $project_no, $region, $contract_id, $project_location, $form_no, $grading, $taster_id, $sampled_by;
+    public $project_no, $region, $contract_id, $project_location, $form_no, $grading, $taster_id, $sampled_by, $status;
 
     public $company_name, $gauge_id, $test_id, $ia_id, $test_data_a, $test_data_b, $test_data_c, $test_data_d, $test_data_e, $test_data_f, $test_data_g, $test_data_h, $test_data_i, $test_data_j;
 
@@ -168,6 +168,13 @@ class CreateCdotComponent extends Component
             'daily_rice_c' => 'required',
             'daily_rice_d' => 'required',
             'daily_rice_e' => 'required',
+        ], [
+            'project_id.required' => 'Project name field is required',
+            'daily_rice_a.required' => 'Ave. daily rice 1st field is required',
+            'daily_rice_b.required' => 'Ave. daily rice 2nd field is required',
+            'daily_rice_c.required' => 'Ave. daily rice 3rd field is required',
+            'daily_rice_d.required' => 'Ave. daily rice 4th field is required',
+            'daily_rice_e.required' => 'Ave. daily rice 5th field is required',
         ]);
 
         $data = new FieldDensityCdot();
@@ -308,7 +315,7 @@ class CreateCdotComponent extends Component
         $data->compaction_c = $this->compaction_c;
         $data->compaction_d = $this->compaction_d;
         $data->compaction_e = $this->compaction_e;
-
+ 
         $data->status = $this->status;
         $data->remark = $this->remark;
         $data->responsible_person = json_encode($this->responsible_person);
