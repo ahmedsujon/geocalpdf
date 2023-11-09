@@ -645,7 +645,7 @@
                                     <h6>&nbsp;</h6>
                                     <div class="input-group">
                                         <span class="input-group-text width28">Cement (lb):</span>
-                                        <input type="text" class="form-control form-color" wire:model="cement">
+                                        <input type="text" class="form-control form-color" wire:model="cement" id="cement">
                                     </div>
                                     @error('cement')
                                         <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
@@ -2467,6 +2467,22 @@
 
 <script>
     document.getElementById('required_strength').addEventListener('input', function(e) {
+        // Remove commas and any non-digit characters
+        let value = e.target.value.replace(/[^\d.]/g, '');
+
+        // Convert the string to a numeric format
+        value = parseFloat(value);
+
+        // Check if it's a valid number
+        if (!isNaN(value)) {
+            // Format the number with commas and update the input value
+            e.target.value = value.toLocaleString('en-US');
+        }
+    });
+</script>
+
+<script>
+    document.getElementById('cement').addEventListener('input', function(e) {
         // Remove commas and any non-digit characters
         let value = e.target.value.replace(/[^\d.]/g, '');
 
