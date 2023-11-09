@@ -2432,6 +2432,21 @@
 
                             <div class="container">
                                 <div class="row mt-3 mb-5 justify-content-md-center">
+                                    <div class="col-md-12">
+                                        @if ($errors->any())
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Validation Error</h5>
+                                                    <ul>
+                                                        @foreach ($errors->all() as $error)
+                                                            <li class="text-danger">
+                                                                {{ $error }}</li>
+                                                        @endforeach
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        @endif
+                                    </div>
                                     <div class="col-md-12 text-center">
                                         <form wire:submit.prevent='updateData'>
                                             <a href="{{ route('template.commercial') }}"

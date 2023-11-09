@@ -367,6 +367,7 @@ class CreateInspectionThreeComponent extends Component
             'sample_time' => 'required',
             'ttf_unloading' => 'required',
             'required_strength' => 'required',
+            'age_a' => 'required',
         ]);
     }
 
@@ -381,6 +382,10 @@ class CreateInspectionThreeComponent extends Component
             'sample_time' => 'required',
             'ttf_unloading' => 'required',
             'required_strength' => 'required',
+            'age_a' => 'required',
+        ], [
+            'age_a.required' => 'At lest one [Age (days)] rows should be fillup',
+            'project_id.required' => 'Project Name is required',
         ]);
 
         $data = new InspectionConcreteSetThree();

@@ -569,7 +569,7 @@ class EditInspectionFourComponent extends Component
             $this->measured_strength_i = 0;
         }
     }
-
+    
     public function updated($fields)
     {
         $this->validateOnly($fields, [
@@ -581,6 +581,7 @@ class EditInspectionFourComponent extends Component
             'sample_time' => 'required',
             'ttf_unloading' => 'required',
             'required_strength' => 'required',
+            'age_a' => 'required',
         ]);
     }
 
@@ -595,7 +596,13 @@ class EditInspectionFourComponent extends Component
             'sample_time' => 'required',
             'ttf_unloading' => 'required',
             'required_strength' => 'required',
+            'age_a' => 'required',
+        ], [
+            'age_a.required' => 'At lest one [Age (days)] rows should be fillup',
+            'project_id.required' => 'Project Name is required',
         ]);
+
+
 
         $data = new InspectionConcreteSetFour();
         $data->project_id = $this->project_id;
