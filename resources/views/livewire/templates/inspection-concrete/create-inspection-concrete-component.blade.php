@@ -236,7 +236,7 @@
                             </div>
                             <div class="col-md-3"></div>
                         </div>
-                        
+
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
@@ -646,7 +646,8 @@
                                     <h6>&nbsp;</h6>
                                     <div class="input-group">
                                         <span class="input-group-text width28">Cement (lb):</span>
-                                        <input type="text" class="form-control form-color" wire:model="cement" id="cement">
+                                        <input type="text" class="form-control form-color" wire:model="cement"
+                                            id="cement">
                                     </div>
                                     @error('cement')
                                         <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
@@ -855,7 +856,8 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="max_load_a" wire:keyup='measuredStrengthA' id="max_load_a">
+                                                            wire:model="max_load_a" wire:keyup='measuredStrengthA'
+                                                            id="max_load_a">
                                                         @error('max_load_a')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1006,7 +1008,8 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="max_load_b" wire:keyup='measuredStrengthB' id="max_load_b">
+                                                            wire:model="max_load_b" wire:keyup='measuredStrengthB'
+                                                            id="max_load_b">
                                                         @error('max_load_b')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1157,7 +1160,8 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="max_load_c" wire:keyup='measuredStrengthC' id="max_load_c">
+                                                            wire:model="max_load_c" wire:keyup='measuredStrengthC'
+                                                            id="max_load_c">
                                                         @error('max_load_c')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1308,7 +1312,8 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="max_load_d" wire:keyup='measuredStrengthD' id="max_load_d">
+                                                            wire:model="max_load_d" wire:keyup='measuredStrengthD'
+                                                            id="max_load_d">
                                                         @error('max_load_d')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1459,7 +1464,8 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="max_load_e" wire:keyup='measuredStrengthE' id="max_load_e">
+                                                            wire:model="max_load_e" wire:keyup='measuredStrengthE'
+                                                            id="max_load_e">
                                                         @error('max_load_e')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1610,7 +1616,8 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="max_load_f" wire:keyup='measuredStrengthF' id="max_load_f">
+                                                            wire:model="max_load_f" wire:keyup='measuredStrengthF'
+                                                            id="max_load_f">
                                                         @error('max_load_f')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1761,7 +1768,8 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="max_load_g" wire:keyup='measuredStrengthG' id="max_load_g">
+                                                            wire:model="max_load_g" wire:keyup='measuredStrengthG'
+                                                            id="max_load_g">
                                                         @error('max_load_g')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1912,7 +1920,8 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="max_load_h" wire:keyup='measuredStrengthH' id="max_load_h">
+                                                            wire:model="max_load_h" wire:keyup='measuredStrengthH'
+                                                            id="max_load_h">
                                                         @error('max_load_h')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2063,7 +2072,8 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="max_load_i" wire:keyup='measuredStrengthI' id="max_load_i">
+                                                            wire:model="max_load_i" wire:keyup='measuredStrengthI'
+                                                            id="max_load_i">
                                                         @error('max_load_i')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2389,7 +2399,9 @@
                                     <div class="form-check form-switch mb-3" dir="ltr">
                                         <input class="form-check-input" type="checkbox" id="permission"
                                             wire:model='permission' value="1">
-                                        <label class="form-check-label" for="permission">"Concrete Field Report" and "Concrete Test Report" are both included by default. To only send the "Concrete Test Report", click here.</span></label><br>
+                                        <label class="form-check-label" for="permission">"Concrete Field Report" and
+                                            "Concrete Test Report" are both included by default. To only send the
+                                            "Concrete Test Report", click here.</span></label><br>
                                     </div>
                                 </div>
                             </div>
@@ -2399,7 +2411,7 @@
                                     @if ($errors->any())
                                         <div class="card">
                                             <div class="card-body">
-                                                <h5 class="card-title">Validation Error</h5>
+                                                <h5 class="card-title">Required Fields:</h5>
                                                 <ul>
                                                     @foreach ($errors->all() as $error)
                                                         <li class="text-danger">
@@ -2413,10 +2425,7 @@
                                 <div class="col-md-12 text-center">
                                     <form wire:submit.prevent='storeData'>
                                         <button type="submit" class="btn btn-primary submit_btn"
-                                            style="background: green;">{!! loadingState(
-                                                'storeData',
-                                                'Save and Send',
-                                            ) !!}</button>
+                                            style="background: green;">{!! loadingState('storeData', 'Save and Send') !!}</button>
                                     </form>
                                 </div>
                             </div>
@@ -2465,132 +2474,131 @@
         });
     </script>
 
-<script>
-    document.getElementById('mix_design_strength').addEventListener('input', function(e) {
-        // Remove commas and any non-digit characters
-        let value = e.target.value.replace(/[^\d.]/g, '');
+    <script>
+        document.getElementById('mix_design_strength').addEventListener('input', function(e) {
+            // Remove commas and any non-digit characters
+            let value = e.target.value.replace(/[^\d.]/g, '');
 
-        // Convert the string to a numeric format
-        value = parseFloat(value);
+            // Convert the string to a numeric format
+            value = parseFloat(value);
 
-        // Check if it's a valid number
-        if (!isNaN(value)) {
-            // Format the number with commas and update the input value
-            e.target.value = value.toLocaleString('en-US');
-        }
-    });
-</script>
+            // Check if it's a valid number
+            if (!isNaN(value)) {
+                // Format the number with commas and update the input value
+                e.target.value = value.toLocaleString('en-US');
+            }
+        });
+    </script>
 
-<script>
-    document.getElementById('required_strength').addEventListener('input', function(e) {
-        // Remove commas and any non-digit characters
-        let value = e.target.value.replace(/[^\d.]/g, '');
+    <script>
+        document.getElementById('required_strength').addEventListener('input', function(e) {
+            // Remove commas and any non-digit characters
+            let value = e.target.value.replace(/[^\d.]/g, '');
 
-        // Convert the string to a numeric format
-        value = parseFloat(value);
+            // Convert the string to a numeric format
+            value = parseFloat(value);
 
-        // Check if it's a valid number
-        if (!isNaN(value)) {
-            // Format the number with commas and update the input value
-            e.target.value = value.toLocaleString('en-US');
-        }
-    });
-</script>
+            // Check if it's a valid number
+            if (!isNaN(value)) {
+                // Format the number with commas and update the input value
+                e.target.value = value.toLocaleString('en-US');
+            }
+        });
+    </script>
 
-<script>
-    document.getElementById('cement').addEventListener('input', function(e) {
-        // Remove commas and any non-digit characters
-        let value = e.target.value.replace(/[^\d.]/g, '');
+    <script>
+        document.getElementById('cement').addEventListener('input', function(e) {
+            // Remove commas and any non-digit characters
+            let value = e.target.value.replace(/[^\d.]/g, '');
 
-        // Convert the string to a numeric format
-        value = parseFloat(value);
+            // Convert the string to a numeric format
+            value = parseFloat(value);
 
-        // Check if it's a valid number
-        if (!isNaN(value)) {
-            // Format the number with commas and update the input value
-            e.target.value = value.toLocaleString('en-US');
-        }
-    });
-</script>
+            // Check if it's a valid number
+            if (!isNaN(value)) {
+                // Format the number with commas and update the input value
+                e.target.value = value.toLocaleString('en-US');
+            }
+        });
+    </script>
 
-<script>
-    document.getElementById('water').addEventListener('input', function(e) {
-        // Remove commas and any non-digit characters
-        let value = e.target.value.replace(/[^\d.]/g, '');
+    <script>
+        document.getElementById('water').addEventListener('input', function(e) {
+            // Remove commas and any non-digit characters
+            let value = e.target.value.replace(/[^\d.]/g, '');
 
-        // Convert the string to a numeric format
-        value = parseFloat(value);
+            // Convert the string to a numeric format
+            value = parseFloat(value);
 
-        // Check if it's a valid number
-        if (!isNaN(value)) {
-            // Format the number with commas and update the input value
-            e.target.value = value.toLocaleString('en-US');
-        }
-    });
-</script>
+            // Check if it's a valid number
+            if (!isNaN(value)) {
+                // Format the number with commas and update the input value
+                e.target.value = value.toLocaleString('en-US');
+            }
+        });
+    </script>
 
-<script>
-    document.getElementById('fine_aggregate').addEventListener('input', function(e) {
-        // Remove commas and any non-digit characters
-        let value = e.target.value.replace(/[^\d.]/g, '');
+    <script>
+        document.getElementById('fine_aggregate').addEventListener('input', function(e) {
+            // Remove commas and any non-digit characters
+            let value = e.target.value.replace(/[^\d.]/g, '');
 
-        // Convert the string to a numeric format
-        value = parseFloat(value);
+            // Convert the string to a numeric format
+            value = parseFloat(value);
 
-        // Check if it's a valid number
-        if (!isNaN(value)) {
-            // Format the number with commas and update the input value
-            e.target.value = value.toLocaleString('en-US');
-        }
-    });
-</script>
+            // Check if it's a valid number
+            if (!isNaN(value)) {
+                // Format the number with commas and update the input value
+                e.target.value = value.toLocaleString('en-US');
+            }
+        });
+    </script>
 
-<script>
-    document.getElementById('fine_aggregate').addEventListener('input', function(e) {
-        // Remove commas and any non-digit characters
-        let value = e.target.value.replace(/[^\d.]/g, '');
+    <script>
+        document.getElementById('fine_aggregate').addEventListener('input', function(e) {
+            // Remove commas and any non-digit characters
+            let value = e.target.value.replace(/[^\d.]/g, '');
 
-        // Convert the string to a numeric format
-        value = parseFloat(value);
+            // Convert the string to a numeric format
+            value = parseFloat(value);
 
-        // Check if it's a valid number
-        if (!isNaN(value)) {
-            // Format the number with commas and update the input value
-            e.target.value = value.toLocaleString('en-US');
-        }
-    });
-</script>
+            // Check if it's a valid number
+            if (!isNaN(value)) {
+                // Format the number with commas and update the input value
+                e.target.value = value.toLocaleString('en-US');
+            }
+        });
+    </script>
 
-<script>
-    document.getElementById('course_aggregate').addEventListener('input', function(e) {
-        // Remove commas and any non-digit characters
-        let value = e.target.value.replace(/[^\d.]/g, '');
+    <script>
+        document.getElementById('course_aggregate').addEventListener('input', function(e) {
+            // Remove commas and any non-digit characters
+            let value = e.target.value.replace(/[^\d.]/g, '');
 
-        // Convert the string to a numeric format
-        value = parseFloat(value);
+            // Convert the string to a numeric format
+            value = parseFloat(value);
 
-        // Check if it's a valid number
-        if (!isNaN(value)) {
-            // Format the number with commas and update the input value
-            e.target.value = value.toLocaleString('en-US');
-        }
-    });
-</script>
+            // Check if it's a valid number
+            if (!isNaN(value)) {
+                // Format the number with commas and update the input value
+                e.target.value = value.toLocaleString('en-US');
+            }
+        });
+    </script>
 
-<script>
-    document.getElementById('total_batch_weight').addEventListener('input', function(e) {
-        // Remove commas and any non-digit characters
-        let value = e.target.value.replace(/[^\d.]/g, '');
+    <script>
+        document.getElementById('total_batch_weight').addEventListener('input', function(e) {
+            // Remove commas and any non-digit characters
+            let value = e.target.value.replace(/[^\d.]/g, '');
 
-        // Convert the string to a numeric format
-        value = parseFloat(value);
+            // Convert the string to a numeric format
+            value = parseFloat(value);
 
-        // Check if it's a valid number
-        if (!isNaN(value)) {
-            // Format the number with commas and update the input value
-            e.target.value = value.toLocaleString('en-US');
-        }
-    });
-</script>
-
+            // Check if it's a valid number
+            if (!isNaN(value)) {
+                // Format the number with commas and update the input value
+                e.target.value = value.toLocaleString('en-US');
+            }
+        });
+    </script>
 @endpush

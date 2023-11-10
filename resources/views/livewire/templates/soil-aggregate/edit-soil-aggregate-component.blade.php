@@ -899,8 +899,7 @@
                                                 </td>
                                                 <td class="moistureremove" colspan="6">
                                                     <div class="input-group">
-                                                        <input type="text"
-                                                            class="form-control form-color"
+                                                        <input type="text" class="form-control form-color"
                                                             wire:model="location_a">
                                                         @error('location_a')
                                                             <span class="text-danger"
@@ -1056,8 +1055,7 @@
                                                 </td>
                                                 <td class="moistureremove" colspan="6">
                                                     <div class="input-group">
-                                                        <input type="text"
-                                                            class="form-control form-color"
+                                                        <input type="text" class="form-control form-color"
                                                             wire:model="location_b">
                                                         @error('location_b')
                                                             <span class="text-danger"
@@ -1217,8 +1215,7 @@
                                                 </td>
                                                 <td class="moistureremove" colspan="6">
                                                     <div class="input-group">
-                                                        <input type="text"
-                                                            class="form-control form-color"
+                                                        <input type="text" class="form-control form-color"
                                                             wire:model="location_c">
                                                         @error('location_c')
                                                             <span class="text-danger"
@@ -1378,8 +1375,7 @@
                                                 </td>
                                                 <td class="moistureremove" colspan="6">
                                                     <div class="input-group">
-                                                        <input type="text"
-                                                            class="form-control form-color"
+                                                        <input type="text" class="form-control form-color"
                                                             wire:model="location_d">
                                                         @error('location_d')
                                                             <span class="text-danger"
@@ -1539,8 +1535,7 @@
                                                 </td>
                                                 <td class="moistureremove" colspan="6">
                                                     <div class="input-group">
-                                                        <input type="text"
-                                                            class="form-control form-color"
+                                                        <input type="text" class="form-control form-color"
                                                             wire:model="location_e">
                                                         @error('location_e')
                                                             <span class="text-danger"
@@ -1700,8 +1695,7 @@
                                                 </td>
                                                 <td class="moistureremove" colspan="6">
                                                     <div class="input-group">
-                                                        <input type="text"
-                                                            class="form-control form-color"
+                                                        <input type="text" class="form-control form-color"
                                                             wire:model="location_f">
                                                         @error('location_f')
                                                             <span class="text-danger"
@@ -1813,8 +1807,8 @@
                                 <div class="col-md-12 mt-3 select-border">
                                     <div class="input-group">
                                         <span class="input-group-text width12">Next Action:</span>
-                                        <select class="form-select dependent"
-                                            wire:model='status' data-file_id="{{ $file_id }}">
+                                        <select class="form-select dependent" wire:model='status'
+                                            data-file_id="{{ $file_id }}">
                                             <option value="">Select an action...</option>
                                             <option value="sentToPE">Send to Project Engineer</option>
                                             <option value="sentToClerk">Send to Clerk</option>
@@ -1846,7 +1840,7 @@
                                     @if ($errors->any())
                                         <div class="card">
                                             <div class="card-body">
-                                                <h5 class="card-title">Validation Error</h5>
+                                                <h5 class="card-title">Required Fields:</h5>
                                                 <ul>
                                                     @foreach ($errors->all() as $error)
                                                         <li class="text-danger">
@@ -1866,7 +1860,7 @@
                                             class="btn btn-success submit_btn">{!! loadingState(
                                                 'updateData',
                                                 'Save
-                                                                                        and Send',
+                                                                                                                                    and Send',
                                             ) !!}</button>
                                     </form>
                                 </div>

@@ -64,7 +64,7 @@
     }
 
 
-    //checkRequired fields
+    //checkRequired Fields:
     function checkRequired(inputArr) {
         inputArr.forEach(function(input){
             if(input.value.trim() === ''){

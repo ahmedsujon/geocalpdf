@@ -1513,7 +1513,7 @@
                                     @if ($errors->any())
                                         <div class="card">
                                             <div class="card-body">
-                                                <h5 class="card-title">Validation Error</h5>
+                                                <h5 class="card-title">Required Fields:</h5>
                                                 <ul>
                                                     @foreach ($errors->all() as $error)
                                                         <li class="text-danger">
@@ -1533,7 +1533,7 @@
                                             {!! loadingState(
                                                 'updateData',
                                                 'Save
-                                                                                        and Send',
+                                                                                                                                                                                and Send',
                                             ) !!}</button>
                                     </form>
                                 </div>
