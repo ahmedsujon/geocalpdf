@@ -566,7 +566,6 @@ class EditSoilAggregateComponent extends Component
                         $mailData['email'] = $select_user->email;
                     }
                     $user = User::find($auth_user_id);
-                    $mailData['email'] = $user->email;
                     $mailData['name'] = $user->name;
                     $mailData['role_id'] = $user->role_id;
                     $mailData['id'] = $f_id;

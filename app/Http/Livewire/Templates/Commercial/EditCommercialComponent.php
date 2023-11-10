@@ -655,17 +655,6 @@ class EditCommercialComponent extends Component
         $data->relative_compaction_f = $this->relative_compaction_f;
         $data->pass_fail_f = $this->pass_fail_f;
 
-        // if (Auth::user()->role_id == '1') {
-        //     $data['status'] = "SuperAdminCreated";
-        // } elseif (Auth::user()->role_id == '2') {
-        //     $data['status'] = 'ProjectEngineerCreated';
-        // } elseif (Auth::user()->role_id == '3') {
-        //     $data['status'] = 'ClerkCreated';
-        // } elseif (Auth::user()->role_id == '4') {
-        //     $data['status'] = 'SupervisorCreated';
-        // } else {
-        //     $data['status'] = 'FTCreated';
-        // }
         $data->status = $this->status;
         if($this->status == 'sentToClient'){
             $data->send_to_client = 1;
