@@ -407,18 +407,7 @@ class CreateSoilAggregateComponent extends Component
         $data->comments_f = $this->comments_f;
         $data->material_f = $this->material_f;
 
-        if (Auth::user()->role_id == '1') {
-            $data['status'] = "SuperAdminCreated";
-        } elseif (Auth::user()->role_id == '2') {
-            $data['status'] = 'ProjectEngineerCreated';
-        } elseif (Auth::user()->role_id == '3') {
-            $data['status'] = 'ClerkCreated';
-        } elseif (Auth::user()->role_id == '4') {
-            $data['status'] = 'SupervisorCreated';
-        } else {
-            $data['status'] = 'FTCreated';
-        }
-
+        $data->status = $this->status;
         $data->remark = $this->remark;
         $data->created_by = Auth::user()->id;
         $data->responsible_person = json_encode($this->responsible_person);
