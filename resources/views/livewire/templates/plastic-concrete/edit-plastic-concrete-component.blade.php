@@ -409,16 +409,16 @@
                                     </div>
                                     <div class="input-group">
                                         <span class="input-group-text width23">Design Strength (psi):</span>
-                                        <input type="number" step="any" class="form-control form-color"
-                                            wire:model='design_strength'>
+                                        <input type="text" class="form-control form-color"
+                                            wire:model='design_strength' id="design_strength">
                                     </div>
                                     @error('design_strength')
                                         <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
                                     <div class="input-group">
                                         <span class="input-group-text width23">Required Strength (psi):</span>
-                                        <input type="number" step="any" class="form-control form-color"
-                                            wire:model='required_strength'>
+                                        <input type="text" class="form-control form-color"
+                                            wire:model='required_strength' id="required_strength">
                                     </div>
                                     @error('required_strength')
                                         <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
@@ -1953,6 +1953,39 @@
             });
         });
     </script>
+
+<script>
+    document.getElementById('design_strength').addEventListener('input', function(e) {
+        // Remove commas and any non-digit characters
+        let value = e.target.value.replace(/[^\d.]/g, '');
+
+        // Convert the string to a numeric format
+        value = parseFloat(value);
+
+        // Check if it's a valid number
+        if (!isNaN(value)) {
+            // Format the number with commas and update the input value
+            e.target.value = value.toLocaleString('en-US');
+        }
+    });
+</script>
+
+
+<script>
+    document.getElementById('required_strength').addEventListener('input', function(e) {
+        // Remove commas and any non-digit characters
+        let value = e.target.value.replace(/[^\d.]/g, '');
+
+        // Convert the string to a numeric format
+        value = parseFloat(value);
+
+        // Check if it's a valid number
+        if (!isNaN(value)) {
+            // Format the number with commas and update the input value
+            e.target.value = value.toLocaleString('en-US');
+        }
+    });
+</script>
 
     <script>
         document.getElementById('cylinder_set_no_a').addEventListener('input', function(e) {
