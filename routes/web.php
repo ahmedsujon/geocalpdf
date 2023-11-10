@@ -271,7 +271,9 @@ Route::post('/upload', 'app\http\controllers\BaseController@uploadckimage')->nam
 
 // PDF Generate
 Route::get('/invoice/ijP6ERmmdeLfFi57209633311{id}4ijP6ERmmdeLfFi5RiwZATmrI2SMOYYVSmdtcmjxJe2K31U5knK', [InvoiceController::class, 'commercialPDF'])->name('invoice.commercial');
+
 Route::get('/cdot-form/ijP6ERmmdeLfFi55958194244{id}4ijP6ERmmdeLfFi5RiwZATmrI2SMOYYVSmdtcmjxJe2K31U5knK', [InvoiceController::class, 'cdotPDF'])->name('cdot.form.generate');
+
 Route::get('/plastic/concrete/ijP6ERmmdeLfFi54426715493{id}4ijP6ERmmdeLfFi5RiwZATmrI2SMOYYVSmdtcmjxJe2K31U5knK', [InvoiceController::class, 'plasticConcretePDF'])->name('plastic.concrete.generate');
 
 
