@@ -1783,10 +1783,7 @@
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
                                 </div>
-
-
                             </div>
-
 
                             <div class="row">
                                 <div class="col-md-12 mt-2">
@@ -1832,12 +1829,28 @@
                                 <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                 @enderror
                             </div>
-
-
-                            <div class="row mt-4 mb-4 justify-content-md-center text-center">
+                        </div>
+                        <div class="container">
+                            <div class="row mt-3 mb-5 justify-content-md-center">
                                 <div class="col-md-12">
+                                    @if ($errors->any())
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Validation Error</h5>
+                                                <ul>
+                                                    @foreach ($errors->all() as $error)
+                                                        <li class="text-danger">
+                                                            {{ $error }}</li>
+                                                    @endforeach
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    @endif
+                                </div>
+                                <div class="col-md-12 text-center">
                                     <form wire:submit.prevent='storeData'>
-                                        <button type="submit" class="btn btn-success submit_btn">{!! loadingState(
+                                        <button type="submit" class="btn btn-success submit_btn">{!!
+                                            loadingState(
                                             'storeData',
                                             'Save
                                             and Send',
@@ -1845,10 +1858,7 @@
                                     </form>
                                 </div>
                             </div>
-
                         </div>
-
-
                     </div>
                 </div>
             </div>

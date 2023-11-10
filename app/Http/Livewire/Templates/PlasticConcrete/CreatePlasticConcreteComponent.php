@@ -68,6 +68,9 @@ class CreatePlasticConcreteComponent extends Component
             'office_address' => 'required',
             'design_strength' => 'required',
             'required_strength' => 'required',
+        ], [
+            'project_id.required' => 'Project Name is required',
+            'user_id.required' => 'Technician name is required',
         ]);
 
         $data = new PlasticConcrete();

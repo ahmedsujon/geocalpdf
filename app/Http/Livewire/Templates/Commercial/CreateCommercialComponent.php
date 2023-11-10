@@ -388,6 +388,9 @@ class CreateCommercialComponent extends Component
             'report_status' => 'required',
             'compaction_requirement_min' => 'required',
             'compaction_requirement_max' => 'required'
+        ], [
+            'project_id.required' => 'Project name is required',
+            'user_id.required' => 'Technician name is required',
         ]);
 
         $data = new Commercial();
