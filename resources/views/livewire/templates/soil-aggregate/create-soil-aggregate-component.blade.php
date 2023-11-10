@@ -14,6 +14,9 @@
         .form-color {
             background: #ccecff !important;
         }
+        .rtable-border{
+            border: none !important;
+        }
 
         .moistureremoveinput {
             background-color: #ccecff;
@@ -899,7 +902,7 @@
                                                 </td>
                                                 <td class="moistureremove" colspan="6">
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control form-color"
+                                                        <input type="text" class="form-control form-color rtable-border"
                                                             wire:model="location_a">
                                                         @error('location_a')
                                                             <span class="text-danger"
@@ -1055,7 +1058,7 @@
                                                 </td>
                                                 <td class="moistureremove" colspan="6">
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control form-color"
+                                                        <input type="text" class="form-control form-color rtable-border"
                                                             wire:model="location_b">
                                                         @error('location_b')
                                                             <span class="text-danger"
@@ -1215,7 +1218,7 @@
                                                 </td>
                                                 <td class="moistureremove" colspan="6">
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control form-color"
+                                                        <input type="text" class="form-control form-color rtable-border"
                                                             wire:model="location_c">
                                                         @error('location_c')
                                                             <span class="text-danger"
@@ -1375,7 +1378,7 @@
                                                 </td>
                                                 <td class="moistureremove" colspan="6">
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control form-color"
+                                                        <input type="text" class="form-control form-color rtable-border"
                                                             wire:model="location_d">
                                                         @error('location_d')
                                                             <span class="text-danger"
@@ -1535,7 +1538,7 @@
                                                 </td>
                                                 <td class="moistureremove" colspan="6">
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control form-color"
+                                                        <input type="text" class="form-control form-color rtable-border"
                                                             wire:model="location_e">
                                                         @error('location_e')
                                                             <span class="text-danger"
@@ -1695,7 +1698,7 @@
                                                 </td>
                                                 <td class="moistureremove" colspan="6">
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control form-color"
+                                                        <input type="text" class="form-control form-color rtable-border"
                                                             wire:model="location_f">
                                                         @error('location_f')
                                                             <span class="text-danger"
