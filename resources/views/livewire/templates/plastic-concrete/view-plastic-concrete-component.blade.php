@@ -405,7 +405,7 @@
                                     </div>
                                     <div class="input-group">
                                         <span class="input-group-text width23">Design Strength (psi):</span>
-                                        <input type="number" step="any" class="form-control form-color"
+                                        <input type="text" class="form-control form-color"
                                             wire:model='design_strength' readonly>
                                     </div>
                                     @error('design_strength')
@@ -413,7 +413,7 @@
                                     @enderror
                                     <div class="input-group">
                                         <span class="input-group-text width23">Required Strength (psi):</span>
-                                        <input type="number" step="any" class="form-control form-color"
+                                        <input type="text" class="form-control form-color"
                                             wire:model='required_strength' readonly>
                                     </div>
                                     @error('required_strength')
