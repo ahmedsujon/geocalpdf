@@ -77,7 +77,7 @@
                 </td>
                 <td style="padding: 1px; border: 1px solid #000">
                     <h4 style="font-size: 14px; font-weight: 400">Strength:
-                        {{ number_format($data->required_strength) }}</h4>
+                        {{ $data->required_strength }}</h4>
                 </td>
                 <td style="padding: 1px; border: 1px solid #000" colspan="2">
                     <h4 style="font-size: 14px; font-weight: 400">Temperature: {{ $data->conc_temp_min }} - {{ $data->conc_temp_max }}</h4>
@@ -626,7 +626,7 @@
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
                             <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
-                                {{ number_format($data->design_strength) }}</h6>
+                                {{ $data->design_strength }}</h6>
                         </td>
                     </tr>
                 @endif
@@ -648,7 +648,7 @@
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
                             <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
-                                {{ number_format($data->design_strength) }}</h6>
+                                {{ $data->design_strength }}</h6>
                         </td>
                     </tr>
                 @endif
@@ -670,7 +670,7 @@
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
                             <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
-                                {{ number_format($data->design_strength) }}</h6>
+                                {{ $data->design_strength }}</h6>
                         </td>
                     </tr>
                 @endif
@@ -692,7 +692,7 @@
                         </td>
                         <td style="padding: 1px; border: 1px solid #000">
                             <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
-                                {{ number_format($data->design_strength) }}</h6>
+                                {{ $data->design_strength }}</h6>
                         </td>
                     </tr>
                 @endif
