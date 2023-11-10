@@ -23,20 +23,16 @@
 
         <table style="width: 100%; border-collapse: collapse;">
             <tr>
-
                 <td style="width: 28%; text-align: left;">
 
-                    <h4 style="font-size: 13px; font-weight: 400;">
-                        Client: {{ $data->client_name }}
+                    <h4 style="font-size: 14px; font-weight: 700;">
+                        Client
                     </h4>
-                    <h4 style="font-size: 13px; font-weight: 400;">
-                        Email: {{ $data->client_email }}
+                    <h4 style="font-size: 14px; font-weight: 400;">
+                        {{ $data->client_company_name }}
                     </h4>
-                    <h4 style="font-size: 13px; font-weight: 400;">
-                        Phone: {{ $data->client_phone }}
-                    </h4>
-                    <h4 style="font-size: 13px; font-weight: 400;">
-                        Company Name: {{ $data->client_company_name }}
+                    <h4 style="font-size: 14px; font-weight: 400;">
+                        {{ $data->client_address }}
                     </h4>
                 </td>
                 <td style="width: 40%; text-align: center;">
@@ -45,21 +41,19 @@
                     <h4 style="font-size: 13px; font-weight: 700; padding-top: 5px">
                         {{ $data->office_address }}
                     </h4>
+                    <h4 style="font-size: 13px; font-weight: 700; padding-top: 5px">CONCRETE TEST REPORT</h4>
                 </td>
                 <td style="width: 28%; text-align: left;">
-                    <h4 style="font-size: 13px; font-weight: 400;">
-                        Date: {{ $data->created_at->format('m/d/Y') }}
+                    <h4 style="font-size: 14px; font-weight: 500;">
+                        Date Cast: <span
+                            style="font-size: 14px; font-weight: 400;">{{ $data->created_at->format('m/d/Y') }}</span>
                     </h4>
-                    <h4 style="font-size: 13px; font-weight: 400;">
-                        Project No: {{ $data->project_number }}
+                    <h4 style="font-size: 14px; font-weight: 500;">
+                        Project No: <span style="font-size: 14px; font-weight: 400;">{{ $data->project_number }}</span>
                     </h4>
-                    <h4 style="font-size: 13px; font-weight: 400;">
-                        Project Name: {{ $data->project_name }}
+                    <h4 style="font-size: 14px; font-weight: 500;">
+                        Project Name: <span style="font-size: 14px; font-weight: 400;">{{ $data->project_name }}</span>
                     </h4>
-                    <h4 style="font-size: 13px; font-weight: 400;">
-                        Weather: {{ $data->weather }}
-                    </h4>
-
                 </td>
             </tr>
         </table>
@@ -67,46 +61,26 @@
         <table style="width: 100%; border-collapse: collapse; padding-top: 3px;">
             <tr>
                 <td style="padding: 1px;">
-                    <h3 style="font-size: 14px; font-weight: 500; text-align: center">PHYSICAL PROPERTIES OF PLASTIC CONCRETE</h3>
+                    <h3 style="font-size: 14px; font-weight: 500; text-align: center">PHYSICAL PROPERTIES OF PLASTIC
+                        CONCRETE</h3>
                 </td>
             </tr>
         </table>
 
         <table style="width: 100%; border-collapse: collapse; padding-top: 5px;">
             <tr>
-                <td style="padding: 1px; border: 1px solid #000">
-                    <h4 style="font-size: 14px; font-weight: 400">Specifications: Slump:</h4>
+                <td style="padding: 1px; border: 1px solid #000" colspan="2">
+                    <h4 style="font-size: 14px; font-weight: 400">Specifications: Slump: {{ $data->specified_slump_min }} - {{ $data->specified_slump_max }}</h4>
+                </td>
+                <td style="padding: 1px; border: 1px solid #000" colspan="2">
+                    <h4 style="font-size: 14px; font-weight: 400">Air Content: {{ $data->specified_air_min }} - {{ $data->specified_air_max }}</h4>
                 </td>
                 <td style="padding: 1px; border: 1px solid #000">
-                    <h4 style="font-size: 14px; font-weight: 400">
-                        {{ $data->specified_slump_min }}
-                    </h4>
+                    <h4 style="font-size: 14px; font-weight: 400">Strength:
+                        {{ number_format($data->required_strength) }}</h4>
                 </td>
-                <td style="padding: 1px; border: 1px solid #000">
-                    <h4 style="font-size: 14px; font-weight: 400">
-                        - {{ $data->specified_slump_max }}
-                    </h4>
-                </td>
-                <td style="padding: 1px; border: 1px solid #000">
-                    <h4 style="font-size: 14px; font-weight: 400">Air Content</h4>
-                </td>
-                <td style="padding: 1px; border: 1px solid #000">
-                    <h4 style="font-size: 14px; font-weight: 400">{{ $data->specified_air_min }}</h4>
-                </td>
-                <td style="padding: 1px; border: 1px solid #000">
-                    <h4 style="font-size: 14px; font-weight: 400">- {{ $data->specified_air_max }}</h4>
-                </td>
-                <td style="padding: 1px; border: 1px solid #000">
-                    <h4 style="font-size: 14px; font-weight: 400">Strength: {{ number_format($data->required_strength) }}</h4>
-                </td>
-                <td style="padding: 1px; border: 1px solid #000">
-                    <h4 style="font-size: 14px; font-weight: 400">Temperature: </h4>
-                </td>
-                <td style="padding: 1px; border: 1px solid #000">
-                    <h4 style="font-size: 14px; font-weight: 400">{{ $data->conc_temp_min }}</h4>
-                </td>
-                <td style="padding: 1px; border: 1px solid #000">
-                    <h4 style="font-size: 14px; font-weight: 400">- {{ $data->conc_temp_max }}</h4>
+                <td style="padding: 1px; border: 1px solid #000" colspan="2">
+                    <h4 style="font-size: 14px; font-weight: 400">Temperature: {{ $data->conc_temp_min }} - {{ $data->conc_temp_max }}</h4>
                 </td>
             </tr>
         </table>
@@ -164,348 +138,344 @@
                         </th>
                 </tr>
                 @if ($data->test_no_a)
-                <tr>
-                    <td style="padding: 1px; border: 1px solid #000">
-                        <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
-                            {{ $data->test_no_a }}</h6>
-                    </td>
-                    <td style="padding: 1px; border: 1px solid #000">
-                        <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
-                            {{ $data->truck_no_a }}
-                        </h6>
-                    </td>
-                    <td style="padding: 1px; border: 1px solid #000">
-                        <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
-                            {{ $data->ticket_no_a }}
-                        </h6>
-                    </td>
-                    <td style="padding: 1px; border: 1px solid #000">
-                        <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
-                            {{ $data->truck_dispatched_a }}
-                        </h6>
-                    </td>
-                    <td style="padding: 1px; border: 1px solid #000">
-                        <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
-                            {{ $data->time_sample_taken_a }}
-                        </h6>
-                    </td>
-                    <td style="padding: 1px; border: 1px solid #000">
-                        <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
-                            {{ $data->time_truck_finished_a }}</h6>
-                    </td>
-                    @if ($data->slump_a < $data->specified_slump_min || $data->slump_a > $data->specified_slump_max)
-                        <td style="padding: 1px; border: 1px solid #000">
-                            <h6 style="font-size: 14px; font-weight: 400; text-align: center; color:red;">
-                                {{ $data->slump_a }}</h6>
-                        </td>
-                        @else
+                    <tr>
                         <td style="padding: 1px; border: 1px solid #000">
                             <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
-                                {{ $data->slump_a }}
+                                {{ $data->test_no_a }}</h6>
+                        </td>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                {{ $data->truck_no_a }}
                             </h6>
                         </td>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                {{ $data->ticket_no_a }}
+                            </h6>
+                        </td>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                {{ $data->truck_dispatched_a }}
+                            </h6>
+                        </td>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                {{ $data->time_sample_taken_a }}
+                            </h6>
+                        </td>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                {{ $data->time_truck_finished_a }}</h6>
+                        </td>
+                        @if ($data->slump_a < $data->specified_slump_min || $data->slump_a > $data->specified_slump_max)
+                            <td style="padding: 1px; border: 1px solid #000">
+                                <h6 style="font-size: 14px; font-weight: 400; text-align: center; color:red;">
+                                    {{ $data->slump_a }}</h6>
+                            </td>
+                        @else
+                            <td style="padding: 1px; border: 1px solid #000">
+                                <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                    {{ $data->slump_a }}
+                                </h6>
+                            </td>
                         @endif
-                        @if ($data->air_cont_a < $data->specified_air_min || $data->air_cont_a >
-                            $data->specified_air_max)
+                        @if ($data->air_cont_a < $data->specified_air_min || $data->air_cont_a > $data->specified_air_max)
                             <td style="padding: 1px; border: 1px solid #000">
                                 <h6 style="font-size: 14px; font-weight: 400; text-align: center; color:red;">
                                     {{ $data->air_cont_a }}</h6>
                             </td>
-                            @else
+                        @else
                             <td style="padding: 1px; border: 1px solid #000">
                                 <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
                                     {{ $data->air_cont_a }}
                                 </h6>
                             </td>
-                            @endif
-                            <td style="padding: 1px; border: 1px solid #000">
-                                <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
-                                    {{ $data->unit_wt_a }}</h6>
-                            </td>
-                            <td style="padding: 1px; border: 1px solid #000">
-                                <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
-                                    {{ $data->relative_yield_a }}
-                                </h6>
-                            </td>
-                            <td style="padding: 1px; border: 1px solid #000">
-                                <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
-                                    {{ $data->wc_ratio_a }}
-                                </h6>
-                            </td>
-                            <td style="padding: 1px; border: 1px solid #000">
-                                <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
-                                    {{ $data->conc_temp_a }}
-                                </h6>
-                            </td>
-                            <td style="padding: 1px; border: 1px solid #000">
-                                <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
-                                    {{ $data->air_temp_a }}
-                                </h6>
-                            </td>
-                            <td style="padding: 1px; border: 1px solid #000">
-                                <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
-                                    {{ $data->cylinder_set_no_a }}
-                                </h6>
-                            </td>
-                </tr>
-                @endif
-                @if ($data->test_no_b)
-                <tr>
-                    <td style="padding: 1px; border: 1px solid #000">
-                        <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
-                            {{ $data->test_no_b }}</h6>
-                    </td>
-                    <td style="padding: 1px; border: 1px solid #000">
-                        <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
-                            {{ $data->truck_no_b }}
-                        </h6>
-                    </td>
-                    <td style="padding: 1px; border: 1px solid #000">
-                        <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
-                            {{ $data->ticket_no_b }}
-                        </h6>
-                    </td>
-                    <td style="padding: 1px; border: 1px solid #000">
-                        <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
-                            {{ $data->truck_dispatched_b }}
-                        </h6>
-                    </td>
-                    <td style="padding: 1px; border: 1px solid #000">
-                        <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
-                            {{ $data->time_sample_taken_b }}
-                        </h6>
-                    </td>
-                    <td style="padding: 1px; border: 1px solid #000">
-                        <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
-                            {{ $data->time_truck_finished_b }}</h6>
-                    </td>
-                    @if ($data->slump_b < $data->specified_slump_min || $data->slump_b > $data->specified_slump_max)
-                        <td style="padding: 1px; border: 1px solid #000">
-                            <h6 style="font-size: 14px; font-weight: 400; text-align: center; color:red;">
-                                {{ $data->slump_b }}</h6>
-                        </td>
-                        @else
+                        @endif
                         <td style="padding: 1px; border: 1px solid #000">
                             <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
-                                {{ $data->slump_a }}
+                                {{ $data->unit_wt_a }}</h6>
+                        </td>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                {{ $data->relative_yield_a }}
                             </h6>
                         </td>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                {{ $data->wc_ratio_a }}
+                            </h6>
+                        </td>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                {{ $data->conc_temp_a }}
+                            </h6>
+                        </td>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                {{ $data->air_temp_a }}
+                            </h6>
+                        </td>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                {{ $data->cylinder_set_no_a }}
+                            </h6>
+                        </td>
+                    </tr>
+                @endif
+                @if ($data->test_no_b)
+                    <tr>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                {{ $data->test_no_b }}</h6>
+                        </td>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                {{ $data->truck_no_b }}
+                            </h6>
+                        </td>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                {{ $data->ticket_no_b }}
+                            </h6>
+                        </td>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                {{ $data->truck_dispatched_b }}
+                            </h6>
+                        </td>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                {{ $data->time_sample_taken_b }}
+                            </h6>
+                        </td>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                {{ $data->time_truck_finished_b }}</h6>
+                        </td>
+                        @if ($data->slump_b < $data->specified_slump_min || $data->slump_b > $data->specified_slump_max)
+                            <td style="padding: 1px; border: 1px solid #000">
+                                <h6 style="font-size: 14px; font-weight: 400; text-align: center; color:red;">
+                                    {{ $data->slump_b }}</h6>
+                            </td>
+                        @else
+                            <td style="padding: 1px; border: 1px solid #000">
+                                <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                    {{ $data->slump_a }}
+                                </h6>
+                            </td>
                         @endif
-                        @if ($data->air_cont_b < $data->specified_air_min || $data->air_cont_b >
-                            $data->specified_air_max)
+                        @if ($data->air_cont_b < $data->specified_air_min || $data->air_cont_b > $data->specified_air_max)
                             <td style="padding: 1px; border: 1px solid #000">
                                 <h6 style="font-size: 14px; font-weight: 400; text-align: center; color:red;">
                                     {{ $data->air_cont_b }}</h6>
                             </td>
-                            @else
+                        @else
                             <td style="padding: 1px; border: 1px solid #000">
                                 <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
                                     {{ $data->air_cont_b }}
                                 </h6>
                             </td>
-                            @endif
-                            <td style="padding: 1px; border: 1px solid #000">
-                                <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
-                                    {{ $data->unit_wt_b }}</h6>
-                            </td>
-                            <td style="padding: 1px; border: 1px solid #000">
-                                <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
-                                    {{ $data->relative_yield_b }}
-                                </h6>
-                            </td>
-                            <td style="padding: 1px; border: 1px solid #000">
-                                <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
-                                    {{ $data->wc_ratio_b }}
-                                </h6>
-                            </td>
-                            <td style="padding: 1px; border: 1px solid #000">
-                                <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
-                                    {{ $data->conc_temp_b }}
-                                </h6>
-                            </td>
-                            <td style="padding: 1px; border: 1px solid #000">
-                                <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
-                                    {{ $data->air_temp_b }}
-                                </h6>
-                            </td>
-                            <td style="padding: 1px; border: 1px solid #000">
-                                <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
-                                    {{ $data->cylinder_set_no_b }}
-                                </h6>
-                            </td>
-                </tr>
-                @endif
-                @if ($data->test_no_c)
-                <tr>
-                    <td style="padding: 1px; border: 1px solid #000">
-                        <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
-                            {{ $data->test_no_c }}</h6>
-                    </td>
-                    <td style="padding: 1px; border: 1px solid #000">
-                        <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
-                            {{ $data->truck_no_c }}
-                        </h6>
-                    </td>
-                    <td style="padding: 1px; border: 1px solid #000">
-                        <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
-                            {{ $data->ticket_no_c }}
-                        </h6>
-                    </td>
-                    <td style="padding: 1px; border: 1px solid #000">
-                        <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
-                            {{ $data->truck_dispatched_c }}
-                        </h6>
-                    </td>
-                    <td style="padding: 1px; border: 1px solid #000">
-                        <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
-                            {{ $data->time_sample_taken_c }}
-                        </h6>
-                    </td>
-                    <td style="padding: 1px; border: 1px solid #000">
-                        <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
-                            {{ $data->time_truck_finished_c }}</h6>
-                    </td>
-                    @if ($data->slump_c < $data->specified_slump_min || $data->slump_c > $data->specified_slump_max)
-                        <td style="padding: 1px; border: 1px solid #000">
-                            <h6 style="font-size: 14px; font-weight: 400; text-align: center; color:red;">
-                                {{ $data->slump_c }}</h6>
-                        </td>
-                        @else
+                        @endif
                         <td style="padding: 1px; border: 1px solid #000">
                             <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
-                                {{ $data->slump_c }}
+                                {{ $data->unit_wt_b }}</h6>
+                        </td>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                {{ $data->relative_yield_b }}
                             </h6>
                         </td>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                {{ $data->wc_ratio_b }}
+                            </h6>
+                        </td>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                {{ $data->conc_temp_b }}
+                            </h6>
+                        </td>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                {{ $data->air_temp_b }}
+                            </h6>
+                        </td>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                {{ $data->cylinder_set_no_b }}
+                            </h6>
+                        </td>
+                    </tr>
+                @endif
+                @if ($data->test_no_c)
+                    <tr>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                {{ $data->test_no_c }}</h6>
+                        </td>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                {{ $data->truck_no_c }}
+                            </h6>
+                        </td>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                {{ $data->ticket_no_c }}
+                            </h6>
+                        </td>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                {{ $data->truck_dispatched_c }}
+                            </h6>
+                        </td>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                {{ $data->time_sample_taken_c }}
+                            </h6>
+                        </td>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                {{ $data->time_truck_finished_c }}</h6>
+                        </td>
+                        @if ($data->slump_c < $data->specified_slump_min || $data->slump_c > $data->specified_slump_max)
+                            <td style="padding: 1px; border: 1px solid #000">
+                                <h6 style="font-size: 14px; font-weight: 400; text-align: center; color:red;">
+                                    {{ $data->slump_c }}</h6>
+                            </td>
+                        @else
+                            <td style="padding: 1px; border: 1px solid #000">
+                                <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                    {{ $data->slump_c }}
+                                </h6>
+                            </td>
                         @endif
-                        @if ($data->air_cont_c < $data->specified_air_min || $data->air_cont_c >
-                            $data->specified_air_max)
+                        @if ($data->air_cont_c < $data->specified_air_min || $data->air_cont_c > $data->specified_air_max)
                             <td style="padding: 1px; border: 1px solid #000">
                                 <h6 style="font-size: 14px; font-weight: 400; text-align: center; color:red;">
                                     {{ $data->air_cont_c }}</h6>
                             </td>
-                            @else
+                        @else
                             <td style="padding: 1px; border: 1px solid #000">
                                 <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
                                     {{ $data->air_cont_c }}
                                 </h6>
                             </td>
-                            @endif
-                            <td style="padding: 1px; border: 1px solid #000">
-                                <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
-                                    {{ $data->unit_wt_c }}</h6>
-                            </td>
-                            <td style="padding: 1px; border: 1px solid #000">
-                                <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
-                                    {{ $data->relative_yield_c }}
-                                </h6>
-                            </td>
-                            <td style="padding: 1px; border: 1px solid #000">
-                                <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
-                                    {{ $data->wc_ratio_c }}
-                                </h6>
-                            </td>
-                            <td style="padding: 1px; border: 1px solid #000">
-                                <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
-                                    {{ $data->conc_temp_c }}
-                                </h6>
-                            </td>
-                            <td style="padding: 1px; border: 1px solid #000">
-                                <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
-                                    {{ $data->air_temp_c }}
-                                </h6>
-                            </td>
-                            <td style="padding: 1px; border: 1px solid #000">
-                                <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
-                                    {{ $data->cylinder_set_no_c }}
-                                </h6>
-                            </td>
-                </tr>
-                @endif
-                @if ($data->test_no_d)
-                <tr>
-                    <td style="padding: 1px; border: 1px solid #000">
-                        <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
-                            {{ $data->test_no_d }}</h6>
-                    </td>
-                    <td style="padding: 1px; border: 1px solid #000">
-                        <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
-                            {{ $data->truck_no_d }}
-                        </h6>
-                    </td>
-                    <td style="padding: 1px; border: 1px solid #000">
-                        <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
-                            {{ $data->ticket_no_d }}
-                        </h6>
-                    </td>
-                    <td style="padding: 1px; border: 1px solid #000">
-                        <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
-                            {{ $data->truck_dispatched_d }}
-                        </h6>
-                    </td>
-                    <td style="padding: 1px; border: 1px solid #000">
-                        <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
-                            {{ $data->time_sample_taken_d }}
-                        </h6>
-                    </td>
-                    <td style="padding: 1px; border: 1px solid #000">
-                        <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
-                            {{ $data->time_truck_finished_d }}</h6>
-                    </td>
-                    @if ($data->slump_d < $data->specified_slump_min || $data->slump_d > $data->specified_slump_max)
-                        <td style="padding: 1px; border: 1px solid #000">
-                            <h6 style="font-size: 14px; font-weight: 400; text-align: center; color:red;">
-                                {{ $data->slump_d }}</h6>
-                        </td>
-                        @else
+                        @endif
                         <td style="padding: 1px; border: 1px solid #000">
                             <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
-                                {{ $data->slump_d }}
+                                {{ $data->unit_wt_c }}</h6>
+                        </td>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                {{ $data->relative_yield_c }}
                             </h6>
                         </td>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                {{ $data->wc_ratio_c }}
+                            </h6>
+                        </td>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                {{ $data->conc_temp_c }}
+                            </h6>
+                        </td>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                {{ $data->air_temp_c }}
+                            </h6>
+                        </td>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                {{ $data->cylinder_set_no_c }}
+                            </h6>
+                        </td>
+                    </tr>
+                @endif
+                @if ($data->test_no_d)
+                    <tr>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                {{ $data->test_no_d }}</h6>
+                        </td>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                {{ $data->truck_no_d }}
+                            </h6>
+                        </td>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                {{ $data->ticket_no_d }}
+                            </h6>
+                        </td>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                {{ $data->truck_dispatched_d }}
+                            </h6>
+                        </td>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                {{ $data->time_sample_taken_d }}
+                            </h6>
+                        </td>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                {{ $data->time_truck_finished_d }}</h6>
+                        </td>
+                        @if ($data->slump_d < $data->specified_slump_min || $data->slump_d > $data->specified_slump_max)
+                            <td style="padding: 1px; border: 1px solid #000">
+                                <h6 style="font-size: 14px; font-weight: 400; text-align: center; color:red;">
+                                    {{ $data->slump_d }}</h6>
+                            </td>
+                        @else
+                            <td style="padding: 1px; border: 1px solid #000">
+                                <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                    {{ $data->slump_d }}
+                                </h6>
+                            </td>
                         @endif
-                        @if ($data->air_cont_d < $data->specified_air_min || $data->air_cont_d >
-                            $data->specified_air_max)
+                        @if ($data->air_cont_d < $data->specified_air_min || $data->air_cont_d > $data->specified_air_max)
                             <td style="padding: 1px; border: 1px solid #000">
                                 <h6 style="font-size: 14px; font-weight: 400; text-align: center; color:red;">
                                     {{ $data->air_cont_d }}</h6>
                             </td>
-                            @else
+                        @else
                             <td style="padding: 1px; border: 1px solid #000">
                                 <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
                                     {{ $data->air_cont_d }}
                                 </h6>
                             </td>
-                            @endif
-                            <td style="padding: 1px; border: 1px solid #000">
-                                <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
-                                    {{ $data->unit_wt_d }}</h6>
-                            </td>
-                            <td style="padding: 1px; border: 1px solid #000">
-                                <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
-                                    {{ $data->relative_yield_d }}
-                                </h6>
-                            </td>
-                            <td style="padding: 1px; border: 1px solid #000">
-                                <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
-                                    {{ $data->wc_ratio_d }}
-                                </h6>
-                            </td>
-                            <td style="padding: 1px; border: 1px solid #000">
-                                <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
-                                    {{ $data->conc_temp_d }}
-                                </h6>
-                            </td>
-                            <td style="padding: 1px; border: 1px solid #000">
-                                <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
-                                    {{ $data->air_temp_d }}
-                                </h6>
-                            </td>
-                            <td style="padding: 1px; border: 1px solid #000">
-                                <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
-                                    {{ $data->cylinder_set_no_d }}
-                                </h6>
-                            </td>
-                </tr>
+                        @endif
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                {{ $data->unit_wt_d }}</h6>
+                        </td>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                {{ $data->relative_yield_d }}
+                            </h6>
+                        </td>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                {{ $data->wc_ratio_d }}
+                            </h6>
+                        </td>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                {{ $data->conc_temp_d }}
+                            </h6>
+                        </td>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                {{ $data->air_temp_d }}
+                            </h6>
+                        </td>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                {{ $data->cylinder_set_no_d }}
+                            </h6>
+                        </td>
+                    </tr>
                 @endif
 
             </table>
@@ -542,76 +512,76 @@
                         </th>
                 </tr>
                 @if ($data->test_no_a)
-                <tr>
-                    <td style="padding: 1px; border: 1px solid #000">
-                        <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->test_no_a }}
-                        </h4>
-                    </td>
+                    <tr>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->test_no_a }}
+                            </h4>
+                        </td>
 
-                    <td style="padding: 1px; border: 1px solid #000">
-                        <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->location_a }}
-                        </h4>
-                    </td>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->location_a }}
+                            </h4>
+                        </td>
 
-                    <td style="padding: 1px; border: 1px solid #000">
-                        <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->remark }}
-                        </h4>
-                    </td>
-                </tr>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->remark }}
+                            </h4>
+                        </td>
+                    </tr>
                 @endif
                 @if ($data->test_no_b)
-                <tr>
-                    <td style="padding: 1px; border: 1px solid #000">
-                        <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->test_no_b }}
-                        </h4>
-                    </td>
+                    <tr>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->test_no_b }}
+                            </h4>
+                        </td>
 
-                    <td style="padding: 1px; border: 1px solid #000">
-                        <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->location_b }}
-                        </h4>
-                    </td>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->location_b }}
+                            </h4>
+                        </td>
 
-                    <td style="padding: 1px; border: 1px solid #000">
-                        <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->remark }}
-                        </h4>
-                    </td>
-                </tr>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->remark }}
+                            </h4>
+                        </td>
+                    </tr>
                 @endif
                 @if ($data->test_no_c)
-                <tr>
-                    <td style="padding: 1px; border: 1px solid #000">
-                        <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->test_no_c }}
-                        </h4>
-                    </td>
+                    <tr>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->test_no_c }}
+                            </h4>
+                        </td>
 
-                    <td style="padding: 1px; border: 1px solid #000">
-                        <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->location_c }}
-                        </h4>
-                    </td>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->location_c }}
+                            </h4>
+                        </td>
 
-                    <td style="padding: 1px; border: 1px solid #000">
-                        <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->remark }}
-                        </h4>
-                    </td>
-                </tr>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->remark }}
+                            </h4>
+                        </td>
+                    </tr>
                 @endif
                 @if ($data->test_no_d)
-                <tr>
-                    <td style="padding: 1px; border: 1px solid #000">
-                        <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->test_no_d }}
-                        </h4>
-                    </td>
+                    <tr>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->test_no_d }}
+                            </h4>
+                        </td>
 
-                    <td style="padding: 1px; border: 1px solid #000">
-                        <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->location_d }}
-                        </h4>
-                    </td>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->location_d }}
+                            </h4>
+                        </td>
 
-                    <td style="padding: 1px; border: 1px solid #000">
-                        <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->remark }}
-                        </h4>
-                    </td>
-                </tr>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h4 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->remark }}
+                            </h4>
+                        </td>
+                    </tr>
                 @endif
 
             </table>
@@ -639,92 +609,92 @@
                         </th>
                 </tr>
                 @if ($data->test_no_a)
-                <tr>
-                    <td style="padding: 1px; border: 1px solid #000">
-                        <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
-                            {{ $data->test_no_a }}
-                        </h6>
-                    </td>
-                    <td style="padding: 1px; border: 1px solid #000">
-                        <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
-                            {{ $data->mix_supplier }}
-                        </h6>
-                    </td>
-                    <td style="padding: 1px; border: 1px solid #000">
-                        <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->mix_id }}
-                        </h6>
-                    </td>
-                    <td style="padding: 1px; border: 1px solid #000">
-                        <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
-                            {{ number_format($data->design_strength) }}</h6>
-                    </td>
-                </tr>
+                    <tr>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                {{ $data->test_no_a }}
+                            </h6>
+                        </td>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                {{ $data->mix_supplier }}
+                            </h6>
+                        </td>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->mix_id }}
+                            </h6>
+                        </td>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                {{ number_format($data->design_strength) }}</h6>
+                        </td>
+                    </tr>
                 @endif
                 @if ($data->test_no_b)
-                <tr>
-                    <td style="padding: 1px; border: 1px solid #000">
-                        <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
-                            {{ $data->test_no_b }}
-                        </h6>
-                    </td>
-                    <td style="padding: 1px; border: 1px solid #000">
-                        <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
-                            {{ $data->mix_supplier }}
-                        </h6>
-                    </td>
-                    <td style="padding: 1px; border: 1px solid #000">
-                        <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->mix_id }}
-                        </h6>
-                    </td>
-                    <td style="padding: 1px; border: 1px solid #000">
-                        <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
-                            {{ number_format($data->design_strength) }}</h6>
-                    </td>
-                </tr>
+                    <tr>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                {{ $data->test_no_b }}
+                            </h6>
+                        </td>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                {{ $data->mix_supplier }}
+                            </h6>
+                        </td>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h6 style="font-size: 14px; font-weight: 400; text-align: center;">{{ $data->mix_id }}
+                            </h6>
+                        </td>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                {{ number_format($data->design_strength) }}</h6>
+                        </td>
+                    </tr>
                 @endif
                 @if ($data->test_no_c)
-                <tr>
-                    <td style="padding: 1px; border: 1px solid #000">
-                        <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
-                            {{ $data->test_no_c }}
-                        </h6>
-                    </td>
-                    <td style="padding: 1px; border: 1px solid #000">
-                        <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
-                            {{ $data->mix_supplier }}
-                        </h6>
-                    </td>
-                    <td style="padding: 1px; border: 1px solid #000">
-                        <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
-                            {{ $data->mix_id }}</h6>
-                    </td>
-                    <td style="padding: 1px; border: 1px solid #000">
-                        <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
-                            {{ number_format($data->design_strength) }}</h6>
-                    </td>
-                </tr>
+                    <tr>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                {{ $data->test_no_c }}
+                            </h6>
+                        </td>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                {{ $data->mix_supplier }}
+                            </h6>
+                        </td>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                {{ $data->mix_id }}</h6>
+                        </td>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                {{ number_format($data->design_strength) }}</h6>
+                        </td>
+                    </tr>
                 @endif
                 @if ($data->test_no_d)
-                <tr>
-                    <td style="padding: 1px; border: 1px solid #000">
-                        <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
-                            {{ $data->test_no_d }}
-                        </h6>
-                    </td>
-                    <td style="padding: 1px; border: 1px solid #000">
-                        <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
-                            {{ $data->mix_supplier }}
-                        </h6>
-                    </td>
-                    <td style="padding: 1px; border: 1px solid #000">
-                        <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
-                            {{ $data->mix_id }}</h6>
-                    </td>
-                    <td style="padding: 1px; border: 1px solid #000">
-                        <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
-                            {{ number_format($data->design_strength) }}</h6>
-                    </td>
-                </tr>
+                    <tr>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                {{ $data->test_no_d }}
+                            </h6>
+                        </td>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                {{ $data->mix_supplier }}
+                            </h6>
+                        </td>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                {{ $data->mix_id }}</h6>
+                        </td>
+                        <td style="padding: 1px; border: 1px solid #000">
+                            <h6 style="font-size: 14px; font-weight: 400; text-align: center;">
+                                {{ number_format($data->design_strength) }}</h6>
+                        </td>
+                    </tr>
                 @endif
             </table>
         </div>
@@ -770,29 +740,31 @@
             <tr>
                 <td
                     style="width: 28%; padding-top: 10px; padding-left: 10px; padding-right: 10px; padding-bottom: 20px;">
-                    <h6 style="padding-bottom: 4px; font-weight: normal; 
+                    <h6
+                        style="padding-bottom: 4px; font-weight: normal; 
             font-size: 14px;
             font-weight: normal;">
                         @if ($data->observation == 'Part Time Observation')
-                        <span style="padding: 1px 5px; border-bottom: 2px solid #000;"></span>
-                        <span style="padding-left: 25px;">Part Time Observation</span>
+                            <span style="padding: 1px 5px; border-bottom: 2px solid #000;"></span>
+                            <span style="padding-left: 25px;">Part Time Observation</span>
                         @else
-                        <span
-                            style="padding: 1px 5px; border-bottom: 2px solid #000; border-top: 2px solid #000;">X</span>
-                        <span>Part Time Observation</span>
+                            <span
+                                style="padding: 1px 5px; border-bottom: 2px solid #000; border-top: 2px solid #000;">X</span>
+                            <span>Part Time Observation</span>
                         @endif
                     </h6>
 
-                    <h6 style="padding-bottom: 4px; font-weight: normal; 
+                    <h6
+                        style="padding-bottom: 4px; font-weight: normal; 
             font-size: 14px;
             font-weight: normal;">
                         @if ($data->observation == 'Full Time Observation')
-                        <span style="padding: 1px 5px; border-bottom: 2px solid #000;"></span>
-                        <span style="padding-left: 25px;">Full Time Observation</span>
+                            <span style="padding: 1px 5px; border-bottom: 2px solid #000;"></span>
+                            <span style="padding-left: 25px;">Full Time Observation</span>
                         @else
-                        <span
-                            style="padding: 1px 5px; border-bottom: 2px solid #000; border-top: 2px solid #000;">X</span>
-                        <span>Full Time Observation</span>
+                            <span
+                                style="padding: 1px 5px; border-bottom: 2px solid #000; border-top: 2px solid #000;">X</span>
+                            <span>Full Time Observation</span>
                         @endif
                     </h6>
                 </td>
@@ -802,7 +774,8 @@
                 font-size: 14px;
                 font-weight: normal;">
                         {{ user($data->user_id)->name }}</h6>
-                    <h6 style="
+                    <h6
+                        style="
             font-size: 14px;
             font-weight: normal;
             border-top: 1px solid black;
@@ -818,7 +791,8 @@
                 font-size: 14px;
                 font-weight: normal;">
                         {{ user($data->created_by)->name }}</h6>
-                    <h6 style="
+                    <h6
+                        style="
             font-size: 14px;
             font-weight: normal;
             border-top: 1px solid black;
@@ -830,12 +804,10 @@
             </tr>
         </table>
 
-
-
         <table style="width: 100%; border-collapse: collapse; padding-top: 10px;">
             <tr>
                 <td>
-                    <p style="font-size: 12px; font-style: italic; font-weight: 400; text-align: left">
+                    <p style="font-size: 12px; font-weight: 400; text-align: left">
                         These test results apply only to the specific samples/location/materials noted and may not be
                         representative of other areas or similar materials. This report may not be reproduced, except in
                         full, without written authorization by Geocal, Inc.

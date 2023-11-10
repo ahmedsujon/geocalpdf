@@ -1808,7 +1808,6 @@
                                             class="cGcvT"></grammarly-extension>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                         <div class="container">
