@@ -7,6 +7,7 @@ use App\Models\Project;
 use App\Models\SubClient;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -93,7 +94,11 @@ class CommercialComponent extends Component
     public function render()
     {
         $files = Commercial::orderBy('id', 'DESC')
+
             ->join('projects', 'commercials.project_id', '=', 'projects.id')
+
+            ->where(Auth::user()->id, 'responsible_person_id')
+
             ->where('projects.name', 'like', '%' . $this->searchTerm . '%')
             ->select('commercials.*')
             ->paginate($this->sortingValue);
