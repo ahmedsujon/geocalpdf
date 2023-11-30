@@ -179,27 +179,34 @@
                         @if(Auth::user()->role_id == '1' || Auth::user()->role_id == '2' || Auth::user()->role_id ==
                         '3')
                         <li class="menu-label mt-0 text-primary font-12 fw-semibold">M<span>anagements</span></li>
-                        @if(Auth::user()->role_id == '1' || Auth::user()->role_id == '2' || Auth::user()->role_id ==
-                        '3')
+
+                        @if(Auth::user()->role_id == '1' || Auth::user()->role_id == '2')
+                        <!--end nav-item-->
                         <li class="nav-item">
-                            <a class="nav-link" href="#sidebarAnalytics" data-bs-toggle="collapse" role="button"
-                                aria-expanded="false" aria-controls="sidebarAnalytics">
-                                <i class="ti ti-stack menu-icon"></i>
-                                <span>Project</span>
+                            <a class="nav-link" href="#sidebarUser" data-bs-toggle="collapse" role="button"
+                                aria-expanded="false" aria-controls="sidebarUser">
+                                <i class="ti ti-user-check menu-icon"></i>
+                                <span>Users</span>
                             </a>
-                            <div class="collapse {{ request()->is('project') || request()->is('project/*')? 'show': '' }}"
-                                id="sidebarAnalytics">
+                            <div class="collapse {{ request()->is('user') || request()->is('user/*')? 'show': '' }}"
+                                id="sidebarUser">
                                 <ul class="nav flex-column">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('project.list') }}">Project Listing</a>
+                                        <a class="nav-link" href="{{ route('user.list') }}">User Listing</a>
                                     </li>
+                                    <!--end nav-item-->
                                     <li class="nav-item">
-                                        <a href="{{ route('project.create') }}" class="nav-link ">Add Project</a>
+                                        <a class="nav-link" href="{{ route('user.create') }}">Add User</a>
                                     </li>
+                                    <!--end nav-item-->
                                 </ul>
+                                <!--end nav-->
                             </div>
+                            <!--end sidebarEmail-->
                         </li>
+                        <!--end nav-item-->
                         @endif
+
                         @if(Auth::user()->role_id == '1' || Auth::user()->role_id == '2' || Auth::user()->role_id ==
                         '3')
                         <li class="nav-item">
@@ -221,13 +228,36 @@
                             </div>
                         </li>
                         @endif
+                        
+                        @if(Auth::user()->role_id == '1' || Auth::user()->role_id == '2' || Auth::user()->role_id ==
+                        '3')
+                        <li class="nav-item">
+                            <a class="nav-link" href="#sidebarAnalytics" data-bs-toggle="collapse" role="button"
+                                aria-expanded="false" aria-controls="sidebarAnalytics">
+                                <i class="ti ti-stack menu-icon"></i>
+                                <span>Project</span>
+                            </a>
+                            <div class="collapse {{ request()->is('project') || request()->is('project/*')? 'show': '' }}"
+                                id="sidebarAnalytics">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('project.list') }}">Project Listing</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{{ route('project.create') }}" class="nav-link ">Add Project</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        @endif
+                    
                         @if(Auth::user()->role_id == '1' || Auth::user()->role_id == '2' || Auth::user()->role_id ==
                         '3')
                         <li class="nav-item">
                             <a class="nav-link" href="#sidebarProctor" data-bs-toggle="collapse" role="button"
                                 aria-expanded="false" aria-controls="sidebarProctor">
                                 <i class="ti ti-users menu-icon"></i>
-                                <span>Proctor</span>
+                                <span>Proctor Information</span>
                             </a>
                             <div class="collapse {{ request()->is('proctor') || request()->is('proctor/*')? 'show': '' }}"
                                 id="sidebarProctor">
@@ -263,34 +293,7 @@
                             </div>
                         </li>
                         @endif
-                        @if(Auth::user()->role_id == '1' || Auth::user()->role_id == '2')
-                        <!--end nav-item-->
-                        <li class="nav-item">
-                            <a class="nav-link" href="#sidebarUser" data-bs-toggle="collapse" role="button"
-                                aria-expanded="false" aria-controls="sidebarUser">
-                                <i class="ti ti-user-check menu-icon"></i>
-                                <span>Users</span>
-                            </a>
-                            <div class="collapse {{ request()->is('user') || request()->is('user/*')? 'show': '' }}"
-                                id="sidebarUser">
-                                <ul class="nav flex-column">
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('user.list') }}">User Listing</a>
-                                    </li>
-                                    <!--end nav-item-->
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('user.create') }}">Add User</a>
-                                    </li>
-                                    <!--end nav-item-->
-                                </ul>
-                                <!--end nav-->
-                            </div>
-                            <!--end sidebarEmail-->
-                        </li>
-                        <!--end nav-item-->
                         @endif
-                        @endif
-
                         <li class="menu-label mt-0 text-primary font-12 fw-semibold">S<span>ettings</span></li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('profile') }}"><i
