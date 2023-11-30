@@ -141,7 +141,7 @@
                                     <?php echo App\Http\Livewire\SuperAdmin\DashboardComponent::ago($file->created_at); ?>
                                 </span>
                                 <div class="timeline-content">
-                                    <a href="{{ route('plastic.concrete.update', ['file_id' => $temp->id]) }}"
+                                    <a href="{{ route('plastic.concrete.update', ['file_id' => $file->id]) }}"
                                         class="title">
                                         {{ getProject($file->project_id)->name }} -
                                         @if ($file->status)
