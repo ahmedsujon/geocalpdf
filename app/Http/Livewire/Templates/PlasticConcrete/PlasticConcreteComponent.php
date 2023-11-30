@@ -40,6 +40,9 @@ class PlasticConcreteComponent extends Component
 
         $project = Project::find($project_id);
         $responsible_persons = [];
+        $responsible_ft = $project->responsible_ft;
+        $responsible_persons = array_merge($responsible_persons, json_decode($responsible_ft));
+
         $responsible_supervisor = $project->responsible_supervisor;
         $responsible_persons = array_merge($responsible_persons, json_decode($responsible_supervisor));
         $responsible_clerk = $project->responsible_clerk;
