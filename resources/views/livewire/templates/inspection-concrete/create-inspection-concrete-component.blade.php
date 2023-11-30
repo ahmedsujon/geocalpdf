@@ -2393,19 +2393,7 @@
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                 @enderror
                             </div>
-
-                            <div class="row pt-3">
-                                <div class="col-md-12">
-                                    <div class="form-check form-switch mb-3" dir="ltr">
-                                        <input class="form-check-input" type="checkbox" id="permission"
-                                            wire:model='permission' value="1">
-                                        <label class="form-check-label" for="permission">"Concrete Field Report" and
-                                            "Concrete Test Report" are both included by default. To only send the
-                                            "Concrete Test Report", click here.</span></label><br>
-                                    </div>
-                                </div>
-                            </div>
-
+                            
                             <div class="row mt-5 mb-5 justify-content-md-center">
                                 <div class="col-md-12">
                                     @if ($errors->any())

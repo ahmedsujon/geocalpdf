@@ -35,14 +35,6 @@
             Report</a><br>
     @endif
 
-    <br>
-    @if ($permission == 0)
-        @if ($id)
-            <a class="button button1" href="{{ route('concrete.field.report.generate', ['id' => $project_id]) }}">Concrete
-                Field Report</a>
-        @endif
-    @endif
-
     <br><br>
     <p>Thank you...!!</p>
     <p>{{ $name }}</p>
