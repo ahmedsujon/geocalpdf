@@ -12,12 +12,17 @@ class ConcreteFieldReportComponent extends Component
 {
     use WithPagination;
     public $sortingValue = 10, $searchTerm;
+    public $project_name, $client_name, $Send_by, $edit_id;
+
+    public function storeClientData($id)
+    {
+        $data = InspectionConcrete::find($id);
+        $this->edit_id = $data->id;
+        $this->dispatchBrowserEvent('showEditModal');
+    }
 
     public function render()
     {
-        
-        
-
         DB::statement("SET SQL_MODE=''");
         $project_ids = InspectionConcrete::groupBy('project_id')->pluck('project_id')->toArray();
         $projects = Project::whereIn('id', $project_ids)->paginate($this->sortingValue);
