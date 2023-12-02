@@ -85,7 +85,7 @@
 
                                                 <td style="text-align: center;">
                                                     <a id="driverEmail" type="button"
-                                                        wire:click.prevent="storeClientData({{ $file->id }})"
+                                                        wire:click.prevent="storeClientData({{ $file->client_id }})"
                                                         class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm" data-bs-toggle="tooltip"
                                                         data-bs-placement="top"
                                                         data-bs-original-title="Sent To Client"><i
@@ -118,7 +118,7 @@
         </div>
     </div>
 
-    <div wire:ignore.self class="modal fade" id="StatusDataModal" tabindex="-1" role="dialog"
+    <div wire:ignore.self class="modal fade" id="sendmailModal" tabindex="-1" role="dialog"
         data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="modelTitleId">
         <div class="modal-dialog modal-dialog-centered modal-dialog-zoom modal-lg" role="document">
             <div class="modal-content">
@@ -132,23 +132,17 @@
                             <form wire:submit.prevent='sentToClient'>
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <label for="example-number-input" class="col-form-label">Status</label>
-                                        <select class="form-select" wire:model="status">
-                                            <option value="">Choose Status</option>
-                                            <option value="Rejected">Rejected</option>
-                                            <option value="Approved">Approved</option>
-                                        </select>
-                                        @error('status')
-                                            <p class="text-danger" style="font-size: 11.5px;">{{ $message }}</p>
-                                        @enderror
+                                        <label for="example-number-input" class="col-form-label">Client</label>
+                                        <input type="text" class="form-control" name="" id="" value="{{ $client_name }}" readonly>
+
                                     </div>
 
                                     <div class="col-md-12">
                                         <label for="example-number-input" class="col-form-label">Message</label>
                                         <div>
-                                            <textarea wire:model="notify" placeholder="Write here..." class="form-control" rows="12" spellcheck="false"></textarea>
+                                            <textarea wire:model="message" placeholder="Write here..." class="form-control" rows="12" spellcheck="false"></textarea>
                                         </div>
-                                        @error('notify')
+                                        @error('message')
                                             <p class="text-danger" style="font-size: 11.5px;">{{ $message }}</p>
                                         @enderror
                                     </div>
@@ -173,8 +167,8 @@
 
 @push('scripts')
     <script>
-        window.addEventListener('viewEditModal', event => {
-            $('#StatusDataModal').modal('show');
+        window.addEventListener('showMailSendModal', event => {
+            $('#sendmailModal').modal('show');
         });
 
         window.addEventListener('closeModal', event => {

@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Templates\ConcreteFieldReport;
 
+use App\Models\Client;
 use Livewire\Component;
 use Livewire\WithPagination;
 use App\Models\InspectionConcrete;
@@ -12,13 +13,25 @@ class ConcreteFieldReportComponent extends Component
 {
     use WithPagination;
     public $sortingValue = 10, $searchTerm;
-    public $project_name, $client_name, $Send_by, $edit_id;
+    public $project_name, $client_name, $Send_by, $client_id, $message;
 
     public function storeClientData($id)
     {
-        $data = InspectionConcrete::find($id);
-        $this->edit_id = $data->id;
-        $this->dispatchBrowserEvent('showEditModal');
+        $this->client_id = $id;
+
+        $this->client_name = Client::find($id)->name;
+
+        $this->dispatchBrowserEvent('showMailSendModal');
+    }
+
+    public function sentToClient()
+    {
+        $client_id = $this->client_id;
+        $message = $this->message;
+
+        //save data as required
+
+        // mail function
     }
 
     public function render()
