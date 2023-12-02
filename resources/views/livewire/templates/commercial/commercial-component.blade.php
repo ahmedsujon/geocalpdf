@@ -136,7 +136,7 @@
                 'success'
             )
         });
-        
+
 </script>
 
 @endpush

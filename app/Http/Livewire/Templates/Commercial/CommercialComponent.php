@@ -94,37 +94,23 @@ class CommercialComponent extends Component
 
     public function render()
     {
-        //dd(auth()->user());
-        $auth_user = auth()->user();
-        $files = Commercial::orderBy('id', 'DESC')
+        $files = collect([]);
+
+        $all_files = Commercial::orderBy('id', 'DESC')
             ->join('projects', 'commercials.project_id', '=', 'projects.id')
             ->where('projects.name', 'like', '%' . $this->searchTerm . '%')
             ->select('commercials.*')
-            ->paginate($this->sortingValue);
+            ->get();
 
-        $filteredItems = $files->filter(function ($item) use ($auth_user) {
-            
-            $responsible_person = json_decode($item->responsible_person);
-            if(in_array($auth_user->id,$responsible_person)){
-                return true;
+        foreach ($all_files as $key => $file) {
+            if (in_array(Auth::user()->id, json_decode($file->responsible_person))) {
+                $files->push($file);
             }
-            return false;
-        });   
+        }
 
-        $perPage = 1;
-        $page = request()->get('page', 1);
-        $currentPageItems = $filteredItems->slice(($page - 1) * $perPage, $perPage);
-        $filteredItems = new LengthAwarePaginator(
-            $currentPageItems,
-            $filteredItems->count(), // Total items
-            $perPage,
-            $page,
-            ['path' => request()->url(), 'query' => request()->query()]
-        );
-        
-        //$filteredItems  = $filteredItems->paginate($this->sortingValue);
-        //dd($files->toArray());
-        return view('livewire.templates.commercial.commercial-component', ['files' => $files, 'filteredItems'=>$filteredItems])->layout('livewire.layouts.base');
+        $files = $files->paginate($this->sortingValue);
+
+        return view('livewire.templates.commercial.commercial-component', ['files' => $files])->layout('livewire.layouts.base');
     }
 
     // public function render()
