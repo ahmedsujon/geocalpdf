@@ -2,14 +2,15 @@
 
 namespace App\Http\Livewire\Templates\PlasticConcrete;
 
-use App\Models\PlasticConcrete;
-use App\Models\Project;
-use App\Models\SubClient;
 use App\Models\User;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use App\Models\Project;
 use Livewire\Component;
+use App\Models\SubClient;
+use Illuminate\Http\Request;
 use Livewire\WithPagination;
+use App\Models\PlasticConcrete;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class PlasticConcreteComponent extends Component
 {
@@ -89,11 +90,29 @@ class PlasticConcreteComponent extends Component
 
     public function render()
     {
-        $plastic_concretes = PlasticConcrete::orderBy('id', 'DESC')
-            ->join('projects', 'plastic_concretes.project_id', '=', 'projects.id')
-            ->where('projects.name', 'like', '%' . $this->searchTerm . '%')
-            ->select('plastic_concretes.*')
-            ->paginate($this->sortingValue);
+
+        if (Auth::user()->role_id == '1' || Auth::user()->role_id == '2') {
+            $plastic_concretes = PlasticConcrete::orderBy('id', 'DESC')
+                ->join('projects', 'plastic_concretes.project_id', '=', 'projects.id')
+                ->where('projects.name', 'like', '%' . $this->searchTerm . '%')
+                ->select('plastic_concretes.*')
+                ->paginate($this->sortingValue);
+        } else {
+            $plastic_concretes = collect([]);
+            $all_files = PlasticConcrete::orderBy('id', 'DESC')
+                ->join('projects', 'plastic_concretes.project_id', '=', 'projects.id')
+                ->where('projects.name', 'like', '%' . $this->searchTerm . '%')
+                ->select('plastic_concretes.*')
+                ->get();
+
+            foreach ($all_files as $key => $file) {
+                if (in_array(Auth::user()->id, json_decode($file->responsible_person))) {
+                    $plastic_concretes->push($file);
+                }
+            }
+            $plastic_concretes = $plastic_concretes->paginate($this->sortingValue);
+        }
+
         return view('livewire.templates.plastic-concrete.plastic-concrete-component', ['plastic_concretes' => $plastic_concretes])->layout('livewire.layouts.base');
     }
 }

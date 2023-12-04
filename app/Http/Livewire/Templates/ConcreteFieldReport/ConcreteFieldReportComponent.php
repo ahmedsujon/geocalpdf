@@ -18,9 +18,7 @@ class ConcreteFieldReportComponent extends Component
     public function storeClientData($id)
     {
         $this->client_id = $id;
-
         $this->client_name = Client::find($id)->name;
-
         $this->dispatchBrowserEvent('showMailSendModal');
     }
 
@@ -32,6 +30,7 @@ class ConcreteFieldReportComponent extends Component
         //save data as required
 
         // mail function
+
     }
 
     public function render()

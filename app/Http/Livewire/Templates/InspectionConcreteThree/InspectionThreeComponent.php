@@ -2,14 +2,15 @@
 
 namespace App\Http\Livewire\Templates\InspectionConcreteThree;
 
+use App\Models\User;
+use App\Models\Project;
 use Livewire\Component;
+use App\Models\SubClient;
 use Illuminate\Http\Request;
 use Livewire\WithPagination;
-use App\Models\InspectionConcreteSetThree;
-use App\Models\Project;
-use App\Models\SubClient;
-use App\Models\User;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+use App\Models\InspectionConcreteSetThree;
 
 class InspectionThreeComponent extends Component
 {
@@ -92,11 +93,27 @@ class InspectionThreeComponent extends Component
 
     public function render()
     {
-        $files = InspectionConcreteSetThree::orderBy('id', 'DESC')
-            ->join('projects', 'inspection_concrete_set_threes.project_id', '=', 'projects.id')
-            ->where('projects.name', 'like', '%' . $this->searchTerm . '%')
-            ->select('inspection_concrete_set_threes.*')
-            ->paginate($this->sortingValue);
+        if (Auth::user()->role_id == '1' || Auth::user()->role_id == '2') {
+            $files = InspectionConcreteSetThree::orderBy('id', 'DESC')
+                ->join('projects', 'inspection_concrete_set_threes.project_id', '=', 'projects.id')
+                ->where('projects.name', 'like', '%' . $this->searchTerm . '%')
+                ->select('inspection_concrete_set_threes.*')
+                ->paginate($this->sortingValue);
+        } else {
+            $files = collect([]);
+            $all_files = InspectionConcreteSetThree::orderBy('id', 'DESC')
+                ->join('projects', 'inspection_concrete_set_threes.project_id', '=', 'projects.id')
+                ->where('projects.name', 'like', '%' . $this->searchTerm . '%')
+                ->select('inspection_concrete_set_threes.*')
+                ->get();
+
+            foreach ($all_files as $key => $file) {
+                if (in_array(Auth::user()->id, json_decode($file->responsible_person))) {
+                    $files->push($file);
+                }
+            }
+            $files = $files->paginate($this->sortingValue);
+        }
         return view('livewire.templates.inspection-concrete-three.inspection-three-component', ['files' => $files])->layout('livewire.layouts.base');
     }
 }

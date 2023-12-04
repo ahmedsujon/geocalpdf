@@ -2,14 +2,15 @@
 
 namespace App\Http\Livewire\Templates\SoilAggregate;
 
-use App\Models\Project;
-use App\Models\SoilAggregate;
-use App\Models\SubClient;
 use App\Models\User;
+use App\Models\Project;
 use Livewire\Component;
+use App\Models\SubClient;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Livewire\WithPagination;
+use App\Models\SoilAggregate;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class SoilAggregateComponent extends Component
 {
@@ -92,11 +93,28 @@ class SoilAggregateComponent extends Component
 
     public function render()
     {
-        $files = SoilAggregate::orderBy('id', 'DESC')
-            ->join('projects', 'soil_aggregates.project_id', '=', 'projects.id')
-            ->where('projects.name', 'like', '%' . $this->searchTerm . '%')
-            ->select('soil_aggregates.*')
-            ->paginate($this->sortingValue);
+        if (Auth::user()->role_id == '1' || Auth::user()->role_id == '2') {
+            $files = SoilAggregate::orderBy('id', 'DESC')
+                ->join('projects', 'soil_aggregates.project_id', '=', 'projects.id')
+                ->where('projects.name', 'like', '%' . $this->searchTerm . '%')
+                ->select('soil_aggregates.*')
+                ->paginate($this->sortingValue);
+        } else {
+            $files = collect([]);
+            $all_files = SoilAggregate::orderBy('id', 'DESC')
+                ->join('projects', 'soil_aggregates.project_id', '=', 'projects.id')
+                ->where('projects.name', 'like', '%' . $this->searchTerm . '%')
+                ->select('soil_aggregates.*')
+                ->get();
+
+            foreach ($all_files as $key => $file) {
+                if (in_array(Auth::user()->id, json_decode($file->responsible_person))) {
+                    $files->push($file);
+                }
+            }
+            $files = $files->paginate($this->sortingValue);
+        }
+
         return view('livewire.templates.soil-aggregate.soil-aggregate-component', ['files' => $files])->layout('livewire.layouts.base');
     }
 }

@@ -2,15 +2,16 @@
 
 namespace App\Http\Livewire\Templates\InspectionConcrete;
 
-use App\Models\Concrete;
-use App\Models\InspectionConcrete;
-use App\Models\Project;
-use App\Models\SubClient;
 use App\Models\User;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use App\Models\Project;
 use Livewire\Component;
+use App\Models\Concrete;
+use App\Models\SubClient;
+use Illuminate\Http\Request;
 use Livewire\WithPagination;
+use App\Models\InspectionConcrete;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class InspectionConcreteComponent extends Component
 {
@@ -93,11 +94,28 @@ class InspectionConcreteComponent extends Component
 
     public function render()
     {
-        $files = InspectionConcrete::orderBy('id', 'DESC')
+        if (Auth::user()->role_id == '1' || Auth::user()->role_id == '2') {
+            $files = InspectionConcrete::orderBy('id', 'DESC')
             ->join('projects', 'inspection_concretes.project_id', '=', 'projects.id')
             ->where('projects.name', 'like', '%' . $this->searchTerm . '%')
             ->select('inspection_concretes.*')
-            ->paginate($this->sortingValue);
+                ->paginate($this->sortingValue);
+        } else {
+            $files = collect([]);
+            $all_files = InspectionConcrete::orderBy('id', 'DESC')
+            ->join('projects', 'inspection_concretes.project_id', '=', 'projects.id')
+            ->where('projects.name', 'like', '%' . $this->searchTerm . '%')
+            ->select('inspection_concretes.*')
+                ->get();
+
+            foreach ($all_files as $key => $file) {
+                if (in_array(Auth::user()->id, json_decode($file->responsible_person))) {
+                    $files->push($file);
+                }
+            }
+            $files = $files->paginate($this->sortingValue);
+        }
+
         return view('livewire.templates.inspection-concrete.inspection-concrete-component', ['files' => $files])->layout('livewire.layouts.base');
     }
 }

@@ -9,6 +9,7 @@ use App\Models\SubClient;
 use Illuminate\Http\Request;
 use Livewire\WithPagination;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use App\Models\InspectionConcreteSetSeven;
 
 class InspectionSevenComponent extends Component
@@ -92,11 +93,27 @@ class InspectionSevenComponent extends Component
 
     public function render()
     {
-        $files = InspectionConcreteSetSeven::orderBy('id', 'DESC')
-            ->join('projects', 'inspection_concrete_set_sevens.project_id', '=', 'projects.id')
-            ->where('projects.name', 'like', '%' . $this->searchTerm . '%')
-            ->select('inspection_concrete_set_sevens.*')
-            ->paginate($this->sortingValue);
+        if (Auth::user()->role_id == '1' || Auth::user()->role_id == '2') {
+            $files = InspectionConcreteSetSeven::orderBy('id', 'DESC')
+                ->join('projects', 'inspection_concrete_set_sevens.project_id', '=', 'projects.id')
+                ->where('projects.name', 'like', '%' . $this->searchTerm . '%')
+                ->select('inspection_concrete_set_sevens.*')
+                ->paginate($this->sortingValue);
+        } else {
+            $files = collect([]);
+            $all_files = InspectionConcreteSetSeven::orderBy('id', 'DESC')
+                ->join('projects', 'inspection_concrete_set_sevens.project_id', '=', 'projects.id')
+                ->where('projects.name', 'like', '%' . $this->searchTerm . '%')
+                ->select('inspection_concrete_set_sevens.*')
+                ->get();
+
+            foreach ($all_files as $key => $file) {
+                if (in_array(Auth::user()->id, json_decode($file->responsible_person))) {
+                    $files->push($file);
+                }
+            }
+            $files = $files->paginate($this->sortingValue);
+        }
         return view('livewire.templates.inspection-concrete-seven.inspection-seven-component', ['files' => $files])->layout('livewire.layouts.base');
     }
 }

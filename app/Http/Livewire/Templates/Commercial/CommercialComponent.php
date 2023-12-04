@@ -16,7 +16,7 @@ use Illuminate\Pagination\LengthAwarePaginator;
 class CommercialComponent extends Component
 {
     use WithPagination;
-    public $sortingValue = 2, $searchTerm;
+    public $sortingValue = 10, $searchTerm;
     protected $listeners = ['deleteConfirmed' => 'deleteData'];
     public $edit_id, $delete_id;
 
@@ -94,33 +94,27 @@ class CommercialComponent extends Component
 
     public function render()
     {
-        $files = collect([]);
+        if (Auth::user()->role_id == '1' || Auth::user()->role_id == '2') {
+            $files = Commercial::orderBy('id', 'DESC')
+                ->join('projects', 'commercials.project_id', '=', 'projects.id')
+                ->where('projects.name', 'like', '%' . $this->searchTerm . '%')
+                ->select('commercials.*')
+                ->paginate($this->sortingValue);
+        } else {
+            $files = collect([]);
+            $all_files = Commercial::orderBy('id', 'DESC')
+                ->join('projects', 'commercials.project_id', '=', 'projects.id')
+                ->where('projects.name', 'like', '%' . $this->searchTerm . '%')
+                ->select('commercials.*')
+                ->get();
 
-        $all_files = Commercial::orderBy('id', 'DESC')
-            ->join('projects', 'commercials.project_id', '=', 'projects.id')
-            ->where('projects.name', 'like', '%' . $this->searchTerm . '%')
-            ->select('commercials.*')
-            ->get();
-
-        foreach ($all_files as $key => $file) {
-            if (in_array(Auth::user()->id, json_decode($file->responsible_person))) {
-                $files->push($file);
+            foreach ($all_files as $key => $file) {
+                if (in_array(Auth::user()->id, json_decode($file->responsible_person))) {
+                    $files->push($file);
+                }
             }
+            $files = $files->paginate($this->sortingValue);
         }
-
-        $files = $files->paginate($this->sortingValue);
-
         return view('livewire.templates.commercial.commercial-component', ['files' => $files])->layout('livewire.layouts.base');
     }
-
-    // public function render()
-    // {
-    //     $files = Commercial::orderBy('id', 'DESC')
-    //         ->join('projects', 'commercials.project_id', '=', 'projects.id')
-    //         ->where(Auth::user()->id, 'responsible_person_id')
-    //         ->where('projects.name', 'like', '%' . $this->searchTerm . '%')
-    //         ->select('commercials.*')
-    //         ->paginate($this->sortingValue);
-    //     return view('livewire.templates.commercial.commercial-component', ['files' => $files])->layout('livewire.layouts.base');
-    // }
 }

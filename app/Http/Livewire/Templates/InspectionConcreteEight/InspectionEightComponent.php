@@ -9,6 +9,7 @@ use App\Models\SubClient;
 use Illuminate\Http\Request;
 use Livewire\WithPagination;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use App\Models\InspectionConcreteSetEight;
 
 class InspectionEightComponent extends Component
@@ -92,11 +93,28 @@ class InspectionEightComponent extends Component
 
     public function render()
     {
-        $files = InspectionConcreteSetEight::orderBy('id', 'DESC')
-            ->join('projects', 'inspection_concrete_set_eights.project_id', '=', 'projects.id')
-            ->where('projects.name', 'like', '%' . $this->searchTerm . '%')
-            ->select('inspection_concrete_set_eights.*')
-            ->paginate($this->sortingValue);
+        if (Auth::user()->role_id == '1' || Auth::user()->role_id == '2') {
+            $files = InspectionConcreteSetEight::orderBy('id', 'DESC')
+                ->join('projects', 'inspection_concrete_set_eights.project_id', '=', 'projects.id')
+                ->where('projects.name', 'like', '%' . $this->searchTerm . '%')
+                ->select('inspection_concrete_set_eights.*')
+                ->paginate($this->sortingValue);
+        } else {
+            $files = collect([]);
+            $all_files = InspectionConcreteSetEight::orderBy('id', 'DESC')
+                ->join('projects', 'inspection_concrete_set_eights.project_id', '=', 'projects.id')
+                ->where('projects.name', 'like', '%' . $this->searchTerm . '%')
+                ->select('inspection_concrete_set_eights.*')
+                ->get();
+
+            foreach ($all_files as $key => $file) {
+                if (in_array(Auth::user()->id, json_decode($file->responsible_person))) {
+                    $files->push($file);
+                }
+            }
+            $files = $files->paginate($this->sortingValue);
+        }
+
         return view('livewire.templates.inspection-concrete-eight.inspection-eight-component', ['files' => $files])->layout('livewire.layouts.base');
     }
 }

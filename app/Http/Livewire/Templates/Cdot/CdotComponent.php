@@ -2,14 +2,15 @@
 
 namespace App\Http\Livewire\Templates\Cdot;
 
-use App\Models\FieldDensityCdot;
-use App\Models\Project;
-use App\Models\SubClient;
 use App\Models\User;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use App\Models\Project;
 use Livewire\Component;
+use App\Models\SubClient;
+use Illuminate\Http\Request;
 use Livewire\WithPagination;
+use App\Models\FieldDensityCdot;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class CdotComponent extends Component
 {
@@ -93,7 +94,28 @@ class CdotComponent extends Component
 
     public function render()
     {
-        $cdot_files = FieldDensityCdot::orderBy('id', 'DESC')->paginate($this->sortingValue);
+        if (Auth::user()->role_id == '1' || Auth::user()->role_id == '2') {
+            $cdot_files = FieldDensityCdot::orderBy('id', 'DESC')
+                ->join('projects', 'field_density_cdots.project_id', '=', 'projects.id')
+                ->where('projects.name', 'like', '%' . $this->searchTerm . '%')
+                ->select('field_density_cdots.*')
+                ->paginate($this->sortingValue);
+        } else {
+            $cdot_files = collect([]);
+            $all_files = FieldDensityCdot::orderBy('id', 'DESC')
+                ->join('projects', 'field_density_cdots.project_id', '=', 'projects.id')
+                ->where('projects.name', 'like', '%' . $this->searchTerm . '%')
+                ->select('field_density_cdots.*')
+                ->get();
+
+            foreach ($all_files as $key => $file) {
+                if (in_array(Auth::user()->id, json_decode($file->responsible_person))) {
+                    $cdot_files->push($file);
+                }
+            }
+            $cdot_files = $cdot_files->paginate($this->sortingValue);
+        }
+        
         return view('livewire.templates.cdot.cdot-component', ['cdot_files'=>$cdot_files])->layout('livewire.layouts.base');
     }
 }
