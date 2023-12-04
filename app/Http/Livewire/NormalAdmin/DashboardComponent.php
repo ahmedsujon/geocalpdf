@@ -64,20 +64,188 @@ class DashboardComponent extends Component
 
     public function render()
     {
-        $commercial_forms = Commercial::orderBy('id', 'DESC')->take(3)->get();
-        $cdot_forms = FieldDensityCdot::orderBy('id', 'DESC')->take(3)->get();
-        $soil_aggregates = SoilAggregate::orderBy('id', 'DESC')->take(3)->get();
-        $plastic_concretes = PlasticConcrete::orderBy('id', 'DESC')->take(3)->get();
-        $concrete_ones = InspectionConcrete::orderBy('id', 'DESC')->take(3)->get();
-        $concrete_twos = InspectionConcreteSetTwo::orderBy('id', 'DESC')->take(3)->get();
-        $concrete_threes = InspectionConcreteSetThree::orderBy('id', 'DESC')->take(3)->get();
-        $concrete_fours = InspectionConcreteSetFour::orderBy('id', 'DESC')->take(3)->get();
-        $concrete_fives = InspectionConcreteSetFive::orderBy('id', 'DESC')->take(3)->get();
-        $concrete_sixs = InspectionConcreteSetSix::orderBy('id', 'DESC')->take(3)->get();
-        $concrete_sevens = InspectionConcreteSetSeven::orderBy('id', 'DESC')->take(3)->get();
-        $concrete_eights = InspectionConcreteSetEight::orderBy('id', 'DESC')->take(3)->get();
-        $concrete_nines = InspectionConcreteSetNine::orderBy('id', 'DESC')->take(3)->get();
-        $concrete_tens = InspectionConcreteSetTen::orderBy('id', 'DESC')->take(3)->get();
+        if (Auth::user()->role_id == '1' || Auth::user()->role_id == '2') {
+            $commercial_forms = Commercial::orderBy('id', 'DESC')->take(3)->get();
+        } else {
+            $commercial_forms = collect([]);
+            $all_files = Commercial::orderBy('id', 'DESC')->get();
+            foreach ($all_files as $key => $file) {
+                if (in_array(Auth::user()->id, json_decode($file->responsible_person))) {
+                    $commercial_forms->push($file);
+                }
+            }
+            $commercial_forms = $commercial_forms->take(3);
+        }
+        if (Auth::user()->role_id == '1' || Auth::user()->role_id == '2') {
+            $cdot_forms = FieldDensityCdot::orderBy('id', 'DESC')->take(3)->get();
+        } else {
+            $cdot_forms = collect([]);
+            $all_files = FieldDensityCdot::orderBy('id', 'DESC')->get();
+            foreach ($all_files as $key => $file) {
+                if (in_array(Auth::user()->id, json_decode($file->responsible_person))) {
+                    $cdot_forms->push($file);
+                }
+            }
+            $cdot_forms = $cdot_forms->take(3);
+        }
+        if (Auth::user()->role_id == '1' || Auth::user()->role_id == '2') {
+            $soil_aggregates = SoilAggregate::orderBy('id', 'DESC')->take(3)->get();
+        } else {
+            $soil_aggregates = collect([]);
+            $all_files = SoilAggregate::orderBy('id', 'DESC')->get();
+            foreach ($all_files as $key => $file) {
+                if (in_array(Auth::user()->id, json_decode($file->responsible_person))) {
+                    $soil_aggregates->push($file);
+                }
+            }
+            $soil_aggregates = $soil_aggregates->take(3);
+        }
+        if (Auth::user()->role_id == '1' || Auth::user()->role_id == '2') {
+            $plastic_concretes = PlasticConcrete::orderBy('id', 'DESC')->take(3)->get();
+        } else {
+            $plastic_concretes = collect([]);
+            $all_files = PlasticConcrete::orderBy('id', 'DESC')->get();
+            foreach ($all_files as $key => $file) {
+                if (in_array(Auth::user()->id, json_decode($file->responsible_person))) {
+                    $plastic_concretes->push($file);
+                }
+            }
+            $plastic_concretes = $plastic_concretes->take(3);
+        }
+        if (Auth::user()->role_id == '1' || Auth::user()->role_id == '2') {
+            $concrete_ones = InspectionConcrete::orderBy('id', 'DESC')->take(3)->get();
+        } else {
+            $concrete_ones = collect([]);
+            $all_files = InspectionConcrete::orderBy('id', 'DESC')->get();
+            foreach ($all_files as $key => $file) {
+                if (in_array(Auth::user()->id, json_decode($file->responsible_person))) {
+                    $concrete_ones->push($file);
+                }
+            }
+            $concrete_ones = $concrete_ones->take(3);
+        }
+        if (Auth::user()->role_id == '1' || Auth::user()->role_id == '2') {
+            $concrete_twos = InspectionConcreteSetTwo::orderBy('id', 'DESC')->take(3)->get();
+        } else {
+            $concrete_twos = collect([]);
+            $all_files = InspectionConcreteSetTwo::orderBy('id', 'DESC')->get();
+            foreach ($all_files as $key => $file) {
+                if (in_array(Auth::user()->id, json_decode($file->responsible_person))) {
+                    $concrete_twos->push($file);
+                }
+            }
+            $concrete_twos = $concrete_twos->take(3);
+        }
+        if (Auth::user()->role_id == '1' || Auth::user()->role_id == '2') {
+            $concrete_threes = InspectionConcreteSetThree::orderBy('id', 'DESC')->take(3)->get();
+        } else {
+            $concrete_threes = collect([]);
+            $all_files = InspectionConcreteSetThree::orderBy('id', 'DESC')->get();
+            foreach ($all_files as $key => $file) {
+                if (in_array(Auth::user()->id, json_decode($file->responsible_person))) {
+                    $concrete_threes->push($file);
+                }
+            }
+            $concrete_threes = $concrete_threes->take(3);
+        }
+        if (Auth::user()->role_id == '1' || Auth::user()->role_id == '2') {
+            $concrete_fours = InspectionConcreteSetFour::orderBy('id', 'DESC')->take(3)->get();
+        } else {
+            $concrete_fours = collect([]);
+            $all_files = InspectionConcreteSetFour::orderBy('id', 'DESC')->get();
+            foreach ($all_files as $key => $file) {
+                if (in_array(Auth::user()->id, json_decode($file->responsible_person))) {
+                    $concrete_fours->push($file);
+                }
+            }
+            $concrete_fours = $concrete_fours->take(3);
+        }
+        if (Auth::user()->role_id == '1' || Auth::user()->role_id == '2') {
+            $concrete_fives = InspectionConcreteSetFive::orderBy('id', 'DESC')->take(3)->get();
+        } else {
+            $concrete_fives = collect([]);
+            $all_files = InspectionConcreteSetFive::orderBy('id', 'DESC')->get();
+            foreach ($all_files as $key => $file) {
+                if (in_array(Auth::user()->id, json_decode($file->responsible_person))) {
+                    $concrete_fives->push($file);
+                }
+            }
+            $concrete_fives = $concrete_fives->take(3);
+        }
+        if (Auth::user()->role_id == '1' || Auth::user()->role_id == '2') {
+            $concrete_sixs = InspectionConcreteSetSix::orderBy('id', 'DESC')->take(3)->get();
+        } else {
+            $concrete_sixs = collect([]);
+            $all_files = InspectionConcreteSetSix::orderBy('id', 'DESC')->get();
+            foreach ($all_files as $key => $file) {
+                if (in_array(Auth::user()->id, json_decode($file->responsible_person))) {
+                    $concrete_sixs->push($file);
+                }
+            }
+            $concrete_sixs = $concrete_sixs->take(3);
+        }
+        if (Auth::user()->role_id == '1' || Auth::user()->role_id == '2') {
+            $concrete_sevens = InspectionConcreteSetSeven::orderBy('id', 'DESC')->take(3)->get();
+        } else {
+            $concrete_sevens = collect([]);
+            $all_files = InspectionConcreteSetSeven::orderBy('id', 'DESC')->get();
+            foreach ($all_files as $key => $file) {
+                if (in_array(Auth::user()->id, json_decode($file->responsible_person))) {
+                    $concrete_sevens->push($file);
+                }
+            }
+            $concrete_sevens = $concrete_sevens->take(3);
+        }
+        if (Auth::user()->role_id == '1' || Auth::user()->role_id == '2') {
+            $concrete_eights = InspectionConcreteSetEight::orderBy('id', 'DESC')->take(3)->get();
+        } else {
+            $concrete_eights = collect([]);
+            $all_files = InspectionConcreteSetEight::orderBy('id', 'DESC')->get();
+            foreach ($all_files as $key => $file) {
+                if (in_array(Auth::user()->id, json_decode($file->responsible_person))) {
+                    $concrete_eights->push($file);
+                }
+            }
+            $concrete_eights = $concrete_eights->take(3);
+        }
+        if (Auth::user()->role_id == '1' || Auth::user()->role_id == '2') {
+            $concrete_nines = InspectionConcreteSetNine::orderBy('id', 'DESC')->take(3)->get();
+        } else {
+            $concrete_nines = collect([]);
+            $all_files = InspectionConcreteSetNine::orderBy('id', 'DESC')->get();
+            foreach ($all_files as $key => $file) {
+                if (in_array(Auth::user()->id, json_decode($file->responsible_person))) {
+                    $concrete_nines->push($file);
+                }
+            }
+            $concrete_nines = $concrete_nines->take(3);
+        }
+        if (Auth::user()->role_id == '1' || Auth::user()->role_id == '2') {
+            $concrete_tens = InspectionConcreteSetTen::orderBy('id', 'DESC')->take(3)->get();
+        } else {
+            $concrete_tens = collect([]);
+            $all_files = InspectionConcreteSetTen::orderBy('id', 'DESC')->get();
+            foreach ($all_files as $key => $file) {
+                if (in_array(Auth::user()->id, json_decode($file->responsible_person))) {
+                    $concrete_tens->push($file);
+                }
+            }
+            $concrete_tens = $concrete_tens->take(3);
+        }
+        // $commercial_forms = Commercial::orderBy('id', 'DESC')->take(3)->get();
+        // $cdot_forms = FieldDensityCdot::orderBy('id', 'DESC')->take(3)->get();
+        // $soil_aggregates = SoilAggregate::orderBy('id', 'DESC')->take(3)->get();
+        // $plastic_concretes = PlasticConcrete::orderBy('id', 'DESC')->take(3)->get();
+        // $concrete_ones = InspectionConcrete::orderBy('id', 'DESC')->take(3)->get();
+        // $concrete_twos = InspectionConcreteSetTwo::orderBy('id', 'DESC')->take(3)->get();
+        // $concrete_threes = InspectionConcreteSetThree::orderBy('id', 'DESC')->take(3)->get();
+        // $concrete_fours = InspectionConcreteSetFour::orderBy('id', 'DESC')->take(3)->get();
+        // $concrete_fives = InspectionConcreteSetFive::orderBy('id', 'DESC')->take(3)->get();
+        // $concrete_sixs = InspectionConcreteSetSix::orderBy('id', 'DESC')->take(3)->get();
+        // $concrete_sevens = InspectionConcreteSetSeven::orderBy('id', 'DESC')->take(3)->get();
+        // $concrete_eights = InspectionConcreteSetEight::orderBy('id', 'DESC')->take(3)->get();
+        // $concrete_nines = InspectionConcreteSetNine::orderBy('id', 'DESC')->take(3)->get();
+        // $concrete_tens = InspectionConcreteSetTen::orderBy('id', 'DESC')->take(3)->get();
         return view('livewire.super-admin.dashboard-component', [
             'commercial_forms' => $commercial_forms,
             'cdot_forms' => $cdot_forms,
