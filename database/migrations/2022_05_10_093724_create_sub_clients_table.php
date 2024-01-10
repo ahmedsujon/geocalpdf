@@ -16,8 +16,8 @@ class CreateSubClientsTable extends Migration
         Schema::create('sub_clients', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('client_id')->unsigned();
-            $table->string('name');
-            $table->string('email');
+            $table->string('name')->nullable();
+            $table->string('email')->nullable();
             $table->timestamps();
         });
     }

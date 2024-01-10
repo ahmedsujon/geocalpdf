@@ -93,7 +93,7 @@ Add Clients
                             </div>
 
                             <div class="row mb-3">
-                                <label class="col-sm-3 col-form-label" for="designation">Designation </label>
+                                <label class="col-sm-3 col-form-label" for="designation">Designation (Optional) </label>
                                 <div class="col-sm-9">
                                     <input type="text" class="form-control" id="designation" placeholder="Designation"
                                         wire:model="designation" />
