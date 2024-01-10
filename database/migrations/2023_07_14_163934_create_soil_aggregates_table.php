@@ -32,6 +32,7 @@ class CreateSoilAggregatesTable extends Migration
             $table->string('model')->nullable();
             $table->string('serial_number')->nullable();
             $table->string('density_count')->nullable();
+            $table->string('item_number')->nullable();
             $table->string('moisture_count')->nullable();
             $table->string('moisture_equation')->nullable();
             

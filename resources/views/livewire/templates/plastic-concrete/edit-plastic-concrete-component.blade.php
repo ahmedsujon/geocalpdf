@@ -407,14 +407,22 @@
                                             <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                         @enderror
                                     </div>
+
                                     <div class="input-group">
                                         <span class="input-group-text width23">Design Strength (psi):</span>
                                         <input type="text" class="form-control form-color"
-                                            wire:model='design_strength' id="design_strength">
+                                            wire:model="design_strength" id="design_strength">
+                                        @error('design_strength')
+                                            <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
+                                        @enderror
+                                        <span class="input-group-text">Item Number:</span>
+                                        <input type="text" class="form-control form-color"
+                                            wire:model="item_number">
+                                        @error('item_number')
+                                            <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
+                                        @enderror
                                     </div>
-                                    @error('design_strength')
-                                        <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
-                                    @enderror
+
                                     <div class="input-group">
                                         <span class="input-group-text width23">Required Strength (psi):</span>
                                         <input type="text" class="form-control form-color"
@@ -593,7 +601,7 @@
                                             <tr>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="text"
+                                                        <input type="number"
                                                             class="form-control form-color moistureremoveinput"
                                                             wire:model='test_no_a'>
                                                         @error('test_no_a')
@@ -888,7 +896,7 @@
                                             <tr>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="text"
+                                                        <input type="number"
                                                             class="form-control form-color moistureremoveinput"
                                                             wire:model='test_no_b'>
                                                         @error('test_no_b')
@@ -1183,7 +1191,7 @@
                                             <tr>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="text"
+                                                        <input type="number"
                                                             class="form-control form-color moistureremoveinput"
                                                             wire:model='test_no_c'>
                                                         @error('test_no_c')
@@ -1478,7 +1486,7 @@
                                             <tr>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="text"
+                                                        <input type="number"
                                                             class="form-control form-color moistureremoveinput"
                                                             wire:model='test_no_d'>
                                                         @error('test_no_d')
@@ -1901,7 +1909,7 @@
                                                 class="btn btn-success submit_btn">{!! loadingState(
                                                     'updateData',
                                                     'Save
-                                                                                                                                                and Send',
+                                                                                                                                                                                                and Send',
                                                 ) !!}</button>
                                         </form>
                                     </div>
@@ -1954,38 +1962,38 @@
         });
     </script>
 
-<script>
-    document.getElementById('design_strength').addEventListener('input', function(e) {
-        // Remove commas and any non-digit characters
-        let value = e.target.value.replace(/[^\d.]/g, '');
+    <script>
+        document.getElementById('design_strength').addEventListener('input', function(e) {
+            // Remove commas and any non-digit characters
+            let value = e.target.value.replace(/[^\d.]/g, '');
 
-        // Convert the string to a numeric format
-        value = parseFloat(value);
+            // Convert the string to a numeric format
+            value = parseFloat(value);
 
-        // Check if it's a valid number
-        if (!isNaN(value)) {
-            // Format the number with commas and update the input value
-            e.target.value = value.toLocaleString('en-US');
-        }
-    });
-</script>
+            // Check if it's a valid number
+            if (!isNaN(value)) {
+                // Format the number with commas and update the input value
+                e.target.value = value.toLocaleString('en-US');
+            }
+        });
+    </script>
 
 
-<script>
-    document.getElementById('required_strength').addEventListener('input', function(e) {
-        // Remove commas and any non-digit characters
-        let value = e.target.value.replace(/[^\d.]/g, '');
+    <script>
+        document.getElementById('required_strength').addEventListener('input', function(e) {
+            // Remove commas and any non-digit characters
+            let value = e.target.value.replace(/[^\d.]/g, '');
 
-        // Convert the string to a numeric format
-        value = parseFloat(value);
+            // Convert the string to a numeric format
+            value = parseFloat(value);
 
-        // Check if it's a valid number
-        if (!isNaN(value)) {
-            // Format the number with commas and update the input value
-            e.target.value = value.toLocaleString('en-US');
-        }
-    });
-</script>
+            // Check if it's a valid number
+            if (!isNaN(value)) {
+                // Format the number with commas and update the input value
+                e.target.value = value.toLocaleString('en-US');
+            }
+        });
+    </script>
 
     <script>
         document.getElementById('cylinder_set_no_a').addEventListener('input', function(e) {

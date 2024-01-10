@@ -9,7 +9,7 @@ use Livewire\Component;
 
 class ViewPlasticConcreteComponent extends Component
 {
-    public $project_id, $client_id, $project_number, $date, $user_id, $remark, $created_by, $client_name, $weather, $est_wind, $est_rh, $slump_cone, $thermometer, $air_meter, $unit_weight_measure, $scale_id, $contractor, $mix_supplier, $plant, $mix_id, $design_strength, $required_strength, $specified_slump_min, $specified_slump_max, $specified_air_min, $specified_air_max, $conc_temp_min, $conc_temp_max, $cement_ib, $cementitious_malt, $water, $fine_aggregate, $course_aggregate, $max_aggregate, $admixture_one, $admixture_two, $admixture_three, $representative, $total_yds, $general_location, $responsibles, $observation, $office_address, $file_id, $status, $responsible_person = [];
+    public $project_id, $client_id, $project_number, $date, $user_id, $remark, $created_by, $client_name, $weather, $est_wind, $est_rh, $slump_cone, $thermometer, $air_meter, $unit_weight_measure, $scale_id, $contractor, $mix_supplier, $plant, $mix_id, $design_strength, $item_number, $required_strength, $specified_slump_min, $specified_slump_max, $specified_air_min, $specified_air_max, $conc_temp_min, $conc_temp_max, $cement_ib, $cementitious_malt, $water, $fine_aggregate, $course_aggregate, $max_aggregate, $admixture_one, $admixture_two, $admixture_three, $representative, $total_yds, $general_location, $responsibles, $observation, $office_address, $file_id, $status, $responsible_person = [];
 
     public $test_no_a, $ticket_no_a, $truck_no_a, $truck_dispatched_a, $time_sample_taken_a, $time_truck_finished_a, $batch_size_a, $total_cumulative_a, $slump_a, $air_cont_a, $unit_wt_a, $air_temp_a, $conc_temp_a, $location_a, $water_added_before_test_a, $water_added_after_test_a, $cylinder_set_no_a, $wc_ratio_a, $relative_yield_a, $type_a, $dimensions_a, $cyls_cast_a, $age_days_a;
 
@@ -63,6 +63,7 @@ class ViewPlasticConcreteComponent extends Component
         $this->plant = $file->plant;
         $this->mix_id = $file->mix_id;
         $this->design_strength = $file->design_strength;
+        $this->item_number = $file->item_number;
         $this->required_strength = $file->required_strength;
         $this->specified_slump_min = $file->specified_slump_min;
         $this->specified_slump_max = $file->specified_slump_max;

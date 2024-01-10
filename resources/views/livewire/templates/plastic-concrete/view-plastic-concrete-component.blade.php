@@ -403,14 +403,21 @@
                                         <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                         @enderror
                                     </div>
+
                                     <div class="input-group">
                                         <span class="input-group-text width23">Design Strength (psi):</span>
                                         <input type="text" class="form-control form-color"
-                                            wire:model='design_strength' readonly>
+                                            wire:model="design_strength" id="design_strength">
+                                        @error('design_strength')
+                                            <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
+                                        @enderror
+                                        <span class="input-group-text">Item Number:</span>
+                                        <input type="text" class="form-control form-color" wire:model="item_number">
+                                        @error('item_number')
+                                            <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
+                                        @enderror
                                     </div>
-                                    @error('design_strength')
-                                    <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
-                                    @enderror
+
                                     <div class="input-group">
                                         <span class="input-group-text width23">Required Strength (psi):</span>
                                         <input type="text" class="form-control form-color"

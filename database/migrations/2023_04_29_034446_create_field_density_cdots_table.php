@@ -33,6 +33,7 @@ class CreateFieldDensityCdotsTable extends Migration
             $table->string('model')->nullable();
             $table->string('serial_no')->nullable();
             $table->string('density_std_count')->nullable();
+            $table->string('item_number')->nullable();
             $table->string('moisture_std_count')->nullable();
             $table->string('moisture_equations')->nullable();
             // COLORADO DEPARTMENT OF TRANSPORTATION													

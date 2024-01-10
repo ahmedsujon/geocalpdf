@@ -38,6 +38,7 @@ class CreatePlasticConcretesTable extends Migration
             $table->text('plant')->nullable();
             $table->text('mix_id')->nullable();
             $table->text('design_strength')->nullable();
+            $table->string('item_number')->nullable();
             $table->text('required_strength')->nullable();
             $table->text('specified_slump_min')->nullable();
             $table->text('specified_slump_max')->nullable();

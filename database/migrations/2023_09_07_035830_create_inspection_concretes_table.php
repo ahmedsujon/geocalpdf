@@ -25,6 +25,7 @@ class CreateInspectionConcretesTable extends Migration
             $table->string('supplier')->nullable();
             $table->string('plant')->nullable();
             $table->string('sampled_by')->nullable();
+            $table->string('item_number')->nullable();
             $table->string('created_by')->nullable();
 
             $table->string('publish_status')->nullable();
