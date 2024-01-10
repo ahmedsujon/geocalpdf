@@ -406,10 +406,15 @@
 
                                     <div class="input-group">
                                         <span class="input-group-text width27">Density Standard Count:</span>
-                                        <input type="number" class="form-control form-color" wire:model="density_count"
-                                            readonly>
+                                        <input type="number" class="form-control form-color"
+                                            wire:model="density_count" readonly>
                                         @error('density_count')
-                                        <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
+                                            <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
+                                        @enderror
+                                        <span class="input-group-text">Item Number:</span>
+                                        <input type="text" class="form-control form-color" wire:model="item_number" readonly>
+                                        @error('item_number')
+                                            <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                         @enderror
                                     </div>
 

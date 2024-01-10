@@ -13,7 +13,8 @@ use Illuminate\Support\Facades\Mail;
 
 class EditSoilAggregateComponent extends Component
 {
-    public $project_id, $client_id, $project_number, $date, $user_id, $weather, $troxler, $other, $model, $serial_number, $density_count, $moisture_count, $moisture_equation, $compaction_requirement, $requirement_plus, $requirement_minus, $general_info, $remark, $created_by, $status, $test_mode, $main_test_method, $observation, $office_address, $client_name, $responsible_person = [], $file_id;
+    public $project_id, $client_id, $project_number, $date, $user_id, $weather, $troxler, $other, $model, $serial_number, 
+    $density_count, $item_number, $moisture_count, $moisture_equation, $compaction_requirement, $requirement_plus, $requirement_minus, $general_info, $remark, $created_by, $status, $test_mode, $main_test_method, $observation, $office_address, $client_name, $responsible_person = [], $file_id;
 
     public $proctor_id_a, $description_a, $test_method_a, $max_dry_density_a, $optimum_moisture_a, $proctor_info_a;
     public $proctor_id_b, $description_b, $test_method_b, $max_dry_density_b, $optimum_moisture_b, $proctor_info_b;
@@ -46,6 +47,7 @@ class EditSoilAggregateComponent extends Component
         $this->model = $file->model;
         $this->serial_number = $file->serial_number;
         $this->density_count = $file->density_count;
+        $this->item_number = $file->item_number;
         $this->moisture_count = $file->moisture_count;
         $this->moisture_equation = $file->moisture_equation;
         $this->observation = $file->observation;
@@ -425,6 +427,7 @@ class EditSoilAggregateComponent extends Component
         $data->model = $this->model;
         $data->serial_number = $this->serial_number;
         $data->density_count = $this->density_count;
+        $data->item_number = $this->item_number;
         $data->moisture_count = $this->moisture_count;
         $data->moisture_equation = $this->moisture_equation;
         $data->test_mode = $this->test_mode;

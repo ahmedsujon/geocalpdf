@@ -12,8 +12,8 @@ use Livewire\Component;
 
 class EditCdotComponent extends Component
 {
-    public $user_id, $project_id, $client_id, $project_number, $client_name, $geocal_project_num, $geocal_project_name, $cdot_project_name, $weather, $date, $office_address, $test_method, $troxler, $other, $model, $serial_no, 
-    $density_std_count, $item_number, $moisture_std_count, $moisture_equations, $density_count, $moisture_count, $created_by, $remark, $responsible_person = [], $file_id, $status;
+    public $user_id, $project_id, $client_id, $project_number, $client_name, $geocal_project_num, $geocal_project_name, $cdot_project_name, $weather, $date, $office_address, $test_method, $troxler, $other, $model, $serial_no,
+        $density_std_count, $item_number, $moisture_std_count, $moisture_equations, $density_count, $moisture_count, $created_by, $remark, $responsible_person = [], $file_id, $status;
 
     public $project_no, $region, $contract_id, $project_location, $form_no, $grading, $taster_id, $sampled_by;
 
@@ -39,10 +39,20 @@ class EditCdotComponent extends Component
         $value = round((float)$this->daily_rice_a * 62.4, 1);
         $this->ave_daily_rice_a = is_numeric($value) && floor($value) == $value ? $value . '.0' : $value;
     }
+
     public function compactionAAA()
     {
-        $this->compaction_a = round(($this->adjusted_wet_a / $this->ave_daily_rice_a) * 100, 1);
+        if ($this->ave_daily_rice_a != 0) {
+            $this->compaction_a = round(($this->adjusted_wet_a / $this->ave_daily_rice_a) * 100, 1);
+        } else {
+            $this->compaction_a = 0;
+        }
     }
+    // public function compactionAAA()
+    // {
+    //     $this->compaction_a = round(($this->adjusted_wet_a / $this->ave_daily_rice_a) * 100, 1);
+    // }
+
     // Formula Calculation
     public $wet_densitiesBB = [];
     public function calculateBB()
@@ -56,10 +66,20 @@ class EditCdotComponent extends Component
         $value = round((float)$this->daily_rice_a * 62.4, 1);
         $this->ave_daily_rice_b = is_numeric($value) && floor($value) == $value ? $value . '.0' : $value;
     }
+
     public function compactionBBB()
     {
-        $this->compaction_b = round(($this->adjusted_wet_b / $this->ave_daily_rice_b) * 100, 1);
+        if ($this->ave_daily_rice_b != 0) {
+            $this->compaction_b = round(($this->adjusted_wet_b / $this->ave_daily_rice_b) * 100, 1);
+        } else {
+            $this->compaction_b = 0;
+        }
     }
+    // public function compactionBBB()
+    // {
+    //     $this->compaction_b = round(($this->adjusted_wet_b / $this->ave_daily_rice_b) * 100, 1);
+    // }
+
     // Formula Calculation
     public $wet_densitiesCC = [];
     public function calculateCC()
@@ -219,7 +239,7 @@ class EditCdotComponent extends Component
         $this->wet_densitiesCC[3] = $cdot_file->wet_density_d_c;
         $this->wet_densitiesDD[3] = $cdot_file->wet_density_d_d;
         $this->wet_densitiesEE[3] = $cdot_file->wet_density_d_e;
-        
+
         // sum of wet_densities
         $this->wet_densities_a = $cdot_file->wet_densities_a;
         $this->wet_densities_b = $cdot_file->wet_densities_b;
@@ -434,7 +454,7 @@ class EditCdotComponent extends Component
         $data->compaction_e = $this->compaction_e;
 
         $data->status = $this->status;
-        if($this->status == 'sentToClient'){
+        if ($this->status == 'sentToClient') {
             $data->send_to_client = 1;
         }
         $data->remark = $this->remark;
@@ -449,10 +469,10 @@ class EditCdotComponent extends Component
             dispatch(function () use ($persons, $f_id, $auth_user_id) {
                 foreach ($persons as $key => $re_id) {
                     $select_project = FieldDensityCdot::find($f_id);
-                    if ($select_project->send_to_client == 1){
+                    if ($select_project->send_to_client == 1) {
                         $sub_client = SubClient::find($re_id);
                         $mailData['email'] = $sub_client->email;
-                    }else{
+                    } else {
                         $select_user = User::find($re_id);
                         $mailData['email'] = $select_user->email;
                     }
@@ -478,8 +498,10 @@ class EditCdotComponent extends Component
         $projects = Project::orderBy('id', 'DESC')->get();
         $cdot_files = FieldDensityCdot::orderBy('id', 'DESC');
         $supervisors = User::orderBy('id', 'DESC')->get();
-        return view('livewire.templates.cdot.edit-cdot-component', 
-        ['projects'=>$projects, 'cdot_files'=>$cdot_files, 'supervisors'=>$supervisors])
-        ->layout('livewire.layouts.base');
+        return view(
+            'livewire.templates.cdot.edit-cdot-component',
+            ['projects' => $projects, 'cdot_files' => $cdot_files, 'supervisors' => $supervisors]
+        )
+            ->layout('livewire.layouts.base');
     }
 }

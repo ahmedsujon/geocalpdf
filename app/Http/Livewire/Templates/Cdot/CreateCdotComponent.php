@@ -11,9 +11,9 @@ use Livewire\Component;
 
 class CreateCdotComponent extends Component
 {
-    public $user_id, $project_id, $client_id, $project_number, $client_name, $geocal_project_num, $geocal_project_name, $cdot_project_name, $weather, $date, $office_address, $test_method, $troxler, $other, $model, $serial_no, 
-    $density_std_count, $moisture_std_count, $moisture_equations, 
-    $density_count, $item_number, $moisture_count, $created_by, $remark, $responsible_person = [];
+    public $user_id, $project_id, $client_id, $project_number, $client_name, $geocal_project_num, $geocal_project_name, $cdot_project_name, $weather, $date, $office_address, $test_method, $troxler, $other, $model, $serial_no,
+        $density_std_count, $moisture_std_count, $moisture_equations,
+        $density_count, $item_number, $moisture_count, $created_by, $remark, $responsible_person = [];
 
     public $project_no, $region, $contract_id, $project_location, $form_no, $grading, $taster_id, $sampled_by, $status;
 
@@ -31,7 +31,9 @@ class CreateCdotComponent extends Component
     public function calculateAA()
     {
         $this->wet_densities_a = round(array_sum($this->wet_densitiesAA), 1);
+
         $this->average_wet_density_a = round($this->wet_densities_a / count($this->wet_densitiesAA), 1);
+
         $this->adjusted_wet_a = round($this->average_wet_density_a + (float)$this->correction_factor_a, 1);
         $this->compactionAAA();
     }
@@ -44,8 +46,18 @@ class CreateCdotComponent extends Component
 
     public function compactionAAA()
     {
-        $this->compaction_a = round(($this->adjusted_wet_a / $this->ave_daily_rice_a) * 100, 1);
+        if ($this->ave_daily_rice_a != 0) {
+            $this->compaction_a = round(($this->adjusted_wet_a / $this->ave_daily_rice_a) * 100, 1);
+        } else {
+            $this->compaction_a = 0;
+        }
     }
+
+    // public function compactionAAA()
+    // {
+    //     $this->compaction_a = round(($this->adjusted_wet_a / $this->ave_daily_rice_a) * 100, 1);
+    // }
+
     // Formula Calculation
     public $wet_densitiesBB = [];
     public function calculateBB()
@@ -59,10 +71,21 @@ class CreateCdotComponent extends Component
         $value = round((float)$this->daily_rice_a * 62.4, 1);
         $this->ave_daily_rice_b = is_numeric($value) && floor($value) == $value ? $value . '.0' : $value;
     }
+
     public function compactionBBB()
     {
-        $this->compaction_b = round(($this->adjusted_wet_b / $this->ave_daily_rice_b) * 100, 1);
+        if ($this->ave_daily_rice_b != 0) {
+            $this->compaction_b = round(($this->adjusted_wet_b / $this->ave_daily_rice_b) * 100, 1);
+        } else {
+            $this->compaction_b = 0;
+        }
     }
+    
+    // public function compactionBBB()
+    // {
+    //     $this->compaction_b = round(($this->adjusted_wet_b / $this->ave_daily_rice_b) * 100, 1);
+    // }
+
     // Formula Calculation
     public $wet_densitiesCC = [];
     public function calculateCC()
@@ -318,7 +341,7 @@ class CreateCdotComponent extends Component
         $data->compaction_c = $this->compaction_c;
         $data->compaction_d = $this->compaction_d;
         $data->compaction_e = $this->compaction_e;
- 
+
         $data->status = $this->status;
         $data->remark = $this->remark;
         $data->responsible_person = json_encode($this->responsible_person);
@@ -334,8 +357,8 @@ class CreateCdotComponent extends Component
                     $auth_user = User::find($auth_user_id);
                     $user = User::find($re_id);
                     $mailData['email'] = $user->email;
-                    $mailData['name'] = $auth_user ->name;
-                    $mailData['role_id'] = $auth_user ->role_id;
+                    $mailData['name'] = $auth_user->name;
+                    $mailData['role_id'] = $auth_user->role_id;
                     $mailData['id'] = $f_id;
                     $mailData['subject'] = 'New file waiting for your review';
                     Mail::send('emails.mail_cdot', $mailData, function ($message) use ($mailData) {
@@ -356,6 +379,6 @@ class CreateCdotComponent extends Component
         $projects = Project::orderBy('id', 'DESC')->get();
         $cdot_files = FieldDensityCdot::orderBy('id', 'DESC');
         $supervisors = User::orderBy('id', 'DESC')->get();
-        return view('livewire.templates.cdot.create-cdot-component', ['projects'=>$projects, 'cdot_files'=>$cdot_files, 'supervisors'=>$supervisors])->layout('livewire.layouts.base');
+        return view('livewire.templates.cdot.create-cdot-component', ['projects' => $projects, 'cdot_files' => $cdot_files, 'supervisors' => $supervisors])->layout('livewire.layouts.base');
     }
 }
