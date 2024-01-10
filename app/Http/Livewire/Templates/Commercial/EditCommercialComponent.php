@@ -13,7 +13,8 @@ use Illuminate\Support\Facades\Mail;
 
 class EditCommercialComponent extends Component
 {
-    public $client_id, $client_name, $project_id, $project_number, $date, $user_id, $weather, $office_address, $troxler, $other, $model, $serial_no, $density_count, $moisture_count, $moisture_equation, $test_mode, $test_method, $compaction_requirement_min, $compaction_requirement_max, $general_location, $remark, $status, $report_status, $file_id, $responsible_person = [];
+    public $client_id, $client_name, $project_id, $project_number, $date, $user_id, $weather, $office_address, $troxler, $other, $model, $serial_no,
+        $density_count, $item_number, $moisture_count, $moisture_equation, $test_mode, $test_method, $compaction_requirement_min, $compaction_requirement_max, $general_location, $remark, $status, $report_status, $file_id, $responsible_person = [];
 
     public $mix_a_id, $supplier_a, $plant_a, $mix_type_a, $max_theoretical_density_a, $max_theoretical_specific_gravity_a,
         $mix_b_id, $supplier_b, $plant_b, $mix_type_b, $max_theoretical_density_b, $max_theoretical_specific_gravity_b,
@@ -47,6 +48,7 @@ class EditCommercialComponent extends Component
         $this->model = $file->model;
         $this->serial_no = $file->serial_no;
         $this->density_count = $file->density_count;
+        $this->item_number = $file->item_number;
         $this->moisture_count = $file->moisture_count;
         $this->moisture_equation = $file->moisture_equation;
         $this->report_status = $file->report_status;
@@ -538,6 +540,7 @@ class EditCommercialComponent extends Component
         $data->model = $this->model;
         $data->serial_no = $this->serial_no;
         $data->density_count = $this->density_count;
+        $data->item_number = $this->item_number;
         $data->moisture_count = $this->moisture_count;
         $data->moisture_equation = $this->moisture_equation;
         $data->report_status = $this->report_status;
@@ -656,7 +659,7 @@ class EditCommercialComponent extends Component
         $data->pass_fail_f = $this->pass_fail_f;
 
         $data->status = $this->status;
-        if($this->status == 'sentToClient'){
+        if ($this->status == 'sentToClient') {
             $data->send_to_client = 1;
         }
         $data->remark = $this->remark;
@@ -671,12 +674,12 @@ class EditCommercialComponent extends Component
             $auth_user_id = Auth::user()->id;
             dispatch(function () use ($persons, $f_id, $auth_user_id) {
                 foreach ($persons as $key => $re_id) {
-                   
+
                     $select_project = Commercial::find($f_id);
-                    if ($select_project->send_to_client == 1){
+                    if ($select_project->send_to_client == 1) {
                         $sub_client = SubClient::find($re_id);
                         $mailData['email'] = $sub_client->email;
-                    }else{
+                    } else {
                         $select_user = User::find($re_id);
                         $mailData['email'] = $select_user->email;
                     }

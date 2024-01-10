@@ -10,7 +10,8 @@ use Livewire\Component;
 
 class ViewCommercialComponent extends Component
 {
-    public $client_id, $client_name, $project_id, $project_number, $date, $user_id, $weather, $office_address, $troxler, $other, $model, $serial_no, $density_count, $moisture_count, $moisture_equation, $test_mode, $test_method, $compaction_requirement_min, $compaction_requirement_max, $general_location, $remark, $status, $report_status, $file_id, $responsible_person = [];
+    public $client_id, $client_name, $project_id, $project_number, $date, $user_id, $weather, $office_address, $troxler, $other, $model, $serial_no, 
+    $density_count, $item_number, $moisture_count, $moisture_equation, $test_mode, $test_method, $compaction_requirement_min, $compaction_requirement_max, $general_location, $remark, $status, $report_status, $file_id, $responsible_person = [];
 
     public $mix_a_id, $supplier_a, $plant_a, $mix_type_a, $max_theoretical_density_a, $max_theoretical_specific_gravity_a,
         $mix_b_id, $supplier_b, $plant_b, $mix_type_b, $max_theoretical_density_b, $max_theoretical_specific_gravity_b,
@@ -44,6 +45,7 @@ class ViewCommercialComponent extends Component
         $this->model = $file->model;
         $this->serial_no = $file->serial_no;
         $this->density_count = $file->density_count;
+        $this->item_number = $file->item_number;
         $this->moisture_count = $file->moisture_count;
         $this->moisture_equation = $file->moisture_equation;
         $this->report_status = $file->report_status;
