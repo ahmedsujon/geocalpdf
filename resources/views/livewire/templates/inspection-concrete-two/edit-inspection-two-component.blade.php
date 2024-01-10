@@ -428,10 +428,16 @@
                                         <span class="input-group-text width20">Project No:</span>
                                         <input type="text" class="form-control form-color"
                                             wire:model="project_number" readonly>
+                                        @error('project_number')
+                                            <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
+                                        @enderror
+                                        <span class="input-group-text width13">Item Number:</span>
+                                        <input type="text" class="form-control form-color"
+                                            wire:model="item_number">
+                                        @error('item_number')
+                                            <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
+                                        @enderror
                                     </div>
-                                    @error('project_number')
-                                        <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
-                                    @enderror
 
                                     <div class="input-group">
                                         <span class="input-group-text width20">Supplier:</span>

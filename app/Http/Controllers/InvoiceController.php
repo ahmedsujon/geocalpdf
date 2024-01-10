@@ -127,7 +127,6 @@ class InvoiceController extends Controller
         }
         $data->avarage = round(array_sum($avarage_array) / count($avarage_array), -1);
        
-
         $pdf = Pdf::loadView('pdf.inspection_concrete_one', compact('data'));
         return $pdf->stream('inspection_concrete_report.pdf');
     }

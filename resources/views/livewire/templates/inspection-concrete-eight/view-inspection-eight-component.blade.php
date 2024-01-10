@@ -416,13 +416,19 @@
                                     @enderror
 
                                     <div class="input-group">
-                                        <span class="input-group-text width20">Project Number:</span>
+                                        <span class="input-group-text width20">Project No:</span>
                                         <input type="text" class="form-control form-color"
                                             wire:model="project_number" readonly>
+                                        @error('project_number')
+                                            <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
+                                        @enderror
+                                        <span class="input-group-text width13">Item Number:</span>
+                                        <input type="text" class="form-control form-color"
+                                            wire:model="item_number" readonly>
+                                        @error('item_number')
+                                            <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
+                                        @enderror
                                     </div>
-                                    @error('project_number')
-                                        <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
-                                    @enderror
 
                                     <div class="input-group">
                                         <span class="input-group-text width20">Date:</span>
@@ -816,7 +822,7 @@
                                                     <div class="input-group">
                                                         <input type="number" step="any"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="diameter_a" readonly wire:keyup='AreaCylA'>
+                                                            wire:model="diameter_a" readonly wire:keyup='AreaCylA' readonly>
                                                         @error('diameter_a')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -827,7 +833,7 @@
                                                     <div class="input-group">
                                                         <input type="number" step="any"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="diameter_a_a" readonly wire:keyup='AreaCylA'>
+                                                            wire:model="diameter_a_a" readonly wire:keyup='AreaCylA' readonly>
                                                         @error('diameter_a_a')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -871,7 +877,7 @@
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <select class="form-select moistureremoveinput"
-                                                            wire:model="type_cap_a" required>
+                                                            wire:model="type_cap_a" required readonly>
                                                             <option value="">Select </option>
                                                             <option value="Unbonded">Unbonded</option>
                                                             <option value="Gypsum cement">Gypsum cement</option>
@@ -1023,7 +1029,7 @@
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <select class="form-select moistureremoveinput"
-                                                            wire:model="type_cap_b" required>
+                                                            wire:model="type_cap_b" required readonly>
                                                             <option value="">Select </option>
                                                             <option value="Unbonded">Unbonded</option>
                                                             <option value="Gypsum cement">Gypsum cement</option>
