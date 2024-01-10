@@ -11,7 +11,9 @@ use Livewire\Component;
 
 class CreateCdotComponent extends Component
 {
-    public $user_id, $project_id, $client_id, $project_number, $client_name, $geocal_project_num, $geocal_project_name, $cdot_project_name, $weather, $date, $office_address, $test_method, $troxler, $other, $model, $serial_no, $density_std_count, $moisture_std_count, $moisture_equations, $density_count, $moisture_count, $created_by, $remark, $responsible_person = [];
+    public $user_id, $project_id, $client_id, $project_number, $client_name, $geocal_project_num, $geocal_project_name, $cdot_project_name, $weather, $date, $office_address, $test_method, $troxler, $other, $model, $serial_no, 
+    $density_std_count, $moisture_std_count, $moisture_equations, 
+    $density_count, $item_number, $moisture_count, $created_by, $remark, $responsible_person = [];
 
     public $project_no, $region, $contract_id, $project_location, $form_no, $grading, $taster_id, $sampled_by, $status;
 
@@ -194,6 +196,7 @@ class CreateCdotComponent extends Component
         $data->model = $this->model;
         $data->serial_no = $this->serial_no;
         $data->density_std_count = $this->density_std_count;
+        $data->item_number = $this->item_number;
         $data->moisture_std_count = $this->moisture_std_count;
         $data->moisture_equations = $this->moisture_equations;
         // COLORADO DEPARTMENT OF TRANSPORTATION	
