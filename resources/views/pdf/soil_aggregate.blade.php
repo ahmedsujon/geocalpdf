@@ -363,7 +363,7 @@
                         <h3 style="font-size: 14px; font-weight: 700">Results</h3>
                     </th>
                 </tr>
-                @if ($data->test_num_a)
+                @if ($data->test_num_a || $data->result_proctor_id_a || $data->test_dept_a)
                     <tr>
                         <td style="padding: 1px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->test_num_a }}
@@ -410,7 +410,7 @@
                         </td>
                     </tr>
                 @endif
-                @if ($data->test_num_b)
+                @if ($data->test_num_b || $data->result_proctor_id_b || $data->test_dept_b)
                     <tr>
                         <td style="padding: 1px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->test_num_b }}
@@ -457,7 +457,7 @@
                         </td>
                     </tr>
                 @endif
-                @if ($data->test_num_c)
+                @if ($data->test_num_c || $data->result_proctor_id_c || $data->test_dept_c)
                     <tr>
                         <td style="padding: 1px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->test_num_c }}
@@ -504,7 +504,7 @@
                         </td>
                     </tr>
                 @endif
-                @if ($data->test_num_d)
+                @if ($data->test_num_d || $data->result_proctor_id_d || $data->test_dept_d)
                     <tr>
                         <td style="padding: 1px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->test_num_d }}
@@ -551,7 +551,7 @@
                         </td>
                     </tr>
                 @endif
-                @if ($data->test_num_e)
+                @if ($data->test_num_e || $data->result_proctor_id_e || $data->test_dept_e)
                     <tr>
                         <td style="padding: 1px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->test_num_e }}
@@ -598,7 +598,7 @@
                         </td>
                     </tr>
                 @endif
-                @if ($data->test_num_f)
+                @if ($data->test_num_f || $data->result_proctor_id_f || $data->test_dept_f)
                     <tr>
                         <td style="padding: 1px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400; text-align:center;">{{ $data->test_num_f }}
@@ -646,7 +646,6 @@
                     </tr>
                 @endif
             </table>
-
         </div>
 
 
@@ -711,7 +710,7 @@
                         </td>
                     </tr>
                 @endif
-                @if ($data->test_num_b)
+                @if ($data->test_num_b || $data->result_proctor_id_b || $data->test_dept_b)
                     <tr>
                         <td style="padding: 1px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400; text-align: center">{{ $data->test_num_b }}
@@ -734,7 +733,7 @@
                         </td>
                     </tr>
                 @endif
-                @if ($data->test_num_c)
+                @if ($data->test_num_c || $data->result_proctor_id_c || $data->test_dept_c)
                     <tr>
                         <td style="padding: 1px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400; text-align: center">{{ $data->test_num_c }}
@@ -757,7 +756,7 @@
                         </td>
                     </tr>
                 @endif
-                @if ($data->test_num_d)
+                @if ($data->test_num_d || $data->result_proctor_id_d || $data->test_dept_d)
                     <tr>
                         <td style="padding: 1px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400; text-align: center">{{ $data->test_num_d }}
@@ -780,7 +779,7 @@
                         </td>
                     </tr>
                 @endif
-                @if ($data->test_num_e)
+                @if ($data->test_num_e || $data->result_proctor_id_e || $data->test_dept_e)
                     <tr>
                         <td style="padding: 1px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400; text-align: center">{{ $data->test_num_e }}
@@ -803,7 +802,7 @@
                         </td>
                     </tr>
                 @endif
-                @if ($data->test_num_f)
+                @if ($data->test_num_f || $data->result_proctor_id_f || $data->test_dept_f)
                     <tr>
                         <td style="padding: 1px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400; text-align: center">{{ $data->test_num_f }}
@@ -828,8 +827,6 @@
                 @endif
             </table>
         </div>
-
-
 
         <div
             style="padding-top: 5px; border-top: 1px solid #000; border-right: 3px solid #000; border-bottom: 1px solid #000; border-left: 3px solid #000;">
