@@ -688,7 +688,7 @@
                         <h3 style="font-size: 14px; font-weight: 700; text-align: center">Elev/Lift of Test</h3>
                         </th>
                 </tr>
-                @if ($data->test_num_a)
+                @if ($data->test_num_a || $data->result_proctor_id_a || $data->test_dept_a)
                     <tr>
                         <td style="padding: 1px; border: 1px solid #000">
                             <h4 style="font-size: 14px; font-weight: 400; text-align: center">{{ $data->test_num_a }}
