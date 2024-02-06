@@ -1,0 +1,164 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateCompressiveStrengthsTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('compressive_strengths', function (Blueprint $table) {
+            $table->id();
+            $table->bigInteger('project_id')->nullable();
+            $table->bigInteger('client_id')->nullable();
+            $table->bigInteger('user_id')->nullable();
+            $table->string('project_number')->nullable();
+            $table->string('date')->nullable();
+            $table->string('weather')->nullable();
+            $table->string('contractid')->nullable();
+            $table->string('region')->nullable();
+            $table->string('contract_id_seq')->nullable();
+            $table->string('project_location')->nullable();
+            $table->string('concrete_supplier')->nullable();
+            $table->string('cdot_mix')->nullable();
+            $table->string('item')->nullable();
+            $table->string('description')->nullable();
+            $table->string('placed_at')->nullable();
+            $table->string('material_placed_in_line_item')->nullable();
+            $table->string('batch_ticket')->nullable();
+            $table->string('field_tester_name')->nullable();
+            $table->string('entrained_air')->nullable();
+            $table->string('slump')->nullable();
+            $table->string('concrete_temperature')->nullable();
+            $table->string('unit_weight')->nullable();
+            $table->string('yield')->nullable();
+            $table->string('wc_ratio')->nullable();
+            $table->string('specimen_for')->nullable();
+            $table->string('mold_date')->nullable();
+            $table->string('time')->nullable();
+            $table->string('hours_initial_cure_in_molds')->nullable();
+            $table->string('initial_cure_temperature')->nullable();
+            $table->string('final_cure_method')->nullable();
+            $table->string('location_stored_in_field')->nullable();
+            $table->string('manner_of_protection')->nullable();
+            $table->string('maintained_moist_and_temperature')->nullable();
+            $table->string('date_time_molds_removed')->nullable();
+            $table->string('field_comments')->nullable();
+            $table->string('sample_id')->nullable();
+            $table->string('set_no')->nullable();
+            $table->string('conc_class')->nullable();
+            $table->string('28_day_break_date')->nullable();
+            $table->string('number_of_specimens')->nullable();
+            $table->string('for_cast_specimens')->nullable();
+            $table->string('date_submitted_to_lab')->nullable();
+            $table->string('specimens_tested_at')->nullable();
+            $table->string('required_strength')->nullable();
+            $table->string('day_average_compressive_strength')->nullable();
+            $table->string('type_of_specimen_submitted')->nullable();
+            $table->string('represented_quantity')->nullable();
+            $table->string('previous_qty')->nullable();
+            $table->string('this_sheet')->nullable();
+            $table->string('total_to_date')->nullable();
+            $table->string('specimen_a')->nullable();
+            $table->string('break_date_a')->nullable();
+            $table->string('age_a')->nullable();
+            $table->string('diameter_one_a')->nullable();
+            $table->string('diameter_two_a')->nullable();
+            $table->string('area_a')->nullable();
+            $table->string('maximum_load_a')->nullable();
+            $table->string('psi_a')->nullable();
+            $table->string('break_type_a')->nullable();
+            $table->string('aggregate_fractured_a')->nullable();
+            $table->string('specimen_b')->nullable();
+            $table->string('break_date_b')->nullable();
+            $table->string('age_b')->nullable();
+            $table->string('diameter_one_b')->nullable();
+            $table->string('diameter_two_b')->nullable();
+            $table->string('area_b')->nullable();
+            $table->string('maximum_load_b')->nullable();
+            $table->string('psi_b')->nullable();
+            $table->string('break_type_b')->nullable();
+            $table->string('aggregate_fractured_b')->nullable();
+            $table->string('specimen_c')->nullable();
+            $table->string('break_date_c')->nullable();
+            $table->string('age_c')->nullable();
+            $table->string('diameter_one_c')->nullable();
+            $table->string('diameter_two_c')->nullable();
+            $table->string('area_c')->nullable();
+            $table->string('maximum_load_c')->nullable();
+            $table->string('psi_c')->nullable();
+            $table->string('break_type_c')->nullable();
+            $table->string('aggregate_fractured_c')->nullable();
+            $table->string('specimen_d')->nullable();
+            $table->string('break_date_d')->nullable();
+            $table->string('age_d')->nullable();
+            $table->string('diameter_one_d')->nullable();
+            $table->string('diameter_two_d')->nullable();
+            $table->string('area_d')->nullable();
+            $table->string('maximum_load_d')->nullable();
+            $table->string('psi_d')->nullable();
+            $table->string('break_type_d')->nullable();
+            $table->string('aggregate_fractured_d')->nullable();
+            $table->string('specimen_e')->nullable();
+            $table->string('break_date_e')->nullable();
+            $table->string('age_e')->nullable();
+            $table->string('diameter_one_e')->nullable();
+            $table->string('diameter_two_e')->nullable();
+            $table->string('area_e')->nullable();
+            $table->string('maximum_load_e')->nullable();
+            $table->string('psi_e')->nullable();
+            $table->string('break_type_e')->nullable();
+            $table->string('aggregate_fractured_e')->nullable();
+            $table->string('specimen_f')->nullable();
+            $table->string('break_date_f')->nullable();
+            $table->string('age_f')->nullable();
+            $table->string('diameter_one_f')->nullable();
+            $table->string('diameter_two_f')->nullable();
+            $table->string('area_f')->nullable();
+            $table->string('maximum_load_f')->nullable();
+            $table->string('psi_f')->nullable();
+            $table->string('break_type_f')->nullable();
+            $table->string('aggregate_fractured_f')->nullable();
+            $table->string('specimen_g')->nullable();
+            $table->string('break_date_g')->nullable();
+            $table->string('age_g')->nullable();
+            $table->string('diameter_one_g')->nullable();
+            $table->string('diameter_two_g')->nullable();
+            $table->string('area_g')->nullable();
+            $table->string('maximum_load_g')->nullable();
+            $table->string('psi_g')->nullable();
+            $table->string('break_type_g')->nullable();
+            $table->string('aggregate_fractured_g')->nullable();
+            $table->longText('lab_comments')->nullable();
+            $table->string('submitted_by')->nullable();
+            $table->string('approved_by')->nullable();
+            $table->string('email')->nullable();
+            $table->string('slump_cone_id')->nullable();
+            $table->string('thermometer_id')->nullable();
+            $table->string('air_meter_id')->nullable();
+            $table->string('unit_weight_measure_id')->nullable();
+            $table->string('scale_id')->nullable();
+            $table->string('status')->nullable();
+            $table->string('send_to_client')->default(0);
+            $table->string('responsible_person')->nullable();
+
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('compressive_strengths');
+    }
+}
