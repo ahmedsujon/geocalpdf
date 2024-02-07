@@ -325,7 +325,7 @@
                                 <div class="col-lg-6 select-border">
                                     <h6 style="font-weight: 700;">CONCRETE TEST RESULTS SUMMARY</h6>
                                     <div class="input-group">
-                                        <span class="input-group-text width20">Client:</span>
+                                        <span class="input-group-text width20">Item:</span>
                                         <input type="text" class="form-control form-color" wire:model="client_name"
                                             readonly>
                                         @error('client_id')
@@ -333,7 +333,7 @@
                                         @enderror
                                     </div>
                                     <div class="input-group">
-                                        <span class="input-group-text width20">Client:</span>
+                                        <span class="input-group-text width20">Class:</span>
                                         <input type="text" class="form-control form-color"
                                             wire:model="client_name" readonly>
                                         @error('client_id')
@@ -341,7 +341,7 @@
                                         @enderror
                                     </div>
                                     <div class="input-group">
-                                        <span class="input-group-text width20">Project No:</span>
+                                        <span class="input-group-text width20">Design mix no:</span>
                                         <input type="text" class="form-control form-color"
                                             wire:model="project_number">
                                         @error('project_number')
@@ -349,7 +349,7 @@
                                         @enderror
                                     </div>
                                     <div class="input-group">
-                                        <span class="input-group-text width20">Project No:</span>
+                                        <span class="input-group-text width20">Batch plant:</span>
                                         <input type="text" class="form-control form-color"
                                             wire:model="project_number">
                                         @error('project_number')
@@ -357,7 +357,7 @@
                                         @enderror
                                     </div>
                                     <div class="input-group">
-                                        <span class="input-group-text width20">Project No:</span>
+                                        <span class="input-group-text width20">Structure:</span>
                                         <input type="text" class="form-control form-color"
                                             wire:model="project_number">
                                         @error('project_number')
@@ -368,7 +368,7 @@
                                 <div class="col-lg-6 select-border">
                                     <h6>&nbsp;</h6>
                                     <div class="input-group">
-                                        <span class="input-group-text width20">Region:</span>
+                                        <span class="input-group-text width20">User ID:</span>
                                         <input type="text" class="form-control form-color"
                                             wire:model='cylinder_id'>
                                         @error('cylinder_id')
@@ -376,7 +376,7 @@
                                         @enderror
                                     </div>
                                     <div class="input-group">
-                                        <span class="input-group-text width20">Date Submitted:</span>
+                                        <span class="input-group-text width20">Slump:</span>
                                         <input type="text" class="form-control form-color"
                                             wire:model='cylinder_id'>
                                         @error('cylinder_id')
@@ -384,7 +384,7 @@
                                         @enderror
                                     </div>
                                     <div class="input-group">
-                                        <span class="input-group-text width20">Project location:</span>
+                                        <span class="input-group-text width20">Compressive strength (Psi):</span>
                                         <input type="text" class="form-control form-color"
                                             wire:model="project_number" readonly>
                                         @error('project_number')
@@ -392,18 +392,15 @@
                                         @enderror
                                     </div>
                                     <div class="input-group">
-                                        <span class="input-group-text width20">Project location:</span>
-                                        <input type="text" class="form-control form-color"
-                                            wire:model="project_number" readonly>
-                                        @error('project_number')
+                                        <span class="input-group-text width28">inches maximum(% total air):</span>
+                                        <input type="number" class="form-control form-color"
+                                            wire:model="density_count">
+                                        @error('density_count')
                                             <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                         @enderror
-                                    </div>
-                                    <div class="input-group">
-                                        <span class="input-group-text width20">Project location:</span>
-                                        <input type="text" class="form-control form-color"
-                                            wire:model="project_number" readonly>
-                                        @error('project_number')
+                                        <span class="input-group-text">To:</span>
+                                        <input type="text" class="form-control form-color" wire:model="item_number">
+                                        @error('item_number')
                                             <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                         @enderror
                                     </div>

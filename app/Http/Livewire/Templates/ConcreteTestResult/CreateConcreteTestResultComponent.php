@@ -9,7 +9,7 @@ use Livewire\Component;
 class CreateConcreteTestResultComponent extends Component
 {
     public $office_address, $project_id, $client_id, $user_id, $project_number, $project_location, $date_submited, $region, $item,
-        $class, $design_mix_no, $batch_plant, $structure, $slupm, $inches_max, $inches_min, $compressive_strength,
+        $class, $design_mix_no, $batch_plant, $structure, $userid, $slupm, $inches_max, $inches_min, $compressive_strength,
         $location_test_a, $date_placed_a, $ticket_no_a, $batched_a, $placed_a, $temp_a, $slump_a, $total_air_a,
         $unit_mass_a, $yeild_a, $calculated_wc_ratio_a, $cylinders_cast_fs_no_a, $set_no_a, $location_test_b,
         $date_placed_b, $ticket_no_b, $batched_b, $placed_b, $temp_b, $slump_b, $total_air_b, $unit_mass_b, $yeild_b,
