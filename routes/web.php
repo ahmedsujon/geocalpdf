@@ -30,8 +30,14 @@ use App\Http\Livewire\Templates\Commercial\CommercialComponent;
 use App\Http\Livewire\Templates\Commercial\CreateCommercialComponent;
 use App\Http\Livewire\Templates\Commercial\EditCommercialComponent;
 use App\Http\Livewire\Templates\Commercial\ViewCommercialComponent;
+use App\Http\Livewire\Templates\CompressiveStrength\CompressiveStrengthComponent;
+use App\Http\Livewire\Templates\CompressiveStrength\CreateCompressiveStrengthComponent;
+use App\Http\Livewire\Templates\CompressiveStrength\EditCompressiveStrengthComponent;
 use App\Http\Livewire\Templates\ConcreteFieldReport\ConcreteFieldReportComponent;
-use App\Http\Livewire\Templates\ConcreteFieldReport\EditConcreteFieldReportComponent;
+use App\Http\Livewire\Templates\ConcreteTestResult\ConcreteTestResultComponent;
+use App\Http\Livewire\Templates\ConcreteTestResult\CreateConcreteTestResultComponent;
+use App\Http\Livewire\Templates\ConcreteTestResult\EditConcreteTestResultComponent;
+use App\Http\Livewire\Templates\ConcreteTestResult\ViewConcreteTestResultComponent;
 use App\Http\Livewire\Templates\InspectionConcrete\CreateInspectionConcreteComponent;
 use App\Http\Livewire\Templates\InspectionConcrete\EditInspectionConcreteComponent;
 use App\Http\Livewire\Templates\InspectionConcrete\InspectionConcreteComponent;
@@ -120,11 +126,17 @@ Route::get('/project/show/{project_id}', ViewProjectComponent::class)->name('pro
 // Templates
 Route::get('/templates', TemplateComponent::class)->name('templates');
 
-// Concrete Form
-Route::get('/concrete', CdotComponent::class)->name('template.concrete');
-Route::get('/concrete/create', CreateCdotComponent::class)->name('concrete.create');
-Route::get('/concrete/edit/{file_id}', EditCdotComponent::class)->name('concrete.update');
-Route::get('/concrete/show/{file_id}', ViewCdotComponent::class)->name('concrete.show');
+// Concrete Test Results Summary - Local Agency
+Route::get('/concrete/test/result', ConcreteTestResultComponent::class)->name('template.concrete.test.result');
+Route::get('/concrete/test/result/create', CreateConcreteTestResultComponent::class)->name('concrete.test.result.create');
+Route::get('/concrete/test/result/edit/{file_id}', EditConcreteTestResultComponent::class)->name('concrete.test.result.update');
+Route::get('/concrete/test/result/show/{file_id}', ViewConcreteTestResultComponent::class)->name('concrete.test.result.show');
+
+// Compressive Strength - Local Agency
+Route::get('/compressive/strength', CompressiveStrengthComponent::class)->name('template.compressive.strength');
+Route::get('/compressive/strength/create', CreateCompressiveStrengthComponent::class)->name('compressive.strength.create');
+Route::get('/compressive/strength/edit/{file_id}', EditCompressiveStrengthComponent::class)->name('compressive.strength.update');
+Route::get('/compressive/strength/show/{file_id}', ViewCommercialComponent::class)->name('compressive.strength.show');
 
 // CDOT
 Route::get('/cdot', CdotComponent::class)->name('template.cdot');
@@ -276,6 +288,8 @@ Route::post('/get-supervisors', [BaseController::class, 'getSupervisor'])->name(
 Route::post('/upload', 'app\http\controllers\BaseController@uploadckimage')->name('ckeditor.upload');
 
 // PDF Generate
+Route::get('/invoice/ijP6ERmmdeLfFi57209633311{id}4ijP6ERmmdeLfFi5RiwZATmrI2SMOYYVSmdtcmjxJe2K31U5knK', [InvoiceController::class, 'concreteTestResultsPDF'])->name('invoice.concrete-test-results');
+Route::get('/invoice/ijP6ERmmdeLfFi57209633311{id}4ijP6ERmmdeLfFi5RiwZATmrI2SMOYYVSmdtcmjxJe2K31U5knK', [InvoiceController::class, 'compressiveStrengthsPDF'])->name('invoice.compressive.strengths');
 Route::get('/invoice/ijP6ERmmdeLfFi57209633311{id}4ijP6ERmmdeLfFi5RiwZATmrI2SMOYYVSmdtcmjxJe2K31U5knK', [InvoiceController::class, 'commercialPDF'])->name('invoice.commercial');
 
 Route::get('/cdot-form/ijP6ERmmdeLfFi55958194244{id}4ijP6ERmmdeLfFi5RiwZATmrI2SMOYYVSmdtcmjxJe2K31U5knK', [InvoiceController::class, 'cdotPDF'])->name('cdot.form.generate');
@@ -333,5 +347,3 @@ Route::middleware(['auth:sanctum', 'verified'])->name('admin.')->group(function 
 Route::middleware(['auth:sanctum', 'verified'])->name('admin.')->group(function () {
     Route::get('/admin/field-tech', NormalAdminDashboardComponent::class)->name('tech.dashboard');
 });
-
-

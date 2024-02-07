@@ -74,17 +74,34 @@
                         <li class="menu-label mt-0 text-primary font-12 fw-semibold">F<span>orms</span></li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="#sidebarConcrete" data-bs-toggle="collapse" role="button"
-                                aria-expanded="false" aria-controls="sidebarConcrete">
+                            <a class="nav-link" href="#sidebarConcreteForm" data-bs-toggle="collapse" role="button"
+                                aria-expanded="false" aria-controls="sidebarConcreteForm">
                                 <i class="ti ti-stack menu-icon"></i>
                                 <span>Concrete Form</span>
                             </a>
-                            <div class="collapse {{ request()->is('commercial') || request()->is('commercial/*') ? 'show' : '' }}"
-                                id="sidebarCommercial">
+                            <div class="collapse {{ request()->is('concrete/test/result') || request()->is('concrete/test/result/*') ? 'show' : '' }}"
+                                id="sidebarConcreteForm">
                                 <ul class="nav flex-column">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('template.commercial') }}">Concrete Test
+                                        <a class="nav-link" href="{{ route('template.concrete.test.result') }}">Concrete Test
                                             Results</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#sidebarCompressiveForm" data-bs-toggle="collapse" role="button"
+                                aria-expanded="false" aria-controls="sidebarCompressiveForm">
+                                <i class="ti ti-stack menu-icon"></i>
+                                <span>Compressive Strength</span>
+                            </a>
+                            <div class="collapse {{ request()->is('compressive/strength') || request()->is('compressive/strength/*') ? 'show' : '' }}"
+                                id="sidebarCompressiveForm">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('template.compressive.strength') }}">Compressive
+                                            Strength</a>
                                     </li>
                                 </ul>
                             </div>
@@ -124,8 +141,8 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="#sidebarSoilAggregate" data-bs-toggle="collapse" role="button"
-                                aria-expanded="false" aria-controls="sidebarSoilAggregate">
+                            <a class="nav-link" href="#sidebarSoilAggregate" data-bs-toggle="collapse"
+                                role="button" aria-expanded="false" aria-controls="sidebarSoilAggregate">
                                 <i class="ti ti-stack menu-icon"></i>
                                 <span>Soil Aggregate</span>
                             </a>
