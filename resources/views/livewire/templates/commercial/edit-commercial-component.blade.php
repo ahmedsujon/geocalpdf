@@ -372,7 +372,7 @@
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                 @enderror
                             </div>
-                          
+
                             <div class="input-group">
                                 <span class="input-group-text width28">Moisture Standard Count:</span>
                                 <input type="number" class="form-control form-color" wire:model="moisture_count">
@@ -1698,8 +1698,7 @@
                                 <button type="submit"
                                     class="btn btn-success submit_btn">{!! loadingState(
                                         'updateData',
-                                        'Save
-                                                                                                            and Send',
+                                        'Save and Send',
                                     ) !!}</button>
                             </form>
                         </div>

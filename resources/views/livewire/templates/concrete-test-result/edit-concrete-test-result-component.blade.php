@@ -2859,6 +2859,23 @@
                                         class="cGcvT"></grammarly-extension>
                                 </div>
                             </div>
+                            <div class="col-md-12 mt-3 select-border">
+                                <div class="input-group">
+                                    <span class="input-group-text width12">Next Action:</span>
+                                    <select class="form-select moistureremoveinput dependent text-left"
+                                        wire:model='status' data-file_id="{{ $file_id }}">
+                                        <option value="">Select an action...</option>
+                                        <option value="sentToPE">Send to Project Engineer</option>
+                                        <option value="sentToClerk">Send to Clerk</option>
+                                        <option value="sentToSupervisor">Send to Supervisor</option>
+                                        <option value="sentToTech">Send to Tech</option>
+                                        <option value="sentToClient">Send to Client</option>
+                                    </select>
+                                </div>
+                                @error('status')
+                                    <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
+                                @enderror
+                            </div>
                             <div class="col-md-12 mt-3" wire:ignore>
                                 <div class="input-group">
                                     <span class="input-group-text width12">Responsible Persons:</span>
@@ -2907,7 +2924,7 @@
             $('#selectInfo').change(function() {
                 var project_id = $(this).val();
                 $.ajax({
-                    url: "{{ route('edit_concrete_test_result_representative') }}",
+                    url: "{{ route('edit_concrete_representative') }}",
                     method: "POST",
                     data: {
                         project_id: project_id,

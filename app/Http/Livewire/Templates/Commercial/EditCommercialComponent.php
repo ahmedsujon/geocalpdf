@@ -699,7 +699,6 @@ class EditCommercialComponent extends Component
         session()->flash('message', 'Commercial file created successfully');
         return redirect()->route('template.commercial');
     }
-
     public function render()
     {
         if ($this->compaction_requirement_max < $this->relative_compaction_a || $this->compaction_requirement_min > $this->relative_compaction_a) {

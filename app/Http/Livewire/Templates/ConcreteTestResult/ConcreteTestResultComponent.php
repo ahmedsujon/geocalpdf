@@ -33,7 +33,7 @@ class ConcreteTestResultComponent extends Component
         $this->dispatchBrowserEvent('FileDeleted');
     }
 
-    public function getConcreteTestResultComponentRepresentative(Request $request)
+    public function getConcreteRepresentative(Request $request)
     {
         $output = '';
         $project_id = $request->get('project_id');
@@ -62,14 +62,12 @@ class ConcreteTestResultComponent extends Component
         echo $output;
     }
 
-    public function editConcreteTestResultComponentRepresentative(Request $request)
+    public function editConcreteRepresentative(Request $request)
     {
         $output = '';
         $value = $request->get('value');
-
         $file_id = $request->get('file_id');
         DB::statement("SET SQL_MODE=''");
-
         $responsible_persons = ConcreteTestResult::find($file_id)->responsible_person;
 
         if ($value == 'sentToClient') {
@@ -84,7 +82,6 @@ class ConcreteTestResultComponent extends Component
         } else if ($value == 'sentToPE') {
             $data = User::whereIn('id', json_decode($responsible_persons))->where('role_id', 2)->get();
         }
-
         foreach ($data as $row) {
             $output .= '<option value="' . $row->id . '">' . $row->name . ' </option>';
         }

@@ -132,8 +132,8 @@ Route::get('/concrete/test/result/create', CreateConcreteTestResultComponent::cl
 Route::get('/concrete/test/result/edit/{file_id}', EditConcreteTestResultComponent::class)->name('concrete.test.result.update');
 Route::get('/concrete/test/result/show/{file_id}', ViewConcreteTestResultComponent::class)->name('concrete.test.result.show');
 // Get Representative
-Route::post('/get-concrete-test-result-representative', [ConcreteTestResultComponent::class, 'getConcreteTestResultComponentRepresentative'])->name('get_concrete_test_result_representative');
-Route::post('/edit-concrete-test-result-representative', [ConcreteTestResultComponent::class, 'editConcreteTestResultComponentRepresentative'])->name('edit_concrete_test_result_representative');
+Route::post('/get-concrete/representative', [ConcreteTestResultComponent::class, 'getConcreteRepresentative'])->name('get_concrete_representative');
+Route::post('/edit-concrete/representative', [ConcreteTestResultComponent::class, 'editConcreteRepresentative'])->name('edit_concrete_representative');
 
 
 // Compressive Strength - Local Agency
