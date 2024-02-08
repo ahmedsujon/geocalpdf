@@ -83,7 +83,7 @@
                                                 <td>{{ $file->created_at }}</td>
                                                 <td style="text-align: center;">
                                                     <a target="_blank"
-                                                        href="{{ route('invoice.concrete-test-results', ['id' => $file->id]) }}"
+                                                        href="{{ route('invoice.concrete-test-results-pdf', ['id' => $file->id]) }}"
                                                         type="button"
                                                         class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm"><i
                                                             class="ti ti-file-invoice" data-bs-toggle="tooltip"

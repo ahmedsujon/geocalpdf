@@ -131,6 +131,10 @@ Route::get('/concrete/test/result', ConcreteTestResultComponent::class)->name('t
 Route::get('/concrete/test/result/create', CreateConcreteTestResultComponent::class)->name('concrete.test.result.create');
 Route::get('/concrete/test/result/edit/{file_id}', EditConcreteTestResultComponent::class)->name('concrete.test.result.update');
 Route::get('/concrete/test/result/show/{file_id}', ViewConcreteTestResultComponent::class)->name('concrete.test.result.show');
+// Get Representative
+Route::post('/get-concrete-test-result-representative', [ConcreteTestResultComponent::class, 'getConcreteTestResultComponentRepresentative'])->name('get_concrete_test_result_representative');
+Route::post('/edit-concrete-test-result-representative', [ConcreteTestResultComponent::class, 'editConcreteTestResultComponentRepresentative'])->name('edit_concrete_test_result_representative');
+
 
 // Compressive Strength - Local Agency
 Route::get('/compressive/strength', CompressiveStrengthComponent::class)->name('template.compressive.strength');
@@ -288,8 +292,10 @@ Route::post('/get-supervisors', [BaseController::class, 'getSupervisor'])->name(
 Route::post('/upload', 'app\http\controllers\BaseController@uploadckimage')->name('ckeditor.upload');
 
 // PDF Generate
-Route::get('/invoice/ijP6ERmmdeLfFi57209633311{id}4ijP6ERmmdeLfFi5RiwZATmrI2SMOYYVSmdtcmjxJe2K31U5knK', [InvoiceController::class, 'concreteTestResultsPDF'])->name('invoice.concrete-test-results');
+Route::get('/invoice/ijP6ERmmdeLfFi57211{id}4ijP6ERmmdeLfFi5RiwZYYVSmdtcmjxJe2K31U5knK', [InvoiceController::class, 'concreteTestResultsPDF'])->name('invoice.concrete-test-results-pdf');
+
 Route::get('/invoice/ijP6ERmmdeLfFi57209633311{id}4ijP6ERmmdeLfFi5RiwZATmrI2SMOYYVSmdtcmjxJe2K31U5knK', [InvoiceController::class, 'compressiveStrengthsPDF'])->name('invoice.compressive.strengths');
+
 Route::get('/invoice/ijP6ERmmdeLfFi57209633311{id}4ijP6ERmmdeLfFi5RiwZATmrI2SMOYYVSmdtcmjxJe2K31U5knK', [InvoiceController::class, 'commercialPDF'])->name('invoice.commercial');
 
 Route::get('/cdot-form/ijP6ERmmdeLfFi55958194244{id}4ijP6ERmmdeLfFi5RiwZATmrI2SMOYYVSmdtcmjxJe2K31U5knK', [InvoiceController::class, 'cdotPDF'])->name('cdot.form.generate');

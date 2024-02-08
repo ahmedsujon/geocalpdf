@@ -24,12 +24,12 @@ class CreateConcreteTestResultsTable extends Migration
             $table->string('region')->nullable();
 
             $table->string('item')->nullable();
-            $table->string('class')->nullable();
+            $table->string('class_name')->nullable();
             $table->string('design_mix_no')->nullable();
             $table->string('batch_plant')->nullable();
             $table->string('structure')->nullable();
             $table->string('userid')->nullable();
-            $table->string('slupm')->nullable();
+            $table->string('slump')->nullable();
             $table->string('inches_max')->nullable();
             $table->string('inches_min')->nullable();
             $table->string('compressive_strength')->nullable();
@@ -47,6 +47,7 @@ class CreateConcreteTestResultsTable extends Migration
             $table->text('calculated_wc_ratio_a')->nullable();
             $table->text('cylinders_cast_fs_no_a')->nullable();
             $table->text('set_no_a')->nullable();
+            $table->text('se_a')->nullable();
 
             $table->text('location_test_b')->nullable();
             $table->text('date_placed_b')->nullable();
@@ -61,6 +62,7 @@ class CreateConcreteTestResultsTable extends Migration
             $table->text('calculated_wc_ratio_b')->nullable();
             $table->text('cylinders_cast_fs_no_b')->nullable();
             $table->text('set_no_b')->nullable();
+            $table->text('se_b')->nullable();
 
             $table->text('location_test_c')->nullable();
             $table->text('date_placed_c')->nullable();
@@ -75,6 +77,7 @@ class CreateConcreteTestResultsTable extends Migration
             $table->text('calculated_wc_ratio_c')->nullable();
             $table->text('cylinders_cast_fs_no_c')->nullable();
             $table->text('set_no_c')->nullable();
+            $table->text('se_c')->nullable();
 
             $table->text('location_test_d')->nullable();
             $table->text('date_placed_d')->nullable();
@@ -89,6 +92,7 @@ class CreateConcreteTestResultsTable extends Migration
             $table->text('calculated_wc_ratio_d')->nullable();
             $table->text('cylinders_cast_fs_no_d')->nullable();
             $table->text('set_no_d')->nullable();
+            $table->text('se_d')->nullable();
 
             $table->text('location_test_e')->nullable();
             $table->text('date_placed_e')->nullable();
@@ -103,6 +107,7 @@ class CreateConcreteTestResultsTable extends Migration
             $table->text('calculated_wc_ratio_e')->nullable();
             $table->text('cylinders_cast_fs_no_e')->nullable();
             $table->text('set_no_e')->nullable();
+            $table->text('se_e')->nullable();
 
             $table->text('location_test_f')->nullable();
             $table->text('date_placed_f')->nullable();
@@ -117,6 +122,7 @@ class CreateConcreteTestResultsTable extends Migration
             $table->text('calculated_wc_ratio_f')->nullable();
             $table->text('cylinders_cast_fs_no_f')->nullable();
             $table->text('set_no_f')->nullable();
+            $table->text('se_f')->nullable();
 
             $table->text('location_test_g')->nullable();
             $table->text('date_placed_g')->nullable();
@@ -131,6 +137,7 @@ class CreateConcreteTestResultsTable extends Migration
             $table->text('calculated_wc_ratio_g')->nullable();
             $table->text('cylinders_cast_fs_no_g')->nullable();
             $table->text('set_no_g')->nullable();
+            $table->text('se_g')->nullable();
 
             $table->text('location_test_h')->nullable();
             $table->text('date_placed_h')->nullable();
@@ -145,6 +152,7 @@ class CreateConcreteTestResultsTable extends Migration
             $table->text('calculated_wc_ratio_h')->nullable();
             $table->text('cylinders_cast_fs_no_h')->nullable();
             $table->text('set_no_h')->nullable();
+            $table->text('se_h')->nullable();
 
             $table->text('location_test_i')->nullable();
             $table->text('date_placed_i')->nullable();
@@ -159,6 +167,7 @@ class CreateConcreteTestResultsTable extends Migration
             $table->text('calculated_wc_ratio_i')->nullable();
             $table->text('cylinders_cast_fs_no_i')->nullable();
             $table->text('set_no_i')->nullable();
+            $table->text('se_i')->nullable();
 
             $table->text('location_test_j')->nullable();
             $table->text('date_placed_j')->nullable();
@@ -173,6 +182,7 @@ class CreateConcreteTestResultsTable extends Migration
             $table->text('calculated_wc_ratio_j')->nullable();
             $table->text('cylinders_cast_fs_no_j')->nullable();
             $table->text('set_no_j')->nullable();
+            $table->text('se_j')->nullable();
 
             $table->text('location_test_k')->nullable();
             $table->text('date_placed_k')->nullable();
@@ -187,6 +197,7 @@ class CreateConcreteTestResultsTable extends Migration
             $table->text('calculated_wc_ratio_k')->nullable();
             $table->text('cylinders_cast_fs_no_k')->nullable();
             $table->text('set_no_k')->nullable();
+            $table->text('se_k')->nullable();
 
             $table->text('location_test_l')->nullable();
             $table->text('date_placed_l')->nullable();
@@ -201,6 +212,7 @@ class CreateConcreteTestResultsTable extends Migration
             $table->text('calculated_wc_ratio_l')->nullable();
             $table->text('cylinders_cast_fs_no_l')->nullable();
             $table->text('set_no_l')->nullable();
+            $table->text('se_l')->nullable();
 
             $table->text('location_test_m')->nullable();
             $table->text('date_placed_m')->nullable();
@@ -215,6 +227,7 @@ class CreateConcreteTestResultsTable extends Migration
             $table->text('calculated_wc_ratio_m')->nullable();
             $table->text('cylinders_cast_fs_no_m')->nullable();
             $table->text('set_no_m')->nullable();
+            $table->text('se_m')->nullable();
 
             $table->text('location_test_n')->nullable();
             $table->text('date_placed_n')->nullable();
@@ -229,6 +242,7 @@ class CreateConcreteTestResultsTable extends Migration
             $table->text('calculated_wc_ratio_n')->nullable();
             $table->text('cylinders_cast_fs_no_n')->nullable();
             $table->text('set_no_n')->nullable();
+            $table->text('se_n')->nullable();
 
             $table->text('location_test_o')->nullable();
             $table->text('date_placed_o')->nullable();
@@ -243,6 +257,7 @@ class CreateConcreteTestResultsTable extends Migration
             $table->text('calculated_wc_ratio_o')->nullable();
             $table->text('cylinders_cast_fs_no_o')->nullable();
             $table->text('set_no_o')->nullable();
+            $table->text('se_o')->nullable();
 
             $table->string('tester')->nullable();
             $table->string('tester_title')->nullable();
@@ -250,8 +265,9 @@ class CreateConcreteTestResultsTable extends Migration
             $table->string('signature')->nullable();
             $table->string('title')->nullable();
 
+            $table->string('remark')->nullable();
             $table->string('status')->nullable();
-            $table->string('send_to_client')->default(0);
+            $table->string('created_by')->nullable();
             $table->string('responsible_person')->nullable();
 
             $table->timestamps();
