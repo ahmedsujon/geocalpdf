@@ -244,7 +244,7 @@
                                 <div class="col-md-12">
                                     <div class="input-group" style="border: 1px solid #111;">
                                         <span class="input-group-text" style="border: none">Office Address:</span>
-                                        <select class="form-select" wire:model="office_address">
+                                        <select class="form-select" wire:model="office_address" readonly disabled>
                                             <option value="">Select office addres</option>
                                             <option value="7290 South Fraser St.Centennial, CO 80112">7290 South Fraser
                                                 St.Centennial, CO 80112</option>
@@ -264,7 +264,7 @@
                                     <div class="input-group">
                                         <span class="input-group-text width20">Project:</span>
                                         <select class="form-select" wire:model="project_id" wire:change="selectInfo"
-                                            id="selectInfo">
+                                            id="selectInfo" readonly disabled>
                                             <option value="">Select Project:</option>
                                             @foreach ($projects as $project)
                                                 <option value="{{ $project->id }}">{{ $project->name }}</option>
@@ -277,7 +277,7 @@
 
                                     <div class="input-group">
                                         <span class="input-group-text width20">Client:</span>
-                                        <input type="text" class="form-control form-color" wire:model="client_name"
+                                        <input type="text" class="form-control form-color" wire:model="client_name" readonly
                                             readonly>
                                     </div>
                                     @error('client_id')
@@ -287,7 +287,7 @@
                                     <div class="input-group">
                                         <span class="input-group-text width20">Project No:</span>
                                         <input type="text" class="form-control form-color"
-                                            wire:model="project_number" readonly>
+                                            wire:model="project_number" readonly readonly>
                                         @error('project_number')
                                             <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                         @enderror
@@ -313,7 +313,7 @@
                                     <div class="input-group">
                                         <span class="input-group-text width20">Project location:</span>
                                         <input type="text" class="form-control form-color"
-                                            wire:model="project_location">
+                                            wire:model="project_location" readonly>
                                     </div>
                                     @error('project_location')
                                         <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
@@ -327,7 +327,7 @@
                                     <h6 style="font-weight: 700;">CONCRETE TEST RESULTS SUMMARY</h6>
                                     <div class="input-group">
                                         <span class="input-group-text width20">Item:</span>
-                                        <input type="text" class="form-control form-color" wire:model="item">
+                                        <input type="text" class="form-control form-color" wire:model="item" readonly>
                                         @error('item')
                                             <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                         @enderror
@@ -335,7 +335,7 @@
                                     <div class="input-group">
                                         <span class="input-group-text width20">Class:</span>
                                         <input type="text" class="form-control form-color"
-                                            wire:model="class_name">
+                                            wire:model="class_name" readonly>
                                         @error('class_name')
                                             <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                         @enderror
@@ -343,7 +343,7 @@
                                     <div class="input-group">
                                         <span class="input-group-text width20">Design mix no:</span>
                                         <input type="text" class="form-control form-color"
-                                            wire:model="design_mix_no">
+                                            wire:model="design_mix_no" readonly>
                                         @error('design_mix_no')
                                             <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                         @enderror
@@ -351,14 +351,14 @@
                                     <div class="input-group">
                                         <span class="input-group-text width20">Batch plant:</span>
                                         <input type="text" class="form-control form-color"
-                                            wire:model="batch_plant">
+                                            wire:model="batch_plant" readonly>
                                         @error('batch_plant')
                                             <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                         @enderror
                                     </div>
                                     <div class="input-group">
                                         <span class="input-group-text width20">Structure:</span>
-                                        <input type="text" class="form-control form-color" wire:model="structure">
+                                        <input type="text" class="form-control form-color" wire:model="structure" readonly>
                                         @error('structure')
                                             <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                         @enderror
@@ -383,7 +383,7 @@
                                     <div class="input-group">
                                         <span class="input-group-text width20">Compressive strength (Psi):</span>
                                         <input type="text" class="form-control form-color"
-                                            wire:model="compressive_strength">
+                                            wire:model="compressive_strength" readonly>
                                         @error('compressive_strength')
                                             <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                         @enderror
@@ -391,10 +391,10 @@
                                     <div class="input-group">
                                         <span class="input-group-text width28">inches maximum(% total air):</span>
                                         <input type="number" class="form-control form-color"
-                                            wire:model="inches_max">
+                                            wire:model="inches_max" readonly>
                                         <span class="input-group-text">To:</span>
                                         <input type="text" class="form-control form-color"
-                                            wire:model="inches_min">
+                                            wire:model="inches_min" readonly>
                                     </div>
                                 </div>
                             </div>
@@ -428,7 +428,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="location_test_a" required>
+                                                            wire:model="location_test_a" readonly required>
                                                         @error('location_test_a')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -439,7 +439,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="date_placed_a" required>
+                                                            wire:model="date_placed_a" readonly required>
                                                         @error('date_placed_a')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -450,7 +450,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="ticket_no_a">
+                                                            wire:model="ticket_no_a" readonly>
                                                         @error('ticket_no_a')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -461,7 +461,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="batched_a">
+                                                            wire:model="batched_a" readonly>
                                                         @error('batched_a')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -472,7 +472,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="placed_a">
+                                                            wire:model="placed_a" readonly>
                                                         @error('placed_a')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -483,7 +483,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="temp_a">
+                                                            wire:model="temp_a" readonly>
                                                         @error('temp_a')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -494,7 +494,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="slump_a">
+                                                            wire:model="slump_a" readonly>
                                                         @error('slump_a')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -505,7 +505,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="total_air_a">
+                                                            wire:model="total_air_a" readonly>
                                                         @error('total_air_a')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -516,7 +516,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="unit_mass_a" required>
+                                                            wire:model="unit_mass_a" readonly required>
                                                         @error('unit_mass_a')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -527,7 +527,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="yeild_a">
+                                                            wire:model="yeild_a" readonly>
                                                         @error('yeild_a')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -538,7 +538,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="calculated_wc_ratio_a">
+                                                            wire:model="calculated_wc_ratio_a" readonly>
                                                         @error('calculated_wc_ratio_a')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -549,7 +549,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="cylinders_cast_fs_no_a">
+                                                            wire:model="cylinders_cast_fs_no_a" readonly>
                                                         @error('cylinders_cast_fs_no_a')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -560,7 +560,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="set_no_a">
+                                                            wire:model="set_no_a" readonly>
                                                         @error('set_no_a')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -571,7 +571,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="se_a">
+                                                            wire:model="se_a" readonly>
                                                         @error('se_a')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -584,7 +584,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="location_test_b" required>
+                                                            wire:model="location_test_b" readonly required>
                                                         @error('location_test_b')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -595,7 +595,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="date_placed_b" required>
+                                                            wire:model="date_placed_b" readonly required>
                                                         @error('date_placed_b')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -606,7 +606,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="ticket_no_b">
+                                                            wire:model="ticket_no_b" readonly>
                                                         @error('ticket_no_b')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -617,7 +617,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="batched_b">
+                                                            wire:model="batched_b" readonly>
                                                         @error('batched_b')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -628,7 +628,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="placed_b">
+                                                            wire:model="placed_b" readonly>
                                                         @error('placed_b')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -639,7 +639,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="temp_b">
+                                                            wire:model="temp_b" readonly>
                                                         @error('temp_b')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -650,7 +650,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="slump_b">
+                                                            wire:model="slump_b" readonly>
                                                         @error('slump_b')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -661,7 +661,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="total_air_b">
+                                                            wire:model="total_air_b" readonly>
                                                         @error('total_air_b')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -672,7 +672,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="unit_mass_b" required>
+                                                            wire:model="unit_mass_b" readonly required>
                                                         @error('unit_mass_b')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -683,7 +683,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="yeild_b">
+                                                            wire:model="yeild_b" readonly>
                                                         @error('yeild_b')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -694,7 +694,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="calculated_wc_ratio_b">
+                                                            wire:model="calculated_wc_ratio_b" readonly>
                                                         @error('calculated_wc_ratio_b')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -705,7 +705,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="cylinders_cast_fs_no_b">
+                                                            wire:model="cylinders_cast_fs_no_b" readonly>
                                                         @error('cylinders_cast_fs_no_b')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -716,7 +716,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="set_no_b">
+                                                            wire:model="set_no_b" readonly>
                                                         @error('set_no_b')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -727,7 +727,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="se_b">
+                                                            wire:model="se_b" readonly>
                                                         @error('se_b')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -740,7 +740,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="location_test_c" required>
+                                                            wire:model="location_test_c" readonly required>
                                                         @error('location_test_c')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -751,7 +751,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="date_placed_c" required>
+                                                            wire:model="date_placed_c" readonly required>
                                                         @error('date_placed_c')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -762,7 +762,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="ticket_no_c">
+                                                            wire:model="ticket_no_c" readonly>
                                                         @error('ticket_no_c')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -773,7 +773,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="batched_c">
+                                                            wire:model="batched_c" readonly>
                                                         @error('batched_c')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -784,7 +784,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="placed_c">
+                                                            wire:model="placed_c" readonly>
                                                         @error('placed_c')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -795,7 +795,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="temp_c">
+                                                            wire:model="temp_c" readonly>
                                                         @error('temp_c')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -806,7 +806,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="slump_c">
+                                                            wire:model="slump_c" readonly>
                                                         @error('slump_c')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -817,7 +817,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="total_air_c">
+                                                            wire:model="total_air_c" readonly>
                                                         @error('total_air_c')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -828,7 +828,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="unit_mass_c" required>
+                                                            wire:model="unit_mass_c" readonly required>
                                                         @error('unit_mass_c')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -839,7 +839,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="yeild_c">
+                                                            wire:model="yeild_c" readonly>
                                                         @error('yeild_c')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -850,7 +850,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="calculated_wc_ratio_c">
+                                                            wire:model="calculated_wc_ratio_c" readonly>
                                                         @error('calculated_wc_ratio_c')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -861,7 +861,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="cylinders_cast_fs_no_c">
+                                                            wire:model="cylinders_cast_fs_no_c" readonly>
                                                         @error('cylinders_cast_fs_no_c')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -872,7 +872,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="set_no_c">
+                                                            wire:model="set_no_c" readonly>
                                                         @error('set_no_c')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -883,7 +883,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="se_c">
+                                                            wire:model="se_c" readonly>
                                                         @error('se_c')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -896,7 +896,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="location_test_d" required>
+                                                            wire:model="location_test_d" readonly required>
                                                         @error('location_test_d')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -907,7 +907,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="date_placed_d" required>
+                                                            wire:model="date_placed_d" readonly required>
                                                         @error('date_placed_d')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -918,7 +918,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="ticket_no_d">
+                                                            wire:model="ticket_no_d" readonly>
                                                         @error('ticket_no_d')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -929,7 +929,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="batched_d">
+                                                            wire:model="batched_d" readonly>
                                                         @error('batched_d')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -940,7 +940,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="placed_d">
+                                                            wire:model="placed_d" readonly>
                                                         @error('placed_d')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -951,7 +951,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="temp_d">
+                                                            wire:model="temp_d" readonly>
                                                         @error('temp_d')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -962,7 +962,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="slump_d">
+                                                            wire:model="slump_d" readonly>
                                                         @error('slump_d')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -973,7 +973,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="total_air_d">
+                                                            wire:model="total_air_d" readonly>
                                                         @error('total_air_d')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -984,7 +984,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="unit_mass_d" required>
+                                                            wire:model="unit_mass_d" readonly required>
                                                         @error('unit_mass_d')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -995,7 +995,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="yeild_d">
+                                                            wire:model="yeild_d" readonly>
                                                         @error('yeild_d')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1006,7 +1006,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="calculated_wc_ratio_d">
+                                                            wire:model="calculated_wc_ratio_d" readonly>
                                                         @error('calculated_wc_ratio_d')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1017,7 +1017,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="cylinders_cast_fs_no_d">
+                                                            wire:model="cylinders_cast_fs_no_d" readonly>
                                                         @error('cylinders_cast_fs_no_d')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1028,7 +1028,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="set_no_d">
+                                                            wire:model="set_no_d" readonly>
                                                         @error('set_no_d')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1039,7 +1039,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="se_d">
+                                                            wire:model="se_d" readonly>
                                                         @error('se_d')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1052,7 +1052,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="location_test_e" required>
+                                                            wire:model="location_test_e" readonly required>
                                                         @error('location_test_e')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1063,7 +1063,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="date_placed_e" required>
+                                                            wire:model="date_placed_e" readonly required>
                                                         @error('date_placed_e')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1074,7 +1074,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="ticket_no_e">
+                                                            wire:model="ticket_no_e" readonly>
                                                         @error('ticket_no_e')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1085,7 +1085,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="batched_e">
+                                                            wire:model="batched_e" readonly>
                                                         @error('batched_e')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1096,7 +1096,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="placed_e">
+                                                            wire:model="placed_e" readonly>
                                                         @error('placed_e')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1107,7 +1107,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="temp_e">
+                                                            wire:model="temp_e" readonly>
                                                         @error('temp_e')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1118,7 +1118,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="slump_e">
+                                                            wire:model="slump_e" readonly>
                                                         @error('slump_e')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1129,7 +1129,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="total_air_e">
+                                                            wire:model="total_air_e" readonly>
                                                         @error('total_air_e')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1140,7 +1140,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="unit_mass_e" required>
+                                                            wire:model="unit_mass_e" readonly required>
                                                         @error('unit_mass_e')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1151,7 +1151,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="yeild_e">
+                                                            wire:model="yeild_e" readonly>
                                                         @error('yeild_e')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1162,7 +1162,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="calculated_wc_ratio_e">
+                                                            wire:model="calculated_wc_ratio_e" readonly>
                                                         @error('calculated_wc_ratio_e')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1173,7 +1173,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="cylinders_cast_fs_no_e">
+                                                            wire:model="cylinders_cast_fs_no_e" readonly>
                                                         @error('cylinders_cast_fs_no_e')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1184,7 +1184,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="set_no_e">
+                                                            wire:model="set_no_e" readonly>
                                                         @error('set_no_e')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1195,7 +1195,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="se_e">
+                                                            wire:model="se_e" readonly>
                                                         @error('se_e')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1208,7 +1208,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="location_test_f" required>
+                                                            wire:model="location_test_f" readonly required>
                                                         @error('location_test_f')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1219,7 +1219,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="date_placed_f" required>
+                                                            wire:model="date_placed_f" readonly required>
                                                         @error('date_placed_f')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1230,7 +1230,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="ticket_no_f">
+                                                            wire:model="ticket_no_f" readonly>
                                                         @error('ticket_no_f')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1241,7 +1241,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="batched_f">
+                                                            wire:model="batched_f" readonly>
                                                         @error('batched_f')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1252,7 +1252,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="placed_f">
+                                                            wire:model="placed_f" readonly>
                                                         @error('placed_f')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1263,7 +1263,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="temp_f">
+                                                            wire:model="temp_f" readonly>
                                                         @error('temp_f')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1274,7 +1274,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="slump_f">
+                                                            wire:model="slump_f" readonly>
                                                         @error('slump_f')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1285,7 +1285,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="total_air_f">
+                                                            wire:model="total_air_f" readonly>
                                                         @error('total_air_f')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1296,7 +1296,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="unit_mass_f" required>
+                                                            wire:model="unit_mass_f" readonly required>
                                                         @error('unit_mass_f')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1307,7 +1307,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="yeild_f">
+                                                            wire:model="yeild_f" readonly>
                                                         @error('yeild_f')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1318,7 +1318,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="calculated_wc_ratio_f">
+                                                            wire:model="calculated_wc_ratio_f" readonly>
                                                         @error('calculated_wc_ratio_f')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1329,7 +1329,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="cylinders_cast_fs_no_f">
+                                                            wire:model="cylinders_cast_fs_no_f" readonly>
                                                         @error('cylinders_cast_fs_no_f')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1340,7 +1340,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="set_no_f">
+                                                            wire:model="set_no_f" readonly>
                                                         @error('set_no_f')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1351,7 +1351,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="se_f">
+                                                            wire:model="se_f" readonly>
                                                         @error('se_f')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1364,7 +1364,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="location_test_g" required>
+                                                            wire:model="location_test_g" readonly required>
                                                         @error('location_test_g')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1375,7 +1375,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="date_placed_g" required>
+                                                            wire:model="date_placed_g" readonly required>
                                                         @error('date_placed_g')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1386,7 +1386,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="ticket_no_g">
+                                                            wire:model="ticket_no_g" readonly>
                                                         @error('ticket_no_g')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1397,7 +1397,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="batched_g">
+                                                            wire:model="batched_g" readonly>
                                                         @error('batched_g')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1408,7 +1408,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="placed_g">
+                                                            wire:model="placed_g" readonly>
                                                         @error('placed_g')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1419,7 +1419,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="temp_g">
+                                                            wire:model="temp_g" readonly>
                                                         @error('temp_g')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1430,7 +1430,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="slump_g">
+                                                            wire:model="slump_g" readonly>
                                                         @error('slump_g')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1441,7 +1441,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="total_air_g">
+                                                            wire:model="total_air_g" readonly>
                                                         @error('total_air_g')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1452,7 +1452,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="unit_mass_g" required>
+                                                            wire:model="unit_mass_g" readonly required>
                                                         @error('unit_mass_g')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1463,7 +1463,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="yeild_g">
+                                                            wire:model="yeild_g" readonly>
                                                         @error('yeild_g')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1474,7 +1474,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="calculated_wc_ratio_g">
+                                                            wire:model="calculated_wc_ratio_g" readonly>
                                                         @error('calculated_wc_ratio_g')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1485,7 +1485,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="cylinders_cast_fs_no_g">
+                                                            wire:model="cylinders_cast_fs_no_g" readonly>
                                                         @error('cylinders_cast_fs_no_g')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1496,7 +1496,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="set_no_g">
+                                                            wire:model="set_no_g" readonly>
                                                         @error('set_no_g')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1507,7 +1507,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="se_g">
+                                                            wire:model="se_g" readonly>
                                                         @error('se_g')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1520,7 +1520,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="location_test_h" required>
+                                                            wire:model="location_test_h" readonly required>
                                                         @error('location_test_h')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1531,7 +1531,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="date_placed_h" required>
+                                                            wire:model="date_placed_h" readonly required>
                                                         @error('date_placed_h')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1542,7 +1542,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="ticket_no_h">
+                                                            wire:model="ticket_no_h" readonly>
                                                         @error('ticket_no_h')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1553,7 +1553,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="batched_h">
+                                                            wire:model="batched_h" readonly>
                                                         @error('batched_h')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1564,7 +1564,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="placed_h">
+                                                            wire:model="placed_h" readonly>
                                                         @error('placed_h')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1575,7 +1575,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="temp_h">
+                                                            wire:model="temp_h" readonly>
                                                         @error('temp_h')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1586,7 +1586,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="slump_h">
+                                                            wire:model="slump_h" readonly>
                                                         @error('slump_h')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1597,7 +1597,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="total_air_h">
+                                                            wire:model="total_air_h" readonly>
                                                         @error('total_air_h')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1608,7 +1608,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="unit_mass_h" required>
+                                                            wire:model="unit_mass_h" readonly required>
                                                         @error('unit_mass_h')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1619,7 +1619,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="yeild_h">
+                                                            wire:model="yeild_h" readonly>
                                                         @error('yeild_h')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1630,7 +1630,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="calculated_wc_ratio_h">
+                                                            wire:model="calculated_wc_ratio_h" readonly>
                                                         @error('calculated_wc_ratio_h')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1641,7 +1641,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="cylinders_cast_fs_no_h">
+                                                            wire:model="cylinders_cast_fs_no_h" readonly>
                                                         @error('cylinders_cast_fs_no_h')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1652,7 +1652,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="set_no_h">
+                                                            wire:model="set_no_h" readonly>
                                                         @error('set_no_h')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1663,7 +1663,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="se_h">
+                                                            wire:model="se_h" readonly>
                                                         @error('se_h')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1676,7 +1676,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="location_test_i" required>
+                                                            wire:model="location_test_i" readonly required>
                                                         @error('location_test_i')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1687,7 +1687,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="date_placed_i" required>
+                                                            wire:model="date_placed_i" readonly required>
                                                         @error('date_placed_i')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1698,7 +1698,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="ticket_no_i">
+                                                            wire:model="ticket_no_i" readonly>
                                                         @error('ticket_no_i')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1709,7 +1709,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="batched_i">
+                                                            wire:model="batched_i" readonly>
                                                         @error('batched_i')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1720,7 +1720,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="placed_i">
+                                                            wire:model="placed_i" readonly>
                                                         @error('placed_i')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1731,7 +1731,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="temp_i">
+                                                            wire:model="temp_i" readonly>
                                                         @error('temp_i')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1742,7 +1742,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="slump_i">
+                                                            wire:model="slump_i" readonly>
                                                         @error('slump_i')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1753,7 +1753,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="total_air_i">
+                                                            wire:model="total_air_i" readonly>
                                                         @error('total_air_i')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1764,7 +1764,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="unit_mass_i" required>
+                                                            wire:model="unit_mass_i" readonly required>
                                                         @error('unit_mass_i')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1775,7 +1775,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="yeild_i">
+                                                            wire:model="yeild_i" readonly>
                                                         @error('yeild_i')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1786,7 +1786,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="calculated_wc_ratio_i">
+                                                            wire:model="calculated_wc_ratio_i" readonly>
                                                         @error('calculated_wc_ratio_i')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1797,7 +1797,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="cylinders_cast_fs_no_i">
+                                                            wire:model="cylinders_cast_fs_no_i" readonly>
                                                         @error('cylinders_cast_fs_no_i')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1808,7 +1808,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="set_no_i">
+                                                            wire:model="set_no_i" readonly>
                                                         @error('set_no_i')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1819,7 +1819,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="se_i">
+                                                            wire:model="se_i" readonly>
                                                         @error('se_i')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1832,7 +1832,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="location_test_j" required>
+                                                            wire:model="location_test_j" readonly required>
                                                         @error('location_test_j')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1843,7 +1843,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="date_placed_j" required>
+                                                            wire:model="date_placed_j" readonly required>
                                                         @error('date_placed_j')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1854,7 +1854,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="ticket_no_j">
+                                                            wire:model="ticket_no_j" readonly>
                                                         @error('ticket_no_j')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1865,7 +1865,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="batched_j">
+                                                            wire:model="batched_j" readonly>
                                                         @error('batched_j')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1876,7 +1876,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="placed_j">
+                                                            wire:model="placed_j" readonly>
                                                         @error('placed_j')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1887,7 +1887,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="temp_j">
+                                                            wire:model="temp_j" readonly>
                                                         @error('temp_j')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1898,7 +1898,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="slump_j">
+                                                            wire:model="slump_j" readonly>
                                                         @error('slump_j')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1909,7 +1909,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="total_air_j">
+                                                            wire:model="total_air_j" readonly>
                                                         @error('total_air_j')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1920,7 +1920,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="unit_mass_j" required>
+                                                            wire:model="unit_mass_j" readonly required>
                                                         @error('unit_mass_j')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1931,7 +1931,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="yeild_j">
+                                                            wire:model="yeild_j" readonly>
                                                         @error('yeild_j')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1942,7 +1942,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="calculated_wc_ratio_j">
+                                                            wire:model="calculated_wc_ratio_j" readonly>
                                                         @error('calculated_wc_ratio_j')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1953,7 +1953,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="cylinders_cast_fs_no_j">
+                                                            wire:model="cylinders_cast_fs_no_j" readonly>
                                                         @error('cylinders_cast_fs_no_j')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1964,7 +1964,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="set_no_j">
+                                                            wire:model="set_no_j" readonly>
                                                         @error('set_no_j')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1975,7 +1975,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="se_j">
+                                                            wire:model="se_j" readonly>
                                                         @error('se_j')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1988,7 +1988,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="location_test_k" required>
+                                                            wire:model="location_test_k" readonly required>
                                                         @error('location_test_k')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1999,7 +1999,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="date_placed_k" required>
+                                                            wire:model="date_placed_k" readonly required>
                                                         @error('date_placed_k')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2010,7 +2010,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="ticket_no_k">
+                                                            wire:model="ticket_no_k" readonly>
                                                         @error('ticket_no_k')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2021,7 +2021,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="batched_k">
+                                                            wire:model="batched_k" readonly>
                                                         @error('batched_k')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2032,7 +2032,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="placed_k">
+                                                            wire:model="placed_k" readonly>
                                                         @error('placed_k')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2043,7 +2043,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="temp_k">
+                                                            wire:model="temp_k" readonly>
                                                         @error('temp_k')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2054,7 +2054,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="slump_k">
+                                                            wire:model="slump_k" readonly>
                                                         @error('slump_k')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2065,7 +2065,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="total_air_k">
+                                                            wire:model="total_air_k" readonly>
                                                         @error('total_air_k')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2076,7 +2076,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="unit_mass_k" required>
+                                                            wire:model="unit_mass_k" readonly required>
                                                         @error('unit_mass_k')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2087,7 +2087,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="yeild_k">
+                                                            wire:model="yeild_k" readonly>
                                                         @error('yeild_k')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2098,7 +2098,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="calculated_wc_ratio_k">
+                                                            wire:model="calculated_wc_ratio_k" readonly>
                                                         @error('calculated_wc_ratio_k')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2109,7 +2109,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="cylinders_cast_fs_no_k">
+                                                            wire:model="cylinders_cast_fs_no_k" readonly>
                                                         @error('cylinders_cast_fs_no_k')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2120,7 +2120,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="set_no_k">
+                                                            wire:model="set_no_k" readonly>
                                                         @error('set_no_k')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2131,7 +2131,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="se_k">
+                                                            wire:model="se_k" readonly>
                                                         @error('se_k')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2144,7 +2144,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="location_test_l" required>
+                                                            wire:model="location_test_l" readonly required>
                                                         @error('location_test_l')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2155,7 +2155,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="date_placed_l" required>
+                                                            wire:model="date_placed_l" readonly required>
                                                         @error('date_placed_l')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2166,7 +2166,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="ticket_no_l">
+                                                            wire:model="ticket_no_l" readonly>
                                                         @error('ticket_no_l')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2177,7 +2177,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="batched_l">
+                                                            wire:model="batched_l" readonly>
                                                         @error('batched_l')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2188,7 +2188,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="placed_l">
+                                                            wire:model="placed_l" readonly>
                                                         @error('placed_l')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2199,7 +2199,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="temp_l">
+                                                            wire:model="temp_l" readonly>
                                                         @error('temp_l')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2210,7 +2210,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="slump_l">
+                                                            wire:model="slump_l" readonly>
                                                         @error('slump_l')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2221,7 +2221,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="total_air_l">
+                                                            wire:model="total_air_l" readonly>
                                                         @error('total_air_l')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2232,7 +2232,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="unit_mass_l" required>
+                                                            wire:model="unit_mass_l" readonly required>
                                                         @error('unit_mass_l')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2243,7 +2243,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="yeild_l">
+                                                            wire:model="yeild_l" readonly>
                                                         @error('yeild_l')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2254,7 +2254,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="calculated_wc_ratio_l">
+                                                            wire:model="calculated_wc_ratio_l" readonly>
                                                         @error('calculated_wc_ratio_l')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2265,7 +2265,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="cylinders_cast_fs_no_l">
+                                                            wire:model="cylinders_cast_fs_no_l" readonly>
                                                         @error('cylinders_cast_fs_no_l')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2276,7 +2276,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="set_no_l">
+                                                            wire:model="set_no_l" readonly>
                                                         @error('set_no_l')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2287,7 +2287,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="se_l">
+                                                            wire:model="se_l" readonly>
                                                         @error('se_l')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2300,7 +2300,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="location_test_m" required>
+                                                            wire:model="location_test_m" readonly required>
                                                         @error('location_test_m')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2311,7 +2311,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="date_placed_m" required>
+                                                            wire:model="date_placed_m" readonly required>
                                                         @error('date_placed_m')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2322,7 +2322,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="ticket_no_m">
+                                                            wire:model="ticket_no_m" readonly>
                                                         @error('ticket_no_m')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2333,7 +2333,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="batched_m">
+                                                            wire:model="batched_m" readonly>
                                                         @error('batched_m')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2344,7 +2344,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="placed_m">
+                                                            wire:model="placed_m" readonly>
                                                         @error('placed_m')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2355,7 +2355,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="temp_m">
+                                                            wire:model="temp_m" readonly>
                                                         @error('temp_m')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2366,7 +2366,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="slump_m">
+                                                            wire:model="slump_m" readonly>
                                                         @error('slump_m')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2377,7 +2377,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="total_air_m">
+                                                            wire:model="total_air_m" readonly>
                                                         @error('total_air_m')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2388,7 +2388,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="unit_mass_m" required>
+                                                            wire:model="unit_mass_m" readonly required>
                                                         @error('unit_mass_m')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2399,7 +2399,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="yeild_m">
+                                                            wire:model="yeild_m" readonly>
                                                         @error('yeild_m')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2410,7 +2410,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="calculated_wc_ratio_m">
+                                                            wire:model="calculated_wc_ratio_m" readonly>
                                                         @error('calculated_wc_ratio_m')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2421,7 +2421,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="cylinders_cast_fs_no_m">
+                                                            wire:model="cylinders_cast_fs_no_m" readonly>
                                                         @error('cylinders_cast_fs_no_m')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2432,7 +2432,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="set_no_m">
+                                                            wire:model="set_no_m" readonly>
                                                         @error('set_no_m')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2443,7 +2443,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="se_m">
+                                                            wire:model="se_m" readonly>
                                                         @error('se_m')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2456,7 +2456,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="location_test_n" required>
+                                                            wire:model="location_test_n" readonly required>
                                                         @error('location_test_n')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2467,7 +2467,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="date_placed_n" required>
+                                                            wire:model="date_placed_n" readonly required>
                                                         @error('date_placed_n')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2478,7 +2478,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="ticket_no_n">
+                                                            wire:model="ticket_no_n" readonly>
                                                         @error('ticket_no_n')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2489,7 +2489,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="batched_n">
+                                                            wire:model="batched_n" readonly>
                                                         @error('batched_n')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2500,7 +2500,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="placed_n">
+                                                            wire:model="placed_n" readonly>
                                                         @error('placed_n')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2511,7 +2511,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="temp_n">
+                                                            wire:model="temp_n" readonly>
                                                         @error('temp_n')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2522,7 +2522,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="slump_n">
+                                                            wire:model="slump_n" readonly>
                                                         @error('slump_n')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2533,7 +2533,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="total_air_n">
+                                                            wire:model="total_air_n" readonly>
                                                         @error('total_air_n')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2544,7 +2544,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="unit_mass_n" required>
+                                                            wire:model="unit_mass_n" readonly required>
                                                         @error('unit_mass_n')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2555,7 +2555,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="yeild_n">
+                                                            wire:model="yeild_n" readonly>
                                                         @error('yeild_n')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2566,7 +2566,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="calculated_wc_ratio_n">
+                                                            wire:model="calculated_wc_ratio_n" readonly>
                                                         @error('calculated_wc_ratio_n')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2577,7 +2577,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="cylinders_cast_fs_no_n">
+                                                            wire:model="cylinders_cast_fs_no_n" readonly>
                                                         @error('cylinders_cast_fs_no_n')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2588,7 +2588,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="set_no_n">
+                                                            wire:model="set_no_n" readonly>
                                                         @error('set_no_n')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2599,7 +2599,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="se_n">
+                                                            wire:model="se_n" readonly>
                                                         @error('se_n')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2612,7 +2612,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="location_test_o" required>
+                                                            wire:model="location_test_o" readonly required>
                                                         @error('location_test_o')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2623,7 +2623,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="date_placed_o" required>
+                                                            wire:model="date_placed_o" readonly required>
                                                         @error('date_placed_o')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2634,7 +2634,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="ticket_no_o">
+                                                            wire:model="ticket_no_o" readonly>
                                                         @error('ticket_no_o')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2645,7 +2645,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="batched_o">
+                                                            wire:model="batched_o" readonly>
                                                         @error('batched_o')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2656,7 +2656,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="placed_o">
+                                                            wire:model="placed_o" readonly>
                                                         @error('placed_o')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2667,7 +2667,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="temp_o">
+                                                            wire:model="temp_o" readonly>
                                                         @error('temp_o')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2678,7 +2678,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="slump_o">
+                                                            wire:model="slump_o" readonly>
                                                         @error('slump_o')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2689,7 +2689,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="total_air_o">
+                                                            wire:model="total_air_o" readonly>
                                                         @error('total_air_o')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2700,7 +2700,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="unit_mass_o" required>
+                                                            wire:model="unit_mass_o" readonly required>
                                                         @error('unit_mass_o')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2711,7 +2711,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="yeild_o">
+                                                            wire:model="yeild_o" readonly>
                                                         @error('yeild_o')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2722,7 +2722,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="calculated_wc_ratio_o">
+                                                            wire:model="calculated_wc_ratio_o" readonly>
                                                         @error('calculated_wc_ratio_o')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2733,7 +2733,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="cylinders_cast_fs_no_o">
+                                                            wire:model="cylinders_cast_fs_no_o" readonly>
                                                         @error('cylinders_cast_fs_no_o')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2744,7 +2744,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="set_no_o">
+                                                            wire:model="set_no_o" readonly>
                                                         @error('set_no_o')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2755,7 +2755,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="se_o">
+                                                            wire:model="se_o" readonly>
                                                         @error('se_o')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2789,7 +2789,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="tester" required>
+                                                            wire:model="tester" readonly required>
                                                         @error('tester')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2800,7 +2800,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="tester_title" required>
+                                                            wire:model="tester_title" readonly required>
                                                         @error('tester_title')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2811,7 +2811,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="project_engineer">
+                                                            wire:model="project_engineer" readonly>
                                                         @error('project_engineer')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2822,7 +2822,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="signature">
+                                                            wire:model="signature" readonly>
                                                         @error('signature')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2833,7 +2833,7 @@
                                                     <div class="input-group">
                                                         <input type="number"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="title">
+                                                            wire:model="title" readonly>
                                                         @error('title')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2850,7 +2850,7 @@
                         <div class="row">
                             <div class="col-md-12 mt-3 mb-3">
                                 <div class="input-group">
-                                    <textarea class="form-control form-color" placeholder="Comments..." wire:model="remark"></textarea>
+                                    <textarea class="form-control form-color" placeholder="Comments..." wire:model="remark" readonly></textarea>
                                     <grammarly-extension data-grammarly-shadow-root="true"
                                         style="position: absolute; top: 0px; left: 0px; pointer-events: none; z-index: 3;"
                                         class="cGcvT"></grammarly-extension>
