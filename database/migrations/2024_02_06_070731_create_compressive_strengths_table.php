@@ -18,7 +18,7 @@ class CreateCompressiveStrengthsTable extends Migration
             $table->bigInteger('project_id')->nullable();
             $table->bigInteger('client_id')->nullable();
             $table->bigInteger('user_id')->nullable();
-
+            $table->string('office_address')->nullable();
             $table->string('contractid')->nullable();
             $table->text('region')->nullable();
             $table->string('contract_id_seq')->nullable();
@@ -56,14 +56,14 @@ class CreateCompressiveStrengthsTable extends Migration
             $table->string('sample_id')->nullable();
             $table->string('set_no')->nullable();
             $table->string('conc_class')->nullable();
-            $table->date('28_day_break_date')->nullable();
+            $table->date('day_break_date')->nullable();
             $table->string('number_of_specimens')->nullable();
             $table->string('for_cast_specimens')->nullable();
 
             $table->date('date_submitted_to_lab')->nullable();
             $table->string('specimens_tested_at')->nullable();
             $table->string('required_strength')->nullable();
-            $table->string('28_day_average_compressive_strength')->nullable();
+            $table->string('day_average_compressive_strength')->nullable();
             $table->string('type_of_specimen_submitted')->nullable();
             $table->string('cubes')->nullable();
             $table->string('other')->nullable();
