@@ -18,6 +18,7 @@ class CreateCompressiveStrengthsTable extends Migration
             $table->bigInteger('project_id')->nullable();
             $table->bigInteger('client_id')->nullable();
             $table->bigInteger('user_id')->nullable();
+            $table->string('project_number')->nullable();
             $table->string('office_address')->nullable();
             $table->string('contractid')->nullable();
             $table->text('region')->nullable();
@@ -159,7 +160,8 @@ class CreateCompressiveStrengthsTable extends Migration
             $table->string('unit_weight_measure_id')->nullable();
             $table->string('scale_id')->nullable();
             $table->string('status')->nullable();
-            $table->string('send_to_client')->default(0);
+            $table->string('remark')->nullable();
+            $table->string('created_by')->nullable();
             $table->string('responsible_person')->nullable();
             $table->timestamps();
         });

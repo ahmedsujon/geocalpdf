@@ -141,6 +141,9 @@ Route::get('/compressive/strength', CompressiveStrengthComponent::class)->name('
 Route::get('/compressive/strength/create', CreateCompressiveStrengthComponent::class)->name('compressive.strength.create');
 Route::get('/compressive/strength/edit/{file_id}', EditCompressiveStrengthComponent::class)->name('compressive.strength.update');
 Route::get('/compressive/strength/show/{file_id}', ViewCommercialComponent::class)->name('compressive.strength.show');
+// Get Representative
+Route::post('/get-compressive/strength', [CompressiveStrengthComponent::class, 'getCompressiveStrengthResentative'])->name('get_compressive_representative');
+Route::post('/edit-compressive/strength', [CompressiveStrengthComponent::class, 'editCompressiveStrengthResentative'])->name('edit_compressive_representative');
 
 // CDOT
 Route::get('/cdot', CdotComponent::class)->name('template.cdot');
@@ -292,7 +295,8 @@ Route::post('/get-supervisors', [BaseController::class, 'getSupervisor'])->name(
 Route::post('/upload', 'app\http\controllers\BaseController@uploadckimage')->name('ckeditor.upload');
 
 // PDF Generate
-Route::get('/invoice/ijP6ERmmdeLfFi57211{id}4ijP6ERmmdeLfFi5RiwZYYVSmdtcmjxJe2K31U5knK', [InvoiceController::class, 'concreteTestResultsPDF'])->name('invoice.concrete-test-results-pdf');
+Route::get('/invoice/ijP6ERmmdeLfFi57211{id}4ijP6ERmmdeLfasfFi5RiwfaZYYVSmdtcmsajxJe2K31U5knK', [InvoiceController::class, 'concreteTestResultsPDF'])->name('invoice.concrete-test-results-pdf');
+Route::get('/invoice/ijP6ERmmdeLfFi57211{id}4ijP6ERmmdeLfFi5RiwZYYVSmdtsrsfafcmjxJe2K31U5knK', [InvoiceController::class, 'compressiveStrengthsPDF'])->name('invoice.compressive-strengths-pdf');
 
 Route::get('/invoice/ijP6ERmmdeLfFi57209633311{id}4ijP6ERmmdeLfFi5RiwZATmrI2SMOYYVSmdtcmjxJe2K31U5knK', [InvoiceController::class, 'compressiveStrengthsPDF'])->name('invoice.compressive.strengths');
 

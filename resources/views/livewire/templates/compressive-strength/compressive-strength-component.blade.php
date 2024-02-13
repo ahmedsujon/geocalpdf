@@ -83,7 +83,7 @@
                                                 <td>{{ $file->created_at }}</td>
                                                 <td style="text-align: center;">
                                                     <a target="_blank"
-                                                        href="{{ route('invoice.compressive.strengths', ['id' => $file->id]) }}"
+                                                        href="{{ route('invoice.compressive-strengths-pdf', ['id' => $file->id]) }}"
                                                         type="button"
                                                         class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm"><i
                                                             class="ti ti-file-invoice" data-bs-toggle="tooltip"

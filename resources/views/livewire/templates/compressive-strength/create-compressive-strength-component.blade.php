@@ -656,7 +656,7 @@
                                 <div class="col-md-3">
                                     <div class="input-group">
                                         <span class="input-group-text width27">Date Submitted to Lab:</span>
-                                        <input type="text" class="form-control form-color"
+                                        <input type="date" class="form-control form-color"
                                             wire:model="date_submitted_to_lab">
                                     </div>
                                     @error('date_submitted_to_lab')
@@ -726,7 +726,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row mt-3">
+                        {{-- <div class="row mt-3">
                             <div class="col-md-12">
                                 <div class="table-responsive">
                                     <table class="table table-bordered" style="margin-bottom: 0;">
@@ -802,7 +802,7 @@
                                     </table>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
 
                         <div class="row">
                             <div class="col-md-12 mt-3 mb-3">
@@ -864,7 +864,7 @@
             $('#selectInfo').change(function() {
                 var project_id = $(this).val();
                 $.ajax({
-                    url: "{{ route('get_concrete_representative') }}",
+                    url: "{{ route('get_compressive_representative') }}",
                     method: "POST",
                     data: {
                         project_id: project_id,
