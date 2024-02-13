@@ -47,7 +47,6 @@ class InvoiceController extends Controller
     {
         $data = CompressiveStrength::findOrFail($id);
         $data->project_name = project($data->project_id)->name;
-        $data->technician = user($data->user_id)->name;
         $data->client_name = client($data->client_id)->name;
         $data->client_email = client($data->client_id)->email;
         $data->client_phone = client($data->client_id)->phone;
