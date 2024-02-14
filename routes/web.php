@@ -33,6 +33,7 @@ use App\Http\Livewire\Templates\Commercial\ViewCommercialComponent;
 use App\Http\Livewire\Templates\CompressiveStrength\CompressiveStrengthComponent;
 use App\Http\Livewire\Templates\CompressiveStrength\CreateCompressiveStrengthComponent;
 use App\Http\Livewire\Templates\CompressiveStrength\EditCompressiveStrengthComponent;
+use App\Http\Livewire\Templates\CompressiveStrength\ViewCompressiveStrengthComponent;
 use App\Http\Livewire\Templates\ConcreteFieldReport\ConcreteFieldReportComponent;
 use App\Http\Livewire\Templates\ConcreteTestResult\ConcreteTestResultComponent;
 use App\Http\Livewire\Templates\ConcreteTestResult\CreateConcreteTestResultComponent;
@@ -140,7 +141,7 @@ Route::post('/edit-concrete/representative', [ConcreteTestResultComponent::class
 Route::get('/compressive/strength', CompressiveStrengthComponent::class)->name('template.compressive.strength');
 Route::get('/compressive/strength/create', CreateCompressiveStrengthComponent::class)->name('compressive.strength.create');
 Route::get('/compressive/strength/edit/{file_id}', EditCompressiveStrengthComponent::class)->name('compressive.strength.update');
-Route::get('/compressive/strength/show/{file_id}', ViewCommercialComponent::class)->name('compressive.strength.show');
+Route::get('/compressive/strength/show/{file_id}', ViewCompressiveStrengthComponent::class)->name('compressive.strength.show');
 // Get Representative
 Route::post('/get-compressive/strength', [CompressiveStrengthComponent::class, 'getCompressiveStrengthResentative'])->name('get_compressive_representative');
 Route::post('/edit-compressive/strength', [CompressiveStrengthComponent::class, 'editCompressiveStrengthResentative'])->name('edit_compressive_representative');

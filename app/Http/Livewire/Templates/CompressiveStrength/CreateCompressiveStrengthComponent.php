@@ -193,50 +193,50 @@ class CreateCompressiveStrengthComponent extends Component
     }
     public function psiCalculationB()
     {
-        if ($this->maximum_load_a != null) {
-            $this->psi_a = round($this->maximum_load_a / ($this->area_a == 0 ? 1 : $this->area_a), -1);
+        if ($this->maximum_load_b != null) {
+            $this->psi_b = round($this->maximum_load_b / ($this->area_b == 0 ? 1 : $this->area_b), -1);
         } else {
-            $this->psi_a = null;
+            $this->psi_b = null;
         }
     }
     public function psiCalculationC()
     {
-        if ($this->maximum_load_a != null) {
-            $this->psi_a = round($this->maximum_load_a / ($this->area_a == 0 ? 1 : $this->area_a), -1);
+        if ($this->maximum_load_c != null) {
+            $this->psi_c = round($this->maximum_load_c / ($this->area_c == 0 ? 1 : $this->area_c), -1);
         } else {
-            $this->psi_a = null;
+            $this->psi_c = null;
         }
     }
     public function psiCalculationD()
     {
-        if ($this->maximum_load_a != null) {
-            $this->psi_a = round($this->maximum_load_a / ($this->area_a == 0 ? 1 : $this->area_a), -1);
+        if ($this->maximum_load_d != null) {
+            $this->psi_d = round($this->maximum_load_d / ($this->area_d == 0 ? 1 : $this->area_d), -1);
         } else {
-            $this->psi_a = null;
+            $this->psi_d = null;
         }
     }
     public function psiCalculationE()
     {
-        if ($this->maximum_load_a != null) {
-            $this->psi_a = round($this->maximum_load_a / ($this->area_a == 0 ? 1 : $this->area_a), -1);
+        if ($this->maximum_load_e != null) {
+            $this->psi_e = round($this->maximum_load_e / ($this->area_e == 0 ? 1 : $this->area_e), -1);
         } else {
-            $this->psi_a = null;
+            $this->psi_e = null;
         }
     }
     public function psiCalculationF()
     {
-        if ($this->maximum_load_a != null) {
-            $this->psi_a = round($this->maximum_load_a / ($this->area_a == 0 ? 1 : $this->area_a), -1);
+        if ($this->maximum_load_f != null) {
+            $this->psi_f = round($this->maximum_load_f / ($this->area_f == 0 ? 1 : $this->area_f), -1);
         } else {
-            $this->psi_a = null;
+            $this->psi_f = null;
         }
     }
     public function psiCalculationG()
     {
-        if ($this->maximum_load_a != null) {
-            $this->psi_a = round($this->maximum_load_a / ($this->area_a == 0 ? 1 : $this->area_a), -1);
+        if ($this->maximum_load_g != null) {
+            $this->psi_g = round($this->maximum_load_g / ($this->area_g == 0 ? 1 : $this->area_g), -1);
         } else {
-            $this->psi_a = null;
+            $this->psi_g = null;
         }
     }
     public function updated($fields)

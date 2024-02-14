@@ -5,6 +5,7 @@ namespace App\Http\Livewire\Templates\CompressiveStrength;
 use App\Models\User;
 use App\Models\Project;
 use Livewire\Component;
+use App\Models\SubClient;
 use Illuminate\Http\Request;
 use Livewire\WithPagination;
 use Illuminate\Support\Facades\DB;
@@ -60,7 +61,35 @@ class CompressiveStrengthComponent extends Component
         }
         echo $output;
     }
-    
+
+    public function editCompressiveStrengthResentative(Request $request)
+    {
+        $output = '';
+        $value = $request->get('value');
+
+        $file_id = $request->get('file_id');
+        DB::statement("SET SQL_MODE=''");
+
+        $responsible_persons = CompressiveStrength::find($file_id)->responsible_person;
+
+        if ($value == 'sentToClient') {
+            $getCustomer = CompressiveStrength::where('id', $file_id)->first()->client_id;
+            $data = SubClient::where('client_id', $getCustomer)->get();
+        } else if ($value == 'sentToTech') {
+            $data = User::whereIn('id', json_decode($responsible_persons))->where('role_id', 5)->get();
+        } else if ($value == 'sentToSupervisor') {
+            $data = User::whereIn('id', json_decode($responsible_persons))->where('role_id', 4)->get();
+        } else if ($value == 'sentToClerk') {
+            $data = User::whereIn('id', json_decode($responsible_persons))->where('role_id', 3)->get();
+        } else if ($value == 'sentToPE') {
+            $data = User::whereIn('id', json_decode($responsible_persons))->where('role_id', 2)->get();
+        }
+
+        foreach ($data as $row) {
+            $output .= '<option value="' . $row->id . '">' . $row->name . ' </option>';
+        }
+        echo $output;
+    }
     public function render()
     {
         if (Auth::user()->role_id == '1' || Auth::user()->role_id == '2') {
@@ -84,6 +113,6 @@ class CompressiveStrengthComponent extends Component
             }
             $files = $files->paginate($this->sortingValue);
         }
-        return view('livewire.templates.compressive-strength.compressive-strength-component', ['files'=>$files])->layout('livewire.layouts.base');
+        return view('livewire.templates.compressive-strength.compressive-strength-component', ['files' => $files])->layout('livewire.layouts.base');
     }
 }

@@ -434,8 +434,8 @@
                                                 <tr>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
-                                                            <input type="number"
-                                                                class="form-control form-color moistureremoveinput"
+                                                            <input type="text"
+                                                                class="form-control form-color moistureremoveinput text-center"
                                                                 wire:model="field_tester_name" required>
                                                             @error('field_tester_name')
                                                                 <span class="text-danger"
@@ -445,8 +445,8 @@
                                                     </td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
-                                                            <input type="number"
-                                                                class="form-control form-color moistureremoveinput"
+                                                            <input type="text"
+                                                                class="form-control form-color moistureremoveinput text-center"
                                                                 wire:model="entrained_air" required>
                                                             @error('entrained_air')
                                                                 <span class="text-danger"
@@ -457,7 +457,7 @@
                                                     <td class="moistureremove">
                                                         <div class="input-group">
                                                             <input type="text"
-                                                                class="form-control form-color moistureremoveinput"
+                                                                class="form-control form-color moistureremoveinput text-center"
                                                                 wire:model="slump">
                                                             @error('slump')
                                                                 <span class="text-danger"
@@ -468,7 +468,7 @@
                                                     <td class="moistureremove">
                                                         <div class="input-group">
                                                             <input type="text"
-                                                                class="form-control form-color moistureremoveinput"
+                                                                class="form-control form-color moistureremoveinput text-center"
                                                                 wire:model="concrete_temperature">
                                                             @error('concrete_temperature')
                                                                 <span class="text-danger"
@@ -479,7 +479,7 @@
                                                     <td class="moistureremove">
                                                         <div class="input-group">
                                                             <input type="number"
-                                                                class="form-control form-color moistureremoveinput"
+                                                                class="form-control form-color moistureremoveinput text-center"
                                                                 wire:model="unit_weight">
                                                             @error('unit_weight')
                                                                 <span class="text-danger"
@@ -490,7 +490,7 @@
                                                     <td class="moistureremove">
                                                         <div class="input-group">
                                                             <input type="text"
-                                                                class="form-control form-color moistureremoveinput"
+                                                                class="form-control form-color moistureremoveinput text-center"
                                                                 wire:model="yield">
                                                             @error('yield')
                                                                 <span class="text-danger"
@@ -501,7 +501,7 @@
                                                     <td class="moistureremove">
                                                         <div class="input-group">
                                                             <input type="number"
-                                                                class="form-control form-color moistureremoveinput"
+                                                                class="form-control form-color moistureremoveinput text-center"
                                                                 wire:model="wc_ratio">
                                                             @error('wc_ratio')
                                                                 <span class="text-danger"
@@ -566,7 +566,7 @@
                                                     <td class="moistureremove">
                                                         <div class="input-group">
                                                             <input type="date"
-                                                                class="form-control form-color moistureremoveinput"
+                                                                class="form-control form-color moistureremoveinput text-center"
                                                                 wire:model="mold_date" wire:keyup='breakDateA'>
                                                         </div>
                                                         @error('mold_date')
@@ -577,7 +577,7 @@
                                                     <td class="moistureremove">
                                                         <div class="input-group">
                                                             <input type="time"
-                                                                class="form-control form-color moistureremoveinput"
+                                                                class="form-control form-color moistureremoveinput text-center"
                                                                 wire:model="time">
                                                             @error('time')
                                                                 <span class="text-danger"
@@ -588,7 +588,7 @@
                                                     <td class="moistureremove">
                                                         <div class="input-group">
                                                             <input type="number"
-                                                                class="form-control form-color moistureremoveinput"
+                                                                class="form-control form-color moistureremoveinput text-center"
                                                                 wire:model="hours_initial_cure_in_molds">
                                                             @error('hours_initial_cure_in_molds')
                                                                 <span class="text-danger"
@@ -732,7 +732,7 @@
                             </div>
                         </div>
 
-                        <div class="container mt-3">
+                        <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="table-responsive">
@@ -754,7 +754,7 @@
                                                     <td class="moistureremove">
                                                         <div class="input-group">
                                                             <input type="text"
-                                                                class="form-control form-color moistureremoveinput"
+                                                                class="form-control form-color moistureremoveinput text-center"
                                                                 wire:model="sample_id">
                                                             @error('sample_id')
                                                                 <span class="text-danger"
@@ -765,7 +765,7 @@
                                                     <td class="moistureremove">
                                                         <div class="input-group">
                                                             <input type="text"
-                                                                class="form-control form-color moistureremoveinput"
+                                                                class="form-control form-color moistureremoveinput text-center"
                                                                 wire:model="set_no">
                                                             @error('set_no')
                                                                 <span class="text-danger"
@@ -776,7 +776,7 @@
                                                     <td class="moistureremove">
                                                         <div class="input-group">
                                                             <input type="text"
-                                                                class="form-control form-color moistureremoveinput"
+                                                                class="form-control form-color moistureremoveinput text-center"
                                                                 wire:model="conc_class">
                                                             @error('conc_class')
                                                                 <span class="text-danger"
@@ -787,7 +787,7 @@
                                                     <td class="moistureremove">
                                                         <div class="input-group">
                                                             <input type="date"
-                                                                class="form-control form-color moistureremoveinput"
+                                                                class="form-control form-color moistureremoveinput text-center"
                                                                 wire:model="day_break_date">
                                                             @error('day_break_date')
                                                                 <span class="text-danger"
@@ -798,7 +798,7 @@
                                                     <td class="moistureremove">
                                                         <div class="input-group">
                                                             <input type="text"
-                                                                class="form-control form-color moistureremoveinput"
+                                                                class="form-control form-color moistureremoveinput text-center"
                                                                 wire:model="number_of_specimens">
                                                             @error('number_of_specimens')
                                                                 <span class="text-danger"
@@ -809,7 +809,7 @@
                                                     <td class="moistureremove">
                                                         <div class="input-group">
                                                             <input type="text"
-                                                                class="form-control form-color moistureremoveinput"
+                                                                class="form-control form-color moistureremoveinput text-center"
                                                                 wire:model="for_cast_specimens">
                                                             @error('for_cast_specimens')
                                                                 <span class="text-danger"
@@ -1061,7 +1061,7 @@
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="date"
-                                                            class="form-control moistureremoveinput remove-bacground"
+                                                            class="form-control moistureremoveinput remove-bacground text-center"
                                                             wire:model="break_date_a" readonly>
                                                         @error('break_date_a')
                                                             <span class="text-danger"
@@ -1172,7 +1172,7 @@
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="date"
-                                                            class="form-control moistureremoveinput remove-bacground"
+                                                            class="form-control moistureremoveinput remove-bacground text-center"
                                                             wire:model="break_date_b" readonly>
                                                         @error('break_date_b')
                                                             <span class="text-danger"
