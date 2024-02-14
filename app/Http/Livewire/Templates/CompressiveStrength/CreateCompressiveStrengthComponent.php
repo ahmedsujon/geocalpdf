@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Templates\CompressiveStrength;
 
+use Carbon\Carbon;
 use App\Models\User;
 use App\Models\Project;
 use Livewire\Component;
@@ -65,6 +66,179 @@ class CreateCompressiveStrengthComponent extends Component
         }
     }
 
+    // Break Date Calculation
+    public function breakDateA()
+    {
+        if ($this->age_a != null) {
+            $this->break_date_a = Carbon::parse($this->mold_date)->addDays($this->age_a)->format('Y-m-d');
+        } else {
+            $this->break_date_a = null;
+        }
+    }
+    public function breakDateB()
+    {
+        if ($this->age_b != null) {
+            $this->break_date_b = Carbon::parse($this->mold_date)->addDays($this->age_b)->format('Y-m-d');
+        } else {
+            $this->break_date_b = null;
+        }
+    }
+    public function breakDateC()
+    {
+        if ($this->age_c != null) {
+            $this->break_date_c = Carbon::parse($this->mold_date)->addDays($this->age_c)->format('Y-m-d');
+        } else {
+            $this->break_date_c = null;
+        }
+    }
+    public function breakDateD()
+    {
+        if ($this->age_d != null) {
+            $this->break_date_d = Carbon::parse($this->mold_date)->addDays($this->age_d)->format('Y-m-d');
+        } else {
+            $this->break_date_d = null;
+        }
+    }
+    public function breakDateE()
+    {
+        if ($this->age_e != null) {
+            $this->break_date_e = Carbon::parse($this->mold_date)->addDays($this->age_e)->format('Y-m-d');
+        } else {
+            $this->break_date_e = null;
+        }
+    }
+    public function breakDateF()
+    {
+        if ($this->age_f != null) {
+            $this->break_date_f = Carbon::parse($this->mold_date)->addDays($this->age_f)->format('Y-m-d');
+        } else {
+            $this->break_date_f = null;
+        }
+    }
+    public function breakDateG()
+    {
+        if ($this->age_g != null) {
+            $this->break_date_g = Carbon::parse($this->mold_date)->addDays($this->age_g)->format('Y-m-d');
+        } else {
+            $this->break_date_g = null;
+        }
+    }
+
+    // Area Calculation
+    public function AreaCylA()
+    {
+        if ($this->diameter_one_a != null && $this->diameter_two_a != null) {
+            $this->area_a = number_format(pow((($this->diameter_one_a + $this->diameter_two_a) / 2 / 2), 2) * 3.14159265, 2);
+        } else {
+            $this->area_a = 0;
+        }
+    }
+    public function AreaCylB()
+    {
+        if ($this->diameter_one_b != null && $this->diameter_two_b != null) {
+            $this->area_b = number_format(pow((($this->diameter_one_b + $this->diameter_two_b) / 2 / 2), 2) * 3.14159265, 2);
+        } else {
+            $this->area_b = 0;
+        }
+    }
+    public function AreaCylC()
+    {
+        if ($this->diameter_one_c != null && $this->diameter_two_c != null) {
+            $this->area_c = number_format(pow((($this->diameter_one_c + $this->diameter_two_c) / 2 / 2), 2) * 3.14159265, 2);
+        } else {
+            $this->area_c = 0;
+        }
+    }
+    public function AreaCylD()
+    {
+        if ($this->diameter_one_d != null && $this->diameter_two_d != null) {
+            $this->area_d = number_format(pow((($this->diameter_one_d + $this->diameter_two_d) / 2 / 2), 2) * 3.14159265, 2);
+        } else {
+            $this->area_d = 0;
+        }
+    }
+    public function AreaCylE()
+    {
+        if ($this->diameter_one_e != null && $this->diameter_two_e != null) {
+            $this->area_e = number_format(pow((($this->diameter_one_e + $this->diameter_two_e) / 2 / 2), 2) * 3.14159265, 2);
+        } else {
+            $this->area_e = 0;
+        }
+    }
+    public function AreaCylF()
+    {
+        if ($this->diameter_one_f != null && $this->diameter_two_f != null) {
+            $this->area_f = number_format(pow((($this->diameter_one_f + $this->diameter_two_f) / 2 / 2), 2) * 3.14159265, 2);
+        } else {
+            $this->area_f = 0;
+        }
+    }
+    public function AreaCylG()
+    {
+        if ($this->diameter_one_g != null && $this->diameter_two_g != null) {
+            $this->area_g = number_format(pow((($this->diameter_one_g + $this->diameter_two_g) / 2 / 2), 2) * 3.14159265, 2);
+        } else {
+            $this->area_g = 0;
+        }
+    }
+
+    // PSI Calculation
+    public function psiCalculationA()
+    {
+        if ($this->maximum_load_a != null) {
+            $this->psi_a = round($this->maximum_load_a / ($this->area_a == 0 ? 1 : $this->area_a), -1);
+        } else {
+            $this->psi_a = null;
+        }
+    }
+    public function psiCalculationB()
+    {
+        if ($this->maximum_load_a != null) {
+            $this->psi_a = round($this->maximum_load_a / ($this->area_a == 0 ? 1 : $this->area_a), -1);
+        } else {
+            $this->psi_a = null;
+        }
+    }
+    public function psiCalculationC()
+    {
+        if ($this->maximum_load_a != null) {
+            $this->psi_a = round($this->maximum_load_a / ($this->area_a == 0 ? 1 : $this->area_a), -1);
+        } else {
+            $this->psi_a = null;
+        }
+    }
+    public function psiCalculationD()
+    {
+        if ($this->maximum_load_a != null) {
+            $this->psi_a = round($this->maximum_load_a / ($this->area_a == 0 ? 1 : $this->area_a), -1);
+        } else {
+            $this->psi_a = null;
+        }
+    }
+    public function psiCalculationE()
+    {
+        if ($this->maximum_load_a != null) {
+            $this->psi_a = round($this->maximum_load_a / ($this->area_a == 0 ? 1 : $this->area_a), -1);
+        } else {
+            $this->psi_a = null;
+        }
+    }
+    public function psiCalculationF()
+    {
+        if ($this->maximum_load_a != null) {
+            $this->psi_a = round($this->maximum_load_a / ($this->area_a == 0 ? 1 : $this->area_a), -1);
+        } else {
+            $this->psi_a = null;
+        }
+    }
+    public function psiCalculationG()
+    {
+        if ($this->maximum_load_a != null) {
+            $this->psi_a = round($this->maximum_load_a / ($this->area_a == 0 ? 1 : $this->area_a), -1);
+        } else {
+            $this->psi_a = null;
+        }
+    }
     public function updated($fields)
     {
         $this->validateOnly($fields, [
@@ -72,6 +246,7 @@ class CreateCompressiveStrengthComponent extends Component
             'project_location' => 'required',
             'responsible_person' => 'required',
             'office_address' => 'required',
+            'mold_date' => 'required',
         ]);
     }
 
@@ -82,6 +257,7 @@ class CreateCompressiveStrengthComponent extends Component
             'project_location' => 'required',
             'responsible_person' => 'required',
             'office_address' => 'required',
+            'mold_date' => 'required',
         ], [
             'project_id.required' => 'Project name is required',
             'user_id.required' => 'Technician name is required',

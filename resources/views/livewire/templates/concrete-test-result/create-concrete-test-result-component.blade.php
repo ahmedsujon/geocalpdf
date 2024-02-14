@@ -231,7 +231,7 @@
                         <div class="row mb-3">
                             <div class="col-md-3"></div>
                             <div class="col-md-6">
-                                <div class="content text-center pt-2 pb-2">
+                                <div class="content text-center">
                                     <h5 style="text-transform: uppercase; font-weight: 700;">Concrete Test Results
                                         Summary - Local Agency</h5>
                                 </div>
@@ -277,7 +277,7 @@
 
                                     <div class="input-group">
                                         <span class="input-group-text width20">Client:</span>
-                                        <input type="text" class="form-control form-color" wire:model="client_name"
+                                        <input type="text" class="form-control" wire:model="client_name"
                                             readonly>
                                     </div>
                                     @error('client_id')
@@ -286,7 +286,7 @@
 
                                     <div class="input-group">
                                         <span class="input-group-text width20">Project No:</span>
-                                        <input type="text" class="form-control form-color"
+                                        <input type="text" class="form-control"
                                             wire:model="project_number" readonly>
                                         @error('project_number')
                                             <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
