@@ -90,9 +90,10 @@ class CreateCompressiveStrengthComponent extends Component
         $data = new CompressiveStrength();
         $data->project_id = $this->project_id;
         $data->client_id = $this->client_id;
-        $data->user_id = $this->user_id;
+        $data->user_id = Auth::user()->id;
         $data->project_number = $this->project_number;
         $data->project_location = $this->project_location;
+        $data->office_address = $this->office_address;
         $data->contractid = $this->contractid;
         $data->region = $this->region;
         $data->contract_id_seq = $this->contract_id_seq;

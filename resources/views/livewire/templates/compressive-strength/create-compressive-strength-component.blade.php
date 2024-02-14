@@ -547,18 +547,18 @@
                                                             <div class="form-check" style="padding-right: 10px;">
                                                                 <input class="form-check-input" type="radio"
                                                                     wire:model="specimen_for" value="Design Adequacy"
-                                                                    id="flexRadioDefault1">
+                                                                    id="specimenfor1">
                                                                 <label class="form-check-label"
-                                                                    for="flexRadioDefault1">
+                                                                    for="specimenfor1">
                                                                     Design Adequacy
                                                                 </label>
                                                             </div>
                                                             <div class="form-check">
                                                                 <input class="form-check-input" type="radio"
                                                                     wire:model="specimen_for" value="Field Cure"
-                                                                    id="flexRadioDefault2" checked>
+                                                                    id="specimenfor2">
                                                                 <label class="form-check-label"
-                                                                    for="flexRadioDefault2">
+                                                                    for="specimenfor2">
                                                                     Field Cure
                                                                 </label>
                                                             </div>
@@ -611,8 +611,7 @@
                                                             <div class="form-check">
                                                                 <input class="form-check-input" type="radio"
                                                                     wire:model="initial_cure_temperature"
-                                                                    value="(68-78°F)" id="initialcuretemperature2"
-                                                                    checked>
+                                                                    value="(68-78°F)" id="initialcuretemperature2">
                                                                 <label class="form-check-label"
                                                                     for="initialcuretemperature2">
                                                                     (68-78°F)
@@ -635,7 +634,7 @@
                                                                 <input class="form-check-input" type="radio"
                                                                     wire:model="final_cure_method"
                                                                     value="Moist Room Cure 73.5°"
-                                                                    id="finalcuremethod2" checked>
+                                                                    id="finalcuremethod2">
                                                                 <label class="form-check-label"
                                                                     for="finalcuremethod2">
                                                                     Moist Room Cure 73.5°
@@ -786,7 +785,7 @@
                                                     </td>
                                                     <td class="moistureremove">
                                                         <div class="input-group">
-                                                            <input type="text"
+                                                            <input type="date"
                                                                 class="form-control form-color moistureremoveinput"
                                                                 wire:model="day_break_date">
                                                             @error('day_break_date')
@@ -881,9 +880,9 @@
                                     <div class="input-group">
                                         <span class="input-group-text width27">Required Strength:</span>
                                         <input type="text" class="form-control form-color"
-                                            wire:model="batch_ticket">
+                                            wire:model="required_strength">
                                     </div>
-                                    @error('batch_ticket')
+                                    @error('required_strength')
                                         <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
                                 </div>
@@ -892,9 +891,9 @@
                                         <span class="input-group-text width27">28 Day Average Compressive
                                             Strength:</span>
                                         <input type="text" class="form-control form-color"
-                                            wire:model="batch_ticket">
+                                            wire:model="day_average_compressive_strength">
                                     </div>
-                                    @error('batch_ticket')
+                                    @error('day_average_compressive_strength')
                                         <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
                                 </div>
@@ -913,16 +912,16 @@
                                         <label for="" style="padding-right: 10px;">Cylinders:</label>
                                         <div class="form-check form-check-inline">
                                             <input class="form-check-input" type="radio"
-                                                wire:model='type_of_specimen_submitted' name="inlineRadioOptions"
-                                                id="type_of_specimen_submitted1" value="4 X 8">
-                                            <label class="form-check-label" for="type_of_specimen_submitted1">4 X
+                                                wire:model='type_of_specimen_submitted' name="typeofspecimensubmitted1"
+                                                id="typeofspecimensubmitted1" value="4 X 8">
+                                            <label class="form-check-label" for="typeofspecimensubmitted1">4 X
                                                 8</label>
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                                id="type_of_specimen_submitted2"
+                                            <input class="form-check-input" type="radio" name="typeofspecimensubmitted2"
+                                                id="typeofspecimensubmitted2"
                                                 wire:model='type_of_specimen_submitted' value="6 X 12">
-                                            <label class="form-check-label" for="type_of_specimen_submitted2">6 X
+                                            <label class="form-check-label" for="typeofspecimensubmitted2">6 X
                                                 12</label>
                                         </div>
                                     </div>
@@ -935,8 +934,8 @@
                                         <label for="" style="padding-right: 10px;">Cubes:</label>
                                         <div class="form-check form-check-inline">
                                             <input class="form-check-input" wire:model='cubes' type="radio"
-                                                name="inlineRadioOptions" id="cubes1" value="2 X 2">
-                                            <label class="form-check-label" for="cubes1">2 X 2</label>
+                                                name="cubes11" id="cubes11" value="2 X 2">
+                                            <label class="form-check-label" for="cubes11">2 X 2</label>
                                         </div>
                                     </div>
                                     @error('cubes')
@@ -967,23 +966,23 @@
                                 <div class="col-md-3">
                                     <label for="">Specimens tested at:</label>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="exampleRadios"
-                                            id="exampleRadios1" value="ubic Yards" checked>
+                                        <input class="form-check-input" type="radio" wire:model="represented_quantity" name="exampleRadios"
+                                            id="exampleRadios1" value="ubic Yards">
                                         <label class="form-check-label" for="exampleRadios1">
                                             Cubic Yards
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="exampleRadios"
+                                        <input class="form-check-input" type="radio" wire:model="represented_quantity" name="exampleRadios"
                                             id="exampleRadios2" value="Lineal Feet">
                                         <label class="form-check-label" for="exampleRadios2">
                                             Lineal Feet
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="exampleRadios"
-                                            id="exampleRadios2" value="Square Yards">
-                                        <label class="form-check-label" for="exampleRadios2">
+                                        <input class="form-check-input" type="radio" wire:model="represented_quantity" name="exampleRadios"
+                                            id="exampleRadios3" value="Square Yards">
+                                        <label class="form-check-label" for="exampleRadios3">
                                             Square Yards
                                         </label>
                                     </div>
@@ -995,9 +994,9 @@
                                     <div class="input-group">
                                         <span class="input-group-text width27">Previous Qty</span>
                                         <input type="text" class="form-control form-color"
-                                            wire:model="batch_ticket">
+                                            wire:model="previous_qty">
                                     </div>
-                                    @error('batch_ticket')
+                                    @error('previous_qty')
                                         <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
                                 </div>
@@ -1005,9 +1004,9 @@
                                     <div class="input-group">
                                         <span class="input-group-text width27">This Sheet</span>
                                         <input type="text" class="form-control form-color"
-                                            wire:model="batch_ticket">
+                                            wire:model="this_sheet">
                                     </div>
-                                    @error('batch_ticket')
+                                    @error('this_sheet')
                                         <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
                                 </div>
@@ -1015,9 +1014,9 @@
                                     <div class="input-group">
                                         <span class="input-group-text width27">Total to Date</span>
                                         <input type="text" class="form-control form-color"
-                                            wire:model="batch_ticket">
+                                            wire:model="total_to_date">
                                     </div>
-                                    @error('batch_ticket')
+                                    @error('total_to_date')
                                         <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
                                 </div>
@@ -1057,7 +1056,7 @@
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="text"
+                                                        <input type="date"
                                                             class="form-control form-color moistureremoveinput"
                                                             wire:model="break_date_a" required>
                                                         @error('break_date_a')
@@ -1169,7 +1168,7 @@
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="text"
+                                                        <input type="date"
                                                             class="form-control form-color moistureremoveinput"
                                                             wire:model="break_date_b" required>
                                                         @error('break_date_b')
@@ -1281,7 +1280,7 @@
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="text"
+                                                        <input type="date"
                                                             class="form-control form-color moistureremoveinput"
                                                             wire:model="break_date_c" required>
                                                         @error('break_date_c')
@@ -1393,7 +1392,7 @@
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="text"
+                                                        <input type="date"
                                                             class="form-control form-color moistureremoveinput"
                                                             wire:model="break_date_d" required>
                                                         @error('break_date_d')
@@ -1505,7 +1504,7 @@
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="text"
+                                                        <input type="date"
                                                             class="form-control form-color moistureremoveinput"
                                                             wire:model="break_date_e" required>
                                                         @error('break_date_e')
@@ -1617,7 +1616,7 @@
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="text"
+                                                        <input type="date"
                                                             class="form-control form-color moistureremoveinput"
                                                             wire:model="break_date_f" required>
                                                         @error('break_date_f')
@@ -1729,7 +1728,7 @@
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="text"
+                                                        <input type="date"
                                                             class="form-control form-color moistureremoveinput"
                                                             wire:model="break_date_g" required>
                                                         @error('break_date_g')
