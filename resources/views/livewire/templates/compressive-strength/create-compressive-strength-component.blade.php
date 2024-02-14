@@ -16,12 +16,16 @@
             background-color: #ccecff !important;
         }
 
+        .remove-bacground {
+            background: #ffffff !important;
+        }
+
         .form-color {
             background: #ccecff !important;
         }
 
         .moistureremoveinput {
-            background-color: #ccecff !important;
+            background-color: #ccecff;
         }
 
         .commercial-form {
@@ -258,16 +262,14 @@
                                         <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
                                 </div>
-                                <div class="col-lg-6 select-border">
-                                    <h6 style="font-weight: 700;">&nbsp;</h6>
+                                <div class="col-lg-6 select-border mt-3">
                                     <div style="border: 1px solid; padding: 38px; text-align:center;">
                                         <h5>Concrete Cylinders Compressive Strength C39 <br>Cubes Compressive Strength
                                             C109</h5>
                                         <span>Additional methods C1064, T119, T121, T152</span>
                                     </div>
                                 </div>
-                                <div class="col-lg-6 select-border">
-                                    <h6>&nbsp;</h6>
+                                <div class="col-lg-6 select-border mt-3">
                                     <div class="input-group">
                                         <span class="input-group-text width20">Project:</span>
                                         <select class="form-select" wire:model="project_id" wire:change="selectInfo"
@@ -284,8 +286,7 @@
 
                                     <div class="input-group">
                                         <span class="input-group-text width20">Client:</span>
-                                        <input type="text" class="form-control form-color" wire:model="client_name"
-                                            readonly>
+                                        <input type="text" class="form-control" wire:model="client_name" readonly>
                                     </div>
                                     @error('client_id')
                                         <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
@@ -314,8 +315,7 @@
                                     @enderror
                                     <div class="input-group">
                                         <span class="input-group-text width20">Project Number:</span>
-                                        <input type="text" class="form-control form-color"
-                                            wire:model="project_number" readonly>
+                                        <input type="text" class="form-control" wire:model="project_number" readonly>
                                     </div>
                                     @error('project_number')
                                         <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
@@ -380,7 +380,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="container mt-2">
+                        <div class="container">
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="input-group">
@@ -543,13 +543,13 @@
                                             <tbody>
                                                 <tr>
                                                     <td class="moistureremove">
-                                                        <div class="input-group moistureremoveinput" style="padding-left: 5px;">
+                                                        <div class="input-group moistureremoveinput"
+                                                            style="padding-left: 5px;">
                                                             <div class="form-check" style="padding-right: 10px;">
                                                                 <input class="form-check-input" type="radio"
                                                                     wire:model="specimen_for" value="Design Adequacy"
                                                                     id="specimenfor1">
-                                                                <label class="form-check-label"
-                                                                    for="specimenfor1">
+                                                                <label class="form-check-label" for="specimenfor1">
                                                                     Design Adequacy
                                                                 </label>
                                                             </div>
@@ -557,8 +557,7 @@
                                                                 <input class="form-check-input" type="radio"
                                                                     wire:model="specimen_for" value="Field Cure"
                                                                     id="specimenfor2">
-                                                                <label class="form-check-label"
-                                                                    for="specimenfor2">
+                                                                <label class="form-check-label" for="specimenfor2">
                                                                     Field Cure
                                                                 </label>
                                                             </div>
@@ -598,7 +597,8 @@
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove">
-                                                        <div class="input-group moistureremoveinput" style="padding-left: 5px;">
+                                                        <div class="input-group moistureremoveinput"
+                                                            style="padding-left: 5px;">
                                                             <div class="form-check" style="padding-right: 10px;">
                                                                 <input class="form-check-input" type="radio"
                                                                     wire:model="initial_cure_temperature"
@@ -620,7 +620,8 @@
                                                         </div>
                                                     </td>
                                                     <td class="moistureremove">
-                                                        <div class="input-group moistureremoveinput" style="padding-left: 5px;">
+                                                        <div class="input-group moistureremoveinput"
+                                                            style="padding-left: 5px;">
                                                             <div class="form-check" style="padding-right: 10px;">
                                                                 <input class="form-check-input" type="radio"
                                                                     wire:model="final_cure_method"
@@ -824,7 +825,7 @@
                             </div>
                         </div>
 
-                        <div class="container mt-2">
+                        <div class="container mt-3">
                             <div class="row">
                                 <div class="col-md-3">
                                     <div class="input-group">
@@ -900,7 +901,7 @@
                             </div>
                         </div>
 
-                        <div class="container mt-2">
+                        <div class="container mt-4">
                             <div class="row">
                                 <div class="col-md-2">
                                     <div class="input-group">
@@ -912,14 +913,15 @@
                                         <label for="" style="padding-right: 10px;">Cylinders:</label>
                                         <div class="form-check form-check-inline">
                                             <input class="form-check-input" type="radio"
-                                                wire:model='type_of_specimen_submitted' name="typeofspecimensubmitted1"
-                                                id="typeofspecimensubmitted1" value="4 X 8">
+                                                wire:model='type_of_specimen_submitted'
+                                                name="typeofspecimensubmitted1" id="typeofspecimensubmitted1"
+                                                value="4 X 8">
                                             <label class="form-check-label" for="typeofspecimensubmitted1">4 X
                                                 8</label>
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="typeofspecimensubmitted2"
-                                                id="typeofspecimensubmitted2"
+                                            <input class="form-check-input" type="radio"
+                                                name="typeofspecimensubmitted2" id="typeofspecimensubmitted2"
                                                 wire:model='type_of_specimen_submitted' value="6 X 12">
                                             <label class="form-check-label" for="typeofspecimensubmitted2">6 X
                                                 12</label>
@@ -956,7 +958,7 @@
                             </div>
                         </div>
 
-                        <div class="container mt-3">
+                        <div class="container mt-4">
                             <div class="row">
                                 <div class="col-md-2">
                                     <div class="input-group">
@@ -966,21 +968,24 @@
                                 <div class="col-md-3">
                                     <label for="">Specimens tested at:</label>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" wire:model="represented_quantity" name="exampleRadios"
+                                        <input class="form-check-input" type="radio"
+                                            wire:model="represented_quantity" name="exampleRadios"
                                             id="exampleRadios1" value="ubic Yards">
                                         <label class="form-check-label" for="exampleRadios1">
                                             Cubic Yards
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" wire:model="represented_quantity" name="exampleRadios"
+                                        <input class="form-check-input" type="radio"
+                                            wire:model="represented_quantity" name="exampleRadios"
                                             id="exampleRadios2" value="Lineal Feet">
                                         <label class="form-check-label" for="exampleRadios2">
                                             Lineal Feet
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" wire:model="represented_quantity" name="exampleRadios"
+                                        <input class="form-check-input" type="radio"
+                                            wire:model="represented_quantity" name="exampleRadios"
                                             id="exampleRadios3" value="Square Yards">
                                         <label class="form-check-label" for="exampleRadios3">
                                             Square Yards
@@ -1029,16 +1034,17 @@
                                     <table class="table table-bordered" style="margin-bottom: 0;">
                                         <thead>
                                             <tr>
-                                                <th class="customcolor" scope="col">Specimen</th>
-                                                <th class="customcolor" scope="col">Break Date</th>
-                                                <th class="customcolor" scope="col">Age</th>
-                                                <th class="customcolor" scope="col">Diameter 1</th>
-                                                <th class="customcolor" scope="col">Diameter 2</th>
-                                                <th class="customcolor" scope="col">Area</th>
-                                                <th class="customcolor" scope="col">Maximum Load</th>
-                                                <th class="customcolor" scope="col">PSI</th>
-                                                <th class="customcolor" scope="col">Break Type</th>
-                                                <th class="customcolor" scope="col">% Aggregate Fractured</th>
+                                                <th class="customcolor text-center" scope="col">Specimen</th>
+                                                <th class="customcolor text-center" scope="col">Break Date</th>
+                                                <th class="customcolor text-center" scope="col">Age</th>
+                                                <th class="customcolor text-center" scope="col">Diameter 1</th>
+                                                <th class="customcolor text-center" scope="col">Diameter 2</th>
+                                                <th class="customcolor text-center" scope="col">Area</th>
+                                                <th class="customcolor text-center" scope="col">Maximum Load</th>
+                                                <th class="customcolor text-center" scope="col">PSI</th>
+                                                <th class="customcolor text-center" scope="col">Break Type</th>
+                                                <th class="customcolor text-center" scope="col">% Aggregate
+                                                    Fractured</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -1046,19 +1052,15 @@
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="text"
-                                                            class="form-control form-color moistureremoveinput"
-                                                            wire:model="specimen_a" required>
-                                                        @error('specimen_a')
-                                                            <span class="text-danger"
-                                                                style="font-size: 12px;">{{ $message }}</span>
-                                                        @enderror
+                                                            class="form-control moistureremoveinput text-center"
+                                                            value="1" readonly>
                                                     </div>
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="date"
-                                                            class="form-control form-color moistureremoveinput"
-                                                            wire:model="break_date_a" required>
+                                                            class="form-control moistureremoveinput remove-bacground"
+                                                            wire:model="break_date_a" readonly>
                                                         @error('break_date_a')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1101,8 +1103,8 @@
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="text"
-                                                            class="form-control form-color moistureremoveinput"
-                                                            wire:model="area_a" required>
+                                                            class="form-control remove-bacground moistureremoveinput"
+                                                            wire:model="area_a" readonly>
                                                         @error('area_a')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1123,8 +1125,8 @@
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="text"
-                                                            class="form-control form-color moistureremoveinput"
-                                                            wire:model="psi_a">
+                                                            class="form-control remove-bacground moistureremoveinput"
+                                                            wire:model="psi_a" readonly>
                                                         @error('psi_a')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1158,19 +1160,15 @@
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="text"
-                                                            class="form-control form-color moistureremoveinput"
-                                                            wire:model="specimen_b" required>
-                                                        @error('specimen_b')
-                                                            <span class="text-danger"
-                                                                style="font-size: 12px;">{{ $message }}</span>
-                                                        @enderror
+                                                            class="form-control moistureremoveinput text-center"
+                                                            value="2" readonly>
                                                     </div>
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="date"
-                                                            class="form-control form-color moistureremoveinput"
-                                                            wire:model="break_date_b" required>
+                                                            class="form-control moistureremoveinput remove-bacground"
+                                                            wire:model="break_date_b" readonly>
                                                         @error('break_date_b')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1213,8 +1211,8 @@
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="text"
-                                                            class="form-control form-color moistureremoveinput"
-                                                            wire:model="area_b" required>
+                                                            class="form-control remove-bacground moistureremoveinput"
+                                                            wire:model="area_b" readonly>
                                                         @error('area_b')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1235,8 +1233,8 @@
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="text"
-                                                            class="form-control form-color moistureremoveinput"
-                                                            wire:model="psi_b">
+                                                            class="form-control remove-bacground moistureremoveinput"
+                                                            wire:model="psi_b" readonly>
                                                         @error('psi_b')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1270,19 +1268,15 @@
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="text"
-                                                            class="form-control form-color moistureremoveinput"
-                                                            wire:model="specimen_c" required>
-                                                        @error('specimen_c')
-                                                            <span class="text-danger"
-                                                                style="font-size: 12px;">{{ $message }}</span>
-                                                        @enderror
+                                                            class="form-control moistureremoveinput text-center"
+                                                            value="3" readonly>
                                                     </div>
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="date"
-                                                            class="form-control form-color moistureremoveinput"
-                                                            wire:model="break_date_c" required>
+                                                            class="form-control moistureremoveinput remove-bacground"
+                                                            wire:model="break_date_c" readonly>
                                                         @error('break_date_c')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1325,8 +1319,8 @@
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="text"
-                                                            class="form-control form-color moistureremoveinput"
-                                                            wire:model="area_c" required>
+                                                            class="form-control remove-bacground moistureremoveinput"
+                                                            wire:model="area_c" readonly>
                                                         @error('area_c')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1347,8 +1341,8 @@
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="text"
-                                                            class="form-control form-color moistureremoveinput"
-                                                            wire:model="psi_c">
+                                                            class="form-control remove-bacground moistureremoveinput"
+                                                            wire:model="psi_c" readonly>
                                                         @error('psi_c')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1382,19 +1376,15 @@
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="text"
-                                                            class="form-control form-color moistureremoveinput"
-                                                            wire:model="specimen_d" required>
-                                                        @error('specimen_d')
-                                                            <span class="text-danger"
-                                                                style="font-size: 12px;">{{ $message }}</span>
-                                                        @enderror
+                                                            class="form-control moistureremoveinput text-center"
+                                                            value="4" readonly>
                                                     </div>
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="date"
-                                                            class="form-control form-color moistureremoveinput"
-                                                            wire:model="break_date_d" required>
+                                                            class="form-control remove-bacground moistureremoveinput"
+                                                            wire:model="break_date_d" readonly>
                                                         @error('break_date_d')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1437,8 +1427,8 @@
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="text"
-                                                            class="form-control form-color moistureremoveinput"
-                                                            wire:model="area_d" required>
+                                                            class="form-control remove-bacground moistureremoveinput"
+                                                            wire:model="area_d" readonly>
                                                         @error('area_d')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1459,8 +1449,8 @@
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="text"
-                                                            class="form-control form-color moistureremoveinput"
-                                                            wire:model="psi_d">
+                                                            class="form-control remove-bacground moistureremoveinput"
+                                                            wire:model="psi_d" readonly>
                                                         @error('psi_d')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1494,19 +1484,15 @@
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="text"
-                                                            class="form-control form-color moistureremoveinput"
-                                                            wire:model="specimen_e" required>
-                                                        @error('specimen_e')
-                                                            <span class="text-danger"
-                                                                style="font-size: 12px;">{{ $message }}</span>
-                                                        @enderror
+                                                            class="form-control moistureremoveinput text-center"
+                                                            value="5" readonly>
                                                     </div>
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="date"
-                                                            class="form-control form-color moistureremoveinput"
-                                                            wire:model="break_date_e" required>
+                                                            class="form-control remove-bacground moistureremoveinput"
+                                                            wire:model="break_date_e" readonly>
                                                         @error('break_date_e')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1549,8 +1535,8 @@
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="text"
-                                                            class="form-control form-color moistureremoveinput"
-                                                            wire:model="area_e" required>
+                                                            class="form-control remove-bacground moistureremoveinput"
+                                                            wire:model="area_e" readonly>
                                                         @error('area_e')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1571,8 +1557,8 @@
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="text"
-                                                            class="form-control form-color moistureremoveinput"
-                                                            wire:model="psi_e">
+                                                            class="form-control remove-bacground moistureremoveinput"
+                                                            wire:model="psi_e" readonly>
                                                         @error('psi_e')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1606,19 +1592,15 @@
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="text"
-                                                            class="form-control form-color moistureremoveinput"
-                                                            wire:model="specimen_f" required>
-                                                        @error('specimen_f')
-                                                            <span class="text-danger"
-                                                                style="font-size: 12px;">{{ $message }}</span>
-                                                        @enderror
+                                                            class="form-control moistureremoveinput text-center"
+                                                            value="6" readonly>
                                                     </div>
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="date"
-                                                            class="form-control form-color moistureremoveinput"
-                                                            wire:model="break_date_f" required>
+                                                            class="form-control remove-bacground moistureremoveinput"
+                                                            wire:model="break_date_f" readonly>
                                                         @error('break_date_f')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1661,8 +1643,8 @@
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="text"
-                                                            class="form-control form-color moistureremoveinput"
-                                                            wire:model="area_f" required>
+                                                            class="form-control remove-bacground moistureremoveinput"
+                                                            wire:model="area_f" readonly>
                                                         @error('area_f')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1683,8 +1665,8 @@
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="text"
-                                                            class="form-control form-color moistureremoveinput"
-                                                            wire:model="psi_f">
+                                                            class="form-control remove-bacground moistureremoveinput"
+                                                            wire:model="psi_f" readonly>
                                                         @error('psi_f')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1718,19 +1700,15 @@
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="text"
-                                                            class="form-control form-color moistureremoveinput"
-                                                            wire:model="specimen_g" required>
-                                                        @error('specimen_g')
-                                                            <span class="text-danger"
-                                                                style="font-size: 12px;">{{ $message }}</span>
-                                                        @enderror
+                                                            class="form-control moistureremoveinput text-center"
+                                                            value="7" readonly>
                                                     </div>
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="date"
-                                                            class="form-control form-color moistureremoveinput"
-                                                            wire:model="break_date_g" required>
+                                                            class="form-control remove-bacground moistureremoveinput"
+                                                            wire:model="break_date_g" readonly>
                                                         @error('break_date_g')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1773,8 +1751,8 @@
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="text"
-                                                            class="form-control form-color moistureremoveinput"
-                                                            wire:model="area_g" required>
+                                                            class="form-control remove-bacground moistureremoveinput"
+                                                            wire:model="area_g" readonly>
                                                         @error('area_g')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1795,8 +1773,8 @@
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="text"
-                                                            class="form-control form-color moistureremoveinput"
-                                                            wire:model="psi_g">
+                                                            class="form-control remove-bacground moistureremoveinput"
+                                                            wire:model="psi_g" readonly>
                                                         @error('psi_g')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -1867,14 +1845,12 @@
                             <div class="col-md-12 mb-4 mt-2">
                                 <div class="input-group">
                                     <span class="input-group-text width27">Email:</span>
-                                    <input type="text" class="form-control form-color"
-                                        wire:model="email">
+                                    <input type="text" class="form-control form-color" wire:model="email">
                                 </div>
                                 @error('email')
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                 @enderror
                             </div>
-
 
                             <div class="col-md-4">
                                 <div class="input-group">
@@ -1889,7 +1865,8 @@
                             <div class="col-md-4 mb-2">
                                 <div class="input-group">
                                     <span class="input-group-text width20">Thermometer ID:</span>
-                                    <input type="text" class="form-control form-color" wire:model="thermometer_id">
+                                    <input type="text" class="form-control form-color"
+                                        wire:model="thermometer_id">
                                 </div>
                                 @error('thermometer_id')
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
@@ -1898,7 +1875,8 @@
                             <div class="col-md-4 mb-2">
                                 <div class="input-group">
                                     <span class="input-group-text width20">Air Meter ID:</span>
-                                    <input type="text" class="form-control form-color" wire:model="air_meter_id">
+                                    <input type="text" class="form-control form-color"
+                                        wire:model="air_meter_id">
                                 </div>
                                 @error('air_meter_id')
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
@@ -1917,8 +1895,7 @@
                             <div class="col-md-4">
                                 <div class="input-group">
                                     <span class="input-group-text width20">Scale ID:</span>
-                                    <input type="text" class="form-control form-color"
-                                        wire:model="scale_id">
+                                    <input type="text" class="form-control form-color" wire:model="scale_id">
                                 </div>
                                 @error('scale_id')
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>

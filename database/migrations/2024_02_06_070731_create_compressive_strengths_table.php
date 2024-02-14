@@ -73,7 +73,6 @@ class CreateCompressiveStrengthsTable extends Migration
             $table->string('this_sheet')->nullable();
             $table->string('total_to_date')->nullable();
 
-            $table->text('specimen_a')->nullable();
             $table->date('break_date_a')->nullable();
             $table->text('age_a')->nullable();
             $table->text('diameter_one_a')->nullable();
@@ -84,7 +83,6 @@ class CreateCompressiveStrengthsTable extends Migration
             $table->text('break_type_a')->nullable();
             $table->text('aggregate_fractured_a')->nullable();
 
-            $table->text('specimen_b')->nullable();
             $table->date('break_date_b')->nullable();
             $table->text('age_b')->nullable();
             $table->text('diameter_one_b')->nullable();
@@ -95,7 +93,6 @@ class CreateCompressiveStrengthsTable extends Migration
             $table->text('break_type_b')->nullable();
             $table->text('aggregate_fractured_b')->nullable();
 
-            $table->text('specimen_c')->nullable();
             $table->date('break_date_c')->nullable();
             $table->text('age_c')->nullable();
             $table->text('diameter_one_c')->nullable();
@@ -106,7 +103,6 @@ class CreateCompressiveStrengthsTable extends Migration
             $table->text('break_type_c')->nullable();
             $table->text('aggregate_fractured_c')->nullable();
 
-            $table->text('specimen_d')->nullable();
             $table->date('break_date_d')->nullable();
             $table->text('age_d')->nullable();
             $table->text('diameter_one_d')->nullable();
@@ -117,7 +113,6 @@ class CreateCompressiveStrengthsTable extends Migration
             $table->text('break_type_d')->nullable();
             $table->text('aggregate_fractured_d')->nullable();
 
-            $table->text('specimen_e')->nullable();
             $table->date('break_date_e')->nullable();
             $table->text('age_e')->nullable();
             $table->text('diameter_one_e')->nullable();
@@ -128,7 +123,6 @@ class CreateCompressiveStrengthsTable extends Migration
             $table->text('break_type_e')->nullable();
             $table->text('aggregate_fractured_e')->nullable();
 
-            $table->text('specimen_f')->nullable();
             $table->date('break_date_f')->nullable();
             $table->text('age_f')->nullable();
             $table->text('diameter_one_f')->nullable();
@@ -139,7 +133,6 @@ class CreateCompressiveStrengthsTable extends Migration
             $table->text('break_type_f')->nullable();
             $table->text('aggregate_fractured_f')->nullable();
 
-            $table->text('specimen_g')->nullable();
             $table->date('break_date_g')->nullable();
             $table->text('age_g')->nullable();
             $table->text('diameter_one_g')->nullable();

@@ -22,25 +22,25 @@ class CreateCompressiveStrengthComponent extends Component
         $date_submitted_to_lab, $specimens_tested_at, $required_strength, $day_average_compressive_strength,
         $type_of_specimen_submitted, $cubes, $other, $represented_quantity, $previous_qty, $this_sheet, $total_to_date,
 
-        $specimen_a, $break_date_a, $age_a, $diameter_one_a, $diameter_two_a, $area_a, $maximum_load_a, $psi_a,
+        $break_date_a, $age_a, $diameter_one_a, $diameter_two_a, $area_a, $maximum_load_a, $psi_a,
         $break_type_a, $aggregate_fractured_a,
 
-        $specimen_b, $break_date_b, $age_b, $diameter_one_b, $diameter_two_b, $area_b, $maximum_load_b, $psi_b,
+        $break_date_b, $age_b, $diameter_one_b, $diameter_two_b, $area_b, $maximum_load_b, $psi_b,
         $break_type_b, $aggregate_fractured_b,
 
-        $specimen_c, $break_date_c, $age_c, $diameter_one_c, $diameter_two_c, $area_c, $maximum_load_c, $psi_c,
+        $break_date_c, $age_c, $diameter_one_c, $diameter_two_c, $area_c, $maximum_load_c, $psi_c,
         $break_type_c, $aggregate_fractured_c,
 
-        $specimen_d, $break_date_d, $age_d, $diameter_one_d, $diameter_two_d, $area_d, $maximum_load_d, $psi_d,
+        $break_date_d, $age_d, $diameter_one_d, $diameter_two_d, $area_d, $maximum_load_d, $psi_d,
         $break_type_d, $aggregate_fractured_d,
 
-        $specimen_e, $break_date_e, $age_e, $diameter_one_e, $diameter_two_e, $area_e, $maximum_load_e, $psi_e,
+        $break_date_e, $age_e, $diameter_one_e, $diameter_two_e, $area_e, $maximum_load_e, $psi_e,
         $break_type_e, $aggregate_fractured_e,
 
-        $specimen_f, $break_date_f, $age_f, $diameter_one_f, $diameter_two_f, $area_f, $maximum_load_f, $psi_f,
+        $break_date_f, $age_f, $diameter_one_f, $diameter_two_f, $area_f, $maximum_load_f, $psi_f,
         $break_type_f, $aggregate_fractured_f,
 
-        $specimen_g, $break_date_g, $age_g, $diameter_one_g, $diameter_two_g, $area_g, $maximum_load_g, $psi_g,
+        $break_date_g, $age_g, $diameter_one_g, $diameter_two_g, $area_g, $maximum_load_g, $psi_g,
         $break_type_g, $aggregate_fractured_g,
 
         $lab_comments, $submitted_by, $approved_by, $email, $slump_cone_id, $thermometer_id, $air_meter_id,
@@ -146,7 +146,6 @@ class CreateCompressiveStrengthComponent extends Component
         $data->this_sheet = $this->this_sheet;
         $data->total_to_date = $this->total_to_date;
 
-        $data->specimen_a = $this->specimen_a;
         $data->break_date_a = $this->break_date_a;
         $data->age_a = $this->age_a;
         $data->diameter_one_a = $this->diameter_one_a;
@@ -157,7 +156,6 @@ class CreateCompressiveStrengthComponent extends Component
         $data->break_type_a = $this->break_type_a;
         $data->aggregate_fractured_a = $this->aggregate_fractured_a;
 
-        $data->specimen_b = $this->specimen_b;
         $data->break_date_b = $this->break_date_b;
         $data->age_b = $this->age_b;
         $data->diameter_one_b = $this->diameter_one_b;
@@ -168,7 +166,6 @@ class CreateCompressiveStrengthComponent extends Component
         $data->break_type_b = $this->break_type_b;
         $data->aggregate_fractured_b = $this->aggregate_fractured_b;
 
-        $data->specimen_b = $this->specimen_b;
         $data->break_date_b = $this->break_date_b;
         $data->age_b = $this->age_b;
         $data->diameter_one_b = $this->diameter_one_b;
@@ -179,7 +176,6 @@ class CreateCompressiveStrengthComponent extends Component
         $data->break_type_b = $this->break_type_b;
         $data->aggregate_fractured_b = $this->aggregate_fractured_b;
 
-        $data->specimen_b = $this->specimen_b;
         $data->break_date_b = $this->break_date_b;
         $data->age_b = $this->age_b;
         $data->diameter_one_b = $this->diameter_one_b;
@@ -190,7 +186,6 @@ class CreateCompressiveStrengthComponent extends Component
         $data->break_type_b = $this->break_type_b;
         $data->aggregate_fractured_b = $this->aggregate_fractured_b;
 
-        $data->specimen_c = $this->specimen_c;
         $data->break_date_c = $this->break_date_c;
         $data->age_c = $this->age_c;
         $data->diameter_one_c = $this->diameter_one_c;
@@ -201,7 +196,6 @@ class CreateCompressiveStrengthComponent extends Component
         $data->break_type_c = $this->break_type_c;
         $data->aggregate_fractured_c = $this->aggregate_fractured_c;
 
-        $data->specimen_d = $this->specimen_d;
         $data->break_date_d = $this->break_date_d;
         $data->age_d = $this->age_d;
         $data->diameter_one_d = $this->diameter_one_d;
@@ -212,7 +206,6 @@ class CreateCompressiveStrengthComponent extends Component
         $data->break_type_d = $this->break_type_d;
         $data->aggregate_fractured_d = $this->aggregate_fractured_d;
 
-        $data->specimen_e = $this->specimen_e;
         $data->break_date_e = $this->break_date_e;
         $data->age_e = $this->age_e;
         $data->diameter_one_e = $this->diameter_one_e;
@@ -223,7 +216,6 @@ class CreateCompressiveStrengthComponent extends Component
         $data->break_type_e = $this->break_type_e;
         $data->aggregate_fractured_e = $this->aggregate_fractured_e;
 
-        $data->specimen_f = $this->specimen_f;
         $data->break_date_f = $this->break_date_f;
         $data->age_f = $this->age_f;
         $data->diameter_one_f = $this->diameter_one_f;
@@ -234,7 +226,6 @@ class CreateCompressiveStrengthComponent extends Component
         $data->break_type_f = $this->break_type_f;
         $data->aggregate_fractured_f = $this->aggregate_fractured_f;
 
-        $data->specimen_g = $this->specimen_g;
         $data->break_date_g = $this->break_date_g;
         $data->age_g = $this->age_g;
         $data->diameter_one_g = $this->diameter_one_g;
