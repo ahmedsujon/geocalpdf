@@ -2921,20 +2921,23 @@
 @push('scripts')
     <script>
         $(document).ready(function() {
-            $('#selectInfo').change(function() {
-                var project_id = $(this).val();
-                $.ajax({
-                    url: "{{ route('edit_concrete_representative') }}",
-                    method: "POST",
-                    data: {
-                        project_id: project_id,
-                        _token: '<?php echo csrf_token(); ?>',
-                    },
-                    success: function(result) {
-                        console.log(result);
-                        $('#action').html(result);
-                    }
-                })
+            $('.dependent').change(function() {
+                if ($(this).val() != '') {
+                    var file_id = $(this).data("file_id");
+                    var value = $(this).val();
+                    $.ajax({
+                        url: "{{ route('edit_concrete_representative') }}",
+                        method: "POST",
+                        data: {
+                            file_id: file_id,
+                            value: value,
+                            _token: '<?php echo csrf_token(); ?>',
+                        },
+                        success: function(result) {
+                            $('#action').html(result);
+                        }
+                    })
+                }
             });
         });
     </script>

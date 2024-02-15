@@ -2885,12 +2885,12 @@
                                     @endif
                                 </div>
                                 <div class="col-md-12 text-center">
-                                    <form wire:submit.prevent='storeData("publish")'>
-                                        <button type="submit" class="btn btn-primary submit_btn"
+                                    {{-- <form wire:submit.prevent=''> --}}
+                                        <button type="button" wire:click.prevent='storeData("unpublish")' class="btn btn-primary submit_btn"
                                             style="background: green;">{!! loadingState('storeData', 'Save as Draft') !!}</button>
-                                        <button type="submit" class="btn btn-primary submit_btn"
+                                        <button type="button" wire:click.prevent='storeData("publish")' class="btn btn-primary submit_btn"
                                             style="background: green;">{!! loadingState('storeData', 'Save and Send') !!}</button>
-                                    </form>
+                                    {{-- </form> --}}
                                 </div>
                             </div>
                         </div>
