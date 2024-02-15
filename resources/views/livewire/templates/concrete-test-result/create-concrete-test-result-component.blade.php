@@ -277,8 +277,7 @@
 
                                     <div class="input-group">
                                         <span class="input-group-text width20">Client:</span>
-                                        <input type="text" class="form-control" wire:model="client_name"
-                                            readonly>
+                                        <input type="text" class="form-control" wire:model="client_name" readonly>
                                     </div>
                                     @error('client_id')
                                         <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
@@ -286,8 +285,7 @@
 
                                     <div class="input-group">
                                         <span class="input-group-text width20">Project No:</span>
-                                        <input type="text" class="form-control"
-                                            wire:model="project_number" readonly>
+                                        <input type="text" class="form-control" wire:model="project_number" readonly>
                                         @error('project_number')
                                             <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                         @enderror
@@ -2887,7 +2885,9 @@
                                     @endif
                                 </div>
                                 <div class="col-md-12 text-center">
-                                    <form wire:submit.prevent='storeData'>
+                                    <form wire:submit.prevent='storeData("publish")'>
+                                        <button type="submit" class="btn btn-primary submit_btn"
+                                            style="background: green;">{!! loadingState('storeData', 'Save as Draft') !!}</button>
                                         <button type="submit" class="btn btn-primary submit_btn"
                                             style="background: green;">{!! loadingState('storeData', 'Save and Send') !!}</button>
                                     </form>

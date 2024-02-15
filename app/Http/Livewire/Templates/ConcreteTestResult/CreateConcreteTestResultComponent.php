@@ -112,6 +112,7 @@ class CreateConcreteTestResultComponent extends Component
         $data = new ConcreteTestResult();
         $data->project_id = $this->project_id;
         $data->client_id = $this->client_id;
+        $data->user_id = Auth::user()->id;
         $data->project_number = $this->project_number;
         $data->project_location = $this->project_location;
         $data->date_submited = $this->date_submited;
@@ -360,13 +361,18 @@ class CreateConcreteTestResultComponent extends Component
         $data->title = $this->title;
 
         $data->remark = $this->remark;
-        $data->status = $this->status;
         $data->created_by = Auth::user()->id;
         $data->responsible_person = json_encode($this->responsible_person);
 
+        if ($data->status === 'publish') {
+            $data->status = 'publish';
+        } else {
+            $data->status = 'unpublish';
+        }
+
         $data->save();
 
-        //send Mail
+        // send Mail
         // if ($this->responsible_person) {
         //     $persons = $this->responsible_person;
         //     $f_id = $data->id;
@@ -376,8 +382,8 @@ class CreateConcreteTestResultComponent extends Component
         //             $auth_user = User::find($auth_user_id);
         //             $user = User::find($re_id);
         //             $mailData['email'] = $user->email;
-        //             $mailData['name'] = $auth_user ->name;
-        //             $mailData['role_id'] = $auth_user ->role_id;
+        //             $mailData['name'] = $auth_user->name;
+        //             $mailData['role_id'] = $auth_user->role_id;
         //             $mailData['id'] = $f_id;
         //             $mailData['subject'] = 'New file waiting for your review';
         //             Mail::send('emails.mail_commercial', $mailData, function ($message) use ($mailData) {
