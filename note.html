@@ -1,0 +1,40 @@
+<form wire:submit.prevent='storeData'>
+    <div class="row">
+        <div class="col-md-10 offset-1">
+            <div class="row mb-3">
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" wire:model="supplier" />
+                </div>
+            </div>
+            <div class="row mt-5 mb-3">
+                <div class="col-sm-12 text-end">
+                    <button type="submit" class="btn btn-primary">
+                        Save as Draft
+                    </button>
+                    <button type="submit" class="btn btn-primary">
+                        Save
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+public function storeData()
+{
+    $this->validate([
+        'supplier' => 'required',
+    ]);
+
+    if ($status === 'publish'){
+        $proctor = new MixInfo();
+        $proctor->supplier = $this->supplier;
+        $proctor->status = 'publish';
+        $proctor->save();
+    }else {
+        $proctor = new MixInfo();
+        $proctor->supplier = $this->supplier;
+        $proctor->status = 'unpublish';
+        $proctor->save();
+    }
+}

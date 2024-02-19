@@ -30,8 +30,17 @@ use App\Http\Livewire\Templates\Commercial\CommercialComponent;
 use App\Http\Livewire\Templates\Commercial\CreateCommercialComponent;
 use App\Http\Livewire\Templates\Commercial\EditCommercialComponent;
 use App\Http\Livewire\Templates\Commercial\ViewCommercialComponent;
+use App\Http\Livewire\Templates\CompressiveStrength\CompressiveDraftFileComponent;
+use App\Http\Livewire\Templates\CompressiveStrength\CompressiveStrengthComponent;
+use App\Http\Livewire\Templates\CompressiveStrength\CreateCompressiveStrengthComponent;
+use App\Http\Livewire\Templates\CompressiveStrength\EditCompressiveStrengthComponent;
+use App\Http\Livewire\Templates\CompressiveStrength\ViewCompressiveStrengthComponent;
 use App\Http\Livewire\Templates\ConcreteFieldReport\ConcreteFieldReportComponent;
-use App\Http\Livewire\Templates\ConcreteFieldReport\EditConcreteFieldReportComponent;
+use App\Http\Livewire\Templates\ConcreteTestResult\ConcreteTestResultComponent;
+use App\Http\Livewire\Templates\ConcreteTestResult\CreateConcreteTestResultComponent;
+use App\Http\Livewire\Templates\ConcreteTestResult\DraftFileComponent;
+use App\Http\Livewire\Templates\ConcreteTestResult\EditConcreteTestResultComponent;
+use App\Http\Livewire\Templates\ConcreteTestResult\ViewConcreteTestResultComponent;
 use App\Http\Livewire\Templates\InspectionConcrete\CreateInspectionConcreteComponent;
 use App\Http\Livewire\Templates\InspectionConcrete\EditInspectionConcreteComponent;
 use App\Http\Livewire\Templates\InspectionConcrete\InspectionConcreteComponent;
@@ -120,6 +129,27 @@ Route::get('/project/show/{project_id}', ViewProjectComponent::class)->name('pro
 // Templates
 Route::get('/templates', TemplateComponent::class)->name('templates');
 
+// Concrete Test Results Summary - Local Agency
+Route::get('/concrete/test/result', ConcreteTestResultComponent::class)->name('template.concrete.test.result');
+Route::get('/draft/concrete/test/result', DraftFileComponent::class)->name('template.concrete.test.result.draft');
+Route::get('/concrete/test/result/create', CreateConcreteTestResultComponent::class)->name('concrete.test.result.create');
+Route::get('/concrete/test/result/edit/{file_id}', EditConcreteTestResultComponent::class)->name('concrete.test.result.update');
+Route::get('/concrete/test/result/show/{file_id}', ViewConcreteTestResultComponent::class)->name('concrete.test.result.show');
+// Get Representative
+Route::post('/get-concrete/representative', [ConcreteTestResultComponent::class, 'getConcreteRepresentative'])->name('get_concrete_representative');
+Route::post('/edit-concrete/representative', [ConcreteTestResultComponent::class, 'editConcreteRepresentative'])->name('edit_concrete_representative');
+
+
+// Compressive Strength - Local Agency
+Route::get('/compressive/strength', CompressiveStrengthComponent::class)->name('template.compressive.strength');
+Route::get('/draft/compressive/strength', CompressiveDraftFileComponent::class)->name('template.compressive.strength.draft');
+Route::get('/compressive/strength/create', CreateCompressiveStrengthComponent::class)->name('compressive.strength.create');
+Route::get('/compressive/strength/edit/{file_id}', EditCompressiveStrengthComponent::class)->name('compressive.strength.update');
+Route::get('/compressive/strength/show/{file_id}', ViewCompressiveStrengthComponent::class)->name('compressive.strength.show');
+// Get Representative
+Route::post('/get-compressive/strength', [CompressiveStrengthComponent::class, 'getCompressiveStrengthResentative'])->name('get_compressive_representative');
+Route::post('/edit-compressive/strength', [CompressiveStrengthComponent::class, 'editCompressiveStrengthResentative'])->name('edit_compressive_representative');
+
 // CDOT
 Route::get('/cdot', CdotComponent::class)->name('template.cdot');
 Route::get('/cdot/create', CreateCdotComponent::class)->name('cdot.create');
@@ -134,7 +164,7 @@ Route::post('/edit-representative', [CdotComponent::class, 'editCdotRepresentati
 Route::get('/commercial', CommercialComponent::class)->name('template.commercial');
 Route::get('/commercial/create', CreateCommercialComponent::class)->name('commercial.create');
 Route::get('/commercial/edit/{file_id}', EditCommercialComponent::class)->name('commercial.update');
-Route::get('/commercial/show/{file_id}', ViewCommercialComponent::class)->name('commercial.show'); 
+Route::get('/commercial/show/{file_id}', ViewCommercialComponent::class)->name('commercial.show');
 
 // Get Representative for Commercial
 Route::post('/get-com-representative', [CommercialComponent::class, 'getCommercialRepresentative'])->name('get_commercial_representative');
@@ -149,7 +179,7 @@ Route::get('/inspection/concrete/{file_id}', ViewInspectionConcreteComponent::cl
 // Get Representative
 Route::post('/get-data-set-two-representative', [InspectionConcreteComponent::class, 'getInspectionRepresentative'])->name('get_inspection_representative');
 Route::post('/edit-data-set-two-representative', [InspectionConcreteComponent::class, 'editInspectionRepresentative'])->name('edit_inspection_representative');
- 
+
 // Data Set Two
 Route::get('/inspection/data-set-two', InspectionTwoComponent::class)->name('template.concrete.two');
 Route::get('/inspection/data-set-two/create', CreateInspectionTwoComponent::class)->name('concrete.create.two');
@@ -157,7 +187,7 @@ Route::get('/inspection/data-set-two/edit/{file_id}', EditInspectionTwoComponent
 Route::get('/inspection/data-set-two/{file_id}', ViewInspectionTwoComponent::class)->name('concrete.show.two');
 // Get Representative
 Route::post('/get-inspection-representative/data-set/two', [InspectionTwoComponent::class, 'getDataSetTwoRepresentative'])->name('get_data_set_two_representative');
-Route::post('/edit-inspection-representative/data-set/two', [InspectionTwoComponent::class, 'editDataSetTwoRepresentative'])->name('edit_data_set_two_representative'); 
+Route::post('/edit-inspection-representative/data-set/two', [InspectionTwoComponent::class, 'editDataSetTwoRepresentative'])->name('edit_data_set_two_representative');
 
 // Data Set Three
 Route::get('/inspection/data-set-three', InspectionThreeComponent::class)->name('template.concrete.three');
@@ -270,6 +300,9 @@ Route::post('/get-supervisors', [BaseController::class, 'getSupervisor'])->name(
 Route::post('/upload', 'app\http\controllers\BaseController@uploadckimage')->name('ckeditor.upload');
 
 // PDF Generate
+Route::get('/invoice/ijP6ERmmdeLfFi57211{id}4ijP6ERmmdeLfasfFi5RiwfaZYYVSmdtcmsajxJe2K31U5knK', [InvoiceController::class, 'concreteTestResultsPDF'])->name('invoice.concrete-test-results-pdf');
+Route::get('/invoice/ijP6ERmmdeLfFi57211{id}4ijP6ERmmdeLfFi5RiwZYYVSmdtsrsfafcmjxJe2K31U5knK', [InvoiceController::class, 'compressiveStrengthsPDF'])->name('invoice.compressive-strengths-pdf');
+
 Route::get('/invoice/ijP6ERmmdeLfFi57209633311{id}4ijP6ERmmdeLfFi5RiwZATmrI2SMOYYVSmdtcmjxJe2K31U5knK', [InvoiceController::class, 'commercialPDF'])->name('invoice.commercial');
 
 Route::get('/cdot-form/ijP6ERmmdeLfFi55958194244{id}4ijP6ERmmdeLfFi5RiwZATmrI2SMOYYVSmdtcmjxJe2K31U5knK', [InvoiceController::class, 'cdotPDF'])->name('cdot.form.generate');
@@ -327,5 +360,3 @@ Route::middleware(['auth:sanctum', 'verified'])->name('admin.')->group(function 
 Route::middleware(['auth:sanctum', 'verified'])->name('admin.')->group(function () {
     Route::get('/admin/field-tech', NormalAdminDashboardComponent::class)->name('tech.dashboard');
 });
-
-

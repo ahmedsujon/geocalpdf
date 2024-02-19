@@ -3,30 +3,59 @@
 namespace App\Http\Controllers;
 
 use App\Models\Client;
+use App\Models\Project;
 use App\Models\Commercial;
+use App\Models\ProctorData;
+use Illuminate\Http\Request;
+use App\Models\SoilAggregate;
+use App\Models\PlasticConcrete;
+use Barryvdh\DomPDF\Facade\Pdf;
 use App\Models\FieldDensityCdot;
+use App\Models\ConcreteTestResult;
 use App\Models\InspectionConcrete;
-use App\Models\InspectionConcreteSetEight;
+use App\Models\CompressiveStrength;
+use App\Models\SoilAggregateMixData;
+use App\Models\SoilAggregateTestResult;
+use App\Models\InspectionConcreteSetSix;
+use App\Models\InspectionConcreteSetTen;
+use App\Models\InspectionConcreteSetTwo;
 use App\Models\InspectionConcreteSetFive;
 use App\Models\InspectionConcreteSetFour;
 use App\Models\InspectionConcreteSetNine;
+use App\Models\InspectionConcreteSetEight;
 use App\Models\InspectionConcreteSetSeven;
-use App\Models\InspectionConcreteSetSix;
-use App\Models\InspectionConcreteSetTen;
 use App\Models\InspectionConcreteSetThree;
-use App\Models\InspectionConcreteSetTwo;
-use App\Models\PlasticConcrete;
-use App\Models\ProctorData;
-use App\Models\Project;
-use App\Models\SoilAggregate;
-use App\Models\SoilAggregateMixData;
-use App\Models\SoilAggregateTestResult;
-use Barryvdh\DomPDF\Facade\Pdf;
-use Illuminate\Http\Request;
 
 class InvoiceController extends Controller
 {
 
+    public function concreteTestResultsPDF($id)
+    {
+        $data = ConcreteTestResult::findOrFail($id);
+        $data->project_name = project($data->project_id)->name;
+        $data->client_name = client($data->client_id)->name;
+        $data->client_email = client($data->client_id)->email;
+        $data->client_phone = client($data->client_id)->phone;
+        $data->client_address = client($data->client_id)->address;
+        $data->client_company_name = client($data->client_id)->company_name;
+
+        $pdf = Pdf::loadView('pdf.concrete-test-results', compact('data'));
+        return $pdf->stream('concrete-test-results-summary-local-agency .pdf');
+    }
+
+    public function compressiveStrengthsPDF($id)
+    {
+        $data = CompressiveStrength::findOrFail($id);
+        $data->project_name = project($data->project_id)->name;
+        $data->client_name = client($data->client_id)->name;
+        $data->client_email = client($data->client_id)->email;
+        $data->client_phone = client($data->client_id)->phone;
+        $data->client_address = client($data->client_id)->address;
+        $data->client_company_name = client($data->client_id)->company_name;
+
+        $pdf = Pdf::loadView('pdf.compressive-strength', compact('data'));
+        return $pdf->stream('compressive-strength-local-agency.pdf');
+    }
     public function commercialPDF($id)
     {
         $data = Commercial::findOrFail($id);
@@ -56,7 +85,7 @@ class InvoiceController extends Controller
         $pdf = Pdf::loadView('pdf.soil_aggregate', compact('data'));
         return $pdf->stream('field-density-soil-aggregate-report.pdf');
     }
-    
+
     public function cdotPDF($id)
     {
         $data = FieldDensityCdot::findOrFail($id);
@@ -70,7 +99,7 @@ class InvoiceController extends Controller
         $pdf = Pdf::loadView('pdf.cdot_form', compact('data'));
         return $pdf->stream('asphalt-field-density-by-nuclear-mMethod-cdot-report.pdf');
     }
- 
+
     public function plasticConcretePDF($id)
     {
         $data = PlasticConcrete::findOrFail($id);
@@ -126,7 +155,7 @@ class InvoiceController extends Controller
             $avarage_array[] = $data->measured_strength_i;
         }
         $data->avarage = round(array_sum($avarage_array) / count($avarage_array), -1);
-       
+
         $pdf = Pdf::loadView('pdf.inspection_concrete_one', compact('data'));
         return $pdf->stream('inspection_concrete_report.pdf');
     }
