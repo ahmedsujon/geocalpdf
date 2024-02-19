@@ -37,6 +37,7 @@ use App\Http\Livewire\Templates\CompressiveStrength\ViewCompressiveStrengthCompo
 use App\Http\Livewire\Templates\ConcreteFieldReport\ConcreteFieldReportComponent;
 use App\Http\Livewire\Templates\ConcreteTestResult\ConcreteTestResultComponent;
 use App\Http\Livewire\Templates\ConcreteTestResult\CreateConcreteTestResultComponent;
+use App\Http\Livewire\Templates\ConcreteTestResult\DraftFileComponent;
 use App\Http\Livewire\Templates\ConcreteTestResult\EditConcreteTestResultComponent;
 use App\Http\Livewire\Templates\ConcreteTestResult\ViewConcreteTestResultComponent;
 use App\Http\Livewire\Templates\InspectionConcrete\CreateInspectionConcreteComponent;
@@ -129,6 +130,7 @@ Route::get('/templates', TemplateComponent::class)->name('templates');
 
 // Concrete Test Results Summary - Local Agency
 Route::get('/concrete/test/result', ConcreteTestResultComponent::class)->name('template.concrete.test.result');
+Route::get('/draft/concrete/test/result', DraftFileComponent::class)->name('template.concrete.test.result.draft');
 Route::get('/concrete/test/result/create', CreateConcreteTestResultComponent::class)->name('concrete.test.result.create');
 Route::get('/concrete/test/result/edit/{file_id}', EditConcreteTestResultComponent::class)->name('concrete.test.result.update');
 Route::get('/concrete/test/result/show/{file_id}', ViewConcreteTestResultComponent::class)->name('concrete.test.result.show');

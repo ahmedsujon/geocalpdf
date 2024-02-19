@@ -96,19 +96,6 @@ class CreateConcreteTestResultComponent extends Component
 
     public function storeData($status)
     {
-        $this->validate([
-            'project_id' => 'required',
-            'date_submited' => 'required',
-            'project_location' => 'required',
-            'responsible_person' => 'required',
-            'office_address' => 'required',
-            'inches_max' => 'required',
-            'inches_min' => 'required'
-        ], [
-            'project_id.required' => 'Project name is required',
-            'user_id.required' => 'Technician name is required',
-        ]);
-
         $data = new ConcreteTestResult();
         $data->project_id = $this->project_id;
         $data->client_id = $this->client_id;
@@ -117,6 +104,7 @@ class CreateConcreteTestResultComponent extends Component
         $data->project_location = $this->project_location;
         $data->date_submited = $this->date_submited;
         $data->region = $this->region;
+        $data->office_address = $this->office_address;
 
         $data->item = $this->item;
         $data->class_name = $this->class_name;
@@ -365,8 +353,19 @@ class CreateConcreteTestResultComponent extends Component
         $data->responsible_person = json_encode($this->responsible_person);
 
         if ($status === 'publish') {
+            $this->validate([
+                'project_id' => 'required',
+                'date_submited' => 'required',
+                'project_location' => 'required',
+                'responsible_person' => 'required',
+                'office_address' => 'required',
+                'inches_max' => 'required',
+                'inches_min' => 'required'
+            ], [
+                'project_id.required' => 'Project name is required',
+                'user_id.required' => 'Technician name is required',
+            ]);
             $data->status = 'publish';
-
             // send Mail
             if ($this->responsible_person) {
                 $persons = $this->responsible_person;
@@ -389,6 +388,12 @@ class CreateConcreteTestResultComponent extends Component
                 });
             }
         } else {
+            $this->validate([
+                'project_id' => 'required',
+                'office_address' => 'required',
+            ], [
+                'project_id.required' => 'Project name is required',
+            ]);
             $data->status = 'unpublish';
         }
         $data->save();
@@ -400,7 +405,8 @@ class CreateConcreteTestResultComponent extends Component
     {
         $projects = Project::orderBy('id', 'DESC')->get();
         $supervisors = User::orderBy('id', 'DESC')->where('role_id', 5)->get();
-        return view('livewire.templates.concrete-test-result.create-concrete-test-result-component',
+        return view(
+            'livewire.templates.concrete-test-result.create-concrete-test-result-component',
             ['projects' => $projects, 'supervisors' => $supervisors]
         )
             ->layout('livewire.layouts.base');

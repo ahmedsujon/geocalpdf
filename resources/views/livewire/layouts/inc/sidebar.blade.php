@@ -86,6 +86,9 @@
                                         <a class="nav-link" href="{{ route('template.concrete.test.result') }}">Concrete Test
                                             Results</a>
                                     </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('template.concrete.test.result.draft') }}">Draft Files</a>
+                                    </li>
                                 </ul>
                             </div>
                         </li>
