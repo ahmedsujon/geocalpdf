@@ -336,9 +336,7 @@ class EditConcreteTestResultComponent extends Component
         $this->project_engineer = $file->project_engineer;
         $this->signature = $file->signature;
         $this->title = $file->title;
-
         $this->remark = $file->remark;
-        $this->status = $file->status;
     }
 
     public function updated($fields)
