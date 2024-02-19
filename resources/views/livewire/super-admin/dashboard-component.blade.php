@@ -6,7 +6,86 @@
             <div class="col-lg-6">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">ASPHALT FIELD DENSITY BY NUCLEAR METHOD - COMMERCIAL 
+                        <h4 class="card-title">CONCRETE TEST RESULTS SUMMARY - LOCAL AGENCY</h4>
+                    </div>
+                    <!--end card-header-->
+                    <div class="card-body">
+                        <div class="main-timeline mt-3">
+                            @if ($concreate_test_result_forms->count() > 0)
+                            @foreach ($concreate_test_result_forms as $file)
+                            <div class="timeline">
+                                <span class="timeline-icon"></span>
+                                <span class="year">
+                                    <?php echo App\Http\Livewire\SuperAdmin\DashboardComponent::ago($file->created_at); ?>
+                                </span>
+                                <div class="timeline-content">
+                                    <a href="{{ route('concrete.test.result.update', ['file_id' => $file->id]) }}"
+                                        class="title">
+                                        {{ getProject($file->project_id)->name }} -
+                                        @if ($file->status)
+                                        {{$file->status }}
+                                        @else
+                                            New Project Created
+                                        @endif
+                                        - by ({{
+                                        getUser($file->created_by)->name }}) : <span class="post">{{
+                                            $file->created_at }}</span></a>
+                                    <p class="description">
+                                        {{ $file->remark }}
+                                    </p>
+                                </div>
+                            </div>
+                            @endforeach
+                            @else
+                            <h5 style="color: #c7c7c7">No Activity Available!</h5>
+                            @endif
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">COMPRESSIVE STRENGTH - LOCAL AGENCY</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="main-timeline mt-3">
+                            @if ($compressive_strenght_forms->count() > 0)
+                            @foreach ($compressive_strenght_forms as $file)
+                            <div class="timeline">
+                                <span class="timeline-icon"></span>
+                                <span class="year">
+                                    <?php echo App\Http\Livewire\SuperAdmin\DashboardComponent::ago($file->created_at); ?>
+                                </span>
+                                <div class="timeline-content">
+                                    <a href="{{ route('compressive.strength.update', ['file_id' => $file->id]) }}"
+                                        class="title">
+                                        {{ getProject($file->project_id)->name }} -
+                                        @if ($file->status)
+                                        {{$file->status }}
+                                        @else
+                                            New Project Created
+                                        @endif
+                                        - by ({{
+                                        getUser($file->created_by)->name }}) : <span class="post">{{
+                                            $file->created_at }}</span></a>
+                                    <p class="description">
+                                        {{ $file->remark }}
+                                    </p>
+                                </div>
+                            </div>
+                            @endforeach
+                            @else
+                            <h5 style="color: #c7c7c7">No Activity Available!</h5>
+                            @endif
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">ASPHALT FIELD DENSITY BY NUCLEAR METHOD - COMMERCIAL
                         </h4>
                     </div>
                     <!--end card-header-->
@@ -24,9 +103,9 @@
                                         class="title">
                                         {{ getProject($file->project_id)->name }} -
                                         @if ($file->status)
-                                        {{$file->status }} 
+                                        {{$file->status }}
                                         @else
-                                            New Project Created 
+                                            New Project Created
                                         @endif
                                         - by ({{
                                         getUser($file->created_by)->name }}) : <span class="post">{{
@@ -65,9 +144,9 @@
                                         class="title">
                                         {{ getProject($file->project_id)->name }} -
                                         @if ($file->status)
-                                        {{$file->status }} 
+                                        {{$file->status }}
                                         @else
-                                            New Project Created 
+                                            New Project Created
                                         @endif
                                         - by ({{
                                         getUser($file->created_by)->name }}) : <span class="post">{{
@@ -105,9 +184,9 @@
                                         class="title">
                                         {{ getProject($file->project_id)->name }} -
                                         @if ($file->status)
-                                        {{$file->status }} 
+                                        {{$file->status }}
                                         @else
-                                            New Project Created 
+                                            New Project Created
                                         @endif
                                         - by ({{
                                         getUser($file->created_by)->name }}) : <span class="post">{{
@@ -145,9 +224,9 @@
                                         class="title">
                                         {{ getProject($file->project_id)->name }} -
                                         @if ($file->status)
-                                        {{$file->status }} 
+                                        {{$file->status }}
                                         @else
-                                            New Project Created 
+                                            New Project Created
                                         @endif
                                         - by ({{
                                         getUser($file->created_by)->name }}) : <span class="post">{{
@@ -186,9 +265,9 @@
                                         class="title">
                                         {{ getProject($file->project_id)->name }} -
                                         @if ($file->status)
-                                        {{$file->status }} 
+                                        {{$file->status }}
                                         @else
-                                            New Project Created 
+                                            New Project Created
                                         @endif
                                         - by ({{
                                         getUser($file->created_by)->name }}) : <span class="post">{{
@@ -227,9 +306,9 @@
                                         class="title">
                                         {{ getProject($file->project_id)->name }} -
                                         @if ($file->status)
-                                        {{$file->status }} 
+                                        {{$file->status }}
                                         @else
-                                            New Project Created 
+                                            New Project Created
                                         @endif
                                         - by ({{
                                         getUser($file->created_by)->name }}) : <span class="post">{{
@@ -268,9 +347,9 @@
                                         class="title">
                                         {{ getProject($file->project_id)->name }} -
                                         @if ($file->status)
-                                        {{$file->status }} 
+                                        {{$file->status }}
                                         @else
-                                            New Project Created 
+                                            New Project Created
                                         @endif
                                         - by ({{
                                         getUser($file->created_by)->name }}) : <span class="post">{{
@@ -309,9 +388,9 @@
                                         class="title">
                                         {{ getProject($file->project_id)->name }} -
                                         @if ($file->status)
-                                        {{$file->status }} 
+                                        {{$file->status }}
                                         @else
-                                            New Project Created 
+                                            New Project Created
                                         @endif
                                         - by ({{
                                         getUser($file->created_by)->name }}) : <span class="post">{{
@@ -350,9 +429,9 @@
                                         class="title">
                                         {{ getProject($file->project_id)->name }} -
                                         @if ($file->status)
-                                        {{$file->status }} 
+                                        {{$file->status }}
                                         @else
-                                            New Project Created 
+                                            New Project Created
                                         @endif
                                         - by ({{
                                         getUser($file->created_by)->name }}) : <span class="post">{{
@@ -391,9 +470,9 @@
                                         class="title">
                                         {{ getProject($file->project_id)->name }} -
                                         @if ($file->status)
-                                        {{$file->status }} 
+                                        {{$file->status }}
                                         @else
-                                            New Project Created 
+                                            New Project Created
                                         @endif
                                         - by ({{
                                         getUser($file->created_by)->name }}) : <span class="post">{{
@@ -432,9 +511,9 @@
                                         class="title">
                                         {{ getProject($file->project_id)->name }} -
                                         @if ($file->status)
-                                        {{$file->status }} 
+                                        {{$file->status }}
                                         @else
-                                            New Project Created 
+                                            New Project Created
                                         @endif
                                         - by ({{
                                         getUser($file->created_by)->name }}) : <span class="post">{{
@@ -473,9 +552,9 @@
                                         class="title">
                                         {{ getProject($file->project_id)->name }} -
                                         @if ($file->status)
-                                        {{$file->status }} 
+                                        {{$file->status }}
                                         @else
-                                            New Project Created 
+                                            New Project Created
                                         @endif
                                         - by ({{
                                         getUser($file->created_by)->name }}) : <span class="post">{{
@@ -514,9 +593,9 @@
                                         class="title">
                                         {{ getProject($file->project_id)->name }} -
                                         @if ($file->status)
-                                        {{$file->status }} 
+                                        {{$file->status }}
                                         @else
-                                            New Project Created 
+                                            New Project Created
                                         @endif
                                         - by ({{
                                         getUser($file->created_by)->name }}) : <span class="post">{{
@@ -555,9 +634,9 @@
                                         class="title">
                                         {{ getProject($file->project_id)->name }} -
                                         @if ($file->status)
-                                        {{$file->status }} 
+                                        {{$file->status }}
                                         @else
-                                            New Project Created 
+                                            New Project Created
                                         @endif
                                         - by ({{
                                         getUser($file->created_by)->name }}) : <span class="post">{{

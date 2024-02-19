@@ -23,7 +23,7 @@ class CreateConcreteTestResultsTable extends Migration
             $table->string('date_submited')->nullable();
             $table->string('region')->nullable();
             $table->string('office_address')->nullable();
-            
+
             $table->string('item')->nullable();
             $table->string('class_name')->nullable();
             $table->string('design_mix_no')->nullable();
@@ -268,6 +268,7 @@ class CreateConcreteTestResultsTable extends Migration
 
             $table->string('remark')->nullable();
             $table->string('status')->nullable();
+            $table->string('publish_status')->nullable();
             $table->string('created_by')->nullable();
             $table->string('responsible_person')->nullable();
 

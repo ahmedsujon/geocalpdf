@@ -153,6 +153,7 @@ class CreateCompressiveStrengthsTable extends Migration
             $table->string('unit_weight_measure_id')->nullable();
             $table->string('scale_id')->nullable();
             $table->string('status')->nullable();
+            $table->string('publish_status')->nullable();
             $table->string('remark')->nullable();
             $table->string('created_by')->nullable();
             $table->string('responsible_person')->nullable();

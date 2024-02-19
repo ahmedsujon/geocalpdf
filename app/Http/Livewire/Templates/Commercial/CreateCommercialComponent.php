@@ -14,7 +14,7 @@ use Livewire\Component;
 
 class CreateCommercialComponent extends Component
 {
-    public $client_id, $client_name, $project_id, $project_number, $date, $user_id, $weather, $office_address, $troxler, $other, $model, $serial_no, 
+    public $client_id, $client_name, $project_id, $project_number, $date, $user_id, $weather, $office_address, $troxler, $other, $model, $serial_no,
     $density_count, $item_number, $moisture_count, $moisture_equation, $test_mode, $test_method, $compaction_requirement_min, $compaction_requirement_max, $general_location, $remark, $status, $report_status, $responsible_person = [];
 
     public $mix_a_id, $supplier_a, $plant_a, $mix_type_a, $max_theoretical_density_a, $max_theoretical_specific_gravity_a,
@@ -525,7 +525,6 @@ class CreateCommercialComponent extends Component
         $data->relative_compaction_f = $this->relative_compaction_f;
         $data->pass_fail_f = $this->pass_fail_f;
 
-        
         $data->status = $this->status;
         $data->remark = $this->remark;
         $data->created_by = Auth::user()->id;

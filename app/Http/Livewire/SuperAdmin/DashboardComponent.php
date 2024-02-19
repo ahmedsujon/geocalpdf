@@ -3,7 +3,9 @@
 namespace App\Http\Livewire\SuperAdmin;
 
 use App\Models\Commercial;
+use App\Models\CompressiveStrength;
 use App\Models\Concrete;
+use App\Models\ConcreteTestResult;
 use App\Models\FieldDensityCdot;
 use App\Models\InspectionConcrete;
 use App\Models\InspectionConcreteSetEight;
@@ -63,6 +65,8 @@ class DashboardComponent extends Component
 
     public function render()
     {
+        $concreate_test_result_forms = ConcreteTestResult::orderBy('id', 'DESC')->where('publish_status', 'publish')->take(3)->get();
+        $compressive_strenght_forms = CompressiveStrength::orderBy('id', 'DESC')->where('publish_status', 'publish')->take(3)->get();
         $commercial_forms = Commercial::orderBy('id', 'DESC')->take(3)->get();
         $cdot_forms = FieldDensityCdot::orderBy('id', 'DESC')->take(3)->get();
         $soil_aggregates = SoilAggregate::orderBy('id', 'DESC')->take(3)->get();
@@ -78,6 +82,8 @@ class DashboardComponent extends Component
         $concrete_nines = InspectionConcreteSetNine::orderBy('id', 'DESC')->take(3)->get();
         $concrete_tens = InspectionConcreteSetTen::orderBy('id', 'DESC')->take(3)->get();
         return view('livewire.super-admin.dashboard-component', [
+            'concreate_test_result_forms'=> $concreate_test_result_forms,
+            'compressive_strenght_forms'=> $compressive_strenght_forms,
             'commercial_forms' => $commercial_forms,
             'cdot_forms' => $cdot_forms,
             'soil_aggregates' => $soil_aggregates,

@@ -69,7 +69,7 @@ class CreateInspectionConcreteComponent extends Component
     public function specifiedStrengthA()
     {
         if ($this->age_a != null) {
-           $this->test_date_a = Carbon::parse($this->date)->addDays($this->age_a)->format('Y-m-d');  
+           $this->test_date_a = Carbon::parse($this->date)->addDays($this->age_a)->format('Y-m-d');
         }else {
             $this->test_date_a = null;
         }
@@ -85,7 +85,7 @@ class CreateInspectionConcreteComponent extends Component
     public function specifiedStrengthB()
     {
         if ($this->age_b != null) {
-            $this->test_date_b = Carbon::parse($this->date)->addDays($this->age_b)->format('Y-m-d');  
+            $this->test_date_b = Carbon::parse($this->date)->addDays($this->age_b)->format('Y-m-d');
          }else {
             $this->test_date_b = null;
         }
@@ -101,7 +101,7 @@ class CreateInspectionConcreteComponent extends Component
     public function specifiedStrengthC()
     {
         if ($this->age_c != null) {
-            $this->test_date_c = Carbon::parse($this->date)->addDays($this->age_c)->format('Y-m-d');  
+            $this->test_date_c = Carbon::parse($this->date)->addDays($this->age_c)->format('Y-m-d');
          }else {
             $this->test_date_c = null;
         }
@@ -117,7 +117,7 @@ class CreateInspectionConcreteComponent extends Component
     public function specifiedStrengthD()
     {
         if ($this->age_d != null) {
-            $this->test_date_d = Carbon::parse($this->date)->addDays($this->age_d)->format('Y-m-d');  
+            $this->test_date_d = Carbon::parse($this->date)->addDays($this->age_d)->format('Y-m-d');
          }else {
             $this->test_date_d = null;
         }
@@ -133,7 +133,7 @@ class CreateInspectionConcreteComponent extends Component
     public function specifiedStrengthE()
     {
         if ($this->age_e != null) {
-            $this->test_date_e = Carbon::parse($this->date)->addDays($this->age_e)->format('Y-m-d');  
+            $this->test_date_e = Carbon::parse($this->date)->addDays($this->age_e)->format('Y-m-d');
          }else {
             $this->test_date_e = null;
         }
@@ -149,7 +149,7 @@ class CreateInspectionConcreteComponent extends Component
     public function specifiedStrengthF()
     {
         if ($this->age_f != null) {
-            $this->test_date_f = Carbon::parse($this->date)->addDays($this->age_f)->format('Y-m-d');  
+            $this->test_date_f = Carbon::parse($this->date)->addDays($this->age_f)->format('Y-m-d');
          }else {
             $this->test_date_f = null;
         }
@@ -165,7 +165,7 @@ class CreateInspectionConcreteComponent extends Component
     public function specifiedStrengthG()
     {
         if ($this->age_g != null) {
-            $this->test_date_g = Carbon::parse($this->date)->addDays($this->age_g)->format('Y-m-d');  
+            $this->test_date_g = Carbon::parse($this->date)->addDays($this->age_g)->format('Y-m-d');
          }else {
             $this->test_date_g = null;
         }
@@ -181,7 +181,7 @@ class CreateInspectionConcreteComponent extends Component
     public function specifiedStrengthH()
     {
         if ($this->age_h != null) {
-            $this->test_date_h = Carbon::parse($this->date)->addDays($this->age_h)->format('Y-m-d');  
+            $this->test_date_h = Carbon::parse($this->date)->addDays($this->age_h)->format('Y-m-d');
          }else {
             $this->test_date_h = null;
         }
@@ -197,7 +197,7 @@ class CreateInspectionConcreteComponent extends Component
     public function specifiedStrengthI()
     {
         if ($this->age_i != null) {
-            $this->test_date_i = Carbon::parse($this->date)->addDays($this->age_i)->format('Y-m-d');  
+            $this->test_date_i = Carbon::parse($this->date)->addDays($this->age_i)->format('Y-m-d');
          }else {
             $this->test_date_i = null;
         }
@@ -390,7 +390,7 @@ class CreateInspectionConcreteComponent extends Component
             'age_a.required' => 'At lest one [Age (days)] rows should be fillup',
             'project_id.required' => 'Project Name is required',
         ]);
-        
+
         $data = new InspectionConcrete();
         $data->project_id = $this->project_id;
         $data->client_id = $this->client_id;

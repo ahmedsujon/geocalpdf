@@ -34,7 +34,7 @@ class CompressiveDraftFileComponent extends Component
         $files = CompressiveStrength::orderBy('id', 'DESC')
             ->join('projects', 'compressive_strengths.project_id', '=', 'projects.id')
             ->where('projects.name', 'like', '%' . $this->searchTerm . '%')
-            ->where('status', 'unpublish')
+            ->where('publish_status', 'unpublish')
             ->where('user_id', Auth::user()->id)
             ->select('compressive_strengths.*')
             ->paginate($this->sortingValue);
