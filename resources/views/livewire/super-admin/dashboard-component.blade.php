@@ -19,7 +19,7 @@
                                     <?php echo App\Http\Livewire\SuperAdmin\DashboardComponent::ago($file->created_at); ?>
                                 </span>
                                 <div class="timeline-content">
-                                    <a href="{{ route('commercial.update', ['file_id' => $file->id]) }}"
+                                    <a href="{{ route('concrete.test.result.update', ['file_id' => $file->id]) }}"
                                         class="title">
                                         {{ getProject($file->project_id)->name }} -
                                         @if ($file->status)
@@ -58,7 +58,7 @@
                                     <?php echo App\Http\Livewire\SuperAdmin\DashboardComponent::ago($file->created_at); ?>
                                 </span>
                                 <div class="timeline-content">
-                                    <a href="{{ route('commercial.update', ['file_id' => $file->id]) }}"
+                                    <a href="{{ route('compressive.strength.update', ['file_id' => $file->id]) }}"
                                         class="title">
                                         {{ getProject($file->project_id)->name }} -
                                         @if ($file->status)

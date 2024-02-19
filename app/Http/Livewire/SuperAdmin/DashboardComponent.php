@@ -65,8 +65,8 @@ class DashboardComponent extends Component
 
     public function render()
     {
-        $concreate_test_result_forms = ConcreteTestResult::orderBy('id', 'DESC')->take(3)->get();
-        $compressive_strenght_forms = CompressiveStrength::orderBy('id', 'DESC')->take(3)->get();
+        $concreate_test_result_forms = ConcreteTestResult::orderBy('id', 'DESC')->where('publish_status', 'publish')->take(3)->get();
+        $compressive_strenght_forms = CompressiveStrength::orderBy('id', 'DESC')->where('publish_status', 'publish')->take(3)->get();
         $commercial_forms = Commercial::orderBy('id', 'DESC')->take(3)->get();
         $cdot_forms = FieldDensityCdot::orderBy('id', 'DESC')->take(3)->get();
         $soil_aggregates = SoilAggregate::orderBy('id', 'DESC')->take(3)->get();

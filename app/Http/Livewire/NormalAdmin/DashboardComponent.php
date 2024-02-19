@@ -6,6 +6,8 @@ use DateTime;
 use Livewire\Component;
 use App\Models\Concrete;
 use App\Models\Commercial;
+use App\Models\CompressiveStrength;
+use App\Models\ConcreteTestResult;
 use App\Models\TemplateOne;
 use Livewire\WithPagination;
 use App\Models\SoilAggregate;
@@ -65,10 +67,10 @@ class DashboardComponent extends Component
     public function render()
     {
         if (Auth::user()->role_id == '1' || Auth::user()->role_id == '2') {
-            $concreate_test_result_forms = Commercial::orderBy('id', 'DESC')->take(3)->get();
+            $concreate_test_result_forms = ConcreteTestResult::orderBy('id', 'DESC')->where('publish_status', 'publish')->take(3)->get();
         } else {
             $concreate_test_result_forms = collect([]);
-            $all_files = Commercial::orderBy('id', 'DESC')->get();
+            $all_files = ConcreteTestResult::orderBy('id', 'DESC')->where('publish_status', 'publish')->get();
             foreach ($all_files as $key => $file) {
                 if (in_array(Auth::user()->id, json_decode($file->responsible_person))) {
                     $concreate_test_result_forms->push($file);
@@ -77,10 +79,10 @@ class DashboardComponent extends Component
             $concreate_test_result_forms = $concreate_test_result_forms->take(3);
         }
         if (Auth::user()->role_id == '1' || Auth::user()->role_id == '2') {
-            $compressive_strenght_forms = Commercial::orderBy('id', 'DESC')->take(3)->get();
+            $compressive_strenght_forms = CompressiveStrength::orderBy('id', 'DESC')->where('publish_status', 'publish')->take(3)->get();
         } else {
             $compressive_strenght_forms = collect([]);
-            $all_files = Commercial::orderBy('id', 'DESC')->get();
+            $all_files = CompressiveStrength::orderBy('id', 'DESC')->where('publish_status', 'publish')->get();
             foreach ($all_files as $key => $file) {
                 if (in_array(Auth::user()->id, json_decode($file->responsible_person))) {
                     $compressive_strenght_forms->push($file);

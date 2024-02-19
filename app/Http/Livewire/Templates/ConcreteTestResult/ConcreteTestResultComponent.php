@@ -93,7 +93,7 @@ class ConcreteTestResultComponent extends Component
             $files = ConcreteTestResult::orderBy('id', 'DESC')
                 ->join('projects', 'concrete_test_results.project_id', '=', 'projects.id')
                 ->where('projects.name', 'like', '%' . $this->searchTerm . '%')
-                ->where('status', 'publish')
+                ->where('publish_status', 'publish')
                 ->select('concrete_test_results.*')
                 ->paginate($this->sortingValue);
         } else {
@@ -101,7 +101,7 @@ class ConcreteTestResultComponent extends Component
             $all_files = ConcreteTestResult::orderBy('id', 'DESC')
                 ->join('projects', 'concrete_test_results.project_id', '=', 'projects.id')
                 ->where('projects.name', 'like', '%' . $this->searchTerm . '%')
-                ->where('status', 'publish')
+                ->where('publish_status', 'publish')
                 ->select('concrete_test_results.*')
                 ->get();
 

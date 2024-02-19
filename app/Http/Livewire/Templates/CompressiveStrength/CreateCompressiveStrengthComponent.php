@@ -46,7 +46,7 @@ class CreateCompressiveStrengthComponent extends Component
         $break_type_g, $aggregate_fractured_g,
 
         $lab_comments, $submitted_by, $approved_by, $email, $slump_cone_id, $thermometer_id, $air_meter_id,
-        $unit_weight_measure_id, $scale_id, $status, $send_to_client, $remark, $responsible_person = [];
+        $unit_weight_measure_id, $scale_id, $publish_status, $status, $send_to_client, $remark, $responsible_person = [];
 
     // ============== get project information ========
     public $selected_project_ids = [];
@@ -251,7 +251,7 @@ class CreateCompressiveStrengthComponent extends Component
         ]);
     }
 
-    public function storeData($status)
+    public function storeData($publish_status)
     {
         $data = new CompressiveStrength();
         $data->project_id = $this->project_id;
@@ -412,10 +412,11 @@ class CreateCompressiveStrengthComponent extends Component
         $data->unit_weight_measure_id = $this->unit_weight_measure_id;
         $data->scale_id = $this->scale_id;
         $data->remark = $this->remark;
+        $data->status = $this->status;
         $data->created_by = Auth::user()->id;
         $data->responsible_person = json_encode($this->responsible_person);
 
-        if ($status === 'publish') {
+        if ($publish_status === 'publish') {
             $this->validate([
                 'project_id' => 'required',
                 'project_location' => 'required',
@@ -425,7 +426,7 @@ class CreateCompressiveStrengthComponent extends Component
             ], [
                 'project_id.required' => 'Project name is required',
             ]);
-            $data->status = 'publish';
+            $data->publish_status = 'publish';
             // send Mail
             if ($this->responsible_person) {
                 $persons = $this->responsible_person;
@@ -455,7 +456,7 @@ class CreateCompressiveStrengthComponent extends Component
             ], [
                 'project_id.required' => 'Project name is required',
             ]);
-            $data->status = 'unpublish';
+            $data->publish_status = 'unpublish';
         }
         $data->save();
         session()->flash('message', 'Compressive strength file created successfully');

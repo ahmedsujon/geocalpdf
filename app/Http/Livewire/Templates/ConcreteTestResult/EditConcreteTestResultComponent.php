@@ -60,7 +60,7 @@ class EditConcreteTestResultComponent extends Component
         $unit_mass_o, $yeild_o, $calculated_wc_ratio_o, $cylinders_cast_fs_no_o, $set_no_o, $se_o,
 
         $tester, $tester_title, $project_engineer, $signature, $title, $file_id,
-        $remark, $status, $created_by, $responsible_person = [];
+        $remark, $publish_status, $status, $created_by, $responsible_person = [];
 
     // ============== get project information ========
     public $selected_project_ids = [];
@@ -354,7 +354,7 @@ class EditConcreteTestResultComponent extends Component
         ]);
     }
 
-    public function updateData($status)
+    public function updateData($publish_status)
     {
         $data = new ConcreteTestResult();
         $data->project_id = $this->project_id;
@@ -609,10 +609,11 @@ class EditConcreteTestResultComponent extends Component
         $data->title = $this->title;
 
         $data->remark = $this->remark;
+        $data->status = $this->status;
         $data->created_by = Auth::user()->id;
         $data->responsible_person = json_encode($this->responsible_person);
 
-        if ($status === 'publish') {
+        if ($publish_status === 'publish') {
             $this->validate([
                 'project_id' => 'required',
                 'date_submited' => 'required',
@@ -625,7 +626,7 @@ class EditConcreteTestResultComponent extends Component
                 'project_id.required' => 'Project name is required',
                 'user_id.required' => 'Technician name is required',
             ]);
-            $data->status = 'publish';
+            $data->publish_status = 'publish';
             // send Mail
             if ($this->responsible_person) {
                 $persons = $this->responsible_person;
@@ -654,7 +655,7 @@ class EditConcreteTestResultComponent extends Component
             ], [
                 'project_id.required' => 'Project name is required',
             ]);
-            $data->status = 'unpublish';
+            $data->publish_status = 'unpublish';
         }
         $data->save();
 
