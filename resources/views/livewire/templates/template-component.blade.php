@@ -19,6 +19,36 @@
             <div class="row row-cols-1 row-cols-md-2 gx-3">
                 <div class="col">
                     <div style="text-align: center" class="card">
+                        <a href="{{ route('concrete.test.result.create') }}" style="cursor: pointer;">
+                            <div class="card-body">
+                                <h5 class="card-title"></h5>
+                            </div>
+                            <img style="height: 150px; width: 350px;"
+                                src="{{ asset('uploads/templates/template-1.png') }}" class="card-img-top bg-light-alt"
+                                alt="...">
+                            <div class="card-body">
+                                <h5 style="text-transform: uppercase;" class="card-title">Concrete Test Results Summary - Local Agency </h5>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col">
+                    <div style="text-align: center" class="card">
+                        <a href="{{ route('compressive.strength.create') }}" style="cursor: pointer;">
+                            <div class="card-body">
+                                <h5 class="card-title"></h5>
+                            </div>
+                            <img style="height: 150px; width: 350px;"
+                                src="{{ asset('uploads/templates/template-1.png') }}" class="card-img-top bg-light-alt"
+                                alt="...">
+                            <div class="card-body">
+                                <h5 style="text-transform: uppercase;" class="card-title">Compressive Strength - Local Agency</h5>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col">
+                    <div style="text-align: center" class="card">
                         <a style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#FIELDMOISTUREDENSITY">
                             <div class="card-body">
                                 <h5 class="card-title"></h5>
@@ -31,9 +61,7 @@
                                     Nuclear Method </h5>
                             </div>
                         </a>
-                        <!--end card-body-->
                     </div>
-                    <!--end card-->
                 </div>
                 <!--end col-->
                 <div class="col">
