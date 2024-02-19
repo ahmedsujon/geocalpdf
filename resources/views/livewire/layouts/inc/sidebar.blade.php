@@ -106,6 +106,9 @@
                                         <a class="nav-link" href="{{ route('template.compressive.strength') }}">Compressive
                                             Strength</a>
                                     </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('template.compressive.strength.draft') }}">Draft Files</a>
+                                    </li>
                                 </ul>
                             </div>
                         </li>

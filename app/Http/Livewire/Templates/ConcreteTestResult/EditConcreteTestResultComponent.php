@@ -640,7 +640,7 @@ class EditConcreteTestResultComponent extends Component
                         $mailData['role_id'] = $auth_user->role_id;
                         $mailData['id'] = $f_id;
                         $mailData['subject'] = 'New file waiting for your review';
-                        Mail::send('emails.mail_commercial', $mailData, function ($message) use ($mailData) {
+                        Mail::send('emails.mail_concreate_test_result', $mailData, function ($message) use ($mailData) {
                             $message->to($mailData['email'])
                                 ->subject($mailData['subject']);
                         });

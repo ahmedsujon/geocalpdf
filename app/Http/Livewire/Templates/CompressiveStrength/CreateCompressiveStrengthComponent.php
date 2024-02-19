@@ -8,6 +8,7 @@ use App\Models\Project;
 use Livewire\Component;
 use App\Models\CompressiveStrength;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class CreateCompressiveStrengthComponent extends Component
 {
@@ -66,7 +67,7 @@ class CreateCompressiveStrengthComponent extends Component
         }
     }
 
-    // Break Date Calculation
+    // ======== Break Date Calculation ========
     public function breakDateA()
     {
         if ($this->age_a != null) {
@@ -124,7 +125,7 @@ class CreateCompressiveStrengthComponent extends Component
         }
     }
 
-    // Area Calculation
+    // ======== Area Calculation ========
     public function AreaCylA()
     {
         if ($this->diameter_one_a != null && $this->diameter_two_a != null) {
@@ -182,7 +183,7 @@ class CreateCompressiveStrengthComponent extends Component
         }
     }
 
-    // PSI Calculation
+    // ======== PSI Calculation ========
     public function psiCalculationA()
     {
         if ($this->maximum_load_a != null) {
@@ -250,19 +251,8 @@ class CreateCompressiveStrengthComponent extends Component
         ]);
     }
 
-    public function storeData()
+    public function storeData($status)
     {
-        $this->validate([
-            'project_id' => 'required',
-            'project_location' => 'required',
-            'responsible_person' => 'required',
-            'office_address' => 'required',
-            'mold_date' => 'required',
-        ], [
-            'project_id.required' => 'Project name is required',
-            'user_id.required' => 'Technician name is required',
-        ]);
-
         $data = new CompressiveStrength();
         $data->project_id = $this->project_id;
         $data->client_id = $this->client_id;
@@ -422,34 +412,53 @@ class CreateCompressiveStrengthComponent extends Component
         $data->unit_weight_measure_id = $this->unit_weight_measure_id;
         $data->scale_id = $this->scale_id;
         $data->remark = $this->remark;
-        $data->status = $this->status;
         $data->created_by = Auth::user()->id;
         $data->responsible_person = json_encode($this->responsible_person);
 
+        if ($status === 'publish') {
+            $this->validate([
+                'project_id' => 'required',
+                'project_location' => 'required',
+                'responsible_person' => 'required',
+                'office_address' => 'required',
+                'mold_date' => 'required',
+            ], [
+                'project_id.required' => 'Project name is required',
+            ]);
+            $data->status = 'publish';
+            // send Mail
+            if ($this->responsible_person) {
+                $persons = $this->responsible_person;
+                $f_id = $data->id;
+                $auth_user_id = Auth::user()->id;
+                dispatch(function () use ($persons, $f_id, $auth_user_id) {
+                    foreach ($persons as $key => $re_id) {
+                        $auth_user = User::find($auth_user_id);
+                        $user = User::find($re_id);
+                        $mailData['email'] = $user->email;
+                        $mailData['name'] = $auth_user->name;
+                        $mailData['role_id'] = $auth_user->role_id;
+                        $mailData['id'] = $f_id;
+                        $mailData['subject'] = 'New file waiting for your review';
+                        Mail::send('emails.mail_compressive_strength', $mailData, function ($message) use ($mailData) {
+                            $message->to($mailData['email'])
+                                ->subject($mailData['subject']);
+                        });
+                    }
+                });
+            }
+        } else {
+            $this->validate([
+                'project_id' => 'required',
+                'office_address' => 'required',
+                'mold_date' => 'required',
+            ], [
+                'project_id.required' => 'Project name is required',
+            ]);
+            $data->status = 'unpublish';
+        }
         $data->save();
-
-        //send Mail
-        // if ($this->responsible_person) {
-        //     $persons = $this->responsible_person;
-        //     $f_id = $data->id;
-        //     $auth_user_id = Auth::user()->id;
-        //     dispatch(function () use ($persons, $f_id, $auth_user_id) {
-        //         foreach ($persons as $key => $re_id) {
-        //             $auth_user = User::find($auth_user_id);
-        //             $user = User::find($re_id);
-        //             $mailData['email'] = $user->email;
-        //             $mailData['name'] = $auth_user ->name;
-        //             $mailData['role_id'] = $auth_user ->role_id;
-        //             $mailData['id'] = $f_id;
-        //             $mailData['subject'] = 'New file waiting for your review';
-        //             Mail::send('emails.mail_commercial', $mailData, function ($message) use ($mailData) {
-        //                 $message->to($mailData['email'])
-        //                     ->subject($mailData['subject']);
-        //             });
-        //         }
-        //     });
-        // }
-        session()->flash('message', 'Concrete test result file created successfully');
+        session()->flash('message', 'Compressive strength file created successfully');
         return redirect()->route('template.compressive.strength');
     }
     public function render()

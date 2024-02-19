@@ -30,6 +30,7 @@ use App\Http\Livewire\Templates\Commercial\CommercialComponent;
 use App\Http\Livewire\Templates\Commercial\CreateCommercialComponent;
 use App\Http\Livewire\Templates\Commercial\EditCommercialComponent;
 use App\Http\Livewire\Templates\Commercial\ViewCommercialComponent;
+use App\Http\Livewire\Templates\CompressiveStrength\CompressiveDraftFileComponent;
 use App\Http\Livewire\Templates\CompressiveStrength\CompressiveStrengthComponent;
 use App\Http\Livewire\Templates\CompressiveStrength\CreateCompressiveStrengthComponent;
 use App\Http\Livewire\Templates\CompressiveStrength\EditCompressiveStrengthComponent;
@@ -141,6 +142,7 @@ Route::post('/edit-concrete/representative', [ConcreteTestResultComponent::class
 
 // Compressive Strength - Local Agency
 Route::get('/compressive/strength', CompressiveStrengthComponent::class)->name('template.compressive.strength');
+Route::get('/draft/compressive/strength', CompressiveDraftFileComponent::class)->name('template.compressive.strength.draft');
 Route::get('/compressive/strength/create', CreateCompressiveStrengthComponent::class)->name('compressive.strength.create');
 Route::get('/compressive/strength/edit/{file_id}', EditCompressiveStrengthComponent::class)->name('compressive.strength.update');
 Route::get('/compressive/strength/show/{file_id}', ViewCompressiveStrengthComponent::class)->name('compressive.strength.show');
@@ -300,8 +302,6 @@ Route::post('/upload', 'app\http\controllers\BaseController@uploadckimage')->nam
 // PDF Generate
 Route::get('/invoice/ijP6ERmmdeLfFi57211{id}4ijP6ERmmdeLfasfFi5RiwfaZYYVSmdtcmsajxJe2K31U5knK', [InvoiceController::class, 'concreteTestResultsPDF'])->name('invoice.concrete-test-results-pdf');
 Route::get('/invoice/ijP6ERmmdeLfFi57211{id}4ijP6ERmmdeLfFi5RiwZYYVSmdtsrsfafcmjxJe2K31U5knK', [InvoiceController::class, 'compressiveStrengthsPDF'])->name('invoice.compressive-strengths-pdf');
-
-Route::get('/invoice/ijP6ERmmdeLfFi57209633311{id}4ijP6ERmmdeLfFi5RiwZATmrI2SMOYYVSmdtcmjxJe2K31U5knK', [InvoiceController::class, 'compressiveStrengthsPDF'])->name('invoice.compressive.strengths');
 
 Route::get('/invoice/ijP6ERmmdeLfFi57209633311{id}4ijP6ERmmdeLfFi5RiwZATmrI2SMOYYVSmdtcmjxJe2K31U5knK', [InvoiceController::class, 'commercialPDF'])->name('invoice.commercial');
 

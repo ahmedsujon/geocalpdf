@@ -1953,10 +1953,10 @@
                                     @endif
                                 </div>
                                 <div class="col-md-12 text-center">
-                                    <form wire:submit.prevent='storeData'>
-                                        <button type="submit" class="btn btn-primary submit_btn"
-                                            style="background: green;">{!! loadingState('storeData', 'Save and Send') !!}</button>
-                                    </form>
+                                    <button type="button" wire:click.prevent='storeData("unpublish")'
+                                        class="btn btn-primary submit_btn">{!! loadingState('storeData', 'Save as Draft') !!}</button>
+                                    <button type="button" wire:click.prevent='storeData("publish")'
+                                        class="btn btn-success submit_btn">{!! loadingState('storeData', 'Save and Send') !!}</button>
                                 </div>
                             </div>
                         </div>
