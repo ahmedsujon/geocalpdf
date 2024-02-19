@@ -25,10 +25,6 @@
         <div class="row">
             <div class="col-12">
                 <div class="card">
-                    <div class="card-header">
-                        <a style="float: right" href="{{ route('concrete.test.result.create') }}"
-                            class="card-button btn btn-sm btn-primary"><i class="ti ti-plus"></i> ADD NEW</a>
-                    </div>
                     <div class="card-body">
                         <div class="row mb-3">
                             <div class="col-md-6 col-sm-12 mb-2 sort_cont">

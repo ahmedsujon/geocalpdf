@@ -1976,14 +1976,13 @@
                                     @endif
                                 </div>
                                 <div class="col-md-12 text-center">
-                                    <button type="button" wire:click.prevent='storeData("unpublish")'
-                                        class="btn btn-primary submit_btn">{!! loadingState('storeData', 'Save as Draft') !!}</button>
-                                    <button type="button" wire:click.prevent='storeData("publish")'
-                                        class="btn btn-success submit_btn">{!! loadingState('storeData', 'Save and Send') !!}</button>
+                                    <button type="button" wire:click.prevent='updateData("unpublish")'
+                                        class="btn btn-primary submit_btn">{!! loadingState('updateData', 'Save as Draft') !!}</button>
+                                    <button type="button" wire:click.prevent='updateData("publish")'
+                                        class="btn btn-success submit_btn">{!! loadingState('updateData', 'Save and Send') !!}</button>
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -1994,23 +1993,27 @@
 @push('scripts')
     <script>
         $(document).ready(function() {
-            $('#selectInfo').change(function() {
-                var project_id = $(this).val();
-                $.ajax({
-                    url: "{{ route('edit_compressive_representative') }}",
-                    method: "POST",
-                    data: {
-                        project_id: project_id,
-                        _token: '<?php echo csrf_token(); ?>',
-                    },
-                    success: function(result) {
-                        console.log(result);
-                        $('#action').html(result);
-                    }
-                })
+            $('.dependent').change(function() {
+                if ($(this).val() != '') {
+                    var file_id = $(this).data("file_id");
+                    var value = $(this).val();
+                    $.ajax({
+                        url: "{{ route('edit_compressive_representative') }}",
+                        method: "POST",
+                        data: {
+                            file_id: file_id,
+                            value: value,
+                            _token: '<?php echo csrf_token(); ?>',
+                        },
+                        success: function(result) {
+                            $('#action').html(result);
+                        }
+                    })
+                }
             });
         });
     </script>
+
     <script>
         $(document).ready(function() {
             $('.multiple_selector').select2({
