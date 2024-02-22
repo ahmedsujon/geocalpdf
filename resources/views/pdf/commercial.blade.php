@@ -706,7 +706,7 @@
             <tr>
                 <td
                     style="width: 28%; padding-top: 10px; padding-left: 10px; padding-right: 10px; padding-bottom: 20px;">
-                    <h6 style="padding-bottom: 4px; font-weight: normal; 
+                    <h6 style="padding-bottom: 4px; font-weight: normal;
                 font-size: 14px;
                 font-weight: normal;">
                         @if ($data->report_status == 'Full Time Observation')
@@ -718,7 +718,7 @@
                         <span>Full Time Observation</span>
                         @endif
                     </h6>
-                    <h6 style="padding-bottom: 4px; font-weight: normal; 
+                    <h6 style="padding-bottom: 4px; font-weight: normal;
                 font-size: 14px;
                 font-weight: normal;">
                         @if ($data->report_status == 'Part Time Observation')

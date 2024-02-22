@@ -974,7 +974,7 @@
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio"
                                             wire:model="represented_quantity" name="exampleRadios"
-                                            id="exampleRadios1" value="ubic Yards">
+                                            id="exampleRadios1" value="Cubic Yards">
                                         <label class="form-check-label" for="exampleRadios1">
                                             Cubic Yards
                                         </label>
