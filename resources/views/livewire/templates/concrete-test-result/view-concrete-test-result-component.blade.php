@@ -277,8 +277,8 @@
 
                                     <div class="input-group">
                                         <span class="input-group-text width20">Client:</span>
-                                        <input type="text" class="form-control form-color" wire:model="client_name" readonly
-                                            readonly>
+                                        <input type="text" class="form-control form-color" wire:model="client_name"
+                                            readonly readonly>
                                     </div>
                                     @error('client_id')
                                         <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
@@ -295,6 +295,13 @@
                                 </div>
                                 <div class="col-lg-6 select-border">
                                     <h6>&nbsp;</h6>
+                                    <div class="input-group">
+                                        <span class="input-group-text width20">Contact ID:</span>
+                                        <input type="text" class="form-control form-color" wire:model='contactid'>
+                                    </div>
+                                    @error('contactid')
+                                        <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
+                                    @enderror
                                     <div class="input-group">
                                         <span class="input-group-text width20">Region:</span>
                                         <input type="text" class="form-control form-color" wire:model='region'>
@@ -327,15 +334,16 @@
                                     <h6 style="font-weight: 700;">CONCRETE TEST RESULTS SUMMARY</h6>
                                     <div class="input-group">
                                         <span class="input-group-text width20">Item:</span>
-                                        <input type="text" class="form-control form-color" wire:model="item" readonly>
+                                        <input type="text" class="form-control form-color" wire:model="item"
+                                            readonly>
                                         @error('item')
                                             <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                         @enderror
                                     </div>
                                     <div class="input-group">
                                         <span class="input-group-text width20">Class:</span>
-                                        <input type="text" class="form-control form-color"
-                                            wire:model="class_name" readonly>
+                                        <input type="text" class="form-control form-color" wire:model="class_name"
+                                            readonly>
                                         @error('class_name')
                                             <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                         @enderror
@@ -358,7 +366,8 @@
                                     </div>
                                     <div class="input-group">
                                         <span class="input-group-text width20">Structure:</span>
-                                        <input type="text" class="form-control form-color" wire:model="structure" readonly>
+                                        <input type="text" class="form-control form-color" wire:model="structure"
+                                            readonly>
                                         @error('structure')
                                             <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                         @enderror
@@ -390,11 +399,11 @@
                                     </div>
                                     <div class="input-group">
                                         <span class="input-group-text width28">inches maximum(% total air):</span>
-                                        <input type="number" class="form-control form-color"
-                                            wire:model="inches_max" readonly>
+                                        <input type="number" class="form-control form-color" wire:model="inches_max"
+                                            readonly>
                                         <span class="input-group-text">To:</span>
-                                        <input type="text" class="form-control form-color"
-                                            wire:model="inches_min" readonly>
+                                        <input type="text" class="form-control form-color" wire:model="inches_min"
+                                            readonly>
                                     </div>
                                 </div>
                             </div>
@@ -2863,9 +2872,10 @@
                                 <div class="container">
                                     <div class="row mt-3 mb-5 justify-content-md-center">
                                         <div class="col-md-12 text-center">
-                                            <a href="{{ route('template.concrete.test.result') }}" class="btn btn-primary submit_btn">Back To list</a>
-                                                <a href="{{ route('invoice.concrete-test-results-pdf',['id'=>$file_id]) }}" target="_blank"
-                                                    class="btn btn-success submit_btn">Download PDF</a>
+                                            <a href="{{ route('template.concrete.test.result') }}"
+                                                class="btn btn-primary submit_btn">Back To list</a>
+                                            <a href="{{ route('invoice.concrete-test-results-pdf', ['id' => $file_id]) }}"
+                                                target="_blank" class="btn btn-success submit_btn">Download PDF</a>
                                         </div>
                                     </div>
                                 </div>

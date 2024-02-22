@@ -296,6 +296,13 @@
                                 <div class="col-lg-6 select-border">
                                     <h6>&nbsp;</h6>
                                     <div class="input-group">
+                                        <span class="input-group-text width20">Contact ID:</span>
+                                        <input type="text" class="form-control form-color" wire:model='contactid'>
+                                    </div>
+                                    @error('contactid')
+                                        <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
+                                    @enderror
+                                    <div class="input-group">
                                         <span class="input-group-text width20">Region:</span>
                                         <input type="text" class="form-control form-color" wire:model='region'>
                                     </div>

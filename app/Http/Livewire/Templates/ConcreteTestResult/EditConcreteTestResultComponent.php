@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Mail;
 
 class EditConcreteTestResultComponent extends Component
 {
-    public $office_address, $project_id, $client_id, $client_name, $user_id, $project_number, $project_location, $date_submited, $region, $item,
+    public $contactid, $office_address, $project_id, $client_id, $client_name, $user_id, $project_number, $project_location, $date_submited, $region, $item,
         $class_name, $design_mix_no, $batch_plant, $structure, $userid, $slump, $inches_max, $inches_min, $compressive_strength,
 
         $location_test_a, $date_placed_a, $ticket_no_a, $batched_a, $placed_a, $temp_a, $slump_a, $total_air_a,
@@ -94,6 +94,7 @@ class EditConcreteTestResultComponent extends Component
         $this->project_location = $file->project_location;
         $this->office_address = $file->office_address;
         $this->date_submited = $file->date_submited;
+        $this->contactid = $file->contactid;
 
         $this->item = $file->item;
         $this->class_name = $file->class_name;
@@ -348,7 +349,8 @@ class EditConcreteTestResultComponent extends Component
             'responsible_person' => 'required',
             'office_address' => 'required',
             'inches_max' => 'required',
-            'inches_min' => 'required'
+            'inches_min' => 'required',
+            'contactid' => 'contactid'
         ]);
     }
 
@@ -363,6 +365,7 @@ class EditConcreteTestResultComponent extends Component
         $data->date_submited = $this->date_submited;
         $data->region = $this->region;
         $data->office_address = $this->office_address;
+        $data->contactid = $this->contactid;
 
         $data->item = $this->item;
         $data->class_name = $this->class_name;

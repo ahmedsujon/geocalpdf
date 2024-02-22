@@ -20,6 +20,7 @@ class CreateConcreteTestResultsTable extends Migration
             $table->bigInteger('user_id')->nullable();
             $table->string('project_number')->nullable();
             $table->string('project_location')->nullable();
+            $table->string('contactid')->nullable();
             $table->string('date_submited')->nullable();
             $table->string('region')->nullable();
             $table->string('office_address')->nullable();

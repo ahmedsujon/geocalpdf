@@ -9,7 +9,7 @@ use App\Models\ConcreteTestResult;
 
 class ViewConcreteTestResultComponent extends Component
 {
-    public $office_address, $project_id, $client_id, $client_name, $user_id, $project_number, $project_location, $date_submited, $region, $item,
+    public $contactid, $office_address, $project_id, $client_id, $client_name, $user_id, $project_number, $project_location, $date_submited, $region, $item,
         $class_name, $design_mix_no, $batch_plant, $structure, $userid, $slump, $inches_max, $inches_min, $compressive_strength,
 
         $location_test_a, $date_placed_a, $ticket_no_a, $batched_a, $placed_a, $temp_a, $slump_a, $total_air_a,
@@ -57,7 +57,7 @@ class ViewConcreteTestResultComponent extends Component
         $location_test_o, $date_placed_o, $ticket_no_o, $batched_o, $placed_o, $temp_o, $slump_o, $total_air_o,
         $unit_mass_o, $yeild_o, $calculated_wc_ratio_o, $cylinders_cast_fs_no_o, $set_no_o, $se_o,
 
-        $tester, $tester_title, $project_engineer, $signature, $title,
+        $tester, $tester_title, $project_engineer, $signature, $title, $file_id,
         $remark, $status, $created_by, $responsible_person = [];
     public function mount($file_id)
     {
@@ -67,6 +67,7 @@ class ViewConcreteTestResultComponent extends Component
         $this->client_id = $file->client_id;
         $this->client_name = client($file->client_id)->name;
         $this->project_number = $file->project_number;
+        $this->contactid = $file->contactid;
 
         $this->item = $file->item;
         $this->class_name = $file->class_name;
