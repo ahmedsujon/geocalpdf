@@ -15,10 +15,17 @@ class PESeeder extends Seeder
      */
     public function run()
     {
+        // User::updateOrCreate([
+        //     'role_id' => '2',
+        //     'name' => 'Jim Smith',
+        //     'email' => 'jimsmith@geocal.us',
+        //     'password' => Hash::make('12345678'),
+        // ]);
+
         User::updateOrCreate([
             'role_id' => '2',
-            'name' => 'Jim Smith',
-            'email' => 'jimsmith@geocal.us',
+            'name' => 'Cloud Intrigue',
+            'email' => 'cloudintrigue@gmail.com',
             'password' => Hash::make('12345678'),
         ]);
     }

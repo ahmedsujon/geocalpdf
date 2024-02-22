@@ -56,7 +56,7 @@
                                         <th>Client Name</th>
                                         <th>Project Number</th>
                                         <th>Updated By</th>
-                                        <th>Created Date</th>
+                                        <th>Last Update</th>
                                         <th style="text-align: center;">Options</th>
                                     </tr>
                                 </thead>
@@ -80,7 +80,7 @@
                                                 <td>{{ client($file->client_id)->name }}</td>
                                                 <td>{{ $file->project_number }}</td>
                                                 <td>{{ user($file->created_by)->name }}</td>
-                                                <td>{{ $file->created_at }}</td>
+                                                <td>{{ $file->updated_at->format('M j, Y \a\t g:i A') }}</td>
                                                 <td style="text-align: center;">
                                                     <a target="_blank"
                                                         href="{{ route('invoice.concrete-test-results-pdf', ['id' => $file->id]) }}"

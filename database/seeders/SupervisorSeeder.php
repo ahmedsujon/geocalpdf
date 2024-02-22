@@ -15,10 +15,17 @@ class SupervisorSeeder extends Seeder
      */
     public function run()
     {
+        // User::updateOrCreate([
+        //     'role_id' => '4',
+        //     'name' => 'Greg',
+        //     'email' => 'gregp@geocal.us',
+        //     'password' => Hash::make('12345678'),
+        // ]);
+
         User::updateOrCreate([
             'role_id' => '4',
-            'name' => 'Greg',
-            'email' => 'gregp@geocal.us',
+            'name' => 'UIUX',
+            'email' => 'uiuxsujon@gmail.com',
             'password' => Hash::make('12345678'),
         ]);
     }

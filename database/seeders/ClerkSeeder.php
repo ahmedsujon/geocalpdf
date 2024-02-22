@@ -15,10 +15,17 @@ class ClerkSeeder extends Seeder
      */
     public function run()
     {
+        // User::updateOrCreate([
+        //     'role_id' => '3',
+        //     'name' => 'Cindy Card',
+        //     'email' => 'cindycard@geocal.us',
+        //     'password' => Hash::make('12345678'),
+        // ]);
+        
         User::updateOrCreate([
             'role_id' => '3',
-            'name' => 'Cindy Card',
-            'email' => 'cindycard@geocal.us',
+            'name' => 'Ahmed Sujon',
+            'email' => 'ahmedsujon050@gmail.com',
             'password' => Hash::make('12345678'),
         ]);
     }
