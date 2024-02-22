@@ -30,7 +30,7 @@ class CreateConcreteTestResultsTable extends Migration
             $table->string('design_mix_no')->nullable();
             $table->string('batch_plant')->nullable();
             $table->string('structure')->nullable();
-            $table->string('userid')->nullable();
+            $table->string('supplier')->nullable();
             $table->string('slump')->nullable();
             $table->string('inches_max')->nullable();
             $table->string('inches_min')->nullable();

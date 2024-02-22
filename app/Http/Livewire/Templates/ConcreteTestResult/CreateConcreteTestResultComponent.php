@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Mail;
 class CreateConcreteTestResultComponent extends Component
 {
     public $contactid, $office_address, $project_id, $client_id, $client_name, $user_id, $project_number, $project_location, $date_submited, $region, $item,
-        $class_name, $design_mix_no, $batch_plant, $structure, $userid, $slump, $inches_max, $inches_min, $compressive_strength,
+        $class_name, $design_mix_no, $batch_plant, $structure, $supplier, $slump, $inches_max, $inches_min, $compressive_strength,
 
         $location_test_a, $date_placed_a, $ticket_no_a, $batched_a, $placed_a, $temp_a, $slump_a, $total_air_a,
         $unit_mass_a, $yeild_a, $calculated_wc_ratio_a, $cylinders_cast_fs_no_a, $set_no_a, $se_a,
@@ -112,7 +112,7 @@ class CreateConcreteTestResultComponent extends Component
         $data->design_mix_no = $this->design_mix_no;
         $data->batch_plant = $this->batch_plant;
         $data->structure = $this->structure;
-        $data->userid = $this->userid;
+        $data->supplier = $this->supplier;
         $data->slump = $this->slump;
         $data->inches_max = $this->inches_max;
         $data->inches_min = $this->inches_min;

@@ -156,7 +156,7 @@
                                 Supplier
                             </p>
                             <p style="font-size: 12px; padding-bottom: 2px;">
-                                {{ $data->structure }}
+                                {{ $data->supplier }}
                             </p>
                         </td>
                     </tr>
@@ -270,7 +270,7 @@
                     <th
                         style="text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 3px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->location_test_a }}
+                            Hello
                         </p>
                     </th>
                     <th
@@ -390,73 +390,73 @@
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->ticket_no_a }}
+                            {{ $data->ticket_no_b }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->batched_a }}
+                            {{ $data->batched_b }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->placed_a }}
+                            {{ $data->placed_b }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->temp_a }}
+                            {{ $data->temp_b }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->slump_a }}
+                            {{ $data->slump_b }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->total_air_a }}
+                            {{ $data->total_air_b }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->unit_mass_a }}
+                            {{ $data->unit_mass_b }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->yeild_a }}
+                            {{ $data->yeild_b }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->calculated_wc_ratio_a }}
+                            {{ $data->calculated_wc_ratio_b }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->cylinders_cast_fs_no_a }}
+                            {{ $data->cylinders_cast_fs_no_b }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->set_no_a }}
+                            {{ $data->set_no_b }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 3px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->se_a }}
+                            {{ $data->se_b }}
                         </p>
                     </td>
                 </tr>
@@ -477,73 +477,73 @@
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->ticket_no_a }}
+                            {{ $data->ticket_no_c }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->batched_a }}
+                            {{ $data->batched_c }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->placed_a }}
+                            {{ $data->placed_c }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->temp_a }}
+                            {{ $data->temp_c }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->slump_a }}
+                            {{ $data->slump_c }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->total_air_a }}
+                            {{ $data->total_air_c }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->unit_mass_a }}
+                            {{ $data->unit_mass_c }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->yeild_a }}
+                            {{ $data->yeild_c }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->calculated_wc_ratio_a }}
+                            {{ $data->calculated_wc_ratio_c }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->cylinders_cast_fs_no_a }}
+                            {{ $data->cylinders_cast_fs_no_c }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->set_no_a }}
+                            {{ $data->set_no_c }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 3px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->se_a }}
+                            {{ $data->se_c }}
                         </p>
                     </td>
                 </tr>
@@ -564,73 +564,73 @@
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->ticket_no_a }}
+                            {{ $data->ticket_no_d }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->batched_a }}
+                            {{ $data->batched_d }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->placed_a }}
+                            {{ $data->placed_d }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->temp_a }}
+                            {{ $data->temp_d }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->slump_a }}
+                            {{ $data->slump_d }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->total_air_a }}
+                            {{ $data->total_air_d }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->unit_mass_a }}
+                            {{ $data->unit_mass_d }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->yeild_a }}
+                            {{ $data->yeild_d }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->calculated_wc_ratio_a }}
+                            {{ $data->calculated_wc_ratio_d }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->cylinders_cast_fs_no_a }}
+                            {{ $data->cylinders_cast_fs_no_d }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->set_no_a }}
+                            {{ $data->set_no_d }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 3px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->se_a }}
+                            {{ $data->se_d }}
                         </p>
                     </td>
                 </tr>
@@ -651,73 +651,73 @@
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->ticket_no_a }}
+                            {{ $data->ticket_no_e }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->batched_a }}
+                            {{ $data->batched_e }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->placed_a }}
+                            {{ $data->placed_e }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->temp_a }}
+                            {{ $data->temp_e }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->slump_a }}
+                            {{ $data->slump_e }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->total_air_a }}
+                            {{ $data->total_air_e }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->unit_mass_a }}
+                            {{ $data->unit_mass_e }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->yeild_a }}
+                            {{ $data->yeild_e }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->calculated_wc_ratio_a }}
+                            {{ $data->calculated_wc_ratio_e }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->cylinders_cast_fs_no_a }}
+                            {{ $data->cylinders_cast_fs_no_e }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->set_no_a }}
+                            {{ $data->set_no_e }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 3px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->se_a }}
+                            {{ $data->se_e }}
                         </p>
                     </td>
                 </tr>
@@ -738,73 +738,73 @@
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->ticket_no_a }}
+                            {{ $data->ticket_no_f }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->batched_a }}
+                            {{ $data->batched_f }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->placed_a }}
+                            {{ $data->placed_f }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->temp_a }}
+                            {{ $data->temp_f }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->slump_a }}
+                            {{ $data->slump_f }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->total_air_a }}
+                            {{ $data->total_air_f }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->unit_mass_a }}
+                            {{ $data->unit_mass_f }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->yeild_a }}
+                            {{ $data->yeild_f }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->calculated_wc_ratio_a }}
+                            {{ $data->calculated_wc_ratio_f }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->cylinders_cast_fs_no_a }}
+                            {{ $data->cylinders_cast_fs_no_f }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->set_no_a }}
+                            {{ $data->set_no_f }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 3px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->se_a }}
+                            {{ $data->se_f }}
                         </p>
                     </td>
                 </tr>
@@ -825,73 +825,73 @@
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->ticket_no_a }}
+                            {{ $data->ticket_no_g }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->batched_a }}
+                            {{ $data->batched_g }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->placed_a }}
+                            {{ $data->placed_g }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->temp_a }}
+                            {{ $data->temp_g }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->slump_a }}
+                            {{ $data->slump_g }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->total_air_a }}
+                            {{ $data->total_air_g }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->unit_mass_a }}
+                            {{ $data->unit_mass_g }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->yeild_a }}
+                            {{ $data->yeild_g }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->calculated_wc_ratio_a }}
+                            {{ $data->calculated_wc_ratio_g }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->cylinders_cast_fs_no_a }}
+                            {{ $data->cylinders_cast_fs_no_g }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->set_no_a }}
+                            {{ $data->set_no_g }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 3px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->se_a }}
+                            {{ $data->se_g }}
                         </p>
                     </td>
                 </tr>
@@ -912,73 +912,73 @@
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->ticket_no_a }}
+                            {{ $data->ticket_no_h }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->batched_a }}
+                            {{ $data->batched_h }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->placed_a }}
+                            {{ $data->placed_h }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->temp_a }}
+                            {{ $data->temp_h }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->slump_a }}
+                            {{ $data->slump_h }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->total_air_a }}
+                            {{ $data->total_air_h }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->unit_mass_a }}
+                            {{ $data->unit_mass_h }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->yeild_a }}
+                            {{ $data->yeild_h }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->calculated_wc_ratio_a }}
+                            {{ $data->calculated_wc_ratio_h }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->cylinders_cast_fs_no_a }}
+                            {{ $data->cylinders_cast_fs_no_h }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->set_no_a }}
+                            {{ $data->set_no_h }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 3px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->se_a }}
+                            {{ $data->se_h }}
                         </p>
                     </td>
                 </tr>
@@ -999,73 +999,73 @@
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->ticket_no_a }}
+                            {{ $data->ticket_no_i }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->batched_a }}
+                            {{ $data->batched_i }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->placed_a }}
+                            {{ $data->placed_i }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->temp_a }}
+                            {{ $data->temp_i }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->slump_a }}
+                            {{ $data->slump_i }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->total_air_a }}
+                            {{ $data->total_air_i }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->unit_mass_a }}
+                            {{ $data->unit_mass_i }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->yeild_a }}
+                            {{ $data->yeild_i }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->calculated_wc_ratio_a }}
+                            {{ $data->calculated_wc_ratio_i }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->cylinders_cast_fs_no_a }}
+                            {{ $data->cylinders_cast_fs_no_i }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->set_no_a }}
+                            {{ $data->set_no_i }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 3px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->se_a }}
+                            {{ $data->se_i }}
                         </p>
                     </td>
                 </tr>
@@ -1086,73 +1086,73 @@
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->ticket_no_a }}
+                            {{ $data->ticket_no_j }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->batched_a }}
+                            {{ $data->batched_j }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->placed_a }}
+                            {{ $data->placed_j }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->temp_a }}
+                            {{ $data->temp_j }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->slump_a }}
+                            {{ $data->slump_j }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->total_air_a }}
+                            {{ $data->total_air_j }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->unit_mass_a }}
+                            {{ $data->unit_mass_j }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->yeild_a }}
+                            {{ $data->yeild_j }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->calculated_wc_ratio_a }}
+                            {{ $data->calculated_wc_ratio_j }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->cylinders_cast_fs_no_a }}
+                            {{ $data->cylinders_cast_fs_no_j }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->set_no_a }}
+                            {{ $data->set_no_j }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 3px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->se_a }}
+                            {{ $data->se_j }}
                         </p>
                     </td>
                 </tr>
@@ -1173,67 +1173,67 @@
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->ticket_no_a }}
+                            {{ $data->ticket_no_k }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->batched_a }}
+                            {{ $data->batched_k }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->placed_a }}
+                            {{ $data->placed_k }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->temp_a }}
+                            {{ $data->temp_k }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->slump_a }}
+                            {{ $data->slump_k }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->total_air_a }}
+                            {{ $data->total_air_k }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->unit_mass_a }}
+                            {{ $data->unit_mass_k }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->yeild_a }}
+                            {{ $data->yeild_k }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->calculated_wc_ratio_a }}
+                            {{ $data->calculated_wc_ratio_k }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->cylinders_cast_fs_no_a }}
+                            {{ $data->cylinders_cast_fs_no_k }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->set_no_a }}
+                            {{ $data->set_no_k }}
                         </p>
                     </td>
                     <td
@@ -1260,73 +1260,73 @@
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->ticket_no_a }}
+                            {{ $data->ticket_no_l }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->batched_a }}
+                            {{ $data->batched_l }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->placed_a }}
+                            {{ $data->placed_l }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->temp_a }}
+                            {{ $data->temp_l }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->slump_a }}
+                            {{ $data->slump_l }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->total_air_a }}
+                            {{ $data->total_air_l }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->unit_mass_a }}
+                            {{ $data->unit_mass_l }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->yeild_a }}
+                            {{ $data->yeild_l }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->calculated_wc_ratio_a }}
+                            {{ $data->calculated_wc_ratio_l }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->cylinders_cast_fs_no_a }}
+                            {{ $data->cylinders_cast_fs_no_l }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->set_no_a }}
+                            {{ $data->set_no_l }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 3px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->se_a }}
+                            {{ $data->se_l }}
                         </p>
                     </td>
                 </tr>
@@ -1347,73 +1347,73 @@
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->ticket_no_a }}
+                            {{ $data->ticket_no_m }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->batched_a }}
+                            {{ $data->batched_m }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->placed_a }}
+                            {{ $data->placed_m }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->temp_a }}
+                            {{ $data->temp_m }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->slump_a }}
+                            {{ $data->slump_m }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->total_air_a }}
+                            {{ $data->total_air_m }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->unit_mass_a }}
+                            {{ $data->unit_mass_m }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->yeild_a }}
+                            {{ $data->yeild_m }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->calculated_wc_ratio_a }}
+                            {{ $data->calculated_wc_ratio_m }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->cylinders_cast_fs_no_a }}
+                            {{ $data->cylinders_cast_fs_no_m }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->set_no_a }}
+                            {{ $data->set_no_m }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 3px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->se_a }}
+                            {{ $data->se_m }}
                         </p>
                     </td>
                 </tr>
@@ -1434,73 +1434,73 @@
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->ticket_no_a }}
+                            {{ $data->ticket_no_n }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->batched_a }}
+                            {{ $data->batched_n }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->placed_a }}
+                            {{ $data->placed_n }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->temp_a }}
+                            {{ $data->temp_n }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->slump_a }}
+                            {{ $data->slump_n }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->total_air_a }}
+                            {{ $data->total_air_n }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->unit_mass_a }}
+                            {{ $data->unit_mass_n }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->yeild_a }}
+                            {{ $data->yeild_n }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->calculated_wc_ratio_a }}
+                            {{ $data->calculated_wc_ratio_n }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->cylinders_cast_fs_no_a }}
+                            {{ $data->cylinders_cast_fs_no_n }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->set_no_a }}
+                            {{ $data->set_no_n }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 3px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->se_a }}
+                            {{ $data->se_n }}
                         </p>
                     </td>
                 </tr>
@@ -1521,73 +1521,73 @@
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->ticket_no_a }}
+                            {{ $data->ticket_no_o }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->batched_a }}
+                            {{ $data->batched_o }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->placed_a }}
+                            {{ $data->placed_o }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->temp_a }}
+                            {{ $data->temp_o }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->slump_a }}
+                            {{ $data->slump_o }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->total_air_a }}
+                            {{ $data->total_air_o }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->unit_mass_a }}
+                            {{ $data->unit_mass_o }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->yeild_a }}
+                            {{ $data->yeild_o }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->calculated_wc_ratio_a }}
+                            {{ $data->calculated_wc_ratio_o }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->cylinders_cast_fs_no_a }}
+                            {{ $data->cylinders_cast_fs_no_o }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->set_no_a }}
+                            {{ $data->set_no_o }}
                         </p>
                     </td>
                     <td
                         style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 3px solid #000;">
                         <p style="font-size: 12px;">
-                            {{ $data->se_a }}
+                            {{ $data->se_o }}
                         </p>
                     </td>
                 </tr>
