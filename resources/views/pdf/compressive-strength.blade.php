@@ -785,7 +785,7 @@
 
                 <tr>
                     <th
-                        style="border-top: 1px solid #000; border-right: 2px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
+                        style="width: 8%; border-top: 1px solid #000; border-right: 2px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
                         <p style="font-size: 12px; text-align: center">Specimen</p>
                     </th>
                     <th
@@ -793,7 +793,7 @@
                         <p style="font-size: 12px; text-align: center">Break Date</p>
                     </th>
                     <th
-                        style="border-top: 1px solid #000; border-right: 2px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
+                        style="width: 8%; border-top: 1px solid #000; border-right: 2px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
                         <p style="font-size: 12px; text-align: center">Age</p>
                     </th>
                     <th colspan="2"
