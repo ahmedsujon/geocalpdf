@@ -415,7 +415,8 @@ class CreateCompressiveStrengthComponent extends Component
         $data->status = $this->status;
         $data->created_by = Auth::user()->id;
         $data->responsible_person = json_encode($this->responsible_person);
-
+        $data->publish_status = $publish_status;
+        $data->save();
         if ($publish_status === 'publish') {
             $this->validate([
                 'project_id' => 'required',
@@ -426,7 +427,6 @@ class CreateCompressiveStrengthComponent extends Component
             ], [
                 'project_id.required' => 'Project name is required',
             ]);
-            $data->publish_status = 'publish';
             // send Mail
             if ($this->responsible_person) {
                 $persons = $this->responsible_person;
@@ -456,9 +456,7 @@ class CreateCompressiveStrengthComponent extends Component
             ], [
                 'project_id.required' => 'Project name is required',
             ]);
-            $data->publish_status = 'unpublish';
         }
-        $data->save();
         session()->flash('message', 'Compressive strength file created successfully');
         return redirect()->route('template.compressive.strength');
     }
