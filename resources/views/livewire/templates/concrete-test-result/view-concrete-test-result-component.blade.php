@@ -2796,9 +2796,9 @@
                                             <tr>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="number"
+                                                        <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="tester" readonly required>
+                                                            wire:model="tester" required>
                                                         @error('tester')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2807,9 +2807,9 @@
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="number"
+                                                        <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="tester_title" readonly required>
+                                                            wire:model="tester_title" required>
                                                         @error('tester_title')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2820,7 +2820,7 @@
                                                     <div class="input-group">
                                                         <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="project_engineer" readonly>
+                                                            wire:model="project_engineer">
                                                         @error('project_engineer')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2829,9 +2829,9 @@
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="number"
+                                                        <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="signature" readonly>
+                                                            wire:model="signature">
                                                         @error('signature')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>
@@ -2840,9 +2840,9 @@
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="number"
+                                                        <input type="text"
                                                             class="form-control form-color moistureremoveinput"
-                                                            wire:model="title" readonly>
+                                                            wire:model="title">
                                                         @error('title')
                                                             <span class="text-danger"
                                                                 style="font-size: 12px;">{{ $message }}</span>

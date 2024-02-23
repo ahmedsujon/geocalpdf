@@ -2801,7 +2801,7 @@
                                             <tr>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="number"
+                                                        <input type="text"
                                                             class="form-control form-color moistureremoveinput"
                                                             wire:model="tester" required>
                                                         @error('tester')
@@ -2812,7 +2812,7 @@
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="number"
+                                                        <input type="text"
                                                             class="form-control form-color moistureremoveinput"
                                                             wire:model="tester_title" required>
                                                         @error('tester_title')
@@ -2834,7 +2834,7 @@
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="number"
+                                                        <input type="text"
                                                             class="form-control form-color moistureremoveinput"
                                                             wire:model="signature">
                                                         @error('signature')
@@ -2845,7 +2845,7 @@
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="number"
+                                                        <input type="text"
                                                             class="form-control form-color moistureremoveinput"
                                                             wire:model="title">
                                                         @error('title')
