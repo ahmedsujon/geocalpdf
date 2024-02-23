@@ -78,7 +78,7 @@
                                                 <td>{{ user($file->created_by)->name }}</td>
                                                 <td>{{ $file->updated_at->format('M j, Y \a\t g:i A') }}</td>
                                                 <td style="text-align: center;">
-                                                    <a href="{{ route('concrete.test.result.update', ['file_id' => $file->id]) }}"
+                                                    <a href="{{ route('compressive.strength.update', ['file_id' => $file->id]) }}"
                                                         class="btn btn-outline-warning btn-icon-circle btn-icon-circle-sm"><i
                                                             class="ti ti-edit" data-bs-toggle="tooltip"
                                                             data-bs-placement="top"
