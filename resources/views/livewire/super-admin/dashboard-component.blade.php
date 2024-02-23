@@ -30,9 +30,6 @@
                                         - by ({{
                                         getUser($file->created_by)->name }}) : <span class="post">{{
                                             $file->created_at }}</span></a>
-                                    <p class="description">
-                                        {{ $file->remark }}
-                                    </p>
                                 </div>
                             </div>
                             @endforeach
