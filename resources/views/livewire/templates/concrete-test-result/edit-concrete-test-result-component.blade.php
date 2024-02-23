@@ -2880,7 +2880,7 @@
                             <div class="col-md-12 mt-3 select-border">
                                 <div class="input-group">
                                     <span class="input-group-text width12">Next Action:</span>
-                                    <select class="form-select moistureremoveinput dependent text-left"
+                                    <select class="form-select dependent text-left"
                                         wire:model='status' data-file_id="{{ $file_id }}">
                                         <option value="">Select an action...</option>
                                         <option value="sentToPE">Send to Project Engineer</option>
