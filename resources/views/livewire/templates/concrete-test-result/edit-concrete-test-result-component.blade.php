@@ -22,6 +22,7 @@
 
         .moistureremoveinput {
             background-color: #ccecff !important;
+            text-align: center;
         }
 
         .commercial-form {
@@ -91,6 +92,16 @@
         .commercial-form .width12 {
             width: 12%;
         }
+
+
+        .commercial-form .width11 {
+            width: 11%;
+        }
+
+        .commercial-form .width10 {
+            width: 10%;
+        }
+
 
         .commercial-form .width9 {
             width: 9.1%;
@@ -388,20 +399,20 @@
                                         @enderror
                                     </div>
                                     <div class="input-group">
-                                        <span class="input-group-text width20">Compressive strength (Psi):</span>
-                                        <input type="text" class="form-control form-color"
-                                            wire:model="compressive_strength">
-                                        @error('compressive_strength')
-                                            <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
-                                        @enderror
-                                    </div>
-                                    <div class="input-group">
                                         <span class="input-group-text width28">inches maximum(% total air):</span>
                                         <input type="number" class="form-control form-color"
                                             wire:model="inches_max">
                                         <span class="input-group-text">To:</span>
                                         <input type="text" class="form-control form-color"
                                             wire:model="inches_min">
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-group-text width20">Compressive strength (Psi):</span>
+                                        <input type="text" class="form-control form-color"
+                                            wire:model="compressive_strength" id="compressive_strength">
+                                        @error('compressive_strength')
+                                            <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
+                                        @enderror
                                     </div>
                                 </div>
                             </div>
@@ -413,27 +424,27 @@
                                     <table class="table table-bordered" style="margin-bottom: 0;">
                                         <thead>
                                             <tr>
-                                                <th class="customcolor" scope="col">Location and Test #</th>
-                                                <th class="customcolor" scope="col">Date Placed</th>
-                                                <th class="customcolor" scope="col">Ticket no.</th>
-                                                <th class="customcolor" scope="col">Batched</th>
-                                                <th class="customcolor" scope="col">Placed</th>
-                                                <th class="customcolor" scope="col">Temp.</th>
-                                                <th class="customcolor" scope="col">Slump</th>
-                                                <th class="customcolor" scope="col">% total air</th>
-                                                <th class="customcolor" scope="col">Unit mass</th>
-                                                <th class="customcolor" scope="col">Yield</th>
-                                                <th class="customcolor" scope="col">Calculated w/c ratio</th>
-                                                <th class="customcolor" scope="col">Cylinders cast F.S. no.</th>
-                                                <th class="customcolor" scope="col">Set No.</th>
-                                                <th class="customcolor" scope="col">S. E.</th>
+                                                <th class="customcolor text-center width11" scope="col">Location and Test #</th>
+                                                <th class="customcolor text-center" scope="col">Date Placed</th>
+                                                <th class="customcolor text-center" scope="col">Ticket no.</th>
+                                                <th class="customcolor text-center" scope="col">Batched</th>
+                                                <th class="customcolor text-center" scope="col">Placed</th>
+                                                <th class="customcolor text-center" scope="col">Temp.</th>
+                                                <th class="customcolor text-center" scope="col">Slump</th>
+                                                <th class="customcolor text-center" scope="col">% total air</th>
+                                                <th class="customcolor text-center" scope="col">Unit mass</th>
+                                                <th class="customcolor text-center" scope="col">Yield</th>
+                                                <th class="customcolor text-center" scope="col">Calculated w/c ratio</th>
+                                                <th class="customcolor text-center" scope="col">Cylinders cast F.S. no.</th>
+                                                <th class="customcolor text-center" scope="col">Set No.</th>
+                                                <th class="customcolor text-center" scope="col">S. E.</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="number"
+                                                        <input type="text"
                                                             class="form-control form-color moistureremoveinput"
                                                             wire:model="location_test_a" required>
                                                         @error('location_test_a')
@@ -444,7 +455,7 @@
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="number"
+                                                        <input type="date"
                                                             class="form-control form-color moistureremoveinput"
                                                             wire:model="date_placed_a" required>
                                                         @error('date_placed_a')
@@ -589,7 +600,7 @@
                                             <tr>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="number"
+                                                        <input type="text"
                                                             class="form-control form-color moistureremoveinput"
                                                             wire:model="location_test_b" required>
                                                         @error('location_test_b')
@@ -600,7 +611,7 @@
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="number"
+                                                        <input type="date"
                                                             class="form-control form-color moistureremoveinput"
                                                             wire:model="date_placed_b" required>
                                                         @error('date_placed_b')
@@ -745,7 +756,7 @@
                                             <tr>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="number"
+                                                        <input type="text"
                                                             class="form-control form-color moistureremoveinput"
                                                             wire:model="location_test_c" required>
                                                         @error('location_test_c')
@@ -756,7 +767,7 @@
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="number"
+                                                        <input type="date"
                                                             class="form-control form-color moistureremoveinput"
                                                             wire:model="date_placed_c" required>
                                                         @error('date_placed_c')
@@ -901,7 +912,7 @@
                                             <tr>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="number"
+                                                        <input type="text"
                                                             class="form-control form-color moistureremoveinput"
                                                             wire:model="location_test_d" required>
                                                         @error('location_test_d')
@@ -912,7 +923,7 @@
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="number"
+                                                        <input type="date"
                                                             class="form-control form-color moistureremoveinput"
                                                             wire:model="date_placed_d" required>
                                                         @error('date_placed_d')
@@ -1057,7 +1068,7 @@
                                             <tr>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="number"
+                                                        <input type="text"
                                                             class="form-control form-color moistureremoveinput"
                                                             wire:model="location_test_e" required>
                                                         @error('location_test_e')
@@ -1068,7 +1079,7 @@
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="number"
+                                                        <input type="date"
                                                             class="form-control form-color moistureremoveinput"
                                                             wire:model="date_placed_e" required>
                                                         @error('date_placed_e')
@@ -1213,7 +1224,7 @@
                                             <tr>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="number"
+                                                        <input type="text"
                                                             class="form-control form-color moistureremoveinput"
                                                             wire:model="location_test_f" required>
                                                         @error('location_test_f')
@@ -1224,7 +1235,7 @@
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="number"
+                                                        <input type="date"
                                                             class="form-control form-color moistureremoveinput"
                                                             wire:model="date_placed_f" required>
                                                         @error('date_placed_f')
@@ -1369,7 +1380,7 @@
                                             <tr>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="number"
+                                                        <input type="text"
                                                             class="form-control form-color moistureremoveinput"
                                                             wire:model="location_test_g" required>
                                                         @error('location_test_g')
@@ -1380,7 +1391,7 @@
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="number"
+                                                        <input type="date"
                                                             class="form-control form-color moistureremoveinput"
                                                             wire:model="date_placed_g" required>
                                                         @error('date_placed_g')
@@ -1525,7 +1536,7 @@
                                             <tr>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="number"
+                                                        <input type="text"
                                                             class="form-control form-color moistureremoveinput"
                                                             wire:model="location_test_h" required>
                                                         @error('location_test_h')
@@ -1536,7 +1547,7 @@
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="number"
+                                                        <input type="date"
                                                             class="form-control form-color moistureremoveinput"
                                                             wire:model="date_placed_h" required>
                                                         @error('date_placed_h')
@@ -1681,7 +1692,7 @@
                                             <tr>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="number"
+                                                        <input type="text"
                                                             class="form-control form-color moistureremoveinput"
                                                             wire:model="location_test_i" required>
                                                         @error('location_test_i')
@@ -1692,7 +1703,7 @@
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="number"
+                                                        <input type="date"
                                                             class="form-control form-color moistureremoveinput"
                                                             wire:model="date_placed_i" required>
                                                         @error('date_placed_i')
@@ -1837,7 +1848,7 @@
                                             <tr>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="number"
+                                                        <input type="text"
                                                             class="form-control form-color moistureremoveinput"
                                                             wire:model="location_test_j" required>
                                                         @error('location_test_j')
@@ -1848,7 +1859,7 @@
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="number"
+                                                        <input type="date"
                                                             class="form-control form-color moistureremoveinput"
                                                             wire:model="date_placed_j" required>
                                                         @error('date_placed_j')
@@ -1993,7 +2004,7 @@
                                             <tr>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="number"
+                                                        <input type="text"
                                                             class="form-control form-color moistureremoveinput"
                                                             wire:model="location_test_k" required>
                                                         @error('location_test_k')
@@ -2004,7 +2015,7 @@
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="number"
+                                                        <input type="date"
                                                             class="form-control form-color moistureremoveinput"
                                                             wire:model="date_placed_k" required>
                                                         @error('date_placed_k')
@@ -2149,7 +2160,7 @@
                                             <tr>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="number"
+                                                        <input type="text"
                                                             class="form-control form-color moistureremoveinput"
                                                             wire:model="location_test_l" required>
                                                         @error('location_test_l')
@@ -2160,7 +2171,7 @@
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="number"
+                                                        <input type="date"
                                                             class="form-control form-color moistureremoveinput"
                                                             wire:model="date_placed_l" required>
                                                         @error('date_placed_l')
@@ -2305,7 +2316,7 @@
                                             <tr>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="number"
+                                                        <input type="text"
                                                             class="form-control form-color moistureremoveinput"
                                                             wire:model="location_test_m" required>
                                                         @error('location_test_m')
@@ -2316,7 +2327,7 @@
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="number"
+                                                        <input type="date"
                                                             class="form-control form-color moistureremoveinput"
                                                             wire:model="date_placed_m" required>
                                                         @error('date_placed_m')
@@ -2461,7 +2472,7 @@
                                             <tr>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="number"
+                                                        <input type="text"
                                                             class="form-control form-color moistureremoveinput"
                                                             wire:model="location_test_n" required>
                                                         @error('location_test_n')
@@ -2472,7 +2483,7 @@
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="number"
+                                                        <input type="date"
                                                             class="form-control form-color moistureremoveinput"
                                                             wire:model="date_placed_n" required>
                                                         @error('date_placed_n')
@@ -2617,7 +2628,7 @@
                                             <tr>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="number"
+                                                        <input type="text"
                                                             class="form-control form-color moistureremoveinput"
                                                             wire:model="location_test_o" required>
                                                         @error('location_test_o')
@@ -2628,7 +2639,7 @@
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="number"
+                                                        <input type="date"
                                                             class="form-control form-color moistureremoveinput"
                                                             wire:model="date_placed_o" required>
                                                         @error('date_placed_o')
@@ -2911,9 +2922,11 @@
                                     @endif
                                 </div>
                                 <div class="col-md-12 text-center">
-                                    <button type="button" wire:click.prevent='updateData("unpublish")' class="btn btn-primary submit_btn">{!! loadingState('updateData', 'Save as Draft') !!}</button>
-                                    <button type="button" wire:click.prevent='updateData("publish")' class="btn btn-success submit_btn">{!! loadingState('updateData', 'Save and Send') !!}</button>
-                            </div>
+                                    <button type="button" wire:click.prevent='updateData("unpublish")'
+                                        class="btn btn-primary submit_btn">{!! loadingState('updateData', 'Save as Draft') !!}</button>
+                                    <button type="button" wire:click.prevent='updateData("publish")'
+                                        class="btn btn-success submit_btn">{!! loadingState('updateData', 'Save and Send') !!}</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -2959,6 +2972,16 @@
                 var value = $(this).val();
                 @this.set('responsible_person', value);
             });
+        });
+    </script>
+
+    <script>
+        document.getElementById('compressive_strength').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/[^\d.]/g, '');
+            value = parseFloat(value);
+            if (!isNaN(value)) {
+                e.target.value = value.toLocaleString('en-US');
+            }
         });
     </script>
 @endpush
