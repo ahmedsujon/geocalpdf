@@ -40,7 +40,7 @@ class InvoiceController extends Controller
         $data->client_company_name = client($data->client_id)->company_name;
 
         $pdf = Pdf::loadView('pdf.concrete-test-results', compact('data'));
-        return $pdf->stream('concrete-test-results-summary-local-agency .pdf');
+        return $pdf->download('concrete-test-results-summary-local-agency .pdf');
     }
 
     public function compressiveStrengthsPDF($id)
@@ -54,7 +54,7 @@ class InvoiceController extends Controller
         $data->client_company_name = client($data->client_id)->company_name;
 
         $pdf = Pdf::loadView('pdf.compressive-strength', compact('data'));
-        return $pdf->stream('compressive-strength-local-agency.pdf');
+        return $pdf->download('compressive-strength-local-agency.pdf');
     }
     public function commercialPDF($id)
     {
@@ -68,7 +68,7 @@ class InvoiceController extends Controller
         $data->client_company_name = client($data->client_id)->company_name;
 
         $pdf = Pdf::loadView('pdf.commercial', compact('data'));
-        return $pdf->stream('asphalt-field-density-by-nuclear-method-commercial-report.pdf');
+        return $pdf->download('asphalt-field-density-by-nuclear-method-commercial-report.pdf');
     }
 
     public function templateSoilAggregate($id)
@@ -83,7 +83,7 @@ class InvoiceController extends Controller
         $data->client_company_name = client($data->client_id)->company_name;
 
         $pdf = Pdf::loadView('pdf.soil_aggregate', compact('data'));
-        return $pdf->stream('field-density-soil-aggregate-report.pdf');
+        return $pdf->download('field-density-soil-aggregate-report.pdf');
     }
 
     public function cdotPDF($id)
@@ -97,7 +97,7 @@ class InvoiceController extends Controller
         $data->client_company_name = client($data->client_id)->company_name;
 
         $pdf = Pdf::loadView('pdf.cdot_form', compact('data'));
-        return $pdf->stream('asphalt-field-density-by-nuclear-mMethod-cdot-report.pdf');
+        return $pdf->download('asphalt-field-density-by-nuclear-mMethod-cdot-report.pdf');
     }
 
     public function plasticConcretePDF($id)
@@ -112,7 +112,7 @@ class InvoiceController extends Controller
         $data->client_company_name = client($data->client_id)->company_name;
 
         $pdf = Pdf::loadView('pdf.plastic_concrete', compact('data'));
-        return $pdf->stream('plastic_concrete_report.pdf');
+        return $pdf->download('plastic_concrete_report.pdf');
     }
 
     public function InspectionConcreteDataSetOne($id)
@@ -157,7 +157,7 @@ class InvoiceController extends Controller
         $data->avarage = round(array_sum($avarage_array) / count($avarage_array), -1);
 
         $pdf = Pdf::loadView('pdf.inspection_concrete_one', compact('data'));
-        return $pdf->stream('inspection_concrete_report.pdf');
+        return $pdf->download('inspection_concrete_report.pdf');
     }
 
     public function InspectionConcreteDataSetTwo($id)
@@ -200,7 +200,7 @@ class InvoiceController extends Controller
         }
         $data->avarage = round(array_sum($avarage_array) / count($avarage_array), -1);
         $pdf = Pdf::loadView('pdf.inspection_concrete_two', compact('data'));
-        return $pdf->stream('inspection_concrete_report.pdf');
+        return $pdf->download('inspection_concrete_report.pdf');
     }
 
     public function InspectionConcreteDataSetThree($id)
@@ -243,7 +243,7 @@ class InvoiceController extends Controller
         }
         $data->avarage = round(array_sum($avarage_array) / count($avarage_array), -1);
         $pdf = Pdf::loadView('pdf.inspection_concrete_three', compact('data'));
-        return $pdf->stream('inspection_concrete_report.pdf');
+        return $pdf->download('inspection_concrete_report.pdf');
     }
 
     public function InspectionConcreteDataSetFour($id)
@@ -286,7 +286,7 @@ class InvoiceController extends Controller
         }
         $data->avarage = round(array_sum($avarage_array) / count($avarage_array), -1);
         $pdf = Pdf::loadView('pdf.inspection_concrete_four', compact('data'));
-        return $pdf->stream('inspection_concrete_report.pdf');
+        return $pdf->download('inspection_concrete_report.pdf');
     }
 
     public function InspectionConcreteDataSetFive($id)
@@ -329,7 +329,7 @@ class InvoiceController extends Controller
         }
         $data->avarage = round(array_sum($avarage_array) / count($avarage_array), -1);
         $pdf = Pdf::loadView('pdf.inspection_concrete_five', compact('data'));
-        return $pdf->stream('inspection_concrete_report.pdf');
+        return $pdf->download('inspection_concrete_report.pdf');
     }
 
     public function InspectionConcreteDataSetSix($id)
@@ -372,7 +372,7 @@ class InvoiceController extends Controller
         }
         $data->avarage = round(array_sum($avarage_array) / count($avarage_array), -1);
         $pdf = Pdf::loadView('pdf.inspection_concrete_six', compact('data'));
-        return $pdf->stream('inspection_concrete_report.pdf');
+        return $pdf->download('inspection_concrete_report.pdf');
     }
 
     public function InspectionConcreteDataSetSeven($id)
@@ -415,7 +415,7 @@ class InvoiceController extends Controller
         }
         $data->avarage = round(array_sum($avarage_array) / count($avarage_array), -1);
         $pdf = Pdf::loadView('pdf.inspection_concrete_seven', compact('data'));
-        return $pdf->stream('inspection_concrete_report.pdf');
+        return $pdf->download('inspection_concrete_report.pdf');
     }
 
     public function InspectionConcreteDataSetEight($id)
@@ -458,7 +458,7 @@ class InvoiceController extends Controller
         }
         $data->avarage = round(array_sum($avarage_array) / count($avarage_array), -1);
         $pdf = Pdf::loadView('pdf.inspection_concrete_eight', compact('data'));
-        return $pdf->stream('inspection_concrete_report.pdf');
+        return $pdf->download('inspection_concrete_report.pdf');
     }
 
     public function InspectionConcreteDataSetNine($id)
@@ -501,7 +501,7 @@ class InvoiceController extends Controller
         }
         $data->avarage = round(array_sum($avarage_array) / count($avarage_array), -1);
         $pdf = Pdf::loadView('pdf.inspection_concrete_nine', compact('data'));
-        return $pdf->stream('inspection_concrete_report.pdf');
+        return $pdf->download('inspection_concrete_report.pdf');
     }
 
     public function InspectionConcreteDataSetTen($id)
@@ -544,7 +544,7 @@ class InvoiceController extends Controller
         }
         $data->avarage = round(array_sum($avarage_array) / count($avarage_array), -1);
         $pdf = Pdf::loadView('pdf.inspection_concrete_ten', compact('data'));
-        return $pdf->stream('inspection_concrete_report.pdf');
+        return $pdf->download('inspection_concrete_report.pdf');
     }
 
     public function concreteFieldReport(Request $request)
@@ -563,6 +563,6 @@ class InvoiceController extends Controller
         $set_nine = InspectionConcreteSetNine::where('project_id', $project_id)->orderBy('updated_at', 'DESC')->first();
         $set_ten = InspectionConcreteSetTen::where('project_id', $project_id)->orderBy('updated_at', 'DESC')->first();
         $pdf = Pdf::loadView('pdf.concrete_field_report', compact('set_one', 'set_two', 'set_three', 'set_four', 'set_five', 'set_six', 'set_seven', 'set_eight', 'set_nine', 'set_ten', 'project', 'client'));
-        return $pdf->stream('concrete_field_report.pdf');
+        return $pdf->download('concrete_field_report.pdf');
     }
 }
