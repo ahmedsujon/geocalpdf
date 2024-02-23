@@ -883,7 +883,7 @@
                                     <div class="input-group">
                                         <span class="input-group-text width27">Required Strength:</span>
                                         <input type="text" class="form-control form-color"
-                                            wire:model="required_strength">
+                                            wire:model="required_strength" id="required_strength">
                                         <span class="input-group-text width27">psi</span>
                                     </div>
                                     @error('required_strength')
@@ -970,7 +970,6 @@
                                     </div>
                                 </div>
                                 <div class="col-md-3">
-                                    <label for="">Specimens tested at:</label>
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio"
                                             wire:model="represented_quantity" name="exampleRadios"
@@ -2029,4 +2028,15 @@
             });
         });
     </script>
+
+<script>
+    document.getElementById('required_strength').addEventListener('input', function(e) {
+        let value = e.target.value.replace(/[^\d.]/g, '');
+        value = parseFloat(value);
+        if (!isNaN(value)) {
+            e.target.value = value.toLocaleString('en-US');
+        }
+    });
+</script>
+
 @endpush

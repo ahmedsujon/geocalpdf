@@ -968,7 +968,6 @@
                                     </div>
                                 </div>
                                 <div class="col-md-3">
-                                    <label for="">Specimens tested at:</label>
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio"
                                             wire:model="represented_quantity" name="exampleRadios"
