@@ -31,7 +31,7 @@
     <p>New file has been created.</p>
     <p>Please check the attachment for your next action.</p> <br>
     @if ($id)
-        <a class="button button1" href="{{ route('invoice.compressive-strengths-pdf', ['id' => $id]) }}">Download</a>
+        <a class="button button1" href="{{ route('invoice.concrete-test-results-pdf', ['id' => $id]) }}">Download</a>
     @endif
     <br><br>
     <p>Thank you...!!</p>
