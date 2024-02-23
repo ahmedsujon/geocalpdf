@@ -211,7 +211,6 @@ class EditCompressiveStrengthComponent extends Component
        $this->unit_weight_measure_id = $file->unit_weight_measure_id;
        $this->scale_id = $file->scale_id;
        $this->remark = $file->remark;
-       $this->status = $file->status;
     }
 
         // ======== Break Date Calculation ========
