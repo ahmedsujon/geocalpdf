@@ -300,7 +300,7 @@ Route::post('/upload', 'app\http\controllers\BaseController@uploadckimage')->nam
 
 // PDF Generate
 Route::get('/invoice/ijP6ERmmdeLfFi57211{id}4ijP6ERmmdeLfasfFi5RiwfaZYYVSmdtcmsajxJe2K31U5knK', [InvoiceController::class, 'concreteTestResultsPDF'])->name('invoice.concrete-test-results-pdf');
-Route::get('/invoice/ijP6ERmmdeLfFi57211{id}4ijP6ERmmdeLfFi5RiwZYYVSmdtsrsfafcmjxJe2K31U5knK', [InvoiceController::class, 'compressiveStrengthsPDF'])->name('invoice.compressive-strengths-pdf');
+Route::get('/invoice/ijP6ERmmdeLfFi57211{id}4ijP6ERmmdeLfFi5Riw35ZYYV547rsfafcmjxJe2K31U5knK', [InvoiceController::class, 'compressiveStrengthsPDF'])->name('invoice.compressive-strengths-pdf');
 
 Route::get('/invoice/ijP6ERmmdeLfFi57209633311{id}4ijP6ERmmdeLfFi5RiwZATmrI2SMOYYVSmdtcmjxJe2K31U5knK', [InvoiceController::class, 'commercialPDF'])->name('invoice.commercial');
 
