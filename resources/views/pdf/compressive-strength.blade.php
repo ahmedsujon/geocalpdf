@@ -51,8 +51,7 @@
                 </td>
                 <td style="width: 30%; ">
                     <p style="font-size: 12px; text-align: right;">
-                        {{ $data->project_number }}<br>
-                        {{ $data->project_name }}<br>
+                        {{ $set_one->office_address }}
                     </p>
                     <p style="font-size: 12px; text-align: left">FS# = (Contract
                         ID-Seq.#)</p>
