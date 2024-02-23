@@ -353,6 +353,8 @@ class CreateConcreteTestResultComponent extends Component
         $data->status = $this->status;
         $data->created_by = Auth::user()->id;
         $data->responsible_person = json_encode($this->responsible_person);
+        $data->publish_status = $publish_status;
+        $data->save();
 
         if ($publish_status === 'publish') {
             $this->validate([
@@ -367,7 +369,6 @@ class CreateConcreteTestResultComponent extends Component
                 'project_id.required' => 'Project name is required',
                 'user_id.required' => 'Technician name is required',
             ]);
-            $data->publish_status = 'publish';
             // send Mail
             if ($this->responsible_person) {
                 $persons = $this->responsible_person;
@@ -396,10 +397,7 @@ class CreateConcreteTestResultComponent extends Component
             ], [
                 'project_id.required' => 'Project name is required',
             ]);
-            $data->publish_status = 'unpublish';
         }
-        $data->save();
-
         session()->flash('message', 'Concrete test result file created successfully');
         return redirect()->route('template.concrete.test.result');
     }
@@ -407,7 +405,8 @@ class CreateConcreteTestResultComponent extends Component
     {
         $projects = Project::orderBy('id', 'DESC')->get();
         $supervisors = User::orderBy('id', 'DESC')->where('role_id', 5)->get();
-        return view('livewire.templates.concrete-test-result.create-concrete-test-result-component',
+        return view(
+            'livewire.templates.concrete-test-result.create-concrete-test-result-component',
             ['projects' => $projects, 'supervisors' => $supervisors]
         )
             ->layout('livewire.layouts.base');
