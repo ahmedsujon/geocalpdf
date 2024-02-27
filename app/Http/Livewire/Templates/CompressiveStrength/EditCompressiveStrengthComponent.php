@@ -559,6 +559,7 @@ class EditCompressiveStrengthComponent extends Component
                 'project_location' => 'required',
                 'office_address' => 'required',
                 'mold_date' => 'required',
+                'responsible_person' => 'required',
             ], [
                 'project_id.required' => 'Project name is required',
                 'responsible_person.required' => 'Next action & responsible person is required',

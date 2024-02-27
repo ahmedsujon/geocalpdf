@@ -422,6 +422,7 @@ class CreateCompressiveStrengthComponent extends Component
                 'project_id' => 'required',
                 'project_location' => 'required',
                 'office_address' => 'required',
+                'responsible_person' => 'required',
                 'mold_date' => 'required',
             ], [
                 'project_id.required' => 'Project name is required',

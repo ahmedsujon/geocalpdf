@@ -363,7 +363,8 @@ class CreateConcreteTestResultComponent extends Component
                 'project_location' => 'required',
                 'office_address' => 'required',
                 'inches_max' => 'required',
-                'inches_min' => 'required'
+                'inches_min' => 'required',
+                'responsible_person' => 'required',
             ], [
                 'project_id.required' => 'Project name is required',
                 'user_id.required' => 'Technician name is required',
