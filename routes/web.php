@@ -33,11 +33,13 @@ use App\Http\Livewire\Templates\Commercial\ViewCommercialComponent;
 use App\Http\Livewire\Templates\CompressiveStrength\CompressiveDraftFileComponent;
 use App\Http\Livewire\Templates\CompressiveStrength\CompressiveStrengthComponent;
 use App\Http\Livewire\Templates\CompressiveStrength\CreateCompressiveStrengthComponent;
+use App\Http\Livewire\Templates\CompressiveStrength\DraftEditCompressiveStrengthComponemt;
 use App\Http\Livewire\Templates\CompressiveStrength\EditCompressiveStrengthComponent;
 use App\Http\Livewire\Templates\CompressiveStrength\ViewCompressiveStrengthComponent;
 use App\Http\Livewire\Templates\ConcreteFieldReport\ConcreteFieldReportComponent;
 use App\Http\Livewire\Templates\ConcreteTestResult\ConcreteTestResultComponent;
 use App\Http\Livewire\Templates\ConcreteTestResult\CreateConcreteTestResultComponent;
+use App\Http\Livewire\Templates\ConcreteTestResult\DraftEditConcreteTestResultComponemt;
 use App\Http\Livewire\Templates\ConcreteTestResult\DraftFileComponent;
 use App\Http\Livewire\Templates\ConcreteTestResult\EditConcreteTestResultComponent;
 use App\Http\Livewire\Templates\ConcreteTestResult\ViewConcreteTestResultComponent;
@@ -133,6 +135,7 @@ Route::get('/concrete/test/result', ConcreteTestResultComponent::class)->name('t
 Route::get('/draft/concrete/test/result', DraftFileComponent::class)->name('template.concrete.test.result.draft');
 Route::get('/concrete/test/result/create', CreateConcreteTestResultComponent::class)->name('concrete.test.result.create');
 Route::get('/concrete/test/result/edit/{file_id}', EditConcreteTestResultComponent::class)->name('concrete.test.result.update');
+Route::get('/draft/concrete/test/result/edit/{file_id}', DraftEditConcreteTestResultComponemt::class)->name('draft.concrete.test.result.update');
 Route::get('/concrete/test/result/show/{file_id}', ViewConcreteTestResultComponent::class)->name('concrete.test.result.show');
 // Get Representative
 Route::post('/get-concrete/representative', [ConcreteTestResultComponent::class, 'getConcreteRepresentative'])->name('get_concrete_representative');
@@ -144,6 +147,7 @@ Route::get('/compressive/strength', CompressiveStrengthComponent::class)->name('
 Route::get('/draft/compressive/strength', CompressiveDraftFileComponent::class)->name('template.compressive.strength.draft');
 Route::get('/compressive/strength/create', CreateCompressiveStrengthComponent::class)->name('compressive.strength.create');
 Route::get('/compressive/strength/edit/{file_id}', EditCompressiveStrengthComponent::class)->name('compressive.strength.update');
+Route::get('/draft/compressive/strength/edit/{file_id}', DraftEditCompressiveStrengthComponemt::class)->name('draft.compressive.strength.update');
 Route::get('/compressive/strength/show/{file_id}', ViewCompressiveStrengthComponent::class)->name('compressive.strength.show');
 // Get Representative
 Route::post('/get-compressive/strength', [CompressiveStrengthComponent::class, 'getCompressiveStrengthResentative'])->name('get_compressive_representative');
