@@ -620,13 +620,13 @@ class EditConcreteTestResultComponent extends Component
                 'project_id' => 'required',
                 'date_submited' => 'required',
                 'project_location' => 'required',
-                'responsible_person' => 'required',
                 'office_address' => 'required',
                 'inches_max' => 'required',
                 'inches_min' => 'required'
             ], [
                 'project_id.required' => 'Project name is required',
                 'user_id.required' => 'Technician name is required',
+                'responsible_person.required' => 'Next action & responsible person is required',
             ]);
             // send Mail
             if ($this->responsible_person) {

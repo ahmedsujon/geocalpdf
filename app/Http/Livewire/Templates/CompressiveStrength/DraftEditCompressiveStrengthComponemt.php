@@ -558,11 +558,11 @@ class DraftEditCompressiveStrengthComponemt extends Component
             $this->validate([
                 'project_id' => 'required',
                 'project_location' => 'required',
-                'responsible_person' => 'required',
                 'office_address' => 'required',
                 'mold_date' => 'required',
             ], [
                 'project_id.required' => 'Project name is required',
+                'responsible_person.required' => 'Next action & responsible person is required',
             ]);
             // send Mail
             if ($this->responsible_person) {
@@ -621,7 +621,7 @@ class DraftEditCompressiveStrengthComponemt extends Component
         if ($this->mold_date) {
             $this->breakDateG();
         }
-        
+
         $projects = Project::orderBy('id', 'DESC')->get();
         $supervisors = User::orderBy('id', 'DESC')->where('role_id', 5)->get();
         return view('livewire.templates.compressive-strength.draft-edit-compressive-strength-componemt', ['projects'=>$projects, 'supervisors'=>$supervisors])->layout('livewire.layouts.base');

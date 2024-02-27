@@ -421,11 +421,11 @@ class CreateCompressiveStrengthComponent extends Component
             $this->validate([
                 'project_id' => 'required',
                 'project_location' => 'required',
-                'responsible_person' => 'required',
                 'office_address' => 'required',
                 'mold_date' => 'required',
             ], [
                 'project_id.required' => 'Project name is required',
+                'responsible_person.required' => 'Next action & responsible person is required',
             ]);
             // send Mail
             if ($this->responsible_person) {
