@@ -600,6 +600,28 @@ class DraftEditCompressiveStrengthComponemt extends Component
 
     public function render()
     {
+        if ($this->mold_date) {
+            $this->breakDateA();
+        }
+        if ($this->mold_date) {
+            $this->breakDateB();
+        }
+        if ($this->mold_date) {
+            $this->breakDateC();
+        }
+        if ($this->mold_date) {
+            $this->breakDateD();
+        }
+        if ($this->mold_date) {
+            $this->breakDateE();
+        }
+        if ($this->mold_date) {
+            $this->breakDateF();
+        }
+        if ($this->mold_date) {
+            $this->breakDateG();
+        }
+        
         $projects = Project::orderBy('id', 'DESC')->get();
         $supervisors = User::orderBy('id', 'DESC')->where('role_id', 5)->get();
         return view('livewire.templates.compressive-strength.draft-edit-compressive-strength-componemt', ['projects'=>$projects, 'supervisors'=>$supervisors])->layout('livewire.layouts.base');
