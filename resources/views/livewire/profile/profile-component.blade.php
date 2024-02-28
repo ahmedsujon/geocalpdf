@@ -28,11 +28,11 @@
                                     <div class="met-profile-main">
                                         <div class="met-profile-main-pic">
                                             @if ($profile->avatar)
-                                            <img src="{{ asset('uploads/profile') }}/{{  $profile->avatar }}" alt=""
-                                                height="110">
+                                                <img src="{{ asset('uploads/profile') }}/{{ $profile->avatar }}"
+                                                    alt="" height="110">
                                             @else
-                                            <img src="{{ asset('assets/admin/images/default/profile.png') }}" alt=""
-                                                height="110">
+                                                <img src="{{ asset('assets/admin/images/default/profile.png') }}"
+                                                    alt="" height="110">
                                             @endif
                                         </div>
                                         <div class="met-profile_user-detail">
@@ -70,7 +70,7 @@
 
                         <!-- Tab panes -->
                         <div class="tab-content">
-                            <div class="tab-pane p-3 active" id="Settings" role="tabpanel">
+                            <div class="tab-pane p-3 active" role="tabpanel">
                                 <form wire:submit.prevent="storeData" enctype="multipart/form-data">
                                     <div class="row">
                                         <div class="col-lg-6 col-xl-6">
@@ -90,10 +90,11 @@
                                                         <label
                                                             class="col-xl-3 col-lg-3 text-end mb-lg-0 align-self-center form-label">Name</label>
                                                         <div class="col-lg-9 col-xl-8">
-                                                            <input class="form-control" type="text" wire:model="name">
+                                                            <input class="form-control" type="text"
+                                                                wire:model="name">
                                                             @error('title')
-                                                            <span class="text-danger" style="font-size: 12.5px;">{{
-                                                                $message }}</span>
+                                                                <span class="text-danger"
+                                                                    style="font-size: 12.5px;">{{ $message }}</span>
                                                             @enderror
                                                         </div>
                                                     </div>
@@ -107,8 +108,8 @@
                                                                 <input type="phone" class="form-control"
                                                                     aria-describedby="basic-addon1" wire:model="phone">
                                                                 @error('phone')
-                                                                <span class="text-danger" style="font-size: 12.5px;">{{
-                                                                    $message }}</span>
+                                                                    <span class="text-danger"
+                                                                        style="font-size: 12.5px;">{{ $message }}</span>
                                                                 @enderror
                                                             </div>
                                                         </div>
@@ -124,8 +125,8 @@
                                                                 <input type="email" class="form-control"
                                                                     aria-describedby="basic-addon1" wire:model="email">
                                                                 @error('email')
-                                                                <span class="text-danger" style="font-size: 12.5px;">{{
-                                                                    $message }}</span>
+                                                                    <span class="text-danger"
+                                                                        style="font-size: 12.5px;">{{ $message }}</span>
                                                                 @enderror
                                                             </div>
                                                         </div>
@@ -149,8 +150,8 @@
                                                             <input class="form-control" placeholder="Password"
                                                                 type="password" wire:model="password">
                                                             @error('password')
-                                                            <span class="text-danger" style="font-size: 12.5px;">{{
-                                                                $message }}</span>
+                                                                <span class="text-danger"
+                                                                    style="font-size: 12.5px;">{{ $message }}</span>
                                                             @enderror
                                                         </div>
                                                     </div>
@@ -163,8 +164,8 @@
                                                                 placeholder="Confirm password"
                                                                 wire:model="confirm_password">
                                                             @error('confirm_password')
-                                                            <span class="text-danger" style="font-size: 12.5px;">{{
-                                                                $message }}</span>
+                                                                <span class="text-danger"
+                                                                    style="font-size: 12.5px;">{{ $message }}</span>
                                                             @enderror
                                                         </div>
                                                     </div>
@@ -190,11 +191,13 @@
                                                                 class="mr-2"><i
                                                                     class="fa fa-spinner fa-spin mt-3 ml-2"></i>
                                                                 Uploading</div>
+
                                                             @if ($avatar)
-                                                            <img src="{{ $avatar->temporaryUrl() }}" width="120" alt="">
+                                                                <img src="{{ $avatar->temporaryUrl() }}"
+                                                                    width="120" alt="">
                                                             @elseif ($new_avatar)
-                                                            <img src="{{ asset('uploads/profile') }}/{{ $new_avatar }}"
-                                                                width="120" alt="">
+                                                                <img src="{{ asset($new_avatar) }}" width="120"
+                                                                    alt="">
                                                             @endif
                                                         </div>
                                                     </div>
@@ -206,7 +209,8 @@
                                         <div class="col-lg-12 col-xl-12">
                                             <div class="form-group mb-3 row">
                                                 <div class="col-lg-12 col-xl-12">
-                                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                                    <button type="submit" class="btn btn-primary">Save
+                                                        Changes</button>
                                                 </div>
                                             </div>
                                         </div>
