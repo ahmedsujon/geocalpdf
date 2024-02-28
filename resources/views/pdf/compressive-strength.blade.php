@@ -191,7 +191,7 @@
                     <td
                         style="width: 9%; border-top: 1px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 0px solid #000;">
                         <p style="font-size: 12px; text-align: center"><span
-                                style="font-size: 10px; text-align: left display: block">Entrained
+                                style="font-size: 10px; text-align: center display: block">Entrained
                                 Air</span><br>
                             {{ $data->entrained_air }}
                         </p>
@@ -199,34 +199,34 @@
                     <td class="td-padding-left"
                         style="width: 9.5%; border-top: 1px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
                         <p style="font-size: 12px; text-align: center"><span
-                                style="font-size: 10px; text-align: left; display: block">Slump</span><br>
+                                style="font-size: 10px; text-align: center; display: block; padding-bottom: 4px;">Slump</span>
                             {{ $data->slump }}</p>
                     </td>
                     <td class="td-padding-left"
                         style="width: 15%; border-top: 1px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 0px solid #000;">
                         <p style="font-size: 12px; text-align: center"><span
-                                style="font-size: 10px; text-align: left; display: block">Concrete
-                                Temperature</span><br>
+                                style="font-size: 10px; text-align: center; display: block; padding-bottom: 4px;">Concrete
+                                Temperature</span>
                             {{ $data->concrete_temperature }}</p>
                     </td>
                     <td class="td-padding-left"
                         style="width: 15%; border-top: 1px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 2px solid #000;">
                         <p style="font-size: 12px; text-align: center"><span
-                                style="font-size: 10px; text-align: left; display: block">Unit
-                                Weight</span><br>
+                                style="font-size: 10px; text-align: center; display: block; padding-bottom: 4px;">Unit
+                                Weight</span>
                             {{ $data->unit_weight }}</p>
                     </td>
                     <td class="td-padding-left"
                         style="width: 7%; border-top: 1px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
                         <p style="font-size: 12px; text-align: center"><span
-                                style="font-size: 10px; text-align: left; display: block">Yield</span><br>
+                                style="font-size: 10px; text-align: center; display: block; padding-bottom: 4px;">Yield</span>
                             {{ $data->yield }}</p>
                     </td>
                     <td class="td-padding-left"
                         style="width: 10%; border-top: 1px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 2px solid #000;">
                         <p style="font-size: 12px; text-align: center"><span
-                                style="font-size: 10px; text-align: left; display: block">W/C
-                                Ratio</span><br>
+                                style="font-size: 10px; text-align: center; display: block; padding-bottom: 4px;">W/C
+                                Ratio</span>
                             {{ $data->wc_ratio }}</p>
                     </td>
                 </tr>
@@ -248,9 +248,9 @@
                     <td class="td-padding-left"
                         style=" border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
                         <p style="font-size: 12px; text-align: left; padding-bottom: 4px;"><span
-                                style="font-size: 8px; text-align: center; width: 100%; display: block;">Specimen
-                                for:</span><br>
-                            @if ($data->wc_ratio == 'Design Adequacy')
+                                style="font-size: 8px; text-align: center; width: 100%; display: block; padding-bottom: 4px;">Specimen
+                                for:</span>
+                            @if ($data->specimen_for == 'Design Adequacy')
                                 <span style="width: 100%; display: block; padding-bottom: 6px;">Design
                                     Adequacy <span
                                         style="padding: 1px 5px; margin-left: 10px; border: 2px solid #000;">X</span></span>
@@ -271,7 +271,7 @@
 
                     <td class="td-padding-left"
                         style="border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 0px solid #000;">
-                        <p style="font-size: 12px; text-align: left"><span style="font-size: 8px;">Mold
+                        <p style="font-size: 12px; text-align: center"><span style="font-size: 8px;">Mold
                                 Date</span><br>
                             <span
                                 style="text-align: center; display: block;  font-size: 14px;">{{ $data->mold_date }}</span>
@@ -279,16 +279,17 @@
                     </td>
                     <td class="td-padding-left"
                         style="border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 2px solid #000;">
-                        <p style="font-size: 12px; text-align: left"><span style="font-size: 8px;">Time</span><br>
+                        <p style="font-size: 12px; text-align: center"><span style="font-size: 8px;">Time</span><br>
                             <span
                                 style="text-align: center; display: block;  font-size: 14px;">{{ date('h:i A', strtotime($data->time)) }}</span>
                         </p>
                     </td>
                     <td class="td-padding-left"
                         style="border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 2px solid #000;">
-                        <p style="font-size: 12px; text-align: left"><span style="font-size: 8px;">Hours Initial cure
+                        <p style="font-size: 12px; text-align: center"><span style="font-size: 8px;">Hours Initial
+                                cure
                                 in
-                                molds</span><br>
+                                molds</span>
                             <span
                                 style="text-align: center; display: block;  font-size: 14px;">{{ $data->hours_initial_cure_in_molds }}</span>
                         </p>
@@ -296,8 +297,8 @@
                     <td class="td-padding-left"
                         style="border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 2px solid #000;">
                         <p style="font-size: 12px; text-align: left; padding-bottom: 4px;"><span
-                                style="font-size: 8px; width: 100%; display: block;">Initial
-                                cure temperature</span><br>
+                                style="font-size: 8px; width: 100%; display: block; padding-bottom: 4px;">Initial
+                                cure temperature</span>
                             @if ($data->initial_cure_temperature == '(60-80°F)')
                                 <span style="width: 100%; display: block; padding-bottom: 6px;">(60-80°F)
                                     <span
@@ -313,15 +314,13 @@
                                     <span
                                         style="padding: 1px 5px; margin-left: 10px; border: 2px solid #000;">X</span></span>
                             @endif
-
-
                         </p>
                     </td>
                     <td class="td-padding-left"
                         style="border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 2px solid #000;">
                         <p style="font-size: 12px; text-align: left; padding-bottom: 4px;"><span
-                                style="font-size: 8px; display: block;">Final Cure
-                                Method</span><br>
+                                style="font-size: 8px; display: block; padding-bottom: 4px;">Final Cure
+                                Method</span>
                             @if ($data->final_cure_method == 'Water at 73.5°')
                                 <span style="width: 100%; display: block; padding-bottom: 6px;">Water
                                     at 73.5° <span
@@ -530,15 +529,15 @@
                                         </p>
                                         <p style="font-size: 10px; text-align: left; padding-bottom: 4px;">
                                             <span style="width: 100%; display: block;">Region Lab<span
-                                                    style="padding: 1px 5px; margin-left: 10px; border: 2px solid #000;">X</span></span>
+                                                    style="padding: 1px 4px; margin-left: 10px; border: 2px solid #000;">&nbsp;
+                                                    &nbsp;</span></span>
                                         </p>
                                     </td>
                                     <td>
                                         <p style="font-size: 10px; text-align: left;">
                                             <span style="width: 100%; display: block; padding-bottom: 6px;">Consultant
                                                 Lab<span
-                                                    style="padding: 1px 4px; margin-left: 14px; border: 2px solid #000;">&nbsp;
-                                                    &nbsp;</span></span>
+                                                    style="padding: 1px 5px; margin-left: 14px; border: 2px solid #000;">X</span></span>
                                         </p>
 
                                         <p style="font-size: 10px; text-align: left; padding-bottom: 4px;">
@@ -557,15 +556,15 @@
                                         </p>
                                         <p style="font-size: 10px; text-align: left; padding-bottom: 4px;">
                                             <span style="width: 100%; display: block;">Region Lab<span
-                                                    style="padding: 1px 4px; margin-left: 10px; border: 2px solid #000;">&nbsp;
-                                                    &nbsp;</span></span>
+                                                    style="padding: 1px 5px; margin-left: 10px; border: 2px solid #000;">X</span></span>
                                         </p>
                                     </td>
                                     <td>
                                         <p style="font-size: 10px; text-align: left;">
                                             <span style="width: 100%; display: block; padding-bottom: 6px;">Consultant
                                                 Lab<span
-                                                    style="padding: 1px 5px; margin-left: 14px; border: 2px solid #000;">X</span></span>
+                                                    style="padding: 1px 4px; margin-left: 14px; border: 2px solid #000;">&nbsp;
+                                                    &nbsp;</span></span>
                                         </p>
 
                                         <p style="font-size: 10px; text-align: left; padding-bottom: 4px;">
@@ -680,9 +679,10 @@
                         </p>
                     </td>
                 </tr>
+
                 <tr>
                     <td
-                        style=" border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
+                        style="border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
                         <p style="font-size: 12px; text-align: left; padding-bottom: 4px;">
                             <span
                                 style="width: 100%; display: block; padding-bottom: 6px; text-align: center;">Represented
@@ -690,7 +690,7 @@
                         </p>
                     </td>
                     <td
-                        style=" border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
+                        style="border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
                         <p style="font-size: 12px; text-align: left; padding-top: 5px; ">
                             @if ($data->represented_quantity == 'Cubic Yards')
                                 <span
@@ -741,21 +741,23 @@
                         </p>
                     </td>
                     <td
-                        style=" border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
+                        style="border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
                         <p style="font-size: 12px; text-align: center; padding-top: 5px;">
                             <span style=" width: 100%; display: block; padding-bottom: 6px;">Previous Qty
                                 <span
-                                    style=" width: 100%; display: block; font-size: 14px; text-align: center; ">{{ $data->previous_qty }}
-                                </span> </span>
+                                    style=" width: 100%; display: block; font-size: 14px; text-align: center; padding-top: 6px;">{{ $data->previous_qty }}
+                                </span>
+                            </span>
                         </p>
                     </td>
                     <td
-                        style=" border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
+                        style="border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
                         <p style="font-size: 12px; text-align: center; padding-top: 5px;">
                             <span style=" width: 100%; display: block; padding-bottom: 6px;">This Sheet
                                 <span
-                                    style=" width: 100%; display: block; font-size: 14px; text-align: center; ">{{ $data->this_sheet }}
-                                </span> </span>
+                                    style=" width: 100%; display: block; font-size: 14px; text-align: center; padding-top: 6px;">{{ $data->this_sheet }}
+                                </span>
+                            </span>
                         </p>
                     </td>
                     <td colspan="2"
@@ -763,11 +765,13 @@
                         <p style="font-size: 12px; text-align: center; padding-top: 5px;">
                             <span style=" width: 100%; display: block; padding-bottom: 6px;">Total to Date
                                 <span
-                                    style=" width: 100%; display: block; font-size: 14px; text-align: center; ">{{ $data->total_to_date }}
-                                </span> </span>
+                                    style=" width: 100%; display: block; font-size: 14px; text-align: center; padding-top: 6px;">{{ $data->total_to_date }}
+                                </span>
+                            </span>
                         </p>
                     </td>
                 </tr>
+
                 <tr>
                     <td colspan="6"
                         style=" border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
@@ -1151,7 +1155,8 @@
                             style=" border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
                             <p style="font-size: 12px; text-align: left; padding-bottom: 4px;"><span
                                     style="font-size: 8px; text-align: left;">Lab Comments:</span><br>
-                                <span style="width: 100%; display: block; padding-bottom: 6px;">{{ $data->lab_comments }}</span>
+                                <span
+                                    style="width: 100%; display: block; padding-bottom: 6px;">{{ $data->lab_comments }}</span>
                             </p>
                         </td>
                     </tr>
@@ -1163,13 +1168,15 @@
                         <td class="td-padding-left"
                             style=" width: 70%;  border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
                             <p style="font-size: 12px; text-align: left; padding-bottom: 4px;"><span
-                                    style="font-size: 8px; text-align: left;">Submitted By: {{ $data->submitted_by }}</span>
+                                    style="font-size: 8px; text-align: left;">Submitted By:
+                                    {{ $data->submitted_by }}</span>
                             </p>
                         </td>
                         <td class="td-padding-left"
                             style=" border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
                             <p style="font-size: 12px; text-align: left; padding-bottom: 4px;"><span
-                                    style="font-size: 8px; text-align: left;">Approved By: {{ $data->approved_by }}</span>
+                                    style="font-size: 8px; text-align: left;">Approved By:
+                                    {{ $data->approved_by }}</span>
                             </p>
                         </td>
                     </tr>
