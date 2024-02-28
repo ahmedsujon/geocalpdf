@@ -15,18 +15,18 @@ class FTSeeder extends Seeder
      */
     public function run()
     {
-        // User::updateOrCreate([
-        //     'role_id' => '5',
-        //     'name' => 'Kathy Glaze',
-        //     'email' => 'kathyglaze@geocal.us',
-        //     'password' => Hash::make('12345678'),
-        // ]);
-
         User::updateOrCreate([
             'role_id' => '5',
-            'name' => 'Gearinsane',
-            'email' => 'gearinsane@gmail.com',
+            'name' => 'Kathy Glaze',
+            'email' => 'kathyglaze@geocal.us',
             'password' => Hash::make('12345678'),
         ]);
+
+        // User::updateOrCreate([
+        //     'role_id' => '5',
+        //     'name' => 'Gearinsane',
+        //     'email' => 'gearinsane@gmail.com',
+        //     'password' => Hash::make('12345678'),
+        // ]);
     }
 }
