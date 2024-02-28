@@ -253,6 +253,17 @@ class CreateCompressiveStrengthComponent extends Component
 
     public function storeData($publish_status)
     {
+        $this->validate([
+            'project_id' => 'required',
+            'project_location' => 'required',
+            'office_address' => 'required',
+            'responsible_person' => 'required',
+            'mold_date' => 'required',
+        ], [
+            'project_id.required' => 'Project name is required',
+            'responsible_person.required' => 'Responsible person is required',
+        ]);
+
         $data = new CompressiveStrength();
         $data->project_id = $this->project_id;
         $data->client_id = $this->client_id;
@@ -418,16 +429,6 @@ class CreateCompressiveStrengthComponent extends Component
         $data->publish_status = $publish_status;
         $data->save();
         if ($publish_status === 'publish') {
-            $this->validate([
-                'project_id' => 'required',
-                'project_location' => 'required',
-                'office_address' => 'required',
-                'responsible_person' => 'required',
-                'mold_date' => 'required',
-            ], [
-                'project_id.required' => 'Project name is required',
-                'responsible_person.required' => 'Next action & responsible person is required',
-            ]);
             // send Mail
             if ($this->responsible_person) {
                 $persons = $this->responsible_person;
@@ -449,14 +450,6 @@ class CreateCompressiveStrengthComponent extends Component
                     }
                 });
             }
-        } else {
-            $this->validate([
-                'project_id' => 'required',
-                'office_address' => 'required',
-                'mold_date' => 'required',
-            ], [
-                'project_id.required' => 'Project name is required',
-            ]);
         }
         session()->flash('message', 'Compressive strength file created successfully');
         return redirect()->route('template.compressive.strength');

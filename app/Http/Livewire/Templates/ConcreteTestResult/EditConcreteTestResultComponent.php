@@ -356,6 +356,18 @@ class EditConcreteTestResultComponent extends Component
 
     public function updateData($publish_status)
     {
+        $this->validate([
+            'project_id' => 'required',
+            'date_submited' => 'required',
+            'project_location' => 'required',
+            'office_address' => 'required',
+            'responsible_person' => 'required',
+        ], [
+            'project_id.required' => 'Project name is required',
+            'user_id.required' => 'Technician name is required',
+            'responsible_person.required' => 'Next action & responsible person is required',
+        ]);
+        
         $data = new ConcreteTestResult();
         $data->project_id = $this->project_id;
         $data->client_id = $this->client_id;
@@ -616,19 +628,6 @@ class EditConcreteTestResultComponent extends Component
         $data->publish_status = $publish_status;
         $data->save();
         if ($publish_status === 'publish') {
-            $this->validate([
-                'project_id' => 'required',
-                'date_submited' => 'required',
-                'project_location' => 'required',
-                'office_address' => 'required',
-                'inches_max' => 'required',
-                'inches_min' => 'required',
-                'responsible_person' => 'required',
-            ], [
-                'project_id.required' => 'Project name is required',
-                'user_id.required' => 'Technician name is required',
-                'responsible_person.required' => 'Next action & responsible person is required',
-            ]);
             // send Mail
             if ($this->responsible_person) {
                 $persons = $this->responsible_person;
@@ -650,13 +649,6 @@ class EditConcreteTestResultComponent extends Component
                     }
                 });
             }
-        } else {
-            $this->validate([
-                'project_id' => 'required',
-                'office_address' => 'required',
-            ], [
-                'project_id.required' => 'Project name is required',
-            ]);
         }
 
         session()->flash('message', 'Concrete test result file created successfully');
