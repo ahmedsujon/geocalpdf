@@ -44,7 +44,6 @@ class EditUserComponent extends Component
                 'role_id' => 'required',
                 'email' => 'required|unique:users,email,' . Auth::user()->id . '',
                 'name' => 'required',
-                'email' => 'required',
                 'phone' => 'required',
                 'password' => 'required|min:8|confirmed',
             ]);
@@ -53,7 +52,6 @@ class EditUserComponent extends Component
                 'role_id' => 'required',
                 'email' => 'required|unique:users,email,' . Auth::user()->id . '',
                 'name' => 'required',
-                'email' => 'required',
                 'phone' => 'required',
             ]);
         }
@@ -63,15 +61,17 @@ class EditUserComponent extends Component
         $user->name = $this->name;
         $user->email = $this->email;
         $user->phone = $this->phone;
+
         if ($this->password != '') {
             $user->password = Hash::make($this->password);
         }
 
-
-        if ($this->avatar != '') {
-            $imageName = Carbon::now()->timestamp . '.' . $this->avatar->extension();
-            $this->avatar->storeAs('user', $imageName);
-            $user->avatar = $imageName;
+        if ($this->avatar) {
+            $fileName = uniqid() . Carbon::now()->timestamp . '.' . $this->avatar->extension();
+            $this->avatar->storeAs('profile_images', $fileName);
+            $user->avatar = 'uploads/profile_images/' . $fileName;
+        } else {
+            $user->avatar = 'assets/images/avatar.png';
         }
 
         $user->save();

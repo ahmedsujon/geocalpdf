@@ -120,13 +120,12 @@
                                     @if ($avatar)
                                     <img src="{{ $avatar->temporaryUrl() }}" width="120">
                                     @elseif($new_avatar != '')
-                                    <img src="{{ asset('uploads/user') }}/{{ $new_avatar }}" width="120">
+                                    <img src="{{ asset($new_avatar) }}" width="120">
                                     @endif
                                     @error('avatar')
                                     <span class="text-danger" style="font-size: 12.5px;">{{
                                         $message }}</span>
                                     @enderror
-
                                 </div>
                             </div>
 

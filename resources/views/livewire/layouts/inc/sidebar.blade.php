@@ -11,7 +11,7 @@
         <div class="sidebar-user-pro media border-end">
             <div class="position-relative mx-auto">
                 @if (Auth::user()->avatar)
-                    <img src="{{ asset('uploads/profile') }}/{{ Auth::user()->avatar }}" alt="user"
+                    <img src="{{ asset(auth::user()->avatar) }}" alt="user"
                         class="rounded-circle thumb-md">
                     <span class="online-icon position-absolute end-0"><i class="mdi mdi-record text-success"></i></span>
                 @else

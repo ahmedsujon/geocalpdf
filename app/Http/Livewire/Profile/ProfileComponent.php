@@ -18,7 +18,6 @@ class ProfileComponent extends Component
     public function mount()
     {
         $getData = User::where('id', Auth::user()->id)->first();
-
         $this->name = $getData->name;
         $this->phone = $getData->phone;
         $this->email = $getData->email;
@@ -40,9 +39,13 @@ class ProfileComponent extends Component
         $profile->email = $this->email;
         $profile->password = Hash::make($this->password);
 
-        $imageName = Carbon::now()->timestamp. '.' . $this->avatar->extension();
-        $this->avatar->storeAs('profile',$imageName);
-        $profile->avatar = $imageName;
+        if ($this->avatar) {
+            $fileName = uniqid() . Carbon::now()->timestamp . '.' . $this->avatar->extension();
+            $this->avatar->storeAs('profile_images', $fileName);
+            $profile->avatar = 'uploads/profile_images/' . $fileName;
+        } else {
+            $profile->avatar = 'assets/images/avatar.png';
+        }
 
         $profile->save();
         $this->dispatchBrowserEvent('success', ['message'=>'Profile Updated Successfully']);

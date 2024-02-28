@@ -69,7 +69,7 @@
                                     <tr>
                                         <td>
                                             @if ($user->avatar)
-                                            <img src="{{ asset('uploads/user') }}/{{ $user->avatar }}" alt="user"
+                                            <img src="{{ asset($user->avatar) }}" alt="user"
                                                 class="rounded-circle thumb-md">
                                             @else
                                             <img src="{{ asset('assets/images/defaults/default.jpg') }}" alt="user"
@@ -123,7 +123,7 @@
                 'success'
             )
         });
-        
+
 </script>
 @endpush
 @push('scripts')

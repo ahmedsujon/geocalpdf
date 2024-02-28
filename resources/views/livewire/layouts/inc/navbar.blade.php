@@ -15,7 +15,7 @@
                         aria-haspopup="false" aria-expanded="false">
                         <div class="d-flex align-items-center">
                             @if(Auth::user()->avatar)
-                            <img src="{{ asset('uploads/profile') }}/{{ Auth::user()->avatar }}" alt="user"
+                            <img src="{{ asset(auth::user()->avatar) }}" alt="user"
                                 class="rounded-circle me-2 thumb-sm">
                             @else
                             <img src="{{ asset('assets/images/defaults/default.png') }}" alt="user"
