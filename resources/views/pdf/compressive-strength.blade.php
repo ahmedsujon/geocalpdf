@@ -30,7 +30,7 @@
                 <td style="width: 25%; text-align: left;">
                     <table style="width: 100%; border-collapse: collapse;">
                         <tr>
-                            <td style="vertical-align: top;">
+                            <td style="padding-right: 5px;">
                                 <p style="font-size: 14px; font-weight: 700;">
                                     Client:
                                 </p>
