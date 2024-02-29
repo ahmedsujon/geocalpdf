@@ -1625,79 +1625,75 @@
                         </td>
                     </tr>
                 @endif
-
-
             </table>
         </div>
         <div
             style="border-top: 0px solid #000; border-right: 0px solid #000; border-bottom: 3px solid #000; border-left: 3px solid #000;">
-
             <table style="width: 100%; border-collapse: collapse;">
                 <tr>
-                    <td style="text-align: left; border-right: 3px solid #000;">
-                        <p style="font-size: 10px; padding-bottom: 20px;">
+                    <td class="td-padding-left" style="text-align: left; border-right: 3px solid #000;">
+                        <p style="font-size: 10px; padding-bottom: 10px; padding-top: 5px;">
                             Action taken to document deviations from specifications
                             (including quantities with price reduction calculations
                             attached).
                         </p>
-                        <p style="font-size: 12px;">
-                            Air Plus / Air Minus added as needed to get air in spec.
+                        <p style="font-size: 12px; padding-bottom: 5px;">
+                            {{ $data->remark }}
                         </p>
                     </td>
-
                 </tr>
             </table>
-
         </div>
 
         <div
             style="margin-top: 2px; border-top: 3px solid #000; border-right: 3px solid #000; border-bottom: 3px solid #000; border-left: 3px solid #000;">
-
             <table style="width: 100%; border-collapse: collapse;">
                 <tr>
-                    <td style="text-align: left; border-right: 3px solid #000;">
-                        <p style="font-size: 10px; padding-bottom: 20px;">
+                    <td class="td-padding-left" style="text-align: left; border-right: 3px solid #000;">
+                        <p style="font-size: 10px; padding-bottom: 10px; padding-top: 5px;">
                             Tester (print name)
                         </p>
-                        <p style="font-size: 12px;">
-                            Technician #1
+                        <p style="font-size: 12px; padding-bottom: 5px;">
+                            {{ $data->tester }}
                         </p>
                     </td>
-                    <td style="text-align: left; border-right: 3px solid #000;">
-                        <p style="font-size: 10px; padding-bottom: 20px;">
+                    <td class="td-padding-left" style="text-align: left; border-right: 3px solid #000;">
+                        <p style="font-size: 10px; padding-bottom: 10px; padding-top: 5px;">
                             Title
                         </p>
-                        <p style="font-size: 12px;">
-                            Technician
+                        <p style="font-size: 12px; padding-bottom: 5px;">
+                            {{ $data->tester_title }}
                         </p>
                     </td>
-                    <td style="text-align: left; border-right: 3px solid #000;">
-                        <p style="font-size: 10px; padding-bottom: 20px;">
+                    <td class="td-padding-left" style="text-align: left; border-right: 3px solid #000;">
+                        <p style="font-size: 10px; padding-bottom: 10px; padding-top: 5px;">
                             Approved by
                         </p>
-                        <p style="font-size: 12px;">
-                            Engineer #1
+                        <p style="font-size: 12px; padding-bottom: 5px;">
+                            {{ $data->project_engineer }}
                         </p>
                     </td>
-                    <td style="text-align: left; border-right: 3px solid #000;">
-                        <p style="font-size: 10px; padding-bottom: 20px;">
+                    <td class="td-padding-left" style="text-align: left; border-right: 3px solid #000;">
+                        <p style="font-size: 10px; padding-bottom: 10px; padding-top: 5px;">
                             Signature
                         </p>
+                        <p style="font-size: 12px; padding-bottom: 5px;">
+                            {{ $data->signature }}
+                        </p>
                     </td>
-                    <td style="text-align: left;">
-                        <p style="font-size: 10px; padding-bottom: 20px;">
+                    <td class="td-padding-left" style="text-align: left;">
+                        <p style="font-size: 10px; padding-bottom: 10px; padding-top: 5px;">
                             Title
                         </p>
-                        <p style="font-size: 12px;">
-                            Engr.
+                        <p style="font-size: 12px; padding-bottom: 5px;">
+                            {{ $data->title }}
                         </p>
                     </td>
                 </tr>
             </table>
-
         </div>
 
-        <div style=" ">
+        {{-- <div style="">
             <table style="width: 100%; padding-top: 5px;">
                 <tr>
                     <td style="text-align: left;">
@@ -1713,10 +1709,8 @@
                     </td>
                 </tr>
             </table>
-        </div>
+        </div> --}}
     </div>
-
-
 </body>
 
 </html>

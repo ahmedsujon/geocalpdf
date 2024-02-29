@@ -164,6 +164,10 @@
             border-left: 1px solid #000000;
         }
 
+        .input-group>.btn~.select2-container--bootstrap-5 .select2-selection, .input-group>.dropdown-menu~.select2-container--bootstrap-5 .select2-selection, .input-group>.input-group-text~.select2-container--bootstrap-5 .select2-selection {
+            background-color: #ccecff !important;
+        }
+
         @media screen and (max-width:1370px) {
 
             .commercial-form {

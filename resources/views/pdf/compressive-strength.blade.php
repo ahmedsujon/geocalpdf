@@ -53,7 +53,7 @@
                     <p style="font-size: 12px; text-align: right;">
                         {{ $data->office_address }}
                     </p>
-                    <p style="font-size: 12px; text-align: left">FS# = (Contract
+                    <p style="font-size: 12px; text-align: center">FS# = (Contract
                         ID-Seq.#)</p>
                 </td>
             </tr>
