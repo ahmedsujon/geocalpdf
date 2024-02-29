@@ -780,8 +780,8 @@
                 <tr>
                     <td colspan="6"
                         style=" border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
-                        <p style="font-size: 14px; text-align: center; padding-top: 5px; ">
-                            <span style=" width: 100%; display: block; padding-bottom: 6px;">Cylinder Compressive
+                        <p style="font-size: 12px; text-align: center; padding-top: 4px; ">
+                            <span style=" width: 100%; display: block; padding-bottom: 4px;">Cylinder Compressive
                                 Strength Results </span>
                         </p>
                     </td>
