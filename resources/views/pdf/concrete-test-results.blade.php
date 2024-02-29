@@ -231,7 +231,7 @@
                         <p style="font-size: 12px;">
                             Cu. Yd./Cu. M.
                         </p>
-                        <p style="font-size: 10px;"><span
+                        <p style="font-size: 8px;"><span
                                 style="border-right: 2px solid #000; padding-right: 5px;">Batched</span>
                             <span style="padding-left: 5px;">Placed</span>
                         </p>

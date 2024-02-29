@@ -49,11 +49,11 @@
                     <img src="https://geocal.us/wp-content/uploads/2019/05/logo-new.png" alt="logo"
                         style="max-width: 100px" />
                 </td>
-                <td style="width: 30%; ">
+                <td style="width: 30%;">
                     <p style="font-size: 12px; text-align: right;">
                         {{ $data->office_address }}
                     </p>
-                    <p style="font-size: 12px; text-align: center">FS# = (Contract
+                    <p style="font-size: 12px; text-align: center; padding-top: 10px;">FS# = (Contract
                         ID-Seq.#)</p>
                 </td>
             </tr>
@@ -623,6 +623,7 @@
                         </p>
                     </td>
                 </tr>
+
                 <tr>
                     <td
                         style=" border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
@@ -670,7 +671,7 @@
                             @endif
                         </p>
                     </td>
-                    <td
+                    <td colspan="2"
                         style=" border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
                         <p style="font-size: 12px; line-height: 20px; text-align: left;">
                             <span style="width: 100%; display: block; padding-bottom: 6px;">Other:
@@ -679,10 +680,11 @@
                         </p>
                     </td>
                 </tr>
+            </table>
 
-                <tr>
-                    <td
-                        style="border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
+            <table style="width: 100%; border-collapse: collapse;">
+                <td
+                        style="border-top: 2px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
                         <p style="font-size: 12px; text-align: left; padding-bottom: 4px;">
                             <span
                                 style="width: 100%; display: block; padding-bottom: 6px; text-align: center;">Represented
@@ -690,58 +692,58 @@
                         </p>
                     </td>
                     <td
-                        style="border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
+                        style="border-top: 2px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
                         <p style="font-size: 12px; text-align: left; padding-top: 5px; ">
                             @if ($data->represented_quantity == 'Cubic Yards')
                                 <span
-                                    style="padding-bottom: 6px; width: 120px; margin: 0 auto; display: block; text-align: left;"><span>Cubic
+                                    style="padding-bottom: 6px; margin: 0 auto; display: block; text-align: left;"><span>Cubic
                                         Yards</span><span
                                         style="padding: 1px 7.5px; margin-left: 22px; border: 2px solid #000;">X</span></span>
                                 <span
-                                    style="padding-bottom: 6px; width: 120px; margin: 0 auto;  display: block; text-align: left;"><span>Lineal
+                                    style="padding-bottom: 6px; margin: 0 auto;  display: block; text-align: left;"><span>Lineal
                                         Feet</span><span
                                         style="padding: 1px 5px; margin-left: 28px; border: 2px solid #000;"> &nbsp;
                                         &nbsp;</span></span>
                                 <span
-                                    style="padding-bottom: 6px; width: 120px; margin: 0 auto; display: block; text-align: left;"><span>Square
+                                    style="padding-bottom: 6px; margin: 0 auto; display: block; text-align: left;"><span>Square
                                         Yards</span><span
                                         style="padding: 1px 5px; margin-left: 14px; margin-right: 2px; border: 2px solid #000;">
                                         &nbsp; &nbsp;</span></span>
                             @elseif ($data->represented_quantity == 'Lineal Feet')
                                 <span
-                                    style="padding-bottom: 6px; width: 120px; margin: 0 auto; display: block; text-align: left;"><span>Cubic
+                                    style="padding-bottom: 6px; margin: 0 auto; display: block; text-align: left;"><span>Cubic
                                         Yards</span><span
                                         style="padding: 1px 5px; margin-left: 22px; border: 2px solid #000;">&nbsp;
                                         &nbsp;</span></span>
                                 <span
-                                    style="padding-bottom: 6px; width: 120px; margin: 0 auto;  display: block; text-align: left;"><span>Lineal
+                                    style="padding-bottom: 6px; margin: 0 auto;  display: block; text-align: left;"><span>Lineal
                                         Feet</span><span
                                         style="padding: 1px 7.5px; margin-left: 28px; border: 2px solid #000;">X</span></span>
                                 <span
-                                    style="padding-bottom: 6px; width: 120px; margin: 0 auto; display: block; text-align: left;"><span>Square
+                                    style="padding-bottom: 6px; margin: 0 auto; display: block; text-align: left;"><span>Square
                                         Yards</span><span
                                         style="padding: 1px 5px; margin-left: 14px; margin-right: 2px; border: 2px solid #000;">
                                         &nbsp; &nbsp;</span></span>
                             @else
                                 <span
-                                    style="padding-bottom: 6px; width: 120px; margin: 0 auto; display: block; text-align: left;"><span>Cubic
+                                    style="padding-bottom: 6px; margin: 0 auto; display: block; text-align: left;"><span>Cubic
                                         Yards</span><span
                                         style="padding: 1px 5px; margin-left: 22px; border: 2px solid #000;">&nbsp;
                                         &nbsp;</span></span>
                                 <span
-                                    style="padding-bottom: 6px; width: 120px; margin: 0 auto;  display: block; text-align: left;"><span>Lineal
+                                    style="padding-bottom: 6px; margin: 0 auto;  display: block; text-align: left;"><span>Lineal
                                         Feet</span><span
                                         style="padding: 1px 5px; margin-left: 28px; border: 2px solid #000;">&nbsp;
                                         &nbsp;</span></span>
                                 <span
-                                    style="padding-bottom: 6px; width: 120px; margin: 0 auto; display: block; text-align: left;"><span>Square
+                                    style="padding-bottom: 6px; margin: 0 auto; display: block; text-align: left;"><span>Square
                                         Yards</span><span
                                         style="padding: 1px 6px; margin-left: 14px; margin-right: 2px; border: 2px solid #000;">X</span></span>
                             @endif
                         </p>
                     </td>
                     <td
-                        style="border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
+                        style="border-top: 2px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
                         <p style="font-size: 12px; text-align: center; padding-top: 5px;">
                             <span style=" width: 100%; display: block; padding-bottom: 6px;">Previous Qty
                                 <span
@@ -751,7 +753,7 @@
                         </p>
                     </td>
                     <td
-                        style="border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
+                        style="border-top: 2px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
                         <p style="font-size: 12px; text-align: center; padding-top: 5px;">
                             <span style=" width: 100%; display: block; padding-bottom: 6px;">This Sheet
                                 <span
@@ -760,8 +762,8 @@
                             </span>
                         </p>
                     </td>
-                    <td colspan="2"
-                        style=" border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
+                    <td
+                        style="border-top: 2px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
                         <p style="font-size: 12px; text-align: center; padding-top: 5px;">
                             <span style=" width: 100%; display: block; padding-bottom: 6px;">Total to Date
                                 <span
@@ -770,8 +772,9 @@
                             </span>
                         </p>
                     </td>
-                </tr>
+            </table>
 
+            <table style="width: 100%; border-collapse: collapse;">
                 <tr>
                     <td colspan="6"
                         style=" border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
@@ -783,10 +786,7 @@
                 </tr>
             </table>
 
-
-
             <table style="width: 100%; border-collapse: collapse;">
-
                 <tr>
                     <th
                         style="width: 8%; border-top: 1px solid #000; border-right: 2px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
