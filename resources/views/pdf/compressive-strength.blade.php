@@ -684,94 +684,87 @@
 
             <table style="width: 100%; border-collapse: collapse;">
                 <td
-                        style="border-top: 2px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
-                        <p style="font-size: 12px; text-align: left; padding-bottom: 4px;">
+                    style="width: 25%; border-top: 2px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
+                    <p style="font-size: 12px; text-align: center; padding: 25px;">
+                        <span style="display: block; padding-bottom: 6px; text-align: center;">Represented
+                            Quantity</span>
+                    </p>
+                </td>
+                <td
+                    style="width: 25%; border-top: 2px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
+                    <p style="font-size: 12px; text-align: left; padding-top: 5px; ">
+                        @if ($data->represented_quantity == 'Cubic Yards')
+                            <span style="padding-bottom: 6px; margin: 0 auto; display: block; text-align: left;"><span>Cubic
+                                    Yards</span><span
+                                    style="padding: 1px 7.5px; margin-left: 22px; border: 2px solid #000;">X</span></span>
                             <span
-                                style="width: 100%; display: block; padding-bottom: 6px; text-align: center;">Represented
-                                Quantity</span>
-                        </p>
-                    </td>
-                    <td
-                        style="border-top: 2px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
-                        <p style="font-size: 12px; text-align: left; padding-top: 5px; ">
-                            @if ($data->represented_quantity == 'Cubic Yards')
-                                <span
-                                    style="padding-bottom: 6px; margin: 0 auto; display: block; text-align: left;"><span>Cubic
-                                        Yards</span><span
-                                        style="padding: 1px 7.5px; margin-left: 22px; border: 2px solid #000;">X</span></span>
-                                <span
-                                    style="padding-bottom: 6px; margin: 0 auto;  display: block; text-align: left;"><span>Lineal
-                                        Feet</span><span
-                                        style="padding: 1px 5px; margin-left: 28px; border: 2px solid #000;"> &nbsp;
-                                        &nbsp;</span></span>
-                                <span
-                                    style="padding-bottom: 6px; margin: 0 auto; display: block; text-align: left;"><span>Square
-                                        Yards</span><span
-                                        style="padding: 1px 5px; margin-left: 14px; margin-right: 2px; border: 2px solid #000;">
-                                        &nbsp; &nbsp;</span></span>
-                            @elseif ($data->represented_quantity == 'Lineal Feet')
-                                <span
-                                    style="padding-bottom: 6px; margin: 0 auto; display: block; text-align: left;"><span>Cubic
-                                        Yards</span><span
-                                        style="padding: 1px 5px; margin-left: 22px; border: 2px solid #000;">&nbsp;
-                                        &nbsp;</span></span>
-                                <span
-                                    style="padding-bottom: 6px; margin: 0 auto;  display: block; text-align: left;"><span>Lineal
-                                        Feet</span><span
-                                        style="padding: 1px 7.5px; margin-left: 28px; border: 2px solid #000;">X</span></span>
-                                <span
-                                    style="padding-bottom: 6px; margin: 0 auto; display: block; text-align: left;"><span>Square
-                                        Yards</span><span
-                                        style="padding: 1px 5px; margin-left: 14px; margin-right: 2px; border: 2px solid #000;">
-                                        &nbsp; &nbsp;</span></span>
-                            @else
-                                <span
-                                    style="padding-bottom: 6px; margin: 0 auto; display: block; text-align: left;"><span>Cubic
-                                        Yards</span><span
-                                        style="padding: 1px 5px; margin-left: 22px; border: 2px solid #000;">&nbsp;
-                                        &nbsp;</span></span>
-                                <span
-                                    style="padding-bottom: 6px; margin: 0 auto;  display: block; text-align: left;"><span>Lineal
-                                        Feet</span><span
-                                        style="padding: 1px 5px; margin-left: 28px; border: 2px solid #000;">&nbsp;
-                                        &nbsp;</span></span>
-                                <span
-                                    style="padding-bottom: 6px; margin: 0 auto; display: block; text-align: left;"><span>Square
-                                        Yards</span><span
-                                        style="padding: 1px 6px; margin-left: 14px; margin-right: 2px; border: 2px solid #000;">X</span></span>
-                            @endif
-                        </p>
-                    </td>
-                    <td
-                        style="border-top: 2px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
-                        <p style="font-size: 12px; text-align: center; padding-top: 5px;">
-                            <span style=" width: 100%; display: block; padding-bottom: 6px;">Previous Qty
-                                <span
-                                    style=" width: 100%; display: block; font-size: 14px; text-align: center; padding-top: 6px;">{{ $data->previous_qty }}
-                                </span>
+                                style="padding-bottom: 6px; margin: 0 auto;  display: block; text-align: left;"><span>Lineal
+                                    Feet</span><span
+                                    style="padding: 1px 5px; margin-left: 28px; border: 2px solid #000;"> &nbsp;
+                                    &nbsp;</span></span>
+                            <span style="padding-bottom: 6px; margin: 0 auto; display: block; text-align: left;"><span>Square
+                                    Yards</span><span
+                                    style="padding: 1px 5px; margin-left: 14px; margin-right: 2px; border: 2px solid #000;">
+                                    &nbsp; &nbsp;</span></span>
+                        @elseif ($data->represented_quantity == 'Lineal Feet')
+                            <span style="padding-bottom: 6px; margin: 0 auto; display: block; text-align: left;"><span>Cubic
+                                    Yards</span><span
+                                    style="padding: 1px 5px; margin-left: 22px; border: 2px solid #000;">&nbsp;
+                                    &nbsp;</span></span>
+                            <span
+                                style="padding-bottom: 6px; margin: 0 auto;  display: block; text-align: left;"><span>Lineal
+                                    Feet</span><span
+                                    style="padding: 1px 7.5px; margin-left: 28px; border: 2px solid #000;">X</span></span>
+                            <span style="padding-bottom: 6px; margin: 0 auto; display: block; text-align: left;"><span>Square
+                                    Yards</span><span
+                                    style="padding: 1px 5px; margin-left: 14px; margin-right: 2px; border: 2px solid #000;">
+                                    &nbsp; &nbsp;</span></span>
+                        @else
+                            <span style="padding-bottom: 6px; margin: 0 auto; display: block; text-align: left;"><span>Cubic
+                                    Yards</span><span
+                                    style="padding: 1px 5px; margin-left: 22px; border: 2px solid #000;">&nbsp;
+                                    &nbsp;</span></span>
+                            <span
+                                style="padding-bottom: 6px; margin: 0 auto;  display: block; text-align: left;"><span>Lineal
+                                    Feet</span><span
+                                    style="padding: 1px 5px; margin-left: 28px; border: 2px solid #000;">&nbsp;
+                                    &nbsp;</span></span>
+                            <span style="padding-bottom: 6px; margin: 0 auto; display: block; text-align: left;"><span>Square
+                                    Yards</span><span
+                                    style="padding: 1px 6px; margin-left: 14px; margin-right: 2px; border: 2px solid #000;">X</span></span>
+                        @endif
+                    </p>
+                </td>
+                <td
+                    style="width: 15%; border-top: 2px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
+                    <p style="font-size: 12px; text-align: center; padding-top: 5px;">
+                        <span style=" width: 100%; display: block; padding-bottom: 6px;">Previous Qty
+                            <span
+                                style=" width: 100%; display: block; font-size: 14px; text-align: center; padding-top: 6px;">{{ $data->previous_qty }}
                             </span>
-                        </p>
-                    </td>
-                    <td
-                        style="border-top: 2px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
-                        <p style="font-size: 12px; text-align: center; padding-top: 5px;">
-                            <span style=" width: 100%; display: block; padding-bottom: 6px;">This Sheet
-                                <span
-                                    style=" width: 100%; display: block; font-size: 14px; text-align: center; padding-top: 6px;">{{ $data->this_sheet }}
-                                </span>
+                        </span>
+                    </p>
+                </td>
+                <td
+                    style="width: 15%; border-top: 2px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
+                    <p style="font-size: 12px; text-align: center; padding-top: 5px;">
+                        <span style=" width: 100%; display: block; padding-bottom: 6px;">This Sheet
+                            <span
+                                style=" width: 100%; display: block; font-size: 14px; text-align: center; padding-top: 6px;">{{ $data->this_sheet }}
                             </span>
-                        </p>
-                    </td>
-                    <td
-                        style="border-top: 2px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
-                        <p style="font-size: 12px; text-align: center; padding-top: 5px;">
-                            <span style=" width: 100%; display: block; padding-bottom: 6px;">Total to Date
-                                <span
-                                    style=" width: 100%; display: block; font-size: 14px; text-align: center; padding-top: 6px;">{{ $data->total_to_date }}
-                                </span>
+                        </span>
+                    </p>
+                </td>
+                <td
+                    style="width: 20%; border-top: 2px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
+                    <p style="font-size: 12px; text-align: center; padding-top: 5px;">
+                        <span style=" width: 100%; display: block; padding-bottom: 6px;">Total to Date
+                            <span
+                                style=" width: 100%; display: block; font-size: 14px; text-align: center; padding-top: 6px;">{{ $data->total_to_date }}
                             </span>
-                        </p>
-                    </td>
+                        </span>
+                    </p>
+                </td>
             </table>
 
             <table style="width: 100%; border-collapse: collapse;">
