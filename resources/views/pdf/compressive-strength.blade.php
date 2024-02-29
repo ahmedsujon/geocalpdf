@@ -400,32 +400,32 @@
             <table style="width: 100%; border-collapse: collapse; border-top: 3px solid #000;">
                 <tr>
                     <td
-                        style=" border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
+                        style="padding: 3px; border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
                         <p style="font-size: 8px; text-align: center;">Mark each
                             specimen with Field Sheet # and Break Date</p>
                     </td>
                     <td
-                        style=" border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
+                        style="padding: 3px; border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
                         <p style="font-size: 8px; text-align: center;">Set
                             No.</p>
                     </td>
                     <td
-                        style=" border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
+                        style="padding: 3px; border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
                         <p style="font-size: 8px; text-align: center;">Conc.
                             Class</p>
                     </td>
                     <td
-                        style=" border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
+                        style="padding: 3px; border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
                         <p style="font-size: 8px; text-align: center;">28 Day
                             Break Date</p>
                     </td>
                     <td
-                        style=" border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
+                        style="padding: 3px; border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
                         <p style="font-size: 8px; text-align: center;">Number of
                             Specimens</p>
                     </td>
                     <td
-                        style=" border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
+                        style="padding: 3px; border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
                         <p style="font-size: 8px; text-align: center;">For Cast
                             specimens, report cast by</p>
                     </td>
@@ -491,7 +491,7 @@
                             <span style="padding-bottom: 6px; text-align: left">Specimens tested at:</span>
                         </p>
                         <table style="width: 100%; border-collapse: collapse;">
-                            <tr>
+                            <tr class="td-padding-left">
                                 @if ($data->specimens_tested_at == 'Central Lab')
                                     <td>
                                         <p style="font-size: 10px; text-align: left; padding-top: 5px;">
@@ -694,44 +694,53 @@
                     style="width: 25%; border-top: 2px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
                     <p style="font-size: 12px; text-align: left; padding-top: 5px; ">
                         @if ($data->represented_quantity == 'Cubic Yards')
-                            <span style="padding-bottom: 6px; margin: 0 auto; display: block; text-align: left;"><span>Cubic
-                                    Yards</span><span
-                                    style="padding: 1px 7.5px; margin-left: 22px; border: 2px solid #000;">X</span></span>
-                            <span
-                                style="padding-bottom: 6px; margin: 0 auto;  display: block; text-align: left;"><span>Lineal
-                                    Feet</span><span
-                                    style="padding: 1px 5px; margin-left: 28px; border: 2px solid #000;"> &nbsp;
-                                    &nbsp;</span></span>
-                            <span style="padding-bottom: 6px; margin: 0 auto; display: block; text-align: left;"><span>Square
-                                    Yards</span><span
-                                    style="padding: 1px 5px; margin-left: 14px; margin-right: 2px; border: 2px solid #000;">
-                                    &nbsp; &nbsp;</span></span>
+                            <p style="font-size: 10px; text-align: left; padding-top: 5px;">
+                                <span style="width: 100%; display: block; padding-bottom: 6px;">Cubic
+                                    Yards<span
+                                        style="padding: 1px 5px; margin-left: 20px; border: 2px solid #000;">X</span></span>
+                            </p>
+                            <p style="font-size: 10px; text-align: left; padding-bottom: 4px;">
+                                <span style="width: 100%; display: block;">Lineal Feet<span
+                                        style="padding: 1px 4px; margin-left: 10px; border: 2px solid #000;">&nbsp;
+                                        &nbsp;</span></span>
+                            </p>
+                            <p style="font-size: 10px; text-align: left; padding-top: 5px;">
+                                <span style="width: 100%; display: block; padding-bottom: 6px;">Square Yards<span
+                                        style="padding: 1px 4px; margin-left: 10px; border: 2px solid #000;">&nbsp;
+                                        &nbsp;</span></span>
+                            </p>
                         @elseif ($data->represented_quantity == 'Lineal Feet')
-                            <span style="padding-bottom: 6px; margin: 0 auto; display: block; text-align: left;"><span>Cubic
-                                    Yards</span><span
-                                    style="padding: 1px 5px; margin-left: 22px; border: 2px solid #000;">&nbsp;
-                                    &nbsp;</span></span>
-                            <span
-                                style="padding-bottom: 6px; margin: 0 auto;  display: block; text-align: left;"><span>Lineal
-                                    Feet</span><span
-                                    style="padding: 1px 7.5px; margin-left: 28px; border: 2px solid #000;">X</span></span>
-                            <span style="padding-bottom: 6px; margin: 0 auto; display: block; text-align: left;"><span>Square
-                                    Yards</span><span
-                                    style="padding: 1px 5px; margin-left: 14px; margin-right: 2px; border: 2px solid #000;">
-                                    &nbsp; &nbsp;</span></span>
+                            <p style="font-size: 10px; text-align: left; padding-top: 5px;">
+                                <span style="width: 100%; display: block; padding-bottom: 6px;">Cubic
+                                    Yards<span
+                                        style="padding: 1px 4px; margin-left: 20px; border: 2px solid #000;">&nbsp;
+                                        &nbsp;</span></span>
+                            </p>
+                            <p style="font-size: 10px; text-align: left; padding-bottom: 4px;">
+                                <span style="width: 100%; display: block;">Lineal Feet<span
+                                        style="padding: 1px 5px; margin-left: 25px; border: 2px solid #000;">X</span></span>
+                            </p>
+                            <p style="font-size: 10px; text-align: left; padding-top: 5px;">
+                                <span style="width: 100%; display: block; padding-bottom: 6px;">Square Yards<span
+                                        style="padding: 1px 4px; margin-left: 15px; border: 2px solid #000;">&nbsp;
+                                        &nbsp;</span></span>
+                            </p>
                         @else
-                            <span style="padding-bottom: 6px; margin: 0 auto; display: block; text-align: left;"><span>Cubic
-                                    Yards</span><span
-                                    style="padding: 1px 5px; margin-left: 22px; border: 2px solid #000;">&nbsp;
-                                    &nbsp;</span></span>
-                            <span
-                                style="padding-bottom: 6px; margin: 0 auto;  display: block; text-align: left;"><span>Lineal
-                                    Feet</span><span
-                                    style="padding: 1px 5px; margin-left: 28px; border: 2px solid #000;">&nbsp;
-                                    &nbsp;</span></span>
-                            <span style="padding-bottom: 6px; margin: 0 auto; display: block; text-align: left;"><span>Square
-                                    Yards</span><span
-                                    style="padding: 1px 6px; margin-left: 14px; margin-right: 2px; border: 2px solid #000;">X</span></span>
+                            <p style="font-size: 10px; text-align: left; padding-top: 5px;">
+                                <span style="width: 100%; display: block; padding-bottom: 6px;">Cubic
+                                    Yards<span
+                                        style="padding: 1px 4px; margin-left: 15px; border: 2px solid #000;">&nbsp;
+                                        &nbsp;</span></span>
+                            </p>
+                            <p style="font-size: 10px; text-align: left; padding-bottom: 4px;">
+                                <span style="width: 100%; display: block;">Lineal Feet<span
+                                        style="padding: 1px 4px; margin-left: 10px; border: 2px solid #000;">&nbsp;
+                                        &nbsp;</span></span>
+                            </p>
+                            <p style="font-size: 10px; text-align: left; padding-top: 5px;">
+                                <span style="width: 100%; display: block; padding-bottom: 6px;">Square Yards<span
+                                        style="padding: 1px 5px; margin-left: 10px; border: 2px solid #000;">X</span></span>
+                            </p>
                         @endif
                     </p>
                 </td>
