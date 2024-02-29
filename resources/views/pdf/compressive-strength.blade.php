@@ -690,7 +690,7 @@
                             Quantity</span>
                     </p>
                 </td>
-                <td
+                <td class="td-padding-left"
                     style="width: 25%; border-top: 2px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
                     <p style="font-size: 12px; text-align: left; padding-top: 5px; ">
                         @if ($data->represented_quantity == 'Cubic Yards')
