@@ -722,7 +722,7 @@
                             </p>
                             <p style="font-size: 10px; text-align: left; padding-top: 5px;">
                                 <span style="width: 100%; display: block; padding-bottom: 6px;">Square Yards<span
-                                        style="padding: 1px 4px; margin-left: 15px; border: 2px solid #000;">&nbsp;
+                                        style="padding: 1px 4px; margin-left: 13px; border: 2px solid #000;">&nbsp;
                                         &nbsp;</span></span>
                             </p>
                         @else
