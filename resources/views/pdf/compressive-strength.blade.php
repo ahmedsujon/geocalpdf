@@ -31,9 +31,9 @@
                     <table style="width: 100%; border-collapse: collapse;">
                         <tr>
                             <td style="vertical-align: top;">
-                                <h4 style="font-size: 14px; font-weight: 700;">
+                                <p style="font-size: 14px; font-weight: 700;">
                                     Client:
-                                </h4>
+                                </p>
                             </td>
                             <td>
                                 <p style="font-size: 12px;">
