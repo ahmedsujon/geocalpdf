@@ -27,7 +27,7 @@
       ">
         <table style="width: 100%; border-collapse: collapse;">
             <tr>
-                <td style="width: 20%; text-align: left;">
+                <td style="width: 25%; text-align: left;">
                     <table style="width: 100%; border-collapse: collapse;">
                         <tr>
                             <td style="vertical-align: top;">
@@ -44,11 +44,11 @@
                         </tr>
                     </table>
                 </td>
-                <td style="width: 60%; text-align: center;">
+                <td style="width: 50%; text-align: center;">
                     <img src="https://geocal.us/wp-content/uploads/2019/05/logo-new.png" alt="logo"
                         style="max-width: 100px" />
                 </td>
-                <td style="width: 20%;">
+                <td style="width: 25%;">
                     <p style="font-size: 12px; text-align: right;">
                         {{ $data->office_address }}
                     </p>
