@@ -96,17 +96,30 @@ class CreateConcreteTestResultComponent extends Component
 
     public function storeData($publish_status)
     {
-        $this->validate([
-            'project_id' => 'required',
-            'date_submited' => 'required',
-            'project_location' => 'required',
-            'office_address' => 'required',
-            'responsible_person' => 'required',
-        ], [
-            'project_id.required' => 'Project name is required',
-            'user_id.required' => 'Technician name is required',
-            'responsible_person.required' => 'Responsible person is required',
-        ]);
+        if ($publish_status === 'publish') {
+            $this->validate([
+                'project_id' => 'required',
+                'date_submited' => 'required',
+                'project_location' => 'required',
+                'office_address' => 'required',
+                'responsible_person' => 'required',
+            ], [
+                'project_id.required' => 'Project name is required',
+                'user_id.required' => 'Technician name is required',
+                'responsible_person.required' => 'Responsible person is required',
+            ]);
+        }else{
+            $this->validate([
+                'project_id' => 'required',
+                'date_submited' => 'required',
+                'project_location' => 'required',
+                'office_address' => 'required',
+            ], [
+                'project_id.required' => 'Project name is required',
+                'user_id.required' => 'Technician name is required',
+            ]);
+        }
+
 
         $data = new ConcreteTestResult();
         $data->project_id = $this->project_id;
@@ -398,8 +411,7 @@ class CreateConcreteTestResultComponent extends Component
     {
         $projects = Project::orderBy('id', 'DESC')->get();
         $supervisors = User::orderBy('id', 'DESC')->where('role_id', 5)->get();
-        return view(
-            'livewire.templates.concrete-test-result.create-concrete-test-result-component',
+        return view('livewire.templates.concrete-test-result.create-concrete-test-result-component',
             ['projects' => $projects, 'supervisors' => $supervisors]
         )
             ->layout('livewire.layouts.base');
