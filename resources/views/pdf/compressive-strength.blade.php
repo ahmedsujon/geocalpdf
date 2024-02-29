@@ -182,7 +182,7 @@
             <table style="width: 100%; border-collapse: collapse;">
                 <tr>
                     <td class="td-padding-left"
-                        style="width: 20%;  border-top: 1px solid #000; border-right: 2px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
+                        style="width: 20%;  border-top: 1px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
                         <p style="font-size: 12px; text-align: left"><span style="font-size: 10px;">Field Tester
                                 Name</span><br>
                             {{ $data->field_tester_name }}</p>
@@ -1146,7 +1146,7 @@
                     <tr>
                         <td
                             style=" border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
-                            <p style="font-size: 12px; text-align: left; padding-bottom: 4px;"><span
+                            <p style="font-size: 12px; text-align: left; padding-bottom: 50px;"><span
                                     style="font-size: 8px; text-align: left;">Lab Comments:</span><br>
                                 <span
                                     style="width: 100%; display: block; padding-bottom: 6px;">{{ $data->lab_comments }}</span>

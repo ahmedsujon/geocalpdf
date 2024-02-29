@@ -12,7 +12,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
+            font-family: "Arial Narrow";
         }
 
         .td-padding-left {
@@ -62,7 +62,7 @@
                         <td style=" width: 50%; text-align: left; border-right: 0px solid #000;">
                             <table style="width: 100%; border-collapse: collapse;">
                                 <tr>
-                                    <td class="td-padding-left" style="border-bottom: 2px solid #000;">
+                                    <td class="td-padding-left" style="border-bottom: 1px solid #000;">
                                         <p style="font-size: 10px; padding-bottom: 5px;">
                                             {{ $data->contactid }}
                                         </p>
@@ -71,7 +71,7 @@
                                         </p>
                                     </td>
                                     <td class="td-padding-left"
-                                        style="border-bottom: 2px solid #000; border-left: 2px solid #000;">
+                                        style="border-bottom: 1px solid #000; border-left: 2px solid #000;">
                                         <p style="font-size: 10px; padding-bottom: 5px;">
                                             Region
                                         </p>
@@ -80,7 +80,7 @@
                                         </p>
                                     </td>
                                     <td class="td-padding-left"
-                                        style="border-bottom: 2px solid #000; border-left: 2px solid #000;">
+                                        style="border-bottom: 1px solid #000; border-left: 2px solid #000;">
                                         <p style="font-size: 10px; padding-bottom: 5px;">
                                             Date Submitted
                                         </p>
@@ -294,85 +294,85 @@
                 @if ($data->location_test_a)
                     <tr>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 3px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 3px solid #000; border-top: 3px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->location_test_a }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ \Carbon\Carbon::parse($data->date_placed_a)->format('m/d/Y') }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->ticket_no_a }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->batched_a }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->placed_a }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->temp_a }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->slump_a }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->total_air_a }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->unit_mass_a }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->yeild_a }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->calculated_wc_ratio_a }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->cylinders_cast_fs_no_a }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->set_no_a }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 3px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 1px solid #000; border-right: 3px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->se_a }}
                             </p>
@@ -383,85 +383,85 @@
                 @if ($data->location_test_b)
                     <tr>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 3px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 3px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->location_test_b }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ \Carbon\Carbon::parse($data->date_placed_b)->format('m/d/Y') }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->ticket_no_b }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->batched_b }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->placed_b }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->temp_b }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->slump_b }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->total_air_b }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->unit_mass_b }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->yeild_b }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->calculated_wc_ratio_b }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->cylinders_cast_fs_no_b }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->set_no_b }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 3px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 3px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->se_b }}
                             </p>
@@ -472,85 +472,85 @@
                 @if ($data->location_test_c)
                     <tr>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 3px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 3px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->location_test_c }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ \Carbon\Carbon::parse($data->date_placed_c)->format('m/d/Y') }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->ticket_no_c }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->batched_c }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->placed_c }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->temp_c }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->slump_c }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->total_air_c }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->unit_mass_c }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->yeild_c }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->calculated_wc_ratio_c }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->cylinders_cast_fs_no_c }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->set_no_c }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 3px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 3px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->se_c }}
                             </p>
@@ -561,85 +561,85 @@
                 @if ($data->location_test_d)
                     <tr>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 3px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 3px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->location_test_d }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ \Carbon\Carbon::parse($data->date_placed_d)->format('m/d/Y') }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->ticket_no_d }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->batched_d }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->placed_d }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->temp_d }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->slump_d }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->total_air_d }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->unit_mass_d }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->yeild_d }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->calculated_wc_ratio_d }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->cylinders_cast_fs_no_d }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->set_no_d }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 3px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 3px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->se_d }}
                             </p>
@@ -650,85 +650,85 @@
                 @if ($data->location_test_e)
                     <tr>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 3px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 3px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->location_test_e }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ \Carbon\Carbon::parse($data->date_placed_e)->format('m/d/Y') }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->ticket_no_e }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->batched_e }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->placed_e }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->temp_e }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->slump_e }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->total_air_e }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->unit_mass_e }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->yeild_e }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->calculated_wc_ratio_e }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->cylinders_cast_fs_no_e }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->set_no_e }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 3px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 3px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->se_e }}
                             </p>
@@ -739,85 +739,85 @@
                 @if ($data->location_test_f)
                     <tr>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 3px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 3px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->location_test_f }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ \Carbon\Carbon::parse($data->date_placed_f)->format('m/d/Y') }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->ticket_no_f }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->batched_f }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->placed_f }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->temp_f }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->slump_f }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->total_air_f }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->unit_mass_f }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->yeild_f }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->calculated_wc_ratio_f }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->cylinders_cast_fs_no_f }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->set_no_f }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 3px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 3px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->se_f }}
                             </p>
@@ -828,85 +828,85 @@
                 @if ($data->location_test_g)
                     <tr>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 3px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 3px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->location_test_g }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ \Carbon\Carbon::parse($data->date_placed_g)->format('m/d/Y') }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->ticket_no_g }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->batched_g }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->placed_g }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->temp_g }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->slump_g }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->total_air_g }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->unit_mass_g }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->yeild_g }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->calculated_wc_ratio_g }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->cylinders_cast_fs_no_g }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->set_no_g }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 3px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 3px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->se_g }}
                             </p>
@@ -917,85 +917,85 @@
                 @if ($data->location_test_h)
                     <tr>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 3px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 3px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->location_test_h }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ \Carbon\Carbon::parse($data->date_placed_h)->format('m/d/Y') }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->ticket_no_h }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->batched_h }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->placed_h }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->temp_h }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->slump_h }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->total_air_h }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->unit_mass_h }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->yeild_h }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->calculated_wc_ratio_h }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->cylinders_cast_fs_no_h }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->set_no_h }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 3px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 3px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->se_h }}
                             </p>
@@ -1006,85 +1006,85 @@
                 @if ($data->location_test_i)
                     <tr>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 3px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 3px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->location_test_i }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ \Carbon\Carbon::parse($data->date_placed_i)->format('m/d/Y') }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->ticket_no_i }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->batched_i }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->placed_i }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->temp_i }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->slump_i }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->total_air_i }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->unit_mass_i }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->yeild_i }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->calculated_wc_ratio_i }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->cylinders_cast_fs_no_i }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->set_no_i }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 3px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 3px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->se_i }}
                             </p>
@@ -1095,85 +1095,85 @@
                 @if ($data->location_test_j)
                     <tr>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 3px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 3px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->location_test_j }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ \Carbon\Carbon::parse($data->date_placed_j)->format('m/d/Y') }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->ticket_no_j }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->batched_j }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->placed_j }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->temp_j }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->slump_j }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->total_air_j }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->unit_mass_j }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->yeild_j }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->calculated_wc_ratio_j }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->cylinders_cast_fs_no_j }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->set_no_j }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 3px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 3px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->se_j }}
                             </p>
@@ -1184,85 +1184,85 @@
                 @if ($data->location_test_k)
                     <tr>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 3px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 3px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->location_test_k }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ \Carbon\Carbon::parse($data->date_placed_k)->format('m/d/Y') }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->ticket_no_k }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->batched_k }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->placed_k }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->temp_k }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->slump_k }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->total_air_k }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->unit_mass_k }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->yeild_k }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->calculated_wc_ratio_k }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->cylinders_cast_fs_no_k }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->set_no_k }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 3px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 3px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->se_k }}
                             </p>
@@ -1273,85 +1273,85 @@
                 @if ($data->location_test_l)
                     <tr>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 3px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 3px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->location_test_l }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ \Carbon\Carbon::parse($data->date_placed_l)->format('m/d/Y') }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->ticket_no_l }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->batched_l }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->placed_l }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->temp_l }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->slump_l }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->total_air_l }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->unit_mass_l }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->yeild_l }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->calculated_wc_ratio_l }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->cylinders_cast_fs_no_l }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->set_no_l }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 3px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 3px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->se_l }}
                             </p>
@@ -1362,85 +1362,85 @@
                 @if ($data->location_test_m)
                     <tr>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 3px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 3px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->location_test_m }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ \Carbon\Carbon::parse($data->date_placed_m)->format('m/d/Y') }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->ticket_no_m }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->batched_m }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->placed_m }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->temp_m }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->slump_m }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->total_air_m }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->unit_mass_m }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->yeild_m }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->calculated_wc_ratio_m }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->cylinders_cast_fs_no_m }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->set_no_m }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 3px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 3px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->se_m }}
                             </p>
@@ -1451,85 +1451,85 @@
                 @if ($data->location_test_n)
                     <tr>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 3px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 3px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->location_test_n }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ \Carbon\Carbon::parse($data->date_placed_n)->format('m/d/Y') }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->ticket_no_n }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->batched_n }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->placed_n }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->temp_n }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->slump_n }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->total_air_n }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->unit_mass_n }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->yeild_n }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->calculated_wc_ratio_n }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->cylinders_cast_fs_no_n }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->set_no_n }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 3px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 3px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->se_n }}
                             </p>
@@ -1540,85 +1540,85 @@
                 @if ($data->location_test_o)
                     <tr>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 3px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 3px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->location_test_o }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ \Carbon\Carbon::parse($data->date_placed_o)->format('m/d/Y') }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->ticket_no_o }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->batched_o }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->placed_o }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->temp_o }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->slump_o }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->total_air_o }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->unit_mass_o }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->yeild_o }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->calculated_wc_ratio_o }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->cylinders_cast_fs_no_o }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 0px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->set_no_o }}
                             </p>
                         </td>
                         <td
-                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 3px solid #000; border-right: 3px solid #000;">
+                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 3px solid #000;">
                             <p style="font-size: 12px;">
                                 {{ $data->se_o }}
                             </p>
@@ -1637,7 +1637,7 @@
                             (including quantities with price reduction calculations
                             attached).
                         </p>
-                        <p style="font-size: 12px; padding-bottom: 5px;">
+                        <p style="font-size: 12px; padding-bottom: 50px;">
                             {{ $data->remark }}
                         </p>
                     </td>
