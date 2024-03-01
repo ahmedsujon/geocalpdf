@@ -23,7 +23,7 @@
 
 <body>
     <div style="
-    padding: 15px 25px 25px 25px;">
+    padding: 5px 55px 10px 55px;">
         <div style="padding: 20px;">
             <table style="width: 100%; border-collapse: collapse;">
                 <tr>
@@ -45,7 +45,7 @@
             <table style="width: 100%; border-collapse: collapse;">
                 <tbody>
                     <tr>
-                        <td style=" width: 60%; text-align: left; border-right: 3px solid #000;">
+                        <td style=" width: 60%; text-align: left; border-right: 3px solid #000; padding-bottom: 5px;">
                             <p style="font-size: 14px; font-weight: 600;">
                                 Client
                             </p>
@@ -1637,7 +1637,7 @@
                             (including quantities with price reduction calculations
                             attached).
                         </p>
-                        <p style="font-size: 12px; padding-bottom: 50px;">
+                        <p style="font-size: 12px; padding-bottom: 40px;">
                             {{ $data->remark }}
                         </p>
                     </td>

@@ -39,10 +39,10 @@ class InvoiceController extends Controller
         $data->client_address = client($data->client_id)->address;
         $data->client_company_name = client($data->client_id)->company_name;
 
-        $pdf = Pdf::loadView('pdf.concrete-test-results', compact('data'));
-        $pdf->setPaper('landscape');
-        return $pdf->stream('concrete-test-results-summary-local-agency .pdf');
+        $pdf = Pdf::loadView('pdf.concrete-test-results', compact('data'))->setPaper('a4', 'landscape');
+        return $pdf->stream('concrete-test-results-summary-local-agency.pdf');
     }
+
 
     public function compressiveStrengthsPDF($id)
     {
