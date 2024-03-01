@@ -82,7 +82,7 @@
                                                 <td>{{ user($file->created_by)->name }}</td>
                                                 <td>{{ $file->updated_at->format('M j, Y \a\t g:i A') }}</td>
                                                 <td style="text-align: center;">
-                                                    <a target="_blank"
+                                                    <a
                                                         href="{{ route('invoice.compressive-strengths-pdf', ['id' => $file->id]) }}"
                                                         type="button"
                                                         class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm"><i
