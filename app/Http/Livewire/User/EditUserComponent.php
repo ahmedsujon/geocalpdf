@@ -42,7 +42,7 @@ class EditUserComponent extends Component
         if ($this->password) {
             $this->validate([
                 'role_id' => 'required',
-                'email' => 'required|unique:users,email,' . Auth::user()->id . '',
+                'email' => 'required|email',
                 'name' => 'required',
                 'phone' => 'required',
                 'password' => 'required|min:8|confirmed',
@@ -50,7 +50,7 @@ class EditUserComponent extends Component
         } else {
             $this->validate([
                 'role_id' => 'required',
-                'email' => 'required|unique:users,email,' . Auth::user()->id . '',
+                'email' => 'required|email',
                 'name' => 'required',
                 'phone' => 'required',
             ]);
