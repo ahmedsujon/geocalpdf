@@ -77,14 +77,13 @@
                             <a class="nav-link" href="#sidebarConcreteForm" data-bs-toggle="collapse" role="button"
                                 aria-expanded="false" aria-controls="sidebarConcreteForm">
                                 <i class="ti ti-stack menu-icon"></i>
-                                <span>Concrete Form</span>
+                                <span>Concrete Test Results</span>
                             </a>
                             <div class="collapse {{ request()->is('concrete/test/result') || request()->is('concrete/test/result/*') ? 'show' : '' }}"
                                 id="sidebarConcreteForm">
                                 <ul class="nav flex-column">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('template.concrete.test.result') }}">Concrete Test
-                                            Results</a>
+                                        <a class="nav-link" href="{{ route('template.concrete.test.result') }}">Concrete Results Form</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="{{ route('template.concrete.test.result.draft') }}">Draft Files</a>
