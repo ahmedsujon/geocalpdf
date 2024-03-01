@@ -356,18 +356,28 @@ class EditConcreteTestResultComponent extends Component
 
     public function updateData($publish_status)
     {
-        $this->validate([
-            'project_id' => 'required',
-            'date_submited' => 'required',
-            'project_location' => 'required',
-            'office_address' => 'required',
-            'responsible_person' => 'required',
-        ], [
-            'project_id.required' => 'Project name is required',
-            'user_id.required' => 'Technician name is required',
-            'responsible_person.required' => 'Next action & responsible person is required',
-        ]);
-        
+        if ($publish_status === 'publish') {
+            $this->validate([
+                'project_id' => 'required',
+                'date_submited' => 'required',
+                'project_location' => 'required',
+                'office_address' => 'required',
+                'responsible_person' => 'required',
+            ], [
+                'project_id.required' => 'Project name is required',
+                'user_id.required' => 'Technician name is required',
+                'responsible_person.required' => 'Responsible person is required',
+            ]);
+        } else {
+            $this->validate([
+                'project_id' => 'required',
+                'project_location' => 'required',
+                'office_address' => 'required',
+            ], [
+                'project_id.required' => 'Project name is required',
+            ]);
+        }
+
         $data = new ConcreteTestResult();
         $data->project_id = $this->project_id;
         $data->client_id = $this->client_id;
@@ -651,8 +661,13 @@ class EditConcreteTestResultComponent extends Component
             }
         }
 
-        session()->flash('message', 'Concrete test result file created successfully');
-        return redirect()->route('template.concrete.test.result');
+        if ($publish_status === 'publish') {
+            session()->flash('message', 'Concrete test result file created successfully');
+            return redirect()->route('template.concrete.test.result');
+        } else {
+            session()->flash('message', 'Concrete test result file created successfully');
+            return redirect()->route('template.concrete.test.result.draft');
+        }
     }
 
     public function render()

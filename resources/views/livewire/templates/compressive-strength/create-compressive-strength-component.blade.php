@@ -164,7 +164,9 @@
             border-left: 1px solid #000000;
         }
 
-        .input-group>.btn~.select2-container--bootstrap-5 .select2-selection, .input-group>.dropdown-menu~.select2-container--bootstrap-5 .select2-selection, .input-group>.input-group-text~.select2-container--bootstrap-5 .select2-selection {
+        .input-group>.btn~.select2-container--bootstrap-5 .select2-selection,
+        .input-group>.dropdown-menu~.select2-container--bootstrap-5 .select2-selection,
+        .input-group>.input-group-text~.select2-container--bootstrap-5 .select2-selection {
             background-color: #ccecff !important;
         }
 
@@ -1957,9 +1959,9 @@
                                 </div>
                                 <div class="col-md-12 text-center">
                                     <button type="button" wire:click.prevent='storeData("unpublish")'
-                                        class="btn btn-primary submit_btn">{!! loadingState('storeData', 'Save as Draft') !!}</button>
+                                        class="btn btn-primary submit_btn">{!! loadingState("storeData('unpublish')", 'Save as Draft') !!}</button>
                                     <button type="button" wire:click.prevent='storeData("publish")'
-                                        class="btn btn-success submit_btn">{!! loadingState('storeData', 'Save and Send') !!}</button>
+                                        class="btn btn-success submit_btn">{!! loadingState("storeData('publish')", 'Save and Send') !!}</button>
                                 </div>
                             </div>
                         </div>
@@ -2006,14 +2008,13 @@
         });
     </script>
 
-<script>
-    document.getElementById('required_strength').addEventListener('input', function(e) {
-        let value = e.target.value.replace(/[^\d.]/g, '');
-        value = parseFloat(value);
-        if (!isNaN(value)) {
-            e.target.value = value.toLocaleString('en-US');
-        }
-    });
-</script>
-
+    <script>
+        document.getElementById('required_strength').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/[^\d.]/g, '');
+            value = parseFloat(value);
+            if (!isNaN(value)) {
+                e.target.value = value.toLocaleString('en-US');
+            }
+        });
+    </script>
 @endpush

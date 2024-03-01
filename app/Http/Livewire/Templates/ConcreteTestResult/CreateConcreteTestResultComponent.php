@@ -108,18 +108,15 @@ class CreateConcreteTestResultComponent extends Component
                 'user_id.required' => 'Technician name is required',
                 'responsible_person.required' => 'Responsible person is required',
             ]);
-        }else{
+        } else {
             $this->validate([
                 'project_id' => 'required',
-                'date_submited' => 'required',
                 'project_location' => 'required',
                 'office_address' => 'required',
             ], [
                 'project_id.required' => 'Project name is required',
-                'user_id.required' => 'Technician name is required',
             ]);
         }
-
 
         $data = new ConcreteTestResult();
         $data->project_id = $this->project_id;
@@ -404,14 +401,20 @@ class CreateConcreteTestResultComponent extends Component
                 });
             }
         }
-        session()->flash('message', 'Concrete test result file created successfully');
-        return redirect()->route('template.concrete.test.result');
+        if ($publish_status === 'publish') {
+            session()->flash('message', 'Concrete test result file created successfully');
+            return redirect()->route('template.concrete.test.result');
+        } else {
+            session()->flash('message', 'Concrete test result file created successfully');
+            return redirect()->route('template.concrete.test.result.draft');
+        }
     }
     public function render()
     {
         $projects = Project::orderBy('id', 'DESC')->get();
         $supervisors = User::orderBy('id', 'DESC')->where('role_id', 5)->get();
-        return view('livewire.templates.concrete-test-result.create-concrete-test-result-component',
+        return view(
+            'livewire.templates.concrete-test-result.create-concrete-test-result-component',
             ['projects' => $projects, 'supervisors' => $supervisors]
         )
             ->layout('livewire.layouts.base');

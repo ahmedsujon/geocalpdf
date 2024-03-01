@@ -253,16 +253,27 @@ class CreateCompressiveStrengthComponent extends Component
 
     public function storeData($publish_status)
     {
-        $this->validate([
-            'project_id' => 'required',
-            'project_location' => 'required',
-            'office_address' => 'required',
-            'responsible_person' => 'required',
-            'mold_date' => 'required',
-        ], [
-            'project_id.required' => 'Project name is required',
-            'responsible_person.required' => 'Responsible person is required',
-        ]);
+        if ($publish_status === 'publish') {
+            $this->validate([
+                'project_id' => 'required',
+                'project_location' => 'required',
+                'office_address' => 'required',
+                'responsible_person' => 'required',
+                'mold_date' => 'required',
+            ], [
+                'project_id.required' => 'Project name is required',
+                'responsible_person.required' => 'Responsible person is required',
+            ]);
+        } else {
+            $this->validate([
+                'project_id' => 'required',
+                'project_location' => 'required',
+                'office_address' => 'required',
+                'mold_date' => 'required',
+            ], [
+                'project_id.required' => 'Project name is required',
+            ]);
+        }
 
         $data = new CompressiveStrength();
         $data->project_id = $this->project_id;
@@ -451,8 +462,14 @@ class CreateCompressiveStrengthComponent extends Component
                 });
             }
         }
-        session()->flash('message', 'Compressive strength file created successfully');
-        return redirect()->route('template.compressive.strength');
+        
+        if ($publish_status === 'publish') {
+            session()->flash('message', 'Compressive strength file created successfully');
+            return redirect()->route('template.compressive.strength');
+        } else {
+            session()->flash('message', 'Compressive strength file created successfully');
+            return redirect()->route('template.compressive.strength.draft');
+        }
     }
     public function render()
     {

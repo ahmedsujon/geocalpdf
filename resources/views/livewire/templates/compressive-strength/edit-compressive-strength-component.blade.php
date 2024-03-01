@@ -1980,9 +1980,9 @@
                                 </div>
                                 <div class="col-md-12 text-center">
                                     <button type="button" wire:click.prevent='updateData("unpublish")'
-                                        class="btn btn-primary submit_btn">{!! loadingState('updateData', 'Save as Draft') !!}</button>
+                                        class="btn btn-primary submit_btn">{!! loadingState("updateData('unpublish')", 'Save as Draft') !!}</button>
                                     <button type="button" wire:click.prevent='updateData("publish")'
-                                        class="btn btn-success submit_btn">{!! loadingState('updateData', 'Save and Send') !!}</button>
+                                        class="btn btn-success submit_btn">{!! loadingState("updateData('publish')", 'Save and Send') !!}</button>
                                 </div>
                             </div>
                         </div>
