@@ -1940,9 +1940,9 @@
                                     @endif
                                 </div>
                                 <div class="col-md-12 text-center">
-                                    <form wire:submit.prevent='storeData'>
-                                        <button type="submit" class="btn btn-primary submit_btn"
-                                            style="background: green;">{!! loadingState('storeData', 'Save and Send') !!}</button>
+                                    <form>
+                                        <a href="{{ route('template.compressive.strength') }}" class="btn btn-primary submit_btn"
+                                            style="background: green;">Back To List</a>
                                     </form>
                                 </div>
                             </div>
