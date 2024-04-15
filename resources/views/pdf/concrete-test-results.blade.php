@@ -63,48 +63,48 @@
                             <table style="width: 100%; border-collapse: collapse;">
                                 <tr>
                                     <td class="td-padding-left" style="border-bottom: 1px solid #000;">
-                                        <p style="font-size: 10px; padding-bottom: 5px;">
+                                        <p style="font-size: 10px; padding-bottom: 3px;">
                                             Contact ID
                                         </p>
-                                        <p style="font-size: 12px;">
+                                        <p style="font-size: 12px; padding-bottom: 2px;">
                                             {{ $data->contactid }}
                                         </p>
                                     </td>
                                     <td class="td-padding-left"
                                         style="border-bottom: 1px solid #000; border-left: 2px solid #000;">
-                                        <p style="font-size: 10px; padding-bottom: 5px;">
+                                        <p style="font-size: 10px; padding-bottom: 3px;">
                                             Region
                                         </p>
-                                        <p style="font-size: 12px;">
-                                            {{ $data->client_address }}
+                                        <p style="font-size: 12px; padding-bottom: 2px;">
+                                            {{ $data->region }}
                                         </p>
                                     </td>
                                     <td class="td-padding-left"
                                         style="border-bottom: 1px solid #000; border-left: 2px solid #000;">
-                                        <p style="font-size: 10px; padding-bottom: 5px;">
+                                        <p style="font-size: 10px; padding-bottom: 3px;">
                                             Date Submitted
                                         </p>
-                                        <p style="font-size: 12px;">
+                                        <p style="font-size: 12px; padding-bottom: 2px;">
                                             {{ \Carbon\Carbon::parse($data->break_date_d)->format('m/d/Y') }}
                                         </p>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="td-padding-left" colspan="3" style="border-bottom: 2px solid #000;">
-                                        <p style="font-size: 10px; padding-bottom: 5px;">
+                                        <p style="font-size: 10px; padding-bottom: 3px;">
                                             Project No.
                                         </p>
-                                        <p style="font-size: 12px;">
+                                        <p style="font-size: 12px; padding-bottom: 2px;">
                                             {{ $data->project_number }}
                                         </p>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="td-padding-left" colspan="3">
-                                        <p style="font-size: 10px; padding-bottom: 5px;">
+                                        <p style="font-size: 10px; padding-bottom: 3px;">
                                             Project location
                                         </p>
-                                        <p style="font-size: 12px;">
+                                        <p style="font-size: 12px; padding-bottom: 2px;">
                                             {{ $data->project_location }}
                                         </p>
                                     </td>

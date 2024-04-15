@@ -837,7 +837,7 @@
                                         <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-2">
                                     <label for="">Specimens tested at:</label>
                                     <div class="input-group">
                                         <div class="form-check" style="padding-right: 43px">
@@ -888,7 +888,7 @@
                                         <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                     @enderror
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-4">
                                     <div class="input-group">
                                         <span class="input-group-text width27">28 Day Average Compressive
                                             Strength:</span>

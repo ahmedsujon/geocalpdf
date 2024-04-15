@@ -401,9 +401,10 @@
                                         @error('slump')
                                             <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                         @enderror
+                                        <span class="input-group-text width20">inches maximum</span>
                                     </div>
                                     <div class="input-group">
-                                        <span class="input-group-text width28">inches maximum(% total air):</span>
+                                        <span class="input-group-text width28">(% total air):</span>
                                         <input type="number" class="form-control form-color"
                                             wire:model="inches_max">
                                         <span class="input-group-text">To:</span>
