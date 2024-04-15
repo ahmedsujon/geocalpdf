@@ -350,7 +350,7 @@ class EditConcreteTestResultComponent extends Component
             'office_address' => 'required',
             'inches_max' => 'required',
             'inches_min' => 'required',
-            'contactid' => 'contactid'
+            'contactid' => 'required'
         ]);
     }
 

@@ -64,10 +64,10 @@
                                 <tr>
                                     <td class="td-padding-left" style="border-bottom: 1px solid #000;">
                                         <p style="font-size: 10px; padding-bottom: 5px;">
-                                            {{ $data->contactid }}
+                                            Contact ID
                                         </p>
                                         <p style="font-size: 12px;">
-                                            {{ $data->client_address }}
+                                            {{ $data->contactid }}
                                         </p>
                                     </td>
                                     <td class="td-padding-left"
