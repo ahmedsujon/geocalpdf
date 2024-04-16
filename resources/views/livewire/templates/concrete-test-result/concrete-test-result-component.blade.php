@@ -7,6 +7,12 @@
         #customSwitchSuccess {
             font-size: 25px;
         }
+
+        .searchbar-style {
+            padding: 8px 50px;
+            border: 1px solid #b6b6b6;
+            border-radius: 5px;
+        }
     </style>
     <div class="container-fluid">
         <div class="row">
@@ -42,9 +48,8 @@
                                 <label class="font-weight-normal" style="">entries</label>
                             </div>
 
-                            <div style="text-align: right" class="col-md-6 col-sm-12 mb-2 search_cont">
-                                <label class="font-weight-normal mr-2">Search:</label>
-                                <input type="search" class="sinput" placeholder="Search" wire:model="searchTerm" />
+                            <div style="text-align: right" class="col-md-6 col-sm-6 mb-2 search_cont">
+                                <input type="search" class="sinput searchbar-style" placeholder="Filter by project name" wire:model="searchTerm" />
                             </div>
                         </div>
                         <div class="table-responsive">
@@ -82,8 +87,7 @@
                                                 <td>{{ user($file->created_by)->name }}</td>
                                                 <td>{{ $file->updated_at->format('M j, Y \a\t g:i A') }}</td>
                                                 <td style="text-align: center;">
-                                                    <a
-                                                        href="{{ route('invoice.concrete-test-results-pdf', ['id' => $file->id]) }}"
+                                                    <a href="{{ route('invoice.concrete-test-results-pdf', ['id' => $file->id]) }}"
                                                         type="button"
                                                         class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm"><i
                                                             class="ti ti-file-invoice" data-bs-toggle="tooltip"

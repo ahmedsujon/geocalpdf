@@ -7,6 +7,11 @@
         #customSwitchSuccess {
             font-size: 25px;
         }
+        .searchbar-style {
+            padding: 8px 50px;
+            border: 1px solid #b6b6b6;
+            border-radius: 5px;
+        }
     </style>
     <div class="container-fluid">
         <div class="row">
@@ -43,8 +48,7 @@
                             </div>
 
                             <div style="text-align: right" class="col-md-6 col-sm-12 mb-2 search_cont">
-                                <label class="font-weight-normal mr-2">Search:</label>
-                                <input type="search" class="sinput" placeholder="Search" wire:model="searchTerm" />
+                                <input type="search" class="sinput searchbar-style" placeholder="Filter by project name" wire:model="searchTerm" />
                             </div>
                         </div>
                         <div class="table-responsive">
