@@ -63,41 +63,46 @@
                                 </thead>
                                 <tbody>
                                     @php
-                                    $sl = $projects->perPage() * $projects->currentPage() - ($projects->perPage() - 1);
+                                        $sl =
+                                            $projects->perPage() * $projects->currentPage() -
+                                            ($projects->perPage() - 1);
                                     @endphp
                                     @if ($projects->count() > 0)
-                                    @foreach ($projects as $project)
-                                    <tr>
-                                        <td>
-                                            @if ($project->avatar)
-                                            <img src="{{ asset('uploads/project') }}/{{ $project->avatar }}" alt="user"
-                                                class="rounded-circle thumb-md">
-                                            @else
-                                            <img src="{{ asset('assets/images/defaults/default_project.jpg') }}" alt="user"
-                                                class="rounded-circle thumb-md">
-                                            @endif
-                                        </td>
-                                        <td>{{ $project->name }}</td>
-                                        <td>{{ client($project->client_id)->name }}</td>
-                                        <td>{{ $project->location }}</td>
-                                        <td>{{ $project->created_at }}</td>
-                                        <td style="text-align: center;">
-                                            <a href="{{ route('project.show', ['project_id' => $project->id]) }}" type="button"
-                                                class="btn btn-outline-success btn-icon-circle btn-icon-circle-sm"><i
-                                                    class="ti ti-eye"></i></a>
-                                            <a href="{{ route('project.update', ['project_id' => $project->id]) }}" type="button"
-                                                class="btn btn-outline-warning btn-icon-circle btn-icon-circle-sm"><i
-                                                    class="ti ti-edit"></i></a>
-                                            {{-- <a wire:click.prevent="deleteConfirmation({{ $project->id }})" type="button"
-                                                class="btn btn-outline-danger btn-icon-circle btn-icon-circle-sm"><i
-                                                    class="ti ti-trash"></i></a> --}}
-                                        </td>
-                                    </tr>
-                                    @endforeach
+                                        @foreach ($projects as $project)
+                                            <tr>
+                                                <td>
+                                                    @if ($project->avatar)
+                                                        <img src="{{ asset('uploads/project') }}/{{ $project->avatar }}"
+                                                            alt="user" class="rounded-circle thumb-md">
+                                                    @else
+                                                        <img src="{{ asset('assets/images/defaults/default_project.jpg') }}"
+                                                            alt="user" class="rounded-circle thumb-md">
+                                                    @endif
+                                                </td>
+                                                <td>{{ $project->name }}</td>
+                                                <td>{{ client($project->client_id)->name }}</td>
+                                                <td>{{ $project->location }}</td>
+                                                <td>{{ $project->created_at }}</td>
+                                                <td style="text-align: center;">
+                                                    <a href="{{ route('project.show', ['project_id' => $project->id]) }}"
+                                                        type="button"
+                                                        class="btn btn-outline-success btn-icon-circle btn-icon-circle-sm"><i
+                                                            class="ti ti-eye"></i></a>
+                                                    <a href="{{ route('project.update', ['project_id' => $project->id]) }}"
+                                                        type="button"
+                                                        class="btn btn-outline-warning btn-icon-circle btn-icon-circle-sm"><i
+                                                            class="ti ti-edit"></i></a>
+                                                    <a href="{{ route('project.update', ['project_id' => $project->id]) }}"
+                                                        type="button"
+                                                        class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm"><i
+                                                            class="ti ti-list-search"></i></a>
+                                                </td>
+                                            </tr>
+                                        @endforeach
                                     @else
-                                    <tr>
-                                        <td colspan="7" class="text-center">No data available!</td>
-                                    </tr>
+                                        <tr>
+                                            <td colspan="7" class="text-center">No data available!</td>
+                                        </tr>
                                     @endif
                                 </tbody>
                             </table>
@@ -111,8 +116,8 @@
 </div>
 
 @push('scripts')
-<script>
-    window.addEventListener('showEditModal', event => {
+    <script>
+        window.addEventListener('showEditModal', event => {
             $('#editDataModal').modal('show');
         });
         window.addEventListener('closeModal', event => {
@@ -120,16 +125,15 @@
             $('#editDataModal').modal('hide');
         });
 
-                //Success Delete
-                window.addEventListener('ProjectDeleted', event => {
+        //Success Delete
+        window.addEventListener('ProjectDeleted', event => {
             Swal.fire(
                 'Deleted!',
                 'Project has been deleted successfully.',
                 'success'
             )
         });
-        
-</script>
+    </script>
 @endpush
 
 @push('scripts')
