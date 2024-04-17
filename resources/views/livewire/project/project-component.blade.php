@@ -92,8 +92,8 @@
                                                         type="button"
                                                         class="btn btn-outline-warning btn-icon-circle btn-icon-circle-sm"><i
                                                             class="ti ti-edit"></i></a>
-                                                    <a href="{{ route('project.update', ['project_id' => $project->id]) }}"
-                                                        type="button"
+                                                    <a href="{{ route('project.listing', ['project_id' => $project->id]) }}"
+                                                        type="button" target="_blank"
                                                         class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm"><i
                                                             class="ti ti-list-search"></i></a>
                                                 </td>

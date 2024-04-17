@@ -20,6 +20,7 @@ use App\Http\Livewire\Profile\ProfileComponent;
 use App\Http\Livewire\Project\AddProjectComponent;
 use App\Http\Livewire\Project\EditProjectComponent;
 use App\Http\Livewire\Project\ProjectComponent;
+use App\Http\Livewire\Project\ProjectListComponent;
 use App\Http\Livewire\Project\ViewProjectComponent;
 use App\Http\Livewire\SuperAdmin\DashboardComponent;
 use App\Http\Livewire\Templates\Cdot\CdotComponent;
@@ -124,6 +125,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/project/add', AddProjectComponent::class)->name('project.create');
     Route::get('/project/edit/{project_id}', EditProjectComponent::class)->name('project.update');
     Route::get('/project/show/{project_id}', ViewProjectComponent::class)->name('project.show');
+    Route::get('/project/listing/{project_id}', ProjectListComponent::class)->name('project.listing');
 
     // ====================Templates Routes List ===================
     // Templates
