@@ -17,8 +17,8 @@
 </head>
 
 <body>
-    <div style="    
-    padding: 15px 25px 25px 25px;  
+    <div style="
+    padding: 15px 25px 25px 25px;
   ">
 
         <table style="width: 100%; border-collapse: collapse;">
@@ -699,10 +699,6 @@
             </table>
         </div>
 
-
-
-
-
         <div
             style="padding-top: 5px; border-top: 1px solid #000; border-right: 3px solid #000; border-bottom: 1px solid #000; border-left: 3px solid #000;">
             <table style="width: 100%; border-collapse: collapse; padding: 10px 5px 20px 5px;">
@@ -741,7 +737,7 @@
                 <td
                     style="width: 28%; padding-top: 10px; padding-left: 10px; padding-right: 10px; padding-bottom: 20px;">
                     <h6
-                        style="padding-bottom: 4px; font-weight: normal; 
+                        style="padding-bottom: 4px; font-weight: normal;
             font-size: 14px;
             font-weight: normal;">
                         @if ($data->observation == 'Part Time Observation')
@@ -755,7 +751,7 @@
                     </h6>
 
                     <h6
-                        style="padding-bottom: 4px; font-weight: normal; 
+                        style="padding-bottom: 4px; font-weight: normal;
             font-size: 14px;
             font-weight: normal;">
                         @if ($data->observation == 'Full Time Observation')
