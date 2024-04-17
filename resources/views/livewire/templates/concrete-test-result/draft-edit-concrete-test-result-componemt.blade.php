@@ -397,7 +397,7 @@
                                     </div>
                                     <div class="input-group">
                                         <span class="input-group-text width20">Slump (inches maximum):</span>
-                                        <input type="text" class="form-control form-color" wire:model='slump'>
+                                        <input type="number" class="form-control form-color" wire:model='slump'>
                                         @error('slump')
                                             <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                         @enderror
@@ -407,7 +407,7 @@
                                         <input type="number" class="form-control form-color"
                                             wire:model="inches_max">
                                         <span class="input-group-text">To:</span>
-                                        <input type="text" class="form-control form-color"
+                                        <input type="number" class="form-control form-color"
                                             wire:model="inches_min">
                                     </div>
                                     <div class="input-group">

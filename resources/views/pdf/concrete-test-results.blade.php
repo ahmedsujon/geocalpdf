@@ -179,7 +179,7 @@
                                 Slump
                             </p>
                             <p style="font-size: 12px; padding-bottom: 2px; text-align: center;">
-                                {{ $data->slump }} <span>inches maximum</span>
+                                {{ number_format($data->slump, 2) }} <span>inches maximum</span>
                             </p>
                         </td>
                         <td class="td-padding-left" style="text-align: left; border-right: 2px solid #000;">
