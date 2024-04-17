@@ -21,10 +21,10 @@
                     <div class="float-end">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="">Dashboard</a></li>
-                            <li class="breadcrumb-item active">XXX -  Form Summary</li>
+                            <li class="breadcrumb-item active">XXX - Form Summary</li>
                         </ol>
                     </div>
-                    <h4 class="page-title">{{ $project_listing }} -  Form Summary</h4>
+                    <h4 class="page-title">{{ $project_listing }} - Form Summary</h4>
                 </div>
             </div>
         </div>
@@ -45,7 +45,8 @@
                             </div>
 
                             <div style="text-align: right" class="col-md-6 col-sm-6 mb-2 search_cont">
-                                <input type="search" class="sinput searchbar-style" placeholder="Filter by project name" wire:model="searchTerm" />
+                                <input type="search" class="sinput searchbar-style"
+                                    placeholder="Filter by project name" wire:model="searchTerm" />
                             </div>
                         </div>
                         <div class="table-responsive">
@@ -63,7 +64,9 @@
                                 </thead>
                                 <tbody>
                                     @php
-                                        $sl = $project_listing->perPage() * $project_listing->currentPage() - ($project_listing->perPage() - 1);
+                                        $sl =
+                                            $project_listing->perPage() * $project_listing->currentPage() -
+                                            ($project_listing->perPage() - 1);
                                     @endphp
                                     @if ($project_listing->count() > 0)
                                         @foreach ($project_listing as $file)
@@ -82,6 +85,23 @@
                                                 <td>{{ $file->project_number }}</td>
                                                 <td>{{ user($file->created_by)->name }}</td>
                                                 <td>{{ $file->updated_at->format('M j, Y \a\t g:i A') }}</td>
+                                                <td>
+                                                    @if ($file->table_name == 'concrete_test_results')
+                                                        <a href="{{ route('concrete.test.result.update', ['file_id' => $file->id]) }}"
+                                                        class="btn btn-outline-warning btn-icon-circle btn-icon-circle-sm"><i
+                                                            class="ti ti-edit" data-bs-toggle="tooltip"
+                                                            data-bs-placement="top"
+                                                            data-bs-original-title="Edit Form"></i></a>
+                                                    @elseif ($file->table_name == 'compressive_strengths')
+                                                        <a href="{{ route('compressive.strength.update', ['file_id' => $file->id]) }}"
+                                                        class="btn btn-outline-warning btn-icon-circle btn-icon-circle-sm"><i
+                                                            class="ti ti-edit" data-bs-toggle="tooltip"
+                                                            data-bs-placement="top"
+                                                            data-bs-original-title="Edit Form"></i></a>
+                                                    @else
+
+                                                    @endif
+                                                </td>
                                                 {{-- <td style="text-align: center;">
                                                     <a href="{{ route('invoice.concrete-test-results-pdf', ['id' => $file->id]) }}"
                                                         type="button"
