@@ -21,10 +21,10 @@
                     <div class="float-end">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="">Dashboard</a></li>
-                            <li class="breadcrumb-item active"> List of form - {{ project($project_id)->name }}</li>
+                            <li class="breadcrumb-item active"> List of forms - {{ project($project_id)->name }}</li>
                         </ol>
                     </div>
-                    <h4 class="page-title"> List of form - {{ project($project_id)->name }}</h4>
+                    <h4 class="page-title"> List of forms - {{ project($project_id)->name }}</h4>
                 </div>
             </div>
         </div>
@@ -33,7 +33,7 @@
                 <div class="card">
                     <div class="card-header">
                         <a style="float: right" href="{{ route('project.list') }}"
-                            class="card-button btn btn-sm btn-primary"><i class="ti ti-arrow-left"></i> Project List</a>
+                            class="card-button btn btn-sm btn-primary"><i class="ti ti-arrow-left"></i> Project Listing</a>
                     </div>
                     <div class="card-body">
                         <div class="row mb-3">
