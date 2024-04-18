@@ -21,10 +21,10 @@
                     <div class="float-end">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="">Dashboard</a></li>
-                            <li class="breadcrumb-item active">XXX - Form Summary</li>
+                            <li class="breadcrumb-item active">{{ project($project_id)->name }} - Form Summary</li>
                         </ol>
                     </div>
-                    <h4 class="page-title">{{ $project_listing }} - Form Summary</h4>
+                    <h4 class="page-title">{{ project($project_id)->name }} - Form Summary</h4>
                 </div>
             </div>
         </div>
@@ -44,10 +44,10 @@
                                 <label class="font-weight-normal" style="">entries</label>
                             </div>
 
-                            <div style="text-align: right" class="col-md-6 col-sm-6 mb-2 search_cont">
+                            {{-- <div style="text-align: right" class="col-md-6 col-sm-6 mb-2 search_cont">
                                 <input type="search" class="sinput searchbar-style"
-                                    placeholder="Filter by project name" wire:model="searchTerm" />
-                            </div>
+                                    placeholder="Filter by client name" wire:model="searchTerm" />
+                            </div> --}}
                         </div>
                         <div class="table-responsive">
                             <table class="table custom_tbl">
@@ -87,44 +87,46 @@
                                                 <td>{{ $file->updated_at->format('M j, Y \a\t g:i A') }}</td>
                                                 <td>
                                                     @if ($file->table_name == 'concrete_test_results')
-                                                        <a href="{{ route('concrete.test.result.update', ['file_id' => $file->id]) }}"
-                                                        class="btn btn-outline-warning btn-icon-circle btn-icon-circle-sm"><i
-                                                            class="ti ti-edit" data-bs-toggle="tooltip"
-                                                            data-bs-placement="top"
-                                                            data-bs-original-title="Edit Form"></i></a>
-                                                    @elseif ($file->table_name == 'compressive_strengths')
-                                                        <a href="{{ route('compressive.strength.update', ['file_id' => $file->id]) }}"
-                                                        class="btn btn-outline-warning btn-icon-circle btn-icon-circle-sm"><i
-                                                            class="ti ti-edit" data-bs-toggle="tooltip"
-                                                            data-bs-placement="top"
-                                                            data-bs-original-title="Edit Form"></i></a>
-                                                    @else
+                                                        <a href="{{ route('invoice.concrete-test-results-pdf', ['id' => $file->id]) }}"
+                                                            type="button"
+                                                            class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm"><i
+                                                                class="ti ti-file-invoice" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top"
+                                                                data-bs-original-title="Download Report"></i></a>
 
+                                                        <a href="{{ route('concrete.test.result.show', ['file_id' => $file->id]) }}"
+                                                            class="btn btn-outline-success btn-icon-circle btn-icon-circle-sm"><i
+                                                                class="ti ti-eye" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top"
+                                                                data-bs-original-title="View Details"></i></a>
+
+                                                        <a href="{{ route('concrete.test.result.update', ['file_id' => $file->id]) }}"
+                                                            class="btn btn-outline-warning btn-icon-circle btn-icon-circle-sm"><i
+                                                                class="ti ti-edit" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top"
+                                                                data-bs-original-title="Edit Form"></i></a>
+                                                    @elseif ($file->table_name == 'compressive_strengths')
+                                                        <a href="{{ route('invoice.compressive-strengths-pdf', ['id' => $file->id]) }}"
+                                                            type="button"
+                                                            class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm"><i
+                                                                class="ti ti-file-invoice" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top"
+                                                                data-bs-original-title="Download Report"></i></a>
+
+                                                        <a href="{{ route('compressive.strength.show', ['file_id' => $file->id]) }}"
+                                                            class="btn btn-outline-success btn-icon-circle btn-icon-circle-sm"><i
+                                                                class="ti ti-eye" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top"
+                                                                data-bs-original-title="View Details"></i></a>
+
+                                                        <a href="{{ route('compressive.strength.update', ['file_id' => $file->id]) }}"
+                                                            class="btn btn-outline-warning btn-icon-circle btn-icon-circle-sm"><i
+                                                                class="ti ti-edit" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top"
+                                                                data-bs-original-title="Edit Form"></i></a>
+                                                    @else
                                                     @endif
                                                 </td>
-                                                {{-- <td style="text-align: center;">
-                                                    <a href="{{ route('invoice.concrete-test-results-pdf', ['id' => $file->id]) }}"
-                                                        type="button"
-                                                        class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm"><i
-                                                            class="ti ti-file-invoice" data-bs-toggle="tooltip"
-                                                            data-bs-placement="top"
-                                                            data-bs-original-title="Download Report"></i></a>
-                                                    <a href="{{ route('concrete.test.result.show', ['file_id' => $file->id]) }}"
-                                                        class="btn btn-outline-success btn-icon-circle btn-icon-circle-sm"><i
-                                                            class="ti ti-eye" data-bs-toggle="tooltip"
-                                                            data-bs-placement="top"
-                                                            data-bs-original-title="View Details"></i></a>
-                                                    <a href="{{ route('concrete.test.result.update', ['file_id' => $file->id]) }}"
-                                                        class="btn btn-outline-warning btn-icon-circle btn-icon-circle-sm"><i
-                                                            class="ti ti-edit" data-bs-toggle="tooltip"
-                                                            data-bs-placement="top"
-                                                            data-bs-original-title="Edit Form"></i></a>
-                                                    <a wire:click.prevent="deleteConfirmation({{ $file->id }})"
-                                                        class="btn btn-outline-danger btn-icon-circle btn-icon-circle-sm"><i
-                                                            class="ti ti-trash" data-bs-toggle="tooltip"
-                                                            data-bs-placement="top"
-                                                            data-bs-original-title="Delete Form"></i></a>
-                                                </td> --}}
                                             </tr>
                                         @endforeach
                                     @else

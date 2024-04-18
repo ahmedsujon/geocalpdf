@@ -42,8 +42,6 @@ class ProjectListComponent extends Component
 
         $project_listings = $project_listing->paginate($this->sortingValue);
 
-        // dd($project_listing);
-
         return view('livewire.project.project-list-component', ['project_listing' => $project_listings])->layout('livewire.layouts.base');
     }
 }
