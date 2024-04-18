@@ -21,16 +21,20 @@
                     <div class="float-end">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="">Dashboard</a></li>
-                            <li class="breadcrumb-item active">{{ project($project_id)->name }} - Form Summary</li>
+                            <li class="breadcrumb-item active"> List of form - {{ project($project_id)->name }}</li>
                         </ol>
                     </div>
-                    <h4 class="page-title">{{ project($project_id)->name }} - Form Summary</h4>
+                    <h4 class="page-title"> List of form - {{ project($project_id)->name }}</h4>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-12">
                 <div class="card">
+                    <div class="card-header">
+                        <a style="float: right" href="{{ route('project.list') }}"
+                            class="card-button btn btn-sm btn-primary"><i class="ti ti-arrow-left"></i> Project List</a>
+                    </div>
                     <div class="card-body">
                         <div class="row mb-3">
                             <div class="col-md-6 col-sm-12 mb-2 sort_cont">
