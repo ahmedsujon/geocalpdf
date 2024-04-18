@@ -700,12 +700,12 @@
                             </p>
                             <p style="font-size: 10px; text-align: left; padding-bottom: 4px;">
                                 <span style="width: 100%; display: block;">Lineal Feet<span
-                                        style="padding: 1px 4px; margin-left: 10px; border: 2px solid #000;">&nbsp;
+                                        style="padding: 1px 4px; margin-left: 25px; border: 2px solid #000;">&nbsp;
                                         &nbsp;</span></span>
                             </p>
                             <p style="font-size: 10px; text-align: left; padding-top: 5px;">
                                 <span style="width: 100%; display: block; padding-bottom: 6px;">Square Yards<span
-                                        style="padding: 1px 4px; margin-left: 10px; border: 2px solid #000;">&nbsp;
+                                        style="padding: 1px 4px; margin-left: 13px; border: 2px solid #000;">&nbsp;
                                         &nbsp;</span></span>
                             </p>
                         @elseif ($data->represented_quantity == 'Lineal Feet')
@@ -733,7 +733,7 @@
                             </p>
                             <p style="font-size: 10px; text-align: left; padding-bottom: 4px;">
                                 <span style="width: 100%; display: block;">Lineal Feet<span
-                                        style="padding: 1px 4px; margin-left: 10px; border: 2px solid #000;">&nbsp;
+                                        style="padding: 1px 4px; margin-left: 20px; border: 2px solid #000;">&nbsp;
                                         &nbsp;</span></span>
                             </p>
                             <p style="font-size: 10px; text-align: left; padding-top: 5px;">
