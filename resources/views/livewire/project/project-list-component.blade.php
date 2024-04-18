@@ -33,7 +33,8 @@
                 <div class="card">
                     <div class="card-header">
                         <a style="float: right" href="{{ route('project.list') }}"
-                            class="card-button btn btn-sm btn-primary"><i class="ti ti-arrow-left"></i> Project Listing</a>
+                            class="card-button btn btn-sm btn-primary"><i class="ti ti-arrow-left"></i> Project
+                            Listing</a>
                     </div>
                     <div class="card-body">
                         <div class="row mb-3">
@@ -90,6 +91,7 @@
                                                 <td>{{ user($file->created_by)->name }}</td>
                                                 <td>{{ $file->updated_at->format('M j, Y \a\t g:i A') }}</td>
                                                 <td>
+
                                                     @if ($file->table_name == 'concrete_test_results')
                                                         <a href="{{ route('invoice.concrete-test-results-pdf', ['id' => $file->id]) }}"
                                                             type="button"
@@ -128,6 +130,75 @@
                                                                 class="ti ti-edit" data-bs-toggle="tooltip"
                                                                 data-bs-placement="top"
                                                                 data-bs-original-title="Edit Form"></i></a>
+                                                    @elseif ($file->table_name == 'commercial')
+                                                        <a target="_blank"
+                                                            href="{{ route('invoice.commercial', ['id' => $file->id]) }}"
+                                                            type="button"
+                                                            class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm"><i
+                                                                class="ti ti-file-invoice" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top"
+                                                                data-bs-original-title="Download Report"></i></a>
+                                                        <a href="{{ route('commercial.show', ['file_id' => $file->id]) }}"
+                                                            class="btn btn-outline-success btn-icon-circle btn-icon-circle-sm"><i
+                                                                class="ti ti-eye" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top"
+                                                                data-bs-original-title="View Details"></i></a>
+                                                        <a href="{{ route('commercial.update', ['file_id' => $file->id]) }}"
+                                                            class="btn btn-outline-warning btn-icon-circle btn-icon-circle-sm"><i
+                                                                class="ti ti-edit" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top"
+                                                                data-bs-original-title="Edit Form"></i></a>
+                                                    @elseif ($file->table_name == 'field_density_cdot')
+                                                        <a target="_blank"
+                                                            href="{{ route('cdot.form.generate', ['id' => $file->id]) }}"
+                                                            class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm"
+                                                            data-bs-toggle="tooltip" data-bs-placement="top"
+                                                            data-bs-original-title="Download Report"><i
+                                                                class="ti ti-file-invoice"></i></a>
+                                                        <a href="{{ route('cdot.show', ['file_id' => $file->id]) }}"
+                                                            class="btn btn-outline-success btn-icon-circle btn-icon-circle-sm"
+                                                            data-bs-toggle="tooltip" data-bs-placement="top"
+                                                            data-bs-original-title="View Details"><i
+                                                                class="ti ti-eye"></i></a>
+                                                        <a href="{{ route('cdot.update', ['file_id' => $file->id]) }}"
+                                                            class="btn btn-outline-warning btn-icon-circle btn-icon-circle-sm"><i
+                                                                class="ti ti-edit" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top"
+                                                                data-bs-original-title="Edit Form"></i></a>
+                                                    @elseif ($file->table_name == 'soil_aggregate')
+                                                        <a target="_blank"
+                                                            href="{{ route('soil.aggregate.generate', ['id' => $file->id]) }}"
+                                                            class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm"
+                                                            data-bs-toggle="tooltip" data-bs-placement="top"
+                                                            data-bs-original-title="Download Report"><i
+                                                                class="ti ti-file-invoice"></i></a>
+                                                        <a href="{{ route('soil.aggregate.show', ['file_id' => $file->id]) }}"
+                                                            class="btn btn-outline-success btn-icon-circle btn-icon-circle-sm"><i
+                                                                class="ti ti-eye" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top"
+                                                                data-bs-original-title="View Details"></i></a>
+                                                        <a href="{{ route('soil.aggregate.update', ['file_id' => $file->id]) }}"
+                                                            class="btn btn-outline-warning btn-icon-circle btn-icon-circle-sm"><i
+                                                                class="ti ti-edit" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top"
+                                                                data-bs-original-title="Edit Form"></i></a>
+                                                    @elseif ($file->table_name == 'plastic_concrete')
+                                                        <a target="_blank"
+                                                            href="{{ route('plastic.concrete.generate', ['id' => $temp->id]) }}"
+                                                            class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm"
+                                                            data-bs-toggle="tooltip" data-bs-placement="top"
+                                                            data-bs-original-title="Download Report"><i
+                                                                class="ti ti-file-invoice"></i></a>
+                                                        <a href="{{ route('plastic.concrete.show', ['file_id' => $temp->id]) }}"
+                                                            class="btn btn-outline-success btn-icon-circle btn-icon-circle-sm"
+                                                            data-bs-toggle="tooltip" data-bs-placement="top"
+                                                            data-bs-original-title="View Details"><i
+                                                                class="ti ti-eye"></i></a>
+                                                        <a href="{{ route('plastic.concrete.update', ['file_id' => $temp->id]) }}"
+                                                            class="btn btn-outline-warning btn-icon-circle btn-icon-circle-sm"
+                                                            data-bs-toggle="tooltip" data-bs-placement="top"
+                                                            data-bs-original-title="Edit Form"><i
+                                                                class="ti ti-edit"></i></a>
                                                     @else
                                                     @endif
                                                 </td>
