@@ -199,7 +199,176 @@
                                                             data-bs-toggle="tooltip" data-bs-placement="top"
                                                             data-bs-original-title="Edit Form"><i
                                                                 class="ti ti-edit"></i></a>
+                                                    @elseif ($file->table_name == 'inspection_concretes')
+                                                        <a target="_blank"
+                                                            href="{{ route('inspection.concrete.generate.one', ['id' => $file->id]) }}"
+                                                            class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm"
+                                                            data-bs-toggle="tooltip" data-bs-placement="top"
+                                                            data-bs-original-title="Download Report"><i
+                                                                class="ti ti-file-invoice"></i></a>
+                                                        <a href="{{ route('concrete.show', ['file_id' => $file->id]) }}"
+                                                            class="btn btn-outline-success btn-icon-circle btn-icon-circle-sm"
+                                                            data-bs-toggle="tooltip" data-bs-placement="top"
+                                                            data-bs-original-title="View Details"><i
+                                                                class="ti ti-eye"></i></a>
+                                                        <a href="{{ route('concrete.update', ['file_id' => $file->id]) }}"
+                                                            class="btn btn-outline-warning btn-icon-circle btn-icon-circle-sm"><i
+                                                                class="ti ti-edit" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top"
+                                                                data-bs-original-title="Edit Form"></i></a>
+                                                    @elseif ($file->table_name == 'inspection_concrete_set_twos')
+                                                        <a target="_blank"
+                                                            href="{{ route('inspection.concrete.generate.two', ['id' => $file->id]) }}"
+                                                            class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm"><i
+                                                                class="ti ti-file-invoice" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top"
+                                                                data-bs-original-title="Download Report"></i></a>
+                                                        <a href="{{ route('concrete.show.two', ['file_id' => $file->id]) }}"
+                                                            class="btn btn-outline-success btn-icon-circle btn-icon-circle-sm"><i
+                                                                class="ti ti-eye" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top"
+                                                                data-bs-original-title="View Details"></i></a>
+                                                        <a href="{{ route('concrete.update.two', ['file_id' => $file->id]) }}"
+                                                            class="btn btn-outline-warning btn-icon-circle btn-icon-circle-sm"><i
+                                                                class="ti ti-edit" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top"
+                                                                data-bs-original-title="Edit Form"></i></a>
+                                                    @elseif ($file->table_name == 'inspection_concrete_set_threes')
+                                                        <a target="_blank"
+                                                            href="{{ route('inspection.concrete.generate.three', ['id' => $file->id]) }}"
+                                                            class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm"><i
+                                                                class="ti ti-file-invoice" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top"
+                                                                data-bs-original-title="Download Report"></i></a>
+                                                        <a href="{{ route('concrete.show.three', ['file_id' => $file->id]) }}"
+                                                            class="btn btn-outline-success btn-icon-circle btn-icon-circle-sm"><i
+                                                                class="ti ti-eye" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top"
+                                                                data-bs-original-title="View Details"></i></a>
+                                                        <a href="{{ route('concrete.update.three', ['file_id' => $file->id]) }}"
+                                                            class="btn btn-outline-warning btn-icon-circle btn-icon-circle-sm"><i
+                                                                class="ti ti-edit" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top"
+                                                                data-bs-original-title="Edit Form"></i></a>
+                                                    @elseif ($file->table_name == 'inspection_concrete_set_fours')
+                                                        <a target="_blank"
+                                                            href="{{ route('inspection.concrete.generate.four', ['id' => $file->id]) }}"
+                                                            class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm"><i
+                                                                class="ti ti-file-invoice" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top"
+                                                                data-bs-original-title="Download Report"></i></a>
+                                                        <a href="{{ route('concrete.show.four', ['file_id' => $file->id]) }}"
+                                                            class="btn btn-outline-success btn-icon-circle btn-icon-circle-sm"><i
+                                                                class="ti ti-eye" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top"
+                                                                data-bs-original-title="View Details"></i></a>
+                                                        <a href="{{ route('concrete.update.four', ['file_id' => $file->id]) }}"
+                                                            class="btn btn-outline-warning btn-icon-circle btn-icon-circle-sm"><i
+                                                                class="ti ti-edit" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top"
+                                                                data-bs-original-title="Edit Form"></i></a>
+                                                    @elseif ($file->table_name == 'inspection_concrete_set_fives')
+                                                        <a target="_blank"
+                                                            href="{{ route('inspection.concrete.generate.five', ['id' => $file->id]) }}"
+                                                            class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm"><i
+                                                                class="ti ti-file-invoice" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top"
+                                                                data-bs-original-title="Download Report"></i></a>
+                                                        <a href="{{ route('concrete.show.five', ['file_id' => $file->id]) }}"
+                                                            class="btn btn-outline-success btn-icon-circle btn-icon-circle-sm"><i
+                                                                class="ti ti-eye" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top"
+                                                                data-bs-original-title="View Details"></i></a>
+                                                        <a href="{{ route('concrete.update.five', ['file_id' => $file->id]) }}"
+                                                            class="btn btn-outline-warning btn-icon-circle btn-icon-circle-sm"><i
+                                                                class="ti ti-edit" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top"
+                                                                data-bs-original-title="Edit Form"></i></a>
+                                                    @elseif ($file->table_name == 'inspection_concrete_set_sixes')
+                                                        <a target="_blank"
+                                                            href="{{ route('inspection.concrete.generate.six', ['id' => $file->id]) }}"
+                                                            class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm"><i
+                                                                class="ti ti-file-invoice" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top"
+                                                                data-bs-original-title="Download Report"></i></a>
+                                                        <a href="{{ route('concrete.show.six', ['file_id' => $file->id]) }}"
+                                                            class="btn btn-outline-success btn-icon-circle btn-icon-circle-sm"><i
+                                                                class="ti ti-eye" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top"
+                                                                data-bs-original-title="View Details"></i></a>
+                                                        <a href="{{ route('concrete.update.six', ['file_id' => $file->id]) }}"
+                                                            class="btn btn-outline-warning btn-icon-circle btn-icon-circle-sm"><i
+                                                                class="ti ti-edit" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top"
+                                                                data-bs-original-title="Edit Form"></i></a>
+                                                    @elseif ($file->table_name == 'inspection_concrete_set_sevens')
+                                                        <a target="_blank"
+                                                            href="{{ route('inspection.concrete.generate.seven', ['id' => $file->id]) }}"
+                                                            class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm"><i
+                                                                class="ti ti-file-invoice" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top"
+                                                                data-bs-original-title="Download Report"></i></a>
+                                                        <a href="{{ route('concrete.show.seven', ['file_id' => $file->id]) }}"
+                                                            class="btn btn-outline-success btn-icon-circle btn-icon-circle-sm"><i
+                                                                class="ti ti-eye" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top"
+                                                                data-bs-original-title="View Details"></i></a>
+                                                        <a href="{{ route('concrete.update.seven', ['file_id' => $file->id]) }}"
+                                                            class="btn btn-outline-warning btn-icon-circle btn-icon-circle-sm"><i
+                                                                class="ti ti-edit" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top"
+                                                                data-bs-original-title="Edit Form"></i></a>
+                                                    @elseif ($file->table_name == 'inspection_concrete_set_eights')
+                                                        <a target="_blank"
+                                                            href="{{ route('inspection.concrete.generate.eight', ['id' => $file->id]) }}"
+                                                            class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm"><i
+                                                                class="ti ti-file-invoice" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top"
+                                                                data-bs-original-title="Download Report"></i></a>
+                                                        <a href="{{ route('concrete.show.eight', ['file_id' => $file->id]) }}"
+                                                            class="btn btn-outline-success btn-icon-circle btn-icon-circle-sm"><i
+                                                                class="ti ti-eye" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top"
+                                                                data-bs-original-title="View Details"></i></a>
+                                                        <a href="{{ route('concrete.update.eight', ['file_id' => $file->id]) }}"
+                                                            class="btn btn-outline-warning btn-icon-circle btn-icon-circle-sm"><i
+                                                                class="ti ti-edit" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top"
+                                                                data-bs-original-title="Edit Form"></i></a>
+                                                    @elseif ($file->table_name == 'inspection_concrete_set_nines')
+                                                        <a target="_blank"
+                                                            href="{{ route('inspection.concrete.generate.nine', ['id' => $file->id]) }}"
+                                                            class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm"><i
+                                                                class="ti ti-file-invoice" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top"
+                                                                data-bs-original-title="Download Report"></i></a>
+                                                        <a href="{{ route('concrete.show.nine', ['file_id' => $file->id]) }}"
+                                                            class="btn btn-outline-success btn-icon-circle btn-icon-circle-sm"><i
+                                                                class="ti ti-eye" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top"
+                                                                data-bs-original-title="View Details"></i></a>
+                                                        <a href="{{ route('concrete.update.nine', ['file_id' => $file->id]) }}"
+                                                            class="btn btn-outline-warning btn-icon-circle btn-icon-circle-sm"><i
+                                                                class="ti ti-edit" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top"
+                                                                data-bs-original-title="Edit Form"></i></a>
                                                     @else
+                                                        <a target="_blank"
+                                                            href="{{ route('inspection.concrete.generate.ten', ['id' => $file->id]) }}"
+                                                            class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm"><i
+                                                                class="ti ti-file-invoice" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top"
+                                                                data-bs-original-title="Download Report"></i></a>
+                                                        <a href="{{ route('concrete.show.ten', ['file_id' => $file->id]) }}"
+                                                            class="btn btn-outline-success btn-icon-circle btn-icon-circle-sm"><i
+                                                                class="ti ti-eye" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top"
+                                                                data-bs-original-title="View Details"></i></a>
+                                                        <a href="{{ route('concrete.update.ten', ['file_id' => $file->id]) }}"
+                                                            class="btn btn-outline-warning btn-icon-circle btn-icon-circle-sm"><i
+                                                                class="ti ti-edit" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top"
+                                                                data-bs-original-title="Edit Form"></i></a>
                                                     @endif
                                                 </td>
                                             </tr>
