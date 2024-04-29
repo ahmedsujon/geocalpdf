@@ -7,6 +7,35 @@
         #customSwitchSuccess {
             font-size: 25px;
         }
+
+        a.btn.btn-outline-primary.btn-icon-circle.btn-icon-circle-sm.btn-icon-circle-size {
+            height: 35px;
+            width: 35px;
+        }
+
+        i.ti.ti-box-multiple-1 {
+            font-size: 20px;
+        }
+
+        i.ti.ti-box-multiple-2 {
+            font-size: 20px;
+        }
+
+        i.ti.ti-box-multiple-3 {
+            font-size: 20px;
+        }
+
+        i.ti.ti-box-multiple-4 {
+            font-size: 20px;
+        }
+
+        i.ti.ti-box-multiple-5 {
+            font-size: 20px;
+        }
+
+        i.ti.ti-box-multiple-6 {
+            font-size: 20px;
+        }
     </style>
     <div class="container-fluid">
         <div class="row">
@@ -58,7 +87,7 @@
                                         <th>Client Name</th>
                                         <th>Location</th>
                                         <th>Project Created</th>
-                                        <th style="text-align: center;">Sub Folders</th>
+                                        <th style="text-align: center;">FORMS</th>
                                         <th style="text-align: center;">Options</th>
                                     </tr>
                                 </thead>
@@ -87,37 +116,37 @@
                                                 <td style="text-align: center;">
                                                     <a href="{{ route('project.listing.sfconcrete', ['project_id' => $project->id]) }}"
                                                         type="button"
-                                                        class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm"><i
+                                                        class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm btn-icon-circle-size"><i
                                                             class="ti ti-box-multiple-1" data-bs-toggle="tooltip"
                                                             data-bs-placement="top"
                                                             data-bs-original-title="Concrete Test Results Forms"></i></a>
                                                     <a href="{{ route('project.listing.sfcomprenssive', ['project_id' => $project->id]) }}"
                                                         type="button"
-                                                        class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm"><i
+                                                        class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm btn-icon-circle-size"><i
                                                             class="ti ti-box-multiple-2" data-bs-toggle="tooltip"
                                                             data-bs-placement="top"
                                                             data-bs-original-title="Compressive Strength Forms"></i></a>
                                                     <a href="{{ route('project.listing.sfcommercial', ['project_id' => $project->id]) }}"
                                                         type="button"
-                                                        class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm"><i
+                                                        class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm btn-icon-circle-size"><i
                                                             class="ti ti-box-multiple-3" data-bs-toggle="tooltip"
                                                             data-bs-placement="top"
                                                             data-bs-original-title="Commercial Form Forms"></i></a>
                                                     <a href="{{ route('project.listingsf.cdot', ['project_id' => $project->id]) }}"
                                                         type="button"
-                                                        class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm"><i
+                                                        class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm btn-icon-circle-size"><i
                                                             class="ti ti-box-multiple-4" data-bs-toggle="tooltip"
                                                             data-bs-placement="top"
                                                             data-bs-original-title="CDOT Forms"></i></a>
                                                     <a href="{{ route('project.listing.sfsoil', ['project_id' => $project->id]) }}"
                                                         type="button"
-                                                        class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm"><i
+                                                        class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm btn-icon-circle-size"><i
                                                             class="ti ti-box-multiple-5" data-bs-toggle="tooltip"
                                                             data-bs-placement="top"
                                                             data-bs-original-title="Soil Aggregate Forms"></i></a>
                                                     <a href="{{ route('project.listing.sfplastic', ['project_id' => $project->id]) }}"
                                                         type="button"
-                                                        class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm"><i
+                                                        class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm btn-icon-circle-size"><i
                                                             class="ti ti-box-multiple-6" data-bs-toggle="tooltip"
                                                             data-bs-placement="top"
                                                             data-bs-original-title="Plastic Concrete Forms"></i></a>
@@ -125,11 +154,11 @@
                                                 <td style="text-align: center;">
                                                     <a href="{{ route('project.show', ['project_id' => $project->id]) }}"
                                                         type="button"
-                                                        class="btn btn-outline-success btn-icon-circle btn-icon-circle-sm"><i
+                                                        class="btn btn-outline-success btn-icon-circle btn-icon-circle-sm btn-icon-circle-size"><i
                                                             class="ti ti-eye"></i></a>
                                                     <a href="{{ route('project.update', ['project_id' => $project->id]) }}"
                                                         type="button"
-                                                        class="btn btn-outline-warning btn-icon-circle btn-icon-circle-sm"><i
+                                                        class="btn btn-outline-warning btn-icon-circle btn-icon-circle-sm btn-icon-circle-size"><i
                                                             class="ti ti-edit"></i></a>
                                                 </td>
                                             </tr>
