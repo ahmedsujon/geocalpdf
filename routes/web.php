@@ -22,6 +22,12 @@ use App\Http\Livewire\Project\EditProjectComponent;
 use App\Http\Livewire\Project\ProjectComponent;
 use App\Http\Livewire\Project\ProjectListComponent;
 use App\Http\Livewire\Project\ViewProjectComponent;
+use App\Http\Livewire\SFProject\SFCdotComponent;
+use App\Http\Livewire\SFProject\SFCommercialComponent;
+use App\Http\Livewire\SFProject\SFCompressiveComponent;
+use App\Http\Livewire\SFProject\SFConcreteComponent;
+use App\Http\Livewire\SFProject\SFPlasticConcreteComponent;
+use App\Http\Livewire\SFProject\SFSoilComponent;
 use App\Http\Livewire\SuperAdmin\DashboardComponent;
 use App\Http\Livewire\Templates\Cdot\CdotComponent;
 use App\Http\Livewire\Templates\Cdot\CreateCdotComponent;
@@ -125,7 +131,14 @@ Route::middleware('auth')->group(function () {
     Route::get('/project/add', AddProjectComponent::class)->name('project.create');
     Route::get('/project/edit/{project_id}', EditProjectComponent::class)->name('project.update');
     Route::get('/project/show/{project_id}', ViewProjectComponent::class)->name('project.show');
-    Route::get('/project/listing/{project_id}', ProjectListComponent::class)->name('project.listing');
+
+    // Project Sub Folder Routes
+    Route::get('/project/listing/concrete/test/result/{project_id}', SFConcreteComponent::class)->name('project.listing.sfconcrete');
+    Route::get('/project/listing/comprenssive/strength/{project_id}', SFCompressiveComponent::class)->name('project.listing.sfcomprenssive');
+    Route::get('/project/listing/commercial/{project_id}', SFCommercialComponent::class)->name('project.listing.sfcommercial');
+    Route::get('/project/listing/dot/{project_id}', SFCdotComponent::class)->name('project.listingsf.cdot');
+    Route::get('/project/listing/soil/aggregate/{project_id}', SFSoilComponent::class)->name('project.listing.sfsoil');
+    Route::get('/project/listing/plastic/concrete/{project_id}', SFPlasticConcreteComponent::class)->name('project.listing.sfplastic');
 
     // ====================Templates Routes List ===================
     // Templates

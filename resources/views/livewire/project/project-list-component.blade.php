@@ -90,7 +90,8 @@
                                                 <td>{{ $file->project_number }}</td>
                                                 <td>{{ user($file->created_by)->name }}</td>
                                                 <td>{{ $file->updated_at->format('M j, Y \a\t g:i A') }}</td>
-                                                <td>
+                                                <td>dd</td>
+                                                {{-- <td>
 
                                                     @if ($file->table_name == 'concrete_test_results')
                                                         <a href="{{ route('invoice.concrete-test-results-pdf', ['id' => $file->id]) }}"
@@ -370,7 +371,7 @@
                                                                 data-bs-placement="top"
                                                                 data-bs-original-title="Edit Form"></i></a>
                                                     @endif
-                                                </td>
+                                                </td> --}}
                                             </tr>
                                         @endforeach
                                     @else

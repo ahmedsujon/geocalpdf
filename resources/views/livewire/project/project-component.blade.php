@@ -58,6 +58,7 @@
                                         <th>Client Name</th>
                                         <th>Location</th>
                                         <th>Project Created</th>
+                                        <th style="text-align: center;">Sub Folders</th>
                                         <th style="text-align: center;">Options</th>
                                     </tr>
                                 </thead>
@@ -84,6 +85,44 @@
                                                 <td>{{ $project->location }}</td>
                                                 <td>{{ $project->created_at }}</td>
                                                 <td style="text-align: center;">
+                                                    <a href="{{ route('project.listing.sfconcrete', ['project_id' => $project->id]) }}"
+                                                        type="button"
+                                                        class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm"><i
+                                                            class="ti ti-box-multiple-1" data-bs-toggle="tooltip"
+                                                            data-bs-placement="top"
+                                                            data-bs-original-title="Concrete Test Results Forms"></i></a>
+                                                    <a href="{{ route('project.listing.sfcomprenssive', ['project_id' => $project->id]) }}"
+                                                        type="button"
+                                                        class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm"><i
+                                                            class="ti ti-box-multiple-2" data-bs-toggle="tooltip"
+                                                            data-bs-placement="top"
+                                                            data-bs-original-title="Compressive Strength Forms"></i></a>
+                                                    <a href="{{ route('project.listing.sfcommercial', ['project_id' => $project->id]) }}"
+                                                        type="button"
+                                                        class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm"><i
+                                                            class="ti ti-box-multiple-3" data-bs-toggle="tooltip"
+                                                            data-bs-placement="top"
+                                                            data-bs-original-title="Commercial Form Forms"></i></a>
+                                                    <a href="{{ route('project.listingsf.cdot', ['project_id' => $project->id]) }}"
+                                                        type="button"
+                                                        class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm"><i
+                                                            class="ti ti-box-multiple-4" data-bs-toggle="tooltip"
+                                                            data-bs-placement="top"
+                                                            data-bs-original-title="CDOT Forms"></i></a>
+                                                    <a href="{{ route('project.listing.sfsoil', ['project_id' => $project->id]) }}"
+                                                        type="button"
+                                                        class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm"><i
+                                                            class="ti ti-box-multiple-5" data-bs-toggle="tooltip"
+                                                            data-bs-placement="top"
+                                                            data-bs-original-title="Soil Aggregate Forms"></i></a>
+                                                    <a href="{{ route('project.listing.sfplastic', ['project_id' => $project->id]) }}"
+                                                        type="button"
+                                                        class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm"><i
+                                                            class="ti ti-box-multiple-6" data-bs-toggle="tooltip"
+                                                            data-bs-placement="top"
+                                                            data-bs-original-title="Plastic Concrete Forms"></i></a>
+                                                </td>
+                                                <td style="text-align: center;">
                                                     <a href="{{ route('project.show', ['project_id' => $project->id]) }}"
                                                         type="button"
                                                         class="btn btn-outline-success btn-icon-circle btn-icon-circle-sm"><i
@@ -92,10 +131,6 @@
                                                         type="button"
                                                         class="btn btn-outline-warning btn-icon-circle btn-icon-circle-sm"><i
                                                             class="ti ti-edit"></i></a>
-                                                    <a href="{{ route('project.listing', ['project_id' => $project->id]) }}"
-                                                        type="button" target="_blank"
-                                                        class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm"><i
-                                                            class="ti ti-list-search"></i></a>
                                                 </td>
                                             </tr>
                                         @endforeach
