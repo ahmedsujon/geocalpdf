@@ -131,7 +131,7 @@
                                                         class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm btn-icon-circle-size"><i
                                                             class="ti ti-box-multiple-3" data-bs-toggle="tooltip"
                                                             data-bs-placement="top"
-                                                            data-bs-original-title="Commercial Form Forms"></i></a>
+                                                            data-bs-original-title="Commercial Forms"></i></a>
                                                     <a href="{{ route('project.listingsf.cdot', ['project_id' => $project->id]) }}"
                                                         type="button"
                                                         class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm btn-icon-circle-size"><i
