@@ -2930,7 +2930,8 @@
                                         class="btn btn-primary submit_btn">{!! loadingState("updateData('unpublish')", 'Save as Draft') !!}</button>
                                     <button type="button" wire:click.prevent='updateData("publish")'
                                         class="btn btn-success submit_btn">{!! loadingState("updateData('publish')", 'Save and Send') !!}</button>
-                                </div>
+                                        <a href="{{ route('invoice.concrete-test-results-pdf', ['id' => $file_id]) }}" class="btn btn-success submit_btn">View Report</a>
+                                    </div>
                             </div>
                         </div>
                     </div>
