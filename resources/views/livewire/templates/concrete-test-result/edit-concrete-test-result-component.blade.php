@@ -3,6 +3,11 @@
 @endpush
 <div>
     <style>
+        p {
+            padding-bottom: 0 !important;
+            margin-bottom: 0 !important;
+        }
+
         .kbw-signature {
             width: 100%;
             height: 100px;
@@ -2966,1698 +2971,1688 @@
         aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl" role="document">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h6 class="modal-title m-0" id="myExtraLargeModalLabel">Concrete Test Results Report</h6>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                        aria-label="Close"></button>
-                </div>
+                
                 <div class="modal-body">
+<div style="
+padding: 5px 20px 10px 30px;">
+                    <div style="padding: 20px;">
+                        <table style="width: 100%; border-collapse: collapse;">
+                            <tr>
+                                <td style="width: 70%; text-align: left;">
+                                    <img src="https://i0.wp.com/geocal.us/wp-content/uploads/2019/05/logo-new.png"
+                                        alt="logo" style="max-width: 100px" />
+                                </td>
+                                <td style="width: 30%; ">
+                                    <p style="font-size: 14px; text-align: right;">
+                                        {{ $office_address }}<br>
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
 
-                        <div style="padding: 20px;">
-                            <table style="width: 100%; border-collapse: collapse;">
+                    <div
+                        style="margin-top: 2px; border-top: 3px solid #000; border-right: 3px solid #000; border-bottom: 3px solid #000; border-left: 3px solid #000;">
+                        <table style="width: 100%; border-collapse: collapse;">
+                            <tbody>
                                 <tr>
-                                    <td style="width: 70%; text-align: left;">
-                                        <img src="https://i0.wp.com/geocal.us/wp-content/uploads/2019/05/logo-new.png"
-                                            alt="logo" style="max-width: 100px" />
+                                    <td style=" width: 60%; text-align: left; border-right: 3px solid #000;">
+                                        <p style="font-size: 14px; font-weight: 600;">
+                                            Client
+                                        </p>
+                                        <p style="font-size: 12px; padding-left: 40px;">
+                                            {{ client($client_id)->company_name }}
+                                        </p>
+                                        <p style="font-size: 12px; padding-left: 40px;">
+                                            {{ client($client_id)->address }}</p>
+                                        <p
+                                            style="font-size: 14px; text-transform: uppercase; text-align: center; font-weight: 600; padding-left: 40px; padding-top: 4px; padding-bottom: 4px; border-top: 3px  solid #000">
+                                            CONCRETE
+                                            TEST RESULTS SUMMARY</p>
                                     </td>
-                                    <td style="width: 30%; ">
-                                        <p style="font-size: 14px; text-align: right;">
-                                            {{ $office_address }}<br>
+                                    <td style=" width: 50%; text-align: left; border-right: 0px solid #000;">
+                                        <table style="width: 100%; border-collapse: collapse;">
+                                            <tr>
+                                                <td class="td-padding-left" style="border-bottom: 1px solid #000;">
+                                                    <p style="font-size: 10px;">
+                                                        Contact ID
+                                                    </p>
+                                                    <p style="font-size: 12px;">
+                                                        {{ $contactid }}
+                                                    </p>
+                                                </td>
+                                                <td class="td-padding-left"
+                                                    style="border-bottom: 1px solid #000; border-left: 2px solid #000;">
+                                                    <p style="font-size: 10px;">
+                                                        Region
+                                                    </p>
+                                                    <p style="font-size: 12px;">
+                                                        {{ $region }}
+                                                    </p>
+                                                </td>
+                                                <td class="td-padding-left"
+                                                    style="border-bottom: 1px solid #000; border-left: 2px solid #000;">
+                                                    <p style="font-size: 10px;">
+                                                        Date Submitted
+                                                    </p>
+                                                    <p style="font-size: 12px;">
+                                                        {{ \Carbon\Carbon::parse($break_date_d)->format('m/d/Y') }}
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="td-padding-left" colspan="3"
+                                                    style="border-bottom: 2px solid #000;">
+                                                    <p style="font-size: 10px;">
+                                                        Project No.
+                                                    </p>
+                                                    <p style="font-size: 12px;">
+                                                        {{ $project_number }}
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="td-padding-left" colspan="3">
+                                                    <p style="font-size: 10px;">
+                                                        Project location
+                                                    </p>
+                                                    <p style="font-size: 12px;">
+                                                        {{ $project_location }}
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div
+                        style=" margin-top: 5px; border-top: 3px solid #000; border-right: 3px solid #000; border-bottom: 0px solid #000; border-left: 3px solid #000;">
+                        <table style="width: 100%; border-collapse: collapse;">
+                            <tbody>
+                                <tr>
+                                    <td class="td-padding-left"
+                                        style=" text-align: left; border-right: 3px solid #000;">
+                                        <p style="font-size: 10px;">
+                                            Item
+                                        </p>
+                                        <p style="font-size: 12px;">
+                                            {{ $item }}
+                                        </p>
+                                    </td>
+                                    <td class="td-padding-left"
+                                        style=" text-align: left; border-right: 2px solid #000;">
+                                        <p style="font-size: 10px;">
+                                            Class
+                                        </p>
+                                        <p style="font-size: 12px;">
+                                            {{ $class_name }}
+                                        </p>
+                                    </td>
+                                    <td class="td-padding-left"
+                                        style="text-align: left; border-right: 2px solid #000;">
+                                        <p style="font-size: 10px;">
+                                            Design mix no.
+                                        </p>
+                                        <p style="font-size: 12px;">
+                                            {{ $design_mix_no }}
+                                        </p>
+                                    </td>
+                                    <td class="td-padding-left"
+                                        style=" text-align: left; border-right: 2px solid #000;">
+                                        <p style="font-size: 10px;">
+                                            Batch plant
+                                        </p>
+                                        <p style="font-size: 12px;">
+                                            {{ $batch_plant }}
+                                        </p>
+                                    </td>
+                                    <td class="td-padding-left"
+                                        style=" text-align: left; border-right: 2px solid #000;">
+                                        <p style="font-size: 10px; ">
+                                            Supplier
+                                        </p>
+                                        <p style="font-size: 12px;">
+                                            {{ $supplier }}
                                         </p>
                                     </td>
                                 </tr>
-                            </table>
-                        </div>
-
-                        <div
-                            style="margin-top: 2px; border-top: 3px solid #000; border-right: 3px solid #000; border-bottom: 3px solid #000; border-left: 3px solid #000;">
-                            <table style="width: 100%; border-collapse: collapse;">
-                                <tbody>
-                                    <tr>
-                                        <td
-                                            style=" width: 60%; text-align: left; border-right: 3px solid #000;">
-                                            <p style="font-size: 14px; font-weight: 600;">
-                                                Client
-                                            </p>
-                                            <p style="font-size: 12px; padding-left: 40px;">
-                                                {{ $client_company_name }}
-                                            </p>
-                                            <p style="font-size: 12px; padding-left: 40px;">
-                                                {{ $client_address }}</p>
-                                            <p
-                                                style="font-size: 14px; text-transform: uppercase; text-align: center; font-weight: 600; padding-left: 40px; padding-top: 4px; padding-bottom: 4px; border-top: 3px  solid #000">
-                                                CONCRETE
-                                                TEST RESULTS SUMMARY</p>
-                                        </td>
-                                        <td style=" width: 50%; text-align: left; border-right: 0px solid #000;">
-                                            <table style="width: 100%; border-collapse: collapse;">
-                                                <tr>
-                                                    <td class="td-padding-left"
-                                                        style="border-bottom: 1px solid #000;">
-                                                        <p style="font-size: 10px;">
-                                                            Contact ID
-                                                        </p>
-                                                        <p style="font-size: 12px;">
-                                                            {{ $contactid }}
-                                                        </p>
-                                                    </td>
-                                                    <td class="td-padding-left"
-                                                        style="border-bottom: 1px solid #000; border-left: 2px solid #000;">
-                                                        <p style="font-size: 10px;">
-                                                            Region
-                                                        </p>
-                                                        <p style="font-size: 12px;">
-                                                            {{ $region }}
-                                                        </p>
-                                                    </td>
-                                                    <td class="td-padding-left"
-                                                        style="border-bottom: 1px solid #000; border-left: 2px solid #000;">
-                                                        <p style="font-size: 10px;">
-                                                            Date Submitted
-                                                        </p>
-                                                        <p style="font-size: 12px;">
-                                                            {{ \Carbon\Carbon::parse($break_date_d)->format('m/d/Y') }}
-                                                        </p>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="td-padding-left" colspan="3"
-                                                        style="border-bottom: 2px solid #000;">
-                                                        <p style="font-size: 10px;">
-                                                            Project No.
-                                                        </p>
-                                                        <p style="font-size: 12px;">
-                                                            {{ $project_number }}
-                                                        </p>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="td-padding-left" colspan="3">
-                                                        <p style="font-size: 10px;">
-                                                            Project location
-                                                        </p>
-                                                        <p style="font-size: 12px;">
-                                                            {{ $project_location }}
-                                                        </p>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-
-                        <div
-                            style=" margin-top: 5px; border-top: 3px solid #000; border-right: 3px solid #000; border-bottom: 0px solid #000; border-left: 3px solid #000;">
-                            <table style="width: 100%; border-collapse: collapse;">
-                                <tbody>
-                                    <tr>
-                                        <td class="td-padding-left"
-                                            style=" text-align: left; border-right: 3px solid #000;">
-                                            <p style="font-size: 10px;">
-                                                Item
-                                            </p>
-                                            <p style="font-size: 12px;">
-                                                {{ $item }}
-                                            </p>
-                                        </td>
-                                        <td class="td-padding-left"
-                                            style=" text-align: left; border-right: 2px solid #000;">
-                                            <p style="font-size: 10px;">
-                                                Class
-                                            </p>
-                                            <p style="font-size: 12px;">
-                                                {{ $class_name }}
-                                            </p>
-                                        </td>
-                                        <td class="td-padding-left"
-                                            style="text-align: left; border-right: 2px solid #000;">
-                                            <p style="font-size: 10px;">
-                                                Design mix no.
-                                            </p>
-                                            <p style="font-size: 12px;">
-                                                {{ $design_mix_no }}
-                                            </p>
-                                        </td>
-                                        <td class="td-padding-left"
-                                            style=" text-align: left; border-right: 2px solid #000;">
-                                            <p style="font-size: 10px;">
-                                                Batch plant
-                                            </p>
-                                            <p style="font-size: 12px;">
-                                                {{ $batch_plant }}
-                                            </p>
-                                        </td>
-                                        <td class="td-padding-left"
-                                            style=" text-align: left; border-right: 2px solid #000;">
-                                            <p style="font-size: 10px; ">
-                                                Supplier
-                                            </p>
-                                            <p style="font-size: 12px;">
-                                                {{ $supplier }}
-                                            </p>
-                                        </td>
-                                    </tr>
-                                    <tr style="border-top: 2px solid #000;">
-                                        <td class="td-padding-left"
-                                            style=" text-align: left; border-right: 3px solid #000;">
-                                            <p style="font-size: 10px;">
-                                                Structure
-                                            </p>
-                                            <p style="font-size: 12px;">
-                                                {{ $structure }}
-                                            </p>
-                                        </td>
-                                        <td class="td-padding-left"
-                                            style=" text-align: left; border-right: 2px solid #000;" colspan="2">
-                                            <p style="font-size: 10px;">
-                                                Slump
-                                            </p>
-                                            <p style="font-size: 12px; text-align: center;">
-                                                {{ number_format($slump, 2) }} <span>inches maximum</span>
-                                            </p>
-                                        </td>
-                                        <td class="td-padding-left"
-                                            style="text-align: left; border-right: 2px solid #000;">
-                                            <p style="font-size: 10px;">
-                                                % total air
-                                            </p>
-                                            <p style="font-size: 12px; text-align: center;">
-                                                {{ number_format($inches_max, 2) }} to
-                                                {{ number_format($inches_min, 2) }}
-                                            </p>
-                                        </td>
-                                        <td class="td-padding-left"
-                                            style=" text-align: left; border-right: 2px solid #000;">
-                                            <p style="font-size: 10px;">
-                                                Compressive strength
-                                            </p>
-                                            <p style="font-size: 12px; text-align: center;">
-                                                {{ $project_location }} psi
-                                            </p>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-
-                        </div>
-
-                        <div style=" margin-top: 0px;">
-
-                            <table style="width: 100%; border-collapse: collapse;">
-                                <tr>
-                                    <th
-                                        style="width: 18%; text-align: center; border-left: 3px solid #000; border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 3px solid #000;">
-                                        <p style="font-size: 12px;">
-                                            Test # and Location
+                                <tr style="border-top: 2px solid #000;">
+                                    <td class="td-padding-left"
+                                        style=" text-align: left; border-right: 3px solid #000;">
+                                        <p style="font-size: 10px;">
+                                            Structure
                                         </p>
-                                    </th>
-                                    <th
-                                        style="text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 3px solid #000;">
                                         <p style="font-size: 12px;">
-                                            Date Placed
+                                            {{ $structure }}
                                         </p>
-                                    </th>
-                                    <th
-                                        style="text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 3px solid #000;">
-                                        <p style="font-size: 12px;">
-                                            Ticket no.
-                                        </p>
-                                    </th>
-                                    <th style="border-left: 1px solid #000; border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 3px solid #000;"
-                                        colspan="2">
-                                        <p style="font-size: 12px;">
-                                            Cu. Yd./Cu. M.
-                                        </p>
-                                        <p style="font-size: 8px;"><span
-                                                style="border-right: 2px solid #000; padding-right: 5px;">Batched</span>
-                                            <span style="padding-left: 5px;">Placed</span>
-                                        </p>
-                                    </th>
-                                    <th
-                                        style="text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 3px solid #000;">
-                                        <p style="font-size: 12px;">
-                                            Temp.
-                                        </p>
-                                    </th>
-                                    <th
-                                        style="text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 3px solid #000;">
-                                        <p style="font-size: 12px;">
+                                    </td>
+                                    <td class="td-padding-left"
+                                        style=" text-align: left; border-right: 2px solid #000;" colspan="2">
+                                        <p style="font-size: 10px;">
                                             Slump
                                         </p>
-                                    </th>
-                                    <th
-                                        style="text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 3px solid #000;">
-                                        <p style="font-size: 12px;">
+                                        <p style="font-size: 12px; text-align: center;">
+                                            {{ number_format($slump, 2) }} <span>inches maximum</span>
+                                        </p>
+                                    </td>
+                                    <td class="td-padding-left"
+                                        style="text-align: left; border-right: 2px solid #000;">
+                                        <p style="font-size: 10px;">
                                             % total air
                                         </p>
-                                    </th>
-                                    <th
-                                        style="text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 3px solid #000;">
-                                        <p style="font-size: 12px;">
-                                            Unit mass
+                                        <p style="font-size: 12px; text-align: center;">
+                                            {{ number_format($inches_max, 2) }} to
+                                            {{ number_format($inches_min, 2) }}
                                         </p>
-                                    </th>
-                                    <th
-                                        style="text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 3px solid #000;">
-                                        <p style="font-size: 12px;">
-                                            Yield
+                                    </td>
+                                    <td class="td-padding-left"
+                                        style=" text-align: left; border-right: 2px solid #000;">
+                                        <p style="font-size: 10px;">
+                                            Compressive strength
                                         </p>
-                                    </th>
-                                    <th
-                                        style="text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 3px solid #000;">
-                                        <p style="font-size: 12px;">
-                                            Calculated w/c ratio
+                                        <p style="font-size: 12px; text-align: center;">
+                                            {{ $project_location }} psi
                                         </p>
-                                    </th>
-                                    <th
-                                        style="text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 3px solid #000;">
-                                        <p style="font-size: 12px;">
-                                            Cylinders cast F.S. no.
-                                        </p>
-                                    </th>
-                                    <th
-                                        style="text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 3px solid #000;">
-                                        <p style="font-size: 12px;">
-                                            Set No.
-                                        </p>
-                                    </th>
-                                    <th
-                                        style="text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-right: 3px solid #000; border-bottom: 3px solid #000;">
-                                        <p style="font-size: 12px;">
-                                            S. E.
-                                        </p>
-                                    </th>
+                                    </td>
                                 </tr>
-                                @if ($location_test_a)
-                                    <tr>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 3px solid #000; border-top: 3px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $location_test_a }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ \Carbon\Carbon::parse($date_placed_a)->format('m/d/Y') }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $ticket_no_a }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $batched_a }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $placed_a }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $temp_a }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $slump_a }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $total_air_a }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $unit_mass_a }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $yeild_a }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $calculated_wc_ratio_a }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $cylinders_cast_fs_no_a }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $set_no_a }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 1px solid #000; border-right: 3px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $se_a }}
-                                            </p>
-                                        </td>
-                                    </tr>
-                                @endif
+                            </tbody>
+                        </table>
 
-                                @if ($location_test_b)
-                                    <tr>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 3px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $location_test_b }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ \Carbon\Carbon::parse($date_placed_b)->format('m/d/Y') }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $ticket_no_b }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $batched_b }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $placed_b }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $temp_b }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $slump_b }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $total_air_b }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $unit_mass_b }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $yeild_b }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $calculated_wc_ratio_b }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $cylinders_cast_fs_no_b }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $set_no_b }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 3px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $se_b }}
-                                            </p>
-                                        </td>
-                                    </tr>
-                                @endif
+                    </div>
 
-                                @if ($location_test_c)
-                                    <tr>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 3px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $location_test_c }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ \Carbon\Carbon::parse($date_placed_c)->format('m/d/Y') }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $ticket_no_c }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $batched_c }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $placed_c }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $temp_c }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $slump_c }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $total_air_c }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $unit_mass_c }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $yeild_c }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $calculated_wc_ratio_c }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $cylinders_cast_fs_no_c }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $set_no_c }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 3px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $se_c }}
-                                            </p>
-                                        </td>
-                                    </tr>
-                                @endif
+                    <div style=" margin-top: 0px;">
 
-                                @if ($location_test_d)
-                                    <tr>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 3px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $location_test_d }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ \Carbon\Carbon::parse($date_placed_d)->format('m/d/Y') }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $ticket_no_d }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $batched_d }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $placed_d }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $temp_d }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $slump_d }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $total_air_d }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $unit_mass_d }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $yeild_d }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $calculated_wc_ratio_d }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $cylinders_cast_fs_no_d }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $set_no_d }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 3px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $se_d }}
-                                            </p>
-                                        </td>
-                                    </tr>
-                                @endif
-
-                                @if ($location_test_e)
-                                    <tr>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 3px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $location_test_e }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ \Carbon\Carbon::parse($date_placed_e)->format('m/d/Y') }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $ticket_no_e }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $batched_e }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $placed_e }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $temp_e }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $slump_e }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $total_air_e }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $unit_mass_e }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $yeild_e }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $calculated_wc_ratio_e }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $cylinders_cast_fs_no_e }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $set_no_e }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 3px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $se_e }}
-                                            </p>
-                                        </td>
-                                    </tr>
-                                @endif
-
-                                @if ($location_test_f)
-                                    <tr>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 3px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $location_test_f }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ \Carbon\Carbon::parse($date_placed_f)->format('m/d/Y') }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $ticket_no_f }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $batched_f }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $placed_f }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $temp_f }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $slump_f }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $total_air_f }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $unit_mass_f }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $yeild_f }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $calculated_wc_ratio_f }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $cylinders_cast_fs_no_f }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $set_no_f }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 3px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $se_f }}
-                                            </p>
-                                        </td>
-                                    </tr>
-                                @endif
-
-                                @if ($location_test_g)
-                                    <tr>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 3px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $location_test_g }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ \Carbon\Carbon::parse($date_placed_g)->format('m/d/Y') }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $ticket_no_g }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $batched_g }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $placed_g }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $temp_g }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $slump_g }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $total_air_g }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $unit_mass_g }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $yeild_g }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $calculated_wc_ratio_g }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $cylinders_cast_fs_no_g }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $set_no_g }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 3px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $se_g }}
-                                            </p>
-                                        </td>
-                                    </tr>
-                                @endif
-
-                                @if ($location_test_h)
-                                    <tr>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 3px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $location_test_h }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ \Carbon\Carbon::parse($date_placed_h)->format('m/d/Y') }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $ticket_no_h }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $batched_h }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $placed_h }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $temp_h }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $slump_h }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $total_air_h }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $unit_mass_h }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $yeild_h }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $calculated_wc_ratio_h }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $cylinders_cast_fs_no_h }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $set_no_h }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 3px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $se_h }}
-                                            </p>
-                                        </td>
-                                    </tr>
-                                @endif
-
-                                @if ($location_test_i)
-                                    <tr>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 3px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $location_test_i }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ \Carbon\Carbon::parse($date_placed_i)->format('m/d/Y') }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $ticket_no_i }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $batched_i }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $placed_i }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $temp_i }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $slump_i }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $total_air_i }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $unit_mass_i }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $yeild_i }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $calculated_wc_ratio_i }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $cylinders_cast_fs_no_i }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $set_no_i }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 3px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $se_i }}
-                                            </p>
-                                        </td>
-                                    </tr>
-                                @endif
-
-                                @if ($location_test_j)
-                                    <tr>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 3px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $location_test_j }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ \Carbon\Carbon::parse($date_placed_j)->format('m/d/Y') }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $ticket_no_j }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $batched_j }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $placed_j }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $temp_j }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $slump_j }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $total_air_j }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $unit_mass_j }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $yeild_j }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $calculated_wc_ratio_j }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $cylinders_cast_fs_no_j }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $set_no_j }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 3px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $se_j }}
-                                            </p>
-                                        </td>
-                                    </tr>
-                                @endif
-
-                                @if ($location_test_k)
-                                    <tr>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 3px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $location_test_k }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ \Carbon\Carbon::parse($date_placed_k)->format('m/d/Y') }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $ticket_no_k }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $batched_k }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $placed_k }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $temp_k }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $slump_k }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $total_air_k }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $unit_mass_k }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $yeild_k }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $calculated_wc_ratio_k }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $cylinders_cast_fs_no_k }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $set_no_k }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 3px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $se_k }}
-                                            </p>
-                                        </td>
-                                    </tr>
-                                @endif
-
-                                @if ($location_test_l)
-                                    <tr>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 3px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $location_test_l }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ \Carbon\Carbon::parse($date_placed_l)->format('m/d/Y') }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $ticket_no_l }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $batched_l }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $placed_l }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $temp_l }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $slump_l }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $total_air_l }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $unit_mass_l }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $yeild_l }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $calculated_wc_ratio_l }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $cylinders_cast_fs_no_l }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $set_no_l }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 3px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $se_l }}
-                                            </p>
-                                        </td>
-                                    </tr>
-                                @endif
-
-                                @if ($location_test_m)
-                                    <tr>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 3px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $location_test_m }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ \Carbon\Carbon::parse($date_placed_m)->format('m/d/Y') }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $ticket_no_m }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $batched_m }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $placed_m }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $temp_m }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $slump_m }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $total_air_m }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $unit_mass_m }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $yeild_m }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $calculated_wc_ratio_m }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $cylinders_cast_fs_no_m }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $set_no_m }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 3px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $se_m }}
-                                            </p>
-                                        </td>
-                                    </tr>
-                                @endif
-
-                                @if ($location_test_n)
-                                    <tr>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 3px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $location_test_n }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ \Carbon\Carbon::parse($date_placed_n)->format('m/d/Y') }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $ticket_no_n }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $batched_n }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $placed_n }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $temp_n }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $slump_n }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $total_air_n }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $unit_mass_n }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $yeild_n }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $calculated_wc_ratio_n }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $cylinders_cast_fs_no_n }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $set_no_n }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 3px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $se_n }}
-                                            </p>
-                                        </td>
-                                    </tr>
-                                @endif
-
-                                @if ($location_test_o)
-                                    <tr>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 3px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $location_test_o }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ \Carbon\Carbon::parse($date_placed_o)->format('m/d/Y') }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $ticket_no_o }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $batched_o }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $placed_o }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $temp_o }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $slump_o }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $total_air_o }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $unit_mass_o }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $yeild_o }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $calculated_wc_ratio_o }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $cylinders_cast_fs_no_o }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $set_no_o }}
-                                            </p>
-                                        </td>
-                                        <td
-                                            style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 3px solid #000;">
-                                            <p style="font-size: 12px;">
-                                                {{ $se_o }}
-                                            </p>
-                                        </td>
-                                    </tr>
-                                @endif
-                            </table>
-                        </div>
-
-                        <div
-                            style="border-top: 0px solid #000; border-right: 0px solid #000; border-bottom: 3px solid #000; border-left: 3px solid #000;">
-                            <table style="width: 100%; border-collapse: collapse;">
+                        <table style="width: 100%; border-collapse: collapse;">
+                            <tr>
+                                <th
+                                    style="width: 18%; text-align: center; border-left: 3px solid #000; border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 3px solid #000;">
+                                    <p style="font-size: 12px;">
+                                        Test # and Location
+                                    </p>
+                                </th>
+                                <th
+                                    style="text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 3px solid #000;">
+                                    <p style="font-size: 12px;">
+                                        Date Placed
+                                    </p>
+                                </th>
+                                <th
+                                    style="text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 3px solid #000;">
+                                    <p style="font-size: 12px;">
+                                        Ticket no.
+                                    </p>
+                                </th>
+                                <th style="border-left: 1px solid #000; border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 3px solid #000;"
+                                    colspan="2">
+                                    <p style="font-size: 12px;">
+                                        Cu. Yd./Cu. M.
+                                    </p>
+                                    <p style="font-size: 8px;"><span
+                                            style="border-right: 2px solid #000; padding-right: 5px;">Batched</span>
+                                        <span style="padding-left: 5px;">Placed</span>
+                                    </p>
+                                </th>
+                                <th
+                                    style="text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 3px solid #000;">
+                                    <p style="font-size: 12px;">
+                                        Temp.
+                                    </p>
+                                </th>
+                                <th
+                                    style="text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 3px solid #000;">
+                                    <p style="font-size: 12px;">
+                                        Slump
+                                    </p>
+                                </th>
+                                <th
+                                    style="text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 3px solid #000;">
+                                    <p style="font-size: 12px;">
+                                        % total air
+                                    </p>
+                                </th>
+                                <th
+                                    style="text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 3px solid #000;">
+                                    <p style="font-size: 12px;">
+                                        Unit mass
+                                    </p>
+                                </th>
+                                <th
+                                    style="text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 3px solid #000;">
+                                    <p style="font-size: 12px;">
+                                        Yield
+                                    </p>
+                                </th>
+                                <th
+                                    style="text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 3px solid #000;">
+                                    <p style="font-size: 12px;">
+                                        Calculated w/c ratio
+                                    </p>
+                                </th>
+                                <th
+                                    style="text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 3px solid #000;">
+                                    <p style="font-size: 12px;">
+                                        Cylinders cast F.S. no.
+                                    </p>
+                                </th>
+                                <th
+                                    style="text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 3px solid #000;">
+                                    <p style="font-size: 12px;">
+                                        Set No.
+                                    </p>
+                                </th>
+                                <th
+                                    style="text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-right: 3px solid #000; border-bottom: 3px solid #000;">
+                                    <p style="font-size: 12px;">
+                                        S. E.
+                                    </p>
+                                </th>
+                            </tr>
+                            @if ($location_test_a)
                                 <tr>
-                                    <td class="td-padding-left"
-                                        style="text-align: left; border-right: 3px solid #000;">
-                                        <p style="font-size: 10px; padding-bottom: 10px; padding-top: 5px;">
-                                            Action taken to document deviations from specifications
-                                            (including quantities with price reduction calculations
-                                            attached).
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 3px solid #000; border-top: 3px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $location_test_a }}
                                         </p>
-                                        <p style="font-size: 12px; padding-bottom: 40px;">
-                                            {{ $remark }}
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ \Carbon\Carbon::parse($date_placed_a)->format('m/d/Y') }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $ticket_no_a }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $batched_a }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $placed_a }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $temp_a }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $slump_a }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $total_air_a }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $unit_mass_a }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $yeild_a }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $calculated_wc_ratio_a }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $cylinders_cast_fs_no_a }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $set_no_a }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 3px solid #000; border-bottom: 1px solid #000; border-right: 3px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $se_a }}
                                         </p>
                                     </td>
                                 </tr>
-                            </table>
-                        </div>
+                            @endif
 
-                        <div
-                            style="margin-top: 2px; border-top: 3px solid #000; border-right: 3px solid #000; border-bottom: 3px solid #000; border-left: 3px solid #000;">
-                            <table style="width: 100%; border-collapse: collapse;">
+                            @if ($location_test_b)
                                 <tr>
-                                    <td class="td-padding-left"
-                                        style="text-align: left; border-right: 3px solid #000;">
-                                        <p style="font-size: 10px; padding-bottom: 10px; padding-top: 5px;">
-                                            Tester (print name)
-                                        </p>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 3px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                                         <p style="font-size: 12px;">
-                                            {{ $tester }}
+                                            {{ $location_test_b }}
                                         </p>
                                     </td>
-                                    <td class="td-padding-left"
-                                        style="text-align: left; border-right: 3px solid #000;">
-                                        <p style="font-size: 10px; padding-bottom: 10px; padding-top: 5px;">
-                                            Title
-                                        </p>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                                         <p style="font-size: 12px;">
-                                            {{ $tester_title }}
+                                            {{ \Carbon\Carbon::parse($date_placed_b)->format('m/d/Y') }}
                                         </p>
                                     </td>
-                                    <td class="td-padding-left"
-                                        style="text-align: left; border-right: 3px solid #000;">
-                                        <p style="font-size: 10px; padding-bottom: 10px; padding-top: 5px;">
-                                            Approved by
-                                        </p>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                                         <p style="font-size: 12px;">
-                                            {{ $project_engineer }}
+                                            {{ $ticket_no_b }}
                                         </p>
                                     </td>
-                                    <td class="td-padding-left"
-                                        style="text-align: left; border-right: 3px solid #000;">
-                                        <p style="font-size: 10px; padding-bottom: 10px; padding-top: 5px;">
-                                            Signature
-                                        </p>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                                         <p style="font-size: 12px;">
-                                            {{ $signature }}
+                                            {{ $batched_b }}
                                         </p>
                                     </td>
-                                    <td class="td-padding-left" style="text-align: left;">
-                                        <p style="font-size: 10px; padding-bottom: 10px; padding-top: 5px;">
-                                            Title
-                                        </p>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
                                         <p style="font-size: 12px;">
-                                            {{ $title }}
+                                            {{ $placed_b }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $temp_b }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $slump_b }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $total_air_b }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $unit_mass_b }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $yeild_b }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $calculated_wc_ratio_b }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $cylinders_cast_fs_no_b }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $set_no_b }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 3px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $se_b }}
                                         </p>
                                     </td>
                                 </tr>
-                            </table>
-                        </div>
+                            @endif
 
+                            @if ($location_test_c)
+                                <tr>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 3px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $location_test_c }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ \Carbon\Carbon::parse($date_placed_c)->format('m/d/Y') }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $ticket_no_c }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $batched_c }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $placed_c }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $temp_c }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $slump_c }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $total_air_c }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $unit_mass_c }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $yeild_c }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $calculated_wc_ratio_c }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $cylinders_cast_fs_no_c }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $set_no_c }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 3px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $se_c }}
+                                        </p>
+                                    </td>
+                                </tr>
+                            @endif
+
+                            @if ($location_test_d)
+                                <tr>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 3px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $location_test_d }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ \Carbon\Carbon::parse($date_placed_d)->format('m/d/Y') }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $ticket_no_d }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $batched_d }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $placed_d }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $temp_d }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $slump_d }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $total_air_d }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $unit_mass_d }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $yeild_d }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $calculated_wc_ratio_d }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $cylinders_cast_fs_no_d }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $set_no_d }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 3px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $se_d }}
+                                        </p>
+                                    </td>
+                                </tr>
+                            @endif
+
+                            @if ($location_test_e)
+                                <tr>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 3px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $location_test_e }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ \Carbon\Carbon::parse($date_placed_e)->format('m/d/Y') }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $ticket_no_e }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $batched_e }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $placed_e }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $temp_e }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $slump_e }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $total_air_e }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $unit_mass_e }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $yeild_e }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $calculated_wc_ratio_e }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $cylinders_cast_fs_no_e }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $set_no_e }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 3px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $se_e }}
+                                        </p>
+                                    </td>
+                                </tr>
+                            @endif
+
+                            @if ($location_test_f)
+                                <tr>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 3px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $location_test_f }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ \Carbon\Carbon::parse($date_placed_f)->format('m/d/Y') }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $ticket_no_f }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $batched_f }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $placed_f }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $temp_f }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $slump_f }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $total_air_f }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $unit_mass_f }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $yeild_f }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $calculated_wc_ratio_f }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $cylinders_cast_fs_no_f }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $set_no_f }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 3px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $se_f }}
+                                        </p>
+                                    </td>
+                                </tr>
+                            @endif
+
+                            @if ($location_test_g)
+                                <tr>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 3px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $location_test_g }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ \Carbon\Carbon::parse($date_placed_g)->format('m/d/Y') }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $ticket_no_g }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $batched_g }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $placed_g }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $temp_g }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $slump_g }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $total_air_g }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $unit_mass_g }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $yeild_g }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $calculated_wc_ratio_g }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $cylinders_cast_fs_no_g }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $set_no_g }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 3px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $se_g }}
+                                        </p>
+                                    </td>
+                                </tr>
+                            @endif
+
+                            @if ($location_test_h)
+                                <tr>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 3px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $location_test_h }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ \Carbon\Carbon::parse($date_placed_h)->format('m/d/Y') }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $ticket_no_h }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $batched_h }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $placed_h }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $temp_h }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $slump_h }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $total_air_h }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $unit_mass_h }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $yeild_h }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $calculated_wc_ratio_h }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $cylinders_cast_fs_no_h }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $set_no_h }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 3px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $se_h }}
+                                        </p>
+                                    </td>
+                                </tr>
+                            @endif
+
+                            @if ($location_test_i)
+                                <tr>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 3px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $location_test_i }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ \Carbon\Carbon::parse($date_placed_i)->format('m/d/Y') }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $ticket_no_i }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $batched_i }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $placed_i }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $temp_i }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $slump_i }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $total_air_i }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $unit_mass_i }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $yeild_i }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $calculated_wc_ratio_i }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $cylinders_cast_fs_no_i }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $set_no_i }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 3px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $se_i }}
+                                        </p>
+                                    </td>
+                                </tr>
+                            @endif
+
+                            @if ($location_test_j)
+                                <tr>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 3px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $location_test_j }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ \Carbon\Carbon::parse($date_placed_j)->format('m/d/Y') }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $ticket_no_j }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $batched_j }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $placed_j }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $temp_j }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $slump_j }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $total_air_j }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $unit_mass_j }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $yeild_j }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $calculated_wc_ratio_j }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $cylinders_cast_fs_no_j }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $set_no_j }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 3px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $se_j }}
+                                        </p>
+                                    </td>
+                                </tr>
+                            @endif
+
+                            @if ($location_test_k)
+                                <tr>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 3px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $location_test_k }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ \Carbon\Carbon::parse($date_placed_k)->format('m/d/Y') }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $ticket_no_k }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $batched_k }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $placed_k }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $temp_k }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $slump_k }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $total_air_k }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $unit_mass_k }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $yeild_k }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $calculated_wc_ratio_k }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $cylinders_cast_fs_no_k }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $set_no_k }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 3px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $se_k }}
+                                        </p>
+                                    </td>
+                                </tr>
+                            @endif
+
+                            @if ($location_test_l)
+                                <tr>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 3px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $location_test_l }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ \Carbon\Carbon::parse($date_placed_l)->format('m/d/Y') }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $ticket_no_l }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $batched_l }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $placed_l }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $temp_l }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $slump_l }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $total_air_l }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $unit_mass_l }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $yeild_l }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $calculated_wc_ratio_l }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $cylinders_cast_fs_no_l }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $set_no_l }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 3px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $se_l }}
+                                        </p>
+                                    </td>
+                                </tr>
+                            @endif
+
+                            @if ($location_test_m)
+                                <tr>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 3px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $location_test_m }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ \Carbon\Carbon::parse($date_placed_m)->format('m/d/Y') }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $ticket_no_m }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $batched_m }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $placed_m }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $temp_m }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $slump_m }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $total_air_m }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $unit_mass_m }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $yeild_m }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $calculated_wc_ratio_m }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $cylinders_cast_fs_no_m }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $set_no_m }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 3px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $se_m }}
+                                        </p>
+                                    </td>
+                                </tr>
+                            @endif
+
+                            @if ($location_test_n)
+                                <tr>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 3px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $location_test_n }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ \Carbon\Carbon::parse($date_placed_n)->format('m/d/Y') }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $ticket_no_n }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $batched_n }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $placed_n }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $temp_n }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $slump_n }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $total_air_n }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $unit_mass_n }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $yeild_n }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $calculated_wc_ratio_n }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $cylinders_cast_fs_no_n }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $set_no_n }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 3px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $se_n }}
+                                        </p>
+                                    </td>
+                                </tr>
+                            @endif
+
+                            @if ($location_test_o)
+                                <tr>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 3px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $location_test_o }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ \Carbon\Carbon::parse($date_placed_o)->format('m/d/Y') }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $ticket_no_o }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $batched_o }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $placed_o }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $temp_o }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $slump_o }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $total_air_o }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $unit_mass_o }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $yeild_o }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $calculated_wc_ratio_o }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $cylinders_cast_fs_no_o }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 0px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $set_no_o }}
+                                        </p>
+                                    </td>
+                                    <td
+                                        style="padding: 3px 2px; text-align: center; border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; border-right: 3px solid #000;">
+                                        <p style="font-size: 12px;">
+                                            {{ $se_o }}
+                                        </p>
+                                    </td>
+                                </tr>
+                            @endif
+                        </table>
+                    </div>
+
+                    <div
+                        style="border-top: 0px solid #000; border-right: 0px solid #000; border-bottom: 3px solid #000; border-left: 3px solid #000;">
+                        <table style="width: 100%; border-collapse: collapse;">
+                            <tr>
+                                <td class="td-padding-left" style="text-align: left; border-right: 3px solid #000;">
+                                    <p style="font-size: 10px; padding-bottom: 10px; padding-top: 5px;">
+                                        Action taken to document deviations from specifications
+                                        (including quantities with price reduction calculations
+                                        attached).
+                                    </p>
+                                    <p style="font-size: 12px; padding-bottom: 40px;">
+                                        {{ $remark }}
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div
+                        style="margin-top: 2px; border-top: 3px solid #000; border-right: 3px solid #000; border-bottom: 3px solid #000; border-left: 3px solid #000;">
+                        <table style="width: 100%; border-collapse: collapse;">
+                            <tr>
+                                <td class="td-padding-left" style="text-align: left; border-right: 3px solid #000;">
+                                    <p style="font-size: 10px; padding-bottom: 10px; padding-top: 5px;">
+                                        Tester (print name)
+                                    </p>
+                                    <p style="font-size: 12px;">
+                                        {{ $tester }}
+                                    </p>
+                                </td>
+                                <td class="td-padding-left" style="text-align: left; border-right: 3px solid #000;">
+                                    <p style="font-size: 10px; padding-bottom: 10px; padding-top: 5px;">
+                                        Title
+                                    </p>
+                                    <p style="font-size: 12px;">
+                                        {{ $tester_title }}
+                                    </p>
+                                </td>
+                                <td class="td-padding-left" style="text-align: left; border-right: 3px solid #000;">
+                                    <p style="font-size: 10px; padding-bottom: 10px; padding-top: 5px;">
+                                        Approved by
+                                    </p>
+                                    <p style="font-size: 12px;">
+                                        {{ $project_engineer }}
+                                    </p>
+                                </td>
+                                <td class="td-padding-left" style="text-align: left; border-right: 3px solid #000;">
+                                    <p style="font-size: 10px; padding-bottom: 10px; padding-top: 5px;">
+                                        Signature
+                                    </p>
+                                    <p style="font-size: 12px;">
+                                        {{ $signature }}
+                                    </p>
+                                </td>
+                                <td class="td-padding-left" style="text-align: left;">
+                                    <p style="font-size: 10px; padding-bottom: 10px; padding-top: 5px;">
+                                        Title
+                                    </p>
+                                    <p style="font-size: 12px;">
+                                        {{ $title }}
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-de-secondary btn-sm"
