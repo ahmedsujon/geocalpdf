@@ -12,6 +12,7 @@
     <!-- App favicon -->
     <link rel="shortcut icon" href="{{ asset('assets/images/favicon.png') }}">
     {{-- <link href="{{ asset('assets/plugins/datatables/datatable.css') }}" rel="stylesheet" type="text/css" /> --}}
+
     <!-- App css -->
     <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
@@ -30,7 +31,7 @@
 </head>
 
 <body id="body" class="dark-sidebar" data-editor="DecoupledDocumentEditor" data-revision-history="false">
-    
+
     @livewire('layouts.inc.sidebar')
     @livewire('layouts.inc.navbar')
     <div class="page-wrapper">
@@ -43,6 +44,10 @@
     </div>
 
     <!-- Javascript  -->
+
+
+
+
     <script src="{{ asset('assets/js/jquery-3.6.0.min.js') }}"></script>
     <script src="{{ asset('assets/plugins/chartjs/chart.js') }}"></script>
     <script src="{{ asset('assets/plugins/lightpicker/litepicker.js') }}"></script>
@@ -56,7 +61,7 @@
 
     <script src="{{ asset('assets/js/simple-datatables.js') }}"></script>
     <script src="{{ asset('assets/js/datatable.init.js') }}"></script>
-    
+
     {{-- sweet alert 2 --}}
     <script src="{{ asset('assets/js/sweetalert2.js') }}"></script>
 
@@ -69,7 +74,7 @@
     <script src="{{ asset('assets/js/app.js') }}"></script>
 
     <script>
-        $(document).ready(function(){
+        $(document).ready(function() {
             toastr.options = {
                 "progressBar": true,
                 "positionClass": "toast-bottom-left"
@@ -87,34 +92,32 @@
         window.addEventListener('error', event => {
             toastr.error(event.detail.message);
         });
-        
-        @if(Session::has('success'))
-            toastr.options =
-                {
-                    "progressBar" : true,
-                    "positionClass": "toast-bottom-left"
-                }
-                toastr.success("{{ session('success') }}");
+
+        @if (Session::has('success'))
+            toastr.options = {
+                "progressBar": true,
+                "positionClass": "toast-bottom-left"
+            }
+            toastr.success("{{ session('success') }}");
         @endif
 
 
         //SWL
         window.addEventListener('show-delete-confirmation', event => {
             Swal.fire({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, Delete !'
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, Delete !'
             }).then((result) => {
                 if (result.isConfirmed) {
                     Livewire.emit('deleteConfirmed')
                 }
             })
         });
-
     </script>
 
 

@@ -8,6 +8,7 @@ use Livewire\Component;
 use App\Models\ConcreteTestResult;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Storage;
 
 class EditConcreteTestResultComponent extends Component
 {
@@ -61,6 +62,8 @@ class EditConcreteTestResultComponent extends Component
 
         $tester, $tester_title, $project_engineer, $signature, $title, $file_id,
         $remark, $publish_status, $status, $created_by, $responsible_person = [];
+
+       public $client_company_name, $client_address, $break_date_d;
 
     // ============== get project information ========
     public $selected_project_ids = [];
@@ -628,7 +631,24 @@ class EditConcreteTestResultComponent extends Component
         $data->tester = $this->tester;
         $data->tester_title = $this->tester_title;
         $data->project_engineer = $this->project_engineer;
-        $data->signature = $this->signature;
+
+
+        $folderPath = 'profile_images';
+        // Extract the base64 image data from the request
+        $image_parts = explode(';base64,', $this->signature);
+        // Determine the image type
+        $image_type_aux = explode('uploads/signature/', $image_parts[0]);
+        $image_type = $image_type_aux[1];
+        // Decode the base64 image data
+        $image_base64 = base64_decode($image_parts[1]);
+        // Generate a unique filename for the image
+        $fileName = uniqid() . '_' . time() . '.' . $image_type;
+        // Store the image using Laravel's storage system
+        Storage::put($folderPath . '/' . $fileName, $image_base64);
+
+        // $data->signature = $this->signature;
+
+
         $data->title = $this->title;
 
         $data->remark = $this->remark;
