@@ -145,6 +145,7 @@ class EditCdotComponent extends Component
         $this->user_id = $cdot_file->user_id;
         $this->weather = $cdot_file->weather;
         $this->office_address = $cdot_file->office_address;
+        $this->created_by = $cdot_file->created_by;
 
         $this->geocal_project_num = $cdot_file->geocal_project_num;
         $this->geocal_project_name = $cdot_file->geocal_project_name;
@@ -335,7 +336,7 @@ class EditCdotComponent extends Component
         $data->item_number = $this->item_number;
         $data->moisture_std_count = $this->moisture_std_count;
         $data->moisture_equations = $this->moisture_equations;
-        // COLORADO DEPARTMENT OF TRANSPORTATION	
+        // COLORADO DEPARTMENT OF TRANSPORTATION
         $data->project_no = $this->project_no;
         $data->region = $this->region;
         $data->contract_id = $this->contract_id;

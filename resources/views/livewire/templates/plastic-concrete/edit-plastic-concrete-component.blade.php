@@ -1906,11 +1906,10 @@
                                             <a href="{{ route('template.plastic.concrete.list') }}"
                                                 class="btn btn-primary submit_btn">Back to List</a>
                                             <button type="submit"
-                                                class="btn btn-success submit_btn">{!! loadingState(
-                                                    'updateData',
-                                                    'Save
-                                                                                                                                                                                                and Send',
-                                                ) !!}</button>
+                                                class="btn btn-success submit_btn">{!! loadingState('updateData', 'Save and Send') !!}</button>
+                                            <button type="button" data-bs-toggle="modal"
+                                                data-bs-target="#bd-example-modal-xl" class="btn btn-secondary"><i
+                                                    class="mdi mdi-file-pdf-box"></i>Preview Report</button>
                                         </form>
                                     </div>
                                 </div>
@@ -1921,7 +1920,22 @@
             </div>
         </div>
     </div>
-</div>
+    <!--start modal-->
+    <div class="modal fade bd-example-modal-xl" id="bd-example-modal-xl" tabindex="-1" role="dialog"
+        aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-de-secondary btn-sm"
+                        data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end modal-->
 </div>
 
 @push('scripts')

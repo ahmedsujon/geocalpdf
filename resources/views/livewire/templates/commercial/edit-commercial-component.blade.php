@@ -2529,7 +2529,6 @@
                                 font-size: 14px;
                                 font-weight: normal;">
                                         {{ user($created_by)->name }}</h6>
-
                                     <h6
                                         style="
                             font-size: 14px;
