@@ -2950,8 +2950,6 @@
                                         class="btn btn-primary submit_btn">{!! loadingState("updateData('unpublish')", 'Save as Draft') !!}</button>
                                     <button type="button" wire:click.prevent='updateData("publish")'
                                         class="btn btn-success submit_btn">{!! loadingState("updateData('publish')", 'Save and Send') !!}</button>
-                                    {{-- <a href="{{ route('invoice.concrete-test-results-pdf', ['id' => $file_id]) }}"
-                                        class="btn btn-success submit_btn">View Report</a> --}}
                                     <button type="button" data-bs-toggle="modal"
                                         data-bs-target="#bd-example-modal-xl" class="btn btn-secondary"><i
                                             class="mdi mdi-file-pdf-box"></i>Preview Report</button>
@@ -2971,7 +2969,7 @@
         aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl" role="document">
             <div class="modal-content">
-                
+
                 <div class="modal-body">
 <div style="
 padding: 5px 20px 10px 30px;">

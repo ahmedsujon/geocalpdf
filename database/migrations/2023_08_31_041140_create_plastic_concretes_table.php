@@ -89,7 +89,7 @@ class CreatePlasticConcretesTable extends Migration
             $table->text('dimensions_a')->nullable();
             $table->text('cyls_cast_a')->nullable();
             $table->text('age_days_a')->nullable();
-            
+
             $table->text('test_no_b')->nullable();
             $table->text('ticket_no_b')->nullable();
             $table->text('truck_no_b')->nullable();
@@ -162,6 +162,7 @@ class CreatePlasticConcretesTable extends Migration
             $table->text('cyls_cast_d')->nullable();
             $table->text('age_days_d')->nullable();
 
+            $table->string('signature')->nullable();
             $table->timestamps();
         });
     }

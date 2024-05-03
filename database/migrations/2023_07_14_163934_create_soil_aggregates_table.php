@@ -35,7 +35,7 @@ class CreateSoilAggregatesTable extends Migration
             $table->string('item_number')->nullable();
             $table->string('moisture_count')->nullable();
             $table->string('moisture_equation')->nullable();
-            
+
             $table->string('compaction_requirement')->nullable();
             $table->string('requirement_plus')->nullable();
             $table->string('requirement_minus')->nullable();
@@ -101,7 +101,7 @@ class CreateSoilAggregatesTable extends Migration
             $table->text('comments_b')->nullable();
             $table->text('location_b')->nullable();
             $table->text('material_b')->nullable();
-            
+
             $table->text('test_num_c')->nullable();
             $table->text('result_proctor_id_c')->nullable();
             $table->text('test_dept_c')->nullable();
@@ -149,6 +149,8 @@ class CreateSoilAggregatesTable extends Migration
             $table->text('comments_f')->nullable();
             $table->text('location_f')->nullable();
             $table->text('material_f')->nullable();
+
+            $table->text('signature')->nullable();
             $table->timestamps();
         });
     }

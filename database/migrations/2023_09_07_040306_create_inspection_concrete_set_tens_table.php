@@ -244,6 +244,7 @@ class CreateInspectionConcreteSetTensTable extends Migration
             $table->text('specified_strength_i')->nullable();
             $table->text('type_fracture_i')->nullable();
             $table->text('person_performing_i')->nullable();
+            $table->string('signature')->nullable();
             $table->timestamps();
         });
     }

@@ -155,6 +155,7 @@ class CreateCompressiveStrengthsTable extends Migration
             $table->string('status')->nullable();
             $table->string('publish_status')->nullable();
             $table->string('remark')->nullable();
+            $table->string('signature')->nullable();
             $table->string('created_by')->nullable();
             $table->string('responsible_person')->nullable();
             $table->timestamps();

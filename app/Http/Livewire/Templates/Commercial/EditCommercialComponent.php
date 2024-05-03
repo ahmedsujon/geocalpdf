@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Mail;
 
 class EditCommercialComponent extends Component
 {
-    public $client_id, $client_name, $project_id, $project_number, $date, $user_id, $weather, $office_address, $troxler, $other, $model, $serial_no,
+    public $client_id, $created_by, $client_name, $project_id, $project_number, $date, $user_id, $weather, $office_address, $troxler, $other, $model, $serial_no,
         $density_count, $item_number, $moisture_count, $moisture_equation, $test_mode, $test_method, $compaction_requirement_min, $compaction_requirement_max, $general_location, $remark, $status, $report_status, $file_id, $responsible_person = [];
 
     public $mix_a_id, $supplier_a, $plant_a, $mix_type_a, $max_theoretical_density_a, $max_theoretical_specific_gravity_a,
@@ -58,6 +58,7 @@ class EditCommercialComponent extends Component
         $this->compaction_requirement_max = $file->compaction_requirement_max;
         $this->general_location = $file->general_location;
         $this->remark = $file->remark;
+        $this->created_by = $file->created_by;
 
         // mix information
         $this->mix_a_id = $file->mix_a_id;
@@ -662,7 +663,7 @@ class EditCommercialComponent extends Component
         if ($this->status == 'sentToClient') {
             $data->send_to_client = 1;
         }
-        
+
         $data->remark = $this->remark;
         $data->created_by = Auth::user()->id;
         $data->responsible_person = json_encode($this->responsible_person);
