@@ -40,8 +40,8 @@ class InvoiceController extends Controller
         $data->client_company_name = client($data->client_id)->company_name;
 
         $pdf = Pdf::loadView('pdf.concrete-test-results', compact('data'))->setPaper('a4', 'landscape');
-        return $pdf->stream('concrete-test-results-summary-local-agency.pdf');
-        // return $pdf->download('concrete-test-results-summary-local-agency.pdf');
+        // return $pdf->stream('concrete-test-results-summary-local-agency.pdf');
+        return $pdf->download('concrete-test-results-summary-local-agency.pdf');
     }
 
 
