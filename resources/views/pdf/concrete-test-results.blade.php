@@ -26,7 +26,7 @@
 
 <body>
     <div style="
-    padding: 5px 55px 10px 55px;">
+    padding: 0px 55px 10px 55px;">
         <div style="padding: 20px;">
             <table style="width: 100%; border-collapse: collapse;">
                 <tr>
@@ -1640,7 +1640,7 @@
                             (including quantities with price reduction calculations
                             attached).
                         </p>
-                        <p style="font-size: 12px; padding-bottom: 40px;">
+                        <p style="font-size: 12px; padding-bottom: 30px;">
                             {{ $data->remark }}
                         </p>
                     </td>
@@ -1680,14 +1680,9 @@
                         <p style="font-size: 10px; padding-bottom: 10px; padding-top: 5px;">
                             Signature
                         </p>
-                        {{-- <p style="font-size: 12px; padding-bottom: 5px;">
-                            {{ $data->signature }}
-                        </p> --}}
-
                         <p style="font-size: 12px; padding-bottom: 5px; text-align: center;">
-                            <img style="height: 70px; width: 200px;" src="{{ $data->signature }}">
+                            <img style="height: 50px; width: 180px;" src="{{ $data->signature }}">
                         </p>
-
                     </td>
                     <td class="td-padding-left width20" style="text-align: left;">
                         <p style="font-size: 10px; padding-bottom: 10px; padding-top: 5px;">
@@ -1700,25 +1695,6 @@
                 </tr>
             </table>
         </div>
-
-        {{-- <div style="">
-            <table style="width: 100%; padding-top: 5px;">
-                <tr>
-                    <td style="text-align: left;">
-                        <p style="font-size: 12px;">Distribution: original - Project
-                            file</p>
-                    </td>
-                    <td style="text-align: center;">
-                        <p style="font-size: 12px;">Previous editions are obsolete and
-                            may not be used.</p>
-                    </td>
-                    <td style="text-align: right;">
-                        <p style="font-size: 12px;">Form #156 4/14</p>
-                    </td>
-                </tr>
-            </table>
-        </div> --}}
     </div>
 </body>
-
 </html>
