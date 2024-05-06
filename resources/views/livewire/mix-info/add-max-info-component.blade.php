@@ -118,27 +118,6 @@
                                     @enderror
                                 </div>
                             </div>
-
-                            <div class="row" wire:ignore>
-                                <div class="col-12">
-                                    <label for="inputSignature" class="form-label">Signature</label>
-                                    <div class="text-center w-100">
-                                        <canvas id="signature-pad" class="signature-pad" width=700 height=300></canvas>
-                                        <br>
-                                        <button type="button"
-                                            style="background: white; color: black; font-size: 13px; margin-right: 5px; padding: 3px 10px; border-radius: 3px;"
-                                            class="btn btn-secondary" id="save_sign">Save</button>
-                                        <button type="button"
-                                            style="background: white; color: black; font-size: 13px; padding: 3px 10px; border-radius: 3px;"
-                                            class="btn btn-secondary" id="clear_sign">Clear</button>
-                                        <br>
-                                        <span id="signature_status"></span>
-                                    </div>
-
-                                    <input id="signature" name="signature" />
-                                </div>
-                            </div>
-
                             <div class="row mt-5 mb-3">
                                 <div class="col-sm-12 text-end">
                                     <button type="submit" class="btn btn-primary">
@@ -153,29 +132,3 @@
         </form>
     </div>
 </div>
-
-@push('scripts')
-    <script src="https://cdn.jsdelivr.net/npm/signature_pad@4.1.7/dist/signature_pad.umd.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            var signaturePad = new SignaturePad(document.getElementById('signature-pad'), {
-                backgroundColor: '#ddd',
-                penColor: 'rgb(0, 0, 0)'
-            });
-            var saveButton = document.getElementById('save_sign');
-            var cancelButton = document.getElementById('clear_sign');
-
-            saveButton.addEventListener('click', function(event) {
-                var data = signaturePad.toDataURL('image/png');
-
-                $('#signature_status').html('<p style="color: green;">Signature added</p>');
-                $('#signature').val(data);
-                @this.set('signature', data);
-            });
-
-            cancelButton.addEventListener('click', function(event) {
-                signaturePad.clear();
-            });
-        });
-    </script>
-@endpush

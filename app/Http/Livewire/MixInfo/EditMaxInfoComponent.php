@@ -31,7 +31,7 @@ class EditMaxInfoComponent extends Component
             'max_theoretical_specific_gravity' => 'required',
         ]);
     }
-    
+
     public function updateData()
     {
         $this->validate([

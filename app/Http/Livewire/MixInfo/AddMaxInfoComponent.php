@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Storage;
 
 class AddMaxInfoComponent extends Component
 {
-    public $mix_id, $supplier, $plant, $mix_type, $max_theoretical_density, $max_theoretical_specific_gravity, $signature;
+    public $mix_id, $supplier, $plant, $mix_type, $max_theoretical_density, $max_theoretical_specific_gravity;
 
     public function updated($fields)
     {
@@ -41,30 +41,8 @@ class AddMaxInfoComponent extends Component
         $proctor->mix_type = $this->mix_type;
         $proctor->max_theoretical_density = $this->max_theoretical_density;
         $proctor->max_theoretical_specific_gravity = $this->max_theoretical_specific_gravity;
-        $proctor->signature = $this->signature;
-
-
-        // $folderPath = public_path('uploads/');
-        // $signature = $this->signature;
-        // // Ensure folder exists, otherwise create it
-        // File::ensureDirectoryExists($folderPath);
-        // // Extract image type and base64 data
-        // list(, $image_data) = explode(';', $signature);
-        // list(, $image_base64) = explode(',', $image_data);
-        // // Decode base64 data
-        // $image = base64_decode($image_base64);
-        // // Generate unique filename
-        // $filename = uniqid() . '.' . explode('/', mime_content_type($signature))[1];
-        // // Write image data to file
-        // if (file_put_contents($folderPath . $filename, $image) !== false) {
-        //     return back()->with('success', 'Image uploaded successfully.');
-        // } else {
-        //     return back()->with('error', 'Failed to upload image.');
-        // }
-
 
         $proctor->save();
-
         session()->flash('success', 'Mix Info added successfully');
         return redirect()->route('mixInfo.list');
         $this->resetInputs();

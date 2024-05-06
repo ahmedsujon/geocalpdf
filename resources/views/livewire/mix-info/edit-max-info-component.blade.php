@@ -116,5 +116,4 @@ Add Proctor
 </div>
 
 @push('scripts')
-<script></script>
 @endpush
