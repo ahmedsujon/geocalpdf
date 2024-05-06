@@ -21,9 +21,7 @@
 </head>
 
 <body>
-    <div style="
-    padding: 15px 25px 25px 25px;
-  ">
+    <div style="padding: 15px 25px 25px 25px;">
 
         <table style="width: 100%; border-collapse: collapse;">
             <tr>

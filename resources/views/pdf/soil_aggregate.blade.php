@@ -18,13 +18,11 @@
 </head>
 
 <body>
-    <div style="
-    padding: 15px 25px 25px 25px;
-  ">
+    <div style="padding: 15px 25px 25px 25px;">
         <table style="width: 100%; border-collapse: collapse;">
             <tr>
                 <td style="width: 28%; text-align: left;">
-        
+
                     <h4 style="font-size: 14px; font-weight: 700;">
                         Client
                     </h4>
@@ -867,7 +865,7 @@
                 <td
                     style="width: 28%; padding-top: 10px; padding-left: 10px; padding-right: 10px; padding-bottom: 20px;">
                     <h6
-                        style="padding-bottom: 4px; font-weight: normal; 
+                        style="padding-bottom: 4px; font-weight: normal;
                 font-size: 14px;
                 font-weight: normal;">
                         @if ($data->observation == 'Part Time Observation')
@@ -881,7 +879,7 @@
                     </h6>
 
                     <h6
-                        style="padding-bottom: 4px; font-weight: normal; 
+                        style="padding-bottom: 4px; font-weight: normal;
                 font-size: 14px;
                 font-weight: normal;">
                         @if ($data->observation == 'Full Time Observation')

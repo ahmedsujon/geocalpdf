@@ -2,6 +2,20 @@
 @endpush
 <div>
     <style>
+        .modal-body h4 {
+            line-height: normal;
+            margin: 0;
+        }
+        .modal-body h3 {
+            line-height: normal;
+            margin: 0;
+        }
+
+        p {
+            padding-bottom: 0 !important;
+            margin-bottom: 0 !important;
+        }
+
         #customSwitchSuccess {
             font-size: 25px;
         }
@@ -361,8 +375,7 @@
 
                             <div class="input-group">
                                 <span class="input-group-text width28">Density Standard Count:</span>
-                                <input type="number" class="form-control form-color"
-                                    wire:model="density_count">
+                                <input type="number" class="form-control form-color" wire:model="density_count">
                                 @error('density_count')
                                     <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                 @enderror
@@ -1696,10 +1709,10 @@
                                 <a href="{{ route('template.commercial') }}"
                                     class="btn btn-primary submit_btn">Back to List</a>
                                 <button type="submit"
-                                    class="btn btn-success submit_btn">{!! loadingState(
-                                        'updateData',
-                                        'Save and Send',
-                                    ) !!}</button>
+                                    class="btn btn-success submit_btn">{!! loadingState('updateData', 'Save and Send') !!}</button>
+                                <button type="button" data-bs-toggle="modal"
+                                    data-bs-target="#bd-example-modal-xl" class="btn btn-secondary"><i
+                                        class="mdi mdi-file-pdf-box"></i>Preview Report</button>
                             </form>
                         </div>
                     </div>
@@ -1707,7 +1720,847 @@
             </div>
         </div>
     </div>
-</div>
+
+    <!--start modal-->
+    <div class="modal fade bd-example-modal-xl" id="bd-example-modal-xl" tabindex="-1" role="dialog"
+        aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div style="
+                    padding: 15px 25px 25px 25px;
+                  ">
+                        <table style="width: 100%; border-collapse: collapse;">
+                            <tr>
+                                <td style="width: 28%; text-align: left;">
+
+                                    <h4 style="font-size: 14px; font-weight: 700;">
+                                        Client
+                                    </h4>
+                                    <h4 style="font-size: 14px; font-weight: 400;">
+                                        {{ client($client_id)->company_name }}
+                                    </h4>
+                                    <h4 style="font-size: 14px; font-weight: 400;">
+                                        {{ client($client_id)->address }}
+                                    </h4>
+                                </td>
+                                <td style="width: 40%; text-align: center;">
+                                    <img src="https://i0.wp.com/geocal.us/wp-content/uploads/2019/05/logo-new.png"
+                                        alt="logo" style="max-width: 100px" />
+                                    <h4 style="font-size: 13px; font-weight: 700; padding-top: 5px">
+                                        {{ $office_address }}
+                                    </h4>
+                                </td>
+                                <td style="width: 28%; text-align: left;">
+                                    <h4 style="font-size: 14px; font-weight: 500;">
+                                        Date Cast: <span style="font-size: 14px; font-weight: 400;">222</span>
+                                    </h4>
+                                    <h4 style="font-size: 14px; font-weight: 500;">
+                                        Project No: <span
+                                            style="font-size: 14px; font-weight: 400;">{{ $project_number }}</span>
+                                    </h4>
+                                    <h4 style="font-size: 14px; font-weight: 500;">
+                                        Project Name: <span
+                                            style="font-size: 14px; font-weight: 400;">{{ project($project_id)->name }}</span>
+                                    </h4>
+                                    <h4 style="font-size: 14px; font-weight: 500;">
+                                        Weather: <span
+                                            style="font-size: 14px; font-weight: 400;">{{ $weather }}</span>
+                                    </h4>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <div
+                            style="margin-top: 5px; border-top: 3px solid #000; border-right: 3px solid #000; border-bottom: 1px solid #000; border-left: 3px solid #000;">
+                            <table style="width: 100%; border-collapse: collapse; border: none">
+                                <caption
+                                    style="text-align:left; font-size: 14px; font-weight: 500; padding: 0; letter-spacing: -1px; background-color: #689A3D; border: none">
+                                    TESTING DETAILS</caption>
+                                <tr>
+                                    <td style="width: 60%;">
+                                        <h4 style="font-size: 14px; font-weight: 400;">
+                                            Tested by:
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ user($user_id)->technician }}
+                                        </h4>
+                                        <h4 style="font-size: 14px; font-weight: 400">Date Tested:
+                                            &nbsp;&nbsp;&nbsp;&nbsp;{{ \Carbon\Carbon::parse($date)->format('m/d/Y') }}
+                                        </h4>
+                                        <h4 style="font-size: 14px; font-weight: 400">Test Method:
+                                            &nbsp;&nbsp;&nbsp;&nbsp;{{ $test_method }}</h4>
+                                        <h4 style="font-size: 14px; font-weight: 400">Gauge Make: &nbsp;&nbsp;
+                                            {{ $troxler }}</h4>
+                                        <h4 style="font-size: 14px; font-weight: 400">Gauge Model:
+                                            &nbsp;&nbsp;{{ $model }}</h4>
+                                    </td>
+                                    <td style="width: 40%;">
+                                        <h4 style="font-size: 14px; font-weight: 400">Gauge SN:
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ $serial_no }}
+                                        </h4>
+                                        <h4 style="font-size: 14px; font-weight: 400">Standard Density Count:
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ $density_count }}</h4>
+                                        <h4 style="font-size: 14px; font-weight: 400">Standard Moisture Count:
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ $moisture_count }}</h4>
+
+                                        <h4 style="font-size: 14px; font-weight: 400">Test Mode:
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ $test_mode }}
+                                        </h4>
+
+                                        <h4 style="font-size: 14px; font-weight: 400">Compaction Requirements:
+                                            &nbsp;&nbsp;
+                                            {{ $compaction_requirement_min }} to
+                                            {{ $compaction_requirement_max }} %</h4>
+                                    </td>
+
+                                </tr>
+
+                            </table>
+                        </div>
+
+                        <div
+                            style="padding-top: 5px; border-top: 1px solid #000; border-right: 2px solid #000; border-bottom: 0px solid #000; border-left: 2px solid #000;">
+                            <table style="width: 100%; border-collapse: collapse;">
+                                <caption
+                                    style="text-align:left; font-size: 14px; font-weight: 500; padding: 0; letter-spacing: -1px; background-color: #689A3D; border-top: 2px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
+                                    MIX INFORMATION</caption>
+                                <tr style="text-align: center">
+                                    <th style="padding: 5px 6px 5px 6px; border: 1px solid #000">
+                                        <h3 style="font-size: 14px; font-weight: 500">Mix ID</h3>
+                                    </th>
+                                    <th style="padding: 5px 6px 5px 6px; border: 1px solid #000">
+                                        <h3 style="font-size: 14px; font-weight: 500">Supplier</h3>
+                                    </th>
+                                    <th style="padding: 5px 6px 5px 6px; border: 1px solid #000">
+                                        <h3 style="font-size: 14px; font-weight: 500">Plant</h3>
+                                    </th>
+                                    <th style="padding: 5px 6px 5px 6px; border: 1px solid #000">
+                                        <h3 style="font-size: 14px; font-weight: 500">Mix Type </h3>
+                                    </th>
+                                    <th style="padding: 5px 6px 5px 6px; border: 1px solid #000">
+                                        <h3 style="font-size: 14px; font-weight: 500">Max Density, (lb/ft<sup>3</sup>)
+                                        </h3>
+                                    </th>
+                                </tr>
+                                @if ($mix_a_id)
+                                    <tr style="text-align: center">
+                                        <td style="padding: 4px 6px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $mix_a_id }}
+                                            </h4>
+                                        </td>
+                                        <td style="padding: 4px 6px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400">{{ $supplier_a }}
+                                            </h4>
+                                        </td>
+                                        <td style="padding: 4px 6px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $plant_a }}</h4>
+                                        </td>
+                                        <td style="padding: 4px 6px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $mix_type_a }}
+                                            </h4>
+                                        </td>
+                                        <td style="padding: 4px 6px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $max_theoretical_density_a }}</h4>
+                                        </td>
+                                    </tr>
+                                @endif
+                                @if ($mix_b_id)
+                                    <tr style="text-align: center">
+                                        <td style="padding: 4px 6px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $mix_b_id }}
+                                            </h4>
+                                        </td>
+                                        <td style="padding: 4px 6px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400">{{ $supplier_b }}
+                                            </h4>
+                                        </td>
+                                        <td style="padding: 4px 6px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $plant_b }}</h4>
+                                        </td>
+                                        <td style="padding: 4px 6px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $mix_type_b }}
+                                            </h4>
+                                        </td>
+                                        <td style="padding: 4px 6px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $max_theoretical_density_b }}</h4>
+                                        </td>
+                                    </tr>
+                                @endif
+                                @if ($mix_c_id)
+                                    <tr style="text-align: center">
+                                        <td style="padding: 4px 6px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $mix_c_id }}
+                                            </h4>
+                                        </td>
+                                        <td style="padding: 4px 6px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400">{{ $supplier_c }}
+                                            </h4>
+                                        </td>
+                                        <td style="padding: 4px 6px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $plant_c }}
+                                            </h4>
+                                        </td>
+                                        <td style="padding: 4px 6px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $mix_type_c }}
+                                            </h4>
+                                        </td>
+                                        <td style="padding: 4px 6px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $max_theoretical_density_c }}</h4>
+                                        </td>
+                                    </tr>
+                                @endif
+                                @if ($mix_d_id)
+                                    <tr style="text-align: center">
+                                        <td style="padding: 4px 6px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $mix_d_id }}
+                                            </h4>
+                                        </td>
+                                        <td style="padding: 4px 6px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400">{{ $supplier_d }}
+                                            </h4>
+                                        </td>
+                                        <td style="padding: 4px 6px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $plant_d }}
+                                            </h4>
+                                        </td>
+                                        <td style="padding: 4px 6px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $mix_type_d }}
+                                            </h4>
+                                        </td>
+                                        <td style="padding: 4px 6px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $max_theoretical_density_d }}</h4>
+                                        </td>
+                                    </tr>
+                                @endif
+                                @if ($mix_e_id)
+                                    <tr style="text-align: center">
+                                        <td style="padding: 4px 6px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $mix_e_id }}
+                                            </h4>
+                                        </td>
+                                        <td style="padding: 4px 6px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400">{{ $supplier_e }}
+                                            </h4>
+                                        </td>
+                                        <td style="padding: 4px 6px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $plant_e }}
+                                            </h4>
+                                        </td>
+                                        <td style="padding: 4px 6px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $mix_type_e }}
+                                            </h4>
+                                        </td>
+                                        <td style="padding: 4px 6px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $max_theoretical_density_e }}</h4>
+                                        </td>
+                                    </tr>
+                                @endif
+                            </table>
+                        </div>
+
+
+                        <div
+                            style="padding-top: 5px; border-top: 1px solid #000; border-right: 2px solid #000; border-bottom: 0px solid #000; border-left: 2px solid #000;">
+                            <table style="width: 100%; border-collapse: collapse;">
+                                <caption
+                                    style="text-align:left; font-size: 14px; font-weight: 500; padding: 0; letter-spacing: -1px; background-color: #689A3D; border-top: 2px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
+                                    TEST RESULTS</caption>
+                                <tr>
+                                    <th width="5%" style="border: 1px solid #000">
+                                        <h3 style="font-size: 14px; font-weight: 500">Test No.</h3>
+                                    </th>
+                                    <th width="15%" style="border: 1px solid #000">
+                                        <h3 style="font-size: 14px; font-weight: 500">Mix ID</h3>
+                                    </th>
+                                    <th width="10%" style="border: 1px solid #000">
+                                        <h3 style="font-size: 14px; font-weight: 500">Test Count Period</h3>
+                                    </th>
+                                    <th width="10%" style="border: 1px solid #000">
+                                        <h3 style="font-size: 14px; font-weight: 500">Material <br> (Base, <br>
+                                            Surface, <br> Bit Agg)</h3>
+                                    </th>
+                                    <th width="5%" style="border: 1px solid #000">
+                                        <h3 style="font-size: 14px; font-weight: 500">Lift</h3>
+                                    </th>
+                                    <th width="10%" style="border: 1px solid #000">
+                                        <h3 style="font-size: 14px; font-weight: 500">Layer Thickness (in)</h3>
+                                    </th>
+                                    <th width="10%" style="border: 1px solid #000">
+                                        <h3 style="font-size: 14px; font-weight: 500">Maximum <br> Theo. <br> Density
+                                            (pcf)</h3>
+                                    </th>
+                                    <th width="10%" style="border: 1px solid #000">
+                                        <h3 style="font-size: 14px; font-weight: 500">In Situ <br> Density
+                                            (lb/ft<sup>3</sup>)</h3>
+                                    </th>
+                                    <th width="15%" style="border: 1px solid #000">
+                                        <h3 style="font-size: 14px; font-weight: 500">% Relative Compaction</h3>
+                                    </th>
+                                    <th width="10%" style="border: 1px solid #000">
+                                        <h3 style="font-size: 14px; font-weight: 500">Pass / Fail</h3>
+                                    </th>
+                                </tr>
+                                @if ($result_mix_id_a)
+                                    <tr>
+                                        <td style="border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $test_no_a }}
+                                            </h4>
+                                        </td>
+                                        <td style="border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $result_mix_id_a }}
+                                            </h4>
+                                        </td>
+                                        <td style="border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $count_period_a }}
+                                            </h4>
+                                        </td>
+                                        <td style="border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $material_a }}
+                                            </h4>
+                                        </td>
+                                        <td style="border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $lift_a }}</h4>
+                                        </td>
+                                        <td style="border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $layer_thickness_a }}</h4>
+                                        </td>
+                                        <td style="border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $max_theory_density_a }}</h4>
+                                        </td>
+                                        <td style="border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $field_wet_density_a }}</h4>
+                                        </td>
+                                        <td style="border: 1px solid #000">
+                                            <h4
+                                                style="font-size: 14px; font-weight: 400; text-align:center; @if ($compaction_requirement_max < $relative_compaction_a || $compaction_requirement_min > $relative_compaction_a) color: red; @endif">
+                                                {{ $relative_compaction_a }}</h4>
+                                        </td>
+                                        @if ($pass_fail_a == 'Pass')
+                                            <td style="border: 1px solid #000">
+                                                <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                    {{ $pass_fail_a }}
+                                                </h4>
+                                            </td>
+                                        @else
+                                            <td style="border: 1px solid #000">
+                                                <h4
+                                                    style="font-size: 14px; font-weight: 400; text-align:center; color: red">
+                                                    {{ $pass_fail_a }}
+                                                </h4>
+                                            </td>
+                                        @endif
+                                    </tr>
+                                @endif
+                                @if ($result_mix_id_b)
+                                    <tr>
+                                        <td style="border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $test_no_b }}
+                                            </h4>
+                                        </td>
+                                        <td style="border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $result_mix_id_b }}
+                                            </h4>
+                                        </td>
+                                        <td style="border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $count_period_b }}
+                                            </h4>
+                                        </td>
+                                        <td style="border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $material_b }}
+                                            </h4>
+                                        </td>
+                                        <td style="border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $lift_b }}</h4>
+                                        </td>
+                                        <td style="border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $layer_thickness_b }}</h4>
+                                        </td>
+                                        <td style="border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $max_theory_density_b }}</h4>
+                                        </td>
+                                        <td style="border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $field_wet_density_b }}</h4>
+                                        </td>
+                                        <td style="border: 1px solid #000">
+                                            <h4
+                                                style="font-size: 14px; font-weight: 400; text-align:center; @if ($compaction_requirement_max < $relative_compaction_b || $compaction_requirement_min > $relative_compaction_b) color: red; @endif">
+                                                {{ $relative_compaction_b }}</h4>
+                                        </td>
+                                        @if ($pass_fail_b == 'Pass')
+                                            <td style="border: 1px solid #000">
+                                                <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                    {{ $pass_fail_b }}
+                                                </h4>
+                                            </td>
+                                        @else
+                                            <td style="border: 1px solid #000">
+                                                <h4
+                                                    style="font-size: 14px; font-weight: 400; text-align:center; color:red;">
+                                                    {{ $pass_fail_b }}
+                                                </h4>
+                                            </td>
+                                        @endif
+                                    </tr>
+                                @endif
+                                @if ($result_mix_id_c)
+                                    <tr>
+                                        <td style="border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $test_no_c }}
+                                            </h4>
+                                        </td>
+                                        <td style="border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $result_mix_id_c }}
+                                            </h4>
+                                        </td>
+                                        <td style="border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $count_period_c }}
+                                            </h4>
+                                        </td>
+                                        <td style="border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $material_c }}
+                                            </h4>
+                                        </td>
+                                        <td style="border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $lift_c }}</h4>
+                                        </td>
+                                        <td style="border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $layer_thickness_c }}</h4>
+                                        </td>
+                                        <td style="border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $max_theory_density_c }}</h4>
+                                        </td>
+                                        <td style="border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $field_wet_density_c }}</h4>
+                                        </td>
+                                        <td style="border: 1px solid #000">
+                                            <h4
+                                                style="font-size: 14px; font-weight: 400; text-align:center; @if ($compaction_requirement_max < $relative_compaction_c || $compaction_requirement_min > $relative_compaction_c) color: red; @endif">
+                                                {{ $relative_compaction_c }}</h4>
+                                        </td>
+                                        @if ($pass_fail_c == 'Pass')
+                                            <td style="border: 1px solid #000">
+                                                <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                    {{ $pass_fail_c }}
+                                                </h4>
+                                            </td>
+                                        @else
+                                            <td style="border: 1px solid #000">
+                                                <h4
+                                                    style="font-size: 14px; font-weight: 400; text-align:center; color:red;">
+                                                    {{ $pass_fail_c }}
+                                                </h4>
+                                            </td>
+                                        @endif
+                                    </tr>
+                                @endif
+                                @if ($result_mix_id_d)
+                                    <tr>
+                                        <td style="border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $test_no_d }}
+                                            </h4>
+                                        </td>
+                                        <td style="border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $result_mix_id_d }}
+                                            </h4>
+                                        </td>
+                                        <td style="border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $count_period_d }}
+                                            </h4>
+                                        </td>
+                                        <td style="border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $material_d }}
+                                            </h4>
+                                        </td>
+                                        <td style="border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $lift_d }}</h4>
+                                        </td>
+                                        <td style="border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $layer_thickness_d }}</h4>
+                                        </td>
+                                        <td style="border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $max_theory_density_d }}</h4>
+                                        </td>
+                                        <td style="border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $field_wet_density_d }}</h4>
+                                        </td>
+                                        <td style="border: 1px solid #000">
+                                            <h4
+                                                style="font-size: 14px; font-weight: 400; text-align:center; @if ($compaction_requirement_max < $relative_compaction_d || $compaction_requirement_min > $relative_compaction_d) color: red; @endif">
+                                                {{ $relative_compaction_d }}</h4>
+                                        </td>
+                                        @if ($pass_fail_d == 'Pass')
+                                            <td style="border: 1px solid #000">
+                                                <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                    {{ $pass_fail_d }}
+                                                </h4>
+                                            </td>
+                                        @else
+                                            <td style="border: 1px solid #000">
+                                                <h4
+                                                    style="font-size: 14px; font-weight: 400; text-align:center; color:red;">
+                                                    {{ $pass_fail_d }}
+                                                </h4>
+                                            </td>
+                                        @endif
+                                    </tr>
+                                @endif
+                                @if ($result_mix_id_e)
+                                    <tr>
+                                        <td style="border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $test_no_e }}
+                                            </h4>
+                                        </td>
+                                        <td style="border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $result_mix_id_e }}
+                                            </h4>
+                                        </td>
+                                        <td style="border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $count_period_e }}
+                                            </h4>
+                                        </td>
+                                        <td style="border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $material_e }}
+                                            </h4>
+                                        </td>
+                                        <td style="border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $lift_e }}</h4>
+                                        </td>
+                                        <td style="border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $layer_thickness_e }}</h4>
+                                        </td>
+                                        <td style="border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $max_theory_density_e }}</h4>
+                                        </td>
+                                        <td style="border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $field_wet_density_e }}</h4>
+                                        </td>
+                                        <td style="border: 1px solid #000">
+                                            <h4
+                                                style="font-size: 14px; font-weight: 400; text-align:center; @if ($compaction_requirement_max < $relative_compaction_e || $compaction_requirement_min > $relative_compaction_e) color: red; @endif">
+                                                {{ $relative_compaction_e }}</h4>
+                                        </td>
+                                        @if ($pass_fail_e == 'Pass')
+                                            <td style="border: 1px solid #000">
+                                                <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                    {{ $pass_fail_e }}
+                                                </h4>
+                                            </td>
+                                        @else
+                                            <td style="border: 1px solid #000">
+                                                <h4
+                                                    style="font-size: 14px; font-weight: 400; text-align:center; color:red;">
+                                                    {{ $pass_fail_e }}
+                                                </h4>
+                                            </td>
+                                        @endif
+                                    </tr>
+                                @endif
+                                @if ($result_mix_id_f)
+                                    <tr>
+                                        <td style="border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $test_no_f }}
+                                            </h4>
+                                        </td>
+                                        <td style="border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $result_mix_id_f }}
+                                            </h4>
+                                        </td>
+                                        <td style="border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $count_period_f }}
+                                            </h4>
+                                        </td>
+                                        <td style="border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $material_f }}
+                                            </h4>
+                                        </td>
+                                        <td style="border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $lift_f }}</h4>
+                                        </td>
+                                        <td style="border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $layer_thickness_f }}</h4>
+                                        </td>
+                                        <td style="border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $max_theory_density_f }}</h4>
+                                        </td>
+                                        <td style="border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $field_wet_density_f }}</h4>
+                                        </td>
+                                        <td style="border: 1px solid #000">
+                                            <h4
+                                                style="font-size: 14px; font-weight: 400; text-align:center; @if ($compaction_requirement_max < $relative_compaction_f || $compaction_requirement_min > $relative_compaction_f) color: red; @endif">
+                                                {{ $relative_compaction_f }}</h4>
+                                        </td>
+                                        @if ($pass_fail_f == 'Pass')
+                                            <td style="border: 1px solid #000">
+                                                <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                    {{ $pass_fail_f }}
+                                                </h4>
+                                            </td>
+                                        @else
+                                            <td style="border: 1px solid #000">
+                                                <h4
+                                                    style="font-size: 14px; font-weight: 400; text-align:center; color:red;">
+                                                    {{ $pass_fail_f }}
+                                                </h4>
+                                            </td>
+                                        @endif
+                                    </tr>
+                                @endif
+                            </table>
+                        </div>
+                        <div
+                            style="padding-top: 5px; border-top: 1px solid #000; border-right: 3px solid #000; border-bottom: 0px solid #000; border-left: 3px solid #000;">
+                            <table style="width: 100%; border-collapse: collapse;">
+                                <caption
+                                    style="text-align:left; font-size: 14px; font-weight: 500; padding: 0; letter-spacing: -1px; background-color: #689A3D; border-top: 2px solid #000; border-right: 1px solid #000; border-bottom: 2px solid #000; border-left: 1px solid #000;">
+                                    LOCATION</caption>
+                                <tr>
+                                    <td>
+                                        <h4 style="padding: 1px; font-size: 14px; font-weight: 400">
+                                            <b> General Location: </b> {{ $general_location }}
+                                        </h4>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <table
+                            style="width: 100%; border-collapse: collapse; border-top: 0px solid #000; border-right: 3px solid #000; border-bottom: 0px solid #000; border-left: 3px solid #000;">
+                            <tr>
+                                <th style="padding: 10px 6px 5px 6px; border: 1px solid #000">
+                                    <h3 style="font-size: 14px; font-weight: 700">Test No.</h3>
+                                </th>
+                                <th style="padding: 10px 6px 5px 6px; text-align: left; border: 1px solid #000">
+                                    <h3 style="font-size: 14px; font-weight: 700">Location</h3>
+                                </th>
+                            </tr>
+                            @if ($test_no_a)
+                                <tr>
+                                    <td style="padding: 4px 6px; border: 1px solid #000; width: 50px">
+                                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                            {{ $test_no_a }}</h4>
+                                    </td>
+                                    <td style="padding: 4px 6px; border: 1px solid #000">
+                                        <h4 style="font-size: 14px; font-weight: 400">{{ $location_a }}</h4>
+                                    </td>
+                                </tr>
+                            @endif
+                            @if ($test_no_b)
+                                <tr>
+                                    <td style="padding: 4px 6px; border: 1px solid #000; width: 50px">
+                                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                            {{ $test_no_b }}</h4>
+                                    </td>
+                                    <td style="padding: 4px 6px; border: 1px solid #000">
+                                        <h4 style="font-size: 14px; font-weight: 400">{{ $location_b }}</h4>
+                                    </td>
+                                </tr>
+                            @endif
+                            @if ($test_no_c)
+                                <tr>
+                                    <td style="padding: 4px 6px; border: 1px solid #000; width: 50px">
+                                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                            {{ $test_no_c }}</h4>
+                                    </td>
+                                    <td style="padding: 4px 6px; border: 1px solid #000">
+                                        <h4 style="font-size: 14px; font-weight: 400">{{ $location_c }}</h4>
+                                    </td>
+                                </tr>
+                            @endif
+                            @if ($test_no_d)
+                                <tr>
+                                    <td style="padding: 4px 6px; border: 1px solid #000; width: 50px">
+                                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                            {{ $test_no_d }}</h4>
+                                    </td>
+                                    <td style="padding: 4px 6px; border: 1px solid #000">
+                                        <h4 style="font-size: 14px; font-weight: 400">{{ $location_d }}</h4>
+                                    </td>
+                                </tr>
+                            @endif
+                            @if ($test_no_e)
+                                <tr>
+                                    <td style="padding: 4px 6px; border: 1px solid #000; width: 50px">
+                                        <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                            {{ $test_no_e }}</h4>
+                                    </td>
+                                    <td style="padding: 4px 6px; border: 1px solid #000">
+                                        <h4 style="font-size: 14px; font-weight: 400">{{ $location_e }}</h4>
+                                    </td>
+                                </tr>
+                            @endif
+                        </table>
+
+                        <div
+                            style="padding-top: 5px; border-top: 1px solid #000; border-right: 3px solid #000; border-bottom: 1px solid #000; border-left: 3px solid #000;">
+                            <table style="width: 100%; border-collapse: collapse;">
+                                <caption
+                                    style="text-align:left; font-size: 14px; font-weight: 500; padding: 0; letter-spacing: -1px; background-color: #689A3D; border-top: 2px solid #000; border-right: 0px solid #000; border-bottom: 0px solid #000; border-left: 0px solid #000;">
+                                    COMMENTS</caption>
+                                <tr>
+                                    <td style="padding: 5px">
+                                        <p style="font-size: 14px; font-weight: 400;">{{ $remark }}</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <table
+                            style="width: 100%; padding-bottom: 10px; border-collapse: collapse; border-top: 0px solid #000; border-right: 3px solid #000; border-bottom: 3px solid #000; border-left: 3px solid #000">
+                            <tr>
+                                <td
+                                    style="width: 28%; padding-top: 10px; padding-left: 10px; padding-right: 10px; padding-bottom: 20px;">
+                                    <h6
+                                        style="padding-bottom: 4px; font-weight: normal;
+                            font-size: 14px;
+                            font-weight: normal;">
+                                        @if ($report_status == 'Full Time Observation')
+                                            <span style="padding: 1px 5px; border-bottom: 2px solid #000;"></span>
+                                            <span style="padding-left: 25px;">Full Time Observation</span>
+                                        @else
+                                            <span
+                                                style="padding: 1px 5px; border-bottom: 2px solid #000; border-top: 2px solid #000;">X</span>
+                                            <span>Full Time Observation</span>
+                                        @endif
+                                    </h6>
+                                    <h6
+                                        style="padding-bottom: 4px; font-weight: normal;
+                            font-size: 14px;
+                            font-weight: normal;">
+                                        @if ($report_status == 'Part Time Observation')
+                                            <span style="padding: 1px 5px; border-bottom: 2px solid #000;"></span>
+                                            <span style="padding-left: 25px;">Part Time Observation</span>
+                                        @else
+                                            <span
+                                                style="padding: 1px 5px; border-bottom: 2px solid #000; border-top: 2px solid #000;">X</span>
+                                            <span>Part Time Observation</span>
+                                        @endif
+                                    </h6>
+                                </td>
+
+                                <td style="width: 32%; padding-top: 10px; padding-bottom: 20px;">
+                                    <h6
+                                        style="
+                                font-size: 14px;
+                                font-weight: normal;">
+                                        {{ user($user_id)->name }}</h6>
+                                    <h6
+                                        style="
+                            font-size: 14px;
+                            font-weight: normal;
+                            border-top: 1px solid black;
+                            padding-top: 2px;
+                            width: 160px;
+                          ">
+                                        Materials Technician:
+                                    </h6>
+                                </td>
+                                <td
+                                    style="width: 40%; padding-top: 10px; padding-left: 10px; padding-right: 20px; padding-bottom: 20px;">
+                                    <h6
+                                        style="
+                                font-size: 14px;
+                                font-weight: normal;">
+                                        {{ user($created_by)->name }}</h6>
+                                    <h6
+                                        style="
+                            font-size: 14px;
+                            font-weight: normal;
+                            border-top: 1px solid black;
+                            padding-top: 2px;
+                          ">
+                                        Reviewed By
+                                    </h6>
+                                </td>
+                            </tr>
+                        </table>
+                        <p
+                            style="padding-bottom: 30px; font-size: 12px; font-style: italic; font-weight: 400; text-align: left;">
+                            These test results apply only to the specific samples/location/materials noted and may not
+                            be
+                            representative
+                            of other areas or similar materials. This report may not be reproduced, except in full,
+                            without
+                            written
+                            authorization by Geocal, Inc.
+                        </p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-de-secondary btn-sm"
+                        data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end modal-->
 </div>
 
 @push('scripts')

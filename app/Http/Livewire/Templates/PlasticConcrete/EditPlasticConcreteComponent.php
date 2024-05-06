@@ -84,6 +84,7 @@ class EditPlasticConcreteComponent extends Component
         $this->admixture_two = $file->admixture_two;
         $this->admixture_three = $file->admixture_three;
         $this->remark = $file->remark;
+        $this->created_by = $file->created_by;
         $this->total_yds = $file->total_yds;
         // Test Results
         $this->test_no_a = $file->test_no_a;

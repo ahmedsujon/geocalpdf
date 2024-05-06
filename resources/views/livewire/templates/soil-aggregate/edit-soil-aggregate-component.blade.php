@@ -2,6 +2,21 @@
 @endpush
 <div>
     <style>
+        .modal-body h4 {
+            line-height: normal;
+            margin: 0;
+        }
+
+        .modal-body h3 {
+            line-height: normal;
+            margin: 0;
+        }
+
+        p {
+            padding-bottom: 0 !important;
+            margin-bottom: 0 !important;
+        }
+
         #customSwitchSuccess {
             font-size: 25px;
         }
@@ -411,7 +426,8 @@
                                             <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                         @enderror
                                         <span class="input-group-text">Item Number:</span>
-                                        <input type="text" class="form-control form-color" wire:model="item_number">
+                                        <input type="text" class="form-control form-color"
+                                            wire:model="item_number">
                                         @error('item_number')
                                             <span class="text-danger" style="font-size: 12px;">{{ $message }}</span>
                                         @enderror
@@ -904,7 +920,8 @@
                                                 </td>
                                                 <td class="moistureremove" colspan="6">
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control form-color rtable-border"
+                                                        <input type="text"
+                                                            class="form-control form-color rtable-border"
                                                             wire:model="location_a">
                                                         @error('location_a')
                                                             <span class="text-danger"
@@ -1060,7 +1077,8 @@
                                                 </td>
                                                 <td class="moistureremove" colspan="6">
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control form-color rtable-border"
+                                                        <input type="text"
+                                                            class="form-control form-color rtable-border"
                                                             wire:model="location_b">
                                                         @error('location_b')
                                                             <span class="text-danger"
@@ -1220,7 +1238,8 @@
                                                 </td>
                                                 <td class="moistureremove" colspan="6">
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control form-color rtable-border"
+                                                        <input type="text"
+                                                            class="form-control form-color rtable-border"
                                                             wire:model="location_c">
                                                         @error('location_c')
                                                             <span class="text-danger"
@@ -1380,7 +1399,8 @@
                                                 </td>
                                                 <td class="moistureremove" colspan="6">
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control form-color rtable-border"
+                                                        <input type="text"
+                                                            class="form-control form-color rtable-border"
                                                             wire:model="location_d">
                                                         @error('location_d')
                                                             <span class="text-danger"
@@ -1540,7 +1560,8 @@
                                                 </td>
                                                 <td class="moistureremove" colspan="6">
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control form-color rtable-border"
+                                                        <input type="text"
+                                                            class="form-control form-color rtable-border"
                                                             wire:model="location_e">
                                                         @error('location_e')
                                                             <span class="text-danger"
@@ -1666,7 +1687,8 @@
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control moistureremoveinput"
+                                                        <input type="text"
+                                                            class="form-control moistureremoveinput"
                                                             wire:model="percent_comp_f"
                                                             style="@if ($compaction_requirement > $percent_comp_f) color: red; @endif"
                                                             readonly>
@@ -1700,7 +1722,8 @@
                                                 </td>
                                                 <td class="moistureremove" colspan="6">
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control form-color rtable-border"
+                                                        <input type="text"
+                                                            class="form-control form-color rtable-border"
                                                             wire:model="location_f">
                                                         @error('location_f')
                                                             <span class="text-danger"
@@ -1862,11 +1885,10 @@
                                             class="btn btn-primary submit_btn">Back to
                                             List</a>
                                         <button type="submit"
-                                            class="btn btn-success submit_btn">{!! loadingState(
-                                                'updateData',
-                                                'Save
-                                                                                                                                    and Send',
-                                            ) !!}</button>
+                                            class="btn btn-success submit_btn">{!! loadingState('updateData', 'Save and Send') !!}</button>
+                                        <button type="button" data-bs-toggle="modal"
+                                            data-bs-target="#bd-example-modal-xl" class="btn btn-secondary"><i
+                                                class="mdi mdi-file-pdf-box"></i>Preview Report</button>
                                     </form>
                                 </div>
                             </div>
@@ -1876,7 +1898,995 @@
             </div>
         </div>
     </div>
-</div>
+    <!--start modal-->
+    <div class="modal fade bd-example-modal-xl" id="bd-example-modal-xl" tabindex="-1" role="dialog"
+        aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div style="padding: 15px 60px 25px 60px;">
+                        <table style="width: 100%; border-collapse: collapse;">
+                            <tr>
+                                <td style="width: 28%; text-align: left;">
+
+                                    <h4 style="font-size: 14px; font-weight: 700;">
+                                        Client
+                                    </h4>
+                                    <h4 style="font-size: 14px; font-weight: 400;">
+                                        {{ client($client_id)->company_name }}
+                                    </h4>
+                                    <h4 style="font-size: 14px; font-weight: 400;">
+                                        {{ client($client_id)->address }}
+                                    </h4>
+                                </td>
+                                <td style="width: 40%; text-align: center;">
+                                    <img src="https://i0.wp.com/geocal.us/wp-content/uploads/2019/05/logo-new.png"
+                                        alt="logo" style="max-width: 100px" />
+                                    <h4 style="font-size: 13px; font-weight: 700; padding-top: 5px">
+                                        {{ $office_address }}
+                                    </h4>
+                                    <h4 style="font-size: 13px; font-weight: 700; padding-top: 5px">CONCRETE TEST
+                                        REPORT</h4>
+                                </td>
+                                <td style="width: 28%; text-align: left;">
+                                    <h4 style="font-size: 14px; font-weight: 500;">
+                                        Date Cast: <span
+                                            style="font-size: 14px; font-weight: 400;">{{ \Carbon\Carbon::parse($date)->format('m/d/Y') }}</span>
+                                    </h4>
+                                    <h4 style="font-size: 14px; font-weight: 500;">
+                                        Project No: <span
+                                            style="font-size: 14px; font-weight: 400;">{{ $project_number }}</span>
+                                    </h4>
+                                    <h4 style="font-size: 14px; font-weight: 500;">
+                                        Project Name: <span
+                                            style="font-size: 14px; font-weight: 400;">{{ project($project_id)->name }}</span>
+                                    </h4>
+                                </td>
+                            </tr>
+                        </table>
+                        <div
+                            style="margin-top: 5px; border-top: 3px solid #000; border-right: 3px solid #000; border-bottom: 0px solid #000; border-left: 3px solid #000;">
+                            <table style="width: 100%; border-collapse: collapse; border: none">
+                                <caption
+                                    style="text-align:left; font-size: 14px; font-weight: 500; padding: 0; letter-spacing: -1px; background-color: #689A3D; border-top: 1px solid #000; border-right: 1px solid #000; border-bottom: 0px solid #000; border-left: 1px solid #000;">
+                                    TESTING DETAILS</caption>
+                                <tr>
+                                    <td style="padding: 1px; border: 1px solid #000">
+                                        <h4 style="font-size: 14px; font-weight: 400">Tested by:</h4>
+                                    </td>
+                                    <td style="padding: 1px; border: 1px solid #000">
+                                        <h4 style="font-size: 14px; font-weight: 400">
+                                            {{ user($created_by)->name }}
+                                        </h4>
+                                    </td>
+                                    <td style="padding: 1px; border: 1px solid #000">
+                                        <h4 style="font-size: 14px; font-weight: 400">Test Mode: </h4>
+                                    </td>
+                                    <td style="padding: 1px; border: 1px solid #000">
+                                        <h4 style="font-size: 14px; font-weight: 400">{{ $test_mode }}</h4>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 1px; border: 1px solid #000">
+                                        <h4 style="font-size: 14px; font-weight: 400">Date Tested:</h4>
+                                    </td>
+                                    <td style="padding: 1px; border: 1px solid #000">
+                                        <h4 style="font-size: 14px; font-weight: 400">
+                                            {{ $date }}
+                                        </h4>
+                                    </td>
+                                    <td style="padding: 1px; border: 1px solid #000">
+                                        <h4 style="font-size: 14px; font-weight: 400">Standard Density Count:</h4>
+                                    </td>
+                                    <td style="padding: 1px; border: 1px solid #000">
+                                        <h4 style="font-size: 14px; font-weight: 400">{{ $density_count }}
+                                        </h4>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 1px; border: 1px solid #000">
+                                        <h4 style="font-size: 14px; font-weight: 400">Test Method:</h4>
+                                    </td>
+                                    <td style="padding: 1px; border: 1px solid #000">
+                                        <h4 style="font-size: 14px; font-weight: 400">
+                                            {{ $main_test_method }}
+                                        </h4>
+                                    </td>
+                                    <td style="padding: 1px; border: 1px solid #000">
+                                        <h4 style="font-size: 14px; font-weight: 400">Moisture Standard Count:</h4>
+                                    </td>
+                                    <td style="padding: 1px; border: 1px solid #000">
+                                        <h4 style="font-size: 14px; font-weight: 400">{{ $moisture_count }}
+                                        </h4>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 1px; border: 1px solid #000">
+                                        <h4 style="font-size: 14px; font-weight: 400">Gauge Make:</h4>
+                                    </td>
+                                    <td style="padding: 1px; border: 1px solid #000">
+                                        <h4 style="font-size: 14px; font-weight: 400">
+                                            @if ($troxler == 'Yes')
+                                                Troxler
+                                            @else
+                                                Other
+                                            @endif
+                                        </h4>
+                                    </td>
+                                    <td style="padding: 1px; border: 1px solid #000">
+                                        <h4 style="font-size: 14px; font-weight: 400">Compaction Requirement</h4>
+                                    </td>
+                                    <td style="padding: 1px; border: 1px solid #000">
+                                        <h4 style="font-size: 14px; font-weight: 400">
+                                            {{ $compaction_requirement }}</h4>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 1px; border: 1px solid #000">
+                                        <h4 style="font-size: 14px; font-weight: 400">Gauge Model:</h4>
+                                    </td>
+                                    <td style="padding: 1px; border: 1px solid #000">
+                                        <h4 style="font-size: 14px; font-weight: 400">
+                                            {{ $model }}
+                                        </h4>
+                                    </td>
+                                    <td style="padding: 1px; border: 1px solid #000">
+                                        <h4 style="font-size: 14px; font-weight: 400">Moisture Requirements:</h4>
+                                    </td>
+                                    <td style="padding: 1px; border: 1px solid #000">
+                                        <h4 style="font-size: 14px; font-weight: 400">
+                                            -{{ $requirement_minus }} to +
+                                            {{ $requirement_plus }}
+                                        </h4>
+                                    </td>
+                                </tr>
+
+                            </table>
+                        </div>
+
+                        <div
+                            style="padding-top: 5px; border-top: 1px solid #000; border-right: 3px solid #000; border-bottom: 0px solid #000; border-left: 3px solid #000;">
+                            <table style="width: 100%; border-collapse: collapse;">
+                                <caption
+                                    style="text-align:left; font-size: 14px; text-transform: uppercase; font-weight: 500; padding: 0; letter-spacing: -1px; background-color: #689A3D; border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
+                                    Proctor Information</caption>
+                                <tr>
+                                    <td style="padding: 1px; border: 1px solid #000">
+                                        <h3 style="font-size: 14px; font-weight: 700; text-align: center">Proctor ID
+                                        </h3>
+                                        </th>
+                                    <td style="padding: 1px; border: 1px solid #000">
+                                        <h3 style="font-size: 14px; font-weight: 700; text-align: center">
+                                            Material Description
+                                        </h3>
+                                        </th>
+                                    <td style="padding: 1px; border: 1px solid #000">
+                                        <h3 style="font-size: 14px; font-weight: 700; text-align: center">Method</h3>
+                                        </th>
+                                    <td style="padding: 1px; border: 1px solid #000">
+                                        <h3 style="font-size: 14px; font-weight: 700; text-align: center">MDD (pcf)
+                                        </h3>
+                                        </th>
+                                    <td style="padding: 1px; border: 1px solid #000">
+                                        <h3 style="font-size: 14px; font-weight: 700; text-align: center">OMC %</h3>
+                                        </th>
+                                </tr>
+                                @if ($proctor_id_a)
+                                    <tr>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $proctor_id_a }}
+                                            </h4>
+                                        </td>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align: center">
+                                                {{ $description_a }}
+                                            </h4>
+                                        </td>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $test_method_a }}
+                                            </h4>
+                                        </td>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $max_dry_density_a }}
+                                            </h4>
+                                        </td>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $optimum_moisture_a }}
+                                            </h4>
+                                        </td>
+                                    </tr>
+                                @endif
+                                @if ($proctor_id_b)
+                                    <tr>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $proctor_id_b }}
+                                            </h4>
+                                        </td>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align: center">
+                                                {{ $description_b }}
+                                            </h4>
+                                        </td>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $test_method_b }}
+                                            </h4>
+                                        </td>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $max_dry_density_b }}
+                                            </h4>
+                                        </td>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $optimum_moisture_b }}
+                                            </h4>
+                                        </td>
+                                    </tr>
+                                @endif
+                                @if ($proctor_id_c)
+                                    <tr>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $proctor_id_c }}
+                                            </h4>
+                                        </td>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align: center">
+                                                {{ $description_c }}
+                                            </h4>
+                                        </td>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $test_method_c }}
+                                            </h4>
+                                        </td>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $max_dry_density_c }}
+                                            </h4>
+                                        </td>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $optimum_moisture_c }}
+                                            </h4>
+                                        </td>
+                                    </tr>
+                                @endif
+                                @if ($proctor_id_d)
+                                    <tr>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $proctor_id_d }}
+                                            </h4>
+                                        </td>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align: center">
+                                                {{ $description_a }}
+                                            </h4>
+                                        </td>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $test_method_d }}
+                                            </h4>
+                                        </td>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $max_dry_density_d }}
+                                            </h4>
+                                        </td>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $optimum_moisture_d }}
+                                            </h4>
+                                        </td>
+                                    </tr>
+                                @endif
+                                @if ($proctor_id_e)
+                                    <tr>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $proctor_id_e }}
+                                            </h4>
+                                        </td>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align: center">
+                                                {{ $description_e }}
+                                            </h4>
+                                        </td>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $test_method_e }}
+                                            </h4>
+                                        </td>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $max_dry_density_e }}
+                                            </h4>
+                                        </td>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $optimum_moisture_e }}
+                                            </h4>
+                                        </td>
+                                    </tr>
+                                @endif
+                            </table>
+                        </div>
+
+                        <div
+                            style="padding-top: 5px; border-top: 1px solid #000; border-right: 3px solid #000; border-bottom: 0px solid #000; border-left: 3px solid #000;">
+                            <table style="width: 100%; border-collapse: collapse;">
+                                <caption
+                                    style="text-align:left; font-size: 14px; text-transform: uppercase; font-weight: 500; padding: 0; letter-spacing: -1px; background-color: #689A3D; border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
+                                    Test Results</caption>
+                                <tr>
+                                    <th style="padding: 1px; border: 1px solid #000">
+                                        <h3 style="font-size: 14px; font-weight: 700">Test No.</h3>
+                                    </th>
+                                    <th style="padding: 1px; border: 1px solid #000">
+                                        <h3 style="font-size: 14px; font-weight: 700">Proctor ID</h3>
+                                    </th>
+                                    <th style="padding: 1px; border: 1px solid #000">
+                                        <h3 style="font-size: 14px; font-weight: 700">Probe Depth (in)</h3>
+                                    </th>
+                                    <th style="padding: 1px; border: 1px solid #000">
+                                        <h3 style="font-size: 14px; font-weight: 700">Wet Density (pcf)</h3>
+                                    </th>
+                                    <th style="padding: 1px; border: 1px solid #000">
+                                        <h3 style="font-size: 14px; font-weight: 700">Dry Density, pcf</h3>
+                                    </th>
+                                    <th style="padding: 1px; border: 1px solid #000">
+                                        <h3 style="font-size: 14px; font-weight: 700">
+                                            Moisture Content %
+                                        </h3>
+                                    </th>
+                                    <th style="padding: 1px; border: 1px solid #000">
+                                        <h3 style="font-size: 14px; font-weight: 700">Compaction %</h3>
+                                    </th>
+                                    <th style="padding: 1px; border: 1px solid #000">
+                                        <h3 style="font-size: 14px; font-weight: 700">Compaction Spec</h3>
+                                    </th>
+                                    <th style="padding: 1px; border: 1px solid #000">
+                                        <h3 style="font-size: 14px; font-weight: 700">Results</h3>
+                                    </th>
+                                </tr>
+                                @if ($test_num_a || $result_proctor_id_a || $test_dept_a)
+                                    <tr>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $test_num_a }}
+                                            </h4>
+                                        </td>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $result_proctor_id_a }}
+                                            </h4>
+                                        </td>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $test_dept_a }}
+                                            </h4>
+                                        </td>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $wet_density_a }}
+                                            </h4>
+                                        </td>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $dry_density_a }}
+                                            </h4>
+                                        </td>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $moisture_content_a }}
+                                            </h4>
+                                        </td>
+
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4
+                                                style="font-size: 14px; font-weight: 400; text-align:center; @if ($compaction_requirement > $percent_comp_a) color: red; @endif">
+                                                {{ $percent_comp_a }}</h4>
+                                        </td>
+
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $compaction_requirement }}</h4>
+                                        </td>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $comments_a }}
+                                            </h4>
+                                        </td>
+                                    </tr>
+                                @endif
+                                @if ($test_num_b || $result_proctor_id_b || $test_dept_b)
+                                    <tr>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $test_num_b }}
+                                            </h4>
+                                        </td>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $result_proctor_id_b }}
+                                            </h4>
+                                        </td>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $test_dept_b }}
+                                            </h4>
+                                        </td>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $wet_density_b }}
+                                            </h4>
+                                        </td>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $dry_density_b }}
+                                            </h4>
+                                        </td>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $moisture_content_b }}
+                                            </h4>
+                                        </td>
+
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4
+                                                style="font-size: 14px; font-weight: 400; text-align:center; @if ($compaction_requirement > $percent_comp_b) color: red; @endif">
+                                                {{ $percent_comp_b }}</h4>
+                                        </td>
+
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $compaction_requirement }}</h4>
+                                        </td>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $comments_b }}
+                                            </h4>
+                                        </td>
+                                    </tr>
+                                @endif
+                                @if ($test_num_c || $result_proctor_id_c || $test_dept_c)
+                                    <tr>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $test_num_c }}
+                                            </h4>
+                                        </td>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $result_proctor_id_c }}
+                                            </h4>
+                                        </td>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $test_dept_c }}
+                                            </h4>
+                                        </td>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $wet_density_c }}
+                                            </h4>
+                                        </td>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $dry_density_c }}
+                                            </h4>
+                                        </td>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $moisture_content_c }}
+                                            </h4>
+                                        </td>
+
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4
+                                                style="font-size: 14px; font-weight: 400; text-align:center; @if ($compaction_requirement > $percent_comp_c) color: red; @endif">
+                                                {{ $percent_comp_c }}</h4>
+                                        </td>
+
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $compaction_requirement }}</h4>
+                                        </td>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $comments_c }}
+                                            </h4>
+                                        </td>
+                                    </tr>
+                                @endif
+                                @if ($test_num_d || $result_proctor_id_d || $test_dept_d)
+                                    <tr>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $test_num_d }}
+                                            </h4>
+                                        </td>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $result_proctor_id_d }}
+                                            </h4>
+                                        </td>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $test_dept_d }}
+                                            </h4>
+                                        </td>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $wet_density_d }}
+                                            </h4>
+                                        </td>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $dry_density_d }}
+                                            </h4>
+                                        </td>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $moisture_content_d }}
+                                            </h4>
+                                        </td>
+
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4
+                                                style="font-size: 14px; font-weight: 400; text-align:center; @if ($compaction_requirement > $percent_comp_d) color: red; @endif">
+                                                {{ $percent_comp_d }}</h4>
+                                        </td>
+
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $compaction_requirement }}</h4>
+                                        </td>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $comments_d }}
+                                            </h4>
+                                        </td>
+                                    </tr>
+                                @endif
+                                @if ($test_num_e || $result_proctor_id_e || $test_dept_e)
+                                    <tr>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $test_num_e }}
+                                            </h4>
+                                        </td>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $result_proctor_id_e }}
+                                            </h4>
+                                        </td>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $test_dept_e }}
+                                            </h4>
+                                        </td>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $wet_density_e }}
+                                            </h4>
+                                        </td>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $dry_density_e }}
+                                            </h4>
+                                        </td>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $moisture_content_e }}
+                                            </h4>
+                                        </td>
+
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4
+                                                style="font-size: 14px; font-weight: 400; text-align:center; @if ($compaction_requirement > $percent_comp_e) color: red; @endif">
+                                                {{ $percent_comp_e }}</h4>
+                                        </td>
+
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $compaction_requirement }}</h4>
+                                        </td>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $comments_e }}
+                                            </h4>
+                                        </td>
+                                    </tr>
+                                @endif
+                                @if ($test_num_f || $result_proctor_id_f || $test_dept_f)
+                                    <tr>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $test_num_f }}
+                                            </h4>
+                                        </td>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $result_proctor_id_f }}
+                                            </h4>
+                                        </td>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $test_dept_f }}
+                                            </h4>
+                                        </td>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $wet_density_f }}
+                                            </h4>
+                                        </td>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $dry_density_f }}
+                                            </h4>
+                                        </td>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $moisture_content_f }}
+                                            </h4>
+                                        </td>
+
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4
+                                                style="font-size: 14px; font-weight: 400; text-align:center; @if ($compaction_requirement > $percent_comp_f) color: red; @endif">
+                                                {{ $percent_comp_f }}</h4>
+                                        </td>
+
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $compaction_requirement }}</h4>
+                                        </td>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align:center;">
+                                                {{ $comments_f }}
+                                            </h4>
+                                        </td>
+                                    </tr>
+                                @endif
+                            </table>
+                        </div>
+                        <div
+                            style="padding-top: 5px; border-top: 2px solid #000; border-right: 3px solid #000; border-bottom: 0px solid #000; border-left: 3px solid #000;">
+
+                            <table
+                                style="width: 100%; padding-top: 5px; border-collapse: collapse; border-bottom: 1px solid #000">
+                                <caption
+                                    style="text-align:left; font-size: 14px; text-transform: uppercase; font-weight: 500; padding: 0; letter-spacing: -1px; background-color: #689A3D; border-top: 2px solid #000; border-right: 1px solid #000; border-bottom: 0px solid #000; border-left: 1px solid #000;">
+                                    Location</caption>
+                                <tr>
+                                    <td style="padding: 10px 5px;">
+                                        <h4 style="font-size: 14px; font-weight: 400">
+                                            <b> General Location: </b> {{ $general_info }}
+                                        </h4>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div
+                            style="border-top: 1px solid #000; border-right: 3px solid #000; border-bottom: 2px solid #000; border-left: 3px solid #000;">
+
+                            <table style="width: 100%; border-collapse: collapse; border-bottom: 1px solid #000">
+                                <tr>
+                                    <td style="padding: 1px; border: 1px solid #000">
+                                        <h3 style="font-size: 14px; font-weight: 700; text-align: center">Test No.
+                                        </h3>
+                                        </th>
+                                    <td style="padding: 1px; border: 1px solid #000">
+                                        <h3 style="font-size: 14px; font-weight: 700; text-align: center">Location
+                                        </h3>
+                                        </th>
+                                    <td style="padding: 1px; border: 1px solid #000">
+                                        <h3 style="font-size: 14px; font-weight: 700; text-align: center">Material
+                                        </h3>
+                                        </th>
+                                    <td style="padding: 1px; border: 1px solid #000">
+                                        <h3 style="font-size: 14px; font-weight: 700; text-align: center">Elev/Lift of
+                                            Test</h3>
+                                        </th>
+                                </tr>
+                                @if ($test_num_a || $result_proctor_id_a || $test_dept_a)
+                                    <tr>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align: center">
+                                                {{ $test_num_a }}
+                                            </h4>
+                                        </td>
+
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align: center">
+                                                {{ $location_a }}
+                                            </h4>
+                                        </td>
+
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align: center">
+                                                {{ $material_a }}
+                                            </h4>
+                                        </td>
+
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align: center">
+                                                {{ $elev_test_a }}</h4>
+                                        </td>
+                                    </tr>
+                                @endif
+                                @if ($test_num_b || $result_proctor_id_b || $test_dept_b)
+                                    <tr>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align: center">
+                                                {{ $test_num_b }}
+                                            </h4>
+                                        </td>
+
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align: center">
+                                                {{ $location_b }}
+                                            </h4>
+                                        </td>
+
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align: center">
+                                                {{ $material_b }}
+                                            </h4>
+                                        </td>
+
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align: center">
+                                                {{ $elev_test_b }}</h4>
+                                        </td>
+                                    </tr>
+                                @endif
+                                @if ($test_num_c || $result_proctor_id_c || $test_dept_c)
+                                    <tr>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align: center">
+                                                {{ $test_num_c }}
+                                            </h4>
+                                        </td>
+
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align: center">
+                                                {{ $location_c }}
+                                            </h4>
+                                        </td>
+
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align: center">
+                                                {{ $material_c }}
+                                            </h4>
+                                        </td>
+
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align: center">
+                                                {{ $elev_test_c }}</h4>
+                                        </td>
+                                    </tr>
+                                @endif
+                                @if ($test_num_d || $result_proctor_id_d || $test_dept_d)
+                                    <tr>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align: center">
+                                                {{ $test_num_d }}
+                                            </h4>
+                                        </td>
+
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align: center">
+                                                {{ $location_d }}
+                                            </h4>
+                                        </td>
+
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align: center">
+                                                {{ $material_d }}
+                                            </h4>
+                                        </td>
+
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align: center">
+                                                {{ $elev_test_d }}</h4>
+                                        </td>
+                                    </tr>
+                                @endif
+                                @if ($test_num_e || $result_proctor_id_e || $test_dept_e)
+                                    <tr>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align: center">
+                                                {{ $test_num_e }}
+                                            </h4>
+                                        </td>
+
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align: center">
+                                                {{ $location_e }}
+                                            </h4>
+                                        </td>
+
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align: center">
+                                                {{ $material_e }}
+                                            </h4>
+                                        </td>
+
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align: center">
+                                                {{ $elev_test_e }}</h4>
+                                        </td>
+                                    </tr>
+                                @endif
+                                @if ($test_num_f || $result_proctor_id_f || $test_dept_f)
+                                    <tr>
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align: center">
+                                                {{ $test_num_f }}
+                                            </h4>
+                                        </td>
+
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align: center">
+                                                {{ $location_f }}
+                                            </h4>
+                                        </td>
+
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align: center">
+                                                {{ $material_f }}
+                                            </h4>
+                                        </td>
+
+                                        <td style="padding: 1px; border: 1px solid #000">
+                                            <h4 style="font-size: 14px; font-weight: 400; text-align: center">
+                                                {{ $elev_test_f }}</h4>
+                                        </td>
+                                    </tr>
+                                @endif
+                            </table>
+                        </div>
+
+                        <div
+                            style="padding-top: 5px; border-top: 1px solid #000; border-right: 3px solid #000; border-bottom: 1px solid #000; border-left: 3px solid #000;">
+                            <table style="width: 100%; border-collapse: collapse;">
+                                <caption
+                                    style="text-align:left; font-size: 14px; font-weight: 500; padding: 0; letter-spacing: -1px; background-color: #689A3D; border-top: 2px solid #000; border-right: 0px solid #000; border-bottom: 0px solid #000; border-left: 0px solid #000;">
+                                    COMMENTS</caption>
+                                <tr>
+                                    <td></td>
+                                    <td style="padding: 4px 30px">
+                                        <ol type="1"
+                                            style="margin: 0; padding: 0; font-size: 13px; font-weight: 400; text-align: left">
+                                            <li>Base</li>
+                                            <li>Subbase</li>
+                                            <li>Subgrade</li>
+                                            <li>Improved Subgrade</li>
+                                            <li>Surface</li>
+                                            <li>Fill</li>
+                                        </ol>
+                                    </td>
+                                    <td style="padding: 4px 30px">
+                                        <ol type="1"
+                                            style="margin: 0; padding: 0; font-size: 13px; font-weight: 400; text-align: left">
+                                            <li>Test results comply with specifications</li>
+                                            <li>Compaction percentage does not comply with specifications</li>
+                                            <li>Retest of previous test</li>
+                                            <li>Moisture in excess of specifications</li>
+                                            <li>Moisture below specifications</li>
+                                        </ol>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <table
+                            style="width: 100%; border-collapse: collapse; border-top: 0px solid #000; border-right: 3px solid #000; border-bottom: 3px solid #000; border-left: 3px solid #000">
+                            <tr>
+                                <td
+                                    style="width: 28%; padding-top: 10px; padding-left: 10px; padding-right: 10px; padding-bottom: 20px;">
+                                    <h6
+                                        style="padding-bottom: 4px; font-weight: normal;
+                                font-size: 14px;
+                                font-weight: normal;">
+                                        @if ($observation == 'Part Time Observation')
+                                            <span style="padding: 1px 5px; border-bottom: 2px solid #000;"></span>
+                                            <span style="padding-left: 25px;">Part Time Observation</span>
+                                        @else
+                                            <span
+                                                style="padding: 1px 5px; border-bottom: 2px solid #000; border-top: 2px solid #000;">X</span>
+                                            <span>Part Time Observation</span>
+                                        @endif
+                                    </h6>
+
+                                    <h6
+                                        style="padding-bottom: 4px; font-weight: normal;
+                                font-size: 14px;
+                                font-weight: normal;">
+                                        @if ($observation == 'Full Time Observation')
+                                            <span style="padding: 1px 5px; border-bottom: 2px solid #000;"></span>
+                                            <span style="padding-left: 25px;">Full Time Observation</span>
+                                        @else
+                                            <span
+                                                style="padding: 1px 5px; border-bottom: 2px solid #000; border-top: 2px solid #000;">X</span>
+                                            <span>Full Time Observation</span>
+                                        @endif
+                                    </h6>
+                                </td>
+
+                                <td style="width: 32%; padding-top: 10px; padding-bottom: 20px;">
+                                    <h6
+                                        style="
+                                    font-size: 14px;
+                                    font-weight: normal;">
+                                        {{ user($user_id)->name }}</h6>
+                                    <h6
+                                        style="
+                                font-size: 14px;
+                                font-weight: normal;
+                                border-top: 1px solid black;
+                                padding-top: 2px;
+                                width: 160px;
+                              ">
+                                        Materials Technician:
+                                    </h6>
+                                </td>
+                                <td
+                                    style="width: 40%; padding-top: 10px; padding-left: 10px; padding-right: 20px; padding-bottom: 20px;">
+                                    <h6
+                                        style="
+                                    font-size: 14px;
+                                    font-weight: normal;">
+                                        {{ user($created_by)->name }}</h6>
+                                    <h6
+                                        style="
+                                font-size: 14px;
+                                font-weight: normal;
+                                border-top: 1px solid black;
+                                padding-top: 2px;
+                              ">
+                                        Reviewed By
+                                    </h6>
+                                </td>
+                            </tr>
+                        </table>
+                        <table style="width: 100%; border-collapse: collapse; ">
+                            <tr>
+                                <td>
+                                    <p
+                                        style="padding-top: 10px; padding-bottom: 30px; font-size: 13px; font-weight: 400; text-align: left">
+                                        These test results apply only to the specific samples/location/materials noted
+                                        and may not
+                                        be
+                                        representative
+                                        of other areas or similar materials. This report may not be reproduced, except
+                                        in full,
+                                        without
+                                        written
+                                        authorization by Geocal, Inc.
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-de-secondary btn-sm"
+                        data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end modal-->
 </div>
 
 @push('scripts')

@@ -1,10 +1,27 @@
 @section('title')
-Add Proctor
+    Add Proctor
 @endsection
+@push('styles')
+    <link rel="stylesheet" type="text/css" href="http://keith-wood.name/css/jquery.signature.css">
+@endpush
 <div>
     <style>
         #customSwitchSuccess {
             font-size: 25px;
+        }
+
+        .kbw-signature {
+            width: 100%;
+            height: 100px;
+        }
+
+        #signaturepad canvas {
+            width: 100% !important;
+            height: auto;
+        }
+
+        .signature-clear {
+            border: 1px solid #a0a0a0;
         }
     </style>
     <div class="container-fluid">
@@ -25,7 +42,7 @@ Add Proctor
 
         <form wire:submit.prevent='storeData'>
             @if (Session::has('message'))
-            <div class="alert alert-success" role="alert">{{ Session::get('message') }}</div>
+                <div class="alert alert-success" role="alert">{{ Session::get('message') }}</div>
             @endif
             <div class="row">
                 <div class="col-md-10 offset-1">
@@ -41,7 +58,7 @@ Add Proctor
                                     <input type="number" class="form-control" id="mix_id" wire:model="mix_id"
                                         placeholder="Enter mix id No." />
                                     @error('mix_id')
-                                    <span class="text-danger" style="font-size: 12.5px;">{{ $message }}</span>
+                                        <span class="text-danger" style="font-size: 12.5px;">{{ $message }}</span>
                                     @enderror
                                 </div>
                             </div>
@@ -52,7 +69,7 @@ Add Proctor
                                     <input type="text" class="form-control" wire:model="supplier"
                                         placeholder="Enter supplier" />
                                     @error('supplier')
-                                    <span class="text-danger" style="font-size: 12.5px;">{{ $message }}</span>
+                                        <span class="text-danger" style="font-size: 12.5px;">{{ $message }}</span>
                                     @enderror
                                 </div>
                             </div>
@@ -63,7 +80,7 @@ Add Proctor
                                     <input type="text" class="form-control" wire:model="plant"
                                         placeholder="Enter plant" />
                                     @error('plant')
-                                    <span class="text-danger" style="font-size: 12.5px;">{{ $message }}</span>
+                                        <span class="text-danger" style="font-size: 12.5px;">{{ $message }}</span>
                                     @enderror
                                 </div>
                             </div>
@@ -74,29 +91,30 @@ Add Proctor
                                     <input type="text" class="form-control" wire:model="mix_type"
                                         placeholder="Enter mix type" />
                                     @error('mix_type')
-                                    <span class="text-danger" style="font-size: 12.5px;">{{ $message }}</span>
+                                        <span class="text-danger" style="font-size: 12.5px;">{{ $message }}</span>
                                     @enderror
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label class="col-sm-3 col-form-label" for="optimum_moisture">Max Theoretical Density, (lb/ft3)<span
-                                        class="text-danger">*</span></label>
+                                <label class="col-sm-3 col-form-label" for="optimum_moisture">Max Theoretical Density,
+                                    (lb/ft3)<span class="text-danger">*</span></label>
                                 <div class="col-sm-9">
                                     <input type="text" class="form-control" wire:model="max_theoretical_density"
                                         placeholder="Enter max theoretical density" />
                                     @error('max_theoretical_density')
-                                    <span class="text-danger" style="font-size: 12.5px;">{{ $message }}</span>
+                                        <span class="text-danger" style="font-size: 12.5px;">{{ $message }}</span>
                                     @enderror
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label class="col-sm-3 col-form-label" for="optimum_moisture">Max Theoretical SpecificGravity<span
-                                        class="text-danger">*</span></label>
+                                <label class="col-sm-3 col-form-label" for="optimum_moisture">Max Theoretical
+                                    SpecificGravity<span class="text-danger">*</span></label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" wire:model="max_theoretical_specific_gravity"
+                                    <input type="text" class="form-control"
+                                        wire:model="max_theoretical_specific_gravity"
                                         placeholder="Enter max theoretical specificGravity" />
                                     @error('max_theoretical_specific_gravity')
-                                    <span class="text-danger" style="font-size: 12.5px;">{{ $message }}</span>
+                                        <span class="text-danger" style="font-size: 12.5px;">{{ $message }}</span>
                                     @enderror
                                 </div>
                             </div>
@@ -114,7 +132,3 @@ Add Proctor
         </form>
     </div>
 </div>
-
-@push('scripts')
-<script></script>
-@endpush

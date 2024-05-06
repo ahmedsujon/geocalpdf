@@ -150,6 +150,7 @@ class CreateCommercialsTable extends Migration
 
             // general information
             $table->text('general_location')->nullable();
+            $table->text('signature')->nullable();
             $table->text('remark')->nullable();
             $table->text('report_status')->nullable();
             $table->string('created_by')->nullable();

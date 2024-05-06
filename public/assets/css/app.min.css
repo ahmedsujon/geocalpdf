@@ -3131,7 +3131,7 @@ a.badge:hover {
 
 .modal-content .modal-body p,
 .modal-content h4 {
-    color: #8d93a1
+    color: #111111 !important;
 }
 
 .modal-content .modal-title.custom-title {

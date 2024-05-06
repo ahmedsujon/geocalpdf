@@ -82,12 +82,14 @@
                                         <td>{{ user($file->created_by)->name }}</td>
                                         <td>{{ $file->created_at }}</td>
                                         <td style="text-align: center;">
+
                                             <a target="_blank"
                                                 href="{{ route('invoice.commercial',['id'=>$file->id]) }}" type="button"
                                                 class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm"><i
                                                     class="ti ti-file-invoice" data-bs-toggle="tooltip"
                                                     data-bs-placement="top"
                                                     data-bs-original-title="Download Report"></i></a>
+
                                             <a href="{{ route('commercial.show', ['file_id' => $file->id]) }}"
                                                 class="btn btn-outline-success btn-icon-circle btn-icon-circle-sm"><i
                                                     class="ti ti-eye" data-bs-toggle="tooltip" data-bs-placement="top"

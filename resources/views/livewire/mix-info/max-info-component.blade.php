@@ -69,12 +69,11 @@
                                     @foreach ($mix_infos as $mix_info)
                                     <tr>
                                         <td style="text-align: center;">{{ $mix_info->mix_id }}</td>
-                                        <td style="text-align: center;">{{ $mix_info->supplier }}</td>
                                         <td style="text-align: center;">{{ $mix_info->plant }}</td>
                                         <td style="text-align: center;">{{ $mix_info->mix_type }}</td>
                                         <td style="text-align: center;">{{ $mix_info->max_theoretical_density }}</td>
                                         <td style="text-align: center;">{{ $mix_info->max_theoretical_specific_gravity }}</td>
-                                       
+
                                         <td style="text-align: center;">
                                             <a href="{{ route('mixInfo.update', ['mix_info_id' => $mix_info->id]) }}"
                                                 type="button"
@@ -118,6 +117,6 @@
                 'success'
             )
         });
-        
+
 </script>
 @endpush

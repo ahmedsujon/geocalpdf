@@ -4,6 +4,8 @@ namespace App\Http\Livewire\MixInfo;
 
 use App\Models\MixInfo;
 use Livewire\Component;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 
 class AddMaxInfoComponent extends Component
 {
@@ -39,8 +41,8 @@ class AddMaxInfoComponent extends Component
         $proctor->mix_type = $this->mix_type;
         $proctor->max_theoretical_density = $this->max_theoretical_density;
         $proctor->max_theoretical_specific_gravity = $this->max_theoretical_specific_gravity;
-        $proctor->save();
 
+        $proctor->save();
         session()->flash('success', 'Mix Info added successfully');
         return redirect()->route('mixInfo.list');
         $this->resetInputs();
@@ -52,7 +54,8 @@ class AddMaxInfoComponent extends Component
         $this->supplier = '';
         $this->plant = '';
         $this->mix_type = '';
-        $this->max_theoretical_density = '';
+        $this->mix_type = '';
+        $this->signature = '';
         $this->max_theoretical_specific_gravity = '';
     }
 
