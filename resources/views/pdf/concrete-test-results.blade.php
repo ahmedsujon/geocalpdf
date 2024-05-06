@@ -18,6 +18,9 @@
         .td-padding-left {
             padding-left: 5px;
         }
+        .td-padding-left.width20 {
+            width: 20%;
+        }
     </style>
 </head>
 
@@ -1649,7 +1652,7 @@
             style="margin-top: 2px; border-top: 3px solid #000; border-right: 3px solid #000; border-bottom: 3px solid #000; border-left: 3px solid #000;">
             <table style="width: 100%; border-collapse: collapse;">
                 <tr>
-                    <td class="td-padding-left" style="text-align: left; border-right: 3px solid #000;">
+                    <td class="td-padding-left width20" style="text-align: left; border-right: 3px solid #000;">
                         <p style="font-size: 10px; padding-bottom: 10px; padding-top: 5px;">
                             Tester (print name)
                         </p>
@@ -1657,7 +1660,7 @@
                             {{ $data->tester }}
                         </p>
                     </td>
-                    <td class="td-padding-left" style="text-align: left; border-right: 3px solid #000;">
+                    <td class="td-padding-left width20" style="text-align: left; border-right: 3px solid #000;">
                         <p style="font-size: 10px; padding-bottom: 10px; padding-top: 5px;">
                             Title
                         </p>
@@ -1665,7 +1668,7 @@
                             {{ $data->tester_title }}
                         </p>
                     </td>
-                    <td class="td-padding-left" style="text-align: left; border-right: 3px solid #000;">
+                    <td class="td-padding-left width20" style="text-align: left; border-right: 3px solid #000;">
                         <p style="font-size: 10px; padding-bottom: 10px; padding-top: 5px;">
                             Approved by
                         </p>
@@ -1673,15 +1676,20 @@
                             {{ $data->project_engineer }}
                         </p>
                     </td>
-                    <td class="td-padding-left" style="text-align: left; border-right: 3px solid #000;">
+                    <td class="td-padding-left width20" style="text-align: left; border-right: 3px solid #000;">
                         <p style="font-size: 10px; padding-bottom: 10px; padding-top: 5px;">
                             Signature
                         </p>
-                        <p style="font-size: 12px; padding-bottom: 5px;">
+                        {{-- <p style="font-size: 12px; padding-bottom: 5px;">
                             {{ $data->signature }}
+                        </p> --}}
+
+                        <p style="font-size: 12px; padding-bottom: 5px; text-align: center;">
+                            <img style="height: 70px; width: 200px;" src="{{ $data->signature }}">
                         </p>
+
                     </td>
-                    <td class="td-padding-left" style="text-align: left;">
+                    <td class="td-padding-left width20" style="text-align: left;">
                         <p style="font-size: 10px; padding-bottom: 10px; padding-top: 5px;">
                             Title
                         </p>
