@@ -1924,6 +1924,7 @@ mark {
 .badge.badge-outline-primary {
     background-color: transparent !important;
     color: #557ef8;
+    padding: 8px;;
     border: 1px solid #557ef8
 }
 
@@ -1950,6 +1951,7 @@ mark {
 .badge.badge-outline-success {
     background-color: transparent !important;
     color: #22b783;
+    padding: 8px;
     border: 1px solid #22b783
 }
 
