@@ -60,7 +60,7 @@ class DraftEditConcreteTestResultComponemt extends Component
         $unit_mass_o, $yeild_o, $calculated_wc_ratio_o, $cylinders_cast_fs_no_o, $set_no_o, $se_o,
 
         $tester, $tester_title, $project_engineer, $signature, $title, $file_id,
-        $remark, $publish_status, $status, $created_by, $responsible_person = [];
+        $remark, $publish_status, $status, $created_by, $break_date_d, $responsible_person = [];
 
     // ============== get project information ========
     public $selected_project_ids = [];

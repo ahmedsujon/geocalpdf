@@ -1129,7 +1129,7 @@
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="text"
+                                                        <input type="number"
                                                             class="form-control form-color moistureremoveinput text-center"
                                                             wire:model="maximum_load_a" wire:keyup='psiCalculationA'
                                                             required>
@@ -1240,7 +1240,7 @@
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="text"
+                                                        <input type="number"
                                                             class="form-control form-color moistureremoveinput text-center"
                                                             wire:model="maximum_load_b" wire:keyup='psiCalculationB'
                                                             required>
@@ -1351,7 +1351,7 @@
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="text"
+                                                        <input type="number"
                                                             class="form-control form-color moistureremoveinput text-center"
                                                             wire:model="maximum_load_c" wire:keyup='psiCalculationC'
                                                             required>
@@ -1462,7 +1462,7 @@
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="text"
+                                                        <input type="number"
                                                             class="form-control form-color moistureremoveinput text-center"
                                                             wire:model="maximum_load_d" wire:keyup='psiCalculationD'
                                                             required>
@@ -1573,7 +1573,7 @@
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="text"
+                                                        <input type="number"
                                                             class="form-control form-color moistureremoveinput text-center"
                                                             wire:model="maximum_load_e" wire:keyup='psiCalculationE'
                                                             required>
@@ -1684,7 +1684,7 @@
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="text"
+                                                        <input type="number"
                                                             class="form-control form-color moistureremoveinput text-center"
                                                             wire:model="maximum_load_f" wire:keyup='psiCalculationF'
                                                             required>
@@ -1795,7 +1795,7 @@
                                                 </td>
                                                 <td class="moistureremove">
                                                     <div class="input-group">
-                                                        <input type="text"
+                                                        <input type="number"
                                                             class="form-control form-color moistureremoveinput text-center"
                                                             wire:model="maximum_load_g" wire:keyup='psiCalculationG'
                                                             required>

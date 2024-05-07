@@ -56,6 +56,7 @@
                                         <th>Client Name</th>
                                         <th>Project Number</th>
                                         <th>Updated By</th>
+                                        <th>Status</th>
                                         <th>Created Date</th>
                                         <th style="text-align: center;">Options</th>
                                     </tr>
@@ -82,6 +83,24 @@
                                         <td>{{ client($temp->client_id)->name }}</td>
                                         <td>{{ $temp->project_number }}</td>
                                         <td>{{ user($temp->created_by)->name }}</td>
+                                        <td>
+                                            @if ($temp->status == 'sentToPE')
+                                                <span class="badge badge-outline-primary">Send To PE</span>
+                                            @elseif ($temp->status == 'sentToClerk')
+                                                <span class="badge badge-outline-primary">Send To Clerk</span>
+                                            @elseif ($temp->status == 'sentToSupervisor')
+                                                <span class="badge badge-outline-primary">Send To
+                                                    Supervisor</span>
+                                            @elseif ($temp->status == 'sentToTech')
+                                                <span class="badge badge-outline-primary">Send To Field
+                                                    Tech</span>
+                                            @elseif ($temp->status == 'sentToClient')
+                                                <span class="badge badge-outline-success">Send To Client</span>
+                                            @else
+                                                <span class="badge badge-outline-success">New Form
+                                                    Created</span>
+                                            @endif
+                                        </td>
                                         <td>{{ $temp->created_at }}</td>
                                         <td style="text-align: center;">
                                             <a target="_blank"

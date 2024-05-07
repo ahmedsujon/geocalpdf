@@ -2893,7 +2893,7 @@
                                     <br>
                                     <button type="button"
                                         style="background: white; color: black; font-size: 13px; margin-right: 5px; padding: 3px 10px; border-radius: 3px;"
-                                        class="btn btn-secondary" id="save_sign">Save</button>
+                                        class="btn btn-secondary" id="save_sign">Save Signature</button>
                                     <button type="button"
                                         style="background: white; color: black; font-size: 13px; padding: 3px 10px; border-radius: 3px;"
                                         class="btn btn-secondary" id="clear_sign">Clear</button>
@@ -2976,8 +2976,6 @@
             </div>
         </div>
     </div>
-
-
 
     <!--start modal-->
     <div class="modal fade bd-example-modal-xl" id="bd-example-modal-xl" tabindex="-1" role="dialog"
