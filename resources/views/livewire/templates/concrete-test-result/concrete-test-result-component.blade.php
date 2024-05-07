@@ -49,7 +49,8 @@
                             </div>
 
                             <div style="text-align: right" class="col-md-6 col-sm-6 mb-2 search_cont">
-                                <input type="search" class="sinput searchbar-style" placeholder="Filter by project name" wire:model="searchTerm" />
+                                <input type="search" class="sinput searchbar-style"
+                                    placeholder="Filter by project name" wire:model="searchTerm" />
                             </div>
                         </div>
                         <div class="table-responsive">
@@ -61,6 +62,7 @@
                                         <th>Client Name</th>
                                         <th>Project Number</th>
                                         <th>Updated By</th>
+                                        <th>Status</th>
                                         <th>Last Update</th>
                                         <th style="text-align: center;">Options</th>
                                     </tr>
@@ -85,6 +87,22 @@
                                                 <td>{{ client($file->client_id)->name }}</td>
                                                 <td>{{ $file->project_number }}</td>
                                                 <td>{{ user($file->created_by)->name }}</td>
+                                                <td>
+                                                    @if ($file->status == 'sentToPE')
+                                                    <span class="badge badge-outline-primary">Send To PE</span>
+                                                @elseif ($file->status == 'sentToClerk')
+                                                    <span class="badge badge-outline-primary">Send To Clerk</span>
+                                                @elseif ($file->status == 'sentToSupervisor')
+                                                    <span class="badge badge-outline-primary">Send To Supervisor</span>
+                                                @elseif ($file->status == 'sentToTech')
+                                                    <span class="badge badge-outline-primary">Send To Field Tech</span>
+                                                @elseif ($file->status == 'sentToClient')
+                                                    <span class="badge badge-outline-success">Send To Client</span>
+                                                @else
+                                                    <span class="badge badge-outline-success">New Form Created</span>
+                                                @endif
+
+                                                </td>
                                                 <td>{{ $file->updated_at->format('M j, Y \a\t g:i A') }}</td>
                                                 <td style="text-align: center;">
                                                     <a href="{{ route('invoice.concrete-test-results-pdf', ['id' => $file->id]) }}"

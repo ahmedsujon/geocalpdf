@@ -56,52 +56,82 @@
                                         <th>Client Name</th>
                                         <th>Project Number</th>
                                         <th>Updated By</th>
+                                        <th>Status</th>
                                         <th>Created Date</th>
                                         <th style="text-align: center;">Options</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @php
-                                    $sl = $cdot_files->perPage() * $cdot_files->currentPage() - ($cdot_files->perPage() - 1);
+                                        $sl =
+                                            $cdot_files->perPage() * $cdot_files->currentPage() -
+                                            ($cdot_files->perPage() - 1);
                                     @endphp
                                     @if ($cdot_files->count() > 0)
-                                    @foreach ($cdot_files as $file)
-                                    <tr>
-                                        <td>
-                                            @if ( project($file->project_id)->avatar)
-                                            <img src="{{ asset('uploads/project') }}/{{ project($file->project_id)->avatar }}"
-                                                alt="user" class="rounded-circle thumb-md">
-                                            @else
-                                            <img src="{{ asset('assets/images/defaults/default_project.jpg') }}" alt="user"
-                                                class="rounded-circle thumb-md">
-                                            @endif
-                                        </td>
-                                        <td>{{ project($file->project_id)->name }}</td>
-                                        <td>{{ client($file->client_id)->name }}</td>
-                                        <td>{{ $file->project_number }}</td>
-                                        <td>{{ user($file->created_by)->name }}</td>
-                                        <td>{{ $file->created_at }}</td>
-                                        <td style="text-align: center;">
+                                        @foreach ($cdot_files as $file)
+                                            <tr>
+                                                <td>
+                                                    @if (project($file->project_id)->avatar)
+                                                        <img src="{{ asset('uploads/project') }}/{{ project($file->project_id)->avatar }}"
+                                                            alt="user" class="rounded-circle thumb-md">
+                                                    @else
+                                                        <img src="{{ asset('assets/images/defaults/default_project.jpg') }}"
+                                                            alt="user" class="rounded-circle thumb-md">
+                                                    @endif
+                                                </td>
+                                                <td>{{ project($file->project_id)->name }}</td>
+                                                <td>{{ client($file->client_id)->name }}</td>
+                                                <td>{{ $file->project_number }}</td>
+                                                <td>{{ user($file->created_by)->name }}</td>
+                                                <td>
+                                                    @if ($file->status == 'sentToPE')
+                                                        <span class="badge badge-outline-primary">Send To PE</span>
+                                                    @elseif ($file->status == 'sentToClerk')
+                                                        <span class="badge badge-outline-primary">Send To Clerk</span>
+                                                    @elseif ($file->status == 'sentToSupervisor')
+                                                        <span class="badge badge-outline-primary">Send To
+                                                            Supervisor</span>
+                                                    @elseif ($file->status == 'sentToTech')
+                                                        <span class="badge badge-outline-primary">Send To Field
+                                                            Tech</span>
+                                                    @elseif ($file->status == 'sentToClient')
+                                                        <span class="badge badge-outline-success">Send To Client</span>
+                                                    @else
+                                                        <span class="badge badge-outline-success">New Form
+                                                            Created</span>
+                                                    @endif
+                                                </td>
+                                                <td>{{ $file->created_at }}</td>
+                                                <td style="text-align: center;">
 
-                                            <a target="_blank" href="{{ route('cdot.form.generate',['id'=>$file->id]) }}"
-                                                class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Download Report"><i
-                                                    class="ti ti-file-invoice"></i></a>
-                                            <a href="{{ route('cdot.show', ['file_id' => $file->id]) }}"
-                                                class="btn btn-outline-success btn-icon-circle btn-icon-circle-sm" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="View Details"><i
-                                                    class="ti ti-eye"></i></a>
-                                            <a href="{{ route('cdot.update', ['file_id' => $file->id]) }}"
-                                                class="btn btn-outline-warning btn-icon-circle btn-icon-circle-sm"><i
-                                                    class="ti ti-edit" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Edit Form"></i></a>
-                                            <a wire:click.prevent="deleteConfirmation({{ $file->id }})"
-                                                class="btn btn-outline-danger btn-icon-circle btn-icon-circle-sm"><i
-                                                    class="ti ti-trash" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Delete Form"></i></a>
-                                        </td>
-                                    </tr>
-                                    @endforeach
+                                                    <a target="_blank"
+                                                        href="{{ route('cdot.form.generate', ['id' => $file->id]) }}"
+                                                        class="btn btn-outline-primary btn-icon-circle btn-icon-circle-sm"
+                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                        data-bs-original-title="Download Report"><i
+                                                            class="ti ti-file-invoice"></i></a>
+                                                    <a href="{{ route('cdot.show', ['file_id' => $file->id]) }}"
+                                                        class="btn btn-outline-success btn-icon-circle btn-icon-circle-sm"
+                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                        data-bs-original-title="View Details"><i
+                                                            class="ti ti-eye"></i></a>
+                                                    <a href="{{ route('cdot.update', ['file_id' => $file->id]) }}"
+                                                        class="btn btn-outline-warning btn-icon-circle btn-icon-circle-sm"><i
+                                                            class="ti ti-edit" data-bs-toggle="tooltip"
+                                                            data-bs-placement="top"
+                                                            data-bs-original-title="Edit Form"></i></a>
+                                                    <a wire:click.prevent="deleteConfirmation({{ $file->id }})"
+                                                        class="btn btn-outline-danger btn-icon-circle btn-icon-circle-sm"><i
+                                                            class="ti ti-trash" data-bs-toggle="tooltip"
+                                                            data-bs-placement="top"
+                                                            data-bs-original-title="Delete Form"></i></a>
+                                                </td>
+                                            </tr>
+                                        @endforeach
                                     @else
-                                    <tr>
-                                        <td colspan="7" class="text-center">No data available!</td>
-                                    </tr>
+                                        <tr>
+                                            <td colspan="7" class="text-center">No data available!</td>
+                                        </tr>
                                     @endif
                                 </tbody>
                             </table>
@@ -115,23 +145,21 @@
 </div>
 
 @push('scripts')
-<script>
-    window.addEventListener('showEditModal', event => {
+    <script>
+        window.addEventListener('showEditModal', event => {
             $('#editDataModal').modal('show');
         });
         window.addEventListener('closeModal', event => {
             $('#addDataModal').modal('hide');
             $('#editDataModal').modal('hide');
         });
-                //Success Delete
-                window.addEventListener('FileDeleted', event => {
+        //Success Delete
+        window.addEventListener('FileDeleted', event => {
             Swal.fire(
                 'Deleted!',
                 'Project has been deleted successfully.',
                 'success'
             )
         });
-        
-</script>
-
+    </script>
 @endpush
