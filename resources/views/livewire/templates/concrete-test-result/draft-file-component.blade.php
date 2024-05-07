@@ -56,6 +56,7 @@
                                         <th>Client Name</th>
                                         <th>Project Number</th>
                                         <th>Updated By</th>
+                                        <th>Status</th>
                                         <th>Last Update</th>
                                         <th style="text-align: center;">Options</th>
                                     </tr>
@@ -80,6 +81,9 @@
                                                 <td>{{ client($file->client_id)->name }}</td>
                                                 <td>{{ $file->project_number }}</td>
                                                 <td>{{ user($file->created_by)->name }}</td>
+                                                <td>
+                                                    <span class="badge badge-outline-primary">Draf Form</span>
+                                                </td>
                                                 <td>{{ $file->updated_at->format('M j, Y \a\t g:i A') }}</td>
                                                 <td style="text-align: center;">
 
@@ -88,13 +92,6 @@
                                                             class="ti ti-edit" data-bs-toggle="tooltip"
                                                             data-bs-placement="top"
                                                             data-bs-original-title="Edit Form"></i></a>
-
-                                                    {{-- <a href="{{ route('concrete.test.result.update', ['file_id' => $file->id]) }}"
-                                                        class="btn btn-outline-warning btn-icon-circle btn-icon-circle-sm"><i
-                                                            class="ti ti-edit" data-bs-toggle="tooltip"
-                                                            data-bs-placement="top"
-                                                            data-bs-original-title="Edit Form"></i></a> --}}
-
                                                     <a wire:click.prevent="deleteConfirmation({{ $file->id }})"
                                                         class="btn btn-outline-danger btn-icon-circle btn-icon-circle-sm"><i
                                                             class="ti ti-trash" data-bs-toggle="tooltip"

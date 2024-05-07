@@ -56,6 +56,7 @@
                                         <th>Client Name</th>
                                         <th>Project Number</th>
                                         <th>Updated By</th>
+                                        <th>Status</th>
                                         <th>Last Update</th>
                                         <th style="text-align: center;">Options</th>
                                     </tr>
@@ -80,6 +81,9 @@
                                                 <td>{{ client($file->client_id)->name }}</td>
                                                 <td>{{ $file->project_number }}</td>
                                                 <td>{{ user($file->created_by)->name }}</td>
+                                                <td>
+                                                    <span class="badge badge-outline-primary">Draf Form</span>
+                                                </td>
                                                 <td>{{ $file->updated_at->format('M j, Y \a\t g:i A') }}</td>
                                                 <td style="text-align: center;">
 
