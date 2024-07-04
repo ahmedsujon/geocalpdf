@@ -214,6 +214,34 @@
                 width: 20%;
             }
         }
+
+        .upload-btn-wrapper {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+        }
+
+        .btn-file {
+            border: 1px dashed gray;
+            color: gray;
+            background-color: white;
+            padding: 40px 60px;
+            border-radius: 8px;
+            font-size: 15px;
+        }
+
+        .upload-btn-wrapper input[type=file] {
+            font-size: 100px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+        }
+
+        .pt-20{
+            padding-top: 20px;
+        }
+
     </style>
     <div class="container-fluid">
         <div class="row">
@@ -2788,7 +2816,7 @@
                         </div>
 
                         <div class="row mt-3">
-                            <div class="col-md-12">
+                            <div class="col-md-9">
                                 <div class="table-responsive">
                                     <table class="table table-bordered" style="margin-bottom: 0;">
                                         <thead>
@@ -2797,7 +2825,6 @@
                                                 <th class="customcolor" scope="col">Title</th>
                                                 <th class="customcolor" scope="col">Project Engineer (print name)
                                                 </th>
-                                                <th class="customcolor" scope="col">Signature</th>
                                                 <th class="customcolor" scope="col">Title</th>
                                             </tr>
                                         </thead>
@@ -2836,19 +2863,6 @@
                                                         @enderror
                                                     </div>
                                                 </td>
-
-                                                <td class="moistureremove">
-                                                    <div class="input-group">
-                                                        <input type="text"
-                                                            class="form-control form-color moistureremoveinput"
-                                                            wire:model="signature">
-                                                        @error('signature')
-                                                            <span class="text-danger"
-                                                                style="font-size: 12px;">{{ $message }}</span>
-                                                        @enderror
-                                                    </div>
-                                                </td>
-                                                
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="text"
@@ -2863,6 +2877,28 @@
                                             </tr>
                                         </tbody>
                                     </table>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="upload-btn-wrapper">
+                                    <button class="btn-file">Upload your signature</button>
+                                    <input class="form-control mb-2" type="file" wire:model="signature" />
+
+                                    <div wire:loading="signature" wire:target="signature" wire:key="signature"
+                                        style="font-size: 12.5px;" class="mr-2 signature-img-style"><i
+                                            class="fa fa-spinner fa-spin mt-3 ml-2"></i> Uploading</div>
+
+                                    @if ($signature)
+                                        <img style="margin-top: -125px; margin-left: 20px; height: 85px; width: 230px;"
+                                            src="{{ $signature->temporaryUrl() }}" width="120">
+                                    @elseif($new_signature != '')
+                                        <img style="margin-top: -125px; margin-left: 20px; height: 85px; width: 230px;"
+                                            src="{{ asset($new_signature) }}" width="120">
+                                    @endif
+                                    @error('signature')
+                                        <span class="text-danger"
+                                            style="font-size: 12.5px;">{{ $message }}</span>
+                                    @enderror
                                 </div>
                             </div>
                         </div>

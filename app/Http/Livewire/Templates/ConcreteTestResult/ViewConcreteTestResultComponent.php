@@ -6,9 +6,12 @@ use App\Models\User;
 use App\Models\Project;
 use Livewire\Component;
 use App\Models\ConcreteTestResult;
+use Livewire\WithFileUploads;
 
 class ViewConcreteTestResultComponent extends Component
 {
+    use  WithFileUploads;
+    
     public $contactid, $office_address, $project_id, $client_id, $client_name, $user_id, $project_number, $project_location, $date_submited, $region, $item,
         $class_name, $design_mix_no, $batch_plant, $structure, $supplier, $slump, $inches_max, $inches_min, $compressive_strength,
 

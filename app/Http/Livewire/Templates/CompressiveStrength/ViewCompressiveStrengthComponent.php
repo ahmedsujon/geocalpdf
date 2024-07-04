@@ -6,9 +6,12 @@ use App\Models\User;
 use App\Models\Project;
 use Livewire\Component;
 use App\Models\CompressiveStrength;
+use Livewire\WithFileUploads;
 
 class ViewCompressiveStrengthComponent extends Component
 {
+    use WithFileUploads;
+    
     public $project_number, $client_name, $project_id, $client_id, $user_id, $office_address, $contractid, $region, $contract_id_seq, $project_location,
     $concrete_supplier, $cdot_mix, $item, $description, $placed_at, $material_placed_in_line_item, $batch_ticket,
     $field_tester_name, $entrained_air, $slump, $concrete_temperature, $unit_weight, $yield, $wc_ratio,
