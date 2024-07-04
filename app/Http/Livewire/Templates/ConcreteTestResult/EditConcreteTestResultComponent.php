@@ -2,9 +2,11 @@
 
 namespace App\Http\Livewire\Templates\ConcreteTestResult;
 
+use Carbon\Carbon;
 use App\Models\User;
 use App\Models\Project;
 use Livewire\Component;
+use Livewire\WithFileUploads;
 use App\Models\ConcreteTestResult;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -12,6 +14,8 @@ use Illuminate\Support\Facades\Storage;
 
 class EditConcreteTestResultComponent extends Component
 {
+    use WithFileUploads;
+
     public $contactid, $office_address, $project_id, $client_id, $client_name, $user_id, $project_number, $project_location, $date_submited, $region, $item,
         $class_name, $design_mix_no, $batch_plant, $structure, $supplier, $slump, $inches_max, $inches_min, $compressive_strength,
 
@@ -60,7 +64,7 @@ class EditConcreteTestResultComponent extends Component
         $location_test_o, $date_placed_o, $ticket_no_o, $batched_o, $placed_o, $temp_o, $slump_o, $total_air_o,
         $unit_mass_o, $yeild_o, $calculated_wc_ratio_o, $cylinders_cast_fs_no_o, $set_no_o, $se_o,
 
-        $tester, $tester_title, $project_engineer, $signature, $title, $file_id,
+        $tester, $tester_title, $project_engineer, $signature, $new_signature, $title, $file_id,
         $remark, $publish_status, $status, $created_by, $responsible_person = [];
 
        public $client_company_name, $client_address, $break_date_d;
@@ -338,7 +342,7 @@ class EditConcreteTestResultComponent extends Component
         $this->tester = $file->tester;
         $this->tester_title = $file->tester_title;
         $this->project_engineer = $file->project_engineer;
-        $this->signature = $file->signature;
+        $this->new_signature = $file->signature;
         $this->title = $file->title;
         $this->remark = $file->remark;
     }
@@ -633,8 +637,11 @@ class EditConcreteTestResultComponent extends Component
         $data->project_engineer = $this->project_engineer;
 
 
-        $data->signature = $this->signature;
-
+        if ($this->signature) {
+            $fileName = uniqid() . Carbon::now()->timestamp . '.' . $this->signature->extension();
+            $this->signature->storeAs('signature', $fileName);
+            $data->signature = 'uploads/signature/' . $fileName;
+        }
 
         $data->title = $this->title;
 

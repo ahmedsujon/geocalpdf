@@ -1167,18 +1167,23 @@
                 <tbody>
                     <tr>
                         <td class="td-padding-left"
-                            style=" width: 70%;  border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
+                            style="width: 40%;  border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
                             <p style="font-size: 12px; text-align: left; padding-bottom: 4px;"><span
                                     style="font-size: 8px; text-align: left;">Submitted By:
                                     {{ $data->submitted_by }}</span>
                             </p>
                         </td>
+                        
                         <td class="td-padding-left"
-                            style=" border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
+                            style="width: 30%; border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
                             <p style="font-size: 12px; text-align: left; padding-bottom: 4px;"><span
                                     style="font-size: 8px; text-align: left;">Approved By:
                                     {{ $data->approved_by }}</span>
                             </p>
+                        </td>
+
+                        <td class="td-padding-left" style="width: 30%;">
+                            <img style="height: 80px; width: 200px;" img src="{{ $data->signature }}" alt="">
                         </td>
                     </tr>
                 </tbody>

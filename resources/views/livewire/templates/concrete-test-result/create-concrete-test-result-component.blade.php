@@ -2836,6 +2836,7 @@
                                                         @enderror
                                                     </div>
                                                 </td>
+
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="text"
@@ -2847,6 +2848,7 @@
                                                         @enderror
                                                     </div>
                                                 </td>
+                                                
                                                 <td class="moistureremove">
                                                     <div class="input-group">
                                                         <input type="text"

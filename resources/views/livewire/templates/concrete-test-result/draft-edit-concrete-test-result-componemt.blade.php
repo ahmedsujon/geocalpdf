@@ -7,20 +7,6 @@
             margin-bottom: 0 !important;
         }
 
-        .kbw-signature {
-            width: 100%;
-            height: 100px;
-        }
-
-        #signaturepad canvas {
-            width: 100% !important;
-            height: auto;
-        }
-
-        .signature-clear {
-            border: 1px solid #a0a0a0;
-        }
-
         #customSwitchSuccess {
             font-size: 25px;
         }
@@ -240,6 +226,33 @@
             .commercial-form .width12 {
                 width: 20%;
             }
+        }
+
+        .upload-btn-wrapper {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+        }
+
+        .btn-file {
+            border: 1px dashed gray;
+            color: gray;
+            background-color: white;
+            padding: 40px 60px;
+            border-radius: 8px;
+            font-size: 15px;
+        }
+
+        .upload-btn-wrapper input[type=file] {
+            font-size: 100px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+        }
+
+        .pt-20 {
+            padding-top: 20px;
         }
     </style>
     <div class="container-fluid">
@@ -2883,23 +2896,31 @@
                                     </table>
                                 </div>
                             </div>
+
                             <div class="col-md-3 mt-2">
-                                <label for="inputSignature" class="form-label">Signature</label>
-                                <div class="text-center w-100">
-                                    <canvas id="signature-pad" style="border: 1px solid #111111"
-                                        class="signature-pad" width=350 height=150></canvas>
-                                    <br>
-                                    <button type="button"
-                                        style="background: white; color: black; font-size: 13px; margin-right: 5px; padding: 3px 10px; border-radius: 3px;"
-                                        class="btn btn-secondary" id="save_sign">Save Signature</button>
-                                    <button type="button"
-                                        style="background: white; color: black; font-size: 13px; padding: 3px 10px; border-radius: 3px;"
-                                        class="btn btn-secondary" id="clear_sign">Clear</button>
-                                    <br>
-                                    <span id="signature_status"></span>
+                                <div class="upload-btn-wrapper pt-20">
+                                    <button class="btn-file">Upload your signature</button>
+                                    <input class="form-control mb-2" type="file" wire:model="signature"
+                                        name="myfile" />
+
+                                    <div wire:loading="signature" wire:target="signature" wire:key="signature"
+                                        style="font-size: 12.5px;" class="mr-2 signature-img-style"><i
+                                            class="fa fa-spinner fa-spin mt-3 ml-2"></i> Uploading</div>
+
+                                    @if ($signature)
+                                        <img style="margin-top: -125px; margin-left: 20px; height: 85px; width: 230px;"
+                                            src="{{ $signature->temporaryUrl() }}" width="120">
+                                    @elseif($new_signature != '')
+                                        <img style="margin-top: -125px; margin-left: 20px; height: 85px; width: 230px;"
+                                            src="{{ asset($new_signature) }}" width="120">
+                                    @endif
+                                    @error('signature')
+                                        <span class="text-danger"
+                                            style="font-size: 12.5px;">{{ $message }}</span>
+                                    @enderror
                                 </div>
-                                <input type="hidden" id="signature" name="signature" />
                             </div>
+
                         </div>
 
                         <div class="row">
@@ -4678,29 +4699,6 @@
 </div>
 
 @push('scripts')
-    <script src="https://cdn.jsdelivr.net/npm/signature_pad@4.1.7/dist/signature_pad.umd.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            var signaturePad = new SignaturePad(document.getElementById('signature-pad'), {
-                backgroundColor: '#fff',
-                penColor: 'rgb(0, 0, 0)'
-            });
-            var saveButton = document.getElementById('save_sign');
-            var cancelButton = document.getElementById('clear_sign');
-
-            saveButton.addEventListener('click', function(event) {
-                var data = signaturePad.toDataURL('image/png');
-
-                $('#signature_status').html('<p style="color: green;">Signature added</p>');
-                $('#signature').val(data);
-                @this.set('signature', data);
-            });
-
-            cancelButton.addEventListener('click', function(event) {
-                signaturePad.clear();
-            });
-        });
-    </script>
 
     <script>
         $(document).ready(function() {

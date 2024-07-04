@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Templates\ConcreteTestResult;
 
+use Carbon\Carbon;
 use App\Models\User;
 use App\Models\Project;
 use Livewire\Component;
@@ -59,7 +60,7 @@ class DraftEditConcreteTestResultComponemt extends Component
         $location_test_o, $date_placed_o, $ticket_no_o, $batched_o, $placed_o, $temp_o, $slump_o, $total_air_o,
         $unit_mass_o, $yeild_o, $calculated_wc_ratio_o, $cylinders_cast_fs_no_o, $set_no_o, $se_o,
 
-        $tester, $tester_title, $project_engineer, $signature, $title, $file_id,
+        $tester, $tester_title, $project_engineer, $signature, $new_signature, $title, $file_id,
         $remark, $publish_status, $status, $created_by, $break_date_d, $responsible_person = [];
 
     // ============== get project information ========
@@ -335,7 +336,7 @@ class DraftEditConcreteTestResultComponemt extends Component
         $this->tester = $file->tester;
         $this->tester_title = $file->tester_title;
         $this->project_engineer = $file->project_engineer;
-        $this->signature = $file->signature;
+        $this->new_signature = $file->signature;
         $this->title = $file->title;
         $this->remark = $file->remark;
     }
@@ -628,9 +629,14 @@ class DraftEditConcreteTestResultComponemt extends Component
         $data->tester = $this->tester;
         $data->tester_title = $this->tester_title;
         $data->project_engineer = $this->project_engineer;
-        $data->signature = $this->signature;
-        $data->title = $this->title;
 
+        if ($this->signature) {
+            $fileName = uniqid() . Carbon::now()->timestamp . '.' . $this->signature->extension();
+            $this->signature->storeAs('signature', $fileName);
+            $data->signature = 'uploads/signature/' . $fileName;
+        }
+
+        $data->title = $this->title;
         $data->remark = $this->remark;
         $data->status = $this->status;
         $data->created_by = Auth::user()->id;

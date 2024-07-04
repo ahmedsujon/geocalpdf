@@ -9,12 +9,18 @@ use Livewire\Component;
 use App\Models\CompressiveStrength;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
+use Livewire\WithFileUploads;
 
 class EditCompressiveStrengthComponent extends Component
 {
+
+    use WithFileUploads;
+
     public $project_number, $client_name, $project_id, $client_id, $user_id, $office_address, $contractid, $region, $contract_id_seq, $project_location,
         $concrete_supplier, $cdot_mix, $item, $description, $placed_at, $material_placed_in_line_item, $batch_ticket,
         $field_tester_name, $entrained_air, $slump, $concrete_temperature, $unit_weight, $yield, $wc_ratio,
+
+        $signature, $new_signature,
 
         $specimen_for, $mold_date, $time, $hours_initial_cure_in_molds, $initial_cure_temperature, $final_cure_method,
         $location_stored_in_field, $manner_of_protection, $maintained_moist_and_temperature_by, $date_time_molds_removed,
@@ -200,6 +206,8 @@ class EditCompressiveStrengthComponent extends Component
         $this->psi_g = $file->psi_g;
         $this->break_type_g = $file->break_type_g;
         $this->aggregate_fractured_g = $file->aggregate_fractured_g;
+
+        $this->new_signature = $file->signature;
 
         $this->lab_comments = $file->lab_comments;
         $this->submitted_by = $file->submitted_by;
@@ -559,6 +567,12 @@ class EditCompressiveStrengthComponent extends Component
         $data->psi_g = $this->psi_g;
         $data->break_type_g = $this->break_type_g;
         $data->aggregate_fractured_g = $this->aggregate_fractured_g;
+
+        if ($this->signature) {
+            $fileName = uniqid() . Carbon::now()->timestamp . '.' . $this->signature->extension();
+            $this->signature->storeAs('signature', $fileName);
+            $data->signature = 'uploads/signature/' . $fileName;
+        }
 
         $data->lab_comments = $this->lab_comments;
         $data->submitted_by = $this->submitted_by;

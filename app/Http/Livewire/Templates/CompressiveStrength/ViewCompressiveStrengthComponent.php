@@ -13,6 +13,8 @@ class ViewCompressiveStrengthComponent extends Component
     $concrete_supplier, $cdot_mix, $item, $description, $placed_at, $material_placed_in_line_item, $batch_ticket,
     $field_tester_name, $entrained_air, $slump, $concrete_temperature, $unit_weight, $yield, $wc_ratio,
 
+    $signature, $new_signature,
+
     $specimen_for, $mold_date, $time, $hours_initial_cure_in_molds, $initial_cure_temperature, $final_cure_method,
     $location_stored_in_field, $manner_of_protection, $maintained_moist_and_temperature_by, $date_time_molds_removed,
     $field_comments, $sample_id, $set_no, $conc_class, $day_break_date, $number_of_specimens,
@@ -197,6 +199,8 @@ class ViewCompressiveStrengthComponent extends Component
        $this->psi_g = $file->psi_g;
        $this->break_type_g = $file->break_type_g;
        $this->aggregate_fractured_g = $file->aggregate_fractured_g;
+
+       $this->new_signature = $file->signature;
 
        $this->lab_comments = $file->lab_comments;
        $this->submitted_by = $file->submitted_by;
