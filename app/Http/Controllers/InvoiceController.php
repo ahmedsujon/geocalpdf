@@ -56,9 +56,7 @@ class InvoiceController extends Controller
         $data->client_company_name = client($data->client_id)->company_name;
 
         $pdf = Pdf::loadView('pdf.compressive-strength', compact('data'));
-        return $pdf->stream('concrete-test-results-summary-local-agency.pdf');
-        
-        // return $pdf->download('compressive-strength-local-agency.pdf');
+        return $pdf->download('compressive-strength-local-agency.pdf');
     }
     public function commercialPDF($id)
     {

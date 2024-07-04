@@ -207,7 +207,10 @@ class EditCompressiveStrengthComponent extends Component
         $this->break_type_g = $file->break_type_g;
         $this->aggregate_fractured_g = $file->aggregate_fractured_g;
 
-        $this->new_signature = $file->signature;
+        if ($file) {
+            $this->file_id = $file->id;
+            $this->new_signature = $file->signature;
+        }
 
         $this->lab_comments = $file->lab_comments;
         $this->submitted_by = $file->submitted_by;
@@ -572,6 +575,8 @@ class EditCompressiveStrengthComponent extends Component
             $fileName = uniqid() . Carbon::now()->timestamp . '.' . $this->signature->extension();
             $this->signature->storeAs('signature', $fileName);
             $data->signature = 'uploads/signature/' . $fileName;
+        } else {
+            $data->signature = $this->new_signature;
         }
 
         $data->lab_comments = $this->lab_comments;

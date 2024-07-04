@@ -336,7 +336,10 @@ class DraftEditConcreteTestResultComponemt extends Component
         $this->tester = $file->tester;
         $this->tester_title = $file->tester_title;
         $this->project_engineer = $file->project_engineer;
-        $this->new_signature = $file->signature;
+        if ($file) {
+            $this->file_id = $file->id;
+            $this->new_signature = $file->signature;
+        }
         $this->title = $file->title;
         $this->remark = $file->remark;
     }
@@ -634,6 +637,8 @@ class DraftEditConcreteTestResultComponemt extends Component
             $fileName = uniqid() . Carbon::now()->timestamp . '.' . $this->signature->extension();
             $this->signature->storeAs('signature', $fileName);
             $data->signature = 'uploads/signature/' . $fileName;
+        } else {
+            $data->signature = $this->new_signature;
         }
 
         $data->title = $this->title;
