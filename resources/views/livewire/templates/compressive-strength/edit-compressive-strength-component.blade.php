@@ -10,7 +10,7 @@
         .pt-40{
             padding-top: 40px;
         }
-        
+
         #customSwitchSuccess {
             font-size: 25px;
         }
@@ -3305,17 +3305,23 @@
                                 <tbody>
                                     <tr>
                                         <td class="td-padding-left"
-                                            style=" width: 70%;  border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
+                                            style="width: 40%; border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
                                             <p style="font-size: 12px; text-align: left; padding-bottom: 4px;"><span
                                                     style="font-size: 8px; text-align: left;">Submitted By:
                                                     {{ $submitted_by }}</span>
                                             </p>
                                         </td>
                                         <td class="td-padding-left"
-                                            style=" border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
+                                            style="width: 30%; border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
                                             <p style="font-size: 12px; text-align: left; padding-bottom: 4px;"><span
                                                     style="font-size: 8px; text-align: left;">Approved By:
                                                     {{ $approved_by }}</span>
+                                            </p>
+                                        </td>
+                                        <td class="td-padding-left"
+                                            style="width: 30%; border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
+                                            <p style="font-size: 12px; text-align: center;">
+                                                <img style="height: 70px; width: 200px;" src="{{ $signature }}">
                                             </p>
                                         </td>
                                     </tr>
