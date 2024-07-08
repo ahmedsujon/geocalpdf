@@ -4672,7 +4672,8 @@
                                             Signature
                                         </p>
                                         <p style="font-size: 12px; text-align: center;">
-                                            <img style="height: 70px; width: 200px;" src="{{ url($new_signature) }}">
+                                            <img style="height: 70px; width: 200px;"
+                                                src="http://geocalpdf.com/{{ $new_signature }}">
                                         </p>
                                     </td>
                                     <td class="td-padding-left width20" style="text-align: left;">
@@ -4699,7 +4700,6 @@
 </div>
 
 @push('scripts')
-
     <script>
         $(document).ready(function() {
             $('.dependent').change(function() {

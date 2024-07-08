@@ -336,10 +336,12 @@ class DraftEditConcreteTestResultComponemt extends Component
         $this->tester = $file->tester;
         $this->tester_title = $file->tester_title;
         $this->project_engineer = $file->project_engineer;
+
         if ($file) {
             $this->file_id = $file->id;
             $this->new_signature = $file->signature;
         }
+
         $this->title = $file->title;
         $this->remark = $file->remark;
     }
