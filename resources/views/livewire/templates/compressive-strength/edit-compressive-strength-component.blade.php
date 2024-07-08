@@ -3321,7 +3321,7 @@
                                         <td class="td-padding-left"
                                             style="width: 30%; border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
                                             <p style="font-size: 12px; text-align: center;">
-                                                <img style="height: 70px; width: 200px;" src="{{ $signature }}">
+                                                <img style="height: 70px; width: 200px;" src="{{ url($new_signature) }}">
                                             </p>
                                         </td>
                                     </tr>
