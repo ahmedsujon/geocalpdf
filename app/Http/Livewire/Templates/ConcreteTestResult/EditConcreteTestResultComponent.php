@@ -67,7 +67,7 @@ class EditConcreteTestResultComponent extends Component
         $tester, $tester_title, $project_engineer, $signature, $new_signature, $title, $file_id,
         $remark, $publish_status, $status, $created_by, $responsible_person = [];
 
-       public $client_company_name, $client_address, $break_date_d;
+    public $client_company_name, $client_address, $break_date_d;
 
     // ============== get project information ========
     public $selected_project_ids = [];
@@ -362,7 +362,8 @@ class EditConcreteTestResultComponent extends Component
             'office_address' => 'required',
             'inches_max' => 'required',
             'inches_min' => 'required',
-            'contactid' => 'required'
+            'contactid' => 'required',
+            'signature' => 'required',
         ]);
     }
 
@@ -375,6 +376,7 @@ class EditConcreteTestResultComponent extends Component
                 'project_location' => 'required',
                 'office_address' => 'required',
                 'responsible_person' => 'required',
+                'signature' => 'required',
             ], [
                 'project_id.required' => 'Project name is required',
                 'user_id.required' => 'Technician name is required',

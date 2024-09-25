@@ -7,12 +7,15 @@ use App\Models\User;
 use App\Models\Project;
 use Livewire\Component;
 use App\Models\SubClient;
+use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use App\Models\InspectionConcreteSetTwo;
 
 class EditInspectionTwoComponent extends Component
 {
+    use WithFileUploads;
+
     public $project_id, $client_id, $client_name, $project_number, $item_number, $office_address, $cylinder_id, $date, $supplier, $plant, $sampled_by, $created_by, $type_of_structure, $general_location, $specific_location, $mix_id, $truck_no, $ticket_no, $batch_time, $sample_time, $ttf_unloading, $ambient_temp, $yards_at_sampling, $total_yard_placement, $water_added, $water_cement_ratio, $air_content, $slump, $concrete_temp, $unit_weight, $air_min, $air_max, $slump_min, $slump_max, $concrete_temp_min, $concrete_temp_max, $yield, $relative_yield, $mix_design_strength, $required_strength, $weather, $est_wind, $est_rh, $slump_cone_id, $thermometer_id, $air_meter_id, $unit_weight_measure_id, $weather_scale_id, $informed_by, $cement, $other_cementitious_matl, $other_cementitious_matl_a, $fly_ash, $water, $fine_aggregate, $course_aggregate, $max_aggregate_size, $admixture_a, $admixture_a_a, $admixture_b, $admixture_b_b, $admixture_c, $admixture_c_c, $total_batch_weight, $conc_comp_machine_id, $caliper_id, $scale_id, $cylinders_cast, $time_cylinders_molded, $cylinders_temperature_24h, $where_cylinders_cured, $field_placement_observations, $remark, $date_cylinders_received_lab, $pick_up_by, $cylinders_condition, $test_hours, $pick_up_hours, $delayed_hours, $why, $status, $file_id, $responsible_person = [];
 
     public $age_a, $test_date_a, $diameter_a, $diameter_a_a, $avg_length_a, $mass_a, $max_load_a, $type_cap_a, $area_cyl_a, $measured_strength_a, $specified_strength_a, $type_fracture_a, $person_performing_a;
@@ -265,11 +268,11 @@ class EditInspectionTwoComponent extends Component
         }
     }
     // ================== specified strength ===================
-    
+
     public function specifiedStrengthA()
     {
         if ($this->age_a != null) {
-           $this->test_date_a = Carbon::parse($this->date)->addDays($this->age_a)->format('Y-m-d');  
+           $this->test_date_a = Carbon::parse($this->date)->addDays($this->age_a)->format('Y-m-d');
         }else {
             $this->test_date_a = null;
         }
@@ -285,7 +288,7 @@ class EditInspectionTwoComponent extends Component
     public function specifiedStrengthB()
     {
         if ($this->age_b != null) {
-            $this->test_date_b = Carbon::parse($this->date)->addDays($this->age_b)->format('Y-m-d');  
+            $this->test_date_b = Carbon::parse($this->date)->addDays($this->age_b)->format('Y-m-d');
          }else {
             $this->test_date_b = null;
         }
@@ -301,7 +304,7 @@ class EditInspectionTwoComponent extends Component
     public function specifiedStrengthC()
     {
         if ($this->age_c != null) {
-            $this->test_date_c = Carbon::parse($this->date)->addDays($this->age_c)->format('Y-m-d');  
+            $this->test_date_c = Carbon::parse($this->date)->addDays($this->age_c)->format('Y-m-d');
          }else {
             $this->test_date_c = null;
         }
@@ -317,7 +320,7 @@ class EditInspectionTwoComponent extends Component
     public function specifiedStrengthD()
     {
         if ($this->age_d != null) {
-            $this->test_date_d = Carbon::parse($this->date)->addDays($this->age_d)->format('Y-m-d');  
+            $this->test_date_d = Carbon::parse($this->date)->addDays($this->age_d)->format('Y-m-d');
          }else {
             $this->test_date_d = null;
         }
@@ -333,7 +336,7 @@ class EditInspectionTwoComponent extends Component
     public function specifiedStrengthE()
     {
         if ($this->age_e != null) {
-            $this->test_date_e = Carbon::parse($this->date)->addDays($this->age_e)->format('Y-m-d');  
+            $this->test_date_e = Carbon::parse($this->date)->addDays($this->age_e)->format('Y-m-d');
          }else {
             $this->test_date_e = null;
         }
@@ -349,7 +352,7 @@ class EditInspectionTwoComponent extends Component
     public function specifiedStrengthF()
     {
         if ($this->age_f != null) {
-            $this->test_date_f = Carbon::parse($this->date)->addDays($this->age_f)->format('Y-m-d');  
+            $this->test_date_f = Carbon::parse($this->date)->addDays($this->age_f)->format('Y-m-d');
          }else {
             $this->test_date_f = null;
         }
@@ -365,7 +368,7 @@ class EditInspectionTwoComponent extends Component
     public function specifiedStrengthG()
     {
         if ($this->age_g != null) {
-            $this->test_date_g = Carbon::parse($this->date)->addDays($this->age_g)->format('Y-m-d');  
+            $this->test_date_g = Carbon::parse($this->date)->addDays($this->age_g)->format('Y-m-d');
          }else {
             $this->test_date_g = null;
         }
@@ -381,7 +384,7 @@ class EditInspectionTwoComponent extends Component
     public function specifiedStrengthH()
     {
         if ($this->age_h != null) {
-            $this->test_date_h = Carbon::parse($this->date)->addDays($this->age_h)->format('Y-m-d');  
+            $this->test_date_h = Carbon::parse($this->date)->addDays($this->age_h)->format('Y-m-d');
          }else {
             $this->test_date_h = null;
         }
@@ -397,7 +400,7 @@ class EditInspectionTwoComponent extends Component
     public function specifiedStrengthI()
     {
         if ($this->age_i != null) {
-            $this->test_date_i = Carbon::parse($this->date)->addDays($this->age_i)->format('Y-m-d');  
+            $this->test_date_i = Carbon::parse($this->date)->addDays($this->age_i)->format('Y-m-d');
          }else {
             $this->test_date_i = null;
         }
@@ -798,7 +801,7 @@ class EditInspectionTwoComponent extends Component
         if($this->status == 'sentToClient'){
             $data->send_to_client = 1;
         }
-        
+
         $data->remark = $this->remark;
         $data->created_by = Auth::user()->id;
         $data->responsible_person = json_encode($this->responsible_person);
@@ -813,7 +816,7 @@ class EditInspectionTwoComponent extends Component
             $project_id = InspectionConcreteSetTwo::find($f_id)->project_id;
             dispatch(function () use ($persons, $f_id, $project_id, $auth_user_id) {
                 foreach ($persons as $key => $re_id) {
-                    
+
                     $select_project = InspectionConcreteSetTwo::find($f_id);
                     if ($select_project->send_to_client == 1){
                         $sub_client = SubClient::find($re_id);

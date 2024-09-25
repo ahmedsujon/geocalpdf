@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Mail;
 class CreateCompressiveStrengthComponent extends Component
 {
     use WithFileUploads;
-    
+
     public $project_number, $client_name, $project_id, $client_id, $user_id, $office_address, $contractid, $region, $contract_id_seq, $project_location,
         $concrete_supplier, $cdot_mix, $item, $description, $placed_at, $material_placed_in_line_item, $batch_ticket,
         $field_tester_name, $entrained_air, $slump, $concrete_temperature, $unit_weight, $yield, $wc_ratio,
@@ -253,6 +253,7 @@ class CreateCompressiveStrengthComponent extends Component
             'responsible_person' => 'required',
             'office_address' => 'required',
             'mold_date' => 'required',
+            'signature' => 'required',
         ]);
     }
 
@@ -265,6 +266,7 @@ class CreateCompressiveStrengthComponent extends Component
                 'office_address' => 'required',
                 'responsible_person' => 'required',
                 'mold_date' => 'required',
+                'signature' => 'required',
             ], [
                 'project_id.required' => 'Project name is required',
                 'responsible_person.required' => 'Responsible person is required',
@@ -434,7 +436,7 @@ class CreateCompressiveStrengthComponent extends Component
             $this->signature->storeAs('signature', $fileName);
             $data->signature = 'uploads/signature/' . $fileName;
         }
-        
+
         $data->lab_comments = $this->lab_comments;
         $data->submitted_by = $this->submitted_by;
         $data->approved_by = $this->approved_by;
@@ -473,7 +475,7 @@ class CreateCompressiveStrengthComponent extends Component
                 });
             }
         }
-        
+
         if ($publish_status === 'publish') {
             session()->flash('message', 'Compressive strength file created successfully');
             return redirect()->route('template.compressive.strength');
@@ -508,8 +510,7 @@ class CreateCompressiveStrengthComponent extends Component
 
         $projects = Project::orderBy('id', 'DESC')->get();
         $supervisors = User::orderBy('id', 'DESC')->where('role_id', 5)->get();
-        return view(
-            'livewire.templates.compressive-strength.create-compressive-strength-component',
+        return view('livewire.templates.compressive-strength.create-compressive-strength-component',
             ['projects' => $projects, 'supervisors' => $supervisors]
         )->layout('livewire.layouts.base');
     }

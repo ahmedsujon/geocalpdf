@@ -6,12 +6,15 @@ use Carbon\Carbon;
 use App\Models\User;
 use App\Models\Project;
 use Livewire\Component;
+use Livewire\WithFileUploads;
 use App\Models\ConcreteTestResult;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 
 class CreateConcreteTestResultComponent extends Component
 {
+    use WithFileUploads;
+
     public $contactid, $office_address, $project_id, $client_id, $client_name, $user_id, $project_number, $project_location, $date_submited, $region, $item,
         $class_name, $design_mix_no, $batch_plant, $structure, $supplier, $slump, $inches_max, $inches_min, $compressive_strength,
 
@@ -93,6 +96,7 @@ class CreateConcreteTestResultComponent extends Component
             'inches_max' => 'required',
             'inches_min' => 'required',
             'contactid' => 'required',
+            'signature' => 'required',
         ]);
     }
 
@@ -105,6 +109,7 @@ class CreateConcreteTestResultComponent extends Component
                 'project_location' => 'required',
                 'office_address' => 'required',
                 'responsible_person' => 'required',
+                'signature' => 'required',
             ], [
                 'project_id.required' => 'Project name is required',
                 'user_id.required' => 'Technician name is required',
@@ -420,8 +425,7 @@ class CreateConcreteTestResultComponent extends Component
     {
         $projects = Project::orderBy('id', 'DESC')->get();
         $supervisors = User::orderBy('id', 'DESC')->where('role_id', 5)->get();
-        return view(
-            'livewire.templates.concrete-test-result.create-concrete-test-result-component',
+        return view('livewire.templates.concrete-test-result.create-concrete-test-result-component',
             ['projects' => $projects, 'supervisors' => $supervisors]
         )
             ->layout('livewire.layouts.base');

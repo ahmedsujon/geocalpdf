@@ -14,7 +14,7 @@ use Livewire\WithFileUploads;
 class DraftEditConcreteTestResultComponemt extends Component
 {
     use WithFileUploads;
-    
+
     public $concrete_test_result_id, $contactid, $office_address, $project_id, $client_id, $client_name, $user_id, $project_number, $project_location, $date_submited, $region, $item,
         $class_name, $design_mix_no, $batch_plant, $structure, $supplier, $slump, $inches_max, $inches_min, $compressive_strength,
 
@@ -359,7 +359,8 @@ class DraftEditConcreteTestResultComponemt extends Component
             'office_address' => 'required',
             'inches_max' => 'required',
             'inches_min' => 'required',
-            'contactid' => 'contactid'
+            'contactid' => 'contactid',
+            'signature' => 'required',
         ]);
     }
 
@@ -372,6 +373,7 @@ class DraftEditConcreteTestResultComponemt extends Component
                 'project_location' => 'required',
                 'office_address' => 'required',
                 'responsible_person' => 'required',
+                'signature' => 'required',
             ], [
                 'project_id.required' => 'Project name is required',
                 'user_id.required' => 'Technician name is required',

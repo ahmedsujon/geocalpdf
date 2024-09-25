@@ -8,11 +8,14 @@ use App\Models\Project;
 use Livewire\Component;
 use App\Models\SubClient;
 use App\Models\SoilAggregate;
+use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 
 class EditSoilAggregateComponent extends Component
 {
+    use WithFileUploads;
+
     public $project_id, $client_id, $project_number, $date, $user_id, $weather, $troxler, $other, $model, $serial_number,
     $density_count, $item_number, $moisture_count, $moisture_equation, $compaction_requirement, $requirement_plus, $requirement_minus, $general_info, $remark, $created_by, $status, $test_mode, $main_test_method, $observation, $office_address, $client_name, $responsible_person = [], $file_id;
 

@@ -169,7 +169,9 @@
             border-left: 1px solid #000000;
         }
 
-        .input-group>.btn~.select2-container--bootstrap-5 .select2-selection, .input-group>.dropdown-menu~.select2-container--bootstrap-5 .select2-selection, .input-group>.input-group-text~.select2-container--bootstrap-5 .select2-selection {
+        .input-group>.btn~.select2-container--bootstrap-5 .select2-selection,
+        .input-group>.dropdown-menu~.select2-container--bootstrap-5 .select2-selection,
+        .input-group>.input-group-text~.select2-container--bootstrap-5 .select2-selection {
             background-color: #ccecff !important;
         }
 
@@ -238,10 +240,9 @@
             opacity: 0;
         }
 
-        .pt-20{
+        .pt-20 {
             padding-top: 20px;
         }
-
     </style>
     <div class="container-fluid">
         <div class="row">
@@ -452,7 +453,8 @@
                                     <table class="table table-bordered" style="margin-bottom: 0;">
                                         <thead>
                                             <tr>
-                                                <th class="customcolor text-center width11" scope="col">Location and Test #</th>
+                                                <th class="customcolor text-center width11" scope="col">Location
+                                                    and Test #</th>
                                                 <th class="customcolor text-center" scope="col">Date Placed</th>
                                                 <th class="customcolor text-center" scope="col">Ticket no.</th>
                                                 <th class="customcolor text-center" scope="col">Batched</th>
@@ -462,8 +464,10 @@
                                                 <th class="customcolor text-center" scope="col">% total air</th>
                                                 <th class="customcolor text-center" scope="col">Unit mass</th>
                                                 <th class="customcolor text-center" scope="col">Yield</th>
-                                                <th class="customcolor text-center" scope="col">Calculated w/c ratio</th>
-                                                <th class="customcolor text-center" scope="col">Cylinders cast F.S. no.</th>
+                                                <th class="customcolor text-center" scope="col">Calculated w/c
+                                                    ratio</th>
+                                                <th class="customcolor text-center" scope="col">Cylinders cast F.S.
+                                                    no.</th>
                                                 <th class="customcolor text-center" scope="col">Set No.</th>
                                                 <th class="customcolor text-center" scope="col">S. E.</th>
                                             </tr>
@@ -2895,11 +2899,11 @@
                                         <img style="margin-top: -125px; margin-left: 20px; height: 85px; width: 230px;"
                                             src="{{ asset($new_signature) }}" width="120">
                                     @endif
-                                    @error('signature')
-                                        <span class="text-danger"
-                                            style="font-size: 12.5px;">{{ $message }}</span>
-                                    @enderror
                                 </div>
+                                <br>
+                                @error('signature')
+                                    <span class="text-danger" style="font-size: 12.5px;">{{ $message }}</span>
+                                @enderror
                             </div>
                         </div>
 
@@ -2943,8 +2947,10 @@
                                     @endif
                                 </div>
                                 <div class="col-md-12 text-center">
-                                        <button type="button" wire:click.prevent='storeData("unpublish")' class="btn btn-primary submit_btn">{!! loadingState("storeData('unpublish')", 'Save as Draft') !!}</button>
-                                        <button type="button" wire:click.prevent='storeData("publish")' class="btn btn-success submit_btn">{!! loadingState("storeData('publish')", 'Save and Send') !!}</button>
+                                    <button type="button" wire:click.prevent='storeData("unpublish")'
+                                        class="btn btn-primary submit_btn">{!! loadingState("storeData('unpublish')", 'Save as Draft') !!}</button>
+                                    <button type="button" wire:click.prevent='storeData("publish")'
+                                        class="btn btn-success submit_btn">{!! loadingState("storeData('publish')", 'Save and Send') !!}</button>
                                 </div>
                             </div>
                         </div>
@@ -2991,14 +2997,13 @@
         });
     </script>
 
-<script>
-    document.getElementById('compressive_strength').addEventListener('input', function(e) {
-        let value = e.target.value.replace(/[^\d.]/g, '');
-        value = parseFloat(value);
-        if (!isNaN(value)) {
-            e.target.value = value.toLocaleString('en-US');
-        }
-    });
-</script>
-
+    <script>
+        document.getElementById('compressive_strength').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/[^\d.]/g, '');
+            value = parseFloat(value);
+            if (!isNaN(value)) {
+                e.target.value = value.toLocaleString('en-US');
+            }
+        });
+    </script>
 @endpush

@@ -2,15 +2,17 @@
 
 namespace App\Http\Livewire\Templates\PlasticConcrete;
 
-use App\Models\PlasticConcrete;
-use App\Models\Project;
 use App\Models\User;
+use App\Models\Project;
+use Livewire\Component;
+use Livewire\WithFileUploads;
+use App\Models\PlasticConcrete;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
-use Livewire\Component;
 
 class CreatePlasticConcreteComponent extends Component
 {
+    use WithFileUploads;
 
     public $project_id, $client_id, $project_number, $date, $user_id, $remark, $created_by, $client_name, $weather, $est_wind, $est_rh, $slump_cone, $thermometer, $air_meter, $unit_weight_measure, $scale_id, $contractor, $mix_supplier, $plant, $mix_id, $design_strength, $item_number, $required_strength, $specified_slump_min, $specified_slump_max, $specified_air_min, $specified_air_max, $conc_temp_min, $conc_temp_max, $cement_ib, $cementitious_malt, $water, $fine_aggregate, $course_aggregate, $max_aggregate, $admixture_one, $admixture_two, $admixture_three, $representative, $total_yds, $general_location, $responsibles, $observation, $office_address, $responsible_person = [];
 

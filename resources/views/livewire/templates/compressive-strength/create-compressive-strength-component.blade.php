@@ -238,7 +238,7 @@
         .pt-40{
             padding-top: 40px;
         }
-        
+
     </style>
     <div class="container-fluid">
         <div class="row">
@@ -1915,6 +1915,7 @@
                                         <img style="margin-top: -125px; margin-left: 20px; height: 85px; width: 230px;"
                                             src="{{ asset($new_signature) }}" width="120">
                                     @endif
+                                    <br>
                                     @error('signature')
                                         <span class="text-danger"
                                             style="font-size: 12.5px;">{{ $message }}</span>
