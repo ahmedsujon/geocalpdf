@@ -99,19 +99,6 @@ class ConcreteTestResultComponent extends Component
         echo $output;
     }
 
-    // public function render()
-    // {
-    //     $files = ConcreteTestResult::orderBy('id', 'DESC')
-    //         ->join('projects', 'concrete_test_results.project_id', '=', 'projects.id')
-    //         ->where('projects.name', 'like', '%' . $this->searchTerm . '%')
-    //         ->where('publish_status', 'publish')
-    //         ->select('concrete_test_results.*')
-    //         ->paginate($this->sortingValue);
-
-    //     return view('livewire.templates.concrete-test-result.concrete-test-result-component', ['files' => $files])
-    //         ->layout('livewire.layouts.base');
-    // }
-
     public function render()
     {
         if (Auth::user()->role_id == '1' || Auth::user()->role_id == '2') {

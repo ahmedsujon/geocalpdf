@@ -11,8 +11,7 @@
         <div class="sidebar-user-pro media border-end">
             <div class="position-relative mx-auto">
                 @if (Auth::user()->avatar)
-                    <img src="{{ asset(auth::user()->avatar) }}" alt="user"
-                        class="rounded-circle thumb-md">
+                    <img src="{{ asset(auth::user()->avatar) }}" alt="user" class="rounded-circle thumb-md">
                     <span class="online-icon position-absolute end-0"><i class="mdi mdi-record text-success"></i></span>
                 @else
                     <img src="{{ asset('assets/images/defaults/default.png') }}" alt="user"
@@ -83,10 +82,13 @@
                                 id="sidebarConcreteForm">
                                 <ul class="nav flex-column">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('template.concrete.test.result') }}">Concrete Results Form</a>
+                                        <a class="nav-link"
+                                            href="{{ route('template.concrete.test.result') }}">Concrete Results
+                                            Form</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('template.concrete.test.result.draft') }}">Draft Files</a>
+                                        <a class="nav-link"
+                                            href="{{ route('template.concrete.test.result.draft') }}">Draft Files</a>
                                     </li>
                                 </ul>
                             </div>
@@ -102,11 +104,13 @@
                                 id="sidebarCompressiveForm">
                                 <ul class="nav flex-column">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('template.compressive.strength') }}">Compressive
+                                        <a class="nav-link"
+                                            href="{{ route('template.compressive.strength') }}">Compressive
                                             Strength</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('template.compressive.strength.draft') }}">Draft Files</a>
+                                        <a class="nav-link"
+                                            href="{{ route('template.compressive.strength.draft') }}">Draft Files</a>
                                     </li>
                                 </ul>
                             </div>
@@ -237,8 +241,13 @@
                             </div>
                         </li>
 
-                        @if (Auth::user()->role_id == '1' || Auth::user()->role_id == '2' || Auth::user()->role_id == '3')
-                            <li class="menu-label mt-0 text-primary font-12 fw-semibold">M<span>anagements</span></li>
+                        @if (Auth::user()->role_id == '1' ||
+                                Auth::user()->role_id == '2' ||
+                                Auth::user()->role_id == '3' ||
+                                Auth::user()->role_id == '4' ||
+                                Auth::user()->role_id == '5')
+                            <li class="menu-label mt-0 text-primary font-12 fw-semibold">
+                                Project<span>Managements</span></li>
 
                             @if (Auth::user()->role_id == '1' || Auth::user()->role_id == '2')
                                 <!--end nav-item-->
@@ -290,28 +299,26 @@
                                 </li>
                             @endif
 
-                            @if (Auth::user()->role_id == '1' || Auth::user()->role_id == '2' || Auth::user()->role_id == '3')
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#sidebarAnalytics" data-bs-toggle="collapse"
-                                        role="button" aria-expanded="false" aria-controls="sidebarAnalytics">
-                                        <i class="ti ti-stack menu-icon"></i>
-                                        <span>Project</span>
-                                    </a>
-                                    <div class="collapse {{ request()->is('project') || request()->is('project/*') ? 'show' : '' }}"
-                                        id="sidebarAnalytics">
-                                        <ul class="nav flex-column">
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="{{ route('project.list') }}">Project
-                                                    Listing</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="{{ route('project.create') }}" class="nav-link ">Add
-                                                    Project</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                            @endif
+                            <li class="nav-item">
+                                <a class="nav-link" href="#sidebarAnalytics" data-bs-toggle="collapse"
+                                    role="button" aria-expanded="false" aria-controls="sidebarAnalytics">
+                                    <i class="ti ti-stack menu-icon"></i>
+                                    <span>Project</span>
+                                </a>
+                                <div class="collapse {{ request()->is('project') || request()->is('project/*') ? 'show' : '' }}"
+                                    id="sidebarAnalytics">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{ route('project.list') }}">Project
+                                                Listing</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="{{ route('project.create') }}" class="nav-link ">Add
+                                                Project</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
 
                             @if (Auth::user()->role_id == '1' || Auth::user()->role_id == '2' || Auth::user()->role_id == '3')
                                 <li class="nav-item">
