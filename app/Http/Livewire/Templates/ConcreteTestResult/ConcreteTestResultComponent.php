@@ -101,6 +101,9 @@ class ConcreteTestResultComponent extends Component
 
     public function render()
     {
+        $userId = (string) auth()->user()->id;
+
+        // For Admin (role_id 1) and Supervisor (role_id 2)
         if (Auth::user()->role_id == '1' || Auth::user()->role_id == '2') {
             $files = ConcreteTestResult::orderBy('id', 'DESC')
                 ->join('projects', 'concrete_test_results.project_id', '=', 'projects.id')
@@ -108,22 +111,54 @@ class ConcreteTestResultComponent extends Component
                 ->where('publish_status', 'publish')
                 ->select('concrete_test_results.*')
                 ->paginate($this->sortingValue);
-        } else {
-            $files = collect([]);
-            $all_files = ConcreteTestResult::orderBy('id', 'DESC')
-                ->join('projects', 'concrete_test_results.project_id', '=', 'projects.id')
-                ->where('projects.name', 'like', '%' . $this->searchTerm . '%')
-                ->where('publish_status', 'publish')
-                ->select('concrete_test_results.*')
-                ->get();
-
-            foreach ($all_files as $key => $file) {
-                if (in_array(Auth::user()->id, json_decode($file->responsible_person))) {
-                    $files->push($file);
-                }
-            }
-            $files = $files->paginate($this->sortingValue);
         }
-        return view('livewire.templates.concrete-test-result.concrete-test-result-component', ['files' => $files])->layout('livewire.layouts.base');
+        // For other roles
+        else {
+            $projects = Project::whereJsonContains('responsible_ft', $userId)
+                ->orWhereJsonContains('responsible_supervisor', $userId)
+                ->orWhereJsonContains('responsible_clerk', $userId)
+                ->orWhereJsonContains('responsible_pe', $userId)
+                ->where('name', 'like', '%' . $this->searchTerm . '%')
+                ->orderBy('id', 'DESC')
+                ->pluck('id'); // Get only project IDs
+
+            // Now fetch the concrete test results for the filtered projects
+            $files = ConcreteTestResult::orderBy('id', 'DESC')
+                ->whereIn('project_id', $projects)
+                ->where('publish_status', 'publish')
+                ->paginate($this->sortingValue);
+        }
+
+        return view('livewire.templates.concrete-test-result.concrete-test-result-component', ['files' => $files])
+            ->layout('livewire.layouts.base');
     }
+
+
+    // public function render()
+    // {
+    //     if (Auth::user()->role_id == '1' || Auth::user()->role_id == '2') {
+    //         $files = ConcreteTestResult::orderBy('id', 'DESC')
+    //             ->join('projects', 'concrete_test_results.project_id', '=', 'projects.id')
+    //             ->where('projects.name', 'like', '%' . $this->searchTerm . '%')
+    //             ->where('publish_status', 'publish')
+    //             ->select('concrete_test_results.*')
+    //             ->paginate($this->sortingValue);
+    //     } else {
+    //         $files = collect([]);
+    //         $all_files = ConcreteTestResult::orderBy('id', 'DESC')
+    //             ->join('projects', 'concrete_test_results.project_id', '=', 'projects.id')
+    //             ->where('projects.name', 'like', '%' . $this->searchTerm . '%')
+    //             ->where('publish_status', 'publish')
+    //             ->select('concrete_test_results.*')
+    //             ->get();
+
+    //         foreach ($all_files as $key => $file) {
+    //             if (in_array(Auth::user()->id, json_decode($file->responsible_person))) {
+    //                 $files->push($file);
+    //             }
+    //         }
+    //         $files = $files->paginate($this->sortingValue);
+    //     }
+    //     return view('livewire.templates.concrete-test-result.concrete-test-result-component', ['files' => $files])->layout('livewire.layouts.base');
+    // }
 }

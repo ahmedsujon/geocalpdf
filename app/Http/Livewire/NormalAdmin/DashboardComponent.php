@@ -3,17 +3,18 @@
 namespace App\Http\Livewire\NormalAdmin;
 
 use DateTime;
+use App\Models\Project;
 use Livewire\Component;
 use App\Models\Concrete;
 use App\Models\Commercial;
-use App\Models\CompressiveStrength;
-use App\Models\ConcreteTestResult;
 use App\Models\TemplateOne;
 use Livewire\WithPagination;
 use App\Models\SoilAggregate;
 use App\Models\PlasticConcrete;
 use App\Models\FieldDensityCdot;
+use App\Models\ConcreteTestResult;
 use App\Models\InspectionConcrete;
+use App\Models\CompressiveStrength;
 use Illuminate\Support\Facades\Auth;
 use App\Models\InspectionConcreteSetSix;
 use App\Models\InspectionConcreteSetTen;
@@ -72,32 +73,90 @@ class DashboardComponent extends Component
         //     ->take(3)
         //     ->get();
 
-
+        $userId = (string) auth()->user()->id;
+        // For Admin (role_id 1) and Supervisor (role_id 2)
         if (Auth::user()->role_id == '1' || Auth::user()->role_id == '2') {
-            $concreate_test_result_forms = ConcreteTestResult::orderBy('id', 'DESC')->where('publish_status', 'publish')->take(3)->get();
-        } else {
-            $concreate_test_result_forms = collect([]);
-            $all_files = ConcreteTestResult::orderBy('id', 'DESC')->where('publish_status', 'publish')->get();
-            foreach ($all_files as $key => $file) {
-                if (in_array(Auth::user()->id, json_decode($file->responsible_person))) {
-                    $concreate_test_result_forms->push($file);
-                }
-            }
-            $concreate_test_result_forms = $concreate_test_result_forms->take(3);
+            // Fetch the top 3 published concrete test results
+            $concreate_test_result_forms = ConcreteTestResult::orderBy('id', 'DESC')
+                ->where('publish_status', 'publish')
+                ->take(3)
+                ->get();
+        }
+        // For other roles
+        else {
+            // Get project IDs where the user is responsible (based on JSON fields)
+            $projectIds = Project::whereJsonContains('responsible_ft', $userId)
+                ->orWhereJsonContains('responsible_supervisor', $userId)
+                ->orWhereJsonContains('responsible_clerk', $userId)
+                ->orWhereJsonContains('responsible_pe', $userId)
+                ->where('name', 'like', '%' . $this->searchTerm . '%')
+                ->orderBy('id', 'DESC')
+                ->pluck('id'); // Get only project IDs
+
+            // Fetch the top 3 concrete test results for the filtered projects
+            $concreate_test_result_forms = ConcreteTestResult::orderBy('id', 'DESC')
+                ->where('publish_status', 'publish')
+                ->whereIn('project_id', $projectIds)
+                ->take(3)
+                ->get();
         }
 
+        // if (Auth::user()->role_id == '1' || Auth::user()->role_id == '2') {
+        //     $concreate_test_result_forms = ConcreteTestResult::orderBy('id', 'DESC')->where('publish_status', 'publish')->take(3)->get();
+        // } else {
+        //     $concreate_test_result_forms = collect([]);
+        //     $all_files = ConcreteTestResult::orderBy('id', 'DESC')->where('publish_status', 'publish')->get();
+        //     foreach ($all_files as $key => $file) {
+        //         if (in_array(Auth::user()->id, json_decode($file->responsible_person))) {
+        //             $concreate_test_result_forms->push($file);
+        //         }
+        //     }
+        //     $concreate_test_result_forms = $concreate_test_result_forms->take(3);
+        // }
+
+        // if (Auth::user()->role_id == '1' || Auth::user()->role_id == '2') {
+        //     $compressive_strenght_forms = CompressiveStrength::orderBy('id', 'DESC')->where('publish_status', 'publish')->take(3)->get();
+        // } else {
+        //     $compressive_strenght_forms = collect([]);
+        //     $all_files = CompressiveStrength::orderBy('id', 'DESC')->where('publish_status', 'publish')->get();
+        //     foreach ($all_files as $key => $file) {
+        //         if (in_array(Auth::user()->id, json_decode($file->responsible_person))) {
+        //             $compressive_strenght_forms->push($file);
+        //         }
+        //     }
+        //     $compressive_strenght_forms = $compressive_strenght_forms->take(3);
+        // }
+
+
+        $userId = (string) auth()->user()->id;
+        // For Admin (role_id 1) and Supervisor (role_id 2)
         if (Auth::user()->role_id == '1' || Auth::user()->role_id == '2') {
-            $compressive_strenght_forms = CompressiveStrength::orderBy('id', 'DESC')->where('publish_status', 'publish')->take(3)->get();
-        } else {
-            $compressive_strenght_forms = collect([]);
-            $all_files = CompressiveStrength::orderBy('id', 'DESC')->where('publish_status', 'publish')->get();
-            foreach ($all_files as $key => $file) {
-                if (in_array(Auth::user()->id, json_decode($file->responsible_person))) {
-                    $compressive_strenght_forms->push($file);
-                }
-            }
-            $compressive_strenght_forms = $compressive_strenght_forms->take(3);
+            // Fetch the top 3 published concrete test results
+            $compressive_strenght_forms = CompressiveStrength::orderBy('id', 'DESC')
+                ->where('publish_status', 'publish')
+                ->take(3)
+                ->get();
         }
+        // For other roles
+        else {
+            // Get project IDs where the user is responsible (based on JSON fields)
+            $projectIds = Project::whereJsonContains('responsible_ft', $userId)
+                ->orWhereJsonContains('responsible_supervisor', $userId)
+                ->orWhereJsonContains('responsible_clerk', $userId)
+                ->orWhereJsonContains('responsible_pe', $userId)
+                ->where('name', 'like', '%' . $this->searchTerm . '%')
+                ->orderBy('id', 'DESC')
+                ->pluck('id'); // Get only project IDs
+
+            // Fetch the top 3 concrete test results for the filtered projects
+            $compressive_strenght_forms = CompressiveStrength::orderBy('id', 'DESC')
+                ->where('publish_status', 'publish')
+                ->whereIn('project_id', $projectIds)
+                ->take(3)
+                ->get();
+        }
+
+
         if (Auth::user()->role_id == '1' || Auth::user()->role_id == '2') {
             $commercial_forms = Commercial::orderBy('id', 'DESC')->take(3)->get();
         } else {

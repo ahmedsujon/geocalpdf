@@ -83,7 +83,7 @@ class CdotComponent extends Component
         echo $output;
     }
 
-    
+
     public function deleteData()
     {
         $data = FieldDensityCdot::find($this->delete_id);
@@ -115,7 +115,7 @@ class CdotComponent extends Component
             }
             $cdot_files = $cdot_files->paginate($this->sortingValue);
         }
-        
+
         return view('livewire.templates.cdot.cdot-component', ['cdot_files'=>$cdot_files])->layout('livewire.layouts.base');
     }
 }
