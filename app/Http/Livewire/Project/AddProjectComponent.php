@@ -81,6 +81,7 @@ class AddProjectComponent extends Component
         $mailData['project_number'] = $this->project_number;
         $mailData['location'] = $this->location;
         $mailData['role_id'] = $auth_user->role_id;
+        $mailData['admin_name'] = $auth_user->name;
 
         // Fetch email addresses of responsible users
         $responsible_ft_emails = User::whereIn('id', $this->responsible_ft)->pluck('email')->toArray();

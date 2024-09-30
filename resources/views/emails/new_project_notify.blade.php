@@ -33,7 +33,7 @@
     <p>Project Number: {{ $project_number }}</p>
     <br>
     <p>Thank you...!!</p>
-    <p>{{ $name }}</p>
+    <p>{{ $admin_name }}</p>
     @if ($role_id = 1)
         <p>Super Administrator</p>
     @elseif($role_id = 2)

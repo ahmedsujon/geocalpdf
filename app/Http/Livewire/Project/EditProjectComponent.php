@@ -110,6 +110,7 @@ class EditProjectComponent extends Component
         $mailData['project_number'] = $this->project_number;
         $mailData['location'] = $this->location;
         $mailData['role_id'] = $auth_user->role_id;
+        $mailData['admin_name'] = $auth_user->name;
 
         foreach ($new_emails as $email) {
             Mail::send('emails.new_project_notify', $mailData, function ($message) use ($email, $mailData) {
