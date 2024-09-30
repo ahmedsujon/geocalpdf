@@ -31,7 +31,6 @@
         <strong>{{ $location }}</strong>.
     </p>
     <p>Project Number: {{ $project_number }}</p>
-    <br>
     <p>Thank you...!!</p>
     <p>{{ $admin_name }}</p>
     @if ($role_id = 1)
