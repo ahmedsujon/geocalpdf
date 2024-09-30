@@ -312,10 +312,12 @@
                                             <a class="nav-link" href="{{ route('project.list') }}">Project
                                                 Listing</a>
                                         </li>
-                                        <li class="nav-item">
-                                            <a href="{{ route('project.create') }}" class="nav-link ">Add
-                                                Project</a>
-                                        </li>
+                                        @if (Auth::user()->role_id == '1' || Auth::user()->role_id == '2' || Auth::user()->role_id == '3')
+                                            <li class="nav-item">
+                                                <a href="{{ route('project.create') }}" class="nav-link ">Add
+                                                    Project</a>
+                                            </li>
+                                        @endif
                                     </ul>
                                 </div>
                             </li>

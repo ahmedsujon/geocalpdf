@@ -1,0 +1,43 @@
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Auth;
+
+public function storeData()
+{
+    $project = new Project();
+    $project->project_number = $this->project_number;
+    $project->name = $this->name;
+    $project->location = $this->location;
+    $project->client_id = $this->client_id;
+    $project->created_by = Auth::user()->id;
+
+    $project->responsible_ft = json_encode($this->responsible_ft);
+    $project->responsible_supervisor = json_encode($this->responsible_supervisor);
+    $project->responsible_clerk = json_encode($this->responsible_clerk);
+    $project->responsible_pe = json_encode($this->responsible_pe);
+
+    $project->save();
+
+    // Convert JSON arrays back to PHP arrays
+    $responsible_ft_emails = json_decode($this->responsible_ft, true);
+    $responsible_supervisor_emails = json_decode($this->responsible_supervisor, true);
+    $responsible_clerk_emails = json_decode($this->responsible_clerk, true);
+    $responsible_pe_emails = json_decode($this->responsible_pe, true);
+
+    // Merge all emails into one array
+    $all_responsibles = array_merge($responsible_ft_emails, $responsible_supervisor_emails, $responsible_clerk_emails, $responsible_pe_emails);
+
+    // Prepare the email data
+    $mailData = [
+        'project_name' => $this->name,
+        'project_location' => $this->location,
+        'project_number' => $this->project_number
+    ];
+
+    // Send email to all responsible users
+    foreach ($all_responsibles as $email) {
+        Mail::send('emails.responsible_notification', $mailData, function ($message) use ($email) {
+            $message->to($email)
+                    ->subject('New Project Assignment');
+        });
+    }
+}

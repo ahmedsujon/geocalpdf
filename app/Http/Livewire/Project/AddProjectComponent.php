@@ -2,14 +2,15 @@
 
 namespace App\Http\Livewire\Project;
 
+use Carbon\Carbon;
+use App\Models\User;
 use App\Models\Client;
 use App\Models\Project;
-use App\Models\User;
-use Carbon\Carbon;
-use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
-use Livewire\WithFileUploads;
 use Livewire\WithPagination;
+use Livewire\WithFileUploads;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class AddProjectComponent extends Component
 {
@@ -20,33 +21,33 @@ class AddProjectComponent extends Component
 
     public $sortingValue = 10, $searchTerm;
     public $edit_id, $delete_id;
-    protected $listeners = ['deleteConfirmed'=>'deleteData'];
+    protected $listeners = ['deleteConfirmed' => 'deleteData'];
 
     public function updated($fields)
     {
         $this->validateOnly($fields, [
-            'project_number'=>'required|unique:projects,project_number',
-            'name'=>'required|unique:projects,name',
-            'location'=>'required',
-            'client_id'=>'required',
-            'responsible_ft'=>'required',
-            'responsible_supervisor'=>'required',
-            'responsible_clerk'=>'required',
-            'responsible_pe'=>'required',
+            'project_number' => 'required|unique:projects,project_number',
+            'name' => 'required|unique:projects,name',
+            'location' => 'required',
+            'client_id' => 'required',
+            'responsible_ft' => 'required',
+            'responsible_supervisor' => 'required',
+            'responsible_clerk' => 'required',
+            'responsible_pe' => 'required',
         ]);
     }
 
     public function storeData()
     {
         $this->validate([
-            'project_number'=>'required|unique:projects,project_number',
-            'name'=>'required|unique:projects,name',
-            'location'=>'required',
-            'client_id'=>'required',
-            'responsible_ft'=>'required',
-            'responsible_supervisor'=>'required',
-            'responsible_clerk'=>'required',
-            'responsible_pe'=>'required',
+            'project_number' => 'required|unique:projects,project_number',
+            'name' => 'required|unique:projects,name',
+            'location' => 'required',
+            'client_id' => 'required',
+            'responsible_ft' => 'required',
+            'responsible_supervisor' => 'required',
+            'responsible_clerk' => 'required',
+            'responsible_pe' => 'required',
         ]);
 
         $project = new Project();
@@ -61,16 +62,50 @@ class AddProjectComponent extends Component
         $project->responsible_clerk = json_encode($this->responsible_clerk);
         $project->responsible_pe = json_encode($this->responsible_pe);
 
-        if($this->avatar!=null){
-            $imageName = Carbon::now()->timestamp. '.' . $this->avatar->extension();
-            $this->avatar->storeAs('project',$imageName);
+        if ($this->avatar != null) {
+            $imageName = Carbon::now()->timestamp . '.' . $this->avatar->extension();
+            $this->avatar->storeAs('project', $imageName);
             $project->avatar = $imageName;
         }
-  
         $project->save();
-        $this->dispatchBrowserEvent('success', ['message'=>'Project created successfully']);
-        $this->resetInputs();
 
+        // Fetch email addresses of responsible users
+        $responsible_ft_emails = User::whereIn('id', $this->responsible_ft)->pluck('email')->toArray();
+        $responsible_supervisor_emails = User::whereIn('id', $this->responsible_supervisor)->pluck('email')->toArray();
+        $responsible_clerk_emails = User::whereIn('id', $this->responsible_clerk)->pluck('email')->toArray();
+        $responsible_pe_emails = User::whereIn('id', $this->responsible_pe)->pluck('email')->toArray();
+
+        // Prepare mail data
+        $auth_user = Auth::user();
+        $mailData['name'] = $this->name;
+        $mailData['project_number'] = $this->project_number;
+        $mailData['location'] = $this->location;
+        $mailData['role_id'] = $auth_user->role_id;
+
+        // Fetch email addresses of responsible users
+        $responsible_ft_emails = User::whereIn('id', $this->responsible_ft)->pluck('email')->toArray();
+        $responsible_supervisor_emails = User::whereIn('id', $this->responsible_supervisor)->pluck('email')->toArray();
+        $responsible_clerk_emails = User::whereIn('id', $this->responsible_clerk)->pluck('email')->toArray();
+        $responsible_pe_emails = User::whereIn('id', $this->responsible_pe)->pluck('email')->toArray();
+
+        // Combine all email arrays into one unique array
+        $all_emails = array_unique(array_merge(
+            $responsible_ft_emails,
+            $responsible_supervisor_emails,
+            $responsible_clerk_emails,
+            $responsible_pe_emails
+        ));
+
+        // Send emails to all responsible users with the prepared $mailData
+        foreach ($all_emails as $email) {
+            Mail::send('emails.new_project_notify', $mailData, function ($message) use ($mailData, $email) {
+                $message->to($email)
+                    ->subject('New Project Assign: ' . $mailData['name']);
+            });
+        }
+
+        $this->dispatchBrowserEvent('success', ['message' => 'Project created successfully']);
+        $this->resetInputs();
     }
 
     public function resetInputs()
@@ -96,6 +131,6 @@ class AddProjectComponent extends Component
         $p_engineers = User::orderBy('id', 'DESC')->where('role_id', 2)->get();
 
         $clients = Client::orderBy('id', 'DESC')->get();
-        return view('livewire.project.add-project-component', ['clients'=>$clients, 'supervisors'=>$supervisors, 'cleks'=>$cleks, 'p_engineers'=>$p_engineers, 'field_techs'=>$field_techs ])->layout('livewire.layouts.base');
+        return view('livewire.project.add-project-component', ['clients' => $clients, 'supervisors' => $supervisors, 'cleks' => $cleks, 'p_engineers' => $p_engineers, 'field_techs' => $field_techs])->layout('livewire.layouts.base');
     }
 }
