@@ -107,10 +107,10 @@ class CompressiveStrengthComponent extends Component
         // For Admin (role_id 1) and Supervisor (role_id 2)
         if (Auth::user()->role_id == '1' || Auth::user()->role_id == '2') {
             $files = CompressiveStrength::orderBy('id', 'DESC')
-                ->join('projects', 'concrete_test_results.project_id', '=', 'projects.id')
+                ->join('projects', 'compressive_strengths.project_id', '=', 'projects.id')
                 ->where('projects.name', 'like', '%' . $this->searchTerm . '%')
                 ->where('publish_status', 'publish')
-                ->select('concrete_test_results.*')
+                ->select('compressive_strengths.*')
                 ->paginate($this->sortingValue);
         }
         // For other roles
