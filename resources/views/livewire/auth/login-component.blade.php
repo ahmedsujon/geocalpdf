@@ -3,7 +3,6 @@
         <div class="col-12 align-self-center">
             <div class="card-body">
                 <div class="row">
-                    <!-- Keep the full width on desktop/laptop (col-lg-4), but adjust for mobile/tablet -->
                     <div class="col-lg-4 col-md-6 col-sm-10 col-12 offset-lg-9 offset-md-3 offset-sm-1">
                         <div class="card">
                             <div class="card-body p-0 auth-header-box">
