@@ -34,6 +34,7 @@ class DraftFileComponent extends Component
         $files = ConcreteTestResult::orderBy('id', 'DESC')
             ->join('projects', 'concrete_test_results.project_id', '=', 'projects.id')
             ->where('projects.name', 'like', '%' . $this->searchTerm . '%')
+            ->where('projects.id', 'like', '%' . $this->searchTerm . '%')
             ->where('publish_status', 'unpublish')
             ->where('user_id', Auth::user()->id)
             ->select('concrete_test_results.*')
