@@ -20,7 +20,7 @@ class SFCommercialComponent extends Component
     {
         $project_listing = collect([]);
 
-        $listing_three = Commercial::where('project_id', $this->project_id)->get();
+        $listing_three = Commercial::where('project_id', $this->project_id)->where('publish_status', 'publish')->get();
         foreach ($listing_three as $l3) {
             $l3->table_name = 'commercials';
             $project_listing->push($l3);

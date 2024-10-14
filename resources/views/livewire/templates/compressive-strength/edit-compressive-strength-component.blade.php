@@ -425,8 +425,7 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="input-group">
-                                        <span class="input-group-text width27">Placed at (Str. No. or
-                                            station/lane/portion):</span>
+                                        <span class="input-group-text width27">Placed at:</span>
                                         <input type="text" class="form-control form-color" wire:model="placed_at">
                                     </div>
                                     @error('placed_at')
@@ -2210,9 +2209,7 @@
                                     <td class="td-padding-left"
                                         style="width: 45%;  border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
                                         <p style="font-size: 12px; text-align: left"><span
-                                                style="font-size: 8px;">Placed at (Str. No.
-                                                or
-                                                station/lane/portion)</span><br>
+                                                style="font-size: 8px;">Placed at:</span><br>
                                             {{ $placed_at }}</p>
                                     </td>
 

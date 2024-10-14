@@ -155,9 +155,7 @@
                 <tr>
                     <td class="td-padding-left"
                         style="width: 45%;  border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
-                        <p style="font-size: 12px; text-align: left"><span style="font-size: 8px;">Placed at (Str. No.
-                                or
-                                station/lane/portion)</span><br>
+                        <p style="font-size: 12px; text-align: left"><span style="font-size: 8px;">Placed at:</span><br>
                             {{ $data->placed_at }}</p>
                     </td>
 
@@ -1173,7 +1171,7 @@
                                     {{ $data->submitted_by }}</span>
                             </p>
                         </td>
-                        
+
                         <td class="td-padding-left"
                             style="width: 30%; border-top: 3px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000;">
                             <p style="font-size: 12px; text-align: left; padding-bottom: 4px;"><span

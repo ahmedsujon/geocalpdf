@@ -20,7 +20,7 @@ class SFCdotComponent extends Component
     {
         $project_listing = collect([]);
 
-        $listing_four = FieldDensityCdot::where('project_id', $this->project_id)->get();
+        $listing_four = FieldDensityCdot::where('project_id', $this->project_id)->where('publish_status', 'publish')->get();
         foreach ($listing_four as $l4) {
             $l4->table_name = 'field_density_cdots';
             $project_listing->push($l4);

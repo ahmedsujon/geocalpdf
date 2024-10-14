@@ -418,8 +418,7 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="input-group">
-                                        <span class="input-group-text width27">Placed at (Str. No. or
-                                            station/lane/portion):</span>
+                                        <span class="input-group-text width27">Placed at:</span>
                                         <input type="text" class="form-control form-color" wire:model="placed_at">
                                     </div>
                                     @error('placed_at')

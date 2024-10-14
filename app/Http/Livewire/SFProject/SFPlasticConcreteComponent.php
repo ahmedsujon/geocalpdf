@@ -20,7 +20,7 @@ class SFPlasticConcreteComponent extends Component
     {
         $project_listing = collect([]);
 
-        $listing_six = PlasticConcrete::where('project_id', $this->project_id)->get();
+        $listing_six = PlasticConcrete::where('project_id', $this->project_id)->where('publish_status', 'publish')->get();
         foreach ($listing_six as $l6) {
             $l6->table_name = 'plastic_concretes';
             $project_listing->push($l6);

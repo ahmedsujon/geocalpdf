@@ -20,7 +20,7 @@ class SFConcreteComponent extends Component
     {
         $project_listing = collect([]);
 
-        $listing_one = ConcreteTestResult::where('project_id', $this->project_id)->get();
+        $listing_one = ConcreteTestResult::where('project_id', $this->project_id)->where('publish_status', 'publish')->get();
         foreach ($listing_one as $l1) {
             $l1->table_name = 'concrete_test_results';
             $project_listing->push($l1);

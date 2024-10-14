@@ -20,7 +20,7 @@ class SFSoilComponent extends Component
     {
         $project_listing = collect([]);
 
-        $listing_five = SoilAggregate::where('project_id', $this->project_id)->get();
+        $listing_five = SoilAggregate::where('project_id', $this->project_id)->where('publish_status', 'publish')->get();
         foreach ($listing_five as $l5) {
             $l5->table_name = 'soil_aggregates';
             $project_listing->push($l5);

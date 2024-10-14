@@ -20,7 +20,7 @@ class SFCompressiveComponent extends Component
     {
         $project_listing = collect([]);
 
-        $listing_two = CompressiveStrength::where('project_id', $this->project_id)->get();
+        $listing_two = CompressiveStrength::where('project_id', $this->project_id)->where('publish_status', 'publish')->get();
         foreach ($listing_two as $l2) {
             $l2->table_name = 'compressive_strengths';
             $project_listing->push($l2);

@@ -164,7 +164,9 @@
             border-left: 1px solid #000000;
         }
 
-        .input-group>.btn~.select2-container--bootstrap-5 .select2-selection, .input-group>.dropdown-menu~.select2-container--bootstrap-5 .select2-selection, .input-group>.input-group-text~.select2-container--bootstrap-5 .select2-selection {
+        .input-group>.btn~.select2-container--bootstrap-5 .select2-selection,
+        .input-group>.dropdown-menu~.select2-container--bootstrap-5 .select2-selection,
+        .input-group>.input-group-text~.select2-container--bootstrap-5 .select2-selection {
             background-color: #ccecff !important;
         }
 
@@ -209,9 +211,11 @@
                 width: 20%;
             }
         }
-        .pt-40{
+
+        .pt-40 {
             padding-top: 40px;
         }
+
         .upload-btn-wrapper {
             position: relative;
             overflow: hidden;
@@ -415,8 +419,7 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="input-group">
-                                        <span class="input-group-text width27">Placed at (Str. No. or
-                                            station/lane/portion):</span>
+                                        <span class="input-group-text width27">Placed at:</span>
                                         <input type="text" class="form-control form-color" wire:model="placed_at">
                                     </div>
                                     @error('placed_at')
@@ -2082,14 +2085,13 @@
         });
     </script>
 
-<script>
-    document.getElementById('required_strength').addEventListener('input', function(e) {
-        let value = e.target.value.replace(/[^\d.]/g, '');
-        value = parseFloat(value);
-        if (!isNaN(value)) {
-            e.target.value = value.toLocaleString('en-US');
-        }
-    });
-</script>
-
+    <script>
+        document.getElementById('required_strength').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/[^\d.]/g, '');
+            value = parseFloat(value);
+            if (!isNaN(value)) {
+                e.target.value = value.toLocaleString('en-US');
+            }
+        });
+    </script>
 @endpush
