@@ -16,16 +16,25 @@ class EditUserComponent extends Component
 
     public $role_id, $name, $email, $avatar, $new_avatar, $password, $password_confirmation, $phone, $user_id;
 
+    public $user; // Add this line to define a public property
+
     public function mount($user_id)
     {
         $user = User::where('id', $user_id)->first();
-        $this->role_id = $user->role_id;
-        $this->name = $user->name;
-        $this->email = $user->email;
-        $this->phone = $user->phone;
-        $this->new_avatar = $user->avatar;
-        $this->user_id = $user->id;
+        if ($user) {
+            $this->user = $user;
+            $this->role_id = $user->role_id;
+            $this->name = $user->name;
+            $this->email = $user->email;
+            $this->phone = $user->phone;
+            $this->new_avatar = $user->avatar;
+            $this->user_id = $user->id;
+        } else {
+            session()->flash('errorMessage', 'User not found.');
+            return redirect()->route('some.route');
+        }
     }
+
 
     public function updated($fields)
     {
@@ -77,6 +86,13 @@ class EditUserComponent extends Component
         $user->save();
         $this->dispatchBrowserEvent('success', ['message' => 'User Updated successfully']);
         return redirect()->back();
+    }
+
+    public function changeStatus($id, $status)
+    {
+        User::where('id', $id)->update(['status' => ($status == 1 ? 0 : 1)]);
+        session()->flash('successMessage', 'User status changed successfully.');
+        return redirect(request()->header('Referer'));
     }
 
     public function render()

@@ -22,7 +22,7 @@
 
         <form wire:submit.prevent='updateData' enctype="multipart/form-data">
             @if (Session::has('message'))
-            <div class="alert alert-success" role="alert">{{ Session::get('message') }}</div>
+                <div class="alert alert-success" role="alert">{{ Session::get('message') }}</div>
             @endif
             <div class="row">
                 <div class="col-md-10 offset-1">
@@ -38,7 +38,7 @@
                                     <input type="text" class="form-control" id="name" wire:model="name"
                                         placeholder="Enter name" />
                                     @error('name')
-                                    <span class="text-danger" style="font-size: 12.5px;">{{ $message }}</span>
+                                        <span class="text-danger" style="font-size: 12.5px;">{{ $message }}</span>
                                     @enderror
                                 </div>
                             </div>
@@ -49,7 +49,7 @@
                                     <input type="text" class="form-control" id="email" placeholder="Enter email"
                                         wire:model="email" />
                                     @error('email')
-                                    <span class="text-danger" style="font-size: 12.5px;">{{ $message }}</span>
+                                        <span class="text-danger" style="font-size: 12.5px;">{{ $message }}</span>
                                     @enderror
                                 </div>
 
@@ -59,10 +59,10 @@
                                 <label class="col-sm-3 col-form-label" for="phone">Phone <span
                                         class="text-danger">*</span></label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" id="phone" placeholder="(XXX) XXX-XXXX"
-                                        wire:model="phone" />
+                                    <input type="text" class="form-control" id="phone"
+                                        placeholder="(XXX) XXX-XXXX" wire:model="phone" />
                                     @error('phone')
-                                    <span class="text-danger" style="font-size: 12.5px;">{{ $message }}</span>
+                                        <span class="text-danger" style="font-size: 12.5px;">{{ $message }}</span>
                                     @enderror
                                 </div>
                             </div>
@@ -74,18 +74,18 @@
                                     <input type="password" class="form-control" id="password"
                                         placeholder="Enter password" wire:model="password" />
                                     @error('password')
-                                    <span class="text-danger" style="font-size: 12.5px;">{{ $message }}</span>
+                                        <span class="text-danger" style="font-size: 12.5px;">{{ $message }}</span>
                                     @enderror
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label class="col-sm-3 col-form-label" for="password_confirmation">Confirm Password <span
-                                        class="text-danger">*</span></label>
+                                <label class="col-sm-3 col-form-label" for="password_confirmation">Confirm Password
+                                    <span class="text-danger">*</span></label>
                                 <div class="col-sm-9">
                                     <input type="password" class="form-control" id="password_confirmation"
                                         placeholder="Confirm password" wire:model="password_confirmation" />
                                     @error('password_confirmation')
-                                    <span class="text-danger" style="font-size: 12.5px;">{{ $message }}</span>
+                                        <span class="text-danger" style="font-size: 12.5px;">{{ $message }}</span>
                                     @enderror
                                 </div>
                             </div>
@@ -98,14 +98,14 @@
                                         <select class="form-control" id="role_id" wire:model="role_id">
                                             <option value="">Select Role</option>
                                             @foreach ($roles as $role)
-                                            <option value="{{ $role->id }}">
-                                                {{ $role->role }}
-                                            </option>
+                                                <option value="{{ $role->id }}">
+                                                    {{ $role->role }}
+                                                </option>
                                             @endforeach
                                         </select>
                                     </div>
                                     @error('role_id')
-                                    <span class="text-danger" style="font-size: 12.5px;">{{ $message }}</span>
+                                        <span class="text-danger" style="font-size: 12.5px;">{{ $message }}</span>
                                     @enderror
                                 </div>
                             </div>
@@ -118,13 +118,12 @@
                                         style="font-size: 12.5px;" class="mr-2"><i
                                             class="fa fa-spinner fa-spin mt-3 ml-2"></i> Uploading</div>
                                     @if ($avatar)
-                                    <img src="{{ $avatar->temporaryUrl() }}" width="120">
+                                        <img src="{{ $avatar->temporaryUrl() }}" width="120">
                                     @elseif($new_avatar != '')
-                                    <img src="{{ asset($new_avatar) }}" width="120">
+                                        <img src="{{ asset($new_avatar) }}" width="120">
                                     @endif
                                     @error('avatar')
-                                    <span class="text-danger" style="font-size: 12.5px;">{{
-                                        $message }}</span>
+                                        <span class="text-danger" style="font-size: 12.5px;">{{ $message }}</span>
                                     @enderror
                                 </div>
                             </div>
@@ -133,12 +132,21 @@
                                 <div class="row mt-3 mb-5 justify-content-md-center">
                                     <div class="col-md-12 text-center">
                                         <form wire:submit.prevent='updateData'>
-                                            <a href="{{ route('user.list') }}" class="btn btn-primary submit_btn">Back to List</a>
-                                            <button type="submit" class="btn btn-success submit_btn">{!!
-                                                loadingState(
-                                                'updateData',
-                                                'Update User',
-                                                ) !!}</button>
+
+                                            @if ($user->status == 0)
+                                                <button style="float: left;" type="submit"
+                                                    wire:click.prevent='changeStatus({{ $user->id }}, {{ $user->status }})'
+                                                    class="btn btn-danger submit_btn">{!! loadingState('changeStatus(' . $user->id . ', ' . $user->status . ')', 'Deactive User') !!}</button>
+                                            @else
+                                                <button style="float: left;" type="submit"
+                                                    wire:click.prevent='changeStatus({{ $user->id }}, {{ $user->status }})'
+                                                    class="btn btn-secondary  submit_btn">{!! loadingState('changeStatus(' . $user->id . ', ' . $user->status . ')', 'Active User') !!}</button>
+                                            @endif
+
+                                            <a href="{{ route('user.list') }}"
+                                                class="btn btn-primary submit_btn">Back to List</a>
+                                            <button type="submit"
+                                                class="btn btn-success submit_btn">{!! loadingState('updateData', 'Update User') !!}</button>
                                         </form>
                                     </div>
                                 </div>
@@ -152,5 +160,9 @@
 </div>
 
 @push('scripts')
-
+<script>
+    Livewire.on('refreshComponent', () => {
+        window.location.reload(); // Full page reload
+    });
+</script>
 @endpush

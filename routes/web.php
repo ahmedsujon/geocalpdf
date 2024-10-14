@@ -103,6 +103,10 @@ use App\Models\InspectionConcreteSetNine;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
+Route::fallback(function(){
+    return view('404');
+});
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', ProfileComponent::class)->name('profile');
     // User Route

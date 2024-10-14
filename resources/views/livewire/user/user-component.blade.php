@@ -99,12 +99,10 @@
                                                 <td class="align-middle text-center">
                                                     @if ($user->status == 0)
                                                         <button class="btn btn-xs btn-success"
-                                                            wire:click.prevent='changeStatus({{ $user->id }}, {{ $user->status }})'
-                                                            style="font-weight: normal; font-size: 11px; padding: 1px 7px;">{!! loadingStateStatus('changeStatus(' . $user->id . ', ' . $user->status . ')', 'Active') !!}</button>
+                                                            style="font-weight: normal; font-size: 11px; padding: 1px 7px;">Active</button>
                                                     @else
                                                         <button class="btn btn-xs btn-danger"
-                                                            wire:click.prevent='changeStatus({{ $user->id }}, {{ $user->status }})'
-                                                            style="font-weight: normal; font-size: 11px; padding: 1px 7px;">{!! loadingStateStatus('changeStatus(' . $user->id . ', ' . $user->status . ')', 'Disabled') !!}</button>
+                                                            style="font-weight: normal; font-size: 11px; padding: 1px 7px;">Disabled</button>
                                                     @endif
                                                 </td>
 
