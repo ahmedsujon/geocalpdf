@@ -28,28 +28,29 @@ class LoginComponent extends Component
 
         $getUser = User::where('email', $this->email)->first();
 
-        if ($getUser != '') {
+        if ($getUser) {
+            // Check if the user's status is 1 (restricted)
+            if ($getUser->status == 1) {
+                session()->flash('errorMessage', 'Your account is restricted. Please contact support.');
+                return;
+            }
+
             if (Hash::check($this->password, $getUser->password)) {
                 Auth::attempt(['email' => $this->email, 'password' => $this->password]);
 
                 $this->dispatchBrowserEvent('success', ['message' => 'Login Successful']);
 
-                if(Auth::user()->role_id == 1){
+                if (Auth::user()->role_id == 1) {
                     return redirect()->route('admin.super.admin.dashboard');
-                }
-                elseif(Auth::user()->role_id == 2){
+                } elseif (Auth::user()->role_id == 2) {
                     return redirect()->route('admin.project.engineer.dashboard');
-                }
-                elseif(Auth::user()->role_id == 3){
+                } elseif (Auth::user()->role_id == 3) {
                     return redirect()->route('admin.clerk.dashboard');
-                }
-                elseif(Auth::user()->role_id == 4){
+                } elseif (Auth::user()->role_id == 4) {
                     return redirect()->route('admin.supervisor.dashboard');
-                }
-                elseif(Auth::user()->role_id == 5){
+                } elseif (Auth::user()->role_id == 5) {
                     return redirect()->route('admin.tech.dashboard');
                 }
-                
             } else {
                 session()->flash('errorMessage', 'Invalid email or password');
             }
@@ -57,6 +58,7 @@ class LoginComponent extends Component
             session()->flash('errorMessage', 'Invalid email or password');
         }
     }
+
 
     public function render()
     {

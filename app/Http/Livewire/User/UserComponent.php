@@ -9,7 +9,7 @@ use Livewire\WithPagination;
 class UserComponent extends Component
 {
     use WithPagination;
-    public $sortingValue = 10, $searchTerm;
+    public $sortingValue = 10, $searchTerm, $searchTermStatus = 0;
 
     protected $listeners = ['deleteConfirmed'=>'deleteData'];
     public $edit_id, $delete_id;
@@ -18,6 +18,12 @@ class UserComponent extends Component
     {
         $this->delete_id = $id;
         $this->dispatchBrowserEvent('show-delete-confirmation');
+    }
+
+    public function changeStatus($id, $status)
+    {
+        User::where('id', $id)->update(['status' => ($status == 1 ? 0 : 1)]);
+        $this->dispatchBrowserEvent('success', ['message' => 'User diactivated successfully.']);
     }
 
     public function deleteData()
@@ -32,7 +38,10 @@ class UserComponent extends Component
 
     public function render()
     {
-        $users = User::orderBy('id', 'DESC')->where('name', 'like', '%'.$this->searchTerm.'%')->paginate($this->sortingValue);
+        $users = User::orderBy('id', 'DESC')
+        ->where('name', 'like', '%'.$this->searchTerm.'%')
+        ->where('status', 'like', '%' . $this->searchTermStatus . '%')
+        ->paginate($this->sortingValue);
         return view('livewire.user.user-component', [ 'users'=>$users ])->layout('livewire.layouts.base');
     }
 }

@@ -126,10 +126,10 @@ class AddProjectComponent extends Component
 
     public function render()
     {
-        $field_techs = User::orderBy('id', 'DESC')->where('role_id', 5)->get();
-        $supervisors = User::orderBy('id', 'DESC')->where('role_id', 4)->get();
-        $cleks = User::orderBy('id', 'DESC')->where('role_id', 3)->get();
-        $p_engineers = User::orderBy('id', 'DESC')->where('role_id', 2)->get();
+        $field_techs = User::orderBy('id', 'DESC')->where('role_id', 5)->where('status', 0)->get();
+        $supervisors = User::orderBy('id', 'DESC')->where('role_id', 4)->where('status', 0)->get();
+        $cleks = User::orderBy('id', 'DESC')->where('role_id', 3)->where('status', 0)->get();
+        $p_engineers = User::orderBy('id', 'DESC')->where('role_id', 2)->where('status', 0)->get();
 
         $clients = Client::orderBy('id', 'DESC')->get();
         return view('livewire.project.add-project-component', ['clients' => $clients, 'supervisors' => $supervisors, 'cleks' => $cleks, 'p_engineers' => $p_engineers, 'field_techs' => $field_techs])->layout('livewire.layouts.base');

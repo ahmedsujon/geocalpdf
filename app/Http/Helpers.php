@@ -160,6 +160,14 @@ function displayTotalSet($id)
     return $totalSetOfData;
 }
 
+function loadingStateStatus($key, $title)
+{
+    $loadingSpinner = '
+        <div wire:loading wire:target="' . $key . '" wire:key="' . $key . '"><span class="spinner-border spinner-border-xs" role="status" aria-hidden="true"></span></div> ' . $title . '
+    ';
+    return $loadingSpinner;
+}
+
 function loadingState($key, $title)
 {
     $loadingSpinner = '
