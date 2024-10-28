@@ -96,7 +96,6 @@ class CreateConcreteTestResultComponent extends Component
             'inches_max' => 'required',
             'inches_min' => 'required',
             'contactid' => 'required',
-            'signature' => 'required',
         ]);
     }
 
@@ -109,7 +108,6 @@ class CreateConcreteTestResultComponent extends Component
                 'project_location' => 'required',
                 'office_address' => 'required',
                 'responsible_person' => 'required',
-                'signature' => 'required',
             ], [
                 'project_id.required' => 'Project name is required',
                 'user_id.required' => 'Technician name is required',

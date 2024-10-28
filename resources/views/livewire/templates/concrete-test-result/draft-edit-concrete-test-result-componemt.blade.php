@@ -4674,7 +4674,7 @@
                                         </p>
                                         <p style="font-size: 12px; text-align: center;">
                                             <img style="height: 70px; width: 200px;"
-                                                src="http://geocalpdf.com/{{ $new_signature }}">
+                                                src="{{ asset($new_signature) }}">
                                         </p>
                                     </td>
                                     <td class="td-padding-left width20" style="text-align: left;">
