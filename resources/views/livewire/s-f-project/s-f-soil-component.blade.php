@@ -59,6 +59,7 @@
                                 <thead class="thead-light">
                                     <tr>
                                         <th>Image</th>
+                                        <th>Form ID</th>
                                         <th>Project Name</th>
                                         <th>Client Name</th>
                                         <th>Project Number</th>
@@ -85,6 +86,7 @@
                                                             alt="user" class="rounded-circle thumb-md">
                                                     @endif
                                                 </td>
+                                                <td>SOA-{{ $file->id }}</td>
                                                 <td>{{ project($file->project_id)->name }}</td>
                                                 <td>{{ client($file->client_id)->name }}</td>
                                                 <td>{{ $file->project_number }}</td>
